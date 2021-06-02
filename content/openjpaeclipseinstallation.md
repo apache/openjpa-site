@@ -5,8 +5,11 @@ Title: OpenJPAEclipseInstallation
 # OpenJPA Eclipse Tooling
 
 <span class="info">
-    [Eclipse Update Site](http://people.apache.org/~dwoods/openjpa/devtools/updatesite/) is 
-    the current Update Site of the OpenJPA Eclipse Tooling. (It will probably still change.)</span>
+
+[Eclipse Update Site](http://people.apache.org/~dwoods/openjpa/devtools/updatesite/) is 
+the current Update Site of the OpenJPA Eclipse Tooling. (It will probably still change.)
+
+</span>
 
 <a name="OpenJPAEclipseInstallation-HowtoinstalltheOpenJPAEclipseTooling"></a>
 

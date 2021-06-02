@@ -129,7 +129,7 @@ ASF_GENID = {
     'permalinks': True,
     'toc': False,
     'toc_headers': r"h[1-4]",
-    'tables': True,
+    'tables': False,
     'debug': False
 }
 

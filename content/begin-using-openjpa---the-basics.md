@@ -74,90 +74,87 @@ not know how to do that, follow the instructions found at the [Geronimo website]
 
 1. Create a new Java project in Eclipse called, **"OpenJPATutorial"**.
 
-    * From the menu, select: **File->New->Enterprise Application Project**. (If
-**Enterprise Application Project** is not available as an option, select
-**Project** and then choose **Enterprise Application Project** from the
-list. Then click on the **Next** button).
-When the New Project settings dialog appears, use the following settings:
+   * From the menu, select: **File->New->Enterprise Application Project**. (If
+     **Enterprise Application Project** is not available as an option, select
+     **Project** and then choose **Enterprise Application Project** from the
+     list. Then click on the **Next** button).
+     When the New Project settings dialog appears, use the following settings:
 
-<img src="images/image001.jpg"/>
+     ![images/image001.jpg](/images/image001.jpg)
   
 1. Under the **Target Runtime** section, select **Apache Geronimo v2.2**.
 
     * If you do not already have Geronimo setup in Eclipse then you will have
-to do so now. Click on the **New...** button.
+      to do so now. Click on the **New...** button.
     * If Apache Geronimo v2.2 does not appear in the list under **Apache**,
-click the **Download additional server adapters** link at the top right of
-the dialog. If the adapter does not appear in that list then follow the [directions from the Geronimo site](http://geronimo.apache.org/geronimo-eclipse-plugin-installation-instructions.html).
+      click the **Download additional server adapters** link at the top right of
+      the dialog. If the adapter does not appear in that list then follow the [directions from the Geronimo site](http://geronimo.apache.org/geronimo-eclipse-plugin-installation-instructions.html).
 
-<img src="images/image002.jpg"/>
+      ![images/image002.jpg](/images/image002.jpg)
   
     * Select **Apache->Apache Geronimo v2.2**
     * Click **Next**.
-  
-<img src="images/image003.jpg"/>
+
+      ![images/image003.jpg](/images/image003.jpg)
   
     * Set the JRE to **jre6** if it is not already set.
     * Browse for the install directory of Geronimo v2.2 on your system.
     * Click **Finish**. You should see the following:
-  
-<img src="images/image001.jpg"/>
+
+      ![images/image001.jpg](/images/image001.jpg)
   
 1. Now, click the **Next** button. You should see this:
+
+   ![images/image004.jpg](/images/image004.jpg)
+   
+   * Check the **Generate application.xml deployment descriptor** option.
+   * Click the **New Module...** button:
+
+     ![images/image005.jpg](/images/image005.jpg)
   
-<img src="images/image004.jpg"/>
+   * De-select **Create default modules**.
+   * Select	the **Web** option.
+   * Click **Next**.
+
+     ![images/image006.jpg](/images/image006.jpg)
   
-    * Check the **Generate application.xml deployment descriptor** option.
-    * Click the **New Module...** button:
-  
-<img src="images/image005.jpg"/>
-  
-    * De-select **Create default modules**.
-    * Select	the **Web** option.
-    * Click **Next**.
-  
-<img src="images/image006.jpg"/>
-  
-    * Click **Finish**. You will see the following:
+   * Click **Finish**. You will see the following:
+
+     ![images/image007.jpg](/images/image007.jpg)
  
-<img src="images/image007.jpg"/>
- 
-    * Click **Finish**.
+   * Click **Finish**.
   
   
 1. Now, your Project Explorer should look like this (partially expanded):
-  
-<img src="images/image008.jpg"/>
+
+   ![images/image008.jpg](/images/image008.jpg)
 
   
-    * If you double-click on the **Deployment Descriptor: OpenJPATutorial**, you
-should see the application.xml open:
+   * If you double-click on the **Deployment Descriptor: OpenJPATutorial**, you
+     should see the application.xml open:
   
-<img src="images/image009.jpg"/>
+     ![images/image009.jpg](/images/image009.jpg)
   
-1. Now we will bring in the sample code. The easiest way to add the sample
-code is      to find the source provided with this tutorial and copy it to
-the src      folder under the **OpenJPATutorialWeb** folder in your project
-directory in Windows Explorer:
+1. Now we will bring in the sample code. The easiest way to add the sample code is
+   to find the source provided with this tutorial and copy it to the src folder
+   under the **OpenJPATutorialWeb** folder in your project directory in Windows Explorer:
+
+   ![images/image010.jpg](/images/image010.jpg)
+
+   * Now go back to Eclipse. Right-click on the **OpenJPATutorialWeb** folder in the Project Explorer view
+     and select **Refresh,** or press the **F5** key on your keyboard. Now you will see this:
+
+     ![images/image011.jpg](/images/image011.jpg)
   
-<img src="images/image010.jpg"/>
-  
-    * Now go back to Eclipse. Right-click on the **OpenJPATutorialWeb** folder
-in the Project Explorer view and select **Refresh,** or press the **F5** key on
-your keyboard. Now you will see this:
-  
-<img src="images/image011.jpg"/>
-  
-        Notice that all the source files compile without error. That is because
-Geronimo comes with OpenJPA v1.1 built in.
+     Notice that all the source files compile without error. That is because Geronimo comes with OpenJPA v1.1 built in.
   
 1. Now copy the index.jsp file from the tutorial into the Web Content directory under the Project directory in Windows Explorer:  
+
+   ![images/image012.jpg](/images/image012.jpg)
   
-<img src="images/image012.jpg"/>  
-  
-    * Got to the Project Explorer and refresh the project. You should see this:  
-  
-<img src="images/image013.jpg"/>
+   * Got to the Project Explorer and refresh the project. You should see this:  
+
+   ![images/image013.jpg](/images/image013.jpg)
 
 <a name="BeginusingOpenJPA-TheBasics-RunningandConfiguringGeronimoandDerby"></a>
 
@@ -166,45 +163,41 @@ Geronimo comes with OpenJPA v1.1 built in.
 Geronimo has no installer and runs from the command line. Here are some
 quick instructions to get you started.
 
-1. In Windows, open a command prompt and navigate to the Geronimo **bin**
-directory.
+1. In Windows, open a command prompt and navigate to the Geronimo **bin** directory.
 1. Type the command:
 
         start-server
   
-<img src="images/image014.jpg"/>
+   ![images/image014.jpg](/images/image014.jpg)
         
-    Press the *Enter* key.
+   Press the *Enter* key.
 
-<img src="images/image015.jpg"/>
+   ![images/image015.jpg](/images/image015.jpg)
   
 1. Open a web browser and go to the address:
-  
-	<http://localhost:8080/console>  
-  
-<img src="images/image016.jpg"/>
-  
-    The default password is _manager_.
-  
-1. You will come to the Welcome page. On the left menu, at the bottom, find
-the	 section for the Embedded DB. This is the Derby database control
-page.
 
-<img src="images/image017.jpg"/>  
+   http://localhost:8080/console
+
+   ![images/image016.jpg](/images/image016.jpg)
+  
+   The default password is _manager_.
+  
+1. You will come to the Welcome page. On the left menu, at the bottom, find the section
+   for the Embedded DB. This is the Derby database control page.
+
+   ![images/image017.jpg](/images/image017.jpg)
   
 1. Click on the link for the **DB Manager**
 1. You will see two sections: **DB Viewer** and **Run SQL**.
-1. In the Run SQL section, in the text field labeled Create DB, type in
-**StoreSystem**. This is the name of the database that the OpenJPA sample is
-configured to transact.
+1. In the Run SQL section, in the text field labeled Create DB, type in **StoreSystem**.
+   This is the name of the database that the OpenJPA sample is configured to transact.
+
+   ![images/image018.jpg](/images/image018.jpg)
   
-<img src="images/image018.jpg"/>  
-  
-1. Click on the **Create** button. You should now see the
-**StoreSystem** database appear in
-the **DB Viewer** section.
-  
-<img src="images/image019.jpg"/>  
+1. Click on the **Create** button. You should now see the **StoreSystem** database appear in
+   the **DB Viewer** section.
+
+   ![images/image019.jpg](/images/image019.jpg)
   
 1. We are now ready to deploy and run the sample code.
 
@@ -223,51 +216,50 @@ OpenJPA, we will first deploy the sample and see it work. To deploy the
 sample code follow these instructions:
 
 1. In Eclipse, in the Project Explorer, right click on the OpenJPATutorial
-project and select: **Export->EAR file**.
+   project and select: **Export->EAR file**.
+
+   ![images/image020.jpg](/images/image020.jpg)
   
-<img src="images/image020.jpg"/>  
-  
-1. In the      Ear Export dialog, find a convenient place to put the
-exported EAR file.
-1. Check      the **Overwrite existing file** check box.
-  
-<img src="images/image021.jpg"/>  
+1. In the Ear Export dialog, find a convenient place to put the exported EAR file.
+1. Check the **Overwrite existing file** check box.
+
+   ![images/image021.jpg](/images/image021.jpg)
   
 1. Click **Finish**.
 1. Go out to Windows Explorer and copy the file **TutorialDeploymentPlan.xml**
-to the location of the exported ear. This is the deployment plan that
-Geronimo requires to deploy the application.
-  
-<img src="images/image022.jpg"/>  
+   to the location of the exported ear. This is the deployment plan that
+   Geronimo requires to deploy the application.
+
+   ![images/image022.jpg](/images/image022.jpg)
   
 1. Open the Geronimo console in a web browser and log in.
 1. In the Console Navigation menu on the left, under the **Applications**
-section, click on the **Deploy New** item.
+   section, click on the **Deploy New** item.
 1. Browse to the location of the exported EAR file and the deployment plan
-XML file.
-  
-<img src="images/image023.jpg"/>  
+   XML file.
+
+   ![images/image023.jpg](/images/image023.jpg)
   
 1. Click on the **Install** button. You should see this.
-  
-<img src="images/image024.jpg"/>  
+
+   ![images/image024.jpg](/images/image024.jpg)
   
 1. In the Console Navigation menu on the left, under the **Applications**
-section, click on the **Web App WARs** item.
-    * Notice that the OpenJPATutorial application is now listed and that there
-is a clickable link under the URL heading:
-  
-<img src="images/image025.jpg"/>  
+   section, click on the **Web App WARs** item.
+   * Notice that the OpenJPATutorial application is now listed and that there
+     is a clickable link under the URL heading:
+
+     ![images/image025.jpg](/images/image025.jpg)
   
 1. Click on the link **OpenJPATutorial** and now you should see this:
-  
-<img src="images/image026.jpg"/>  
-  
-    Each of the buttons will execute OpenJPA code. The lists are filled by
-running queries on the Derby database.
 
-    * Add a some categories and items
-    * Make sure you test each of the buttons and see the results.
+   ![images/image026.jpg](/images/image026.jpg)
+
+   Each of the buttons will execute OpenJPA code. The lists are filled by
+   running queries on the Derby database.
+
+   * Add a some categories and items
+   * Make sure you test each of the buttons and see the results.
   
 <a name="BeginusingOpenJPA-TheBasics-ExaminingtheSampleCode"></a>
 
@@ -283,22 +275,22 @@ locate the code that corresponds to explanations as you follow along.
 
 * Java code: This tutorial comes with the following java source files:
     * index.jsp: This is the interface code only. It does call into other
-classes but it does not use any OpenJPA code directly.
+      classes but it does not use any OpenJPA code directly.
     * InventoryEntityBroker.java:&nbsp;This class contains methods that
-encapsulate the OpenJPA handling code. It is provided as a way to separate
-OpenJPA functionality from the web interface.
+      encapsulate the OpenJPA handling code. It is provided as a way to separate
+      OpenJPA functionality from the web interface.
     * InventoryItem.java: This is an OpenJPA Entity class file. This file is
-an example of a simple OpenJPA Entity with a relationship.
+      an example of a simple OpenJPA Entity with a relationship.
     * InventoryCategory.java: This is an OpenJPA Entity class file. This file
-is an example of a simple OpenJPA Entity with a relationship.
+      is an example of a simple OpenJPA Entity with a relationship.
 * Persistence code: Each entity concept that would be a database table will
-be its own class. In this case, the tables are called "InventoryItem" and
-"InventoryCategory". Annotations in the Java file will associate the
-properties with the database columns. The annotation,
-<font color="#646464">@Column</font>, maps the property name to the column name
-for synchronization with the database. If the table corresponding tables do
-not exist, OpenJPA can use these annotations to create the tables' schema
-dynamically based on the property type and length.
+  be its own class. In this case, the tables are called "InventoryItem" and
+  "InventoryCategory". Annotations in the Java file will associate the
+  properties with the database columns. The annotation,
+  <font color="#646464">@Column</font>, maps the property name to the column name
+  for synchronization with the database. If the table corresponding tables do
+  not exist, OpenJPA can use these annotations to create the tables' schema
+  dynamically based on the property type and length.
 
 <DIV style="border-style: solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryCategory.java</B></DIV>
 
@@ -412,10 +404,10 @@ ensures data integrity during merges and acts as an optimistic concurrency
 control.
 <li> Every property must have both a getter and a setter and the standard case
 convention must be observed.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;�&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <ul>
 <li>Correct: <font color="#7f0055">public void</font> setCategoryName(String name)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;�&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <li>Incorrect: <font color="#7f0055">public void setcategoryname(String name)
 </ul>
 </ul>
@@ -423,15 +415,15 @@ convention must be observed.
 
 
 * Persistence.xml: JPA requires the use of a XML file called the
-"persistence.xml" that describes how to access the data. The XML file must
-be created in the META-INF directory. The META-INF directory containing the
-persistence.xml must be located with the source files.
+  "persistence.xml" that describes how to access the data. The XML file must
+  be created in the META-INF directory. The META-INF directory containing the
+  persistence.xml must be located with the source files.
+
+  ![images/image027.jpg](/images/image027.jpg)
   
-<img src="images/image027.jpg"/>  
+  In the following example, the file only requires a few fields.
   
-In the following example, the file only requires a few fields.
-  
-<DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>META-INF/persistence.xml</B></DIV>
+  <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>META-INF/persistence.xml</B></DIV>
     
         <persistence xmlns=http://java.sun.com/xml/ns/persistence
             xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance
@@ -450,57 +442,50 @@ In the following example, the file only requires a few fields.
          </persistence-unit>
     </persistence>
 
-</div>
+  </div>
     
 * The following elements are specific to this tutorial:
-    * **persistence-unit**: the **name** is the table name to bind. In this case
-it is	     'person'.
-    * **class**: the java class that is bound to the table 'person'.
-    * **property:** openjpa.jdbc.SynchronizeMappings: This tells OpenJPA to
-automatically create the table with the class definition if a table does
-not already exist.
-    * **property:** openjpa.ConnectionURL: The URL of the database connection.
-    * **property:** openjpa.ConnectionDriverName: the class name of the JDBC
-driver for Derby. This must be available via the classpath. In this
-tutorial, the driver is built into Geronimo so no extra actions are needed.
+  * **persistence-unit**: the **name** is the table name to bind. In this case it is 'person'.
+  * **class**: the java class that is bound to the table 'person'.
+  * **property:** openjpa.jdbc.SynchronizeMappings: This tells OpenJPA to automatically create
+    the table with the class definition if a table does not already exist.
+  * **property:** openjpa.ConnectionURL: The URL of the database connection.
+  * **property:** openjpa.ConnectionDriverName: the class name of the JDBC
+    driver for Derby. This must be available via the classpath. In this
+    tutorial, the driver is built into Geronimo so no extra actions are needed.
+
 * A complete explanation of the persistence.xml is in the [Apache OpenJPAV2.0 user's Guide: Chapter 6](http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_persistence.html)
 
 * Create the Entity Manager. In the provided code, the EntityManager is a
-property of the InventoryEntityBroker class. The Entity Manager controls
-the interaction with the database. You must use the Entity Manager to start
-or access transactions or to send queries.
-    * The following code must be added before using any of the persistence
-APIs (If you are using the provided sample code, this is already included):
+  property of the InventoryEntityBroker class. The Entity Manager controls
+  the interaction with the database. You must use the Entity Manager to start
+  or access transactions or to send queries.
+  * The following code must be added before using any of the persistence
+    APIs (If you are using the provided sample code, this is already included):
 
             EntityManagerFactory factory = Persistence.
                 createEntityManagerFactory("InventorySystem", System.getProperties());
                   
             EntityManager em = factory.createEntityManager();
 
-    * Note that the name, **"InventorySystem"**, is the same
-one identified in the persistence.xml.
-    * This code can be placed just before a query or transaction or they can
-be class properties.
-    * Regardless of the scope, the EntityManager and the EntityManagerFactory
-should be closed when they are no longer needed:
+  * Note that the name, **"InventorySystem"**, is the same one identified in the persistence.xml.
+  * This code can be placed just before a query or transaction or they can be class properties.
+  * Regardless of the scope, the EntityManager and the EntityManagerFactory should be closed when they are no longer needed:
   
               ...
               em.close();
               factory.close();
               ...
 
-    * The EntityManagerFactory and EntityManager full descriptions are in the
-following OpenJPA documentation:
-        * EntityManagerFactory: <http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_emfactory.html>
-        * EntityManager: <http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_em.html>
+  * The EntityManagerFactory and EntityManager full descriptions are in the following OpenJPA documentation:
+    * EntityManagerFactory: http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_emfactory.html
+    * EntityManager: http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_em.html
     
-* DB interface class. In this example, the InventoryEntityBroker class
-contains all the OpenJPA database interaction code. This is not required
-but it is a good idea for keeping the functionality componentized. For
-example, if you want to pull all of the records from the InventoryItem
-table, the code would look like this:
+* DB interface class. In this example, the InventoryEntityBroker class contains all the OpenJPA database interaction code.
+  This is not required but it is a good idea for keeping the functionality componentized. For example, if you want
+  to pull all of the records from the InventoryItem table, the code would look like this:
 
-<DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryEntityBroker.java</B></DIV>
+  <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryEntityBroker.java</B></DIV>
     
         ...
         List<Person> getAllItems()
@@ -511,38 +496,31 @@ table, the code would look like this:
         }
         ...
 
-</div>
+  </div>
 
-<DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>index.jsp</B></DIV>
+  <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>index.jsp</B></DIV>
     
         ...
 		List<InventoryItem> itemList = getAllItems();
 		...
 
-</div>
+  </div>
 	
-    * All of the specific APIs are described in the OpenJPA [javadoc](http:/openjpa.apache.org/builds/latest/docs/javadoc/index.html)
-    * Notice that the Query is not standard SQL. It is actually JPQL, which is
-a specialized form of query language specifically designed for JPA.
-        * In the JPQL statement, "<font color="#2a00ff">SELECT item FROM InventoryItem
-item</font>", notice that InventoryItem has the same case as the class
-InventoryItem.
-        * JPQL uses java objects in the query and not the database table names.
-The statement identifies the variable for InventoryItem as
-"<font color="#2a00ff">item</font>".
-        * JPQL provides an object oriented query language that is independent of
-the database being queried.&nbsp; So, regardless of which database being
-used, the JPQL does not change.&nbsp; The JPA runtime takes care of doing
-the translation from the object world to the desired relational database.
-        * For more information on JPQL, check out this [Java Persistence Query Language reference](http://java.sun.com/javaee/5/docs/tutorial/backup/update3/doc/QueryLanguage.html)
+  * All of the specific APIs are described in the OpenJPA [javadoc](http:/openjpa.apache.org/builds/latest/docs/javadoc/index.html)
+  * Notice that the Query is not standard SQL. It is actually JPQL, which is a specialized form of query language specifically designed for JPA.
+    * In the JPQL statement, "<font color="#2a00ff">SELECT item FROM InventoryItem item</font>", notice that InventoryItem has the same case as the class
+      InventoryItem.
+    * JPQL uses java objects in the query and not the database table names. The statement identifies the variable for InventoryItem as
+      "<font color="#2a00ff">item</font>".
+    * JPQL provides an object oriented query language that is independent of the database being queried.&nbsp; So, regardless of which database being
+      used, the JPQL does not change.&nbsp; The JPA runtime takes care of doing the translation from the object world to the desired relational database.
+    * For more information on JPQL, check out this [Java Persistence Query Language reference](http://java.sun.com/javaee/5/docs/tutorial/backup/update3/doc/QueryLanguage.html)
         
-* Also in the InventoryEntityBroker is code to add entries the database
-tables. Since you did not create a table for InventoryItem in the
-StoreSystem database in Derby, OpenJPA 2.0 will create the table the first
-time an _"add"_ is attempted.
-    * Consider the following code:
+* Also in the InventoryEntityBroker is code to add entries the database tables. Since you did not create a table for InventoryItem in the
+  StoreSystem database in Derby, OpenJPA 2.0 will create the table the first time an _"add"_ is attempted.
+  * Consider the following code:
     
-<DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryEntityBroker</B></DIV>
+  <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryEntityBroker</B></DIV>
         
             ...
             void addItem(String name, String description, float price, int categoryID)
@@ -556,13 +534,13 @@ time an _"add"_ is attempted.
             }
             ...
 
-</div>
+  </div>
 
-        You can then call the addItem() method in another part of the code. The
-EntityManager.persist() method will throw an exception if a transaction has
-not been started. The transaction must be committed by calling the
-Transaction.commit() method after all updates have been applied or else the
-changes will not be saved to the database:
+    You can then call the addItem() method in another part of the code. The
+    EntityManager.persist() method will throw an exception if a transaction has
+    not been started. The transaction must be committed by calling the
+    Transaction.commit() method after all updates have been applied or else the
+    changes will not be saved to the database:
 
             ...
             em.getTransaction().begin();
@@ -572,26 +550,21 @@ changes will not be saved to the database:
             em.getTransaction().commit();
             ...
 
-        * When this is executed the first time it will use the annotations to
-create the Person table, then OpenJPA 2.0 will populate it with the
-provided data.
-        * Note the use of the getTransaction() method to start an update and then
-to commit it. The concept is the same as in any database transaction
-processing.
-        * Also note that while the getAllItems() function requires a JPQL SELECT
-query, the update type actions have APIs.
-        * Take a look in the InventoryEntityBroker code at the addItem(),
-updateItem() and deleteItem() functions and note the simplicity of these
-operations.
+    * When this is executed the first time it will use the annotations to create the Person table, then OpenJPA 2.0 will populate it with the
+      provided data.
+    * Note the use of the getTransaction() method to start an update and then to commit it. The concept is the same as in any database transaction
+      processing.
+    * Also note that while the getAllItems() function requires a JPQL SELECT query, the update type actions have APIs.
+    * Take a look in the InventoryEntityBroker code at the addItem(), updateItem() and deleteItem() functions and note the simplicity of these
+      operations.
 
 * An important aspect of relational databases is, of course, the
-relationships. The basic relationship types are: one to many, many to one,
-and many to many. OpenJPA provides annotations to identify the related
-fields.
-Open the source file, InventoryCategory.java in Eclipse and find the
-following code:
+  relationships. The basic relationship types are: one to many, many to one,
+  and many to many. OpenJPA provides annotations to identify the related fields.
+  Open the source file, InventoryCategory.java in Eclipse and find the
+  following code:
 
-<DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryCategory.java</B></DIV>
+  <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryCategory.java</B></DIV>
         
             ...
             @OneToMany(targetEntity=tutorial.InventoryItem.class,
@@ -603,17 +576,14 @@ following code:
             }
             ...
 
-   * The annotation <font color="#646464">@OneToMany</font> identifies that:
-     * This object has a one-to-many relationship with
-targetEntity=tutorial.InventoryItem.class. Meaning that one
-InventoryCategory can have many InventoryItems associated with it.
-     * The property of InventoryItem that specifies the
-InventoryCategory it is associated with is mappedBy="category". In other
-words, InventoryItem has a class property of type InventoryCategory named
-"category".\\  Now open the source file,
-InventoryItem.java and find the following code:
+  * The annotation <font color="#646464">@OneToMany</font> identifies that:
+  * This object has a one-to-many relationship with targetEntity=tutorial.InventoryItem.class. Meaning that one
+    InventoryCategory can have many InventoryItems associated with it.
+  * The property of InventoryItem that specifies the InventoryCategory it is associated with is mappedBy="category". In other
+    words, InventoryItem has a class property of type InventoryCategory named "category".  Now open the source file,
+    InventoryItem.java and find the following code:
 
-<DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryItem.java</B></DIV>
+  <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryItem.java</B></DIV>
     
             ...
             @ManyToOne
@@ -624,15 +594,12 @@ InventoryItem.java and find the following code:
             }
             ...
 
-        * The annotation @ManyToOne identifies that:
-        * This object has a many-to-one relationship with the InventoryCategory
-object. Meaning that there many InventoryItems can reference the same
-InventoryCategory
-
-    * The annotation <font color="#646464">@JoinColumn</font> identifies that:
-        * The column in the database table that holds the InventoryCategory
-reference by the attribute:
-name=<font color="##2a00ff">"CAT_ID"</font>.
+    * The annotation @ManyToOne identifies that:
+    * This object has a many-to-one relationship with the InventoryCategory object. Meaning that there many InventoryItems can reference the same
+      InventoryCategory
+  * The annotation <font color="#646464">@JoinColumn</font> identifies that:
+    * The column in the database table that holds the InventoryCategory
+      reference by the attribute: name=<font color="##2a00ff">"CAT_ID"</font>.
   
 <table class="info"><tr>
   <td valign="top"> <IMG src="images/information.gif" width="16" height="16" border="0">

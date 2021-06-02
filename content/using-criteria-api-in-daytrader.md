@@ -138,14 +138,14 @@ Within the bin directory of the augmented profile:
 1. Run the script using the following command:
 
         wsadmin -f <location ofdaytrader_singleServer.py> <script options>
-    
-    You can display the list of available script options by specifying the option "--help".
+
+   You can display the list of available script options by specifying the option "--help".
 
 1. Re-start the server.
 
 Run DayTrader
 
-1. On a web browser, go to http://localhost:<application port>/daytrader/(The default application port is 9080. But, you may have a different one if you created a new profile.)
+1. On a web browser, go to http://localhost:<application-port>/daytrader/ (The default application port is 9080. But, you may have a different one if you created a new profile.)
 1. Click on the _Configuration_ tab and click on _(Re)-create  DayTrader Database Tables and Indexes_
 1. Click on the _Configuration&nbsp;_ tab and click on _(Re)-populate DayTrader Database_
 1. Click on the _Trading & Portfolios_ tab, login, and start  trading

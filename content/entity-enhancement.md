@@ -79,7 +79,7 @@ If your application uses some other method of enhancement, this support can be e
 
 <a name="EntityEnhancement-SubclassingEnhancement"></a>
 
-##Subclassing Enhancement
+## Subclassing Enhancement
 
 <span class="note">The use of OpenJPA's subclassing support is not recommended, and is disabled by default in OpenJPA 2.0 and beyond.</span>
      

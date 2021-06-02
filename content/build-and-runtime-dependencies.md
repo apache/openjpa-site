@@ -1,7 +1,7 @@
 Title: Build and Runtime Dependencies
 
 
-<a name="OpenJPABuildandRuntimeDependencies></a>
+<a name="OpenJPABuildandRuntimeDependencies"></a>
 
 
 <a name="BuildandRuntimeDependencies-Javaversions"></a>
