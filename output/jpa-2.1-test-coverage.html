@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- JPA 2.1 Test Coverage" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- JPA 2.1 Test Coverage</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="JPA2.1TestCoverage-JPA2.1TestCoverage"></a></p>
+<h1 id="jpa-21-test-coverage">JPA 2.1 Test Coverage<a class="headerlink" href="#jpa-21-test-coverage" title="Permalink">&para;</a></h1>
+<table class="note"><tr>
+<td valign="top"> <img border="0" height="16" src="images/warning.gif" width="16"/>
+<td>Under Construction...  The exact database types and versions still need to be determined for this new JPA 2.0 release...    	
+ </td></td></tr></table>
+<p>Starting with OpenJPA 2.0.0, we have split the <a href="-http://openjpa.apache.org/builds/latest/docs/manual/supported_databases.html.html">supported databases </a>
+into verified and compatible categories.  The automated database testing
+performed by IBM and regular testing performed by the OpenJPA community in
+the lists below are used to determine which databases will be listed as
+<em>verified</em> instead of just <em>compatible</em>.</p>
+<p><a name="JPA2.1TestCoverage-AutomatedDatabaseCoverage"></a></p>
+<h3 id="automated-database-coverage">Automated Database Coverage<a class="headerlink" href="#automated-database-coverage" title="Permalink">&para;</a></h3>
+<p>JUnit results for OpenJPA supported databases being tested nightly by IBM
+using Java SE 6 (either IBM SDK or Sun JDK).</p>
+<p>(/) - All tests passed<br/>
+(x) - Number of failing tests</p>
+<table>
+<tr><th> Database </th><th> JDBC Driver </th><th> M3 (I11 - 20091005) </th><th> Beta (I14 - 20100125)
+</th><th> Beta2 (20100224) </th><th> Beta3 (20100323) </th></tr>
+<tr><td class="border"> Derby 10.2.2.0 </td><td class="border"> Embedded </td><td class="border"> (/) 2711 </td><td class="border"> (/) 2904 </td><td class="border"> </td><td class="border"> </td></tr>
+<tr><td class="border"> Derby 10.5.3.0 </td><td class="border"> Embedded </td><td class="border"> </td><td class="border"> </td><td class="border"> (/) 3004 </td><td class="border"> (/) 3049 </td></tr>
+<tr><td class="border"> DB2 9.5.2 </td><td class="border"> JCC 3.50.152 </td><td class="border"> 2 (x) </td><td class="border"> 1 (x) </td><td class="border"> (/) 3004 </td><td class="border"> 1 (x) </td></tr>
+<tr><td class="border"> HSQLDB 1.8.0.10 </td><td class="border"> Embedded in-memory </td><td class="border"> 13 (x) </td><td class="border"> 12 (x) </td><td class="border"> 12 (x) </td><td class="border"> 16 (x)
+</td></tr>
+<tr><td class="border"> MySQL 5.0.67 </td><td class="border"> JDBC 5.1.6 </td><td class="border"> 1 (x) </td><td class="border"> (/) </td><td class="border"> (/) </td><td class="border"> 2 (x) </td></tr>
+<tr><td class="border"> MS SQL Server 2005 SP3 (9.00.4035) </td><td class="border"> sqljdbc4 2.0.1803.100 </td><td class="border"> 14 (x) </td><td class="border"> 8
+(x) </td><td class="border"> 8 (x) </td><td class="border"> 10 (x) </td></tr>
+<tr><td class="border"> MS SQL Server 2008 SP2 (10.0.2531) </td><td class="border"> sqljdbc4 2.0.1803.100 </td><td class="border"> 14 (x) </td><td class="border"> 5
+(x) </td><td class="border"> 5 (x) </td><td class="border"> 8 (x) </td></tr>
+<tr><td class="border"> Oracle 10g Express (10.2.0.1.0) </td><td class="border"> ojdbc14 10.2.0.1.0XE </td><td class="border"> 5 (x) </td><td class="border"> 3 (x) </td><td class="border">
+5 (x) in locking </td><td class="border"> 1 (x) + locking </td></tr>
+</table>
+<p><a name="JPA2.1TestCoverage-ManualDatabaseCoverage"></a></p>
+<h3 id="manual-database-coverage">Manual Database Coverage<a class="headerlink" href="#manual-database-coverage" title="Permalink">&para;</a></h3>
+<p>If you regularly test OpenJPA 2.4.x against another DB vendor or level not
+listed above and would like to share your results, then feel free to add
+them below.  All we ask, is that you provide as much of the details
+requested below, so others can make their own decision on whether to use
+one of these combinations in their environment.</p>
+<table>
+<tr><th> Database </th><th> JDBC Driver </th><th> Java </th><th>  SVN Rev </th><th>  Results </th><th> Submitter </th><th>
+Notes </th></tr>
+<tr><td class="border"> Derby 10.3.3.0 (652961) </td><td class="border"> Embedded </td><td class="border"> Sun 1.6.0_15 </td><td class="border"> r817831 (20090922) </td><td class="border">
+2 (x) </td><td class="border"> dwoods </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1322">OPENJPA-1322</a>
+</td></tr>
+<tr><td class="border"> Derby 10.4.2.0 (689064) </td><td class="border"> Embedded </td><td class="border"> Sun 1.6.0_15 </td><td class="border"> r817831 (20090922) </td><td class="border">
+2 (x) </td><td class="border"> dwoods </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1322">OPENJPA-1322</a>
+</td></tr>
+<tr><td class="border"> Derby 10.5.3.0 (802917) </td><td class="border"> Embedded </td><td class="border"> Sun 1.6.0_15 </td><td class="border"> r813659 (20090910) </td><td class="border">
+1 (x) </td><td class="border"> dwoods </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1293">OPENJPA-1293</a>
+</td></tr>
+<tr><td class="border"> MS SQL Server 2008 (10.00.1600) </td><td class="border"> jTDS 1.2.5 </td><td class="border"> Sun 1.5.0_11-b03 </td><td class="border"> r895453
+(20100103) </td><td class="border"> 4 (x) </td><td class="border"> mtylenda </td><td class="border"> did not run locking tests </td></tr>
+<tr><td class="border"> PostgreSQL 8.3.5 </td><td class="border"> 8.4 JDBC3 (build 701) </td><td class="border"> Sun 1.5.0_11-b03 </td><td class="border"> r885965
+(20091201) </td><td class="border"> 31 (x) </td><td class="border"> mtylenda </td><td class="border"> AccessToUnderlyingConnectionAllowed DBCP
+property set to true, 12 failures come from locking tests </td></tr>
+<tr><td class="border"> H2 1.1.118 </td><td class="border"> Embedded </td><td class="border"> Sun 1.5.0_11-b03 </td><td class="border"> r905001 (20100131) </td><td class="border"> 48 (x) </td><td class="border">
+mtylenda </td><td class="border"> in-memory named database, 47 failures come from locking tests;
+with MVCC option turned on there are 23 failures from locking tests, <a href="https://issues.apache.org/jira/browse/OPENJPA-1367">OPENJPA-1367</a>
+</td></tr>
+<tr><td class="border"> </td><td class="border"> </td><td class="border"> </td><td class="border"> </td><td class="border"> </td><td class="border"> </td><td class="border"> </td></tr>
+</table>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

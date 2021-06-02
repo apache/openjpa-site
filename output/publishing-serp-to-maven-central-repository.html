@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- Publishing Serp to Maven Central Repository" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- Publishing Serp to Maven Central Repository</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="PublishingSerptoMavenCentralRepository-PublishingSerptoMavenCentralRepository"></a></p>
+<h1 id="publishing-serp-to-maven-central-repository">Publishing Serp to Maven Central Repository<a class="headerlink" href="#publishing-serp-to-maven-central-repository" title="Permalink">&para;</a></h1>
+<p><a name="PublishingSerptoMavenCentralRepository-SerpProject"></a></p>
+<h2 id="serp-project">Serp Project<a class="headerlink" href="#serp-project" title="Permalink">&para;</a></h2>
+<p>Serp is used by OpenJPA for the bytecode enhancement processing.  It is
+maintained as a <a href="http://sourceforge.net/projects/serp">SourceForge project</a>
+.  Serp has been a very solid third-party dependent software project.
+OpenJPA has had a dependency on Serp v1.13.1 for a long time.  Recently, a
+problem was discovered <a href="http://issues.apache.org/jira/browse/OPENJPA-2240">JIRA OPENJPA-2240</a> which
+required an update to Serp.  Eventually, it was determined that this
+problem was resolved in the 1.14.1 version of Serp.  Unfortunately, the
+last version of Serp that was published to Maven Central was version
+1.13.1.  This page discusses how to get an updated Serp release into the
+Maven Central repository.</p>
+<p>SourceForge Serp:  <a href="https://sourceforge.net/projects/serp/">https://sourceforge.net/projects/serp/</a> <br/>
+Serp homepage:	<a href="http://serp.sourceforge.net">http://serp.sourceforge.net</a> <br/>
+Serp sourcecode:  <a href="http://serp.cvs.sourceforge.net/serp">http://serp.cvs.sourceforge.net/serp</a> <br/></p>
+<p><a name="PublishingSerptoMavenCentralRepository-MavenInstructions"></a></p>
+<h2 id="maven-instructions">Maven Instructions<a class="headerlink" href="#maven-instructions" title="Permalink">&para;</a></h2>
+<p>The easiest way to get the updated artifacts for Serp 1.14.1 into Maven
+Central was to follow the instructions on <a href="https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+The+Central+Repository">this page</a>.
+You will need a GPG utility and signature (instructions on that page).
+You will also need a login for Sonatype's Nexus server (instructions also
+on that page).</p>
+<table class="note"><tr>
+<td valign="top"> <img border="0" height="16" src="images/warning.gif" width="16"/>
+<td> <b>Update to the Sonatype documentation...</b><br/>The above referenced wiki page 
+is no longer in service.  I talked with Joel Orlina (jorlina@sonatype.com) and he pointed 
+me at this <a href="http://central.sonatype.org/pages/producers.html">updated documentation</a>.  
+We should attempt to follow these updated, simpler instructions for publishing Serp
+to Maven Central.  But, for historical reference, Sonatype also has the 
+<a href="https://web.archive.org/web/20140903200507/https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+The+Central+Repository">original wiki page in archive</a>.
+</td></td></tr></table>
+<p>Since this exercise shouldn't be a common occurrence, I just went the
+manual route and signed each of the artifacts that were built into my local
+repository:</p>
+<pre><code>&gt; gpg -ab serp-1.14.1-javadoc.jar
+&gt; gpg -ab serp-1.14.1.jar
+&gt; gpg -ab serp-1.14.1-sources.jar
+&gt; gpg -ab serp-1.14.1.pom
+</code></pre>
+<p>And, then I created a bundle:</p>
+<pre><code>&gt; jar -cvf serp-1.14.1-bundle.jar serp-*
+</code></pre>
+<p>The bundle contained:</p>
+<pre><code>Archive:  serp-1.14.1-bundle.jar
+  Length     Date   Time    Name
+ --------    ----   ----    ----
+	0  09-04-12 15:23   META-INF/
+       62  09-04-12 15:23   META-INF/MANIFEST.MF
+   962397  09-04-12 15:21   serp-1.14.1-javadoc.jar
+      499  09-04-12 15:22   serp-1.14.1-javadoc.jar.asc
+   140576  09-04-12 15:21   serp-1.14.1-sources.jar
+      499  09-04-12 15:21   serp-1.14.1-sources.jar.asc
+   206638  09-04-12 15:21   serp-1.14.1.jar
+      499  09-04-12 15:22   serp-1.14.1.jar.asc
+     5508  09-04-12 15:21   serp-1.14.1.pom
+      499  09-04-12 15:23   serp-1.14.1.pom.asc
+ --------		    -------
+  1317177		    10 files
+</code></pre>
+<p>This bundle is what I uploaded to the Sonatype Staging repository as
+outlined on that <a href="https://web.archive.org/web/20140903200507/https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+The+Central+Repository">original wiki page</a>
+.</p>
+<table class="note"><tr>
+<td valign="top"> <img border="0" height="16" src="images/warning.gif" width="16"/>
+<td> <b>Not documented..</b><br/>One process point that was not documented on that
+<a href="https://web.archive.org/web/20140903200507/https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+The+Central+Repository">original wiki page</a>
+was the need for a JIRA to be created against the OSSRH project (Open
+Source Project Repository Hosting).  This JIRA should include the Central
+Repository staging URL that is provided after you upload the bundle. 
+Here's an <a href="https://issues.sonatype.org/browse/OSSRH-4247">example JIRA</a>
+ that worked for me.  If all else fails, contact Joel Orlina,
+jorlina@sonatype.com.
+</td></td></tr></table>
+<p><a name="PublishingSerptoMavenCentralRepository-SerpCodeUpdates"></a></p>
+<h2 id="serp-code-updates">Serp Code Updates<a class="headerlink" href="#serp-code-updates" title="Permalink">&para;</a></h2>
+<p>In order to create the -javadoc and -sources jar files, I had to make a
+couple of minor updates to the existing pom file for serp 1.14.1.  I
+committed these changes to HEAD (1.14.2 snapshot) for future reference:</p>
+<pre><code>    &lt;plugin&gt;
+	  &lt;artifactId&gt;maven-source-plugin&lt;/artifactId&gt;
+	  &lt;executions&gt;
+	    &lt;execution&gt;
+		&lt;id&gt;attach-sources&lt;/id&gt;
+		&lt;goals&gt;
+		    &lt;goal&gt;jar&lt;/goal&gt;
+		&lt;/goals&gt;
+	    &lt;/execution&gt;
+	  &lt;/executions&gt;
+    &lt;/plugin&gt;
+    
+    &lt;plugin&gt;
+	  &lt;artifactId&gt;maven-javadoc-plugin&lt;/artifactId&gt;
+	  &lt;executions&gt;
+	    &lt;execution&gt;
+		&lt;id&gt;attach-javadoc&lt;/id&gt;
+		&lt;goals&gt;
+	      &lt;goal&gt;jar&lt;/goal&gt;
+		&lt;/goals&gt;
+	    &lt;/execution&gt;
+	  &lt;/executions&gt;
+    &lt;/plugin&gt;
+</code></pre>
+<p>If we continue to require changes to Serp, we may want to do more extensive
+changes in the maven processing to make it easier to deploy the artifacts.
+Several of the deployment locations in the pom.xml no longer exist.  I made
+a couple of updates, but the permissions don't show up right, so the
+deployment step is still manual.</p>
+<p>Another idea would be to consume Serp into OpenJPA as an Apache
+sub-project...	That might be the best long-term solution.  But, I will
+leave that for another day.</p>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

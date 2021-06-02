@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- OpenJPA 2.0.0 Beta" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- OpenJPA 2.0.0 Beta</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="OpenJPA2.0.0Beta-OpenJPA2.0.0Beta"></a></p>
+<h1 id="openjpa-200-beta">OpenJPA 2.0.0 Beta<a class="headerlink" href="#openjpa-200-beta" title="Permalink">&para;</a></h1>
+<p>The Apache OpenJPA community is proud to release a Beta distribution of
+OpenJPA 2.0.0.	This distribution is based on the final <a href="http://jcp.org/en/jsr/detail?id=317">JSR 317 Java Persistence API, Version 2.0</a>
+specification and passes the JPA 2.0 TCK.  Included are many enhancements,
+fixes, and new functionality; giving developers access to all the new
+features of JPA 2.0, including:</p>
+<ul>
+<li>Access Types - expanded to allow specification on a per-persistent type
+basis or on individual attributes.</li>
+<li>Embeddables - expanded to include collections of embeddables, nested
+embeddables, and embeddables containing relationships to other entities.</li>
+<li>Enhanced Map Collections - expanded to support ElementCollection and new
+annotations for MapKeyColumn, MapKeyClass and MapKeyJoinColumn</li>
+<li>Derived Identities - enables the ID of an entity to be derived from
+another entity, which provides for parent-to-dependent relationships</li>
+<li>Query API - methods to get typed query parameters and results, supported
+and in-effect hints and lock mode getter/setter</li>
+<li>Locking - official support for Pessimistic locking (included in prior
+OpenJPA releases) along with LockModeType properties and hint</li>
+<li>JPQL Updates -
+<ul>
+<li>Embeddables support for path expressions to nested Embeddables and
+Embeddables with relationships</li>
+<li>Enhanced Map Collection support for ElementCollection and new query
+expressions for KEY, ENTRY, VALUE</li>
+<li>Support for CASE and TYPE expressions along with IN expressions for
+Collection parameters</li>
+<li>Support for native date/time/timestamp literals</li>
+<li>Support for INDEX expressions on an OrderColumn</li>
+</ul>
+</li>
+<li>L2 Cache -
+<ul>
+<li>Provides cache operations such as entity eviction and cache mode
+behaviors to use, bypass or refresh items</li>
+<li>Per-entity annotation to specify whether an entity should be cached</li>
+</ul>
+</li>
+<li>Bean Validation - supports using a JSR 303 implementation for entity
+validation for persist and remove operations</li>
+<li>Metamodel API -
+<ul>
+<li>Provides API to dynamically retrieve metamodel information for a
+persistence unit</li>
+<li>Currently limited to persistent state and relationships</li>
+<li>Used with Criteria API to generate and execute type safe queries</li>
+<li>Supports dynamic or static generation of the metamodel</li>
+</ul>
+</li>
+<li>Criteria API -
+<ul>
+<li>Provides programmatic construction of queries using an object based
+query graph</li>
+<li>Operates on Metamodel objects to provide compile-time type safety
+enforcement</li>
+</ul>
+</li>
+<li>EntityManagerFactory API - updated for new L2 Cache, Properties, Criteria
+and Metamodel APIs</li>
+<li>EntityManager API - updated for new Query and Query Result APIs, Hints,
+Properties, LockModeType, and Detach</li>
+<li>And many more...</li>
+</ul>
+<p>This beta distribution is based upon the contributions provided in
+development iterations 1 through 14, as defined in the <a href="jpa-2.0-roadmap.html">JPA 2.0 Roadmap</a>
+, which contains a complete list of included features, including what is on
+deck for future iterations.</p>
+<hr/>
+<p><a name="OpenJPA2.0.0Beta-Downloads"></a></p>
+<h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permalink">&para;</a></h2>
+<p>Use the links below to download the artifacts or source for Apache OpenJPA
+2.0.0 Beta.  It is always good practice to <a href="downloads.html#verifying-releases">verify the integrity</a>
+of the distribution files.</p>
+<p>For information on obtaining OpenJPA artifacts for use within Maven or ANT
+builds, see the <a href="obtaining.html">Obtaining</a>
+page.	For information on building OpenJPA from source, see the <a href="building.html">Building</a>
+page.</p>
+<p><a name="OpenJPA2.0.0Beta-BinaryAssemblies"></a></p>
+<h3 id="binary-assemblies">Binary Assemblies<a class="headerlink" href="#binary-assemblies" title="Permalink">&para;</a></h3>
+<table>
+<tr><th> Description </th><th> Download </th><th> Signatures </th></tr>
+<tr><td> OpenJPA 2.0.0 Beta </td><td> <a href="http://www.apache.org/dyn/closer.cgi/openjpa/2.0.0-beta/apache-openjpa-2.0.0-beta-binary.zip.html">apache-openjpa-2.0.0-beta-binary.zip</a>
+</td><td> <a href="http://www.apache.org/dyn/closer.cgi/openjpa/2.0.0-beta/apache-openjpa-2.0.0-beta-binary.zip.asc">PGP</a>
+</td></tr>
+</table>
+<p><a name="OpenJPA2.0.0Beta-SourceAssemblies"></a></p>
+<h3 id="source-assemblies">Source Assemblies<a class="headerlink" href="#source-assemblies" title="Permalink">&para;</a></h3>
+<table>
+<tr><th> Description </th><th> Download </th><th> Signatures </th></tr>
+<tr><td> OpenJPA 2.0.0 Beta Source Code </td><td> <a href="http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa/downloads/apache-openjpa-2.0.0-beta-source.zip.html">apache-openjpa-2.0.0-beta-source.zip</a>
+</td><td> <a href="http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa/downloads/apache-openjpa-2.0.0-beta-source.zip.asc">PGP</a>
+</td></tr>
+<tr><td> Geronimo JPA 2.0 Spec API v1.0 source code </td><td> <a href="https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0/geronimo-jpa_2.0_spec-1.0-sources.jar">geronimo-jpa_2.0_spec-1.0-sources.jar</a>
+</td><td> <a href="https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0/geronimo-jpa_2.0_spec-1.0-sources.jar.asc">PGP</a>
+</td></tr>
+<tr><td> Geronimo Bean Validation 1.0 Spec API v1.0 source code </td><td> <a href="https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-validation_1.0_spec/1.0/geronimo-validation_1.0_spec-1.0-sources.jar">geronimo-validation_1.0_spec-1.0-sources.jar</a>
+</td><td> <a href="https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-validation_1.0_spec/1.0/geronimo-validation_1.0_spec-1.0-sources.jar.asc">PGP</a>
+</td></tr>
+</table>
+<hr/>
+<p><a name="OpenJPA2.0.0Beta-OtherResources"></a></p>
+<h2 id="other-resources">Other Resources<a class="headerlink" href="#other-resources" title="Permalink">&para;</a></h2>
+<p><a name="OpenJPA2.0.0Beta-Documentation"></a></p>
+<h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permalink">&para;</a></h3>
+<ul>
+<li><a href="http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/RELEASE-NOTES.html">Release Notes</a></li>
+<li><a href="http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/docs/manual/">HTML Manual</a></li>
+</ul>
+<p><a name="OpenJPA2.0.0Beta-QuickStart"></a></p>
+<h3 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permalink">&para;</a></h3>
+<ul>
+<li><a href="quick-start.html">OpenJPA Examples</a></li>
+</ul>
+<p><a name="OpenJPA2.0.0Beta-Support"></a></p>
+<h3 id="support">Support<a class="headerlink" href="#support" title="Permalink">&para;</a></h3>
+<ul>
+<li><a href="found-a-bug.html">Reporting bugs and general help</a></li>
+</ul>
+<p><a name="OpenJPA2.0.0Beta-MavenArtifacts"></a></p>
+<h3 id="maven-artifacts">Maven Artifacts<a class="headerlink" href="#maven-artifacts" title="Permalink">&para;</a></h3>
+<ul>
+<li><a href="http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/openjpa-2.0.0-beta.jar">OpenJPA 2.0.0 Beta JAR</a></li>
+<li><a href="http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/openjpa-all-2.0.0-beta.jar">OpenJPA 2.0.0 Beta JAR w/ depends</a></li>
+<li><a href="https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0/">Geronimo JPA 2.0 Spec API artifacts</a></li>
+<li><a href="https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-validation_1.0_spec/1.0/">Geronimo Bean Validation 1.0 Spec API artifacts</a></li>
+</ul>
+<p><a name="OpenJPA2.0.0Beta-SVNSourceBranches"></a></p>
+<h3 id="svn-source-branches">SVN Source Branches<a class="headerlink" href="#svn-source-branches" title="Permalink">&para;</a></h3>
+<ul>
+<li><a href="https://svn.apache.org/repos/asf/openjpa/tags/2.0.0-beta/">OpenJPA 2.0.0 Beta</a></li>
+<li><a href="https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-jpa_2.0_spec-1.0/">Geronimo JPA 2.0 Spec API</a></li>
+<li><a href="https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-validation_1.0_spec-1.0/">Geronimo Bean Validation 1.0 Spec API</a></li>
+</ul>
+<hr/>
+<p><a name="OpenJPA2.0.0Beta-Legal"></a></p>
+<h2 id="legal">Legal<a class="headerlink" href="#legal" title="Permalink">&para;</a></h2>
+<p>Apache OpenJPA was developed by <a href="http://www.apache.org/">The Apache Software Foundation</a>
+and is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>
+.
+Copyright 2006,2010 The Apache Software Foundation.
+Apache, the Apache feather logo and OpenJPA are trademarks of Apache
+Software Foundation.</p>
+<p>Apache OpenJPA is bundled with the schemas from the JPA specifications, by
+Sun Microsystems and licensed under the CDDL 1.0. The source code is
+available at: <a href="https://glassfish.dev.java.net/source/browse/glassfish/">https://glassfish.dev.java.net/source/browse/glassfish/</a></p>
+<h2 id="please-review-the-license-and-notice-files-in-svn-source-or-binary-distributions-for-more-details">Please review the <a href="http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/LICENSE.txt">LICENSE</a>
+and <a href="http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/NOTICE.txt">NOTICE</a>
+files in svn, source or binary distributions for more details.<a class="headerlink" href="#please-review-the-license-and-notice-files-in-svn-source-or-binary-distributions-for-more-details" title="Permalink">&para;</a></h2>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

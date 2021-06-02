@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- JPA 2.0 Roadmap" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- JPA 2.0 Roadmap</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="JPA2.0Roadmap-JPA2.0RoadMap"></a></p>
+<h1 id="jpa-20-road-map">JPA 2.0 Road Map<a class="headerlink" href="#jpa-20-road-map" title="Permalink">&para;</a></h1>
+<p>Apache OpenJPA 2.0.0 is being developed in trunk and will be a JPA 2.0
+certified release of the <a href="http://jcp.org/en/jsr/detail?id=317">JSR-317</a>
+specification.</p>
+<p><a name="JPA2.0Roadmap-DevelopmentProcess"></a></p>
+<h3 id="development-process">Development Process<a class="headerlink" href="#development-process" title="Permalink">&para;</a></h3>
+<p>The process that OpenJPA will be following for developing JPA 2.0
+functionality is documented <a href="jpa-2.0-development-process.html">here</a>
+.  The specific roadmap and iteration details will be documented on this
+Roadmap page.</p>
+<p><a name="JPA2.0Roadmap-TestCoverage"></a></p>
+<h3 id="test-coverage">Test Coverage<a class="headerlink" href="#test-coverage" title="Permalink">&para;</a></h3>
+<p>For a list of databases being tested and current status, checkout the <a href="jpa-2.0-test-coverage.html">JPA 2.0 Test Coverage</a>
+page.</p>
+<p><a name="JPA2.0Roadmap-Presentations"></a></p>
+<h3 id="presentations">Presentations<a class="headerlink" href="#presentations" title="Permalink">&para;</a></h3>
+<p>Take a look at the <a href="jpa-2.0-presentations.html">JPA 2.0 Presentations</a>
+page for more details on the major new features of the JPA 2.0
+specification and how they are being implemented in OpenJPA.</p>
+<p><a name="JPA2.0Roadmap-IterationScheduleandContent"></a></p>
+<h2 id="iteration-schedule-and-content">Iteration Schedule and Content<a class="headerlink" href="#iteration-schedule-and-content" title="Permalink">&para;</a></h2>
+<p>The Iteration content can be found on the <a href="jpa-2.0-iterations.html">JPA 2.0 Iterations</a>
+page.</p>
+<ul>
+<li>
+<p><strong>Milestone 1</strong></p>
+<ul>
+<li>Iteration 1 (Dec. 1, 2008 - Dec. 19, 2008) - <a href="https://issues.apache.org/jira/browse/OPENJPA-800">OPENJPA-800</a></li>
+<li>Iteration 1a (Dec. 22, 2008 - Jan. 2, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-831">OPENJPA-831</a></li>
+<li>Iteration 2 (Jan. 5, 2009 - Jan. 23, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-807">OPENJPA-807</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Milestone 2</strong></p>
+<ul>
+<li>Iteration 3 (Jan. 26, 2009 - Feb. 13, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-808">OPENJPA-808</a></li>
+<li>Iteration 4 (Feb. 16, 2009 - Mar. 6, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-875">OPENJPA-875</a></li>
+<li>Iteration 5 (Mar. 9, 2009 - Apr. 3, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-956">OPENJPA-956</a></li>
+<li>Iteration 6 (Apr. 6, 2009 - May 1, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1007">OPENJPA-1007</a></li>
+<li>Iteration 7 (May 4, 2009 - May 29, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1052">OPENJPA-1052</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Milestone 3</strong></p>
+<ul>
+<li>Iteration 8 (June 1, 2009 - July 3, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1105">OPENJPA-1105</a></li>
+<li>Iteration 9 (July 6, 2009 - July 31, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1152">OPENJPA-1152</a></li>
+<li>Iteration 10 (Aug. 3, 2009 - Aug. 28, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1209">OPENJPA-1209</a></li>
+<li>Iteration 11 (Aug. 31, 2009 - Oct. 2, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1268">OPENJPA-1268</a></li>
+<li><a href="#milestone-3.html">Released</a> (Oct. 12, 2009)</li>
+</ul>
+</li>
+<li>
+<p><strong>Beta</strong></p>
+<ul>
+<li>Iteration 12 (Oct. 5, 2009 - Oct. 30, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1337">OPENJPA-1337</a></li>
+<li>Iteration 13 (Nov. 2, 2009 - Dec. 4, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1373">OPENJPA-1373</a></li>
+<li>Iteration 14 (Dec. 7, 2009 - Jan. 1, 2010) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1426">OPENJPA-1426</a></li>
+<li><a href="#beta.html">Released</a> - Jan. 28, 2010</li>
+</ul>
+</li>
+<li>
+<p><a href="#beta2">Beta 2</a> - Released Feb. 27, 2010</p>
+</li>
+<li>
+<p><strong>2.0.x Branch</strong> - March 22, 2010</p>
+</li>
+<li>
+<p>[Beta 3]#beta3) - Released March 29, 2010</p>
+</li>
+<li>
+<p><strong>Release Candidate</strong> - started April 11, 2010</p>
+</li>
+<li>
+<p><a href="#200">2.0.0</a> - Released April 22, 2010</p>
+</li>
+</ul>
+<p><a name="JPA2.0Roadmap-IterationTasks"></a></p>
+<h2 id="iteration-tasks">Iteration Tasks<a class="headerlink" href="#iteration-tasks" title="Permalink">&para;</a></h2>
+<p>The individual tasks and status can be fond on the <a href="jpa-2.0-tasks.html">JPA 2.0 Tasks</a>
+page.</p>
+<hr/>
+<p><a name="JPA2.0Roadmap-Releases"></a></p>
+<h2 id="releases">Releases<a class="headerlink" href="#releases" title="Permalink">&para;</a></h2>
+<p><a name="200"></a></p>
+<h3 id="200"><em>2.0.0</em><a class="headerlink" href="#200" title="Permalink">&para;</a></h3>
+<p>The <a href="openjpa-2.0.0.html">OpenJPA 2.0.0</a>
+release is an official ASF release and passed the final JPA 2.0 TCK.  A
+distribution of the release is available <a href="openjpa-2.0.0.html">here</a>
+for download or the code can be checked out from svn.</p>
+<table border="0" cellpadding="5" cellspacing="0" class="sectionMacro" width="100%"><tbody><tr>
+<td class="confluenceTd" valign="top" width="5%"></td>
+<td class="confluenceTd" valign="top" width="20%"><div class="table-wrap">
+<table class="confluenceTable"><tbody>
+<tr>
+<td class="confluenceTd"><span class="image-wrap" style=""><img src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Download.png" style="border: 0px solid black"/></span></td>
+<td class="confluenceTd"> <a class="external-link" href="http://openjpa.apache.org/openjpa-200.html" rel="nofollow">Download 2.0.0</a> </td>
+</tr>
+</tbody></table>
+</div>
+</td>
+<td class="confluenceTd" valign="top" width="5%"></td>
+<td class="confluenceTd" valign="top" width="20%"><div class="table-wrap">
+<table class="confluenceTable"><tbody>
+<tr>
+<td class="confluenceTd"><span class="image-wrap" style=""><img src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Pencil.png" style="border: 0px solid black"/></span></td>
+<td class="confluenceTd"> <a class="external-link" href="http://svn.apache.org/viewvc/openjpa/tags/2.0.0/" rel="nofollow">View SVN Files</a> </td>
+</tr>
+</tbody></table>
+</div>
+</td>
+<td class="confluenceTd" valign="top"></td></tr></tbody></table>
+<hr/>
+<p><a name="Beta3"></a></p>
+<h3 id="beta-3"><em>Beta 3</em><a class="headerlink" href="#beta-3" title="Permalink">&para;</a></h3>
+<p>The <a href="openjpa-2.0.0-beta-3.html">OpenJPA 2.0.0 Beta 3</a>
+release is an official ASF release and passed the final JPA 2.0 TCK, but
+we still encourage you to upgrade to the final 2.0.0 as soon as possible
+after it is released.  A distribution of the Beta is available <a href="openjpa-2.0.0-beta-3.html">here</a>
+for download or the code can be checked out from svn.</p>
+<hr/>
+<p><a name="Beta2"></a></p>
+<h3 id="beta-2"><em>Beta 2</em><a class="headerlink" href="#beta-2" title="Permalink">&para;</a></h3>
+<p>The <a href="openjpa-2.0.0-beta-2.html">OpenJPA 2.0.0 Beta 2</a>
+release is an official ASF release and passed the final JPA 2.0 TCK, but
+we still encourage you to upgrade to the final 2.0.0 as soon as possible
+after it is released.  A distribution of the Beta is available <a href="openjpa-2.0.0-beta-2.html">here</a>
+for download or the code can be checked out from svn.</p>
+<hr/>
+<p><a name="beta"></a></p>
+<h3 id="beta"><em>Beta</em><a class="headerlink" href="#beta" title="Permalink">&para;</a></h3>
+<p>The <a href="openjpa-2.0.0-beta.html">OpenJPA 2.0.0 Beta</a>
+release is an official ASF release and passed the final JPA 2.0 TCK, but
+we still encourage you to upgrade to the final 2.0.0 as soon as possible
+after it is released.  A distribution of the Beta is available <a href="openjpa-2.0.0-beta.html">here</a>
+for download or the code can be checked out from svn.</p>
+<hr/>
+<p>&lt;a name="milestone3}&gt;</p>
+<h3 id="milestone-3"><em>Milestone 3</em><a class="headerlink" href="#milestone-3" title="Permalink">&para;</a></h3>
+<p>The <a href="openjpa-2.0.0-milestone-3.html">OpenJPA 2.0.0 Milestone 3</a>
+release is an official ASF release, but it implements an early access
+version of the JPA 2.0 specification and we encourage you to upgrade to the
+final 2.0.0 as soon as possible after it is released.  A distribution of
+the Milestone 3 is available for <a href="openjpa-2.0.0-milestone-3.html">download</a>
+or the code can be checked out from <a href="https://svn.apache.org/viewvc/openjpa/tags/2.0.0-M3/">svn</a>
+.</p>
+<hr/>
+<p><a name="milestone2"></a></p>
+<h3 id="milestone-2"><em>Milestone 2</em><a class="headerlink" href="#milestone-2" title="Permalink">&para;</a></h3>
+<p>The Milestone 2 release will not be an official ASF release, but will be
+created as a Early Access 2 SNAPSHOT branch due to the JSR-317 terms of use
+restrictions.  A distribution of the Early Access 2 SNAPSHOT is available
+for <a href="openjpa-2.0.0-early-access-2.html">download</a>
+or the code can be checked out from <a href="https://svn.apache.org/viewvc/openjpa/branches/2.0.0-EA2/">svn</a>
+.</p>
+<hr/>
+<p><a name="milestone1"></a></p>
+<h3 id="milestone-1"><em>Milestone 1</em><a class="headerlink" href="#milestone-1" title="Permalink">&para;</a></h3>
+<p>The Milestone 1 release was never "officially" released, due to the JSR-317
+terms of use issues, but the files were tagged and can be checked out from <a href="https://svn.apache.org/repos/asf/openjpa/branches/2.0.0-M1/">svn</a>
+.</p>
+<hr/>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

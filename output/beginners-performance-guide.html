@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- Beginners Performance Guide" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- Beginners Performance Guide</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="IntroToTuningOpenJPA"></a></p>
+<p><a name="BeginnersPerformanceGuide-OpenJPABeginnersPerformanceGuide"></a></p>
+<h1 id="openjpa-beginners-performance-guide">OpenJPA Beginners Performance Guide<a class="headerlink" href="#openjpa-beginners-performance-guide" title="Permalink">&para;</a></h1>
+<p>This guide is targeted at new users of OpenJPA that would like to know some
+of the important performance tuning properties. Please do not mistake this
+for an exhaustive tuning guide. This is just enough information to make a
+developer dangerous, not lethal.</p>
+<p><a name="BeginnersPerformanceGuide-Enhancement"></a></p>
+<h2 id="enhancement">Enhancement<a class="headerlink" href="#enhancement" title="Permalink">&para;</a></h2>
+<p>OpenJPA uses byte-code weaving technologies to enhance user created Entity
+class objects at build time or dynamically at run time. This allows us to
+efficiently handle these objects.</p>
+<p>Follow the <a href="entity-enhancement.html">Entity Enhancement</a> instructions on how to properly enhance your Entities.</p>
+<p>OpenJPA also has a feature that will auto-generate new subclasses or proxy
+objects that front the user's Entity objects at run time, but <em>this feature
+is not recommended for use</em>. There are numerous functional issues reported
+and it doesn't perform nearly as well. If you ever see the following
+message you are using the non-recommended subclassing approach to
+enhancement.</p>
+<blockquote>
+<p>3328  pu_name INFO   [main]  openjpa.Enhance - Creating subclass for "[ class
+org.apache.openjpa.entity.E1 , class org.apache.openjpa.entity.E2 ]". This
+means that your application will be less efficient and will consume more
+memory than it would if you ran the OpenJPA enhancer. Additionally, lazy
+loading will not be available for one-to-one and many-to-one persistent
+attributes in types using field access; they will be loaded eagerly
+instead.</p>
+</blockquote>
+<p>It is recommended to set the following property to ensure that you don't
+use this enhancement approach.</p>
+<pre><code>&lt;properties&gt; 
+    &lt;property name="openjpa.RuntimeUnenhancedClasses" value="unsupported"/&gt;
+&lt;properties&gt;
+</code></pre>
+<p><a name="BeginnersPerformanceGuide-ConnectionPooling"></a></p>
+<h2 id="connection-pooling">Connection Pooling<a class="headerlink" href="#connection-pooling" title="Permalink">&para;</a></h2>
+<p>As of the 2.1.0 release OpenJPA bundles <a href="http://commons.apache.org/dbcp/">Apache Commons DBCP</a>
+as part of the binary download. When running in JSE environments a default
+connection pool will be plugged in with the provided database configuration
+properties (Once <a href="https://issues.apache.org/jira/browse/OPENJPA-1764">OPENJPA-1764</a>
+is completed) . Most JEE container environments should provide some level
+of connection pooling.</p>
+<p>In releases prior to 2.1.0 add DBCP to your classpath and use the following
+example to figure out how to configure pooling.</p>
+<pre><code>&lt;persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0"&gt;
+    &lt;persistence-unit name="example-derby" transaction-type="RESOURCE_LOCAL"&gt;
+	&lt;properties&gt;
+	    &lt;property name="openjpa.ConnectionProperties" 
+		value="DriverClassName=org.apache.derby.jdbc.ClientDriver,
+		  Url=jdbc:derby://localhost:1527/database, 
+		  MaxActive=100, 
+		  MaxWait=10000, 
+		  TestOnBorrow=true, 
+		  Username=user, 
+		  Password=secret"/&gt;
+	    &lt;property name="openjpa.ConnectionDriverName" 
+		value="org.apache.commons.dbcp.BasicDataSource"/&gt;
+	&lt;/properties&gt;
+    &lt;/persistence-unit&gt;
+&lt;/persistence&gt;
+</code></pre>
+<p><a name="BeginnersPerformanceGuide-Caching"></a></p>
+<h2 id="caching">Caching<a class="headerlink" href="#caching" title="Permalink">&para;</a></h2>
+<pre><code>&lt;properties&gt; 
+    &lt;property name="openjpa.DataCache" value="true"/&gt;
+    &lt;property name="openjpa.QueryCache" value="true"/&gt;
+&lt;properties&gt;
+</code></pre>
+<p>Insert details about what those two properties give me.</p>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

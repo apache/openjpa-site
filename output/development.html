@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- Development" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- Development</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="Development-OpenJPADevelopment"></a></p>
+<h1 id="openjpa-development">OpenJPA Development<a class="headerlink" href="#openjpa-development" title="Permalink">&para;</a></h1>
+<ul><li><a href="automated-builds.html" title="Automated Builds">Automated Builds</a></li>
+<li><a href="build-and-runtime-dependencies.html" title="Build and Runtime Dependencies">Build and Runtime Dependencies</a> &mdash; <span class="smalltext">OpenJPA Build and Runtime Dependencies</span></li>
+<li><a href="building.html" title="Building">Building</a> &mdash; <span class="smalltext">How to build OpenJPA from source</span></li>
+<li><a href="coding-standards.html" title="Coding Standards">Coding Standards</a> &mdash; <span class="smalltext">Coding standards for OpenJPA source code</span></li>
+<li><a href="downloads-nightly.html" title="Downloads - Nightly">Downloads - Nightly</a> &mdash; <span class="smalltext">Nightly SNAPSHOT driver downloads</span></li>
+<li><a href="entity-enhancement.html" title="Entity Enhancement">Entity Enhancement</a> &mdash; <span class="smalltext">How to enhance entity classes</span>
+<ul>
+<li><a href="enhancement-with-ant.html" title="Enhancement with ANT">Enhancement with ANT</a></li>
+<li><a href="enhancement-with-eclipse.html" title="Enhancement with Eclipse">Enhancement with Eclipse</a>
+<ul>
+<li><a href="openjpaeclipseenhancementbuilder.html" title="OpenJPAEclipseEnhancementBuilder">OpenJPAEclipseEnhancementBuilder</a></li>
+<li><a href="openjpaeclipseinstallation.html" title="OpenJPAEclipseInstallation">OpenJPAEclipseInstallation</a></li>
+<li><a href="openjpaeclipsetoolingdevandbuild.html" title="OpenJPAEclipseToolingDevAndBuild">OpenJPAEclipseToolingDevAndBuild</a></li>
+</ul></li>
+<li><a href="enhancement-with-maven.html" title="Enhancement with Maven">Enhancement with Maven</a></li>
+<li><a href="runtime-enhancement.html" title="Runtime Enhancement">Runtime Enhancement</a></li>
+</ul></li>
+<li><a href="integration.html" title="Integration">Integration</a> &mdash; <span class="smalltext">How to integrate OpenJPA with various containers and application servers</span></li>
+<li><a href="jest.html" title="JEST">JEST</a> &mdash; <span class="smalltext">JEST</span>
+<ul>
+<li><a href="jest-examples.html" title="JEST Examples">JEST Examples</a></li>
+<li><a href="jest-representation.html" title="JEST Representation">JEST Representation</a></li>
+<li><a href="jest-syntax.html" title="JEST Syntax">JEST Syntax</a></li>
+<li><a href="jest-transaction.html" title="JEST Transaction">JEST Transaction</a></li>
+<li><a href="jest-usage.html" title="JEST Usage">JEST Usage</a></li>
+</ul></li>
+<li><a href="jpa-specification-development.html" title="JPA Specification Development">JPA Specification Development</a>
+<ul>
+<li><a href="jpa-2.1-roadmap.html" title="JPA 2.1 Roadmap">JPA 2.1 Roadmap</a></li>
+<ul>
+<li><a href="jpa-2.1-development-process.html" title="JPA 2.1 Development Process">JPA 2.1 Development Process</a></li>
+<li><a href="jpa-2.1-tasks.html" title="JPA 2.1 Tasks">JPA 2.1 Tasks</a></li>
+<li><a href="jpa-2.1-test-coverage.html" title="JPA 2.1 Test Coverage">JPA 2.1 Test Coverage</a></li>
+</ul>
+<li><a href="jpa-2.0-roadmap.html" title="JPA 2.0 Roadmap">JPA 2.0 Roadmap</a>
+<ul>
+<li><a href="jpa-2.0-development-process.html" title="JPA 2.0 Development Process">JPA 2.0 Development Process</a></li>
+<li><a href="jpa-2.0-iterations.html" title="JPA 2.0 Iterations">JPA 2.0 Iterations</a></li>
+<li><a href="jpa-2.0-presentations.html" title="JPA 2.0 Presentations">JPA 2.0 Presentations</a></li>
+<li><a href="jpa-2.0-tasks.html" title="JPA 2.0 Tasks">JPA 2.0 Tasks</a></li>
+<li><a href="jpa-2.0-test-coverage.html" title="JPA 2.0 Test Coverage">JPA 2.0 Test Coverage</a></li>
+<li><a href="jsr-317-20081031-public-draft-tasks.html" title="JSR-317 20081031 Public Draft Tasks">JSR-317 20081031 Public Draft Tasks</a></li>
+<li><a href="openjpa-2.0.0.html" title="OpenJPA 2.0.0">OpenJPA 2.0.0</a></li>
+<li><a href="openjpa-2.0.0-beta.html" title="OpenJPA 2.0.0 Beta">OpenJPA 2.0.0 Beta</a></li>
+<li><a href="openjpa-2.0.0-beta-2.html" title="OpenJPA 2.0.0 Beta 2">OpenJPA 2.0.0 Beta 2</a></li>
+<li><a href="openjpa-2.0.0-beta-3.html" title="OpenJPA 2.0.0 Beta 3">OpenJPA 2.0.0 Beta 3</a></li>
+<li><a href="openjpa-2.0.0-early-access-2.html" title="OpenJPA 2.0.0 Early Access 2">OpenJPA 2.0.0 Early Access 2</a> &mdash; <span class="smalltext">OpenJPA 2.0.0 Early Access 2</span></li>
+<li><a href="openjpa-2.0.0-milestone-3.html" title="OpenJPA 2.0.0 Milestone 3">OpenJPA 2.0.0 Milestone 3</a> &mdash; <span class="smalltext">OpenJPA 2.0.0 Milestone 3</span></li>
+<li><a href="openjpa-2.0.1.html" title="OpenJPA 2.0.1">OpenJPA 2.0.1</a></li>
+</ul></li>
+</ul></li>
+<li><a href="obtaining.html" title="Obtaining">Obtaining</a> &mdash; <span class="smalltext">How to obtain OpenJPA</span></li>
+<li><a href="performance-guide.html" title="Performance guide">Performance guide</a> &mdash; <span class="smalltext">OpenJPA Performance Guide</span>
+<ul>
+<li><a href="beginners-performance-guide.html" title="Beginners Performance Guide">Beginners Performance Guide</a> &mdash; <span class="smalltext">Intro to tuning OpenJPA</span></li>
+</ul></li>
+<li><a href="release-management.html" title="Release Management">Release Management</a>
+<ul>
+<li><a href="apache-nexus-release-process-(1.2.x-2.1.x).html" title="Apache Nexus Release Process (1.2.x-present)">Apache Nexus Release Process (1.2.x-present)</a>
+<ul>
+<li><a href="release-setup.html" title="Release Setup">Release Setup</a></li>
+</ul></li>
+<li><a href="publishing-serp-to-maven-central-repository.html" title="Publishing Serp to Maven Central Repository">Publishing Serp to Maven Central Repository</a></li>
+<li><a href="releasing-openjpa-10x-or-11x-old-scp-steps.html" title="Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)">Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</a> &mdash; <span class="smalltext">Instructions for creating an official OpenJPA release</span>
+<ul>
+<li><a href="openjpa-release-policy.html" title="OpenJPA Release Policy">OpenJPA Release Policy</a></li>
+</ul></li>
+<li><a href="releasing-openjpa-12x-old-scp-steps.html" title="Releasing OpenJPA 1.2.x (Old SCP Steps)">Releasing OpenJPA 1.2.x (Old SCP Steps)</a> &mdash; <span class="smalltext">Instructions for creating an official OpenJPA release</span>
+<ul>
+<li><a href="recovering-from-a-vetoed-release.html" title="Recovering from a vetoed release">Recovering from a vetoed release</a></li>
+<li><a href="running-openjpa-examples.html" title="Running OpenJPA Examples">Running OpenJPA Examples</a></li>
+<li><a href="update-release-text-files.html" title="Update release text files">Update release text files</a> &mdash; <span class="smalltext">Instructions for updating .text files shipped with OpenJPA</span></li>
+<li><a href="verifying-release-signatures.html" title="Verifying release signatures">Verifying release signatures</a></li>
+</ul></li>
+</ul></li>
+<li><a href="samples.html" title="Samples">Samples</a> &mdash; <span class="smalltext">OpenJPA Examples</span>
+<ul>
+<li><a href="bean-validation-primer.html" title="Bean Validation Primer">Bean Validation Primer</a></li>
+<li><a href="begin-using-openjpa-the-basics.html" title="Begin using OpenJPA - The Basics">Begin using OpenJPA - The Basics</a></li>
+<li><a href="embeddable-samples.html" title="Embeddable samples">Embeddable samples</a> &mdash; <span class="smalltext">Embeddable samples</span></li>
+<li><a href="getting-started.html" title="Getting started">Getting started</a></li>
+<li><a href="openbooks-featuring-jpa-20.html" title="OpenBooks - Featuring JPA 2.0">OpenBooks - Featuring JPA 2.0</a>
+<ul>
+<li><a href="building-and-running-openbooks.html" title="Building and Running OpenBooks">Building and Running OpenBooks</a></li>
+</ul></li>
+<li><a href="opentrader.html" title="OpenTrader">OpenTrader</a>
+<ul>
+<li><a href="opentraderarchitecture.html" title="OpenTraderArchitecture">OpenTraderArchitecture</a></li>
+<li><a href="opentraderbuild.html" title="OpenTraderBuild">OpenTraderBuild</a></li>
+<li><a href="opentraderclient.html" title="OpenTraderClient">OpenTraderClient</a></li>
+<li><a href="opentradercommunication.html" title="OpenTraderCommunication">OpenTraderCommunication</a></li>
+<li><a href="opentraderdeploy.html" title="OpenTraderDeploy">OpenTraderDeploy</a></li>
+<li><a href="opentraderenvironment.html" title="OpenTraderEnvironment">OpenTraderEnvironment</a></li>
+<li><a href="opentraderserver.html" title="OpenTraderServer">OpenTraderServer</a></li>
+</ul></li>
+<li><a href="sampletemplate.html" title="SampleTemplate">SampleTemplate</a></li>
+<li><a href="using-criteria-api-in-daytrader.html" title="Using Criteria API in DayTrader">Using Criteria API in DayTrader</a>
+<ul>
+<li><a href="apply-an-eclipse-patch.html" title="Apply an Eclipse Patch">Apply an Eclipse Patch</a></li>
+</ul></li>
+</ul></li>
+<li><a href="source-code.html" title="Source Code">Source Code</a> &mdash; <span class="smalltext">Source code access</span></li>
+<li><a href="testing.html" title="Testing">Testing</a> &mdash; <span class="smalltext">Running and <a href="writing-test-cases-for-openjpa.html" title="Writing Test Cases For OpenJPA">Writing</a> OpenJPA unit tests</span>
+<ul>
+<li><a href="running-the-sun-tck-for-jpa.html" title="Running the Sun TCK for JPA">Running the Sun TCK for JPA</a></li>
+<li><a href="writing-test-cases-for-openjpa.html" title="Writing Test Cases For OpenJPA">Writing Test Cases For OpenJPA</a></li>
+</ul></li>
+<li><a href="tools.html" title="Tools">Tools</a>
+<ul>
+<li><a href="domain-model-browser.html" title="Domain Model Browser">Domain Model Browser</a></li>
+<li><a href="fetch-statistics.html" title="Fetch Statistics">Fetch Statistics</a>
+<ul>
+<li><a href="websphere-application-server.html" title="Websphere Application Server">Websphere Application Server</a></li>
+</ul></li>
+<li><a href="jconsole-datacache-plugin.html" title="JConsole DataCache Plugin">JConsole DataCache Plugin</a></li>
+</ul></li>
+</ul>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

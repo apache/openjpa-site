@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- Entity Enhancement" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- Entity Enhancement</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="How-to-enhance-entity-classes"></a></p>
+<p><a name="EntityEnhancement-WhatisEnhancementAnyway?"></a></p>
+<h1 id="what-is-enhancement-anyway">What is Enhancement Anyway?<a class="headerlink" href="#what-is-enhancement-anyway" title="Permalink">&para;</a></h1>
+<p>The JPA spec requires some type of monitoring of Entity objects, but the spec does not define how to implement this monitoring. Some JPA providers auto-generate new subclasses or proxy objects that front the user's Entity objects at runtime, while others use <a href="#EntityEnhancement-byteCode">byte-code weaving</a> technologies to enhance the actual Entity class objects. OpenJPA supports both mechanisms, but strongly suggests only using the byte-code weaving enhancement. The <a href="#EntityEnhancement-SubclassingEnhancement">subclassing</a> support (as provided by OpenJPA)
+is not recommended (and is disabled by default in OpenJPA 2.0 and beyond).</p>
+<p>For complete details on entity enhancement, please checkout the section in
+the latest <a href="http://ci.apache.org/projects/openjpa/trunk/docbook/manual.html#ref_guide_pc_enhance">User's Guide on Enhancement</a>
+.  The following sections will only cover the high-level concepts and the
+ways to use the enhancer in different build and runtime setups.</p>
+<p><a name="EntityEnhancement-byteCode"></a></p>
+<h2 id="byte-code-weaving-enhancement">Byte-code Weaving Enhancement?<a class="headerlink" href="#byte-code-weaving-enhancement" title="Permalink">&para;</a></h2>
+<p>Byte-code weaving is the preferred and recommended method of enhancement to use with OpenJPA.  This byte-code enhancement can be performed at <a href="#EntityEnhancement-BuildTimeEnhancement">﻿build-time</a> or dynamically at <a href="#EntityEnhancement-DynamicEnhancement">run-time</a>.  Whichever approach is selected, the same enhancement processing is performed with the same level of functionality weaved into each Entity class.</p>
+<p><a name="EntityEnhancement-BuildTimeEnhancement"></a></p>
+<h3 id="build-time-enhancement">Build Time Enhancement<a class="headerlink" href="#build-time-enhancement" title="Permalink">&para;</a></h3>
+<p>Build time enhancement is the recommended method to use with OpenJPA, as it
+it the fastest and most reliable method.  Please follow the links below
+based on yBuild time enhancement is probably the most common enhancement method to use with OpenJPA, especially in an automated JUnit test environment.  The whole OpenJPA JUnit test bucket relies on build-time enhancement.  Please follow the links below based on your development environment:</p>
+<ul>
+<li><a href="enhancement-with-ant.html">Enhancement with ANT</a></li>
+<li><a href="enhancement-with-maven.html">Enhancement with Maven</a></li>
+<li><a href="enhancement-with-eclipse.html">Enhancement with Eclipse</a></li>
+</ul>
+<p><a name="EntityEnhancement-DynamicEnhancement"></a></p>
+<h3 id="dynamic-enhancement">Dynamic Enhancement<a class="headerlink" href="#dynamic-enhancement" title="Permalink">&para;</a></h3>
+<p>Dynamic run-time enhancement with OpenJPA comes in several different flavors, depending on your environment.  The preferred and most reliable method of dynamic enhancement is via the defined container hook in a <a href="#javaee">Java EE and OSGi environments</a>.  In a <a href="#jse">JSE environment</a>, there are a couple of choices for configuring or using dynamic enhancement.  The choice will depend on your usage patterns.</p>
+<p><a name="javaee"></a></p>
+<h4 id="java-ee-and-osgi-environments">Java EE and OSGi environments<a class="headerlink" href="#java-ee-and-osgi-environments" title="Permalink">&para;</a></h4>
+<p>The Java EE specifications outline a mechanism for plugging in a JPA transformer (byte code enhancer) into the container's classloading processing.  Most Java EE application servers (for example, IBM's WebSphere Application Server) support this mechanism.  In addition, several of the OSGi container providers (for example, WebSphere's OSGi container) have followed a similar path and provide this classloading hook for dynamic enhancement.  If your container environment supports this mechanism with OpenJPA, this would be the preferred and easiest method of performing the byte-code enhancement.</p>
+<p><a name="jse"></a></p>
+<h4 id="jse-environment">JSE Environment<a class="headerlink" href="#jse-environment" title="Permalink">&para;</a></h4>
+<h5>Explicit javaagent support</h5>
+<p>The recommended way get runtime enhancement for the JSE environment is to provide a javaagent when launching the JVM that OpenJPA is running in. This is a common method to use when executing individual JUnits in a development environment because it is very painless and easy. All that is required to get runtime enhancement is to specify the -javaagent:openjpa-all-2.2.0-SNAPSHOT.jar (as an example) on the JVM configuration.</p>
+<p>More information can be found on the <a href="runtime-enhancement.html">Runtime Enhancement</a> page.</p>
+<h5>Implicit javaagent support</h5>
+<p><a href="https://issues.apache.org/jira/browse/OPENJPA-952">OPENJPA-952</a>
+added the capability to have OpenJPA attempt to dynamically load the
+javaagent enhancer. If you see the following message, OpenJPA loaded the
+enhancer dynamically.</p>
+<blockquote>
+<p>[java] 1453  jpa_app	INFO   [main] openjpa.Runtime - OpenJPA dynamically
+loaded the class enhancer. Any classes that were not enhanced at build time
+will be enhanced when the are loaded by the JVM.</p>
+</blockquote>
+<p>This method of enhancement is intended for first time users or developers
+as it has a number of caveats.</p>
+<ul>
+<li>It works with both the Sun/Oracle 1.6SDK and IBM 1.6JDK.  The JRE is not sufficient.</li>
+<li>If any unenhanced Entities are loaded by the JVM before an EntityManagerFactory is created, this method of enhancement will not work. If this condition is encountered, you will see the following warning:</li>
+</ul>
+<blockquote>
+<p>[java] 1047  jpa_app	WARN   [main] openjpa.Enhance - Unenhanced classes were
+detected even though the enhancer has ran. Ensure that the
+EntityManagerFactory is created prior to creating any Entities.</p>
+</blockquote>
+<p>If your application uses some other method of enhancement, this support can be explicitly disabled by setting the following property in your persistence.xml.</p>
+<blockquote>
+<p>&lt;property name="openjpa.DynamicEnhancementAgent" value="false"/&gt;</p>
+</blockquote>
+<p><a name="EntityEnhancement-SubclassingEnhancement"></a></p>
+<h2 id="subclassing-enhancement">Subclassing Enhancement<a class="headerlink" href="#subclassing-enhancement" title="Permalink">&para;</a></h2>
+<p><span class="note">The use of OpenJPA's subclassing support is not recommended, and is disabled by default in OpenJPA 2.0 and beyond.</span></p>
+<p>When running in a Java SE environment or in a non-Java EE 5 compliant container, OpenJPA can utilize runtime subclassing enhancement. The subclassing enhancement support was added originally as a convenience to new developers to reduce the amount of work to get a 'HelloWorld-ish' OpenJPA application working out of the box. It was never meant to run in production. So you're probably thinking that this sounds great! OpenJPA handles enhancement automatically for me and I can stop reading this post. Wrong! Subclassing has two major drawbacks. First off, it isn't nearly as fast as byte-code enhancement and the second drawback is that there are some documented functional problems when using the subclassing support. The moral of the story is, don't use this method of enhancement.</p>
+<p>For reference, the property that enables/disables the subclassing support is openjpa.RuntimeUnenhancedClasses. The value "unsupported" is the recommended and default setting for this property.</p>
+<p>Additional information regarding the subclassing enhancement can be found in the <a href="http://ci.apache.org/projects/openjpa/trunk/docbook/manual.html#ref_guide_pc_enhance">OpenJPA docs</a>.</p>
+<p><a name="EntityEnhancement-AuthorAttribution"></a></p>
+<h2 id="author-attribution">Author Attribution<a class="headerlink" href="#author-attribution" title="Permalink">&para;</a></h2>
+<p>The content for this page and sub-pages was adapted from content created by
+OpenJPA contributor Rick Curtis from the following <a href="http://webspherepersistence.blogspot.com/">WebSphere and Java Persistence</a>
+blog entries:</p>
+<p><a href="http://webspherepersistence.blogspot.com/2009/02/openjpa-enhancement.html">http://webspherepersistence.blogspot.com/2009/02/openjpa-enhancement.html</a></p>
+<p><a href="http://webspherepersistence.blogspot.com/2009/04/openjpa-enhancement-eclipse-builder.html">http://webspherepersistence.blogspot.com/2009/04/openjpa-enhancement-eclipse-builder.html</a></p>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- Release Setup" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- Release Setup</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="Release-Setup"></a></p>
+<p>These setup steps only need to be performed on a particular machine once.</p>
+<table class="info"><tr>
+<td valign="top"><img border="0" height="16" src="images/information.gif" width="16"/>
+<td>Developers using Linux workstations can skip over the references to Cygwin.  If using Windows, install cygwin, including <b>Utils/gnupg</b> and <b>Net/openssh</b> packages.<br/><br/>
+  See <a href="http://www.gnupg.org/gph/en/manual.html">GNU Privacy Handbook</a> for a quick start on the basic concepts.
+</td></td></tr></table>
+<p><a name="ReleaseSetup-CreateandinstallaSSHkey"></a></p>
+<h2 id="create-and-install-a-ssh-key">Create and install a SSH key<a class="headerlink" href="#create-and-install-a-ssh-key" title="Permalink">&para;</a></h2>
+<ol>
+<li>
+<p>Open a shell window.	If using Windows, open a cygwin window.</p>
+</li>
+<li>
+<p>Use ssh-keygen to create an SSH key.</p>
+<p><span class="note"> ssh-keygen dsa key type only accept 1024 bits; use rsa / 4096 bits instead.</span></p>
+<pre><code> $ ssh-keygen -t rsa -b 4096
+</code></pre>
+<p>Program defaults should be fine. No passphrase is required for the ssh key generation. The keys will be saved in ~/.ssh/id_rsa (private) and ~/.ssh/id_rsa.pub (public).</p>
+</li>
+</ol>
+<table class="info"><tr>
+<td valign="top"><img border="0" height="16" src="images/information.gif" width="16"/>
+<td>
+<p>See <a href="http://www.networknewz.com/networknewz-10-20030707AuthenticatingbyPublicKeyOpenSSH.html">Authenticating By Public Key(OpenSSH)</a> for a good description on why and how to perform this task.</p>
+</td></td></tr></table>
+<ol>
+<li>
+<p>scp your SSH public key ~/.ssh/id_rsa.pub created in last step to ~/id_rsa.pub on people.apache.org.</p>
+<pre><code> $ cd ~/.ssh
+ $ scp id_rsa.pub &lt;your userid&gt;@people.apache.org:id_rsa.pub 
+</code></pre>
+<p>You will be prompted for your password.</p>
+</li>
+<li>
+<p>Use ssh to login to people.apache.org</p>
+<pre><code> $ cd ~
+ $ ssh &lt;your userid&gt;@people.apache.org
+</code></pre>
+<p>At this point, you will still be prompted for your password.</p>
+</li>
+<li>
+<p>Create a ~/.ssh folder in your home directory on people.apache.org and change its file mode to 700.</p>
+<pre><code> $ mkdir ~/.ssh
+ $ chmod 700 ~/.ssh
+</code></pre>
+</li>
+<li>
+<p>Move or append ~/id_rsa.pub to ~/.ssh/authorized_keys and change its file mode to 600.</p>
+<pre><code> $ mv ~/id_rsa.pub ~/.ssh/authorized_keys
+  or
+ $ cat ~/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+ $ chmod 600 ~/.ssh/authorized_keys
+</code></pre>
+</li>
+</ol>
+<table class="info"><tr>
+<td valign="top"><img border="0" height="16" src="images/information.gif" width="16"/>
+<td>
+<ul>
+<li>
+<p>Each public key in the <strong><code>authorized_keys</code></strong><a name="ReleaseSetup-CreateandinstallaSSHkey"></a>
+spans only one line. For example:</p>
+<pre><code> "ssh-dss AAAAB3NzaC1kc3MAAA ..... agBmmfZ9uAbSqA== dsa-key-20071107"
+</code></pre>
+</li>
+<li>
+<p>'#' in the first column is a comment line.</p>
+</li>
+</ul>
+</td></td></tr></table>
+<ol>
+<li>
+<p>Exit out of this ssh session.</p>
+</li>
+<li>
+<p>Start a new ssh session.  No login should be required this time due to the private ssh key on your local box matching up with the public ssh key in your home directory (~/.ssh).</p>
+<pre><code> $ ssh &lt;your userid&gt;@people.apache.org
+</code></pre>
+</li>
+</ol>
+<table class="info"><tr>
+<td valign="top"><img border="0" height="16" src="images/information.gif" width="16"/>
+<td>If you are still prompted for a password, then you have not set up the ssh keys properly.	Review the steps above and ensure that all of the steps were followed properly.  Or, maybe the instructions are still not quite right and they still need some adjusting.  In that case, please update the instructions accordingly.  :-)
+</td></td></tr></table>
+<p><a name="ReleaseSetup-CreateaGPGkey"></a></p>
+<h2 id="create-a-gpg-key">Create a GPG key<a class="headerlink" href="#create-a-gpg-key" title="Permalink">&para;</a></h2>
+<ol>
+<li>Open a shell window.	If using Windows, open a cygwin window.</li>
+</ol>
+<table class="info"><tr>
+<td valign="top"><img border="0" height="16" src="images/information.gif" width="16"/>
+<td>
+<ul>
+<li>
+<p>The generated keys are stored in:</p>
+<ul>
+<li>*nix - $HOME/.gnupg</li>
+<li>Windows XP - %HOME%\Application Data\gnupg</li>
+<li>Windows 7 - C:\ProgramData\GNU\etc\gnupg</li>
+</ul>
+</li>
+<li>
+<p>"gpg --version" shows the GnuPG's home location.</p>
+</li>
+<li>
+<p>Follow the latest steps and guides on the ASF website at <a href="http://www.apache.org/dev/openpgp.html#generate-key">http://www.apache.org/dev/openpgp.html#generate-key</a> as you need to disable using SHA1 and new keys should be 4096 bits.</p>
+</li>
+<li>
+<p>Append the following text to gpg.conf.</p>
+<pre><code>personal-digest-preferences SHA512
+cert-digest-algo SHA512
+default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 \
+    ZLIB BZIP2 ZIP Uncompressed
+</code></pre>
+<ul>
+<li>
+<p>If you are using an existing gpg certificate, update your current certificate with the above preference using:</p>
+<pre><code>  leealber@jpadev:~/.gnupg$ gpg --edit-key Albert Lee
+  Secret key is available.
+  
+  pub  1024D/8007117F  created: 2007-11-05  expires: never       usage: SC  
+      	     trust: ultimate	  validity: ultimate
+  sub  2048g/8D910F8A  created: 2007-11-05  expires: never       usage: E   
+  [ultimate] (1). Albert Lee (CODE SIGNING KEY) &lt;allee8285@apache.org&gt;
+
+  Invalid command  (try "help")
+
+  Command&gt; showpref
+  [ultimate] (1). Albert Lee (CODE SIGNING KEY) &lt;allee8285@apache.org&gt;
+       Cipher: AES256, AES192, AES, CAST5, 3DES
+       Digest: SHA512, SHA384, SHA256, SHA224, SHA1
+       Compression: ZLIB, BZIP2, ZIP, Uncompressed
+       Features: MDC, Keyserver no-modify
+
+  Command&gt; setpref SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB \
+      BZIP2 ZIP Uncompressed
+  Set preference list to:
+       Cipher: AES256, AES192, AES, CAST5, 3DES
+       Digest: SHA512, SHA384, SHA256, SHA224, SHA1
+       Compression: ZLIB, BZIP2, ZIP, Uncompressed
+       Features: MDC, Keyserver no-modify
+  Really update the preferences? (y/N) y
+
+  pub  1024D/8007117F  created: 2007-11-05  expires: never       usage: SC  
+      	     trust: ultimate	  validity: ultimate
+  sub  2048g/8D910F8A  created: 2007-11-05  expires: never       usage: E   
+  [ultimate] (1). Albert Lee (CODE SIGNING KEY) &lt;allee8285@apache.org&gt;
+
+  Command&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</td></td></tr></table>
+<ol>
+<li>
+<p>Generate a key-pair with gpg, using default key kind ("DSA and Elgamal") and ELG-E keys size (2048).</p>
+<pre><code> $ gpg --gen-key
+</code></pre>
+<p>The program's default values should be fine.  For the "Real Name" enter your full name (ie. Stan Programmer).  For the "e-mail address" enter your apache address (ie. <a href="mailto:sprogrammer@apache.org">sprogrammer@apache.org</a>).  You will also be required to enter a "passphrase" for the GPG key generation.  Keep track of this as you will need this for the Release processing.</p>
+</li>
+</ol>
+<table class="info"><tr>
+<td valign="top"><img border="0" height="16" src="images/information.gif" width="16"/>
+<td>Save the content in this subdirectory to a safe media. This contains your private key used to sign all the release materials.
+    </td></td></tr></table>
+<ol>
+<li>
+<p>Backup your cygwin home directory to another media</p>
+</li>
+<li>
+<p>Append your public key to <a href="https://svn.apache.org/repos/asf/openjpa/KEYS">https://svn.apache.org/repos/asf/openjpa/KEYS</a>
+and <a href="http://www.apache.org/dist/openjpa/KEYS">http://www.apache.org/dist/openjpa/KEYS</a>. See the commands describe at the beginning of this KEYS file to perform this task. The gpg key-pair is used to sign the published artifacts for the releases.</p>
+<pre><code> $ ( gpg --list-sigs &lt;Real Name&gt; &amp;&amp; gpg --armor --export &lt;Real Name&gt; ) &gt;&gt; KEYS
+</code></pre>
+</li>
+</ol>
+<table class="info"><tr>
+<td valign="top"><img border="0" height="16" src="images/information.gif" width="16"/>
+<td>
+<pre><code>* The &lt;https://svn.apache.org/repos/asf/openjpa/KEYS&gt; file is updated via normal svn commit procedures.
+
+        svn co https://svn.apache.org/repos/asf/openjpa --depth empty
+        cd openjpa
+        svn up KEYS
+        ( gpg --list-sigs &lt;Real Name&gt; &amp;&amp; gpg --armor --export &lt;Real Name&gt; ) &gt;&gt; KEYS
+        svn commit KEYS --message "update gpg public key for ME."
+
+* The one under www.apache.org/dist/ has to be manually updated. 
+
+        scp KEYS yourid@people.apache.org:/www/www.apache.org/dist/openjpa/KEYS
+</code></pre>
+</td></td></tr></table>
+<ol>
+<li>
+<p>Submit your public key to a key server. E.g. <a href="http://pgp.surfnet.nl:11371/">http://pgp.surfnet.nl:11371/</a> or <a href="http://pgp.mit.edu/">http://pgp.mit.edu/</a></p>
+</li>
+<li>
+<p>Following the instructions in <a href="http://people.apache.org/%7Ehenkp/trust/">http://people.apache.org/~henkp/trust/</a> and ask multiple (at least 3) current Apache committers to sign your public key.</p>
+</li>
+</ol>
+<h2 id="update-maven-settings-for-our-servers">Update Maven settings for our servers<a class="headerlink" href="#update-maven-settings-for-our-servers" title="Permalink">&para;</a></h2>
+<ol>
+<li>
+<p>Create a settings.xml under .m2</p>
+<pre><code> &lt;settings xmlns="http://maven.apache.org/POM/4.0.0"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+       http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
+   &lt;servers&gt;
+     &lt;!-- SCP settings for people.apache.org --&gt;
+     &lt;server&gt;
+       &lt;id&gt;people.apache.org&lt;/id&gt;
+       &lt;username&gt;$USERNAME&lt;/username&gt;
+       &lt;privateKey&gt;$PATH_TO_PRIVATE_KEY&lt;/privateKey&gt;
+       &lt;passphrase&gt;$SSH_PASSPHRASE&lt;/passphrase&gt;
+       &lt;directoryPermissions&gt;775&lt;/directoryPermissions&gt;
+       &lt;filePermissions&gt;644&lt;/filePermissions&gt;
+       &lt;!-- following is only for Windows only
+         &lt;configuration&gt;
+           &lt;sshExecutable&gt;plink&lt;/sshExecutable&gt;
+           &lt;scpExecutable&gt;pscp&lt;/scpExecutable&gt;
+           &lt;scpArgs&gt;-2Bp&lt;/scpArgs&gt;
+           &lt;sshArgs&gt;-2&lt;/sshArgs&gt;
+         &lt;/configuration&gt;
+       --&gt;
+     &lt;/server&gt;
+     &lt;!-- ASF Nexus settings --&gt;
+     &lt;server&gt;
+       &lt;id&gt;apache.snapshots.https&lt;/id&gt;
+       &lt;username&gt;$USERNAME&lt;/username&gt;
+       &lt;password&gt;$APACHE_LDAP_PWD&lt;/password&gt;
+     &lt;/server&gt;
+     &lt;server&gt;
+       &lt;id&gt;apache.releases.https&lt;/id&gt;
+       &lt;username&gt;$USERNAME&lt;/username&gt;
+       &lt;password&gt;$APACHE_LDAP_PWD&lt;/password&gt;
+     &lt;/server&gt;
+   &lt;/servers&gt; 
+   &lt;profiles&gt;
+     &lt;profile&gt;
+       &lt;id&gt;apache-release&lt;/id&gt;
+       &lt;properties&gt;
+ 	    &lt;site.deploy.user.name&gt;$USERNAME&lt;/site.deploy.user.name&gt;
+ 	    &lt;gpg.passphrase&gt;$GPG_PASSPHRASE&lt;/gpg.passphrase&gt;
+       &lt;/properties&gt;
+     &lt;/profile&gt;
+     &lt;profile&gt;
+       &lt;id&gt;gpg-passphrase&lt;/id&gt;
+       &lt;properties&gt;
+ 	    &lt;gpg.passphrase&gt;$GPG_PASSPHRASE&lt;/gpg.passphrase&gt;
+       &lt;/properties&gt;
+     &lt;/profile&gt;
+   &lt;/profiles&gt;
+ &lt;/settings&gt;
+</code></pre>
+</li>
+</ol>
+<table class="info"><tr>
+<td valign="top"><img border="0" height="16" src="images/information.gif" width="16"/>
+<td>
+<ul>
+<li><strong>$USERNAME</strong> is the remote username on people.apache.org, not your local userid.</li>
+<li><strong>$PATH_TO_PRIVATE_KEY</strong> is the path to the private key generated for ssh. E.g. /home/yourLocalUserId/.ssh/id_rsa.  For Windows' cygwin users, you will need to enter the full cygwin path: /cygdrive/c/cygwin/home/yourLocalUserId/.ssh/id_rsa.</li>
+<li><strong>$SSH_PASSPHRASE</strong> for the supplied <strong>$PATH_TO_PRIVATE_KEY</strong>.  If you don't use this in your settings.xml file, then you will be prompted for it during the Release processing.</li>
+<li><strong>$GPG_PASSPHRASE</strong> is pass phase for the GPG key.</li>
+<li><strong>$APACHE_LDAP_PWD</strong> is your Apache LDAP password, which is shared between SVN and password login for  people.apache.org.</li>
+</ul>
+</td></td></tr></table>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

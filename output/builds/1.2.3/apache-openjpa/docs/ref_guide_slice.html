@@ -1,0 +1,43 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter&nbsp;12.&nbsp; Distributed Persistence</title><link rel="stylesheet" href="css/docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"><link rel="start" href="manual.html" title="Apache OpenJPA 1.2 User's Guide"><link rel="up" href="ref_guide.html" title="Part&nbsp;3.&nbsp;Reference Guide"><link rel="prev" href="ref_guide_event.html" title="2.&nbsp; Remote Event Notification Framework"><link rel="next" href="features_and_limitations.html" title="2.&nbsp;Salient Features"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter&nbsp;12.&nbsp;
+    Distributed Persistence
+  </th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ref_guide_event.html">Prev</a>&nbsp;</td><th width="60%" align="center">Part&nbsp;3.&nbsp;Reference Guide</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="features_and_limitations.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en" id="ref_guide_slice"><div class="titlepage"><div><div><h2 class="title"><a name="ref_guide_slice"></a>Chapter&nbsp;12.&nbsp;
+    Distributed Persistence
+  </h2></div><div><h2 class="title"><a name="ref_guide_slice"></a>Chapter&nbsp;12.&nbsp;
+    Distributed Persistence
+  </h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="ref_guide_slice.html#slice_overview">1. Overview</a></span></dt><dt><span class="section"><a href="features_and_limitations.html">2. Salient Features</a></span></dt><dd><dl><dt><span class="section"><a href="features_and_limitations.html#d0e31264">2.1. Transparency</a></span></dt><dt><span class="section"><a href="features_and_limitations.html#d0e31272">2.2. Custom Distribution Policy</a></span></dt><dt><span class="section"><a href="features_and_limitations.html#d0e31301">2.3. Heterogeneous Database</a></span></dt><dt><span class="section"><a href="features_and_limitations.html#d0e31306">2.4. Parallel Execution</a></span></dt><dt><span class="section"><a href="features_and_limitations.html#d0e31311">2.5. Distributed Query</a></span></dt><dt><span class="section"><a href="features_and_limitations.html#d0e31345">2.6. Targeted Query</a></span></dt><dt><span class="section"><a href="features_and_limitations.html#d0e31362">2.7. Distributed Transaction</a></span></dt><dt><span class="section"><a href="features_and_limitations.html#collocation_constraint">2.8. Collocation Constraint</a></span></dt></dl></dd><dt><span class="section"><a href="slice_configuration.html">3. Usage</a></span></dt><dd><dl><dt><span class="section"><a href="slice_configuration.html#d0e31399">3.1. How to activate Slice Runtime?</a></span></dt><dt><span class="section"><a href="slice_configuration.html#d0e31410">3.2. How to configure each database slice?</a></span></dt><dt><span class="section"><a href="slice_configuration.html#distribution_policy">3.3. Implement DistributionPolicy interface</a></span></dt><dt><span class="section"><a href="slice_configuration.html#d0e31524">3.4. </a></span></dt></dl></dd><dt><span class="section"><a href="ch26s04.html">4. Global Properties</a></span></dt><dd><dl><dt><span class="section"><a href="ch26s04.html#d0e31538">4.1. openjpa.slice.DistributionPolicy</a></span></dt><dt><span class="section"><a href="ch26s04.html#d0e31552">4.2. openjpa.slice.Lenient</a></span></dt><dt><span class="section"><a href="ch26s04.html#d0e31568">4.3. openjpa.slice.Master</a></span></dt><dt><span class="section"><a href="ch26s04.html#d0e31580">4.4. openjpa.slice.Names</a></span></dt><dt><span class="section"><a href="ch26s04.html#d0e31595">4.5. openjpa.slice.ThreadingPolicy</a></span></dt><dt><span class="section"><a href="ch26s04.html#d0e31666">4.6. openjpa.slice.TransactionPolicy</a></span></dt></dl></dd><dt><span class="section"><a href="ch26s05.html">5. Per-Slice Properties</a></span></dt></dl></div><p>
+  The standard JPA runtime environment works with a <span class="emphasis"><em>single</em></span>
+  database instance. OpenJPA can be extended via plug-in to work with 
+  multiple databases within the same transaction without any change to the 
+  existing application. This capability of OpenJPA for distributed 
+  database environment is called <span class="emphasis"><em>Slice</em></span> and is explained in 
+  the following sections.
+  </p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="slice_overview"></a>1.&nbsp;Overview</h2></div></div></div><p>
+    Enterprise applications are increasingly deployed for distributed database
+    environments. The reasons for distributed, often horizontally-partitioned 
+    database environment can be to counter massive data growth, to 
+    support multiple external clients on a hosted platform or many other 
+    practical scenarios that can benefit from data partitioning.
+    </p><p>
+    Any JPA-based user application has to address serious technical and conceptual
+    challenges to directly interact with a set of physical databases
+    within a single transaction. 
+    Slice encapsulates the complexity of distributed database environment 
+    via the abstraction of <span class="emphasis"><em>virtual</em></span> database which internally 
+    manages multiple physical databases. We refer each physical database instance 
+    as <span class="emphasis"><em>slice</em></span>. 
+    <span class="emphasis"><em>Virtualization</em></span> of distributed databases 
+    makes OpenJPA object management kernel and 
+    the user application to work in the same way as in the case of a single physical 
+    database.
+    </p></div><p>
+    The properties to configure Slice can be classified in two broad groups.
+The <span class="emphasis"><em>global</em></span> properties apply to all the slices, for example,
+the thread pool used to execute the queries in parallel or the transaction 
+manager used to coordinate transaction across multiple slices. 
+The <span class="emphasis"><em>per-slice</em></span> properties apply to individual slice, for example,
+the JDBC connection URL of a slice.
+   </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ref_guide_event.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ref_guide.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="features_and_limitations.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2.&nbsp;
+            Remote Event Notification Framework
+        &nbsp;</td><td width="20%" align="center"><a accesskey="h" href="manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;2.&nbsp;Salient Features</td></tr></table></div></body></html>

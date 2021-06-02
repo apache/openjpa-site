@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- Integration" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- Integration</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="How to integrate OpenJPA with various containers and application servers"> </a></p>
+<p><a name="Integration-RuntimeDependencies"></a></p>
+<h2 id="runtime-dependencies">Runtime Dependencies<a class="headerlink" href="#runtime-dependencies" title="Permalink">&para;</a></h2>
+<p>The binary release download of OpenJPA includes all of the code needed to
+run in a stand-alone Java SE JVM or within a Java EE application server.</p>
+<p>See <a href="build-and-runtime-dependencies.html">Build and Runtime Dependencies</a>
+for details on the required Java levels and runtime artifacts.</p>
+<p><a name="Integrating-IntegrationwithApacheTomEE"></a></p>
+<h2 id="integration-with-apache-tomee">Integration with Apache TomEE<a class="headerlink" href="#integration-with-apache-tomee" title="Permalink">&para;</a></h2>
+<p><a href="http://tomee.apache.org/">Apache TomEE</a> is a distribution of Tomcat bundled with OpenJPA and the other necessary components to make it a Java EE 6 compliant Web Profile implementation.  Apache TomEE 1.0.0 and later include OpenJPA 2.2.x.  TomEE works in <a href="http://www.youtube.com/watch?v=Lr8pxEACVRI">Eclipse using the Tomcat adapter</a> and you can simply deploy a web archive that contains a persistence unit without the need to include OpenJPA in the webapp.  Unlike putting OpenJPA in Tomcat, TomEE supports full container managed EntityManagers and JTA persistence units.</p>
+<p><a name="Integration-IntegratingwithApacheGeronimo:"></a></p>
+<h2 id="integrating-with-apache-geronimo">Integrating with Apache Geronimo:<a class="headerlink" href="#integrating-with-apache-geronimo" title="Permalink">&para;</a></h2>
+<p><a href="http://geronimo.apache.org/">Apache Geronimo</a>
+V2.0.2 through 2.1.3 include OpenJPA 1.0.x and you can simply deploy an
+enterprise archive, web archive, or EJB-JAR that contains a persistence
+unit.
+Apache Geronimo V2.1.4 includes OpenJPA 1.2.x and you can simply deploy an
+enterprise archive, web archive, or EJB-JAR that contains a persistence
+unit.</p>
+<p><a name="Integration-IntegratingwithGlassFish:"></a></p>
+<h2 id="integrating-with-glassfish">Integrating with GlassFish:<a class="headerlink" href="#integrating-with-glassfish" title="Permalink">&para;</a></h2>
+<p>Since <a href="http://glassfish.dev.java.net">GlassFish</a>
+implements the Java Persistence API 1.0 SPI, it is very easy to use
+OpenJPA in Glassfish. See <a href="http://weblogs.java.net/blog/ss141213/archive/2006/07/using_openjpa_a.html">Sahoo's blog</a>
+for further details.</p>
+<p><a name="Integration-IntegratingwithSunJavaSystemApplicationServer9.x:"></a></p>
+<h2 id="integrating-with-sun-java-system-application-server-9x">Integrating with Sun Java System Application Server 9.x:<a class="headerlink" href="#integrating-with-sun-java-system-application-server-9x" title="Permalink">&para;</a></h2>
+<p>Since Sun Java System Application Server is based on code from the <a href="http://glassfish.dev.java.net">GlassFish project</a>
+, the instructions to use OpenJPA in GlassFish and Sun Java System
+Application Server remain the same.</p>
+<p><a name="Integration-IntegratingwithIBMWebSphereApplicationServer:"></a></p>
+<h2 id="integrating-with-ibm-websphere-application-server">Integrating with IBM WebSphere Application Server:<a class="headerlink" href="#integrating-with-ibm-websphere-application-server" title="Permalink">&para;</a></h2>
+<p>See <a href="http://www-128.ibm.com/developerworks/websphere/techjournal/0612_barcia/0612_barcia.html">IBM WebSphere Developer Technical Journal: Leveraging OpenJPA with WebSphere Application Server V6.1</a>.</p>
+<p>Also, WebSphere Application Server V6.1 can download and install the <a href="http://www-01.ibm.com/support/docview.wss?rs=177&amp;uid=swg21287579">EJB3 Feature Pack</a>
+, which includes OpenJPA 1.0.x.</p>
+<p><a href="http://www.ibm.com/developerworks/downloads/ws/was/">WebSphere Application Server V7.0</a>
+includes OpenJPA 1.2.x and you can simply deploy an enterprise archive, web archive, or EJB-JAR that contains a persistence unit.</p>
+<p>The <a href="http://www-01.ibm.com/software/webservers/appserv/was/featurepacks/osgi/">WebSphere Application Server V7 Feature Pack for OSGi Applications and Java Persistence API 2.0</a>
+includes OpenJPA 2.0 and provides the use of the JPA 2.0 programming model
+within Java EE5 and OSGi applications.</p>
+<p><a name="Integration-IntegratingwithIBMWebSphereApplicationServerCommunityEdition:"></a></p>
+<h2 id="integrating-with-ibm-websphere-application-server-community-edition">Integrating with IBM WebSphere Application Server Community Edition:<a class="headerlink" href="#integrating-with-ibm-websphere-application-server-community-edition" title="Permalink">&para;</a></h2>
+<p><a href="http://www.ibm.com/developerworks/websphere/zones/was/wasce.html">WebSphere Application Server Community Edition</a>
+V2.0.0.2 through 2.1.1.1 include OpenJPA 1.0.x and you can simply deploy
+an enterprise archive, web archive, or EJB-JAR that contains a persistence unit.</p>
+<p>WebSphere Application Server Community Edition V2.1.x releases after
+V2.1.1.1 will include OpenJPA 1.2.x and you can simply deploy an enterprise
+archive, web archive, or EJB-JAR that contains a persistence unit.</p>
+<h2 id="integrating-with-jonas-application-server-v-4x-j2ee-14-ejb21-container">Integrating with JOnAS Application Server V 4.X (J2EE 1.4 / EJB2.1 Container):<a class="headerlink" href="#integrating-with-jonas-application-server-v-4x-j2ee-14-ejb21-container" title="Permalink">&para;</a></h2>
+<p>OpenJPA can successfully be integrated with the JOnAS 4.x Application
+server family. I succeeded in configuring OpenJPA to use managed JTA
+transactions of JOnAS, which means that you can use OpenJPA in parallel to
+EJB 2.1 CMP/BMP  Entity Beans within the SAME container managed
+transactions of your JOnAS Application Server. See <a href="http://hanzz.zapto.org/index.php?option=com_content&amp;task=view&amp;id=105&amp;Itemid=31">Hans Prueller's blog entry</a>
+for further details.</p>
+<p><a name="Integration-IntegratingwithBEAWeblogicServer10:"></a></p>
+<h2 id="integrating-with-bea-weblogic-server-10">Integrating with BEA Weblogic Server 10:<a class="headerlink" href="#integrating-with-bea-weblogic-server-10" title="Permalink">&para;</a></h2>
+<p><a href="http://www.bea.com/framework.jsp?CNT=index.htm&amp;FP=/content/products/weblogic/">BEA WebLogic Server 10</a>
+includes OpenJPA. To use OpenJPA in a WebLogic Server environment, you can
+simply deploy an enterprise archive, web archive, or EJB-JAR that contains
+a persistence unit. The default persistence provider in WebLogic Server is
+OpenJPA + Kodo, so you can either leave the <provider> element out of your
+persistence.xml file, or set it to
+org.apache.openjpa.persistence.PersistenceProviderImpl.</provider></p>
+<p><a href="http://www.bea.com/framework.jsp?CNT=index.htm&amp;FP=/content/products/weblogic/kodo/">BEA Kodo</a>
+is built on top of OpenJPA, and so includes the OpenJPA jars.</p>
+<p><a name="Integration-IntegratingwithSpring:"></a></p>
+<h2 id="integrating-with-spring">Integrating with Spring:<a class="headerlink" href="#integrating-with-spring" title="Permalink">&para;</a></h2>
+<p>It is not necessary to configure a Spring loadTimeWeaver when using OpenJPA
+build time enhancement. The following warning message will be logged by
+OpenJPA when creating an EntityManagerFactory but it can be safely ignored.</p>
+<blockquote>
+<p>WARN   [main] while registering a ClassTransformer with PersistenceUnitInfo: name 'PuName', root URL [file:/.../]. The error has been consumed. To see it, set your openjpa.Runtime log level to TRACE. Load-time class transformation will not be available.</p>
+</blockquote>
+<p>Please see the <a href="http://static.springframework.org/spring/docs/2.0.x/reference/orm.html#orm-jpa-setup-lcemfb">Spring documentation</a>
+for more information.</p>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

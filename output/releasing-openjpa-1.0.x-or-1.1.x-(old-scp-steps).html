@@ -1,0 +1,674 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="ReleasingOpenJPA1.0.xor1.1.x(OldSCPSteps)-MakinganOpenJPA1.0.xor1.1.xRelease"></a></p>
+<h1 id="making-an-openjpa-10x-or-11x-release">Making an OpenJPA 1.0.x or 1.1.x Release<a class="headerlink" href="#making-an-openjpa-10x-or-11x-release" title="Permalink">&para;</a></h1>
+<p>These instructions guide the release manager through the steps of making an
+official OpenJPA release.</p>
+<p><a name="ReleasingOpenJPA1.0.xor1.1.x(OldSCPSteps)-Prerequisites"></a></p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink">&para;</a></h2>
+<ol>
+<li>You should read the <a href="openjpa-release-policy.html">OpenJPA Release Policy</a>
+to decide on the name of the new release, based on the content.</li>
+<li>You should read the Apache <a href="http://www.apache.org/dev/release.html">Release FAQ</a></li>
+<li>You must have shell access to people.apache.org</li>
+<li>You must have the following utilities installed on your local machine and
+available in your path:
+<ul>
+<li><a href="http://java.sun.com/">JDK 1.4 / 1.5</a></li>
+<li><a href="http://www.openssh.com/">ssh</a></li>
+<li><a href="http://maven.apache.org/">Maven 2</a></li>
+<li><a href="http://www.gnupg.org/">gnupg</a></li>
+</ul>
+</li>
+<li>For Windows users, install <a href="http://cygwin.com/">Cygwin</a>
+in addition to the above utilities
+<ul>
+<li>Make sure the Net/openssh and Utils/gnupg packages are installed that
+come with Cygwin installation.</li>
+<li>Optional: <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/">Putty</a></li>
+</ul>
+</li>
+</ol>
+<p><a name="ReleasingOpenJPA1.0.xor1.1.x(OldSCPSteps)-Tasksthatneedtobeperformedforeachrelease"></a></p>
+<h2 id="tasks-that-need-to-be-performed-for-each-release">Tasks that need to be performed for each release<a class="headerlink" href="#tasks-that-need-to-be-performed-for-each-release" title="Permalink">&para;</a></h2>
+<p>{info}In the examples below, it is assumed that the release name will be
+<strong>1.0.1</strong>, and that the current checked-in version name is <strong>1.0.1-SNAPSHOT</strong>
+and stored in the branch named <em>1.0.x</em>.{info}</p>
+<p>{code:none}
+svn copy -m "OpenJPA Release 1.0.1 branch" <br/>
+<a href="https://svn.apache.org/repos/asf/openjpa/branches/1.0.x">https://svn.apache.org/repos/asf/openjpa/branches/1.0.x</a> <br/>
+<a href="https://svn.apache.org/repos/asf/openjpa/branches/1.0.1">https://svn.apache.org/repos/asf/openjpa/branches/1.0.1</a></p>
+<pre><code>|| Monday, 12:02 | Check out a clean branch from which to build the
+</code></pre>
+<p>release: \
+{code:none}
+svn checkout <a href="https://svn.apache.org/repos/asf/openjpa/branches/1.0.1">https://svn.apache.org/repos/asf/openjpa/branches/1.0.1</a>
+cd 1.0.1</p>
+<p>{note}Make sure there is no space characters in the path to the build root subdirectory, i.e. "c:\OpenJPA 1.0.1 Release\build". See "<a href="#space-character-in-build-root-path.html">#Space Character in Build Root Path</a>
+"{note} ||</p>
+<p>{code:none}
+perl -pi -e
+"s;<version>1.0.1-SNAPSHOT</version>;<version>1.0.1</version>;g" <br/>
+pom.xml */pom.xml <em>/</em>/pom.xml</p>
+<pre><code>Update the {{&lt;scm.dir&gt;}} property in the top level pom.xml to the 1.0.1
+</code></pre>
+<p>release. <br/>
+Update the {{<developer>}} element in the top level pom.xml if new
+committers are added or removed. This applies to the 1.0.x branch only. ||
+|| Monday, 12:10 | Verify that LICENSE.txt contains up to date licenses for
+any dependencies which are included in our distribution.\ Any jars or
+source code which is included with the OpenJPA distribution that is not
+covered by the Apache license must be noted in LICENSE.txt. Two examples of
+this are the persistence and orm dtds (licensed under the CDDL) and Serp.
+If any new non Apache dependencies have been introduced they will have to
+be covered here as well. If any discrepancies are found update LICENSE.txt
+and commit the changes. \ ||
+|| Monday, 12:15 | Update BUILDING.txt, CHANGES.txt and RELEASE-NOTES.html
+\
+* BUILDING.txt should be included in the source tarball and contains
+instructions on how to build OpenJPA. Prior to shipping a release we should
+ensure that those instructions are accurate.
+* CHANGES.txt contains a text representation of all the changes which have
+been made since the preceding release. Most of the contents of this file
+can be generated through JIRA's release notes mechanism [here|http://issues.apache.org/jira/secure/ConfigureReleaseNote.jspa?projectId=12310351]
+* RELEASE-NOTES.html contains general information on the OpenJPA project as
+well as an html version of the changes since the preceding version. The
+html change log may also be generated via JIRA.\
+||
+|| Monday, 12:20 | Commit the POM changes \
+{code:none}
+svn commit -m "Updated to version 1.0.1 for the release"</developer></p>
+<p>{code:none}
+mvn clean install -Dtest=false</p>
+<pre><code>|| Monday, 12:23 | Now build the release locally, which will build and
+</code></pre>
+<p>test, run the Apache [Release Audit Tool|http://mojo.codehaus.org/rat-maven-plugin/]
+to verify license headers, generate the javadoc and docbook PDF and HTML,
+run through the JPA TCK, build the source and binariy assemblies in
+<em>target/site/downloads/</em>, and sign the release files. \
+{code:none}
+export MAVEN_OPTS=-Xmx1000m
+mvn --batch-mode deploy site \</p>
+<p>-Ptck-profile,examples-profile,license-verify-profile,javadoc-profile,docbook-profile,sign-release
+<br/>
+-Djava14.jar=${JAVA_HOME}/../../1.4/Classes/classes.jar <br/>
+-Dtck.zip=${HOME}/.m2/privaterepos/jpa-1_0b-tck.zip</p>
+<p>{note} The <em>examples-profile</em> has problem running automatically in this
+maven build task. You will need to run the examples manually. Run the maven
+command without the <em>examples-profile</em>, then perform the following steps
+to run the example:</p>
+<pre><code>mkdir openjpa-integration\examples\target\examples
+unzip target\site\downloads\apache-openjpa-1.0.1-binary.zip -d
+</code></pre>
+<p>openjpa-integration\examples\target\examples
+cd
+openjpa-integration\examples\target\examples\apache-openjpa-1.0.1\examples\hellojpa
+ant
+cd ..\relations
+ant
+cd ..\reversemapping
+ant</p>
+<p>{note} ||</p>
+<p>{code:none}
+gpg --multifile --verify target/site/downloads/*.asc</p>
+<pre><code>|| Monday, 13:01 | Upload the release candidate to [http://openjpa.apache.org/builds/1.0.1/downloads/]
+</code></pre>
+<p>: \
+{code:none}
+mvn site:deploy</p>
+<p>Bear in mind that uploads to
+<em>people.apache.org/www/openjpa.apache.org/builds/</em> are not visible at <a href="http://openjpa.apache.org/builds">http://openjpa.apache.org/builds</a>
+until after the hourly synchronization has taken place, as described at [http://www.apache.org/dev/project-site.html]
+.
+{warning}||</p>
+<table>
+<tr><th> Monday, 15:00 <td> Start a vote for the release on the [mailto:dev@openjpa.apache.org](mailto:dev@openjpa.apache.org.html)
+ mailing list. Votes made by committers and members of the OpenJPA project
+are considered binding for this vote. For an example of the mail, see [this archived 1.0.0 vote</td><td>http://www.nabble.com/-VOTE--Approve-OpenJPA-1.0.0-release-%284th-attempt%29-p12305349.html]
+ </td></th></tr>
+<tr><th> Tuesday, Wednesday <td> While waiting for the vote to complete, perform
+whatever manual review and testing on the release you deem appropriate. </td></th></tr>
+<p>{code:none}
+ssh people.apache.org
+cp -r /www/openjpa.apache.org/builds/1.0.1/downloads/*
+/www/www.apache.org/dist/openjpa/1.0.1
+chgrp -R openjpa /www/www.apache.org/dist/openjpa/1.0.1
+chmod -R g+w /www/www.apache.org/dist/openjpa/1.0.1</p>
+<pre><code>The OpenJPA binary release will be available via the link [http://www.apache.org/dyn/closer.cgi/openjpa/1.0.1/apache-openjpa-1.0.1-binary.zip]
+</code></pre>
+<p>after 24 hours, as per the [Apache mirroring information|http://apache.org/dev/mirrors.html]
+.
+{warning}||
+|| Thursday, 15:15 | Now that the release is locked down, convert the
+writeable 1.0.1 branch to a (du jure) read-only tag: \
+{code:none}
+svn mv -m "OpenJPA Release 1.0.1 tag" <br/>
+<a href="https://svn.apache.org/repos/asf/openjpa/branches/1.0.1">https://svn.apache.org/repos/asf/openjpa/branches/1.0.1</a> <br/>
+<a href="https://svn.apache.org/repos/asf/openjpa/tags/1.0.1">https://svn.apache.org/repos/asf/openjpa/tags/1.0.1</a></p>
+<p>{code:none}
+svn checkout <a href="https://svn.apache.org/repos/asf/openjpa/branches/1.0.x">https://svn.apache.org/repos/asf/openjpa/branches/1.0.x</a>
+cd 1.0.x
+perl -pi -e
+"s;<version>1.0.1-SNAPSHOT</version>;<version>1.0.2-SNAPSHOT</version>;g" <br/>
+pom.xml */pom.xml <em>/</em>/pom.xml
+svn commit -m "Updating version in branch to 1.0.2-SNAPSHOT"</p>
+<pre><code>|| Thursday, 15:20 | Update the [http://cwiki.apache.org/openjpa/downloads.html]
+</code></pre>
+<p>page with links to the download mirrors, using the existing entries as
+templates. {note}All artifacts (<em>apache-openjpa-1.0.1-binary.zip</em> and
+<em>apache-openjpa-1.0.1-source.zip</em>) <em>must</em> link to the mirrors, but
+signatures (<em>apache-openjpa-1.0.1-binary.zip.asc</em> and
+<em>apache-openjpa-1.0.1-source.zip.asc</em>) <em>must not</em> link to mirrors.{note}||
+|| Thursday, 15:30 | The documentation on the server-side must manually be
+extracted on <em>people.apache.org</em>, and the links at [http://openjpa.apache.org/documentation.html]
+need to be updated with the new versions and the "latest" documentation
+symbolic links need to be updated: \
+{code:none}
+cd /www/openjpa.apache.org/builds/1.0.1/
+unzip downloads/apache-openjpa-1.0.1-binary.zip
+rm /www/openjpa.apache.org/docs/latest
+ln -fvs ../builds/1.0.1/apache-openjpa-1.0.1/docs/
+/www/openjpa.apache.org/docs/latest</p>
+<table>
+<tr></tr>
+<p>{code:none}
+svn co
+<a href="http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-stage-plugin/">http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-stage-plugin/</a> <br/>
+/tmp/maven-stage-plugin
+mvn -f /tmp/maven-stage-plugin/pom.xml clean install
+for i in $(find openjpa-* -name m2-repository | egrep -v
+"openjpa-project|openjpa-integration|openjpa-examples"); do
+cd $i
+mvn stage:copy -Dsource=file://. \</p>
+<p>-Dtarget=scp://people.apache.org:/www/people.apache.org/repo/m2-ibiblio-rsync-repository
+<br/>
+-Dversion=1.0.1
+cd -
+done</p>
+<pre><code>This process requires Maven 2.0.5. It is currently quite delicate and
+</code></pre>
+<p>error-prone. Once the <em>maven-stage-plugin</em> is released, it should be
+possible to make it more automated.
+{warning}
+{info}
+Window/Cygwin user: See [#Merging local repository to remote repository in Cygwin/Windows]
+{info}
+{info}
+Linux users: You may need to change the '-Dsource=' option to read
+'-Dsource=file:{}'. The file://{} syntax may result in errors creating the
+wagon file with errors like: "Repository path
+/openjpa-jdbc-5/target/site/m2-repository does not exist, and cannot be
+created."
+{info}
+|| Thursday, 16:00 | Update the [JIRA versions | https://issues.apache.org/jira/secure/project/ManageVersions.jspa?pid=12310351]
+page to mark the version as "released", and set the date to the date that
+the release was approved. You may also need to make a new release entry for
+the subsequent release.||
+|| Friday, 16:00 | After the mirrors have had time to update (24 hours to
+be on the safe side), make a [news announcement|http://cwiki.apache.org/confluence/pages/createblogpost.action?spaceKey=openjpa]
+on the OpenJPA wiki. {note}Once the news item is made, it won't show up on
+the [front page|http://cwiki.apache.org/openjpa/]
+unless you make some minor edit to the containing page (e.g., adding a
+newline somewhere).{note} ||
+|| Friday, 16:05 | Make an announcement about the release on the [mailto:<a href="mailto:users@openjpa.apache.org">users@openjpa.apache.org</a>]
+list (and, for major releases, on the [mailto:<a href="mailto:announce@apache.org">announce@apache.org</a>]
+list as per [the Apache Announcement Mailing Lists page|http://www.apache.org/foundation/mailinglists.html#foundation-announce]
+). The announcement might look something like [this|http://www.nabble.com/-ANNOUNCE--Apache-OpenJPA-1.0.0-released-p12397604.html]
+. ||
+|| Friday, 16:10 | Make an announcement for the [freshmeat.net OpenJPA project|http://freshmeat.net/projects/openjpa/]
+(optional) ||
+|| Friday, 17:00 | Have a beer and enjoy your weekend while the world's
+grateful programmers revel in yet another high-quality release of Apache
+OpenJPA! ||</p>
+<pre><code>h2. One time setup
+
+These setup steps only need to be performed on a particular machine once.
+{info}Developers using Linux workstations can skip over the references to
+</code></pre>
+<p>PuTTY and Cygwin
+{info}</p>
+<pre><code>h3. Create and install a SSH key
+
+|| 1 | Install PuTTY ||
+|| 2a | Use ssh-keygen to create a SSH key.
+{info} See [Authenticating By Public Key (OpenSSH)|http://www.networknewz.com/networknewz-10-20030707AuthenticatingbyPublicKeyOpenSSH.html]
+</code></pre>
+<p>for a good description on why and how to perform this task.
+{info} ||
+|| 2b | In Windows platform, use PuttyGen to create a SSH key (see Putty
+help for details).
+{info}
+* Use "<em>SSH-2 DSA</em>" key type and <em>1024</em>-bit key size.
+* Copy the content of the "Public key for pasting...." and save it to a
+file named {{authorized_keys}} for later use.
+* The private key saved by PuTTYGen can only be used in Putty
+configuration.
+{info} ||
+|| 3 | {{pscp}} your SSH public key {{authorized_keys}} saved in last step
+to {{~/authorized_keys}} ||
+|| 4 | Use PuTTY to login to people.apache.org ||
+|| 5 | Create a {{~.ssh}} folder and change its file mode to 700.
+|| 6 | Move or append {{~/authorized_keys}} to {{~/.ssh/authorized_keys}}
+and change its file mode to 600.
+{info}
+* Each public key in the {{authorized_keys}} spans only one line.
+** For example: "{{ssh-dss AAAAB3NzaC1kc3MAAA ..... agBmmfZ9uAbSqA==
+dsa-key-20071107}}"
+* '#' in the first column is a comment line.
+{info} ||
+|| 7 | Configure putty to use your private key and save the session
+{info}
+Specify your private key in the "Connection -&gt; SSH -&gt; Auth" category in
+Putty configuration.
+{info}
+||</p>
+<pre><code>h3. Create a PGP key
+
+|| 1 | Install cgywin, including *Utils/gnupg* and *Net/openssh* packages, or install gpg from {{[http://www.gnupg.org/(en)/download/index.html]
+</code></pre>
+<p>}} ||
+|| 2 | Generate a key-pair with {{$ gpg --gen-key}} using default key kind
+("DSA and Elgamal") and ELG-E keys size (2048).
+{info}
+* The generated keys are stored in $HOME/.gnupg or %HOME%\Application
+Data\gnupg subdirectory.
+* Save the content in this subdirectory to a safe media. This contains your
+private key used to sign all the OpenJPA release materials.
+{info} ||
+|| 3 | Backup your cygwin home directory to another media ||
+|| 4 | Add your public key to {{[https://svn.apache.org/repos/asf/openjpa/site/docs/KEYS]
+}} and {{/www/www.apache.org/dist/openjpa/KEYS}}. See the commands describe
+at the beginning of this KEYS file to perform this task. The gpg key-pair
+is used to sign the published artifacts for the OpenJPA releases. ||
+|| 5 | Following the instructions in [http://people.apache.org/~henkp/trust/]
+and ask someone in the OpenJPA project to sign your public key. ||
+|| 6 | Submit your public key to a key server. E.g. [http://pgp.surfnet.nl:11371/]
+or [http://pgp.mit.edu/]
+||</p>
+<pre><code>h3. Update Maven settings for our servers
+
+|| 1 | Create a settings.xml under .m2 (in your Document and Settings
+</code></pre>
+<p>folder in Windows) ||
+| | {code:xml|title=settings.xml|borderStyle=solid}
+<settings xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://maven.apache.org/POM/4.0.0
+http://maven.apache.org/xsd/settings-1.0.0.xsd">
+<servers>
+<server>
+<id>people.apache.org</id>
+<username>$USERNAME</username>
+<privatekey>$PATH_TO_PRIVATE_KEY</privatekey>
+<directorypermissions>775</directorypermissions>
+<filepermissions>644</filepermissions>
+</server>
+</servers><br/>
+</settings></p>
+<p>{info}
+<em>$PATH_TO_PRIVATE_KEY</em> is the path to the private key generated for ssh.
+E.g. /home/yourLocalUserId/.ssh/id_dsa.
+{info} |</p>
+<p><a name="ReleasingOpenJPA1.0.xor1.1.x(OldSCPSteps)-ExposeacopyofknownhoststoMaven"></a></p>
+<h3 id="expose-a-copy-of-known-hosts-to-maven">Expose a copy of known hosts to Maven<a class="headerlink" href="#expose-a-copy-of-known-hosts-to-maven" title="Permalink">&para;</a></h3>
+<table>
+<tr><th> 1 <td> From cygwin, ssh to people.apache.org, save the public key if
+prompted, and exit </td></th></tr>
+<tr><td> </td><td> cygwin will save the known hosts to your *\~/.ssh* folder, but the
+script cannot access it there (from Windows) </td></tr>
+<tr><th> 2 <td> From cygwin (not Windows) create another *.ssh* folder at (?) </td></th></tr>
+<tr><th> 3 <td> Copy the *known_hosts* file to the new *.ssh* folder </td></th></tr>
+</table>
+<p><a name="ReleasingOpenJPA1.0.xor1.1.x(OldSCPSteps)-Troubleshooting"></a></p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink">&para;</a></h2>
+<p><a name="ReleasingOpenJPA1.0.xor1.1.x(OldSCPSteps)-SpaceCharacterinBuildRootPath"></a></p>
+<h3 id="space-character-in-build-root-path">Space Character in Build Root Path<a class="headerlink" href="#space-character-in-build-root-path" title="Permalink">&para;</a></h3>
+<table>
+<tr><th> Description <td> If there are spaces in the path to the build root
+subdirectory, the maven task uses to generate the revision number for the
+org.apache.openjpa.revision.properties yields incorrect data. For example:
+</td></th></tr>
+<div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeHeader panelHeader" style="border-bottom-width: 1px;border-bottom-style: solid;"><b>org.apache.openjpa.revision.properties|borderStyle=solid</b></div><div class="codeContent panelContent">
+    revision.number=Type 'svnversion --help' for usage.
+    openjpa.version=1.0.1
+<table>
+<tr><th> Solution <td> Rename the path and remove all spaces. </td></th></tr>
+</table>
+<p><a name="ReleasingOpenJPA1.0.xor1.1.x(OldSCPSteps)-MerginglocalrepositorytoremoterepositoryinCygwin/Windows"></a></p>
+<h3 id="merging-local-repository-to-remote-repository-in-cygwinwindows">Merging local repository to remote repository in Cygwin/Windows<a class="headerlink" href="#merging-local-repository-to-remote-repository-in-cygwinwindows" title="Permalink">&para;</a></h3>
+<table>
+<tr><th> Description <td> The "maven-stage-plugin" is very sensitive to the
+parameters being passed to it, i.e. the source and target URL properties.
+When this plugin is used under Cygwin, make sure the following practices
+are used:
+</td></th></tr>
+<p>Problem symptom:</p>
+<pre><code>$ find . -name m2-repository -not -path "*openjpa-project*" \
+    -exec mvn -f "c:/tmp/maven-stage-plugin/pom.xml" stage:copy \
+    -Dsource=file://{}
+</code></pre>
+<h2 id="-dtargetscpallee8285peopleapacheorgwwwpeopleapacheorgrepom2-ibiblio-rsync-repository-dversion101-info-scanning-for-projects-info-searching-repository-for-plugin-with-prefix-stage-info-downloading-file-from-the-source-repository-info">-Dtarget=scp://allee8285@people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
+<br/>
+-Dversion=1.0.1 ;
+[INFO]
+Scanning for projects...
+[INFO]
+Searching repository for plugin with prefix: 'stage'.
+........
+[INFO]
+Downloading file from the source repository:
+[INFO]<a class="headerlink" href="#-dtargetscpallee8285peopleapacheorgwwwpeopleapacheorgrepom2-ibiblio-rsync-repository-dversion101-info-scanning-for-projects-info-searching-repository-for-plugin-with-prefix-stage-info-downloading-file-from-the-source-repository-info" title="Permalink">&para;</a></h2>
+<pre><code>[ERROR]
+</code></pre>
+<h2 id="build-error-info">BUILD ERROR
+[INFO]<a class="headerlink" href="#build-error-info" title="Permalink">&para;</a></h2>
+<pre><code>[INFO]
+</code></pre>
+<p>Error copying repository from
+file://./openjpa-all/target/site/m2-repository to \</p>
+<p>scp://allee8285@people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository</p>
+<ul>
+<li>
+<p>Quote and use the drive name in the path.
+Problem symptom:</p>
+<p>$ find /cygdrive/c/OpenJPA.1.0.1.Release/1.0.1 -name m2-repository -not
+-path "<em>openjpa-project</em>" <br/>
+-exec mvn -f /cygwin/c/tmp/maven-stage-plugin/pom.xml stage:copy <br/>
+-Dsource=file://{}
+-Dtarget=scp://allee8285@people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
+<br/>
+-Dversion=1.0.1 ;
+[INFO]
+Scanning for projects...
+[INFO]
+Searching repository for plugin with prefix: 'stage'.
+........
+[INFO]
+Downloading file from the source repository:
+[INFO]</p>
+</li>
+</ul>
+<hr/>
+<pre><code>[ERROR]
+</code></pre>
+<h2 id="build-error-info_1">BUILD ERROR
+[INFO]<a class="headerlink" href="#build-error-info_1" title="Permalink">&para;</a></h2>
+<pre><code>[INFO]
+</code></pre>
+<p>Error copying repository from
+file:///cygdrive/c/OpenJPA.1.0.1.Release/1.0.1/openjpa-all/target/site/m2-repository
+to</p>
+<p>scp://allee8285@people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository</p>
+<pre><code>Embedded error: Could not read from file:
+</code></pre>
+<p>c:\cygdrive\c\OpenJPA.1.0.1.Release\1.0.1\openjpa-all\target\site\m2-repository
+\cygdrive\c\OpenJPA.1.0.1.Release\1.0.1\openjpa-all\target\site\m2-repository
+(Access is denied.)</p>
+<ul>
+<li>
+<p>Specify the people.apache.org user id in the target property.
+Problem symptom:</p>
+<p>$ find "c:/OpenJPA.1.0.1.Release/1.0.1" -name m2-repository -not -path
+"<em>openjpa-project</em>" <br/>
+-exec mvn -f "c:/tmp/maven-stage-plugin/pom.xml" stage:copy
+-Dsource=file://{}
+-Dtarget=scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
+<br/>
+-Dversion=1.0.1 ;
+[INFO]
+Scanning for projects...
+[INFO]
+Searching repository for plugin with prefix: 'stage'.
+[INFO]</p>
+</li>
+</ul>
+<hr/>
+<pre><code>........
+[INFO]
+</code></pre>
+<h2 id="downloading-file-from-the-source-repository-orgapacheopenjpaopenjpamaven-metadataxmlsha1-info-downloading-metadata-from-the-target-repository-password-password-info">Downloading file from the source repository:
+/org/apache/openjpa/openjpa/maven-metadata.xml.sha1
+[INFO]
+Downloading metadata from the target repository.
+Password:: *********
+........
+Password:: *********
+[INFO]<a class="headerlink" href="#downloading-file-from-the-source-repository-orgapacheopenjpaopenjpamaven-metadataxmlsha1-info-downloading-metadata-from-the-target-repository-password-password-info" title="Permalink">&para;</a></h2>
+<pre><code>[ERROR]
+</code></pre>
+<h2 id="build-error-info_2">BUILD ERROR
+[INFO]<a class="headerlink" href="#build-error-info_2" title="Permalink">&para;</a></h2>
+<pre><code>[INFO]
+</code></pre>
+<p>Error copying repository from
+file://c:/OpenJPA.1.0.1.Release/1.0.1/openjpa-all/target/site/m2-repository
+to \</p>
+<p>scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository</p>
+<table>
+<tr><th> Solution <td> As recommended in the descriptions.
+</td></th></tr>
+{note}For example:
+<pre><code>find "c:/OpenJPA.1.0.1.Release/1.0.1" -name m2-repository -not -path "*openjpa-project*" \
+    -exec mvn -f "c:/tmp/maven-stage-plugin/pom.xml" stage:copy \
+    -Dsource=file://{} \
+    -Dtarget=scp://allee8285@people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository \
+    -Dversion=1.0.1 \;
+</code></pre>
+<p><a name="ReleasingOpenJPA1.0.xor1.1.x(OldSCPSteps)-Cygwin/WindowsFilePath"></a></p>
+<h3 id="cygwinwindows-file-path">Cygwin/Windows File Path<a class="headerlink" href="#cygwinwindows-file-path" title="Permalink">&para;</a></h3>
+<table>
+<tr><th> Description <td> For Cygwin/Windows user: file and folder path names using
+drive identifier (e.g. *C:\OpenJPA Release\1.0.1\* ) in commands can be
+expressed as */cygwin/c/OpenJPA Release/1.0.1/*. This form of path name
+specification may have inconsistent and undesirable behaviors.</td></th></tr>
+<tr><th> Solution <td> Consistently use the following naming conventions:
+</td></th></tr>
+* Continue to use the Windows form of path name, e.g. *C:\a\b\c*
+* Use *'/'* instead of *'\'* character as file separator, e.g.
+*C:/a/b/c*
+* Quote all path name using *'"'* character, e.g. "*C:/a/b/c*"
+* Avoid using space characters in path name, e.g.
+"*C:/OpenJPA.Release/1.0.1*"
+ ||
+</table>
+<p>&lt;a name="ReleasingOpenJPA1.0.xor1.1.x(OldSCPSteps)-"Toomanyunapprovedlicenses:""&gt;</p>
+<h3 id="too-many-unapproved-licenses">"Too many unapproved licenses:"<a class="headerlink" href="#too-many-unapproved-licenses" title="Permalink">&para;</a></h3>
+<table>
+<tr><th> Description <td> Encounter the "Too many unapproved licenses:" message
+while running the "license-verify-profile" profile in "{{mvn deploy
+site...}}" step. This is caused by extra artifacts in the build tree that
+the license verification plugin does not recognized. Examples of these
+artifacts are:
+</td></th></tr>
+1. Eclipse control files, .classpath, .project
+1. User created log files ||
+<tr><th> Solution <td> Avoid the followings:
+</td></th></tr>
+1. Don't use Eclipse's svn plugin to "Check out" files to a Eclipse project.
+Simply use the svn command, as described in the release instructions.
+1. Don't create, directly or indirectly, any files under the release build
+tree.
+ ||
+</table>
+<p><a name="ReleasingOpenJPA1.0.xor1.1.x(OldSCPSteps)-Resources"></a></p>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permalink">&para;</a></h2>
+<ul>
+<li>Apache Apache <a href="http://www.apache.org/dev/release.html">Release FAQ</a></li>
+<li><a href="http://apache.org/dev/release-signing.html">Signing Releases</a></li>
+<li><a href="http://wiki.wsmoak.net/cgi-bin/wiki.pl?ReleaseSigning">Wendy's notes on Release Signing</a></li>
+<li>Apache <a href="http://apache.org/dev/mirrors.html">Mirroring Guidelines</a></li>
+<li>Struts <a href="http://cwiki.apache.org/WW/creating-and-signing-a-distribution.html">Release Instructions</a>
+(upon which these instructions are based)</li>
+</ul>
+</table></table></div></div></table></table></table>
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

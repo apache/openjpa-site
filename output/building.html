@@ -1,0 +1,750 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- Building" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- Building</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="Building"></a></p>
+<p><a name="Building-Contents"></a></p>
+<h1 id="contents">Contents<a class="headerlink" href="#contents" title="Permalink">&para;</a></h1>
+<ul>
+<li>
+<p><a href="#Building-BuildingOpenJPA">Building OpenJPA</a></p>
+<ul>
+<li>
+<p><a href="#Building-Maven">Maven</a></p>
+<ul>
+<li>
+<p><a href="#Building-CommandLineBuilds">Command Line Builds</a></p>
+</li>
+<li>
+<p><a href="#Building-ExecutingvariousMavenbuildtasks">Executing various Maven build tasks</a></p>
+<ul>
+<li><a href="#Building-RunningjusttheTestPersistencetestcase">Running just the "TestPersistence" test case</a></li>
+<li><a href="#Building-RunningtestswithJava2securityenabled">Running tests with Java 2 security enabled</a></li>
+<li><a href="#Building-Buildingandrunningonlytheexamplesincludedinthedistribution">Building and running only the examples included in the distribution</a></li>
+<li><a href="#Building-Buildingjustthejavadoc">Building just the javadoc</a></li>
+<li><a href="#Building-Buildingjustthedocbookdocumentation">Building just the docbook documentation</a></li>
+<li><a href="#Building-BuildingwithJDK1.4moduleverification(onlyforversionsofOpenJPApriortosvnrevision640685)">Building with JDK 1.4 module verification (only for versions of OpenJPA prior to svn revision 640685)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#Building-EclipsewithCommand-lineMavenutilities">Eclipse with Command-line Maven utilities</a></p>
+</li>
+<li>
+<p><a href="#Building-EclipsewithM2Eclipseplugin">Eclipse with M2Eclipse plugin</a></p>
+</li>
+<li>
+<p><a href="#Building-Common2.xBuildProblems">Common 2.x Build Problems</a></p>
+<ul>
+<li><a href="#Building-WrongMavenLevel">Wrong Maven Level</a></li>
+<li><a href="#Building-WrongJavaLevel">Wrong Java Level</a></li>
+<li><a href="#Building-MissingLicenseHeaders">Missing License Headers</a></li>
+<li><a href="#Building-CheckstyleFailure">Checkstyle failed due to System.out/err.print</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a name="Building-BuildingOpenJPA"></a></p>
+<h1 id="building-openjpa">Building OpenJPA<a class="headerlink" href="#building-openjpa" title="Permalink">&para;</a></h1>
+<p>See <a href="build-and-runtime-dependencies.html">Build and Runtime Dependencies</a>
+for details on the required Java levels.</p>
+<p><a name="Building-Maven"></a></p>
+<h2 id="maven">Maven<a class="headerlink" href="#maven" title="Permalink">&para;</a></h2>
+<p><a name="Building-CommandLineBuilds"></a></p>
+<h3 id="command-line-builds">Command Line Builds<a class="headerlink" href="#command-line-builds" title="Permalink">&para;</a></h3>
+<p>These instructions describe how to check out the current OpenJPA source
+code (from the Subversion source code management repository) and build it
+(using the Apache Maven 2 build tool). They are written for use from the
+console, and are known to work on Linux, Mac OSX and Windows.</p>
+<ol>
+<li>
+<p>Ensure that you have Java installed and in your path by running: <code>java -fullversion</code></p>
+</li>
+<li>
+<p>Set following maven options to avoid out of memory error:</p>
+<p>set MAVEN_OPTS="-XX:MaxPermSize=128m -Xms512m -Xmx1024m"</p>
+</li>
+<li>
+<p>Install the build tool, Apache Maven 2.2.1 or later, from
+<a href="http://maven.apache.org/">http://maven.apache.org/</a>. If it is installed correctly, typing <em>mvn -v</em>
+from the console will result in text like <code>Apache Maven 2.2.1 (r801777; 2009-08-06 21:16:01+0200)</code></p>
+</li>
+<li>
+<p>Install Subversion v1.4.x or newer from <a href="http://subversion.apache.org/">http://subversion.apache.org/</a>.
+If it is installed correctly, typing the following command should output
+help information: <strong>svn help</strong> or <strong>svn --version</strong></p>
+</li>
+<li>
+<p>Create a new directory you want to do your work in, then change to that
+directory from the console.</p>
+</li>
+<li>
+<p>Check out the sources by running: <code>svn co</code>
+<a href="https://svn.apache.org/repos/asf/openjpa/trunk">https://svn.apache.org/repos/asf/openjpa/trunk</a> <code>openjpa-trunk</code>. It will
+check out the sources to the openjpa-trunk directory. More information on
+checking out the OpenJPA sources can be found on the <a href="source-code.html">Source Code</a>
+page.</p>
+</li>
+<li>
+<p>Change to the openjpa-trunk directory, which has already been created in
+the previous step.</p>
+</li>
+<li>
+<p>Build OpenJPA by running: <code>mvn package</code> or better <code>mvn install</code>. The
+first time you run the build, many dependencies are automatically resolved
+and downloaded. <strong>It is common for dependency downloading to fail the first
+time, which will fail the build.</strong> If any of these dependency downloads
+fail, just re-run the command. You may also add the following to your
+<code>~/.m2/setting.xml</code> file (see <a href="http://maven.apache.org/guides/mini/guide-mirror-settings.html">http://maven.apache.org/guides/mini/guide-mirror-settings.html</a>)</p>
+<pre><code> &lt;settings&gt;
+     &lt;mirrors&gt;
+         &lt;mirror&gt;
+             &lt;id&gt;repo.mergere.com&lt;/id&gt;
+             &lt;url&gt;http://repo.mergere.com/maven2&lt;/url&gt;
+             &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+         &lt;/mirror&gt;
+     &lt;/mirrors&gt;
+ &lt;/settings&gt;
+</code></pre>
+</li>
+</ol>
+<p>If any tests fail, and you want to ignore the failures, instead run:</p>
+<pre><code>mvn package -DfailIfNoTests=false
+
+  or
+
+mvn package -DskipTests
+</code></pre>
+<p>An example session is as follows:</p>
+<pre><code>$ cd /tmp/
+
+$ java -version
+
+java version "1.6.0"
+Java(TM) SE Runtime Environment (build 1.6.0-b105)
+Java HotSpot(TM) Client VM (build 1.6.0-b105, mixed mode, sharing)
+
+$ mvn -v
+
+Apache Maven 2.2.1 (r801777; 2009-08-06 21:16:01+0200)
+Java version: 1.6.0
+Java home: /alt/sun160/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux" version: "2.6.18-1.2798.fc6" arch: "i386" Family: "unix"
+
+$ svn --version
+
+svn, version 1.4.3 (r23084)
+   compiled Jan 18 2007, 07:47:40
+
+$ svn co https://svn.apache.org/repos/asf/openjpa/trunk/
+
+A  trunk/openjpa-lib
+A  trunk/openjpa-lib/src
+A  trunk/openjpa-lib/src/test
+A  trunk/openjpa-lib/src/test/java
+A  trunk/openjpa-lib/src/test/java/org
+A  trunk/openjpa-lib/src/test/java/org/apache
+A  trunk/openjpa-lib/src/test/java/org/apache/openjpa
+A  trunk/openjpa-lib/src/test/java/org/apache/openjpa/lib
+A  trunk/openjpa-lib/src/test/java/org/apache/openjpa/lib/test
+A  trunk/openjpa-lib/src/test/java/org/apache/openjpa/lib/test/AbstractTestCase.java
+
+ ...
+
+A  trunk/openjpa-persistence/pom.xml
+Checked out revision 1065345.
+
+$ cd trunk/
+
+$ mvn compile
+
+[INFO] Scanning for projects...
+[INFO] Reactor build order: 
+[INFO]   OpenJPA Parent POM
+[INFO]   OpenJPA Utilities Library
+[INFO]   OpenJPA Kernel
+[INFO]   OpenJPA JDBC
+[INFO]   OpenJPA Persistence
+[INFO]   OpenJPA Persistence JDBC
+[INFO]   OpenJPA Persistence Locking Tests
+[INFO]   OpenJPA XML Store
+[INFO]   OpenJPA Slice
+[INFO]   OpenJPA JEST
+[INFO]   OpenJPA Aggregate Jar
+[INFO]   OpenJPA Aggregate Jar with Dependencies
+[INFO]   OpenJPA Project Docs and Assemblies
+[INFO]   OpenJPA Examples
+[INFO]   OpenJPA Examples - Simple
+[INFO]   OpenJPA Examples - image-gallery
+[INFO]   OpenJPA Examples - OpenBooks
+[INFO]   OpenJPA Integration Tests
+[INFO]   OpenJPA Integration Tests - Daytrader
+[INFO]   OpenJPA Integration Tests - Examples
+[INFO]   OpenJPA Integration Tests - SLF4JLogFactory
+[INFO]   OpenJPA Integration Tests - JPA TCK
+[INFO]   OpenJPA Integration Tests - Bean Validation
+[INFO]   OpenJPA Integration Tests - JMX Platform MBeans
+[INFO] ------------------------------------------------------------------------
+[INFO] Building OpenJPA Parent POM
+[INFO]    task-segment: [compile]
+[INFO] ------------------------------------------------------------------------
+
+ ...
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] ------------------------------------------------------------------------
+[INFO] OpenJPA Parent POM .................................... SUCCESS [1:23.143s]
+[INFO] OpenJPA Utilities Library ............................. SUCCESS [13.749s]
+[INFO] OpenJPA Kernel ........................................ SUCCESS [19.251s]
+[INFO] OpenJPA JDBC .......................................... SUCCESS [14.351s]
+[INFO] OpenJPA Persistence ................................... SUCCESS [10.254s]
+[INFO] OpenJPA Persistence JDBC .............................. SUCCESS [46.774s]
+[INFO] OpenJPA Persistence Locking Tests ..................... SUCCESS [15.183s]
+[INFO] OpenJPA XML Store ..................................... SUCCESS [11.788s]
+[INFO] OpenJPA Slice ......................................... SUCCESS [4.437s]
+[INFO] OpenJPA JEST .......................................... SUCCESS [4.854s]
+[INFO] OpenJPA Aggregate Jar ................................. SUCCESS [10.729s]
+[INFO] OpenJPA Aggregate Jar with Dependencies ............... SUCCESS [6.761s]
+[INFO] OpenJPA Project Docs and Assemblies ................... SUCCESS [1:41.937s]
+[INFO] OpenJPA Examples ...................................... SUCCESS [0.663s]
+[INFO] OpenJPA Examples - Simple ............................. SUCCESS [1.475s]
+[INFO] OpenJPA Examples - image-gallery ...................... SUCCESS [3.920s]
+[INFO] OpenJPA Examples - OpenBooks .......................... SUCCESS [12.961s]
+[INFO] OpenJPA Integration Tests ............................. SUCCESS [0.381s]
+[INFO] OpenJPA Integration Tests - Daytrader ................. SUCCESS [7.565s]
+[INFO] OpenJPA Integration Tests - Examples .................. SUCCESS [0.269s]
+[INFO] OpenJPA Integration Tests - SLF4JLogFactory ........... SUCCESS [1.977s]
+[INFO] OpenJPA Integration Tests - JPA TCK ................... SUCCESS [0.248s]
+[INFO] OpenJPA Integration Tests - Bean Validation ........... SUCCESS [3.213s]
+[INFO] OpenJPA Integration Tests - JMX Platform MBeans ....... SUCCESS [7.729s]
+[INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESSFUL
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6 minutes 26 seconds
+[INFO] Finished at: Sun Jan 30 19:43:50 CET 2011
+[INFO] Final Memory: 92M/158M
+[INFO] ------------------------------------------------------------------------
+
+
+$ mvn package -DskipTests
+
+[INFO] Scanning for projects...
+
+...
+
+[INFO] Building zip:/tmp/trunk/openjpa-project/target/site/downloads/apache-openjpa-2.2.0-SNAPSHOT-binary.zip
+
+... 
+
+$ ls -lh openjpa-project/target/site/downloads/
+
+total 40M
+-rw-r--r-- 1 milosz milosz 15M Jan 30 19:41 apache-openjpa-2.2.0-SNAPSHOT-binary.zip
+-rw-r--r-- 1 milosz milosz 25M Jan 30 19:43 apache-openjpa-2.2.0-SNAPSHOT-source.zip
+</code></pre>
+<p><a name="Building-ExecutingvariousMavenbuildtasks"></a></p>
+<h3 id="executing-various-maven-build-tasks">Executing various Maven build tasks<a class="headerlink" href="#executing-various-maven-build-tasks" title="Permalink">&para;</a></h3>
+<p><a name="Building-RunningjusttheTestPersistencetestcase"></a></p>
+<h5>Running just the "TestPersistence" test case</h5>
+<pre><code>mvn test -Dtest=TestPersistence
+</code></pre>
+<p><a name="Building-RunningtestswithJava2securityenabled"></a></p>
+<h5>Running tests with Java 2 security enabled</h5>
+<pre><code>mvn test -Penable-security
+</code></pre>
+<p><a name="Building-Buildingandrunningonlytheexamplesincludedinthedistribution"></a></p>
+<h5>Building and running only the examples included in the distribution</h5>
+<pre><code>mvn -DskipTests -Pexamples-profile integration-test
+</code></pre>
+<p><a name="Building-Buildingjustthejavadoc"></a></p>
+<h5>Building just the javadoc</h5>
+<p>First install the jars:</p>
+<pre><code>mvn install -DskipTests
+</code></pre>
+<p>Then build the javadoc:</p>
+<pre><code>mvn package -DskipTests -Pjavadoc-profile
+</code></pre>
+<p>The javadoc will be output to <em>target/site/apidocs/index.html</em>.</p>
+<p><a name="Building-Buildingjustthedocbookdocumentation"></a></p>
+<h5>Building just the docbook documentation</h5>
+<pre><code>set MAVEN_OPTS=-Xmx512m
+mvn -f openjpa-project/pom.xml process-resources -Pdocbook-profile
+</code></pre>
+<p>The manual HTML will be output to <code>openjpa-project/target/manual/manual.html</code>.</p>
+<p><a name="Building-BuildingwithJDK1.4moduleverification(onlyforversionsofOpenJPApriortosvnrevision640685)"></a></p>
+<h5>Building with JDK 1.4 module verification (only for versions of OpenJPA prior to svn revision 640685)</h5>
+<pre><code>mvn compile -Djava14.jar=C:\Program Files\Java\j2re1.4.2_07\lib\rt.jar compile
+</code></pre>
+<p>Specifying the "java14.jar" system property will cause the
+JDK-1.4-dependent modules to be compiled with the value as the
+bootclasspath to the compiler. This can be useful to ensure that
+modifications and additions do not violate the JDK version restriction of
+the module. Since the runtime jar location is platform, version, and
+installation dependent, the exact location of the runtime jar will vary,
+which is why it needs to be manually specified.</p>
+<p><a name="Building-EclipsewithCommand-lineMavenutilities"></a></p>
+<h2 id="eclipse-with-command-line-maven-utilities">Eclipse with Command-line Maven utilities<a class="headerlink" href="#eclipse-with-command-line-maven-utilities" title="Permalink">&para;</a></h2>
+<ol>
+<li>
+<p>Checkout the source as described above</p>
+</li>
+<li>
+<p>Build the source using Maven as described above</p>
+</li>
+<li>
+<p>Create the Eclipse Metadata -</p>
+<pre><code> mvn eclipse:eclipse
+</code></pre>
+<ol>
+<li>
+<p>If this is the first project in your workspace to use maven artifacts you need to create a classpath variable named M2_REPO which contains the full path to your local repository. The eclipse plugin can do this for you with the following command</p>
+<pre><code> mvn eclipse:configure-workspace -Declipse.workspace=${path to your workspace} 
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Start Eclipse (3.2 - 3.4 SR2 are known to work) and create a new
+workspace</p>
+</li>
+<li>
+<p>Import the OpenJPA projects, by:</p>
+<ul>
+<li>Select File --&gt; Import... --&gt; General - Existing Projects into Workspace --&gt; Next</li>
+<li>Select root directory = <svn above="" checkout="" location=""></svn></li>
+<li>Deselect the openjpa-examples project</li>
+<li>Press Finish</li>
+</ul>
+</li>
+<li>
+<p>A few fixups will be required to remove the errors that exist in the
+imported projects...</p>
+<ul>
+<li>
+<p>openjpa-kernel -&gt; Properties -&gt; Java Build Path -&gt; Source -&gt; Add Folders</p>
+<ul>
+<li>add target/generated-sources/javacc</li>
+</ul>
+</li>
+<li>
+<p>openjpa-jdbc -&gt; Properties -&gt; Java Build Path -&gt; Libraries -&gt; JRE System Library -&gt; Edit</p>
+<ul>
+<li>change this to a Java 6 JRE to remove these errors (see below if you can not use Java SE 6)</li>
+</ul>
+</li>
+<li>
+<p>openjpa-persistence -&gt; Properties -&gt; Java Build Path -&gt; Libraries -&gt; JRE System Library -&gt; Edit</p>
+<ul>
+<li>change this to a Java 6 JRE to remove these errors (see below if you
+can not use Java SE 6)</li>
+</ul>
+</li>
+<li>
+<p>openjpa-persistence-jdbc -&gt; Properties -&gt; Java Build Path -&gt; Libraries
+-&gt; JRE System Library -&gt; Edit</p>
+<ul>
+<li>change this to a Java 6 JRE to remove these errors (see below if you
+can not use Java SE 6)</li>
+</ul>
+</li>
+<li>
+<p>openjpa-examples.  Open up src/main/java and select ReverseMapping
+folder.  Right mouse click.</p>
+<ul>
+<li>Select Build Path -&gt; Exclude</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>For each imported project, you'll need to edit the build properties to
+remove an incorrect dependency:</p>
+<ul>
+<li>Project --&gt; Properties --&gt; Java Build Path --&gt; Source</li>
+<li>Remove openjpa-project from the list of source folders</li>
+</ul>
+</li>
+</ol>
+<p>For Java SE 5 users building from the 2.0.x branch, you will need to
+exclude some Java SE 6 specific classes by performing the following steps
+for the source:</p>
+<ol>
+<li>
+<p>Open the Properties for openjpa-persistence</p>
+</li>
+<li>
+<p>Select Java Build Path --&gt; Source</p>
+</li>
+<li>
+<p>Edit the openjpa-persistence/src/main/java --&gt; Excluded setting to
+include the following:</p>
+<pre><code> org/apache/openjpa/persistence/meta/AnnotationProcessor6.java
+ org/apache/openjpa/persistence/meta/CompileTimeLogger.java
+ org/apache/openjpa/persistence/meta/SourceAnnotationHandler.java
+</code></pre>
+</li>
+</ol>
+<p><a name="Building-EclipsewithM2Eclipseplugin"></a></p>
+<h2 id="eclipse-with-m2eclipse-plugin">Eclipse with M2Eclipse plugin<a class="headerlink" href="#eclipse-with-m2eclipse-plugin" title="Permalink">&para;</a></h2>
+<ol>
+<li>
+<p>Checkout the source as described above</p>
+</li>
+<li>
+<p>Build the source using Maven as described above</p>
+</li>
+<li>
+<p>Start Eclipse (3.5 Galileo is recommended) and create a new workspace</p>
+</li>
+<li>
+<p>Good references for this M2Eclipse plugin (need to install the plugin
+into your Eclipse environment)</p>
+<ul>
+<li><a href="http://m2eclipse.codehaus.org/">http://m2eclipse.codehaus.org/</a></li>
+<li><a href="http://docs.codehaus.org/display/M2ECLIPSE/Home">http://docs.codehaus.org/display/M2ECLIPSE/Home</a></li>
+<li><a href="http://www.theserverside.com/tt/articles/article.tss?l=Introductiontom2eclipse">http://www.theserverside.com/tt/articles/article.tss?l=Introductiontom2eclipse</a></li>
+</ul>
+</li>
+<li>
+<p>Import the OpenJPA projects, by:</p>
+<ul>
+<li>Select File --&gt; Import... --&gt; General -&gt; Maven Projects --&gt; Next</li>
+<li>Select root directory = <svn above="" checkout="" location=""></svn></li>
+<li>All of the pom.xml files should be pre-selected for the svn checkout
+location</li>
+<li>You can affect the naming convention used for the generated Eclipse projects (one for each Maven module).  Click on Advanced and fill in the Name Template field.  I prefer "TRUNK-[artifactId](artifactid.html)
+" since it helps with workspace organization, but it's your choice.</li>
+<li>Press Finish</li>
+<li><strong>Note:</strong>  You may get a popup internal error at the end of this Import
+processing.  Not sure what the problem is, but it doesn't seem to affect
+the usage.</li>
+</ul>
+</li>
+<li>
+<p>A few fixups will be required to remove the errors that exist in the
+imported projects...</p>
+<ul>
+<li>openjpa-kernel -&gt; Properties -&gt; Java Build Path -&gt; Source -&gt; Add Folders
+<ul>
+<li>add target/generated-sources/javacc</li>
+</ul>
+</li>
+<li>openjpa-jdbc -&gt; Properties -&gt; Java Build Path -&gt; Libraries -&gt; JRE System
+Library -&gt; Edit
+<ul>
+<li>change this to a Java 6 JRE to remove these errors (see below if you
+can not use Java SE 6)</li>
+</ul>
+</li>
+<li>openjpa-persistence -&gt; Properties -&gt; Java Build Path -&gt; Libraries -&gt; JRE
+System Library -&gt; Edit
+<ul>
+<li>change this to a Java 6 JRE to remove these errors (see below if you
+can not use Java SE 6)</li>
+</ul>
+</li>
+<li>openjpa-persistence-jdbc -&gt; Properties -&gt; Java Build Path -&gt; Libraries
+-&gt; JRE System Library -&gt; Edit
+<ul>
+<li>change this to a Java 6 JRE to remove these errors (see below if you
+can not use Java SE 6)</li>
+</ul>
+</li>
+<li>openjpa-examples.  Open up src/main/java and select ReverseMapping
+folder.  Right mouse click.
+<ul>
+<li>Select Build Path -&gt; Exclude</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>For Java SE 5 users building from the 2.0.x branch, you will need to
+exclude some Java SE 6 specific classes by performing the following steps
+for the source:</p>
+<ol>
+<li>
+<p>Open the Properties for BR20-openjpa-persistence (or whatever your naming
+convention is)</p>
+</li>
+<li>
+<p>Select Java Build Path --&gt; Source</p>
+</li>
+<li>
+<p>Edit the openjpa-persistence/src/main/java --&gt; Excluded setting to
+include the following:</p>
+<pre><code> org/apache/openjpa/persistence/meta/AnnotationProcessor6.java
+ org/apache/openjpa/persistence/meta/CompileTimeLogger.java
+ org/apache/openjpa/persistence/meta/SourceAnnotationHandler.java
+</code></pre>
+</li>
+</ol>
+<p><a name="Building-Common2.xBuildProblems"></a></p>
+<h2 id="common-2x-build-problems">Common 2.x Build Problems<a class="headerlink" href="#common-2x-build-problems" title="Permalink">&para;</a></h2>
+<p><a name="Building-CheckstyleFailure"></a></p>
+<h3 id="checkstyle-failure-due-to-systemoutprint-or-systemerrprint">Checkstyle failure due to System.out.print or System.err.print<a class="headerlink" href="#checkstyle-failure-due-to-systemoutprint-or-systemerrprint" title="Permalink">&para;</a></h3>
+<p>Changes were added to build so that the build will fail if there are any calls to System.out/err.print(ln).
+This was done to force people to use the proper logging facilities. If there is an honest reason that
+you need to have System.out/err.print in your code, you can use the following comments to turn the
+checkstyle scanner off, then back on again.</p>
+<pre><code>// START - ALLOW PRINT STATEMENTS
+System.err.println("This needs to be here!");
+// STOP - ALLOW PRINT STATEMENTS
+</code></pre>
+<p><a name="Building-WrongMavenLevel"></a></p>
+<h3 id="wrong-maven-level">Wrong Maven Level<a class="headerlink" href="#wrong-maven-level" title="Permalink">&para;</a></h3>
+<p>Example Maven output -</p>
+<pre><code>[INFO] [enforcer:enforce {execution: default}]
+[WARNING] Rule 0: org.apache.maven.plugins.enforcer.RequireMavenVersion failed with message:
+Detected Maven Version: 2.0.10 is not in the allowed range [2.2.1,).
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD ERROR
+[INFO] ------------------------------------------------------------------------
+[INFO] Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed.
+</code></pre>
+<p>Solution - Upgrade to Maven 2.2.1 or later</p>
+<p><a name="Building-WrongJavaLevel"></a></p>
+<h3 id="wrong-java-level">Wrong Java Level<a class="headerlink" href="#wrong-java-level" title="Permalink">&para;</a></h3>
+<p>Example Maven output -</p>
+<pre><code>[INFO] [enforcer:enforce {execution: default}]
+[WARNING] Rule 1: org.apache.maven.plugins.enforcer.RequireJavaVersion failed with message:
+Detected JDK Version: 1.5.0-19 is not in the allowed range [1.6,).
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD ERROR
+[INFO] ------------------------------------------------------------------------
+[INFO] Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed.
+</code></pre>
+<p>Solution - Upgrade to latest Sun JDK 1.6.0 or IBM 6 SDK</p>
+<p>Note - OpenJDK and Java SE 7 are not supported at this time.</p>
+<p><a name="Building-MissingLicenseHeaders"></a></p>
+<h3 id="missing-license-headers">Missing License Headers<a class="headerlink" href="#missing-license-headers" title="Permalink">&para;</a></h3>
+<p>Example Maven output -</p>
+<pre><code>. . .
+[INFO] ------------------------------------------------------------------------
+[INFO] Building OpenJPA Parent POM
+[INFO]    task-segment: [clean, install]
+[INFO] ------------------------------------------------------------------------
+. . .
+[INFO] [enforcer:enforce {execution: default}]
+[INFO] [source:test-jar {execution: attach-sources}]
+[INFO] [ianal:verify-legal-files {execution: default}]
+[INFO] [apache-rat:check {execution: default}]
+[INFO] Exclude: **/javax.persistence.spi.PersistenceProvider
+[INFO] Exclude: **/javax.annotation.processing.Processor
+[INFO] Exclude: **/*.rsrc
+[INFO] Exclude: **/org.apache.openjpa.revision.properties
+[INFO] Exclude: scripts/*.list
+[INFO] Exclude: scripts/*.options
+[INFO] Exclude: scripts/*.dict
+[INFO] Exclude: **/.*/**
+[INFO] Exclude: **/target/**/*
+[INFO] Exclude: **/dependency-reduced-pom.xml
+[INFO] Exclude: **/*.log
+[INFO] Exclude: **/maven-eclipse.xml
+[INFO] Exclude: **/rat.txt
+[INFO] Exclude: **/internal-repository/**
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Too many unapproved licenses: 1
+[INFO] ------------------------------------------------------------------------
+</code></pre>
+<p>For the module that failed to build (which in the case above is the root
+pom.xml) open the target/rat.txt file and search for any "????"
+occurrences, like -</p>
+<pre><code>. . .
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require AL headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc will be marked N
+  N	LICENSE.txt
+  N	NOTICE.txt
+  AL	openjpa/pom.xml
+  AL	openjpa/src/main/appended-resources/META-INF/LICENSE.vm
+  AL	openjpa/src/main/appended-resources/META-INF/NOTICE.vm
+ !????? OPENJPA-1621.patch
+. . .
+</code></pre>
+<p>Solution - either add the missing Apache License v2.0 license header, remove the file
+from your local working directory (if it is a temporary file that should
+not be added to svn), or ask on the dev@openjpa list if the file can be
+added to the exclude list for the apache-rat checks.</p>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- JPA 2.0 Tasks" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- JPA 2.0 Tasks</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="Task List"></a></p>
+<h2 id="openjpa-20-tasks">OpenJPA 2.0 Tasks<a class="headerlink" href="#openjpa-20-tasks" title="Permalink">&para;</a></h2>
+<p><a name="JPA2.0Tasks-JPA2.0SpecFeatures"></a></p>
+<h3 id="jpa-20-spec-features">JPA 2.0 Spec Features<a class="headerlink" href="#jpa-20-spec-features" title="Permalink">&para;</a></h3>
+<table>
+<tr><th> Status </th><th> JIRA(s) </th><th> Effort </th><th> Summary </th><th> Area </th><th> JPA 2.0 Spec
+Reference(s) </th></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1358">OPENJPA-1358</a>
+</td><td class="border"> Low </td><td class="border"> Added find method that accepts properties (no lock mode) </td><td class="border"> EM </td><td class="border">
+3.1.1 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1358">OPENJPA-1358</a>
+</td><td class="border"> Low </td><td class="border"> New refresh method that accepts properties (no lock mode) </td><td class="border"> EM </td><td class="border">
+3.1.1 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1358">OPENJPA-1358</a>
+</td><td class="border"> Low </td><td class="border"> Verify cache mode properties support on find, refresh and Query </td><td class="border">
+Cache </td><td class="border"> 3.7.2 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1306">OPENJPA-1306</a>
+</td><td class="border"> Medium </td><td class="border"> Added new javax.persistence.lock.scope property </td><td class="border"> Locking </td><td class="border">
+3.4.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1253">OPENJPA-1253</a>
+</td><td class="border"> Medium </td><td class="border"> Review @JoinColumn elements for behavioral changes </td><td class="border"> Mapping </td><td class="border">
+11.1.21 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1306">OPENJPA-1306</a>
+</td><td class="border"> Medium </td><td class="border"> Review clarifications to locking modes </td><td class="border"> Locking </td><td class="border"> 3.4.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> </td><td class="border"> Low </td><td class="border"> Review chapter on deployment and
+bootstrapping contracts for updates. </td><td class="border"> General </td><td class="border"> Ch 9 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1270">OPENJPA-1270</a>
+</td><td class="border"> Low </td><td class="border"> Assert that relationships defined in a mapped superclass must be
+unidirectional. </td><td class="border"> General </td><td class="border"> 2.11.2 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> Spec updated </td><td class="border"> TBD</td><td class="border"> New JPQL reserved
+identifiers. </td><td class="border"> JPQL </td><td class="border"> 4.4.1 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1069">OPENJPA-1069</a>
+</td><td class="border"> Low </td><td class="border"> Review @OrderBy for behavioral changes </td><td class="border"> Mapping </td><td class="border"> 11.1.38 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1274">OPENJPA-1274</a>
+</td><td class="border"> Low </td><td class="border"> Test CascadeType.DETACH via orm.xml </td><td class="border"> Testing </td><td class="border"> 12.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> Routine JPQL BNF update</td><td class="border"> Low </td><td class="border"> Updated
+single_valued_path_expression definition </td><td class="border"> JPQL </td><td class="border"> 4.4.4 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> Routine JPQL BNF update </td><td class="border"> Low </td><td class="border"> New JPQL
+reserved identifiers should not be used as result variables </td><td class="border"> JPQL </td><td class="border"> 4.4.1
+</td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1272">OPENJPA-1272</a>
+</td><td class="border"> Low </td><td class="border"> attribute-override and association-override available from
+element-collection XML schema type </td><td class="border"> Mapping </td><td class="border"> 12.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1271">OPENJPA-1271</a>
+</td><td class="border"> Medium </td><td class="border"> Support for CacheRetrieveMode and CacheStoreMode properties. </td><td class="border">
+Cache </td><td class="border"> 3.7.2 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1264">OPENJPA-1264</a>
+</td><td class="border"> Low </td><td class="border"> Cacheable attribute added to entity element in orm.xml </td><td class="border"> Cache </td><td class="border">
+12.2.3.3, 12.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1264">OPENJPA-1264</a>
+</td><td class="border"> Medium </td><td class="border"> Cacheable annotation </td><td class="border"> Cache </td><td class="border"> 3.7, 11.1.7 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1266">OPENJPA-1266</a>
+</td><td class="border"> Low </td><td class="border"> Support for JDBC escape sequence for date/time literals (6/19 rev)
+</td><td class="border"> JPQL </td><td class="border"> 4.6.1 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1240">OPENJPA-1240</a>
+</td><td class="border"> Low </td><td class="border"> Allow Lob, Temporal, Enumerated annotations to be applied to
+element collections annotations and in XML. </td><td class="border"> Mapping </td><td class="border"> 11.1.16, 11.1.24,
+11.1.47 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1264">OPENJPA-1264</a>
+</td><td class="border"> Low </td><td class="border"> Cache mode elements added to persistence.xml </td><td class="border"> Cache </td><td class="border"> 3.7.1,
+3.7.2, 8.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1228">OPENJPA-1228</a>
+</td><td class="border"> Low </td><td class="border"> Default value change of exclude-unlisted-classes element </td><td class="border"> General
+</td><td class="border"> 8.2.1.6.1 (7/23) </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1251">OPENJPA-1251</a>
+</td><td class="border"> Low </td><td class="border"> EntityManagerFactory getProperties returns Map of <string, object="">
+</string,></td><td class="border"> EMF </td><td class="border"> 7.4 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1251">OPENJPA-1251</a>
+</td><td class="border"> Medium </td><td class="border"> Added setProperty method </td><td class="border"> EM </td><td class="border"> 3.1.1 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1013">OPENJPA-1013</a>
+</td><td class="border"> High </td><td class="border"> Build strictly-typed Criteria API </td><td class="border"> Criteria </td><td class="border"> Ch 6 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1014">OPENJPA-1014</a>
+</td><td class="border"> High </td><td class="border"> Build weakly-typed Criteria API </td><td class="border"> Criteria </td><td class="border"> Ch 6 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1180">OPENJPA-1180</a>
+</td><td class="border"> High </td><td class="border"> Added getParameters, getParameterValue, getParameter methods to
+Query interface </td><td class="border"> Typed Parameters </td><td class="border"> 3.8.1, 3.8.5 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1009">OPENJPA-1009</a>
+</td><td class="border"> High </td><td class="border"> Populate canonical meta-model for strictly typed Criteria Query
+building </td><td class="border"> Metamodel </td><td class="border"> Ch 5 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1010">OPENJPA-1010</a>
+</td><td class="border"> High </td><td class="border"> Instantiate meta-model classes for JPA 2.0 from source code
+annotations </td><td class="border"> Metamodel </td><td class="border"> Ch 5 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1008">OPENJPA-1008</a>
+</td><td class="border"> High </td><td class="border"> Generate meta-model for JPA 2.0 </td><td class="border"> Metamodel </td><td class="border"> Ch 5 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1235">OPENJPA-1235</a>
+</td><td class="border"> Low </td><td class="border"> Optional name element to UniqueConstraint annotation and
+corresponding XML type. </td><td class="border"> Mapping </td><td class="border"> 11.1.49, 12.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1107">OPENJPA-1107</a>
+</td><td class="border"> Medium </td><td class="border"> Provide TraversableResolver for use with Bean Validation
+Factory </td><td class="border"> Spec API </td><td class="border"> 3.6.1.2 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1013">OPENJPA-1013</a>
+</td><td class="border"> Low </td><td class="border"> Modified getQueryBuilder to return updated criteria query builder
+</td><td class="border"> EMF, Criteria </td><td class="border"> 7.4 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1010">OPENJPA-1010</a>
+</td><td class="border"> Low </td><td class="border"> New getMetamodel method </td><td class="border"> EMF, Metamodel </td><td class="border"> 7.4 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1191">OPENJPA-1191</a>
+</td><td class="border"> High </td><td class="border"> Implement Typed Query interface </td><td class="border"> Typed Query </td><td class="border"> 3.8.1, 3.8.5 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1191">OPENJPA-1191</a>
+</td><td class="border"> High </td><td class="border"> Implement Tuple interface </td><td class="border"> Typed Query </td><td class="border"> 3.8.1, 3.8.5 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1068">OPENJPA-1068</a>
+</td><td class="border"> High </td><td class="border"> Support Bean Validation: Entity validation upon lifecycle events.
+</td><td class="border"> Bean Validation </td><td class="border"> 3.6, 3.2.9 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1082">OPENJPA-1082</a>
+</td><td class="border"> Low </td><td class="border"> Validation target groups via persistence.xml or createEMF
+properties Map </td><td class="border"> Bean Validation </td><td class="border"> 3.6.1.2, 8.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1013">OPENJPA-1013</a>
+</td><td class="border"> Low </td><td class="border"> Modified createQuery to accept updated criteria query definition </td><td class="border">
+EM, Criteria </td><td class="border"> 3.1.1 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1013">OPENJPA-1013</a>
+</td><td class="border"> Low </td><td class="border"> Modified getQueryBuilder to return updated criteria query builder
+</td><td class="border"> EM, Criteria </td><td class="border"> 3.1.1. </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-995">OPENJPA-995</a>
+</td><td class="border"> High </td><td class="border"> Migrate existing Criteria Query implementation as OpenJPA
+extension </td><td class="border"> Criteria </td><td class="border"> Ch 6 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1069">OPENJPA-1069</a>
+</td><td class="border"> Medium </td><td class="border"> OrderBy annotation applied to an element collection of basic
+type doesn't require property or field name </td><td class="border"> Mapping </td><td class="border"> 11.1.38 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1055">OPENJPA-1055</a>
+</td><td class="border"> Medium </td><td class="border"> Added MapKeyEnumerated and MapKeyTemporal annotations and XML.
+</td><td class="border"> Mapping </td><td class="border"> 11.1.30, 11.1.33, 12.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-937">OPENJPA-937</a>
+</td><td class="border"> Medium </td><td class="border"> Allow use of AssociationOverrides with mapped superclass
+relationships. </td><td class="border"> Mapping </td><td class="border"> 11.1.2 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-926">OPENJPA-926</a>
+</td><td class="border"> Medium </td><td class="border"> Support persistent access types including @Access annotation
+and AccessType enum and XML </td><td class="border"> General </td><td class="border"> 2.3, 11.1.1, 12.2.1.4, 12.2.2.4,
+12.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1034">OPENJPA-1034</a>
+</td><td class="border"> Low </td><td class="border"> Remove contiguous and base elements from OrderColumn annotation </td><td class="border">
+Mapping </td><td class="border"> 11.1.39 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1032">OPENJPA-1032</a>
+</td><td class="border"> Low </td><td class="border"> Removal and revert behavior of getNamedParameters and
+getPositionalParameters </td><td class="border"> Query </td><td class="border"> 3.8.1 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1013">OPENJPA-1013</a>
+</td><td class="border"> Low </td><td class="border"> Added getMetamodel method </td><td class="border"> EM, Metamodel </td><td class="border"> 3.1.1 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-773">OPENJPA-773</a>
+</td><td class="border"> Low </td><td class="border"> Renamed clear method to detach </td><td class="border"> EM </td><td class="border"> 3.1.1 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-773">OPENJPA-773</a>
+</td><td class="border"> Low </td><td class="border"> Changed target-entity attribute to target-class in
+element-collection </td><td class="border"> Mapping </td><td class="border"> 12.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-773">OPENJPA-773</a>
+</td><td class="border"> Low </td><td class="border"> Update pessimistic lock mode names </td><td class="border"> Locking </td><td class="border"> 3.4.4 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-878">OPENJPA-878</a>
+</td><td class="border"> Low </td><td class="border"> Timeouts are in milliseconds. </td><td class="border"> Query, Locking </td><td class="border"> 3.8.8, 3.4.4.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-773">OPENJPA-773</a>
+</td><td class="border"> Low </td><td class="border"> Renamed cascade CLEAR to DETACH </td><td class="border"> EM </td><td class="border"> 3.1.1, 3.2.6 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1077">OPENJPA-1077</a>
+</td><td class="border"> Low </td><td class="border"> Validation-mode element support added to persistence.xml and to
+createEMF properties Map </td><td class="border"> Bean Validation </td><td class="border"> 3.6.1.1, 8.3 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1102">OPENJPA-1102</a>
+</td><td class="border"> Low </td><td class="border"> Support application/container provided ValidatorFactory </td><td class="border"> Bean
+Validation </td><td class="border"> 3.6.2 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1076">OPENJPA-1076</a>
+</td><td class="border"> Medium </td><td class="border"> PersistenceProviderResolver interface and
+PersistenceProviderResolverHolder class </td><td class="border"> Spec API </td><td class="border"> 9.3 </td></tr>
+</table>
+<p><a href="jsr-317-20081031-public-draft-tasks.html">Task list for JSR-317 10/31/2008 public draft</a></p>
+<p><a name="JPA2.0Tasks-OtherImprovements"></a></p>
+<h3 id="other-improvements">Other Improvements<a class="headerlink" href="#other-improvements" title="Permalink">&para;</a></h3>
+<table>
+<tr><th> Status </th><th> JIRA </th><th> Summary </th></tr>
+<tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1011">OPENJPA-1011</a>
+</td><td class="border"> Instantiate meta-model classes for JPA 2.0 from XML descriptors </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-766">OPENJPA-766</a>
+</td><td class="border"> Tests that currently fail should be committed to the repository </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-5">OPENJPA-5</a>
+</td><td class="border"> Allow compilation with JDK 6 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1114">OPENJPA-1114</a>
+</td><td class="border"> Bean Validation APIs should be an optional runtime dependency </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1113">OPENJPA-1113</a>
+</td><td class="border"> Reflection class performance improvement </td></tr>
+</table>
+<p><a name="JPA2.0Tasks-GeneralTasks"></a></p>
+<h3 id="general-tasks">General Tasks<a class="headerlink" href="#general-tasks" title="Permalink">&para;</a></h3>
+<table>
+<tr><th> Status </th><th> JIRA </th><th> Summary </th></tr>
+<tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-837">OPENJPA-837</a>
+</td><td class="border"> OpenJPA does not fully support database catalogs </td></tr>
+<tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-910">OPENJPA-910</a>
+</td><td class="border"> Allow multiple keys for the same property to be specified at different
+levels </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-773">OPENJPA-773</a>
+</td><td class="border"> Upgrade to JPA 2 - umbrella task - includes updating spec API </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-757">OPENJPA-757</a>
+</td><td class="border"> Map existing OpenJPA extensions to new features of JPA 2.0 </td></tr>
+<tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1103">OPENJPA-1103</a>
+</td><td class="border"> Remove early-access disclaimer from the NOTICE files once the spec is
+released </td></tr>
+</table>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

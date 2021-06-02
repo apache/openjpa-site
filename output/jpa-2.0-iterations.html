@@ -1,0 +1,1663 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- JPA 2.0 Iterations" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- JPA 2.0 Iterations</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="JPA2.0Iterations-JPA2.0IterationsandTasks"></a></p>
+<h1 id="jpa-20-iterations-and-tasks">JPA 2.0 Iterations and Tasks<a class="headerlink" href="#jpa-20-iterations-and-tasks" title="Permalink">&para;</a></h1>
+<p><a name="JPA2.0Iterations-IterationScheduleandContent"></a></p>
+<h2 id="iteration-schedule-and-content">Iteration Schedule and Content<a class="headerlink" href="#iteration-schedule-and-content" title="Permalink">&para;</a></h2>
+<!-- table>
+<tr><td>* [#Milestone 1](#milestone-1)
+</tr -->
+<ul>
+<li>
+<p><a href="#milestone-1">#Milestone 1</a></p>
+<ul>
+<li><a href="#iteration-1">#Iteration 1</a>
+(Dec. 1, 2008 - Dec. 19, 2008) - <a href="https://issues.apache.org/jira/browse/OPENJPA-800">OPENJPA-800</a></li>
+<li><a href="#iteration-1a">#Iteration 1a</a>
+(Dec. 22, 2008 - Jan. 2, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-831">OPENJPA-831</a></li>
+<li><a href="#iteration-2">#Iteration 2</a>
+(Jan. 5, 2009 - Jan. 23, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-807">OPENJPA-807</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#milestone-2">#Milestone 2</a></p>
+<ul>
+<li><a href="#iteration-3">#Iteration 3</a>
+(Jan. 26, 2009 - Feb. 13, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-808">OPENJPA-808</a></li>
+<li><a href="#iteration-4">#Iteration 4</a>
+(Feb. 16, 2009 - Mar. 6, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-875">OPENJPA-875</a></li>
+<li><a href="#iteration-5">#Iteration 5</a>
+(Mar. 9, 2009 - Apr. 3, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-956">OPENJPA-956</a></li>
+<li><a href="#iteration-6">#Iteration 6</a>
+(Apr. 6, 2009 - May 1, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1007">OPENJPA-1007</a></li>
+<li><a href="#iteration-7">#Iteration 7</a>
+(May 4, 2009 - May 29, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1052">OPENJPA-1052</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#milestone-3">#Milestone 3</a></p>
+<ul>
+<li><a href="#iteration-8">#Iteration 8</a>
+(June 1, 2009 - July 3, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1105">OPENJPA-1105</a></li>
+<li><a href="#iteration-9">#Iteration 9</a>
+(July 6, 2009 - July 31, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1152">OPENJPA-1152</a></li>
+<li><a href="#iteration-10">#Iteration 10</a>
+(Aug. 3, 2009 - Aug. 28, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1209">OPENJPA-1209</a></li>
+<li><a href="#iteration-11">#Iteration 11</a>
+(Aug. 31, 2009 - Oct. 2, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1268">OPENJPA-1268</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#milestone-4">#Milestone 4</a></p>
+<ul>
+<li><a href="#iteration-12">#Iteration 12</a>
+(Oct. 5, 2009 - Oct. 30, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1337">OPENJPA-1337</a></li>
+<li><a href="#iteration-13">#Iteration 13</a>
+(Nov. 2, 2009 - Dec. 4, 2009) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1373">OPENJPA-1373</a></li>
+<li><a href="#iteration-14">#Iteration 14</a>
+(Dec. 7, 2009 - Jan. 1, 2010) - <a href="https://issues.apache.org/jira/browse/OPENJPA-1426">OPENJPA-1426</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#beta">#Beta</a>
+(Jan. 28, 2010)</p>
+</li>
+<li>
+<p><a href="#release-candidate">#Release Candidate</a></p>
+</li>
+</ul>
+<ul>
+<li>Date TBD</li>
+</ul>
+<!--tr></tr>
+</table -->
+<p>Jump to <a href="#task-list">#Task List</a></p>
+<hr/>
+<p><a name="milestone-1"></a></p>
+<h2 id="milestone-1"><em>Milestone 1</em><a class="headerlink" href="#milestone-1" title="Permalink">&para;</a></h2>
+<p>The Milestone 1 release was never "officially" released, due to the JSR-317
+terms of use issues, but the files were tagged in svn and can be checked
+out using:</p>
+<pre><code>svn co https://svn.apache.org/repos/asf/openjpa/branches/2.0.0-M1/
+</code></pre>
+<p><a name="iteration-1"></a></p>
+<h3 id="iteration-1-summary-openjpa-800"><em>Iteration 1 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-800">OPENJPA-800</a><a class="headerlink" href="#iteration-1-summary-openjpa-800" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 1 (Dec. 1, 2008 - Dec. 19, 2008)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-800">OPENJPA-800</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-800">OpenJPA 2.0 iteration 1 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 1, OpenJPA includes many new JPA 2.0
+(based on the 10/31/2008 spec draft) features.	Here is a summary of the
+new features provided by OpenJPA:</p>
+<ul>
+<li>The current level of JPA 2.0 API.  You can compile against and use
+implemented methods of the new API.  Unimplemented methods will throw an
+UnsupportedOperationException.</li>
+<li>Validation using the current JPA 2.0 orm and persistence schemas.
+Version 2.0 persistence and orm files will validate using these new
+schemas.  Metadata elements provided in iteration 1 (collection-table and
+element-collection) will validate and can be specified in XML.</li>
+<li>Support for nested embeddables.  An embeddable can now be nested within
+another embeddable.</li>
+<li>Support for relationships within embeddables.  Embeddables can now
+contain relationships.</li>
+<li>Collections of embeddables and basic types through the use of
+ElementCollection and CollectionTable.	Element collections and collection
+tables can be specified using annotations or in a version 2.0 orm XML.</li>
+<li>Support for the Criteria API based on the current spec level, including
+the new constructs; KEY(), VALUE(), and CASE().  OpenJPA also includes the
+ability to convert queries constructed with the Criteria API to JPQL.</li>
+<li>Support for JPA 2.0 JPQL.  Compilation of JPA 2.0 JPQL statements and
+execution of the new JPQL expressions including simple case expressions,
+general case expressions, coalesce, and the nullif expression.	In
+addition, the select expression allows mathematical operations and the
+result alias can be specified in the select expression and in the ORDER BY
+clause.  Execution of additional JPA 2.0 JPQL expressions will be added in
+future iterations.</li>
+<li>Native sequence generators allow the database schema name to be specified
+on the annotation or in a version 2.0 orm XML.</li>
+</ul>
+<p><a name="iteration-1a"></a></p>
+<h3 id="iteration-1a-summary-openjpa-831"><em>Iteration 1a Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-831">OPENJPA-831</a><a class="headerlink" href="#iteration-1a-summary-openjpa-831" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 1a (Dec. 22, 2008 - Jan. 2, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-837">OPENJPA-837</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-837">OpenJPA 2.0: Update OpenJPA documentation with new persistence schemas</a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of the 1a iteration, the OpenJPA documentation has been
+updated to contain the most current JPA 2.0 schemas.</p>
+<p><a name="iteration-2"></a></p>
+<h3 id="iteration-2-summary-openjpa-807"><em>Iteration 2 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-807">OPENJPA-807</a><a class="headerlink" href="#iteration-2-summary-openjpa-807" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 2 (Jan. 5, 2009 - Jan. 23, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-807">OPENJPA-807</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-807">OpenJPA 2.0 iteration 2 primary task</a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 2, OpenJPA includes several additional JPA
+2.0 (based on the 10/31/2008 spec draft) features. Here is a summary of the
+new features provided by OpenJPA:</p>
+<ul>
+<li>Support for the JPA 2.0 level 2 cache interface.  Operations on the
+OpenJPA data cache are now available from the entity manager factory
+through a standard JPA interface.</li>
+<li>Support for use of order column through a JPA annotations or orm mapping
+file elements.	Existing OpenJPA support for order columns has been
+extended to support the JPA standard OrderColumn definition.  This
+iteration supports a configurable base value attribue.	Support for the
+table and contiguous attributes will be provided in future iterations.</li>
+<li>Enhanced map support.  The use of Map collections has been significantly
+enhanced.  This iteration includes use of the new MapKeyClass,
+MapKeyColumn, MapKeyJoinColumn, and MapKeyJoinColumns annotations and
+corresponding orm mapping file elements.</li>
+<li>Support for JPQL INDEX() function within a query projection or predicate.
+Allows the index of ordered columns to be projected or used as part of a
+query predicate.  Projection is currently not supported for element
+collection.  This support will be added in a future iteration.</li>
+<li>Support for entity TYPE() expression.  Allows projection of or query
+criteria based on entity type.	OpenJPA does not currently allow selection
+of an abstract entity type.</li>
+<li>Support for new javax.persistence standard properties.  Standard
+properties such as javax.persistence.jdbc.driver can now be specified as
+configuration properties.</li>
+</ul>
+<hr/>
+<p><a name="milestone-2"></a></p>
+<h2 id="milestone-2"><em>Milestone 2</em><a class="headerlink" href="#milestone-2" title="Permalink">&para;</a></h2>
+<p>The Milestone 2 release will not be an official ASF release, but will be
+created as a Early Access 2 SNAPSHOT branch due to the JSR-317 terms of use
+restrictions.  A distribution of the Early Access 2 SNAPSHOT is available <a href="http://cwiki.apache.org/confluence/display/openjpa/OpenJPA+2.0.0+Early+Access+2">here</a>
+for download or the code can be checked out from svn.</p>
+<table border="0" cellpadding="5" cellspacing="0" class="sectionMacro" width="100%"><tbody><tr>
+<td class="confluenceTd" valign="top" width="5%"></td>
+<td class="confluenceTd" valign="top" width="20%"><div class="table-wrap">
+<table class="confluenceTable"><tbody>
+<tr>
+<td class="confluenceTd"><span class="image-wrap" style=""><img src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Download.png" style="border: 0px solid black"/></span></td>
+<td class="confluenceTd"> <a class="external-link" href="http://openjpa.apache.org/openjpa-200-early-access-2.html" rel="nofollow">Download Milestone 2</a> </td>
+</tr>
+</tbody></table>
+</div>
+</td>
+<td class="confluenceTd" valign="top" width="5%"></td>
+<td class="confluenceTd" valign="top" width="20%"><div class="table-wrap">
+<table class="confluenceTable"><tbody>
+<tr>
+<td class="confluenceTd"><span class="image-wrap" style=""><img src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Pencil.png" style="border: 0px solid black"/></span></td>
+<td class="confluenceTd"> <a class="external-link" href="http://svn.apache.org/viewvc/openjpa/branches/2.0.0-EA2/" rel="nofollow">View SVN Files</a> </td>
+</tr>
+</tbody></table>
+</div>
+</td>
+<td class="confluenceTd" valign="top"></td></tr></tbody></table>
+<p><a name="iteration-3"></a></p>
+<h3 id="iteration-3-summary-openjpa-808"><em>Iteration 3 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-808">OPENJPA-808</a><a class="headerlink" href="#iteration-3-summary-openjpa-808" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 3 (Jan. 26, 2009 - Feb. 13, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-808">OPENJPA-808</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-808">OpenJPA 2.0 iteration 3 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 3, OpenJPA includes several additional JPA
+2.0 (based on the 10/31/2008 spec draft) features. Here is a summary of the
+new features provided by OpenJPA:</p>
+<ul>
+<li>Support for collection-valued parameters in JPQL using the IN expression.
+A collection-valued parameter (List, Set, etc.) may now be used in
+conjunction with the IN expression within the where clause of a JPQL
+statement.</li>
+<li>JPA specification level is available through OpenJPA configuration.  The
+JPA specification level of the provider can now be retrieved via the
+openjpa.Specification property.</li>
+<li>Support for derived identities including the use of MappedById.  OpenJPA
+now supports entities which have an identity that is derived from the id of
+another identity for one-to-one and many-to-one relationships with a
+parent-dependent type association.</li>
+<li>Support for getSupportedProperties and getProperties methods on the
+EntityManager and EntityManagerFactory.  The active properties and their
+values, in addition to the full set of supported properties can be
+retrieved for the EntityManager and EntityManagerFactory.</li>
+<li>The OrderColumn annotation and equivalent XML now allows the
+specification of the table element.  The table element can be used to
+specify the join or collection table used to maintain the relationship.</li>
+<li>Support for getHints and getSupportedHints on Query.	The active hints
+and their values, in addition to supported hints can be retrieved for a
+Query.</li>
+</ul>
+<p><a name="iteration-4"></a></p>
+<h3 id="iteration-4-summary-openjpa-875"><em>Iteration 4 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-875">OPENJPA-875</a><a class="headerlink" href="#iteration-4-summary-openjpa-875" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 4 (Feb. 16, 2009 - Mar. 6, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-875">OPENJPA-875</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-875">OpenJPA 2.0 iteration 4 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 4, OpenJPA includes several additional JPA
+2.0 (based on the 10/31/2008 spec draft) features. Here is a summary of the
+new features provided by OpenJPA:</p>
+<ul>
+<li>Support new JPA LockModeType in find, lock and refresh methods in the
+EntityManager interface. A new "mixed" lock manager is introduced
+implementing the new mixed optimistic and pessimistic entity locking
+semantics.</li>
+<li>AttributeOverride enhanced to allow navigation of multiple levels of
+embeddables, use with map keys and values, and use with element
+collections.</li>
+<li>AssociationOverride enhanced to support specification of of a join table
+and override of embeddables within relationships.</li>
+<li>Additional support of derived identities.</li>
+<li>Support for general and qualified identification variables in JQPL
+selections.  KEY, ENTRY, and VALUE qualifiers
+can now be used within the SELECT clause.</li>
+</ul>
+<p><a name="iteration-5"></a></p>
+<h3 id="iteration-5-summary-openjpa-956"><em>Iteration 5 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-956">OPENJPA-956</a><a class="headerlink" href="#iteration-5-summary-openjpa-956" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 5 (Mar. 9, 2009 - Apr. 3, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-956">OPENJPA-956</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-956">OpenJPA 2.0 iteration 5 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 5, OpenJPA includes several additional JPA
+2.0 (based on the 03/13/2009 spec draft) features. Here is a summary of the
+new features provided by OpenJPA:</p>
+<ul>
+<li>Updated spec APIs and schemas based upon most current specification
+draft.	New, unimplemented methods will throw an
+UnsupportedOperationException.</li>
+<li>A lock timeout hint value can now be specified on applicable entity
+manager and query methods.</li>
+<li>Lock mode (including the new pessimistic lock modes) can be specified on
+query methods and named queries. This allows for fine-grained locking
+configuration at the method level.</li>
+<li>The unwrap method can be used to get access to underlying OpenJPA entity
+manager and query interfaces.</li>
+<li>JPQL queries support the selection of KEY, VALUE, and ENTRY map values.</li>
+<li>Single entities or an entity graph may be detached from the entity
+manager.  Specifying the new cascade type of DETACH or ALL on relationships
+allows selective detachment of an entity graph.</li>
+<li>The third argument of the JPQL SUBSTRING function is now optional.</li>
+<li>JPQL queries have been enhanced to support the projection of element
+collections.</li>
+<li>JPQL queries have been enhanced to support nested embeddables and
+relationships from embeddables.</li>
+</ul>
+<p><a name="iteration-6"></a></p>
+<h3 id="iteration-6-summary-openjpa-1007"><em>Iteration 6 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-1007">OPENJPA-1007</a><a class="headerlink" href="#iteration-6-summary-openjpa-1007" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 6 (Apr. 6, 2009 - May 1, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1007">OPENJPA-1007</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1007">OpenJPA 2.0 iteration 6 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 6, OpenJPA includes several additional JPA
+2.0 (based on the 03/13/2009 spec draft) features. Here is a summary of the
+new features provided by OpenJPA:</p>
+<ul>
+<li>
+<p>Query timeout detection for additional databases. Query timeouts are more
+accurately detected and reported in DB2, Oracle, SQL Server, and Informix.</p>
+</li>
+<li>
+<p>Support for scalar expressions in JPQL subqueries. Scalar expressions
+such as substring can now be used within a subquery.</p>
+</li>
+<li>
+<p>Support for explicit access types on persistent types. The persistence
+access method to use can now be specified on a per-type and field/method
+level.</p>
+</li>
+<li>
+<p>Updates to OrderColumn and EntityManager methods to match new spec draft.</p>
+</li>
+<li>
+<p>JPQL queries now support key/value paths as arguments to scalar
+functions.  KEY() and VALUE() can now be used to indicate that a map key or
+value should be used as an argument to a scalar function.</p>
+</li>
+</ul>
+<p><a name="iteration-7"></a></p>
+<h3 id="iteration-7-summary-openjpa-1052"><em>Iteration 7 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-1052">OPENJPA-1052</a><a class="headerlink" href="#iteration-7-summary-openjpa-1052" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 7 (May 4, 2009 - May 29, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1052">OPENJPA-1052</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1052">OpenJPA 2.0 iteration 7 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 7, OpenJPA includes several additional JPA
+2.0 (based on the 03/13/2009 spec draft) features. Here is a summary of the
+new features provided by OpenJPA:</p>
+<ul>
+<li>New MapKeyEnumerated and MapKeyTemporal annotations and equivalent XML
+elements for tagging the key of a map collection as either an enumerated or
+temporal type.</li>
+<li>Base support for JSR-303 Bean Validation including basic configuration
+and lifecycle-based event validation.</li>
+<li>Support the use of delimited identifiers within annotation attributes for
+a subset of mapping annotations when using the Derby and DB2 databases.
+Support for additional databases will be added in future iterations.</li>
+<li>JPQL subqueries now support derived path expressions and the use of KEY()
+on map collections.</li>
+<li>OSGI bundle metadata has been added to the OpenJPA jar.  This simplifies
+the use of OpenJPA in an OSGi environment such as <a href="http://felix.apache.org">Apache Felix</a>
+.</li>
+<li>OrderBy no longer requires name attribute when applied to a collection of
+basic type.</li>
+</ul>
+<hr/>
+<p><a name="milestone-3"></a></p>
+<h2 id="milestone-3"><em>Milestone 3</em><a class="headerlink" href="#milestone-3" title="Permalink">&para;</a></h2>
+<p>The Milestone 3 release is an official ASF release, but we encourage you to
+upgrade to the final 2.0.0 as soon as possible after it is released.  A
+distribution of the Milestone 3 is available <a href="http://cwiki.apache.org/confluence/display/openjpa/OpenJPA+2.0.0+Milestone+3">here</a>
+for download or the code can be checked out from svn.</p>
+<table border="0" cellpadding="5" cellspacing="0" class="sectionMacro" width="100%"><tbody><tr>
+<td class="confluenceTd" valign="top" width="5%"></td>
+<td class="confluenceTd" valign="top" width="20%"><div class="table-wrap">
+<table class="confluenceTable"><tbody>
+<tr>
+<td class="confluenceTd"><span class="image-wrap" style=""><img src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Download.png" style="border: 0px solid black"/></span></td>
+<td class="confluenceTd"> <a class="external-link" href="http://openjpa.apache.org/openjpa-200-milestone-3.html" rel="nofollow">Download Milestone 3</a> </td>
+</tr>
+</tbody></table>
+</div>
+</td>
+<td class="confluenceTd" valign="top" width="5%"></td>
+<td class="confluenceTd" valign="top" width="20%"><div class="table-wrap">
+<table class="confluenceTable"><tbody>
+<tr>
+<td class="confluenceTd"><span class="image-wrap" style=""><img src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Pencil.png" style="border: 0px solid black"/></span></td>
+<td class="confluenceTd"> <a class="external-link" href="http://svn.apache.org/viewvc/openjpa/tags/2.0.0-M3/" rel="nofollow">View SVN Files</a> </td>
+</tr>
+</tbody></table>
+</div>
+</td>
+<td class="confluenceTd" valign="top"></td></tr></tbody></table>
+<p><a name="iteration-8"></a></p>
+<h3 id="iteration-8-summary-openjpa-1105"><em>Iteration 8 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-1105">OPENJPA-1105</a><a class="headerlink" href="#iteration-8-summary-openjpa-1105" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 8 (June 1, 2009 - July 3, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1105">OPENJPA-1105</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1105">OpenJPA 2.0 iteration 8 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 8, OpenJPA includes several additional JPA
+2.0 features and bug fixes. Here is a summary of the new features provided
+by OpenJPA:</p>
+<ul>
+<li>Sub-project for JSR-303 (Bean Validation) testing with configurable bean
+validation providers.</li>
+<li>Automatic detection of bean validation providers.</li>
+<li>Support for bean validation groups, configurable through standard
+persistence.xml properties.</li>
+<li>Bug fixes for attribute-overrides and embeddable processing.</li>
+<li>Performance enhancements to class reflection utility.  Provides 17%
+performance gain in some benchmarks.</li>
+</ul>
+<p><a name="iteration-9"></a></p>
+<h3 id="iteration-9-summary-openjpa-1152"><em>Iteration 9 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-1152">OPENJPA-1152</a><a class="headerlink" href="#iteration-9-summary-openjpa-1152" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 9 (July 6, 2009 - July 31, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1152">OPENJPA-1152</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1152">OpenJPA 2.0 iteration 9 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 9, OpenJPA includes several additional JPA
+2.0 features and bug fixes. Here is a summary of the new features provided
+by OpenJPA:</p>
+<ul>
+<li>Bean Validation support for validation groups.  Specific validation
+groups can be targeted for lifecycle events.</li>
+<li>A TraversableResolver is now registered with the bean validator.  The
+resolver ensures that only loaded attributes are validated.</li>
+<li>A PersistenceProviderResolver and PersistenceProviderResolverHolder are
+available from the Geronimo Spec API. PersistenceProviderResolver can be
+used to return the list of persistence providers available in the runtime
+environment.</li>
+<li>Availablility of ProviderUtil and PersistenceUnitUtil interfaces.  These
+interfaces provide methods to determine the load state of a persistent
+entity or attribute.  In addition, PersistenceUnitUtil can be used to get
+the identifier of an entity.</li>
+<li>Significant improvements to OpenJPA's subquery processing.</li>
+<li>OpenJPA now includes the ability to use a pluggable encryption provider.
+This provider can be used to support encrypted database passwords in the
+persistence.xml. See the <a href="http://openjpa.apache.org/builds/latest/docs/manual/ref_guide_encryption.html">Encryption Provider</a>
+chapter in the documentation for more details.</li>
+</ul>
+<p><a name="iteration-10"></a></p>
+<h3 id="iteration-10-summary-openjpa-1209"><em>Iteration 10 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-1209">OPENJPA-1209</a><a class="headerlink" href="#iteration-10-summary-openjpa-1209" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 10 (Aug. 3, 2009 - Aug. 28, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1209">OPENJPA-1209</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1209">OpenJPA 2.0 iteration 10 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 10, OpenJPA includes several additional
+JPA 2.0 features and bug fixes. Here is a summary of the new features
+provided by OpenJPA:</p>
+<ul>
+<li>Support for the Criteria and Metamodel API.  The Criteria and Metamodel
+API can be used in conjunction to create and execute strongly-typed
+programmatic queries.</li>
+<li>Metamodel source file generation.  OpenJPA provides tooling to generate
+metamodel source classes.</li>
+<li>Support for the TypedQuery and Tuple interfaces.  These interfaces are
+provided to manipulate typed queries and their results.</li>
+<li>Automatic setting of compatibility options based upon persistence
+version.  Compatibility options are configured based on persistence version
+to provide backward compatibility for OpenJPA version 1.x applications.</li>
+<li>Support for naming of unique constraints.</li>
+<li>Lob, Temporal, and Enumeration can now be specified on element
+collections.</li>
+<li>JPQL now supports multiple constructors in the query projection list.</li>
+<li>Support for the shared-cache-mode element in the persistence.xml.
+Provides configuration/enablement options for L2 cache.</li>
+<li>Support for Cacheable annotation and CacheStoreMode/CacheRetriveMode
+properties.  Allows per class configuration of L2 cacheing and
+per-operation tuning of cache behavior.</li>
+<li>Database updates including updates for Derby reserved words, usage of a
+new version of commons-pool and commons-dbcp, and a new Derby network
+server test profile.</li>
+<li>Support for JDBC date, time, and timestamp literals within JPQL and
+Criteria queries.</li>
+</ul>
+<p><a name="iteration-11"></a></p>
+<h3 id="iteration-11-summary-openjpa-1268"><em>Iteration 11 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-1268">OPENJPA-1268</a><a class="headerlink" href="#iteration-11-summary-openjpa-1268" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 11 (Aug. 31, 2009 - Oct. 2, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1268">OPENJPA-1268</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1268">OpenJPA 2.0 iteration 11 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 11, OpenJPA includes several additional
+JPA 2.0 features and bug fixes. Here is a summary of the new features
+provided by OpenJPA:</p>
+<ul>
+<li>OpenJPA is based upon Proposed Final Draft 2 of <a href="http://jcp.org/en/jsr/detail?id=317">JSR-317</a>
+.</li>
+<li>Support for cascading detach using cascade-detach as specified in the
+orm.xml.</li>
+<li>Assertion that relationships in MappedSuperclass are unidirectional.</li>
+<li>OpenJPA was updated to the CR5 level of the bean validation
+specification.</li>
+<li>A new code sample which showcases the use of embeddables.</li>
+<li>Corrected an XML encoding issue which occurred when using XML data with
+SQL Server.</li>
+<li>Many documentation updates.</li>
+<li>Improved test coverage for many database platforms.  The current test
+matrix is available <a href="http://cwiki.apache.org/confluence/display/openjpa/JPA+2.0+Test+Coverage">here</a>
+.</li>
+</ul>
+<hr/>
+<p><a name="milestone-4"></a></p>
+<h2 id="milestone-4"><em>Milestone 4</em><a class="headerlink" href="#milestone-4" title="Permalink">&para;</a></h2>
+<p><a name="iteration-12"></a></p>
+<h3 id="iteration-12-summary-openjpa-1337"><em>Iteration 12 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-1337">OPENJPA-1337</a><a class="headerlink" href="#iteration-12-summary-openjpa-1337" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 12 (Oct. 5, 2009 - Oct. 30, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1337">OPENJPA-1337</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1337">OpenJPA 2.0 iteration 12 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 12, OpenJPA includes several additional
+JPA 2.0 features
+and bug fixes. Here is a summary of the new features provided by OpenJPA:</p>
+<ul>
+<li>Support for extended lock scope via the javax.persistence.lock.scope
+property.</li>
+<li>Support for the GA version of the <a href="http://jcp.org/en/jsr/detail?id=303">JSR-303</a>
+Bean Validation API.</li>
+<li>Many documentation updates, notably for Criteria API and Metamodel
+tooling.</li>
+<li>More improvements to test coverage for additional database platforms.
+The current test matrix is available <a href="http://cwiki.apache.org/confluence/display/openjpa/JPA+2.0+Test+Coverage">here</a>
+.</li>
+</ul>
+<p><a name="iteration-13"></a></p>
+<h3 id="iteration-13-summary-openjpa-1373"><em>Iteration 13 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-1373">OPENJPA-1373</a><a class="headerlink" href="#iteration-13-summary-openjpa-1373" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 13 (Nov. 2, 2009 - Dec. 4, 2009)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1373">OPENJPA-1373</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1373">OpenJPA 2.0 iteration 13 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 13, OpenJPA includes several additional
+JPA 2.0 features
+and bug fixes. Here is a summary of the new features provided by OpenJPA:</p>
+<ul>
+<li>Support for CacheRetrieveMode and CacheStoreMode on find and refresh
+operations.</li>
+<li>Support for find and refresh entity manager operations that accept
+properties.</li>
+</ul>
+<p><a name="iteration-14"></a></p>
+<h3 id="iteration-14-summary-openjpa-1426"><em>Iteration 14 Summary</em> - <a href="https://issues.apache.org/jira/browse/OPENJPA-1426">OPENJPA-1426</a><a class="headerlink" href="#iteration-14-summary-openjpa-1426" title="Permalink">&para;</a></h3>
+<table align="center" border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td nowrap="" width="1%">
+<b>Iteration 14 (Dec. 7, 2009 - Jan. 1, 2010)</b>&nbsp;
+ </td>
+<td width="100%">
+ &nbsp;
+ </td>
+<td style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td align="right" height="6" nowrap="true" valign="middle"><font size="1">&nbsp;Issue Progress:&nbsp;</font></td>
+<td>
+<table align="right" border="0" cellpadding="0" cellspacing="0" height="6" valign="middle">
+<tr height="6">
+<td bgcolor="009900" height="6" width="100">
+<img border="0" height="10" src="http://issues.apache.org/jira/images/border/spacer.gif" title="Resolved Issues - 100% (1 issues)" width="100"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellspacing="0" class="grid" width="100%">
+<tr>
+<th style="text-align: left;" width="1%">
+ &nbsp;
+ </th>
+<th style="text-align: left;">
+ Key
+ </th>
+<th style="text-align: left;">
+ Summary
+ </th>
+<th style="text-align: left;">
+ Assignee
+ </th>
+<th style="text-align: left;">
+ Pr
+ </th>
+<th style="text-align: left;">
+ Status
+ </th>
+</tr>
+<tr class="rowNormal">
+<td><div style="background-color:ccffcc"><strike>1.</strike></div></td>
+<td nowrap="true">
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1426">OPENJPA-1426</a>
+</td>
+<td>
+<a href="http://issues.apache.org/jira/browse/OPENJPA-1426">OpenJPA 2.0 iteration 14 primary task </a>
+</td>
+<td nowrap="true">
+ Jeremy Bauer
+ </td>
+<td nowrap="true">
+<img alt="Major" border="0" src="http://issues.apache.org/jira/images/icons/priority_major.gif"/>
+</td>
+<td nowrap="true">
+<img alt="Closed" border="0" src="http://issues.apache.org/jira/images/icons/status_closed.gif"/>Closed
+ </td>
+</tr>
+</table>
+<p>With the completion of iteration 13, OpenJPA includes several additional
+JPA 2.0 features
+and bug fixes. Here is a summary of the new features provided by OpenJPA:</p>
+<ul>
+<li>Support for delimited identifiers.</li>
+<li>Added support for testing with JPA 2.0 TCK</li>
+</ul>
+<hr/>
+<p><a name="beta"></a></p>
+<h2 id="beta"><em>Beta</em><a class="headerlink" href="#beta" title="Permalink">&para;</a></h2>
+<p>The Beta release is an official ASF release and it passed the JPA 2.0 TCK,
+but we encourage you to upgrade to the final 2.0.0 as soon as possible
+after it is released.  A distribution of the Beta is available <a href="http://cwiki.apache.org/confluence/display/openjpa/OpenJPA+2.0.0+Beta">here</a>
+for download or the code can be checked out from svn.</p>
+<table border="0" cellpadding="5" cellspacing="0" class="sectionMacro" width="100%"><tbody><tr>
+<td class="confluenceTd" valign="top" width="5%"></td>
+<td class="confluenceTd" valign="top" width="20%"><div class="table-wrap">
+<table class="confluenceTable"><tbody>
+<tr>
+<td class="confluenceTd"><span class="image-wrap" style=""><img src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Download.png" style="border: 0px solid black"/></span></td>
+<td class="confluenceTd"> <a class="external-link" href="http://openjpa.apache.org/openjpa-200-beta.html" rel="nofollow">Download Beta</a> </td>
+</tr>
+</tbody></table>
+</div>
+</td>
+<td class="confluenceTd" valign="top" width="5%"></td>
+<td class="confluenceTd" valign="top" width="20%"><div class="table-wrap">
+<table class="confluenceTable"><tbody>
+<tr>
+<td class="confluenceTd"><span class="image-wrap" style=""><img src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Pencil.png" style="border: 0px solid black"/></span></td>
+<td class="confluenceTd"> <a class="external-link" href="http://svn.apache.org/viewvc/openjpa/tags/2.0.0-beta/" rel="nofollow">View SVN Files</a> </td>
+</tr>
+</tbody></table>
+</div>
+</td>
+<td class="confluenceTd" valign="top"></td></tr></tbody></table>
+<hr/>
+<p><a name="release-candidate"></a></p>
+<h2 id="release-candidate"><em>Release Candidate</em><a class="headerlink" href="#release-candidate" title="Permalink">&para;</a></h2>
+<p><a name="iteration-15"></a></p>
+<h3 id="remaining-work-items-">Remaining Work Items -<a class="headerlink" href="#remaining-work-items-" title="Permalink">&para;</a></h3>
+<ul>
+<li>Performance improvements</li>
+<li>L2 Cache provider improvements</li>
+<li>TBD</li>
+</ul>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

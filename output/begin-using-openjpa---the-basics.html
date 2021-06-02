@@ -1,0 +1,908 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- Begin using OpenJPA - The Basics" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- Begin using OpenJPA - The Basics</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="BeginusingOpenJPA-TheBasics-Introduction"></a></p>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permalink">&para;</a></h1>
+<p>OpenJPA is an open source implementation of the Java JPA (Java Persistence
+API) specification from Apache. JPA provides an agnostic Java-based API for
+storing and retrieving information to a backend database. It has a
+canonical query language named Java Persistence Query Language, or JPQL,
+that blends with the programming methods of Java and eliminates the need to
+tailor database queries for a particular database. However, JPA also
+supports native SQL which can be used for quick ports with a known backend
+database. This tutorial is designed to walk you through the steps of
+setting up a simple web application to use OpenJPA
+Geronimo and to transact the derby database that comes with Geronimo. The
+tutorial code uses a simple Java Server Page (JSP), backed up by some basic
+classes. It displays a table of inventory items and categories. In this
+tutorial, we will not dive into details regarding the JSP code. Its purpose
+is to be a window through which you can examine OpenJPA. &nbsp;The intended
+audience for this tutorial is those with some knowledge and understanding
+of the Java programming language and who are just beginning with OpenJPA.
+To start, you must download the following requirements and install them on
+your computer. For the purposes of this tutorial, we are using Eclipse as
+the IDE and Microsoft Windows as the operating system of choice.&nbsp;</p>
+<p><a name="BeginusingOpenJPA-TheBasics-Prerequisites"></a></p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink">&para;</a></h2>
+<p><strong>Geronimo V2.2:</strong> You can get it <a href="http://www.apache.org/dyn/closer.cgi/geronimo/2.2/geronimo-tomcat6-javaee5-2.2-bin.zip">here</a>
+. Download this file and unzip it to a permanent location. There is no
+installer. The server will run from the command line.</p>
+<p><strong>Java (J2SE) V1.6:</strong> This tutorial was developed and tested with Java V1.6.
+If you don't already have Java V1.6 you can get the IBM JDK <a href="http://www.ibm.com/developerworks/java/jdk/">here</a>
+or the Sun JDK <a href="https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=jdk-6u16-oth-JPR@CDS-CDS_Developer">here</a>
+.</p>
+<p><strong>Eclipse V3.2 or later:</strong> This version has annotation support included.
+Annotations play a large role in OpenJPA.&nbsp; <a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/galileo/SR1/eclipse-jee-galileo-SR1-win32.zip">Download</a>
+Eclipse 3.2 or later.</p>
+<p><strong>Apache OpenJPA library:</strong> For the purpose of implementing this tutorial you
+can select
+OpenJPA v1.2 or greater. You can download <a href="http://openjpa.apache.org/downloads.html">Apache OpenJPA</a>
+from the Apache site. Note that the Milestone (openjpa-all-2.0.0-M3.jar as
+of this writing) is an early release of OpenJPA 2.0 and may have some
+instabilities. No issues have been noted for the usage in this tutorial.</p>
+<p><em>The tutorial code files</em>: <a href="artifacts/OpenJPAWebAppTutorial.zip">These files</a>
+are provided with this tutorial. You will add them to your Eclipse
+project.</p>
+<p><a name="BeginusingOpenJPA-TheBasics-SetupandRunningtheSample"></a></p>
+<h1 id="setup-and-running-the-sample">Setup and Running the Sample<a class="headerlink" href="#setup-and-running-the-sample" title="Permalink">&para;</a></h1>
+<p>Now, that you have all the prerequisites for this tutorial downloaded and
+installed, the following sections will walk you through the Eclipse project
+setup and the OpenJPA configuration. Make sure you read through and follow
+each part carefully. &nbsp;</p>
+<p><a name="BeginusingOpenJPA-TheBasics-SettingupEclipse"></a></p>
+<h2 id="setting-up-eclipse">Setting up Eclipse<a class="headerlink" href="#setting-up-eclipse" title="Permalink">&para;</a></h2>
+<p>After installing Eclipse, create a new project in a dedicated workspace for
+the tutorial. Complete the following setup instructions: First, make sure
+your Eclipse environment is updated and has the Geronimo plugin. If you do
+not know how to do that, follow the instructions found at the <a href="http://geronimo.apache.org/geronimo-eclipse-plugin-installation-instructions.html">Geronimo website</a>
+.</p>
+<ol>
+<li>
+<p>Create a new Java project in Eclipse called, <strong>"OpenJPATutorial"</strong>.</p>
+<ul>
+<li>
+<p>From the menu, select: <strong>File-&gt;New-&gt;Enterprise Application Project</strong>. (If
+<strong>Enterprise Application Project</strong> is not available as an option, select
+<strong>Project</strong> and then choose <strong>Enterprise Application Project</strong> from the
+list. Then click on the <strong>Next</strong> button).
+When the New Project settings dialog appears, use the following settings:</p>
+<p><img alt="images/image001.jpg" src="/images/image001.jpg"/></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Under the <strong>Target Runtime</strong> section, select <strong>Apache Geronimo v2.2</strong>.</p>
+<ul>
+<li>
+<p>If you do not already have Geronimo setup in Eclipse then you will have
+to do so now. Click on the <strong>New...</strong> button.</p>
+</li>
+<li>
+<p>If Apache Geronimo v2.2 does not appear in the list under <strong>Apache</strong>,
+click the <strong>Download additional server adapters</strong> link at the top right of
+the dialog. If the adapter does not appear in that list then follow the <a href="http://geronimo.apache.org/geronimo-eclipse-plugin-installation-instructions.html">directions from the Geronimo site</a>.</p>
+<p><img alt="images/image002.jpg" src="/images/image002.jpg"/></p>
+</li>
+<li>
+<p>Select <strong>Apache-&gt;Apache Geronimo v2.2</strong></p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+<p><img alt="images/image003.jpg" src="/images/image003.jpg"/></p>
+</li>
+<li>
+<p>Set the JRE to <strong>jre6</strong> if it is not already set.</p>
+</li>
+<li>
+<p>Browse for the install directory of Geronimo v2.2 on your system.</p>
+</li>
+<li>
+<p>Click <strong>Finish</strong>. You should see the following:</p>
+<p><img alt="images/image001.jpg" src="/images/image001.jpg"/></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Now, click the <strong>Next</strong> button. You should see this:</p>
+<p><img alt="images/image004.jpg" src="/images/image004.jpg"/></p>
+<ul>
+<li>
+<p>Check the <strong>Generate application.xml deployment descriptor</strong> option.</p>
+</li>
+<li>
+<p>Click the <strong>New Module...</strong> button:</p>
+<p><img alt="images/image005.jpg" src="/images/image005.jpg"/></p>
+</li>
+<li>
+<p>De-select <strong>Create default modules</strong>.</p>
+</li>
+<li>
+<p>Select	the <strong>Web</strong> option.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+<p><img alt="images/image006.jpg" src="/images/image006.jpg"/></p>
+</li>
+<li>
+<p>Click <strong>Finish</strong>. You will see the following:</p>
+<p><img alt="images/image007.jpg" src="/images/image007.jpg"/></p>
+</li>
+<li>
+<p>Click <strong>Finish</strong>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Now, your Project Explorer should look like this (partially expanded):</p>
+<p><img alt="images/image008.jpg" src="/images/image008.jpg"/></p>
+<ul>
+<li>
+<p>If you double-click on the <strong>Deployment Descriptor: OpenJPATutorial</strong>, you
+should see the application.xml open:</p>
+<p><img alt="images/image009.jpg" src="/images/image009.jpg"/></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Now we will bring in the sample code. The easiest way to add the sample code is
+to find the source provided with this tutorial and copy it to the src folder
+under the <strong>OpenJPATutorialWeb</strong> folder in your project directory in Windows Explorer:</p>
+<p><img alt="images/image010.jpg" src="/images/image010.jpg"/></p>
+<ul>
+<li>
+<p>Now go back to Eclipse. Right-click on the <strong>OpenJPATutorialWeb</strong> folder in the Project Explorer view
+and select <strong>Refresh,</strong> or press the <strong>F5</strong> key on your keyboard. Now you will see this:</p>
+<p><img alt="images/image011.jpg" src="/images/image011.jpg"/></p>
+<p>Notice that all the source files compile without error. That is because Geronimo comes with OpenJPA v1.1 built in.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Now copy the index.jsp file from the tutorial into the Web Content directory under the Project directory in Windows Explorer:</p>
+<p><img alt="images/image012.jpg" src="/images/image012.jpg"/></p>
+<ul>
+<li>Got to the Project Explorer and refresh the project. You should see this:</li>
+</ul>
+<p><img alt="images/image013.jpg" src="/images/image013.jpg"/></p>
+</li>
+</ol>
+<p><a name="BeginusingOpenJPA-TheBasics-RunningandConfiguringGeronimoandDerby"></a></p>
+<h2 id="running-and-configuring-geronimo-and-derby">Running and Configuring Geronimo and Derby<a class="headerlink" href="#running-and-configuring-geronimo-and-derby" title="Permalink">&para;</a></h2>
+<p>Geronimo has no installer and runs from the command line. Here are some
+quick instructions to get you started.</p>
+<ol>
+<li>
+<p>In Windows, open a command prompt and navigate to the Geronimo <strong>bin</strong> directory.</p>
+</li>
+<li>
+<p>Type the command:</p>
+<pre><code> start-server
+</code></pre>
+<p><img alt="images/image014.jpg" src="/images/image014.jpg"/></p>
+<p>Press the <em>Enter</em> key.</p>
+<p><img alt="images/image015.jpg" src="/images/image015.jpg"/></p>
+</li>
+<li>
+<p>Open a web browser and go to the address:</p>
+<p><a href="http://localhost:8080/console">http://localhost:8080/console</a></p>
+<p><img alt="images/image016.jpg" src="/images/image016.jpg"/></p>
+<p>The default password is <em>manager</em>.</p>
+</li>
+<li>
+<p>You will come to the Welcome page. On the left menu, at the bottom, find the section
+for the Embedded DB. This is the Derby database control page.</p>
+<p><img alt="images/image017.jpg" src="/images/image017.jpg"/></p>
+</li>
+<li>
+<p>Click on the link for the <strong>DB Manager</strong></p>
+</li>
+<li>
+<p>You will see two sections: <strong>DB Viewer</strong> and <strong>Run SQL</strong>.</p>
+</li>
+<li>
+<p>In the Run SQL section, in the text field labeled Create DB, type in <strong>StoreSystem</strong>.
+This is the name of the database that the OpenJPA sample is configured to transact.</p>
+<p><img alt="images/image018.jpg" src="/images/image018.jpg"/></p>
+</li>
+<li>
+<p>Click on the <strong>Create</strong> button. You should now see the <strong>StoreSystem</strong> database appear in
+the <strong>DB Viewer</strong> section.</p>
+<p><img alt="images/image019.jpg" src="/images/image019.jpg"/></p>
+</li>
+<li>
+<p>We are now ready to deploy and run the sample code.</p>
+</li>
+</ol>
+<p><a name="BeginusingOpenJPA-TheBasics-RunningandDeployingtheSampleCodeinGeronimo"></a></p>
+<h2 id="running-and-deploying-the-sample-code-in-geronimo">Running and Deploying the Sample Code in Geronimo<a class="headerlink" href="#running-and-deploying-the-sample-code-in-geronimo" title="Permalink">&para;</a></h2>
+<p>The sample code provided with this tutorial is working code. It is a simple
+inventory database program that shows items and categories. But even this
+simple example requires the ability to add, edit and delete entries. It
+requires the ability to sort and filter database queries and it requires
+the identification of the relationship of the items to the categories. In
+this example, the relationship is <strong>one to many</strong>. Knowing that relationship
+is important to how the code is written. Before we analyze the code and
+OpenJPA, we will first deploy the sample and see it work. To deploy the
+sample code follow these instructions:</p>
+<ol>
+<li>
+<p>In Eclipse, in the Project Explorer, right click on the OpenJPATutorial
+project and select: <strong>Export-&gt;EAR file</strong>.</p>
+<p><img alt="images/image020.jpg" src="/images/image020.jpg"/></p>
+</li>
+<li>
+<p>In the Ear Export dialog, find a convenient place to put the exported EAR file.</p>
+</li>
+<li>
+<p>Check the <strong>Overwrite existing file</strong> check box.</p>
+<p><img alt="images/image021.jpg" src="/images/image021.jpg"/></p>
+</li>
+<li>
+<p>Click <strong>Finish</strong>.</p>
+</li>
+<li>
+<p>Go out to Windows Explorer and copy the file <strong>TutorialDeploymentPlan.xml</strong>
+to the location of the exported ear. This is the deployment plan that
+Geronimo requires to deploy the application.</p>
+<p><img alt="images/image022.jpg" src="/images/image022.jpg"/></p>
+</li>
+<li>
+<p>Open the Geronimo console in a web browser and log in.</p>
+</li>
+<li>
+<p>In the Console Navigation menu on the left, under the <strong>Applications</strong>
+section, click on the <strong>Deploy New</strong> item.</p>
+</li>
+<li>
+<p>Browse to the location of the exported EAR file and the deployment plan
+XML file.</p>
+<p><img alt="images/image023.jpg" src="/images/image023.jpg"/></p>
+</li>
+<li>
+<p>Click on the <strong>Install</strong> button. You should see this.</p>
+<p><img alt="images/image024.jpg" src="/images/image024.jpg"/></p>
+</li>
+<li>
+<p>In the Console Navigation menu on the left, under the <strong>Applications</strong>
+section, click on the <strong>Web App WARs</strong> item.</p>
+<ul>
+<li>
+<p>Notice that the OpenJPATutorial application is now listed and that there
+is a clickable link under the URL heading:</p>
+<p><img alt="images/image025.jpg" src="/images/image025.jpg"/></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click on the link <strong>OpenJPATutorial</strong> and now you should see this:</p>
+<p><img alt="images/image026.jpg" src="/images/image026.jpg"/></p>
+<p>Each of the buttons will execute OpenJPA code. The lists are filled by
+running queries on the Derby database.</p>
+<ul>
+<li>Add a some categories and items</li>
+<li>Make sure you test each of the buttons and see the results.</li>
+</ul>
+</li>
+</ol>
+<p><a name="BeginusingOpenJPA-TheBasics-ExaminingtheSampleCode"></a></p>
+<h1 id="examining-the-sample-code">Examining the Sample Code<a class="headerlink" href="#examining-the-sample-code" title="Permalink">&para;</a></h1>
+<p>Now that everything is set up and you have seen it work, let's look more
+closely at the parts of the code that use OpenJPA. The JSP code is just a
+prop to explore OpenJPA and we will not examine it.The sample application
+source code is provided for this tutorial and you may run as-is with no
+customizations. However, you have the option of reproducing the code
+manually using the following explanations. Whichever method you choose,
+locate the code that corresponds to explanations as you follow along.</p>
+<ul>
+<li>Java code: This tutorial comes with the following java source files:
+<ul>
+<li>index.jsp: This is the interface code only. It does call into other
+classes but it does not use any OpenJPA code directly.</li>
+<li>InventoryEntityBroker.java:&nbsp;This class contains methods that
+encapsulate the OpenJPA handling code. It is provided as a way to separate
+OpenJPA functionality from the web interface.</li>
+<li>InventoryItem.java: This is an OpenJPA Entity class file. This file is
+an example of a simple OpenJPA Entity with a relationship.</li>
+<li>InventoryCategory.java: This is an OpenJPA Entity class file. This file
+is an example of a simple OpenJPA Entity with a relationship.</li>
+</ul>
+</li>
+<li>Persistence code: Each entity concept that would be a database table will
+be its own class. In this case, the tables are called "InventoryItem" and
+"InventoryCategory". Annotations in the Java file will associate the
+properties with the database columns. The annotation,
+<font color="#646464">@Column</font>, maps the property name to the column name
+for synchronization with the database. If the table corresponding tables do
+not exist, OpenJPA can use these annotations to create the tables' schema
+dynamically based on the property type and length.</li>
+</ul>
+<div style="border-style: solid;border-width: 0px;"><div style="border-bottom-width: 1px;border-bottom-style: solid;"><b>InventoryCategory.java</b></div>
+<pre><code>    package tutorial;
+    import java.util.List;
+
+    import javax.persistence.CascadeType;
+    import javax.persistence.Column;
+    import javax.persistence.Entity;
+    import javax.persistence.GeneratedValue;
+    import javax.persistence.GenerationType;
+    import javax.persistence.Id;
+    import javax.persistence.OneToMany;
+    import javax.persistence.Version;
+
+    @Entity
+    public class InventoryCategory
+    {
+       private int version;
+       private int id;
+
+       private String categoryName;
+       private String categoryDescription;
+
+       List&lt;InventoryItem&gt; items;
+
+       public InventoryCategory(){}
+
+       @Column(name = "categoryName")
+       public String getCategoryName()
+       {
+          return categoryName;
+       }
+
+       public void setCategoryName(String name)
+       {
+          this.categoryName = name;
+       }
+
+       @Column(name = "itemDescription")
+       public String getCategoryDescription()
+       {
+          return categoryDescription;
+       }
+
+       public void setCategoryDescription(String description)
+       {
+          this.categoryDescription = description;
+       }
+
+       @Version
+       @Column(name = "version_field")
+       // not required
+       public int getVersion()
+       {
+           return version;
+       }
+
+       public void setVersion(int version)
+       {
+          this.version = version;
+       }
+
+       @Id
+       @GeneratedValue(strategy = GenerationType.AUTO)
+       public int getId()
+       {
+          return id;
+       }
+
+       public void setId(int id)
+       {
+          this.id = id;
+       }
+
+       @OneToMany(targetEntity=tutorial.InventoryItem.class,
+          cascade=CascadeType.ALL,
+          mappedBy="category")
+       public List&lt;InventoryItem&gt; getItems()
+       {
+          return items;
+       }
+
+       public void setItems(List&lt;InventoryItem&gt; items)
+       {
+          this.items = items;
+       }
+
+       public void addItem(InventoryItem item)
+       {
+          this.items.add(item);
+       }
+    }
+&lt;/div&gt;
+</code></pre>
+<table class="info"><tr>
+<td valign="top"> <img border="0" height="16" src="images/information.gif" width="16"/>
+<td> <b>Note</b><br/>  
+In this example, the property annotations (
+<font color="#646464">@Column, @Version</font>, and
+<font color="#646464">@Id</font>) are placed on the getter methods. They can
+alternatively be placed on the property declarations. For more information
+on these annotations and to see what other annotations are in OpenJPA, see
+the <a href="http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_meta.html">Apache OpenJPA 2.0 User's Guide: Chapter 5</a>
+<ul>
+<li> The annotated class and property declarations are all that are required.
+<li> The <font color="#646464">@Id</font> annotation is needed as the unique
+identifier (primary key) for each record.
+<li> The <font color="#646464">@Version</font> annotation is common practice. It
+ensures data integrity during merges and acts as an optimistic concurrency
+control.
+<li> Every property must have both a getter and a setter and the standard case
+convention must be observed.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<ul>
+<li>Correct: <font color="#7f0055">public void</font> setCategoryName(String name)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<li>Incorrect: <font color="#7f0055">public void setcategoryname(String name)
+</font></li></li></ul>
+</li></li></li></li></ul>
+</td></td></tr></table>
+<ul>
+<li>
+<p>Persistence.xml: JPA requires the use of a XML file called the
+"persistence.xml" that describes how to access the data. The XML file must
+be created in the META-INF directory. The META-INF directory containing the
+persistence.xml must be located with the source files.</p>
+<p><img alt="images/image027.jpg" src="/images/image027.jpg"/></p>
+<p>In the following example, the file only requires a few fields.</p>
+<div style="border-style:solid;border-width: 0px;"><div style="border-bottom-width: 1px;border-bottom-style: solid;"><b>META-INF/persistence.xml</b></div>
+<pre><code>  &lt;persistence xmlns=http://java.sun.com/xml/ns/persistence
+      xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance
+      version="1.0"&gt;
+  &lt;persistence-unit name="InventorySystem" transaction-type="RESOURCE_LOCAL"&gt;
+      &lt;class&gt;tutorial.InventoryItem&lt;/class&gt;
+      &lt;class&gt;tutorial.InventoryCategory&lt;/class&gt;
+      &lt;properties&gt;
+          &lt;property name="openjpa.jdbc.SynchronizeMappings" 
+                   value="buildSchema"/&gt;
+          &lt;property name="openjpa.ConnectionURL" 
+                   value="jdbc:derby://localhost:1527/StoreSystem"/&gt;
+          &lt;property name="openjpa.ConnectionDriverName" 
+                   value="org.apache.derby.jdbc.ClientDriver"/&gt;
+      &lt;/properties&gt;
+   &lt;/persistence-unit&gt;
+</code></pre>
+
+</div>
+</li>
+<li>
+<p>The following elements are specific to this tutorial:</p>
+<ul>
+<li><strong>persistence-unit</strong>: the <strong>name</strong> is the table name to bind. In this case it is 'person'.</li>
+<li><strong>class</strong>: the java class that is bound to the table 'person'.</li>
+<li><strong>property:</strong> openjpa.jdbc.SynchronizeMappings: This tells OpenJPA to automatically create
+the table with the class definition if a table does not already exist.</li>
+<li><strong>property:</strong> openjpa.ConnectionURL: The URL of the database connection.</li>
+<li><strong>property:</strong> openjpa.ConnectionDriverName: the class name of the JDBC
+driver for Derby. This must be available via the classpath. In this
+tutorial, the driver is built into Geronimo so no extra actions are needed.</li>
+</ul>
+</li>
+<li>
+<p>A complete explanation of the persistence.xml is in the <a href="http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_persistence.html">Apache OpenJPAV2.0 user's Guide: Chapter 6</a></p>
+</li>
+<li>
+<p>Create the Entity Manager. In the provided code, the EntityManager is a
+property of the InventoryEntityBroker class. The Entity Manager controls
+the interaction with the database. You must use the Entity Manager to start
+or access transactions or to send queries.</p>
+<ul>
+<li>
+<p>The following code must be added before using any of the persistence
+APIs (If you are using the provided sample code, this is already included):</p>
+<pre><code>    EntityManagerFactory factory = Persistence.
+        createEntityManagerFactory("InventorySystem", System.getProperties());
+          
+    EntityManager em = factory.createEntityManager();
+</code></pre>
+</li>
+<li>
+<p>Note that the name, <strong>"InventorySystem"</strong>, is the same one identified in the persistence.xml.</p>
+</li>
+<li>
+<p>This code can be placed just before a query or transaction or they can be class properties.</p>
+</li>
+<li>
+<p>Regardless of the scope, the EntityManager and the EntityManagerFactory should be closed when they are no longer needed:</p>
+<pre><code>      ...
+      em.close();
+      factory.close();
+      ...
+</code></pre>
+</li>
+<li>
+<p>The EntityManagerFactory and EntityManager full descriptions are in the following OpenJPA documentation:</p>
+<ul>
+<li>EntityManagerFactory: <a href="http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_emfactory.html">http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_emfactory.html</a></li>
+<li>EntityManager: <a href="http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_em.html">http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_em.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>DB interface class. In this example, the InventoryEntityBroker class contains all the OpenJPA database interaction code.
+This is not required but it is a good idea for keeping the functionality componentized. For example, if you want
+to pull all of the records from the InventoryItem table, the code would look like this:</p>
+<div style="border-style:solid;border-width: 0px;"><div style="border-bottom-width: 1px;border-bottom-style: solid;"><b>InventoryEntityBroker.java</b></div>
+<pre><code>  ...
+  List&lt;Person&gt; getAllItems()
+  {
+       Query q = em.createQuery("SELECT item FROM InventoryItem item");
+  
+       return (List&lt;InventoryItem&gt;)q.getResultList();
+  }
+  ...
+</code></pre>
+</div>
+<div style="border-style:solid;border-width: 0px;"><div style="border-bottom-width: 1px;border-bottom-style: solid;"><b>index.jsp</b></div>
+<pre><code>  ...
+  List&lt;InventoryItem&gt; itemList = getAllItems();
+  ...
+</code></pre>
+</div>
+<ul>
+<li>All of the specific APIs are described in the OpenJPA <a href="http:/openjpa.apache.org/builds/latest/docs/javadoc/index.html">javadoc</a></li>
+<li>Notice that the Query is not standard SQL. It is actually JPQL, which is a specialized form of query language specifically designed for JPA.
+<ul>
+<li>In the JPQL statement, "<font color="#2a00ff">SELECT item FROM InventoryItem item</font>", notice that InventoryItem has the same case as the class
+InventoryItem.</li>
+<li>JPQL uses java objects in the query and not the database table names. The statement identifies the variable for InventoryItem as
+"<font color="#2a00ff">item</font>".</li>
+<li>JPQL provides an object oriented query language that is independent of the database being queried.&nbsp; So, regardless of which database being
+used, the JPQL does not change.&nbsp; The JPA runtime takes care of doing the translation from the object world to the desired relational database.</li>
+<li>For more information on JPQL, check out this <a href="http://java.sun.com/javaee/5/docs/tutorial/backup/update3/doc/QueryLanguage.html">Java Persistence Query Language reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Also in the InventoryEntityBroker is code to add entries the database tables. Since you did not create a table for InventoryItem in the
+StoreSystem database in Derby, OpenJPA 2.0 will create the table the first time an <em>"add"</em> is attempted.</p>
+<ul>
+<li>Consider the following code:</li>
+</ul>
+<div style="border-style:solid;border-width: 0px;"><div style="border-bottom-width: 1px;border-bottom-style: solid;"><b>InventoryEntityBroker</b></div>
+<pre><code>      ...
+      void addItem(String name, String description, float price, int categoryID)
+      {
+          InventoryItem item = new InventoryItem();
+          item.setName(name);
+          item.setDescription(description);
+          ...
+      
+          em.persist(item);
+      }
+      ...
+</code></pre>
+</div>
+<p>You can then call the addItem() method in another part of the code. The
+EntityManager.persist() method will throw an exception if a transaction has
+not been started. The transaction must be committed by calling the
+Transaction.commit() method after all updates have been applied or else the
+changes will not be saved to the database:</p>
+<pre><code>      ...
+      em.getTransaction().begin();
+      
+      addItem(...);
+      
+      em.getTransaction().commit();
+      ...
+</code></pre>
+<ul>
+<li>When this is executed the first time it will use the annotations to create the Person table, then OpenJPA 2.0 will populate it with the
+provided data.</li>
+<li>Note the use of the getTransaction() method to start an update and then to commit it. The concept is the same as in any database transaction
+processing.</li>
+<li>Also note that while the getAllItems() function requires a JPQL SELECT query, the update type actions have APIs.</li>
+<li>Take a look in the InventoryEntityBroker code at the addItem(), updateItem() and deleteItem() functions and note the simplicity of these
+operations.</li>
+</ul>
+</li>
+<li>
+<p>An important aspect of relational databases is, of course, the
+relationships. The basic relationship types are: one to many, many to one,
+and many to many. OpenJPA provides annotations to identify the related fields.
+Open the source file, InventoryCategory.java in Eclipse and find the
+following code:</p>
+<div style="border-style:solid;border-width: 0px;"><div style="border-bottom-width: 1px;border-bottom-style: solid;"><b>InventoryCategory.java</b></div>
+<pre><code>      ...
+      @OneToMany(targetEntity=tutorial.InventoryItem.class,
+          cascade=CascadeType.ALL,
+          mappedBy="category")
+      public List&lt;InventoryItem&gt; getItems()
+      {
+          return items;
+      }
+      ...
+</code></pre>
+<ul>
+<li>The annotation <font color="#646464">@OneToMany</font> identifies that:</li>
+<li>This object has a one-to-many relationship with targetEntity=tutorial.InventoryItem.class. Meaning that one
+InventoryCategory can have many InventoryItems associated with it.</li>
+<li>The property of InventoryItem that specifies the InventoryCategory it is associated with is mappedBy="category". In other
+words, InventoryItem has a class property of type InventoryCategory named "category".  Now open the source file,
+InventoryItem.java and find the following code:</li>
+</ul>
+<div style="border-style:solid;border-width: 0px;"><div style="border-bottom-width: 1px;border-bottom-style: solid;"><b>InventoryItem.java</b></div>
+<pre><code>      ...
+      @ManyToOne
+      @JoinColumn(name="CAT_ID", nullable=false)
+      public InventoryCategory getCategory()
+      {
+          return category;
+      }
+      ...
+</code></pre>
+<ul>
+<li>The annotation @ManyToOne identifies that:</li>
+<li>This object has a many-to-one relationship with the InventoryCategory object. Meaning that there many InventoryItems can reference the same
+InventoryCategory</li>
+<li>The annotation <font color="#646464">@JoinColumn</font> identifies that:
+<ul>
+<li>The column in the database table that holds the InventoryCategory
+reference by the attribute: name=<font color="##2a00ff">"CAT_ID"</font>.</li>
+</ul>
+</li>
+</ul>
+</div></div></li>
+</ul>
+<table class="info"><tr>
+<td valign="top"> <img border="0" height="16" src="images/information.gif" width="16"/>
+<td> <b>Remember</b><br/>
+These annotations contribute to the creation of the tables and the
+relationships. It is important to put as much thought into how these
+objects relate to each other as you would if you were designing the
+database tables because you are designing the database tables.
+You can see more about the relationship annotations at the Apache OpenJPA
+site. The&nbsp; <a href="http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_meta_field.html">documentation is here</a>
+.
+</td></td></tr></table>
+<p><a name="BeginusingOpenJPA-TheBasics-Summary"></a></p>
+<h1 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink">&para;</a></h1>
+<p>This was a very basic example of how to use OpenJPA with Geronimo and
+Derby. However, many applications that require database persistence do not
+use much more than the basic functionality demonstrated in this tutorial.
+The purpose of this was to be a primer. Aside from the setup of the server
+and database, we went through the creation of a persistence.xml file, the
+basics of the OpenJPA Entity, and EntityManager and some of the
+functionality.</p>
+<p><strong>Exercises</strong></p>
+<p>Using this sample code as a base, try to do some of the following:</p>
+<ul>
+<li>Add additional fields to the InventoryItem Entity.</li>
+<li>Create a Customer Entity and establish a one-to-many relationship with
+the InventoryItems as one customer having purchased many items.</li>
+<li>Since several customers could have purchased the same items and an item
+could have been purchased by many customers, use the documentation to
+create a many-to-many relationship using @ManyToMany*.</li>
+</ul>
+<p>*To make these changes you may have to delete the existing database
+tables so that they can recreated with the new relationship fields.</p>
+<p><a name="BeginusingOpenJPA-TheBasics-References"></a></p>
+<h1 id="references">References<a class="headerlink" href="#references" title="Permalink">&para;</a></h1>
+<ul>
+<li>
+<p><strong>Java J2SE 1.6</strong></p>
+<ul>
+<li><a href="https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=jdk-6u16-oth-JPR@CDS-CDS_Developer">Download</a>
+<em>&nbsp;</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Apache Sources</strong></p>
+<ul>
+<li><strong>Geronimo</strong>
+<ul>
+<li><a href="http://geronimo.apache.org/">Geronimo Homepage</a></li>
+<li><a href="http://cwiki.apache.org/GMOxDOC22/documentation.html">Gernimo V2.2 Server Documentation</a></li>
+<li><a href="http://www.apache.org/dyn/closer.cgi/geronimo/2.2/geronimo-tomcat6-javaee5-2.2-bin.zip">Geronimo V2.2 Server download</a></li>
+</ul>
+</li>
+<li><strong>JPA</strong>
+<ul>
+<li><a href="http://openjpa.apache.org/">Apache OpenJPA home page</a></li>
+<li><a href="http://openjpa.apache.org/downloads.html">Apache OpenJPA download</a></li>
+<li><a href="http://openjpa.apache.org/documentation.html">Apache OpenJPA documentation</a>
+&nbsp;&nbsp;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Annotations</strong></p>
+<ul>
+<li><a href="http://java.sun.com/j2se/1.5.0/docs/guide/language/annotations.html">Documentation       for Java Annotations</a></li>
+</ul>
+</li>
+<li>
+<p><strong>JPQL</strong></p>
+<ul>
+<li><a href="http://java.sun.com/javaee/5/docs/tutorial/backup/update3/doc/QueryLanguage.html">A reference for JPQL</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Blogs</strong></p>
+<ul>
+<li><a href="http://www.theserverside.com/news/thread.tss?thread_id=58343">Discussion       on The Server Side</a></li>
+<li><a href="http://bit.ly/WASJPAblog">Websphere &amp; OpenJPA blog on       blogspot</a></li>
+<li><a href="http://bit.ly/JPATutApachedwBlog">JPA Blog on developerWorks</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Implementation Sites</strong></p>
+<ul>
+<li><a href="http://bit.ly/BetaSiteApache">IBM WebSphere Application Server V7 Java Persistence API (JPA) 2.0 Open Beta</a></li>
+</ul>
+</li>
+</ul>
+</div>
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- Testing" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- Testing</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="Testing"></a></p>
+<h1 id="running-and-writing-tests-with-openjpa">Running and <a href="writing-test-cases-for-openjpa.html">Writing</a> Tests with OpenJPA<a class="headerlink" href="#running-and-writing-tests-with-openjpa" title="Permalink">&para;</a></h1>
+<p>OpenJPA's unit tests are written using JUnit. For a template for a simple
+test case, see the code for <a href="http://svn.apache.org/viewvc/openjpa/trunk/openjpa-persistence-jdbc/src/test/java/org/apache/openjpa/persistence/simple/TestPersistence.java?view=markup">TestPersistence.java</a>
+.</p>
+<p>If you want to contribute your own test case then follow the <a href="writing-test-cases-for-openjpa.html">guidelines</a>
+.</p>
+<p>Once you have downloaded and built OpenJPA (see <a href="building.html">Building</a>
+), you can run individual tests using the "test" goal to maven. For
+example:</p>
+<pre><code>mvn test -DfailIfNoTests=false -Dtest=TestPersistence
+</code></pre>
+<table class="note"><tr>
+<td valign="top"> <img border="0" height="16" src="images/warning.gif" width="16"/>
+<td>By default Maven will fail if there are no testcases found in any
+module you build. The examples solve this by specifying
+-DfailIfNoTests=false but you can also change your personal default by
+adding the following to ${user.home}/.m2/settings.xml :
+<pre><code>	&lt;profile&gt;
+	    &lt;id&gt;enable-no-tests&lt;/id&gt;
+	    &lt;activation&gt;
+		&lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+	    &lt;/activation&gt;
+	    &lt;properties&gt;
+		&lt;failIfNoTests&gt;false&lt;/failIfNoTests&gt;
+	    &lt;/properties&gt;
+	&lt;/profile&gt;
+</code></pre>
+</td></td></tr></table>
+<p>To get more debugging information (e.g., to see the SQL that is being
+executed against the database), you can enable trace-level logging from the
+command line using the "openjpa.Log" system property. For example:</p>
+<pre><code>$ mvn test -DfailIfNoTests=false -Dtest=TestPersistence -Dopenjpa.Log=DefaultLevel=TRACE
+
+[INFO] Scanning for projects...
+[INFO] Reactor build order: 
+...
+690  test  TRACE  [main] openjpa.jdbc.SQL - &lt;t 4261185, conn 3061987&gt; executing prepstmnt 12659709 
+   INSERT INTO AllFieldTypes (id, arrayOfStrings, booleanField, byteField, charField, dateField, 
+   doubleField, floatField, intField, longField, shortField, stringField) 
+   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [params=(long) 601, (null) null, (int) 0, (byte) 0, 
+   (int) 0, (null) null, (double) 0.0, (float) 0.0, (int) 0, (long) 0, (short) 0, (null) null]
+701  test  TRACE  [main] openjpa.jdbc.SQL - &lt;t 4261185, conn 3061987&gt; [11 ms] spent
+701  test  TRACE  [main] openjpa.jdbc.JDBC - &lt;t 4261185, conn 3061987&gt; [0 ms] commit
+702  test  TRACE  [main] openjpa.jdbc.JDBC - &lt;t 4261185, conn 0&gt; [0 ms] close
+...
+$
+</code></pre>
+<p><a name="Testing-SettingadditionalLogparameters"></a></p>
+<h2 id="setting-additional-log-parameters">Setting additional Log parameters<a class="headerlink" href="#setting-additional-log-parameters" title="Permalink">&para;</a></h2>
+<p>There are several parameters that are used by OpenJPA Log. Here are some
+that might be of value when debugging test cases. Note that the logger
+names are case sensitive while the log levels are not.</p>
+<ul>
+<li>DefaultLevel sets the level for all loggers that are not otherwise set</li>
+<li>file sets the file name for logging output</li>
+<li>Enhance logs messages from the enhancer</li>
+<li>Metadata logs messages from the metadata processor</li>
+<li>Tool logs messages from the schema synchronization tool</li>
+<li>SQL logs messages from the SQL generator</li>
+<li>JDBC logs messages related to JDBC</li>
+<li>Schema logs messages related to schema</li>
+<li>Runtime logs messages related to runtime</li>
+<li>Query logs messages related to queried</li>
+<li>DataCache logs messages related to caching</li>
+</ul>
+<p>Log levels specify the minimum log message that is output. All log messages
+with a level higher than the log level set for a logger are output. So if
+INFO is specified, log messages of level INFO, WARN, ERROR, and SEVERE are
+output.</p>
+<ul>
+<li>TRACE</li>
+<li>INFO</li>
+<li>WARN</li>
+<li>ERROR</li>
+<li>FATAL</li>
+</ul>
+<p>For example, to avoid enhancement warnings, get detailed SQL information,
+and write the log data to a file:</p>
+<pre><code>mvn test -Dtest=TestPersistence -Dopenjpa.Log=Enhance=ERROR,SQL=TRACE,file=openjpa.log
+</code></pre>
+<h1 id="testing-against-alternate-databases">Testing against alternate databases<a class="headerlink" href="#testing-against-alternate-databases" title="Permalink">&para;</a></h1>
+<p>By default, OpenJPA uses the <a href="http://db.apache.org/derby/">Derby</a>
+database for testing. The <code>openjpa-persistence-jdbc/pom.xml</code> POM
+declares various pre-defined databases against which tests can be executed.
+For example, to test against the stand-alone <a href="http://hsqldb.org/">HSQLDB</a>
+database, you can run with the "test-hsqldb" profile:</p>
+<pre><code>mvn test -DfailIfNoTests=false -Dtest=TestPersistence -Ptest-hsqldb
+</code></pre>
+<p>For databases that are not in the pre-defined list, you can manually
+specify connection parameters to use for testing under the "test-custom"
+profile. You will need to manually provide the driver class and specify all
+of the connection parameters. For example, to test against Oracle, you
+might run:</p>
+<pre><code>mvn test -DfailIfNoTests=false -Dtest=TestPersistence -Ptest-custom \
+  -Dopenjpa.custom.driverjar=$(pwd)/drivers/jdbc-oracle-10_2_0_1_0.jar \
+  -Dopenjpa.custom.driverclass=oracle.jdbc.driver.OracleDriver \
+  -Dopenjpa.custom.url=jdbc:oracle:thin:@HOST:PORT:DBNAME \
+  -Dopenjpa.custom.username=USERNAME \
+  -Dopenjpa.custom.password=PASSWORD
+</code></pre>
+<p>If you frequently need to test against another database, you can
+permanently declare the database connection parameters in the
+<code>~/.m2/settings.xml</code> file under a custom profile. For example:</p>
+<pre><code>&lt;settings&gt;
+    &lt;profiles&gt;
+	&lt;profile&gt;
+	    &lt;id&gt;test-oracle&lt;/id&gt;
+	    &lt;properties&gt;
+		&lt;test-custom&gt;true&lt;/test-custom&gt;    	       
+        &lt;openjpa.custom.driverjar&gt;${user.home}/.m2/privaterepos/jdbc-oracle-10_2_0_1_0.jar&lt;/openjpa.custom.driverjar&gt;
+        &lt;openjpa.custom.driverclass&gt;oracle.jdbc.driver.OracleDriver&lt;/openjpa.custom.driverclass&gt;    	       
+        &lt;openjpa.custom.url&gt;jdbc:oracle:thin:@HOST:PORT:DBNAME&lt;/openjpa.custom.url&gt;
+		&lt;openjpa.custom.username&gt;USERNAME&lt;/openjpa.custom.username&gt;
+		&lt;openjpa.custom.password&gt;PASSWORD&lt;/openjpa.custom.password&gt;
+	    &lt;/properties&gt;
+	&lt;/profile&gt;
+    &lt;/profiles&gt;
+&lt;/settings&gt;
+</code></pre>
+<p>This profile can then be executed by running:</p>
+<pre><code>mvn test -DfailIfNoTests=false -Dtest=TestPersistence -Ptest-custom,test-oracle
+</code></pre>
+<p><a name="Testing-RunningJUnitsinEclipse"></a></p>
+<h1 id="running-junits-in-eclipse">Running JUnits in Eclipse<a class="headerlink" href="#running-junits-in-eclipse" title="Permalink">&para;</a></h1>
+<p>You'll probably want to setup a Debug Configuration in Eclipse for running
+the JUnit testcases.</p>
+<ol>
+<li>
+<p>Run --&gt; Debug Configurations...  Create a new JUnit configuration</p>
+<p><img alt="eclipse_dbgcfg_1.png" src="images/eclipse_dbgcfg_1.png"/></p>
+</li>
+<li>
+<p>For the Test tab - Give the configuration a Name, select a Project and
+Test class, and you'll probably want to select the "Keep JUnit running..."
+option.</p>
+<p><img alt="eclipse_dbgcfg_2.png" src="images/eclipse_dbgcfg_2.png"/></p>
+</li>
+<li>
+<p>For the Arguments tab - Press the Variables... button. This will allow us
+to define variables that can be shared across other Release/Debug
+Configurations within this workspace.</p>
+<p><img alt="eclipse_dbgcfg_3.png" src="images/eclipse_dbgcfg_3.png"/></p>
+</li>
+<li>
+<p>For the Select Variable window - Press the Edit Variables... button.</p>
+<p><img alt="eclipse_dbgcfg_4.png" src="images/eclipse_dbgcfg_4.png"/></p>
+</li>
+<li>
+<p>For the Preferences windows - Press New... to add two variables.
+<img alt="eclipse_dbgcfg_5.png" src="images/eclipse_dbgcfg_5.png"/></p>
+<pre><code> Name = openjpa.trace
+ Value = -Dopenjpa.Log=DefaultLevel=TRACE
+ Description = Set OpenJPA logging to TRACE
+</code></pre>
+<p><img alt="eclipse_dbgcfg_6.png" src="images/eclipse_dbgcfg_6.png"/></p>
+<pre><code> Name = connect.derby
+ Value = -Dopenjpa.ConnectionDriverName=org.apache.derby.jdbc.EmbeddedDriver
+     -Dopenjpa.ConnectionURL=jdbc:derby:target/database/openjpa-derby-database;create=true
+ Description = Connection properties for Derby
+</code></pre>
+<p><img alt="eclipse_dbgcfg_7.png" src="images/eclipse_dbgcfg_7.png"/></p>
+</li>
+<li>
+<p>After the above are created and saved, add the new variables as VM Arguments.</p>
+<pre><code> ${openjpa.trace}
+ ${connect.derby}
+</code></pre>
+<p><img alt="eclipse_dbgcfg_8.png" src="images/eclipse_dbgcfg_8.png"/></p>
+</li>
+</ol>
+
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>

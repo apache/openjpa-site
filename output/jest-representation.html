@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
+        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
+        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+        <META name="Description" content="Apache OpenJPA -- JEST Representation" />
+        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
+        <META name="Owner" content="dev@openjpa.apache.org" />
+        <META name="Robots" content="index, follow" />
+        <META name="Security" content="Public" />
+        <META name="Source" content="wiki template" />
+        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
+        <META name="DC.Language" scheme="rfc1766" content="en" />
+        <META name="DC.Rights" content="Copyright © 2006,2021 The Apache Software Foundation" />
+        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
+  visibility: visible
+}	</style>
+        <title>Apache OpenJPA -- JEST Representation</title>
+    </head>
+    <body>
+        <div class="white_box">
+            <div class="header">
+                <div class="header_l">
+                    <div class="header_r">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_l">
+                    <div class="content_r">
+                        <div>
+                            <!-- Banner -->
+                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
+                                <TR>
+                                    <TD valing="top" align="left">
+                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
+                                    </TD>
+                                    <TD width="100%">
+                                        &nbsp;
+                                    </TD>
+                                    <TD valing="top" align="right">
+                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+
+                            <!-- Navigation Bar -->
+                            <div class="bottom_red_bar">
+                                <div id="site-breadcrumbs">
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top">
+                                            <div class="navigation">
+                                                <div class="navigation_top">
+                                                    <div class="navigation_bottom">
+                                                        <!-- NavigationBar -->
+                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
+                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
+                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
+                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
+                                                            <li><a href="/license.html" title="License">License</a></li>
+                                                            <li><a href="/privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
+                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
+                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
+                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
+                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
+                                                        </ul>
+
+
+                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
+                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
+                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
+                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
+                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
+                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
+                                                        </ul>
+
+                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
+
+                                                        <ul class="alternate" type="square">
+                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                                        </ul>
+
+                                                        <h3>Search</h3>
+
+                                                        <div style="padding: 5px 5px 0px 25px;">
+                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                                                <input name="ie" type="hidden" value="UTF-8">
+                                                                <input name="oe" type="hidden" value="UTF-8">
+                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
+                                                                <input name="btnG" type="submit" value="Google">
+                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
+                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td valign="top" width="100%" style="overflow:hidden;">
+                                            <div class="wiki-content">
+    <p><a name="JEST-Representation"></a></p>
+<p>JEST response is either XML or JSON.</p>
+<p><a name="JESTRepresentation-XMLRepresentation"></a></p>
+<h2 id="xml-representation">XML Representation<a class="headerlink" href="#xml-representation" title="Permalink">&para;</a></h2>
+<p>JEST represents persistent Java object graph in a schema-compliant XML. The
+schema is metamodel-driven and hence invariant to particular domain model.
+The schema <em>jest-instance.xsd</em> is as follows:</p>
+<div style="border-style: solid;border-width: 0px;"><div class="codeHeader panelHeader" style="border-bottom-width: 1px;border-bottom-style: solid;"><b>Metamodel-driven schema for JEST XML</b></div>
+<pre><code>&lt;!-- ========================================================================= --&gt;
+&lt;!-- Schema for serialized persistence instance graph                          --&gt;
+&lt;!-- ========================================================================= --&gt;
+&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        attributeFormDefault="unqualified" elementFormDefault="qualified"
+        version="1.0"&gt;
+
+    &lt;xsd:annotation&gt;
+	    &lt;xsd:documentation&gt;&lt;![CDATA[
+ Describes closure of managed persistence instance.
+ Each instance is described by all its loaded persistent attribute.
+ The related instances are resolved within the document root.
+ Document root represents zero or more instances. 
+      
+ The file must be named "jest-instance.xsd".
+     ]]&gt;
+	    &lt;/xsd:documentation&gt;
+    &lt;/xsd:annotation&gt;
+
+    &lt;!-- The root element of the document contains zero or more instances         --&gt;
+    &lt;xsd:element name="instances"&gt;
+	    &lt;xsd:complexType&gt;
+		    &lt;xsd:sequence&gt;
+		        &lt;xsd:element name="uri"	        minOccurs="1" maxOccurs="1" type="xsd:anyURI"/&gt;
+		        &lt;xsd:element name="description" minOccurs="0" maxOccurs="1" type="xsd:string"/&gt;
+			    &lt;xsd:element name="instance"    minOccurs="0" maxOccurs="unbounded" type="instance-type" /&gt;
+			&lt;/xsd:sequence&gt;
+    		&lt;xsd:attribute name="version" type="xsd:string" /&gt;
+	    &lt;/xsd:complexType&gt;
+    &lt;/xsd:element&gt;
+
+	&lt;!-- The root element for a single instance. Children of this element are persistent attribute --&gt;
+    &lt;!-- Persistent Attributes occur in order. The order is determined by the attribute category.  --&gt;
+    &lt;!-- Attribute category is determined by the enumerated PersistentAttributeType defined in     --&gt;
+    &lt;!-- javax.persistence.metamodel and then further refined by id, version, lob and enum.	      --&gt;
+    &lt;!-- See org.apache.openjpa.persistence.jest.MetamodelHelper for further details.	      --&gt;
+    &lt;xsd:complexType name="instance-type"&gt;
+	    &lt;xsd:sequence&gt;
+		    &lt;xsd:element name="id"	               type="basic-attr-type"	   
+		      				minOccurs="0" maxOccurs="unbounded"/&gt;
+		    &lt;xsd:element name="version"            type="basic-attr-type"	   
+		    				minOccurs="0" maxOccurs="unbounded"/&gt;
+		    &lt;xsd:element name="basic"              type="basic-attr-type"	   
+		    				minOccurs="0" maxOccurs="unbounded"/&gt;
+			&lt;xsd:element name="enum"               type="basic-attr-type"	   
+							minOccurs="0" maxOccurs="unbounded"/&gt;
+    		&lt;xsd:element name="embedded"           type="instance-type"	       
+    						minOccurs="0" maxOccurs="unbounded"/&gt;
+	    	&lt;xsd:element name="lob" 	           type="lob-attr-type"	       
+	    					minOccurs="0" maxOccurs="unbounded"/&gt;
+		    &lt;xsd:element name="one-to-one"         type="singular-attr-type"   
+		    				minOccurs="0" maxOccurs="unbounded"/&gt;
+			&lt;xsd:element name="many-to-one"        type="singular-attr-type"   
+							minOccurs="0" maxOccurs="unbounded"/&gt;
+    		&lt;xsd:element name="element-collection" type="collection-attr-type" 
+    						minOccurs="0" maxOccurs="unbounded"/&gt;
+	    	&lt;xsd:element name="one-to-many"        type="collection-attr-type" 
+	    					minOccurs="0" maxOccurs="unbounded"/&gt;
+		    &lt;xsd:element name="many-to-many"       type="map-attr-type"	       
+		    				minOccurs="0" maxOccurs="unbounded"/&gt;
+		&lt;/xsd:sequence&gt;
+    	&lt;xsd:attribute name="id" type="xsd:ID" use="required" /&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!-- A reference to another instance within the same(?) document --&gt;
+    &lt;xsd:complexType name="ref-type"&gt;
+	    &lt;xsd:simpleContent&gt;
+		    &lt;xsd:extension base="xsd:string"&gt;
+			    &lt;xsd:attribute name="id" type="xsd:IDREF"/&gt;
+		    &lt;/xsd:extension&gt;
+	    &lt;/xsd:simpleContent&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!-- A null reference				--&gt;
+    &lt;xsd:complexType name="ref-null"&gt;
+	    &lt;xsd:simpleContent&gt;
+			&lt;xsd:extension base="xsd:string"&gt;
+    		&lt;/xsd:extension&gt;
+	    &lt;/xsd:simpleContent&gt;
+    &lt;/xsd:complexType&gt;
+
+	&lt;!-- Basic Attribute has a name and its runtime type   --&gt;
+    &lt;!-- non-null value appears as text content.	       --&gt;
+	&lt;!-- null value appears as attribute with empty text . --&gt;
+    &lt;xsd:complexType name="basic-attr-type"&gt;
+	    &lt;xsd:simpleContent&gt;
+		    &lt;xsd:extension base="xsd:string"&gt;
+			    &lt;xsd:attribute name="name" type="xsd:string" use="required" /&gt;
+				&lt;xsd:attribute name="type" type="xsd:string" use="required" /&gt;
+    			&lt;xsd:attribute name="null" type="xsd:boolean" /&gt;
+	    	&lt;/xsd:extension&gt;
+		&lt;/xsd:simpleContent&gt;
+    &lt;/xsd:complexType&gt;
+
+	&lt;!-- Large Binary Objects (LOB) represented as hex array --&gt;
+    &lt;xsd:complexType name="lob-attr-type"&gt;
+	    &lt;xsd:simpleContent&gt;
+		    &lt;xsd:extension base="xsd:hexBinary"&gt;
+			    &lt;xsd:attribute name="name" type="xsd:string" use="required" /&gt;
+				&lt;xsd:attribute name="type" type="xsd:string" use="required" /&gt;
+    			&lt;xsd:attribute name="null" type="xsd:boolean" /&gt;
+	    	&lt;/xsd:extension&gt;
+	    &lt;/xsd:simpleContent&gt;
+	&lt;/xsd:complexType&gt;
+
+    &lt;!-- Singular attribute is a reference to another instance or a null reference. --&gt;
+    &lt;xsd:complexType name="singular-attr-type"&gt;
+	    &lt;xsd:choice&gt;
+		    &lt;xsd:element name="null" type="ref-null" /&gt;
+			&lt;xsd:element name="ref"  type="ref-type" /&gt;
+    	&lt;/xsd:choice&gt;
+	    &lt;xsd:attribute name="name" type="xsd:string" use="required" /&gt;
+		&lt;xsd:attribute name="type" type="xsd:string" use="required" /&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!-- Collection attributes list their members with their runtime type --&gt;
+    &lt;!-- Members can be basic or other managed instance    --&gt;
+    &lt;xsd:complexType name="collection-attr-type"&gt;
+	    &lt;xsd:sequence&gt;
+		    &lt;xsd:element name="member" type="member-type" minOccurs="0" maxOccurs="unbounded" /&gt;
+	    &lt;/xsd:sequence&gt;
+	    &lt;xsd:attribute name="name"        type="xsd:string" use="required" /&gt;
+		&lt;xsd:attribute name="type"        type="xsd:string" use="required" /&gt;
+    	&lt;xsd:attribute name="member-type" type="xsd:string" use="required" /&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!-- Map attributes list their entries with runtime type of key and value	 --&gt;
+    &lt;!-- Both key and value can be independently basic or other managed instance --&gt;
+    &lt;xsd:complexType name="map-attr-type"&gt;
+	    &lt;xsd:sequence&gt;
+		    &lt;xsd:element name="entry" type="entry-type" /&gt;
+		&lt;/xsd:sequence&gt;
+    	&lt;xsd:attribute name="name"       type="xsd:string" use="required" /&gt;
+	    &lt;xsd:attribute name="type"       type="xsd:string" use="required" /&gt;
+		&lt;xsd:attribute name="key-type"   type="xsd:string" use="required" /&gt;
+    	&lt;xsd:attribute name="value-type" type="xsd:string" use="required" /&gt;
+    &lt;/xsd:complexType&gt;
+
+    &lt;!-- Value of a member of basic type. --&gt;
+    &lt;xsd:complexType name="basic-value-type"&gt;
+	    &lt;xsd:simpleContent&gt;
+		    &lt;xsd:extension base="xsd:string"&gt;
+			    &lt;xsd:attribute name="null" type="xsd:boolean" /&gt;
+		    &lt;/xsd:extension&gt;
+	    &lt;/xsd:simpleContent&gt;
+    &lt;/xsd:complexType&gt;
+
+	&lt;!-- Value of a member of a collection/map --&gt;
+    &lt;xsd:complexType name="member-type"&gt;
+	    &lt;xsd:choice&gt;
+		    &lt;xsd:element name="basic" type="basic-value-type" /&gt;
+			&lt;xsd:element name="null"  type="ref-null" /&gt;
+    		&lt;xsd:element name="ref"   type="ref-type" /&gt;
+	    &lt;/xsd:choice&gt;
+	&lt;/xsd:complexType&gt;
+
+    &lt;!-- Denotes entry of a map element --&gt;
+	&lt;xsd:complexType name="entry-type"&gt;
+    	&lt;xsd:sequence&gt;
+	    	&lt;xsd:element name="key"   type="member-type" minOccurs="1" maxOccurs="1" /&gt;
+		    &lt;xsd:element name="value" type="member-type" minOccurs="1" maxOccurs="1" /&gt;
+		&lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+
+&lt;/xsd:schema&gt;
+</code></pre>
+<h2 id="example-of-a-serialized-object-graph">Example of a serialized object graph<a class="headerlink" href="#example-of-a-serialized-object-graph" title="Permalink">&para;</a></h2>
+<p>The example shows a Person (primary key p1) who is her own partner.</p>
+<div style="border-style: solid;border-width: 0px;"><div class="codeHeader panelHeader" style="border-bottom-width: 1px;border-bottom-style: solid;"><b>Example of Object Graph with Circular Reference</b></div>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;instances&gt;
+  &lt;instance id="Person-p1"&gt;
+    &lt;basic name="id" type="String"&gt;p1&lt;/basic&gt;
+    &lt;basic name="dob" type="Date"&gt;Fri Sep 08 00:00:00 CDT 1989&lt;/basic&gt;
+    &lt;basic name="firstName" type="String"&gt;Mary&lt;/basic&gt;
+    &lt;basic name="gender" type="Gender"&gt;Female&lt;/basic&gt;
+
+    &lt;basic name="lastName" type="String"&gt;Smith&lt;/basic&gt;
+    &lt;singular name="address" type="Address"&gt;
+      &lt;instance id="Address-101"&gt;
+	&lt;basic name="id" type="long"&gt;101&lt;/basic&gt;
+	&lt;basic name="country" type="String"&gt;C1&lt;/basic&gt;
+	&lt;basic name="state" type="String"&gt;State1&lt;/basic&gt;
+	&lt;basic name="street" type="String"&gt;Street1&lt;/basic&gt;
+
+	&lt;basic name="zip" type="int"&gt;10001&lt;/basic&gt;
+      &lt;/instance&gt;
+    &lt;/singular&gt;
+    &lt;singular name="partner" type="Person"&gt;
+      &lt;ref id="Person-p1"/&gt;
+    &lt;/singular&gt;
+  &lt;/instance&gt;
+&lt;/instances&gt;
+</code></pre>
+<p><a name="JESTRepresentation-JSONRepresentation"></a></p>
+<h2 id="json-representation">JSON Representation<a class="headerlink" href="#json-representation" title="Permalink">&para;</a></h2>
+<p>String-based representation of persistent Java object graphs in either XML
+or more succinct JSON form has to address the critical issue of circular
+reference, because persistent object graphs
+often contains circular reference. JSON, at this point of writing, does not
+address circular reference. Hence JEST introduces special semantics within
+JSON format to refer to
+instances in a serialized graph. However, the enhanced JSON can be parsed
+by standard JSON parsers.</p>
+<p>Enhanced JSON representation in JEST introduces two <em>special</em> fields named
+<code>$id</code> and <code>$ref</code> to address circular reference. Each JSON object
+carries a <code>$id</code> field whose value is the persistent identity of the
+corresponding entity. When JSON serialization encounters a circular
+reference a</p>
+</div></div>
+                                            </div>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="bottom_red_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="footer">
+                        <div class="footer_l">
+                            <div class="footer_r">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="design_attribution">
+                Copyright &copy; 2006,2021 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
+                Apache, the Apache feather logo and OpenJPA are trademarks of The Apache Software Foundation.<br />
+                Other names may be trademarks of their respective owners.<br />
+            </div>
+    </body>
+</html>
