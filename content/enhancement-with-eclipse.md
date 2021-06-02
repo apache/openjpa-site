@@ -62,11 +62,11 @@ should be set to jpa_lib and build.dir should be set to bin.
   
   
 
-![](images/navigator.png)
+![Navigator](images/navigator.png)
 
-![](images/main.png)
+![Main](images/main.png)
 
-![](images/targets.png)
+![Targets](images/targets.png)
 
 <a name="EnhancementwithEclipse-OpenJPAPluginforEclipse"></a>
 

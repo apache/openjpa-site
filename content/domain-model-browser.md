@@ -32,4 +32,4 @@ A graphic visualization of persistence domain classes.
 
 ## A typical snapshot 
 
-![](images/mmb.PNG)
+![domain model](images/mmb.PNG)
