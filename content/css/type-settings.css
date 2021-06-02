@@ -1,0 +1,118 @@
+/**
+	Override default elements
+*/
+
+h1, h2, h3 {
+    border-bottom: 1px dotted #660033;
+}
+
+pre {
+	margin-top: 5px;
+	margin-left: 15px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	text-align: left;
+	  
+	background-color: #f0f0f0;
+	padding: 3px;
+	border: 1px dashed #3c78b5;
+	font-size: 11px;
+	font-family: Courier;
+	line-height: 13px;
+}
+
+body, p, ul, ol {
+	font-family: verdana,arial,helvetica,sans-serif;
+	font-size: 14px;
+	font-size-adjust: none;
+	font-style: normal;
+	font-font-variant: normal;
+	font-weight: normal;
+	color: #000000;
+}
+
+ul, ol {
+	font-size: 12px;
+}
+
+table, td, tr {
+	font-family: verdana,arial,helvetica,sans-serif;
+	font-size: 10px;
+	font-size-adjust: none;
+	font-style: normal;
+	font-font-variant: normal;
+	font-weight: normal;
+	line-height: normal;
+	color: #000000;
+}
+
+table, td, th
+{
+    border-width: 0px;
+    border-style: solid;
+    border-color: #ccc;
+    padding: 3px 4px 3px 4px;
+}
+
+th
+{
+    border-width: 1px;
+    background-color: #f0f0f0;
+}
+
+A:link, A:visited, A:active, A:hover {
+   color: #880055;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+A:active, A:hover {
+   text-decoration: underline;
+   #color: #202020;
+   color: #880055;
+}
+
+/**
+	Additional css class elements. Please ensure to keep this list alphabetized
+*/
+.navigation {
+    border-right: 1px solid #bbbbbb;
+    padding: 10px 10px 10px 10px;
+}
+
+.bottom_red_bar {
+	BACKGROUND: #880055; BORDER: 10px solid #880055;
+}
+
+.border
+{
+    border-bottom: 1px solid #bbbbbb;
+    border-right: 1px solid #bbbbbb;
+}
+
+.info {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #3c78b5;
+	background-color: #D8E4F1;
+	text-align:left;
+    padding: 5px 5px 5px 5px 
+}
+
+.note { 
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #F0C000; 
+    background-color: #FFFFCE; 
+    text-align:left; 
+    padding: 5px 5px 5px 5px 
+}
+
+.tip { 
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #090; 
+    background-color: #dfd; 
+    text-align:left; 
+    padding: 5px 5px 5px 5px 
+}

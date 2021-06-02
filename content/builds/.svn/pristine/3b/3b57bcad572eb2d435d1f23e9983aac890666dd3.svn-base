@@ -1,0 +1,178 @@
+<html>
+<title>Release Notes for OpenJPA</title>
+<body>
+<h1>Release Notes for OpenJPA</h1>
+
+<ul>
+<li><a href="#Overview">Overview</a></li>
+<li><a href="#License">License</a></li>
+<li><a href="#Prerequisites">Prerequisites</a></li>
+<li><a href="#Documentation">Documentation</a></li>
+<li><a href="#GetInvolved">Getting Involved</a></li>
+<li><a href="#Sub-task">Sub-task</a></li>
+<li><a href="#Bug">Bug</a></li>
+<li><a href="#Improvement">Improvement</a></li>
+<li><a href="#Previous">RELEASE-NOTES for previous releases</a></li>
+</ul>
+
+<h2><a name="Overview"></a>Overview</h2>
+
+<p> These notes describe the difference between OpenJPA release 1.0.3 and the
+   preceding releases 1.0.0, 1.0.1 and 1.0.2. 1.0.3 is a maintenance release
+   and contains primarily bugfixes.
+<P>
+OpenJPA is a feature-rich implementation of the persistence part of 
+Java Community Process JSR-220 (Enterprise JavaBeans 3.0), which is
+known as the Java Persistence API (JPA).
+OpenJPA can be used as a stand-alone POJO persistence layer, or it can be
+integrated into any EJB3.0 compliant container and many lightweight frameworks.
+This release of OpenJPA is 100% compliant with the JPA specification.
+</p>
+
+<p>
+Additional information on the OpenJPA project may be found at the project web 
+site: <a href="http://openjpa.apache.org">
+http://openjpa.apache.org</a>
+
+<h2><a name="License"></a>License</h2>
+<P>Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+<BR><P><a href="http://www.apache.org/licenses/LICENSE-2.0">
+http://www.apache.org/licenses/LICENSE-2.0</a>
+
+<BR><P>Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+
+<BR><P>The license may also be found in LICENSE.txt which is included 
+in each release of OpenJPA. 
+
+<h2><a name="Prerequisites"></a>Prerequisites</h2>
+<P>
+In normal usage, OpenJPA requires Java 5 or higher and a relational 
+database of some sort.
+
+<h2><a name="Documentation"></a>Documentation</h2>
+<p>If you have questions about OpenJPA, a good source of information is the 
+online product manual. You can find the manual for the current release as well
+as older releases of OpenJPA at 
+<a href="http://openjpa.apache.org/documentation.html">
+http://openjpa.apache.org/documentation.html</a>
+<p>If you can't find what you're looking for in the manual or would like more
+clarification you please post to the OpenJPA development mailing list.
+Information on all of the OpenJPA mailing lists may be found here:
+<a href="http://openjpa.apache.org/mailing-lists.html">
+http://openjpa.apache.org/mailing-lists.html</a>
+
+<p>
+<h2><a name="GetInvolved"></a>Getting Involved</h2>
+<p>
+The Apache OpenJPA project is being built by the open source community for the 
+open source community - we welcome your input and contributions!
+<P>
+What we are looking for
+<ul>
+    <li> Source code and fixes contributions </li>
+    <li> Documentation assistance </li>
+    <li> Product and feature suggestions </li>
+    <li> Detailed and constructive feedback </li>
+    <li> Articles and whitepapers </li>
+</ul>
+<p>
+How do I Contribute?
+<ul>
+    <li> To discuss Apache OpenJPA topics check out the mailing lists. </li>
+    <li> Informal discussion also occurs on the #openjpa IRC channel on 
+         freenode.net. </li>
+    <li> Bugs and other issues can be posted on the project JIRA. </li>
+</ul>
+
+
+        Release Notes - OpenJPA - Version 1.0.3
+    
+<h2><a name="Sub-task"></a>        Sub-task
+</h2>
+<ul>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-517'>OPENJPA-517</a>] -         Oracle also supports WITH statements
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-555'>OPENJPA-555</a>] -         MappingTool got NullPointerException in DB2Dictionary.isDB2ZOSV8xOrLater()
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-575'>OPENJPA-575</a>] -         Use do priv for to get CL for Oracle empty blob/clob
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-591'>OPENJPA-591</a>] -         Entities are flushed before being detached or serialized
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-648'>OPENJPA-648</a>] -         Table generator uses incorrect schema name
+</li>
+</ul>
+    
+<h2><a name="Bug"></a>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-51'>OPENJPA-51</a>] -         bad sql pushdown, sub select is missing from clause
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-209'>OPENJPA-209</a>] -         Query returning 2 entities w/unidir 1-1 relationship gets openjpa.persistence.ArgumentException: Address with the same id already exists in the L1 cache.
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-245'>OPENJPA-245</a>] -         Attach NEW and auto-increment identity
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-499'>OPENJPA-499</a>] -         Missing dependencies in openjpa-persistence and openjpa-persistence-jdbc
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-512'>OPENJPA-512</a>] -         Maven build fails if -Dmaven.test.skip=true
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-518'>OPENJPA-518</a>] -         openJpa jar is being locked causing future deployments on an app server to fail
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-527'>OPENJPA-527</a>] -         Merge of new one-to-many list only persists last element.
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-529'>OPENJPA-529</a>] -         ManagedClassSubclasses stores table names twice. 
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-535'>OPENJPA-535</a>] -         Javadoc spelling errors in SchemaFactory and Localizer
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-537'>OPENJPA-537</a>] -         openjpa-parent pom should not overwrite central repository setting
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-540'>OPENJPA-540</a>] -         Classloading issue with WAS, Spring, and OpenJPA
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-542'>OPENJPA-542</a>] -         OracleDictionary.getEmptyClob uses its classloader instead of the current classloader. 
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-543'>OPENJPA-543</a>] -         Unclosed prepared statements in SQLStoreQuery.executeUpdate.
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-547'>OPENJPA-547</a>] -         INNER JOIN Fetch query incorrectly generates  LEFT join SQL
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-552'>OPENJPA-552</a>] -         Do not recognize Connection* properties in persistence.xml in appl server container
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-554'>OPENJPA-554</a>] -         The GetMapValue class should have/supply an alias for ORDER-BY clauses.
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-559'>OPENJPA-559</a>] -         java.rmi.MarshalException due to mismatched serialization UIDs of: Source (RepId RMI:org.apache.openjpa.kernel.DetachedStateManager
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-565'>OPENJPA-565</a>] -         Duplicate @NamedQuery terminates subsequent @NameQuery definitions in @NamedQueries 
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-632'>OPENJPA-632</a>] -         setFirstResult and setMaxResults not working for Oracle.
+</li>
+</ul>
+    
+<h2><a name="Improvement"></a>        Improvement
+</h2>
+<ul>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-374'>OPENJPA-374</a>] -         OpenJPA build process enhances Entity classes even when testing is deactivated via -Dtest=false
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-541'>OPENJPA-541</a>] -         Generate SQL92 JOIN syntax for Oracle 9 or later releases
+</li>
+</ul>
+                                
+<h2><a name="Previous"></a>         Previous Releases
+</h2>
+Release notes for earlier releases of OpenJPA may be found in SVN at the following locations. 
+<li><a href='http://svn.apache.org/viewvc/openjpa/tags/1.0.2/openjpa-project/RELEASE-NOTES.html?view=markup'>OpenJPA 1.0.2 RELEASE-NOTES.html</a></li>
+<li><a href='http://svn.apache.org/viewvc/openjpa/tags/1.0.1/openjpa-project/RELEASE-NOTES.html?view=markup'>OpenJPA 1.0.1 RELEASE-NOTES.html</a></li>
+<li><a href='http://svn.apache.org/viewvc/openjpa/tags/1.0.0/openjpa-project/RELEASE-NOTES.html?view=markup'>OpenJPA 1.0.0 RELEASE-NOTES.html</a></li>
+
+</body>
+</html>
+

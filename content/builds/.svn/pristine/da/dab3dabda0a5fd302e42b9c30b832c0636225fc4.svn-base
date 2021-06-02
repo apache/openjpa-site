@@ -1,0 +1,142 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter&nbsp;6.&nbsp; Persistence</title><link rel="stylesheet" href="css/docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"><link rel="start" href="manual.html" title="Apache OpenJPA User's Guide"><link rel="up" href="jpa_overview.html" title="Part&nbsp;2.&nbsp;Java Persistence API"><link rel="prev" href="jpa_overview_meta_complete.html" title="4.&nbsp; Conclusion"><link rel="next" href="jpa_overview_persistence_use.html" title="2.&nbsp; Non-EE Use"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter&nbsp;6.&nbsp;
+        Persistence
+    </th></tr><tr><td width="20%" align="left"><a accesskey="p" href="jpa_overview_meta_complete.html">Prev</a>&nbsp;</td><th width="60%" align="center">Part&nbsp;2.&nbsp;Java Persistence API</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="jpa_overview_persistence_use.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en" id="jpa_overview_persistence"><div class="titlepage"><div><div><h2 class="title"><a name="jpa_overview_persistence"></a>Chapter&nbsp;6.&nbsp;
+        Persistence
+    </h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="jpa_overview_persistence.html#jpa_overview_persistence_xml">1. 
+            persistence.xml
+        </a></span></dt><dt><span class="section"><a href="jpa_overview_persistence_use.html">2. 
+            Non-EE Use
+        </a></span></dt></dl></div><a class="indexterm" name="d0e3848"></a><a class="indexterm" name="d0e3851"></a><a class="indexterm" name="d0e3856"></a><a class="indexterm" name="d0e3861"></a><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="285"><tr><td><img src="img/persistence.png"></td></tr></table></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+OpenJPA also includes the
+<a xmlns:xlink="http://www.w3.org/1999/xlink" href="../javadoc/org/apache/openjpa/persistence/OpenJPAPersistence.html" target="_top">
+<code class="classname">OpenJPAPersistence</code></a> helper class to provide
+additional utility methods.
+        </p></div><p>
+Within a container, you will typically use <span class="emphasis"><em>injection</em></span> to
+access an <code class="classname">EntityManagerFactory</code>. Applications operating
+of a container, however, can use the
+<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://java.sun.com/javaee/5/docs/api/javax/persistence/Persistence.html" target="_top">
+<code class="classname">Persistence</code></a> class to obtain <code class="classname">
+EntityManagerFactory</code> objects in a vendor-neutral fashion.
+    </p><pre class="programlisting">
+public static EntityManagerFactory createEntityManagerFactory(String name);
+public static EntityManagerFactory createEntityManagerFactory(String name, Map props);
+</pre><p>
+Each <code class="methodname">createEntityManagerFactory</code> method searches the
+system for an <code class="classname">EntityManagerFactory</code> definition with the
+given name. Use <code class="literal">null</code> for an unnamed factory. The optional map
+contains vendor-specific property settings used to further configure the
+factory.
+    </p><p>
+<code class="filename">persistence.xml</code> files define <code class="classname">
+EntityManagerFactories</code>. The <code class="methodname">createEntityManagerFactory
+</code> methods search for <code class="filename">persistence.xml</code> files
+within the <code class="filename">META-INF</code> directory of any <code class="literal">CLASSPATH
+</code> element. For example, if your <code class="literal">CLASSPATH</code> contains
+the <code class="filename">conf</code> directory, you could place an <code class="classname">
+EntityManagerFactory</code> definition in <code class="filename">
+conf/META-INF/persistence.xml</code>.
+    </p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="jpa_overview_persistence_xml"></a>1.&nbsp;
+            persistence.xml
+        </h2></div></div></div><p>
+The <code class="filename">persistence.xml</code> file format obeys the following
+Document Type Descriptor (DTD):
+        </p><pre class="programlisting">
+&lt;!ELEMENT persistence (persistence-unit*)&gt;
+&lt;!ELEMENT persistence-unit (description?,provider?,jta-data-source?,
+  non-jta-data-source?,(class|jar-file|mapping-file)*,
+  exclude-unlisted-classes?,properties?)&gt;
+&lt;!ATTLIST persistence-unit name CDATA #REQUIRED&gt;
+&lt;!ATTLIST persistence-unit transaction-type (JTA|RESOURCE_LOCAL) "JTA"&gt;
+&lt;!ELEMENT description (#PCDATA)&gt;
+&lt;!ELEMENT provider (#PCDATA)&gt;
+&lt;!ELEMENT jta-data-source (#PCDATA)&gt;
+&lt;!ELEMENT non-jta-data-source (#PCDATA)&gt;
+&lt;!ELEMENT mapping-file (#PCDATA)&gt;
+&lt;!ELEMENT jar-file (#PCDATA)&gt;
+&lt;!ELEMENT class (#PCDATA)&gt;
+&lt;!ELEMENT exclude-unlisted-classes EMPTY&gt;
+&lt;!ELEMENT properties (property*)&gt;
+&lt;!ELEMENT property EMPTY&gt;
+&lt;!ATTLIST property name CDATA #REQUIRED&gt;
+&lt;!ATTLIST property value CDATA #REQUIRED&gt;
+</pre><p>
+The root element of a <code class="filename">persistence.xml</code> file is <code class="literal">
+persistence</code>, which then contains one or more <code class="literal">
+persistence-unit</code> definitions. Each persistence unit describes the
+configuration for the entity managers created by the persistence unit's entity
+manager factory. The persistence unit can specify these elements and attribtues.
+        </p><div class="itemizedlist"><ul type="disc"><li><p>
+<code class="literal">name</code>: This is the name you pass to the <code class="methodname">
+Persistence.createEntityManagerFactory</code> methods described above. The
+name attribute is required.
+                </p></li><li><p>
+<code class="literal">transaction-type</code>: Whether to use managed
+(<code class="literal">JTA</code>) or local (<code class="literal">RESOURCE_LOCAL</code>)
+transaction management.
+                </p></li><li><p>
+<code class="literal">provider</code>: If you are using a third-party JPA vendor, this
+element names its implementation of the
+<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://java.sun.com/javaee/5/docs/api/javax/persistence/spi/PersistenceProvider.html" target="_top">
+<code class="classname">PersistenceProvider</code></a> bootstrapping interface.
+                </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+Set the <code class="literal">provider</code> to <code class="classname">
+org.apache.openjpa.persistence.PersistenceProviderImpl</code> to use
+OpenJPA.
+                    </p></div></li><li><p>
+<code class="literal">jta-data-source</code>: The JNDI name of a JDBC <code class="classname">
+DataSource</code> that is automatically enlisted in JTA transactions. This
+may be an XA <code class="classname">DataSource</code>.
+                </p></li><li><p>
+<code class="literal">non-jta-data-source</code>: The JNDI name of a JDBC <code class="classname">
+DataSource</code> that is not enlisted in JTA transactions.
+                </p></li><li><p>
+<code class="literal">mapping-file</code>*: The resource names of XML mapping files for
+entities and embeddable classes. You can also specify mapping information in an
+<code class="filename">orm.xml</code> file in your <code class="filename">META-INF</code>
+directory. If present, the <code class="filename">orm.xml</code> mapping file will be
+read automatically.
+                </p></li><li><p>
+<code class="literal">jar-file</code>*: The names of jar files containing entities and
+embeddable classes. The implementation will scan the jar for annotated classes.
+                </p></li><li><p>
+<code class="literal">class</code>*: The class names of entities and embeddable classes.
+                </p></li><li><p>
+<code class="literal">properties</code>: This element contains nested <code class="literal">property
+</code> elements used to specify vendor-specific settings. Each <code class="literal">
+property</code> has a name attribute and a value attribute.
+                </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+The Reference Guide's <a href="ref_guide_conf.html" title="Chapter&nbsp;2.&nbsp; Configuration">Chapter&nbsp;2, <i xmlns:xlink="http://www.w3.org/1999/xlink">
+        Configuration
+    </i></a> describes OpenJPA's
+configuration properties.
+                    </p></div></li></ul></div><p>
+Here is a typical <code class="filename">persistence.xml</code> file for a non-EE
+environment:
+        </p><div class="example"><a name="jpa_overview_persistence_xmlex"></a><p class="title"><b>Example&nbsp;6.1.&nbsp;
+                persistence.xml
+            </b></p><div class="example-contents"><pre class="programlisting">
+&lt;?xml version="1.0"?&gt;
+&lt;persistence&gt;
+  &lt;persistence-unit name="openjpa"&gt;
+    &lt;provider&gt;org.apache.openjpa.persistence.PersistenceProviderImpl&lt;/provider&gt;
+    &lt;class&gt;tutorial.Animal&lt;/class&gt;
+    &lt;class&gt;tutorial.Dog&lt;/class&gt;
+    &lt;class&gt;tutorial.Rabbit&lt;/class&gt;
+    &lt;class&gt;tutorial.Snake&lt;/class&gt;
+    &lt;properties&gt;
+      &lt;property name="openjpa.ConnectionURL" value="jdbc:hsqldb:tutorial_database"/&gt;
+      &lt;property name="openjpa.ConnectionDriverName" value="org.hsqldb.jdbcDriver"/&gt;
+      &lt;property name="openjpa.ConnectionUserName" value="sa"/&gt;
+      &lt;property name="openjpa.ConnectionPassword" value=""/&gt;
+      &lt;property name="openjpa.Log" value="DefaultLevel=WARN, Tool=INFO"/&gt;
+    &lt;/properties&gt;
+  &lt;/persistence-unit&gt;
+&lt;/persistence&gt;
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="jpa_overview_meta_complete.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="jpa_overview.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="jpa_overview_persistence_use.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.&nbsp;
+            Conclusion
+        &nbsp;</td><td width="20%" align="center"><a accesskey="h" href="manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;2.&nbsp;
+            Non-EE Use
+        </td></tr></table></div></body></html>

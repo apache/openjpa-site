@@ -1,0 +1,241 @@
+<!-- 
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE- 2.0
+ 
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License. 
+--> 
+<html>
+<title>Release Notes for Apache OpenJPA 2.2.2</title>
+<body>
+<h1>Release Notes for Apache OpenJPA 2.2.2</h1>
+<p>
+<ul>
+  <li><a href="#Overview">Overview</a></li>
+  <li><a href="#Prerequisites">Prerequisites</a></li>
+  <li><a href="#Documentation">Documentation</a></li>
+  <li><a href="#GetInvolved">Getting Involved</a></li>
+  <li><a href="#License">License</a></li>
+  <li><a href="#Notice">Notice</a></li>
+  <li><a href="#ReleaseNotes">Release Notes</a></li>
+  <li><a href="#Previous">Release Notes for previous OpenJPA releases</a></li>
+</ul>
+</p>
+<BR>
+<hr>
+<h2><a name="Overview"></a>Overview</h2>
+
+<P>
+   The Apache OpenJPA community is proud to release a maintenance distribution of
+   OpenJPA 2.2.2. This distribution is based on the final JSR 317 Java
+   Persistence API, Version 2.0 specification and passes the JPA 2.0 TCK,
+   while remaining backwards compatible with prior releases based on the
+   Java Persistence API (JPA 1.0) part of Java Community Process JSR-220
+   (Enterprise JavaBeans 3.0).
+</P>
+
+<p>Additional information on the OpenJPA project may be found at the project 
+web site: <a href="http://openjpa.apache.org">http://openjpa.apache.org</a></p>
+
+<h2><a name="Prerequisites"></a>Prerequisites</h2>
+<P>OpenJPA requires Java 6 or higher and a relational 
+database of some sort.
+</p>
+
+<h2><a name="Documentation"></a>Documentation</h2>
+<p>If you have questions about OpenJPA, a good source of information is the 
+online product manual. You can find the manual for the current release as well
+as older releases of OpenJPA at 
+<a href="http://openjpa.apache.org/documentation.html">
+http://openjpa.apache.org/documentation.html</a></p>
+<p>If you can't find what you are looking for in the manual or would like more
+clarification, please post to the OpenJPA development mailing list.
+Information on all of the OpenJPA mailing lists may be found here:
+<a href="http://openjpa.apache.org/mailing-lists.html">
+http://openjpa.apache.org/mailing-lists.html</a></p>
+
+<h2><a name="GetInvolved"></a>Getting Involved</h2>
+<p>The Apache OpenJPA project is being built by the open source community for the open source community - 
+we welcome your input and contributions!</p>
+<P>What we are looking for:
+<ul>
+    <li> Source code and fixes contributions </li>
+    <li> Documentation assistance </li>
+    <li> Product and feature suggestions </li>
+    <li> Detailed and constructive feedback </li>
+    <li> Articles and whitepapers </li>
+</ul></p>
+<p>How do I contribute?
+<ul>
+    <li> To discuss Apache OpenJPA topics check out the mailing lists. </li>
+    <li> Informal discussion also occurs on the #openjpa IRC channel on 
+         freenode.net. </li>
+    <li> Bugs and other issues can be posted on
+         <a href="https://issues.apache.org/jira/browse/OPENJPA">
+         the issue tracker</a>.
+     </li>
+</ul>
+</p>
+
+<BR>
+<hr>
+<h2><a name="License"></a>License</h2>
+<P>Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.
+<BR>You may obtain a copy of the License at:
+<a href="http://www.apache.org/licenses/LICENSE-2.0">
+http://www.apache.org/licenses/LICENSE-2.0</a>
+<BR>Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.</p>
+<P>The license may also be found in LICENSE.txt which is included 
+in each release of OpenJPA.</P>
+
+<h2><a name="Notice"></a>Notice</h2>
+<p>Copyright 2006,2013 The Apache Software Foundation
+<BR>This product includes software developed at The Apache Software Foundation (http://www.apache.org/).</p>
+<P>Apache OpenJPA includes the persistence and orm schemas from the JPA specifications.
+<BR>Copyright 2005-2009 Sun Microsystems, Inc. All rights reserved.
+<BR>Apache OpenJPA elects to include this software in this distribution under the CDDL license.
+<BR>You can obtain a copy of the License at:
+<a href="https://glassfish.dev.java.net/public/CDDL+GPL.html">https://glassfish.dev.java.net/public/CDDL+GPL.html</a>
+<BR>The source code is available at:
+<a href="http://java.net/projects/glassfish">http://java.net/projects/glassfish</a></p>
+<P>The complete list of notices can be found in NOTICE.txt included in each assembly.</p>
+
+<BR>
+<hr>
+<h2><a name="ReleaseNotes">Release Notes</h2>
+
+<hr>
+<h2><a name="221">OpenJPA 2.2.2</h2>
+
+        Release Notes - OpenJPA - Version 2.2.2
+                
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2172'>OPENJPA-2172</a>] -         openjpa-all jar is missing slf4j runtime dependency
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2196'>OPENJPA-2196</a>] -         Create Sequence Postgres 9.1
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2233'>OPENJPA-2233</a>] -         Failed to invoke pcGetIDOwningClass method on embeddable entity with ID annotation
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2235'>OPENJPA-2235</a>] -         &quot;READ_UNCOMMITTED&quot; setting for the fetch plan isolation level is ignored in DB2Dictionary
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2240'>OPENJPA-2240</a>] -         JVMVRFY012 when using openjpa together with hyperjaxb3
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2244'>OPENJPA-2244</a>] -         Nested classpath ignored in mapping tool ant task
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2257'>OPENJPA-2257</a>] -         Concurreny in org.apache.openjpa.persistence.EntityManagerImpl.getProperties leads to NullPointer and ConcurrentModificationException
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2284'>OPENJPA-2284</a>] -         NPE occurs when &lt;cascade-persist/&gt; is added to a &lt;persistence-unit-defaults&gt; in an orm.
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2285'>OPENJPA-2285</a>] -         L2 cache doesn&#39;t store FK(s) back into the cache when lazy loading data.
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2288'>OPENJPA-2288</a>] -         MetaDataRepository should be able to filter classes from other app ClassLoaders in JEE Env
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2289'>OPENJPA-2289</a>] -         Additional SQL alias generated for query with subquery causes incorrect # of rows returned - Oracle only
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2298'>OPENJPA-2298</a>] -         VerifyError/Stack underflow due to extra &#39;return&#39; statements generated by PCEnhancer.
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2304'>OPENJPA-2304</a>] -         Thread deadlock in CriteriaBuilder
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2320'>OPENJPA-2320</a>] -         CriteriaBuilder predicate construction deadlocks in multi-core VM due to static initializer
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2321'>OPENJPA-2321</a>] -         Synchronizing logging output stream causes deadlock when used some JDK LogManger derivative 
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2326'>OPENJPA-2326</a>] -         Updates in TCK execution configuration
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2334'>OPENJPA-2334</a>] -         OpenJPA must support processing puRoot &amp; jar-file URLs as jar-formatted InputStreams
+</li>
+</ul>
+                
+<h2>        Improvement
+</h2>
+<ul>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2264'>OPENJPA-2264</a>] -         Upcast PreparedStatementManagerImpl.logSQLWarnings to take a Statement rather than a PreparedStatement
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2292'>OPENJPA-2292</a>] -         Reduce object allocations
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2293'>OPENJPA-2293</a>] -         Reduce LifecycleEventManager 
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2324'>OPENJPA-2324</a>] -         Option to express literal in query string directly into generate SQL
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2332'>OPENJPA-2332</a>] -         Update message when unable to resolve datasource configuration
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2346'>OPENJPA-2346</a>] -         Optimize MetaDataRepository.getMetaDataInternal
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2347'>OPENJPA-2347</a>] -         Make StateManagerImpl more extensible
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2348'>OPENJPA-2348</a>] -         Cache calculated hashCode in OpenJPAId
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2353'>OPENJPA-2353</a>] -         Reduce object allocations
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2354'>OPENJPA-2354</a>] -         Removed synchronized from enhancer added pcReplaceStateManager method
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2368'>OPENJPA-2368</a>] -         Move www.apache.org/openjpa/ns/orm to openjpa.apache.org/ns/orm
+</li>
+</ul>
+    
+<h2>        New Feature
+</h2>
+<ul>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2295'>OPENJPA-2295</a>] -         speed up query metadata lookup
+</li>
+</ul>
+        
+<h2>        Question
+</h2>
+<ul>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-1532'>OPENJPA-1532</a>] -         Should the &lt;shared-cache-mode&gt; element in a persistence unit definition automatically turn on the data cache?
+</li>
+</ul>
+
+<BR>
+<hr>
+<h2><a name="Previous"></a>Previous Releases</h2>
+<p>Release notes for earlier releases of OpenJPA may be found in SVN at the following locations. 
+<ul>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/2.2.1/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 2.2.1 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/2.2.0/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 2.2.0 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/2.1.1/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 2.1.1 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/2.1.0/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 2.1.0 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/2.0.1/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 2.0.1 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/2.0.0/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 2.0.0 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/2.0.0-beta3/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 2.0.0-Beta 3 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/2.0.0-beta2/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 2.0.0-Beta 2 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/2.0.0-beta/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 2.0.0-Beta RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/2.0.0-M3/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 2.0.0-Milestone 3 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/1.2.2/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 1.2.2 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/1.2.2/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 1.2.2 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/1.2.1/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 1.2.1 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/1.1.0/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 1.1.0 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/1.0.4/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 1.0.4 RELEASE-NOTES.html</a></li>
+  <li><a href='http://svn.apache.org/viewvc/openjpa/tags/1.0.3/openjpa-project/RELEASE-NOTES.html?view=co'>OpenJPA 1.0.3 RELEASE-NOTES.html</a></li>
+</ul></p>
+ 
+<hr>
+<p>Copyright (C) 2006,2013 Apache Software Foundation. Licensed under Apache License 2.0.<br>
+Apache, the Apache feather logo and OpenJPA are trademarks of Apache Software Foundation.<br>
+</body>
+</html>

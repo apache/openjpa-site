@@ -1,0 +1,24 @@
+-classpath '/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-lib/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-kernel/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-jdbc/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-persistence/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-persistence-jdbc/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-xmlstore/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-slice/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-all/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-project/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-examples/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-integration/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-integration/examples/target/classes:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-integration/tck/target/classes:/home/teamcity/.m2/repository/org/apache/derby/derby/10.2.1.6/derby-10.2.1.6.jar:/home/teamcity/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/teamcity/.m2/repository/javax/persistence/persistence-api/1.0b/persistence-api-1.0b.jar:/home/teamcity/.m2/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar:/home/teamcity/.m2/repository/postgresql/postgresql/8.1-407.jdbc3/postgresql-8.1-407.jdbc3.jar:/home/teamcity/.m2/repository/org/apache/openjpa/openjpa-persistence-jdbc/1.1.0/openjpa-persistence-jdbc-1.1.0.jar:/home/teamcity/.m2/repository/org/apache/openjpa/openjpa-kernel/1.1.0/openjpa-kernel-1.1.0.jar:/home/teamcity/.m2/repository/org/apache/openjpa/openjpa-persistence/1.1.0/openjpa-persistence-1.1.0.jar:/home/teamcity/.m2/repository/net/sourceforge/serp/serp/1.13.1/serp-1.13.1.jar:/home/teamcity/.m2/repository/org/apache/openjpa/openjpa/1.1.0/openjpa-1.1.0.jar:/home/teamcity/.m2/repository/commons-lang/commons-lang/2.1/commons-lang-2.1.jar:/home/teamcity/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1/geronimo-jta_1.1_spec-1.1.jar:/home/teamcity/.m2/repository/javax/xml/bind/jsr173_api/1.0/jsr173_api-1.0.jar:/home/teamcity/.m2/repository/log4j/log4j/1.2.13/log4j-1.2.13.jar:/home/teamcity/.m2/repository/commons-pool/commons-pool/1.3/commons-pool-1.3.jar:/home/teamcity/.m2/repository/org/apache/geronimo/specs/geronimo-jpa_3.0_spec/1.0/geronimo-jpa_3.0_spec-1.0.jar:/home/teamcity/.m2/repository/javax/xml/bind/jaxb-api/2.0/jaxb-api-2.0.jar:/home/teamcity/.m2/repository/org/apache/openjpa/openjpa-lib/1.1.0/openjpa-lib-1.1.0.jar:/home/teamcity/.m2/repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar:/home/teamcity/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/teamcity/.m2/repository/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.0.1/geronimo-jms_1.1_spec-1.0.1.jar:/home/teamcity/.m2/repository/org/apache/openjpa/openjpa-xmlstore/1.1.0/openjpa-xmlstore-1.1.0.jar:/home/teamcity/.m2/repository/org/apache/openjpa/openjpa-jdbc/1.1.0/openjpa-jdbc-1.1.0.jar:/home/teamcity/.m2/repository/hsqldb/hsqldb/1.8.0.1/hsqldb-1.8.0.1.jar' -protected
+-sourcepath
+'/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-lib/src/main/java:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-kernel/src/main/java:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-jdbc/src/main/java:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-persistence/src/main/java:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-persistence-jdbc/src/main/java:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-xmlstore/src/main/java:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-slice/src/main/java:/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/openjpa-examples/src/main/java'
+-subpackages
+org.apache.openjpa
+-author
+-bottom
+'Copyright &copy; 2006-2008 <a href="http://www.apache.org">Apache Software Foundation</a>. All Rights Reserved.'
+-charset
+'ISO-8859-1'
+-d
+'/home/teamcity/versions/2.1.1/buildAgent-0/work/Agent/OpenJPA_1.1.0/target/site/apidocs'
+-doctitle
+'OpenJPA 1.1.0 API'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-link
+'http://java.sun.com/javaee/5/docs/api'
+-link
+'http://jakarta.apache.org/commons/collections/api-release'
+-use
+-version
+-windowtitle
+'OpenJPA 1.1.0 API'
