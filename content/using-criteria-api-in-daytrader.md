@@ -137,7 +137,7 @@ Within the bin directory of the augmented profile:
 1. Start the server.
 1. Run the script using the following command:
 
-        wsadmin -f <location ofdaytrader_singleServer.py> <script options>
+        wsadmin -f <location ofdaytrader_singleServer.py> &lt;script options&gt;
 
    You can display the list of available script options by specifying the option "--help".
 

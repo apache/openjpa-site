@@ -19,12 +19,12 @@ A graphic visualization of persistence domain classes.
 * The parent directory of persistence unit descriptor (META-INF/persistence.xml)
 * The directory of compiled domain classes
 
-<span class="info">
+<div class="info">
 
 * The persistence unit descriptor must enumerate the domain classes in its `<class>` tag.
 * Database connection is not required.
 
-</span>
+</div>
 
 
 

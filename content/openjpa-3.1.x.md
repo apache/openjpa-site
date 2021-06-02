@@ -1,4 +1,4 @@
-Title:
+Title: OpenJPA 3.1.X
 
 # OpenJPA 3.1.x
 
