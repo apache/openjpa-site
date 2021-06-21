@@ -70,7 +70,7 @@ READERS = {'html': None}
 ARTICLE_PATHS = ['articles']
 
 # ignore README.md files in the content tree and the interviews and include folders.
-IGNORE_FILES = ['README.md']
+IGNORE_FILES = ['README.md', 'docs', 'builds']
 
 # No translations
 PAGE_TRANSLATION_ID = None
@@ -97,7 +97,7 @@ THEME = './theme/apache'
 PLUGIN_PATHS = ['./theme/plugins']
 # PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
 # We are using the default plugin - 'pelican-gfm' which is installed by the build
-PLUGINS = ['asfgenid', 'pelican-gfm']
+PLUGINS = ['asfgenid', 'pelican-gfm', 'asfcopy']
 
 # Lifecycle and plugins:
 # (1) Initialization:
@@ -133,6 +133,9 @@ ASF_GENID = {
     'tables': False,
     'debug': False
 }
+
+# Directories to be copied by asfcopy plugin outside of other Pelican process
+ASF_COPY = ['builds', 'docs']
 
 # Sitemap Generator
 # SITEMAP = {
