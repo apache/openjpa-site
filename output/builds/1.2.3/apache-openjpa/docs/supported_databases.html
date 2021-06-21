@@ -1,0 +1,261 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Appendix&nbsp;2.&nbsp; Supported Databases</title><link rel="stylesheet" href="css/docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"><link rel="start" href="manual.html" title="Apache OpenJPA 1.2 User's Guide"><link rel="up" href="manual.html" title="Apache OpenJPA 1.2 User's Guide"><link rel="prev" href="jpa_resources.html" title="Appendix&nbsp;1.&nbsp; JPA Resources"><link rel="next" href="dbsupport_interbase.html" title="2.&nbsp; Borland Interbase"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix&nbsp;2.&nbsp;
+        Supported Databases
+    </th></tr><tr><td width="20%" align="left"><a accesskey="p" href="jpa_resources.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="dbsupport_interbase.html">Next</a></td></tr></table><hr></div><div class="appendix" lang="en" id="supported_databases"><div class="titlepage"><div><div><h2 class="title"><a name="supported_databases"></a>Appendix&nbsp;2.&nbsp;
+        Supported Databases
+    </h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="supported_databases.html#dbsupport_derby">1. 
+            Apache Derby
+        </a></span></dt><dt><span class="section"><a href="dbsupport_interbase.html">2. 
+            Borland Interbase
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_interbase.html#dbsupport_interbase_issues">2.1. 
+                Known issues with Interbase
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_jdatastore.html">3. 
+            JDataStore
+        </a></span></dt><dt><span class="section"><a href="dbsupport_db2.html">4. 
+            IBM DB2
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_db2.html#dbsupport_db2_issues">4.1. 
+                Known issues with DB2
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_empress.html">5. 
+            Empress
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_empress.html#dbsupport_empress_issues">5.1. 
+                Known issues with Empress
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_h2.html">6. 
+            H2 Database Engine
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_h2.html#dbsupport_h2_issues">6.1. 
+                Known issues with H2 Database Engine
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_hypersonic.html">7. 
+            Hypersonic
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_hypersonic.html#dbsupport_hypersonic_issues">7.1. 
+                Known issues with Hypersonic
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_firebird.html">8. 
+            Firebird
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_firebird.html#dbsupport_firebird_issues">8.1. 
+                Known issues with Firebird
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_informix.html">9. 
+            Informix
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_informix.html#dbsupport_informix_issues">9.1. 
+                Known issues with Informix
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_intersystems_cache.html">10. 
+            InterSystems Cache
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_intersystems_cache.html#dbsupport_intersystems_cache_issues">10.1. 
+                Known issues with InterSystems Cache
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_access.html">11. 
+            Microsoft Access
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_access.html#dbsupport_access_issues">11.1. 
+                Known issues with Microsoft Access
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_sqlserver.html">12. 
+            Microsoft SQL Server
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_sqlserver.html#dbsupport_sqlserver_issues">12.1. 
+                Known issues with SQL Server
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_foxpro.html">13. 
+            Microsoft FoxPro
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_foxpro.html#dbsupport_foxpro_issues">13.1. 
+                Known issues with Microsoft FoxPro
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_mysql.html">14. 
+            MySQL
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_mysql.html#dbsupport_mysql_issues">14.1. 
+                Known issues with MySQL
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_oracle.html">15. 
+            Oracle
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_oracle.html#dbsupport_oracle_query_hints">15.1. 
+                Using Query Hints with Oracle
+            </a></span></dt><dt><span class="section"><a href="dbsupport_oracle.html#dbsupport_oracle_issues">15.2. 
+                Known issues with Oracle
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_pointbase.html">16. 
+            Pointbase
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_pointbase.html#dbsupport_pointbase_issues">16.1. 
+                Known issues with Pointbase
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_postgresql.html">17. 
+            PostgreSQL
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_postgresql.html#dbsupport_postgresql_issues">17.1. 
+                Known issues with PostgreSQL
+            </a></span></dt></dl></dd><dt><span class="section"><a href="dbsupport_sybase.html">18. 
+            Sybase Adaptive Server
+        </a></span></dt><dd><dl><dt><span class="section"><a href="dbsupport_sybase.html#dbsupport_sybase_issues">18.1. 
+                Known issues with Sybase
+            </a></span></dt></dl></dd></dl></div><p>
+Following is a table of the database and JDBC driver versions that are supported
+by OpenJPA.
+    </p><div class="table"><a name="d0e32738"></a><p class="title"><b>Table&nbsp;2.1.&nbsp;
+            Supported Databases and JDBC Drivers
+        </b></p><div class="table-contents"><table summary="&#xA;            Supported Databases and JDBC Drivers&#xA;        " border="1"><colgroup><col align="left"><col align="left"><col align="left"><col align="left"></colgroup><thead><tr><th align="left">
+                        Database Name
+                    </th><th align="left">
+                        Database Version
+                    </th><th align="left">
+                        JDBC Driver Name
+                    </th><th align="left">
+                        JDBC Driver Version
+                    </th></tr></thead><tbody><tr><td align="left">
+                        Apache Derby
+                    </td><td align="left">
+                        10.1.2.1
+                    </td><td align="left">
+                        Apache Derby Embedded JDBC Driver
+                    </td><td align="left">
+                        10.1.2.1
+                    </td></tr><tr><td align="left">
+                        Borland Interbase
+                    </td><td align="left">
+                        7.1.0.202
+                    </td><td align="left">
+                        Interclient
+                    </td><td align="left">
+                        4.5.1
+                    </td></tr><tr><td align="left">
+                        Borland JDataStore
+                    </td><td align="left">
+                        6.0
+                    </td><td align="left">
+                        Borland JDataStore
+                    </td><td align="left">
+                        6.0
+                    </td></tr><tr><td align="left">
+                        DB2
+                    </td><td align="left">
+                        8.1
+                    </td><td align="left">
+                        IBM DB2 JDBC Universal Driver
+                    </td><td align="left">
+                        1.0.581
+                    </td></tr><tr><td align="left">
+                        Empress
+                    </td><td align="left">
+                        8.62
+                    </td><td align="left">
+                        Empress Category 2 JDBC Driver
+                    </td><td align="left">
+                        8.62
+                    </td></tr><tr><td align="left">
+                        Firebird
+                    </td><td align="left">
+                        1.5
+                    </td><td align="left">
+                        JayBird JCA/JDBC driver
+                    </td><td align="left">
+                        1.0.1
+                    </td></tr><tr><td align="left">
+                        H2 Database Engine
+                    </td><td align="left">
+                        1.0
+                    </td><td align="left">
+                        H2
+                    </td><td align="left">
+                        1.0
+                    </td></tr><tr><td align="left">
+                        Hypersonic Database Engine
+                    </td><td align="left">
+                        1.8.0
+                    </td><td align="left">
+                        Hypersonic
+                    </td><td align="left">
+                        1.8.0
+                    </td></tr><tr><td align="left">
+                        Informix Dynamic Server
+                    </td><td align="left">
+                        9.30.UC10
+                    </td><td align="left">
+                        Informix JDBC driver
+                    </td><td align="left">
+                        2.21.JC2
+                    </td></tr><tr><td align="left">
+                        InterSystems Cache
+                    </td><td align="left">
+                        5.0
+                    </td><td align="left">
+                        Cache JDBC Driver
+                    </td><td align="left">
+                        5.0
+                    </td></tr><tr><td align="left">
+                        Microsoft Access
+                    </td><td align="left">
+                        9.0 (a.k.a. "2000")
+                    </td><td align="left">
+                        DataDirect SequeLink
+                    </td><td align="left">
+                        5.4.0038
+                    </td></tr><tr><td align="left">
+                        Microsoft SQL Server
+                    </td><td align="left">
+                        9.00.1399 (SQL Server 2005)
+                    </td><td align="left">
+                        SQLServer
+                    </td><td align="left">
+                        1.0.809.102
+                    </td></tr><tr><td align="left">
+                        Microsoft Visual FoxPro
+                    </td><td align="left">
+                        7.0
+                    </td><td align="left">
+                        DataDirect SequeLink
+                    </td><td align="left">
+                        5.4.0038
+                    </td></tr><tr><td align="left">
+                        MySQL
+                    </td><td align="left">
+                        3.23.43-log
+                    </td><td align="left">
+                        MySQL Driver
+                    </td><td align="left">
+                        3.0.14
+                    </td></tr><tr><td align="left">
+                        MySQL
+                    </td><td align="left">
+                        5.0.26
+                    </td><td align="left">
+                        MySQL Driver
+                    </td><td align="left">
+                        3.0.14
+                    </td></tr><tr><td align="left">
+                        Oracle
+                    </td><td align="left">
+                        8.1,9.2,10.1
+                    </td><td align="left">
+                        Oracle JDBC driver
+                    </td><td align="left">
+                        10.2.0.1.0
+                    </td></tr><tr><td align="left">
+                        Pointbase
+                    </td><td align="left">
+                        4.4
+                    </td><td align="left">
+                        Pointbase JDBC driver
+                    </td><td align="left">
+                        4.4 (4.4) 
+                    </td></tr><tr><td align="left">
+                        PostgreSQL
+                    </td><td align="left">
+                        7.2.1
+                    </td><td align="left">
+                        PostgreSQL Native Driver
+                    </td><td align="left">
+                        8.1
+                    </td></tr><tr><td align="left">
+                        PostgreSQL
+                    </td><td align="left">
+                        8.1.5
+                    </td><td align="left">
+                        PostgreSQL Native Driver
+                    </td><td align="left">
+                        8.1
+                    </td></tr><tr><td align="left">
+                        Sybase Adaptive Server Enterprise
+                    </td><td align="left">
+                        12.5
+                    </td><td align="left">
+                        jConnect
+                    </td><td align="left">
+                        5.5 (5.5)
+                    </td></tr></tbody></table></div></div><br class="table-break"><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="dbsupport_derby"></a>1.&nbsp;
+            Apache Derby
+        </h2></div></div></div><div class="example"><a name="example_props_derby"></a><p class="title"><b>Example&nbsp;2.1.&nbsp;
+                Example properties for Derby
+            </b></p><div class="example-contents"><pre class="programlisting">
+openjpa.ConnectionDriverName: org.apache.derby.jdbc.EmbeddedDriver
+openjpa.ConnectionURL: jdbc:derby:DB_NAME;create=true
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="jpa_resources.html">Prev</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="dbsupport_interbase.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Appendix&nbsp;1.&nbsp;
+        JPA Resources
+    &nbsp;</td><td width="20%" align="center"><a accesskey="h" href="manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;2.&nbsp;
+            Borland Interbase
+        </td></tr></table></div></body></html>

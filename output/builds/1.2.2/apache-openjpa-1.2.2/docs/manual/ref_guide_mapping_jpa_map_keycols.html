@@ -1,0 +1,29 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>8.&nbsp;Key Columns</title><link rel="stylesheet" href="css/docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"><link rel="start" href="manual.html" title="Apache OpenJPA User's Guide"><link rel="up" href="ref_guide_mapping.html" title="Chapter&nbsp;7.&nbsp; Mapping"><link rel="prev" href="ref_guide_mapping_jpa.html" title="7.&nbsp; Additional JPA Mappings"><link rel="next" href="ref_guide_mapping_jpa_map_keyjoincols.html" title="9.&nbsp;Key Join Columns"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">8.&nbsp;Key Columns</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ref_guide_mapping_jpa.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;7.&nbsp;
+        Mapping
+    </th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ref_guide_mapping_jpa_map_keyjoincols.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ref_guide_mapping_jpa_map_keycols"></a>8.&nbsp;Key Columns</h2></div></div></div><a class="indexterm" name="d0e27343"></a><p>
+        Key columns serve the same role for map keys as the element
+        columns described in
+        <a href="">???</a> serve for
+        collection elements.  OpenJPA's
+        <a xmlns:xlink="http://www.w3.org/1999/xlink" href="../javadoc/org/apache/openjpa/persistence/jdbc/KeyColumn.html" target="_top">
+        <code class="classname">org.apache.openjpa.persistence.jdbc.KeyColumn</code>
+        </a> annotation represents a map key.  To map custom
+        multi-column keys, use the
+        <a xmlns:xlink="http://www.w3.org/1999/xlink" href="../javadoc/org/apache/openjpa/persistence/jdbc/KeyColumns.html" target="_top">
+        <code class="classname">org.apache.openjpa.persistence.jdbc.KeyColumns</code>
+        </a> annotation, whose value is an array of <code class="classname">KeyColumn</code>s.
+        </p><p>
+        A <code class="classname">KeyColumn</code> always resides in
+        a container table, so it does not have the <code class="literal">table</code>
+        property of a standard <code class="classname">Column</code>.  Otherwise, the
+        <code class="classname">KeyColumn</code> and standard <code class="classname">Column</code>
+        annotations are equivalent.  See
+        <a href="jpa_overview_mapping_column.html" title="3.&nbsp; Column">Section&nbsp;3, &#8220;
+            Column
+        &#8221;</a> in the JPA
+        Overview for a review of the <code class="classname">Column</code> annotation.
+        </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ref_guide_mapping_jpa.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ref_guide_mapping.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ref_guide_mapping_jpa_map_keyjoincols.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">7.&nbsp;
+            Additional JPA Mappings
+        &nbsp;</td><td width="20%" align="center"><a accesskey="h" href="manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;9.&nbsp;Key Join Columns</td></tr></table></div></body></html>

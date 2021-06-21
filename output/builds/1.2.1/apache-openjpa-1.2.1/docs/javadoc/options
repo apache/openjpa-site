@@ -1,0 +1,27 @@
+-classpath '/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-lib/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-kernel/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-jdbc/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-persistence/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-persistence-jdbc/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-xmlstore/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-slice/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-all/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-project/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-examples/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-integration/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-integration/examples/target/classes:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-integration/tck/target/classes:/home/mikedd/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/mikedd/.m2/repository/org/apache/derby/derby/10.2.2.0/derby-10.2.2.0.jar:/home/mikedd/.m2/repository/javax/persistence/persistence-api/1.0b/persistence-api-1.0b.jar:/home/mikedd/.m2/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar:/home/mikedd/.m2/repository/postgresql/postgresql/8.1-407.jdbc3/postgresql-8.1-407.jdbc3.jar:/home/mikedd/.m2/repository/org/apache/openjpa/openjpa-kernel/1.2.1/openjpa-kernel-1.2.1.jar:/home/mikedd/.m2/repository/net/sourceforge/serp/serp/1.13.1/serp-1.13.1.jar:/home/mikedd/.m2/repository/org/apache/openjpa/openjpa-persistence/1.2.1/openjpa-persistence-1.2.1.jar:/home/mikedd/.m2/repository/com/ibm/websphere/websphere_uow_api/0.0.1/websphere_uow_api-0.0.1.jar:/home/mikedd/.m2/repository/org/apache/openjpa/openjpa/1.2.1/openjpa-1.2.1.jar:/home/mikedd/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1/geronimo-jta_1.1_spec-1.1.jar:/home/mikedd/.m2/repository/javax/xml/bind/jsr173_api/1.0/jsr173_api-1.0.jar:/home/mikedd/.m2/repository/org/apache/openjpa/openjpa-lib/1.2.1/openjpa-lib-1.2.1.jar:/home/mikedd/.m2/repository/org/apache/geronimo/specs/geronimo-jpa_3.0_spec/1.0/geronimo-jpa_3.0_spec-1.0.jar:/home/mikedd/.m2/repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar:/home/mikedd/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/mikedd/.m2/repository/org/apache/openjpa/openjpa-xmlstore/1.2.1/openjpa-xmlstore-1.2.1.jar:/home/mikedd/.m2/repository/hsqldb/hsqldb/1.8.0.1/hsqldb-1.8.0.1.jar:/home/mikedd/.m2/repository/org/apache/openjpa/openjpa-jdbc/1.2.1/openjpa-jdbc-1.2.1.jar:/home/mikedd/.m2/repository/org/apache/openjpa/openjpa-persistence-jdbc/1.2.1/openjpa-persistence-jdbc-1.2.1.jar:/home/mikedd/.m2/repository/commons-lang/commons-lang/2.1/commons-lang-2.1.jar:/home/mikedd/.m2/repository/log4j/log4j/1.2.13/log4j-1.2.13.jar:/home/mikedd/.m2/repository/commons-pool/commons-pool/1.3/commons-pool-1.3.jar:/home/mikedd/.m2/repository/javax/xml/bind/jaxb-api/2.0/jaxb-api-2.0.jar:/home/mikedd/.m2/repository/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.0.1/geronimo-jms_1.1_spec-1.0.1.jar'
+ -encoding
+'ISO-8859-1'
+-protected
+-sourcepath
+'/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-lib/src/main/java:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-kernel/src/main/java:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-jdbc/src/main/java:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-persistence/src/main/java:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-persistence-jdbc/src/main/java:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-xmlstore/src/main/java:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-slice/src/main/java:/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/openjpa-examples/src/main/java'
+-subpackages
+org.apache.openjpa
+-author
+-bottom
+'Copyright &#169; 2006-2009 <a href="http://www.apache.org">Apache Software Foundation</a>. All Rights Reserved.'
+-charset
+'ISO-8859-1'
+-d
+'/home/mikedd/workspaces/tags/1.2.1/openjpa-parent/target/site/apidocs'
+-doctitle
+'OpenJPA 1.2.1 API'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-link
+'http://java.sun.com/javaee/5/docs/api'
+-link
+'http://jakarta.apache.org/commons/collections/api-release'
+-use
+-version
+-windowtitle
+'OpenJPA 1.2.1 API'
