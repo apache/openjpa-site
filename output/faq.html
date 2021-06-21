@@ -194,7 +194,7 @@ by:</p>
 <p><a name="sql"></a></p>
 <h2 id="how-do-i-see-the-sql-that-openjpa-is-executing">How do I see the SQL that OpenJPA is executing?<a class="headerlink" href="#how-do-i-see-the-sql-that-openjpa-is-executing" title="Permalink">&para;</a></h2>
 <p>OpenJPA provides configurable channel-based logging, as described in the
-chapter on <a href="http://openjpa.apache.org/builds/latest/docs/manual/manual.html#ref_guide_logging">Logging</a>
+chapter on <a href="/builds/latest/docs/manual/manual.html#ref_guide_logging">Logging</a>
 . The simplest example of enabling verbose logging is by using the
 following property in your {{persistence.xml}} file:</p>
 <pre><code>&lt;persistence xmlns="http://java.sun.com/xml/ns/persistence"
@@ -236,7 +236,7 @@ connection pool:</p>
         &lt;/persistence-unit&gt;
     &lt;/persistence&gt;
 </code></pre>
-<p>See the documentation on <a href="http://openjpa.apache.org/builds/latest/docs/manual/manual.html#ref_guide_dbsetup_thirdparty">Using a Third-Party DataSource</a> for further details.</p>
+<p>See the documentation on <a href="/builds/latest/docs/manual/manual.html#ref_guide_dbsetup_thirdparty">Using a Third-Party DataSource</a> for further details.</p>
 <p><a name="reorder"></a></p>
 <h2 id="can-openjpa-reorder-sql-statements-to-satisfy-database-foreign-key-constraints">Can OpenJPA reorder SQL statements to satisfy database foreign key constraints?<a class="headerlink" href="#can-openjpa-reorder-sql-statements-to-satisfy-database-foreign-key-constraints" title="Permalink">&para;</a></h2>
 <p>Yes. OpenJPA can reorder and/or batch the SQL statements using different
@@ -246,7 +246,7 @@ OpenJPA to read the existing foreign key information from the database
 schema:</p>
 <pre><code>  &lt;property name="openjpa.jdbc.SchemaFactory" value="native(ForeignKeys=true)"/&gt;
 </code></pre>
-<p>See the documentation on <a href="http://openjpa.apache.org/builds/latest/docs/manual/manual.html#ref_guide_schema_info_list">Schema Factory</a> for further details.</p>
+<p>See the documentation on <a href="/builds/latest/docs/manual/manual.html#ref_guide_schema_info_list">Schema Factory</a> for further details.</p>
 <p><a name="fk"></a></p>
 <h2 id="why-openjpa-is-not-creating-foreign-key-constraints-on-the-database-tables">Why OpenJPA is not creating foreign key constraints on the database tables?<a class="headerlink" href="#why-openjpa-is-not-creating-foreign-key-constraints-on-the-database-tables" title="Permalink">&para;</a></h2>
 <p>By default, OpenJPA does not create foreign key constraints on new tables
