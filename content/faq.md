@@ -77,7 +77,7 @@ by:
 ## How do I see the SQL that OpenJPA is executing?
     
 OpenJPA provides configurable channel-based logging, as described in the
-chapter on [Logging](http://openjpa.apache.org/builds/latest/docs/manual/manual.html#ref_guide_logging)
+chapter on [Logging](/builds/latest/docs/manual/manual.html#ref_guide_logging)
 . The simplest example of enabling verbose logging is by using the
 following property in your {{persistence.xml}} file:
     
@@ -125,7 +125,7 @@ configurable via the JDBC DataSource API (which most are). The following
         </persistence>
 
     
-See the documentation on [Using a Third-Party DataSource](http://openjpa.apache.org/builds/latest/docs/manual/manual.html#ref_guide_dbsetup_thirdparty) for further details.
+See the documentation on [Using a Third-Party DataSource](/builds/latest/docs/manual/manual.html#ref_guide_dbsetup_thirdparty) for further details.
    
 <a name="reorder"></a>
                                                           
@@ -138,7 +138,7 @@ schema:
     
       <property name="openjpa.jdbc.SchemaFactory" value="native(ForeignKeys=true)"/>
 
-See the documentation on [Schema Factory](http://openjpa.apache.org/builds/latest/docs/manual/manual.html#ref_guide_schema_info_list) for further details.
+See the documentation on [Schema Factory](/builds/latest/docs/manual/manual.html#ref_guide_schema_info_list) for further details.
 
 <a name="fk"></a>
 

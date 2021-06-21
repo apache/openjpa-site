@@ -19,11 +19,11 @@ tools to:
 
 * [Entity Enhancement](entity-enhancement.html)
  for enhancing the bytecode of POJO domain classes
-* [reverse map](http://openjpa.apache.org/builds/latest/docs/docbook/manual.html#ref_guide_pc_reverse)
+* [reverse map](/builds/latest/docs/docbook/manual.html#ref_guide_pc_reverse)
  a database schema to Java source code 
-* [create/synchronize](http://openjpa.apache.org/builds/latest/docs/docbook/manual.html#ref_guide_mapping_mappingtool_examples)
+* [create/synchronize](/builds/latest/docs/docbook/manual.html#ref_guide_mapping_mappingtool_examples)
  a Java persistent domain model to a database schema
-* [generate](http://openjpa.apache.org/builds/latest/docs/docbook/manual.html#d0e11103)
+* [generate](/builds/latest/docs/docbook/manual.html#d0e11103)
  canonical metamodel classes for strictly-typed Criteria queries
 
 
