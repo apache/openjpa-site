@@ -1,5 +1,5 @@
 staging:
   profile: ~
-  subdir: docs
+  subdir: output/docs
   whoami: docs
 
