@@ -1,5 +1,3 @@
-# Pelican ASF Website
+# Docs Content
 
-See [ASF-Pelican](https://infra.apache.org/asf-pelican.html)
-
-See [migration notes](migration/README.md)
+This branch is directly published via .asf.yaml
