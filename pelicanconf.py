@@ -97,7 +97,7 @@ THEME = './theme/apache'
 PLUGIN_PATHS = ['./theme/plugins']
 # PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
 # We are using the default plugin - 'pelican-gfm' which is installed by the build
-PLUGINS = ['asfgenid', 'pelican-gfm', 'asfcopy']
+PLUGINS = ['asfgenid', 'pelican-gfm']
 
 # Lifecycle and plugins:
 # (1) Initialization:
@@ -133,9 +133,6 @@ ASF_GENID = {
     'tables': False,
     'debug': False
 }
-
-# Directories to be copied by asfcopy plugin outside of other Pelican process
-ASF_COPY = ['builds', 'docs']
 
 # Sitemap Generator
 # SITEMAP = {
