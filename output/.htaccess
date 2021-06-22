@@ -9,4 +9,3 @@ Redirect Permanent /builds/apache-openjpa-1.3.0-SNAPSHOT/docs   https://ci.apach
 Redirect Permanent /builds/apache-openjpa-1.2.4-SNAPSHOT/docs   https://ci.apache.org/projects/openjpa/1.2.x
 Redirect Permanent /builds/apache-openjpa-1.0.5-SNAPSHOT/docs   https://ci.apache.org/projects/openjpa/1.0.x
 Redirect Permanent /ns/orm                                      https://ci.apache.org/projects/openjpa/trunk/schema
-
