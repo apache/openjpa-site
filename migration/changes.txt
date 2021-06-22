@@ -383,6 +383,18 @@
 ==== ./content/releasing-openjpa-1.0.x-or-1.1.x-(old-scp-steps).md
 ==== ./content/openjpa-logo-contest---round-1.md
 ==== ./content/faq.md
+80c80
+< chapter on [Logging](http://openjpa.apache.org/builds/latest/docs/manual/manual.html#ref_guide_logging)
+---
+> chapter on [Logging](/builds/latest/docs/manual/manual.html#ref_guide_logging)
+128c128
+< See the documentation on [Using a Third-Party DataSource](http://openjpa.apache.org/builds/latest/docs/manual/manual.html#ref_guide_dbsetup_thirdparty) for further details.
+---
+> See the documentation on [Using a Third-Party DataSource](/builds/latest/docs/manual/manual.html#ref_guide_dbsetup_thirdparty) for further details.
+141c141
+< See the documentation on [Schema Factory](http://openjpa.apache.org/builds/latest/docs/manual/manual.html#ref_guide_schema_info_list) for further details.
+---
+> See the documentation on [Schema Factory](/builds/latest/docs/manual/manual.html#ref_guide_schema_info_list) for further details.
 ==== ./content/openjpa-confluence-user-groups.md
 ==== ./content/tips-n-techniques.md
 ==== ./content/quick-start.md
@@ -452,6 +464,326 @@
 ==== ./content/jpa-2.1-tasks.md
 ==== ./content/sidenav-overview.md
 ==== ./content/documentation.md
+12d11
+< 
+19,23c18,22
+<  </td><td class="border"><a href="http://openjpa.apache.org/builds/latest/docs/docbook/manual/main.html">manual</a>
+<  </td><td class="border"><a href="http://openjpa.apache.org/builds/latest/docs/docbook/manual.html">manual</a>
+<  </td><td class="border"><a href="http://openjpa.apache.org/builds/latest/docs/docbook/manual.pdf">manual PDF</a>
+<  </td><td class="border"><a href="http://openjpa.apache.org/builds/latest/docs/javadoc/index.html">JavaDocs</a>
+<  </td><td class="border"><a href="http://openjpa.apache.org/builds/latest/docs/schema/">Schema</a>
+---
+>  </td><td class="border"><a href="/builds/latest/docs/docbook/manual/main.html">manual</a>
+>  </td><td class="border"><a href="/builds/latest/docs/docbook/manual.html">manual</a>
+>  </td><td class="border"><a href="/builds/latest/docs/docbook/manual.pdf">manual PDF</a>
+>  </td><td class="border"><a href="/builds/latest/docs/javadoc/index.html">JavaDocs</a>
+>  </td><td class="border"><a href="/builds/latest/docs/schema/">Schema</a>
+27d25
+< 
+35,38c33,36
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.2/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.2/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.2/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.2/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/3.1.2/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/3.1.2/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/3.1.2/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/3.1.2/apidocs/index.html">javadoc</a>
+43,46c41,44
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.1/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.1/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.1/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.1/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/3.1.1/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/3.1.1/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/3.1.1/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/3.1.1/apidocs/index.html">javadoc</a>
+51,54c49,52
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.0/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.0/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.0/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.1.0/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/3.1.0/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/3.1.0/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/3.1.0/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/3.1.0/apidocs/index.html">javadoc</a>
+68,71c66,69
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.0.0/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.0.0/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.0.0/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/3.0.0/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/3.0.0/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/3.0.0/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/3.0.0/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/3.0.0/apidocs/index.html">javadoc</a>
+85,88c83,86
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.x/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.x/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.x/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.x/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.4.x/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.x/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.x/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.x/apidocs/index.html">javadoc</a>
+91,94c89,92
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.3/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.3/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.3/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.3/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.4.3/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.3/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.3/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.3/apidocs/index.html">javadoc</a>
+97,100c95,98
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.2/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.2/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.2/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.2/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.4.2/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.2/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.2/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.2/apidocs/index.html">javadoc</a>
+103,106c101,104
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.1/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.1/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.1/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.1/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.4.1/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.1/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.1/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.1/apidocs/index.html">javadoc</a>
+109,112c107,110
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.0/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.0/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.0/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.4.0/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.4.0/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.0/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.0/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.4.0/apidocs/index.html">javadoc</a>
+124,127c122,125
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.3.0/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.3.0/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.3.0/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.3.0/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.3.0/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.3.0/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.3.0/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.3.0/apidocs/index.html">javadoc</a>
+138,139c136,137
+< | OpenJPA 2.2.1-SNAPSHOT | [manual](http://openjpa.apache.org/builds/apache-openjpa-2.2.1-SNAPSHOT/docs/docbook/manual/main.html) | [manual](http://openjpa.apache.org/builds/apache-openjpa-2.2.1-SNAPSHOT/docs/docbook/manual.html) | [manual](http://openjpa.apache.org/builds/apache-openjpa-2.2.1-SNAPSHOT/docs/docbook/manual.pdf) | [javadoc](http://openjpa.apache.org/builds/apache-openjpa-2.2.1-SNAPSHOT/docs/javadoc/index.html) |
+< | OpenJPA 2.2.0 | [manual](http://openjpa.apache.org/builds/2.2.0/apache-openjpa/docs/main.html) | [manual](http://openjpa.apache.org/builds/2.2.0/apache-openjpa/docs/manual.html) | [manual](http://openjpa.apache.org/builds/2.2.0/apache-openjpa/docs/manual.pdf) | [javadoc](http://openjpa.apache.org/builds/2.2.0/apidocs/index.html) |
+---
+> | OpenJPA 2.2.1-SNAPSHOT | [manual](/builds/apache-openjpa-2.2.1-SNAPSHOT/docs/docbook/manual/main.html) | [manual](/builds/apache-openjpa-2.2.1-SNAPSHOT/docs/docbook/manual.html) | [manual](/builds/apache-openjpa-2.2.1-SNAPSHOT/docs/docbook/manual.pdf) | [javadoc](/builds/apache-openjpa-2.2.1-SNAPSHOT/docs/javadoc/index.html) |
+> | OpenJPA 2.2.0 | [manual](/builds/2.2.0/apache-openjpa/docs/main.html) | [manual](/builds/2.2.0/apache-openjpa/docs/manual.html) | [manual](/builds/2.2.0/apache-openjpa/docs/manual.pdf) | [javadoc](/builds/2.2.0/apidocs/index.html) |
+146,149c144,147
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/apache-openjpa-2.2.3-SNAPSHOT/docs/docbook/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/apache-openjpa-2.2.3-SNAPSHOT/docs/docbook/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/apache-openjpa-2.2.3-SNAPSHOT/docs/docbook/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/apache-openjpa-2.2.3-SNAPSHOT/docs/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/apache-openjpa-2.2.3-SNAPSHOT/docs/docbook/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/apache-openjpa-2.2.3-SNAPSHOT/docs/docbook/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/apache-openjpa-2.2.3-SNAPSHOT/docs/docbook/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/apache-openjpa-2.2.3-SNAPSHOT/docs/javadoc/index.html">javadoc</a>
+152,155c150,153
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.2/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.2/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.2/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.2/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.2.2/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.2.2/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.2.2/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.2.2/apidocs/index.html">javadoc</a>
+158,161c156,159
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.1/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.1/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.1/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.1/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.2.1/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.2.1/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.2.1/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.2.1/apidocs/index.html">javadoc</a>
+164,167c162,165
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.0/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.0/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.0/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.2.0/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.2.0/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.2.0/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.2.0/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.2.0/apidocs/index.html">javadoc</a>
+180,183c178,181
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.1.1/apache-openjpa/docs/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.1.1/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.1.1/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.1.1/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.1.1/apache-openjpa/docs/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.1.1/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.1.1/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.1.1/apidocs/index.html">javadoc</a>
+186,189c184,187
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.1.0/apache-openjpa-2.1.0/docs/manual/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.1.0/apache-openjpa-2.1.0/docs/manual/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.1.0/apache-openjpa-2.1.0/docs/manual/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.1.0/apache-openjpa-2.1.0/docs/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.1.0/apache-openjpa-2.1.0/docs/manual/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.1.0/apache-openjpa-2.1.0/docs/manual/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.1.0/apache-openjpa-2.1.0/docs/manual/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.1.0/apache-openjpa-2.1.0/docs/javadoc/index.html">javadoc</a>
+201,204c199,202
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.0.1/apache-openjpa-2.0.1/docs/manual/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.0.1/apache-openjpa-2.0.1/docs/manual/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.0.1/apache-openjpa-2.0.1/docs/manual/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.0.1/apache-openjpa-2.0.1/docs/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.0.1/apache-openjpa-2.0.1/docs/manual/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.0.1/apache-openjpa-2.0.1/docs/manual/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.0.1/apache-openjpa-2.0.1/docs/manual/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.0.1/apache-openjpa-2.0.1/docs/javadoc/index.html">javadoc</a>
+207,210c205,208
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/docs/manual/main.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/docs/manual/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/docs/manual/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/docs/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/2.0.0/apache-openjpa-2.0.0/docs/manual/main.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.0.0/apache-openjpa-2.0.0/docs/manual/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/2.0.0/apache-openjpa-2.0.0/docs/manual/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/2.0.0/apache-openjpa-2.0.0/docs/javadoc/index.html">javadoc</a>
+223,226c221,224
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.3/apache-openjpa/docs/index.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.3/apache-openjpa/docs/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.3/apache-openjpa/docs/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.3/apidocs/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/1.2.3/apache-openjpa/docs/index.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.2.3/apache-openjpa/docs/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.2.3/apache-openjpa/docs/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/1.2.3/apidocs/index.html">javadoc</a>
+229,232c227,230
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.2/apache-openjpa-1.2.2/docs/manual/index.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.2/apache-openjpa-1.2.2/docs/manual/manual.html">manual</a> 
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.2/apache-openjpa-1.2.2/docs/manual/manual.pdf">manual</a> 
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.2/apache-openjpa-1.2.2/docs/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/1.2.2/apache-openjpa-1.2.2/docs/manual/index.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.2.2/apache-openjpa-1.2.2/docs/manual/manual.html">manual</a> 
+>  </td><td class="border"> <a href="/builds/1.2.2/apache-openjpa-1.2.2/docs/manual/manual.pdf">manual</a> 
+>  </td><td class="border"> <a href="/builds/1.2.2/apache-openjpa-1.2.2/docs/javadoc/index.html">javadoc</a>
+235,238c233,236
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.1/apache-openjpa-1.2.1/docs/manual/index.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.1/apache-openjpa-1.2.1/docs/manual/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.1/apache-openjpa-1.2.1/docs/manual/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.1/apache-openjpa-1.2.1/docs/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/1.2.1/apache-openjpa-1.2.1/docs/manual/index.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.2.1/apache-openjpa-1.2.1/docs/manual/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.2.1/apache-openjpa-1.2.1/docs/manual/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/1.2.1/apache-openjpa-1.2.1/docs/javadoc/index.html">javadoc</a>
+241,244c239,242
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.0/apache-openjpa-1.2.0/docs/manual/index.html">manual</a> 
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.0/apache-openjpa-1.2.0/docs/manual/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.0/apache-openjpa-1.2.0/docs/manual/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.2.0/apache-openjpa-1.2.0/docs/javadoc/index.html">javadoc</a> 
+---
+>  </td><td class="border"> <a href="/builds/1.2.0/apache-openjpa-1.2.0/docs/manual/index.html">manual</a> 
+>  </td><td class="border"> <a href="/builds/1.2.0/apache-openjpa-1.2.0/docs/manual/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.2.0/apache-openjpa-1.2.0/docs/manual/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/1.2.0/apache-openjpa-1.2.0/docs/javadoc/index.html">javadoc</a> 
+256,259c254,257
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.1.0/apache-openjpa-1.1.0/docs/manual/index.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.1.0/apache-openjpa-1.1.0/docs/manual/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.1.0/apache-openjpa-1.1.0/docs/manual/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.1.0/apache-openjpa-1.1.0/docs/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/1.1.0/apache-openjpa-1.1.0/docs/manual/index.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.1.0/apache-openjpa-1.1.0/docs/manual/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.1.0/apache-openjpa-1.1.0/docs/manual/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/1.1.0/apache-openjpa-1.1.0/docs/javadoc/index.html">javadoc</a>
+271,274c269,272
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.4/apache-openjpa-1.0.4/docs/manual/index.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.4/apache-openjpa-1.0.4/docs/manual/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.4/apache-openjpa-1.0.4/docs/manual/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.4/apache-openjpa-1.0.4/docs/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/1.0.4/apache-openjpa-1.0.4/docs/manual/index.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.4/apache-openjpa-1.0.4/docs/manual/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.4/apache-openjpa-1.0.4/docs/manual/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.4/apache-openjpa-1.0.4/docs/javadoc/index.html">javadoc</a>
+277,280c275,278
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.3/apache-openjpa-1.0.3/docs/manual/index.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.3/apache-openjpa-1.0.3/docs/manual/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.3/apache-openjpa-1.0.3/docs/manual/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.3/apache-openjpa-1.0.3/docs/javadoc/index.html">javadoc</a> 
+---
+>  </td><td class="border"> <a href="/builds/1.0.3/apache-openjpa-1.0.3/docs/manual/index.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.3/apache-openjpa-1.0.3/docs/manual/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.3/apache-openjpa-1.0.3/docs/manual/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.3/apache-openjpa-1.0.3/docs/javadoc/index.html">javadoc</a> 
+283,286c281,284
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.2/apache-openjpa-1.0.2/docs/manual/index.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.2/apache-openjpa-1.0.2/docs/manual/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.2/apache-openjpa-1.0.2/docs/manual/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.2/apache-openjpa-1.0.2/docs/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/1.0.2/apache-openjpa-1.0.2/docs/manual/index.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.2/apache-openjpa-1.0.2/docs/manual/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.2/apache-openjpa-1.0.2/docs/manual/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.2/apache-openjpa-1.0.2/docs/javadoc/index.html">javadoc</a>
+289,292c287,290
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.1/apache-openjpa-1.0.1/docs/manual/index.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.1/apache-openjpa-1.0.1/docs/manual/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.1/apache-openjpa-1.0.1/docs/manual/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.1/apache-openjpa-1.0.1/docs/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/1.0.1/apache-openjpa-1.0.1/docs/manual/index.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.1/apache-openjpa-1.0.1/docs/manual/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.1/apache-openjpa-1.0.1/docs/manual/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.1/apache-openjpa-1.0.1/docs/javadoc/index.html">javadoc</a>
+295,298c293,296
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.0/apache-openjpa-1.0.0/docs/manual/index.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.0/apache-openjpa-1.0.0/docs/manual/manual.html">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.0/apache-openjpa-1.0.0/docs/manual/manual.pdf">manual</a>
+<  </td><td class="border"> <a href="http://openjpa.apache.org/builds/1.0.0/apache-openjpa-1.0.0/docs/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> <a href="/builds/1.0.0/apache-openjpa-1.0.0/docs/manual/index.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.0/apache-openjpa-1.0.0/docs/manual/manual.html">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.0/apache-openjpa-1.0.0/docs/manual/manual.pdf">manual</a>
+>  </td><td class="border"> <a href="/builds/1.0.0/apache-openjpa-1.0.0/docs/javadoc/index.html">javadoc</a>
+310,311c308,309
+<  </td><td class="border"> </td><td class="border"> <a href="http://openjpa.apache.org/docs/openjpa-0.9.7-incubating/manual/manual.html">manual</a>
+<  </td><td class="border"> </td><td class="border"> <a href="http://openjpa.apache.org/docs/openjpa-0.9.7-incubating/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> </td><td class="border"> <a href="/docs/openjpa-0.9.7-incubating/manual/manual.html">manual</a>
+>  </td><td class="border"> </td><td class="border"> <a href="/docs/openjpa-0.9.7-incubating/javadoc/index.html">javadoc</a>
+314,315c312,313
+<  </td><td class="border"> </td><td class="border"> <a href="http://openjpa.apache.org/docs/openjpa-0.9.6-incubating/manual/manual.html">manual</a>
+<  </td><td class="border"> </td><td class="border"> <a href="http://openjpa.apache.org/docs/openjpa-0.9.6-incubating/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> </td><td class="border"> <a href="/docs/openjpa-0.9.6-incubating/manual/manual.html">manual</a>
+>  </td><td class="border"> </td><td class="border"> <a href="/docs/openjpa-0.9.6-incubating/javadoc/index.html">javadoc</a>
+318,319c316,317
+<  </td><td class="border"> </td><td class="border"> <a href="http://openjpa.apache.org/docs/openjpa-0.9.0-incubating/manual/manual.html">manual</a>
+<  </td><td class="border"> </td><td class="border"> <a href="http://openjpa.apache.org/docs/openjpa-0.9.0-incubating/javadoc/index.html">javadoc</a>
+---
+>  </td><td class="border"> </td><td class="border"> <a href="/docs/openjpa-0.9.0-incubating/manual/manual.html">manual</a>
+>  </td><td class="border"> </td><td class="border"> <a href="/docs/openjpa-0.9.0-incubating/javadoc/index.html">javadoc</a>
 ==== ./content/sidenav-development.md
 ==== ./content/release-artifact-locations.md
 ==== ./content/source-code.md
@@ -477,6 +809,18 @@
 ==== ./content/performance-guide.md
 ==== ./content/committers.md
 ==== ./content/tools.md
+22c22
+< * [reverse map](http://openjpa.apache.org/builds/latest/docs/docbook/manual.html#ref_guide_pc_reverse)
+---
+> * [reverse map](/builds/latest/docs/docbook/manual.html#ref_guide_pc_reverse)
+24c24
+< * [create/synchronize](http://openjpa.apache.org/builds/latest/docs/docbook/manual.html#ref_guide_mapping_mappingtool_examples)
+---
+> * [create/synchronize](/builds/latest/docs/docbook/manual.html#ref_guide_mapping_mappingtool_examples)
+26c26
+< * [generate](http://openjpa.apache.org/builds/latest/docs/docbook/manual.html#d0e11103)
+---
+> * [generate](/builds/latest/docs/docbook/manual.html#d0e11103)
 ==== ./content/sampletemplate.md
 ==== ./README.md
 ==== ./migration/README.md
