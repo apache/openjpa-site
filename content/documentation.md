@@ -9,7 +9,6 @@ The online OpenJPA documentation can be found here.
 
 <a name="Documentation-Latest(3.1.3-SNAPSHOT)"></a>
 
-
 ## Nightly builds
 
 <table>
@@ -23,7 +22,6 @@ The online OpenJPA documentation can be found here.
  </td><td class="border"><a href="/builds/latest/docs/schema/">Schema</a>
  </td></tr>
 </table>
-
 
 <a name="Documentation-OpenJPA3.0.xreleases"></a>
 
