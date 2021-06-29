@@ -1,5 +1,4 @@
-staging:
+publish:
   profile: ~
   subdir: output/builds
   whoami: builds
-
