@@ -1,5 +1,4 @@
-staging:
+production:
   profile: ~
   subdir: output/docs
   whoami: docs
-
