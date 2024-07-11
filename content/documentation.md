@@ -7,7 +7,7 @@ Title: Documentation
 
 The online OpenJPA documentation can be found here.
 
-<a name="Documentation-Latest(3.1.3-SNAPSHOT)"></a>
+<a name="Documentation-Latest(4.0.1-SNAPSHOT)"></a>
 
 ## Nightly builds
 
@@ -23,7 +23,55 @@ The online OpenJPA documentation can be found here.
  </td></tr>
 </table>
 
-<a name="Documentation-OpenJPA3.0.xreleases"></a>
+<a name="Documentation-OpenJPA4.0.xreleases"></a>
+
+## OpenJPA 4.0.x releases
+
+<table>
+<tr><th>Version</th><th> HTML Manual</th><th> HTML Manual (Single Page)</th><th>PDF Manual</th><th>Javadocs</th><th>Release Notes</th></tr>
+<tr><td class="border"> OpenJPA 4.0.0
+ </td><td class="border"> <a href="/builds/4.0.0/apache-openjpa/docs/main.html">manual</a>
+ </td><td class="border"> <a href="/builds/4.0.0/apache-openjpa/docs/manual.html">manual</a>
+ </td><td class="border"> <a href="/builds/4.0.0/apache-openjpa/docs/manual.pdf">manual</a>
+ </td><td class="border"> <a href="/builds/4.0.0/apidocs/index.html">javadoc</a>
+ </td><td class="border"><A href="/builds/4.0.0/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
+</td></tr>
+<tr>
+</table>
+
+<a name="Documentation-OpenJPA3.2.xreleases"></a>
+
+## OpenJPA 3.2.x releases
+
+<table>
+<tr><th>Version</th><th> HTML Manual</th><th> HTML Manual (Single Page)</th><th>PDF Manual</th><th>Javadocs</th><th>Release Notes</th></tr>
+<tr><td class="border"> OpenJPA 3.2.2
+ </td><td class="border"> <a href="/builds/3.2.2/apache-openjpa/docs/main.html">manual</a>
+ </td><td class="border"> <a href="/builds/3.2.2/apache-openjpa/docs/manual.html">manual</a>
+ </td><td class="border"> <a href="/builds/3.2.2/apache-openjpa/docs/manual.pdf">manual</a>
+ </td><td class="border"> <a href="/builds/3.2.2/apidocs/index.html">javadoc</a>
+ </td><td class="border"><A href="/builds/3.2.2/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
+</td></tr>
+<tr>
+<tr><td class="border"> OpenJPA 3.2.1
+ </td><td class="border"> <a href="/builds/3.2.1/apache-openjpa/docs/main.html">manual</a>
+ </td><td class="border"> <a href="/builds/3.2.1/apache-openjpa/docs/manual.html">manual</a>
+ </td><td class="border"> <a href="/builds/3.2.1/apache-openjpa/docs/manual.pdf">manual</a>
+ </td><td class="border"> <a href="/builds/3.2.1/apidocs/index.html">javadoc</a>
+ </td><td class="border"><A href="/builds/3.2.1/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
+</td></tr>
+<tr>
+<tr><td class="border"> OpenJPA 3.2.0
+ </td><td class="border"> <a href="/builds/3.2.0/apache-openjpa/docs/main.html">manual</a>
+ </td><td class="border"> <a href="/builds/3.2.0/apache-openjpa/docs/manual.html">manual</a>
+ </td><td class="border"> <a href="/builds/3.2.0/apache-openjpa/docs/manual.pdf">manual</a>
+ </td><td class="border"> <a href="/builds/3.2.0/apidocs/index.html">javadoc</a>
+ </td><td class="border"><A href="/builds/3.2.0/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
+</td></tr>
+<tr>
+</table>
+
+<a name="Documentation-OpenJPA3.1.xreleases"></a>
 
 ## OpenJPA 3.1.x releases
 
