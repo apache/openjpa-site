@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.apache.openjpa.openjpa_maven_plugin"},{"l":"org.apache.openjpa.tools.maven"}]
