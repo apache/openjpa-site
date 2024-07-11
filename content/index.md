@@ -12,6 +12,8 @@ Apache OpenJPA is a Java persistence project at [The Apache Software Foundation]
  into any Java EE compliant container and many other lightweight
 frameworks, such as Tomcat and Spring. 
 
+The [4.x releases](downloads.html) is an implementation of the Jakarta Persistence API 3.0 specification is the most current production ready release.
+
 The [3.x releases](downloads.html) targetting the [JSR-338 Java Persistence 2.2](http://jcp.org/en/jsr/detail?id=338) is the most current production ready release.
 It is fully backward compatible compatible to our JPA 2.1, 2.0 and 1.0 releases.
 
@@ -127,21 +129,59 @@ The [1.x releases](downloads.html)
  <DIV class="blog-post-listing">
 
  <DIV class="logo-heading-block">
- <SPAN class="logoBlock">
- <A class="userLogoLink" data-username="struberg@apache.org" href="http://people.apache.org/committer-index.html#struberg">
- <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: struberg@apache.org" title="struberg@apache.org">
-
- </A>
- </SPAN>
- <SPAN class="blogHeading">
- <DIV class="page-metadata not-personal"><A href="http://people.apache.org/committer-index.html#struberg" class="url fn confluence-userlink" data-username="struberg@apache.org">Mark Struberg</A> posted on 2020-09-04</DIV>
- <A class="blogHeading" href="openjpa-3.1.x.html">OpenJPA 3.1.2</A> Released!</A>
- </SPAN>
+   <SPAN class="logoBlock">
+     <A class="userLogoLink" data-username="struberg@apache.org" href="http://people.apache.org/committer-index.html#struberg">
+       <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: struberg@apache.org" title="struberg@apache.org">
+     </A>
+   </SPAN>
+   <SPAN class="blogHeading">
+     <DIV class="page-metadata not-personal">
+       <A href="http://people.apache.org/committer-index.html#struberg" class="url fn confluence-userlink" data-username="struberg@apache.org">Mark Struberg</A> posted on 2024-02-14
+     </DIV>
+     <A class="blogHeading" href="openjpa-4.0.x.html">OpenJPA 4.0.0 Released!</A>
+   </SPAN>
  </DIV>
 
  <DIV class="wiki-content">
- <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 3.1.2!</P>
+   <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 4.0.0!</P>
  </DIV>
+ <hr>
+
+ <DIV class="logo-heading-block">
+   <SPAN class="logoBlock">
+     <A class="userLogoLink" data-username="ilgrosso@apache.org" href="http://people.apache.org/committer-index.html#ilgrosso">
+       <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: ilgrosso@apache.org" title="ilgrosso@apache.org"/>
+     </A>
+   </SPAN>
+   <SPAN class="blogHeading">
+     <DIV class="page-metadata not-personal">
+       <A href="http://people.apache.org/committer-index.html#ilgrosso" class="url fn confluence-userlink" data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2022-03-19
+     </DIV>
+     <A class="blogHeading" href="openjpa-3.2.x.html">OpenJPA 3.2.2 Released!</A>
+   </SPAN>
+ </DIV>
+
+ <DIV class="wiki-content">
+   <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 3.2.2!</P>
+ </DIV>
+ <hr>
+
+ <DIV class="logo-heading-block">
+   <SPAN class="logoBlock">
+     <A class="userLogoLink" data-username="struberg@apache.org" href="http://people.apache.org/committer-index.html#struberg">
+       <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: struberg@apache.org" title="struberg@apache.org">
+     </A>
+   </SPAN>
+   <SPAN class="blogHeading">
+     <DIV class="page-metadata not-personal">
+       <A href="http://people.apache.org/committer-index.html#struberg" class="url fn confluence-userlink" data-username="struberg@apache.org">Mark Struberg</A> posted on 2020-09-04
+     </DIV>
+     <A class="blogHeading" href="openjpa-3.1.x.html">OpenJPA 3.1.2 Released!</A>
+   </SPAN>
+ </DIV>
+
+ <DIV class="wiki-content">
+   <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 3.1.2!</P>
  </DIV>
  <hr>
 
