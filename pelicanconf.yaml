@@ -1,8 +1,8 @@
 site:
-  name: Apache Template
-  description: Provides a template for projects wishing to use the Pelican ASF static content system
+  name: Apache OpenJPA
+  description: Apache OpenJPA is a Java persistence project at The Apache Software Foundation
   domain: openjpa.apache.org
-  logo: images/logo.png
+  logo: images/openjpa-logo.png
   repository: https://github.com/apache/openjpa-site/blob/main/content/
   trademarks: Apache, the Apache feather logo, and "Project" are trademarks or registered trademarks
 

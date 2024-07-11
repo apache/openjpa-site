@@ -14,7 +14,7 @@ frameworks, such as Tomcat and Spring.
 
 The [4.x releases](downloads.html) is an implementation of the Jakarta Persistence API 3.0 specification is the most current production ready release.
 
-The [3.x releases](downloads.html) targetting the [JSR-338 Java Persistence 2.2](http://jcp.org/en/jsr/detail?id=338) is the most current production ready release.
+The [3.x releases](downloads.html) targetting the [JSR-338 Java Persistence 2.2](http://jcp.org/en/jsr/detail?id=338).
 It is fully backward compatible compatible to our JPA 2.1, 2.0 and 1.0 releases.
 
 The [2.x releases](downloads.html)
