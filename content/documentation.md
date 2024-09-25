@@ -7,7 +7,7 @@ Title: Documentation
 
 The online OpenJPA documentation can be found here.
 
-<a name="Documentation-Latest(4.0.1-SNAPSHOT)"></a>
+<a name="Documentation-Latest(4.0.2-SNAPSHOT)"></a>
 
 ## Nightly builds
 
@@ -29,6 +29,13 @@ The online OpenJPA documentation can be found here.
 
 <table>
 <tr><th>Version</th><th> HTML Manual</th><th> HTML Manual (Single Page)</th><th>PDF Manual</th><th>Javadocs</th><th>Release Notes</th></tr>
+<tr><td class="border"> OpenJPA 4.0.1
+ </td><td class="border"> <a href="/builds/4.0.1/apache-openjpa/docs/main.html">manual</a>
+ </td><td class="border"> <a href="/builds/4.0.1/apache-openjpa/docs/manual.html">manual</a>
+ </td><td class="border"> <a href="/builds/4.0.1/apache-openjpa/docs/manual.pdf">manual</a>
+ </td><td class="border"> <a href="/builds/4.0.1/apidocs/index.html">javadoc</a>
+ </td><td class="border"><A href="/builds/4.0.1/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
+</td></tr>
 <tr><td class="border"> OpenJPA 4.0.0
  </td><td class="border"> <a href="/builds/4.0.0/apache-openjpa/docs/main.html">manual</a>
  </td><td class="border"> <a href="/builds/4.0.0/apache-openjpa/docs/manual.html">manual</a>

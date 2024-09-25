@@ -1,10 +1,10 @@
 
 # Basic information about the site.
-SITENAME = 'Apache Template'
-SITEDESC = 'Provides a template for projects wishing to use the Pelican ASF static content system'
+SITENAME = 'Apache OpenJPA'
+SITEDESC = 'Apache OpenJPA is a Java persistence project at The Apache Software Foundation'
 SITEDOMAIN = 'openjpa.apache.org'
 SITEURL = 'https://openjpa.apache.org'
-SITELOGO = 'https://openjpa.apache.org/images/logo.png'
+SITELOGO = 'https://openjpa.apache.org/images/openjpa-logo.png'
 SITEREPOSITORY = 'https://github.com/apache/openjpa-site/blob/main/content/'
 CURRENTYEAR = 2024
 TRADEMARKS = 'Apache, the Apache feather logo, and "Project" are trademarks or registered trademarks'

@@ -2,8 +2,6 @@ Title: OpenJPA 3.1.X
 
 # OpenJPA 3.1.x
 
-The Apache OpenJPA community is currently mainly working on Apache OpenJPA 3.1.x.
-
 This distribution is based on the final [JSR 338 Java Persistence API, Version 2.2](http://jcp.org/en/jsr/detail?id=338) specification.
 
 Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org).
