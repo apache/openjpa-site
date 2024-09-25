@@ -130,6 +130,25 @@ The [1.x releases](downloads.html)
 
  <DIV class="logo-heading-block">
    <SPAN class="logoBlock">
+     <A class="userLogoLink" data-username="ilgrosso@apache.org" href="http://people.apache.org/committer-index.html#ilgrosso">
+       <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: ilgrosso@apache.org" title="ilgrosso@apache.org"/>
+     </A>
+   </SPAN>
+   <SPAN class="blogHeading">
+     <DIV class="page-metadata not-personal">
+       <A href="http://people.apache.org/committer-index.html#ilgrosso" class="url fn confluence-userlink" data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2024-09-23
+     </DIV>
+     <A class="blogHeading" href="openjpa-4.0.x.html">OpenJPA 4.0.1 Released!</A>
+   </SPAN>
+ </DIV>
+
+ <DIV class="wiki-content">
+   <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 4.0.1!</P>
+ </DIV>
+ <hr>
+
+ <DIV class="logo-heading-block">
+   <SPAN class="logoBlock">
      <A class="userLogoLink" data-username="struberg@apache.org" href="http://people.apache.org/committer-index.html#struberg">
        <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: struberg@apache.org" title="struberg@apache.org">
      </A>
