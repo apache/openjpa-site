@@ -1,0 +1,15 @@
+org.apache.openjpa.lib.ant
+org.apache.openjpa.lib.conf
+org.apache.openjpa.lib.encryption
+org.apache.openjpa.lib.graph
+org.apache.openjpa.lib.identifier
+org.apache.openjpa.lib.instrumentation
+org.apache.openjpa.lib.jdbc
+org.apache.openjpa.lib.log
+org.apache.openjpa.lib.meta
+org.apache.openjpa.lib.rop
+org.apache.openjpa.lib.util
+org.apache.openjpa.lib.util.collections
+org.apache.openjpa.lib.util.concurrent
+org.apache.openjpa.lib.util.git
+org.apache.openjpa.lib.xml
