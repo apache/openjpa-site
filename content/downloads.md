@@ -16,11 +16,32 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
  page. For information on building OpenJPA from source, see the [Building](building.html)
  page.
 
-<a name="Downloads-OfficialJPA3.0Releases"></a>
+## Official JPA 4.1 Releases
+
+### 4.1.x Releases
+
+<table>
+<tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
+<tr><td class="border"> OpenJPA 4.1.0 Binary </td>
+    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.1.0/apache-openjpa-4.1.0-binary.zip">apache-openjpa-4.1.0-binary.zip</a></td>
+    <td class="border"> Mar 24 2025 </td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.0/apache-openjpa-4.1.0-binary.zip.sha512">sha512</a></td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.0/apache-openjpa-4.1.0-binary.zip.asc">PGP</a></td>
+</tr>
+<tr><td class="border"> OpenJPA 4.1.0 Source </td>
+    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.1.0/openjpa-parent-4.1.0-source-release.zip">openjpa-parent-4.1.0-source-release.zip</a>
+    <td class="border"> Mar 24 2025 </td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.0/openjpa-parent-4.1.0-source-release.zip.sha512">sha512</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.0/openjpa-parent-4.1.0-source-release.zip.asc">PGP</a>
+</tr>
+<tr><td class="border"> OpenJPA 4.1.0 Release Notes </td>
+    <td class="border"> <a href="https://openjpa.apache.org/builds/4.1.0/apache-openjpa/RELEASE-NOTES.html">RELEASE-NOTES.html</a>
+    <td class="border"> Mar 24 2025 </td>
+    <td class="border"> </td><td class="border"> </td>
+</table>
+
 
 ## Official JPA 4.0 Releases
-
-<a name="Downloads-4.0.xReleases"></a>
 
 ### 4.0.x Releases
 
@@ -42,16 +63,28 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
     <td class="border"> <a href="https://openjpa.apache.org/builds/4.0.1/apache-openjpa/RELEASE-NOTES.html">RELEASE-NOTES.html</a>
     <td class="border"> Sep 23 2024 </td>
     <td class="border"> </td><td class="border"> </td>
+<tr><td class="border"> OpenJPA 4.0.0 Binary </td>
+    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.0.0/apache-openjpa-4.0.0-binary.zip">apache-openjpa-4.0.0-binary.zip</a></td>
+    <td class="border"> Feb 02 2024 </td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.0/apache-openjpa-4.0.0-binary.zip.sha512">sha512</a></td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.0/apache-openjpa-4.0.0-binary.zip.asc">PGP</a></td>
+</tr>
+<tr><td class="border"> OpenJPA 4.0.0 Source </td>
+    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.0.0/openjpa-parent-4.0.0-source-release.zip">openjpa-parent-4.0.0-source-release.zip</a>
+    <td class="border"> Feb 02 2024 </td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.0/openjpa-parent-4.0.0-source-release.zip.sha512">sha512</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.0/openjpa-parent-4.0.0-source-release.zip.asc">PGP</a>
+</tr>
+<tr><td class="border"> OpenJPA 4.0.0 Release Notes </td>
+    <td class="border"> <a href="https://openjpa.apache.org/builds/4.0.0/apache-openjpa/RELEASE-NOTES.html">RELEASE-NOTES.html</a>
+    <td class="border"> Feb 02 2024 </td>
+    <td class="border"> </td><td class="border"> </td>
 </table>
 
-<a name="Downloads-OfficialJPA2.2Releases"></a>
-
 ## Official JPA 3.2 Releases
- 
-These releases raised the minimum Java version to Java 8 and implement most of 
-[JSR-338 Java Persistence 2.2](httpss://jcp.org/en/jsr/detail?id=338) features.
 
-<a name="Downloads-3.2.xReleases"></a>
+These releases raised the minimum Java version to Java 8 and implement most of
+[JSR-338 Java Persistence 2.2](httpss://jcp.org/en/jsr/detail?id=338) features.
 
 ### 3.2.x Releases
 
@@ -97,8 +130,6 @@ These releases raised the minimum Java version to Java 8 and implement most of
     <td class="border"> </td><td class="border"> </td>
 </table>
 
-<a name="Downloads-3.0.xReleases"></a>
-
 ### 3.0.x Releases
 
 <table>
@@ -121,14 +152,10 @@ These releases raised the minimum Java version to Java 8 and implement most of
     <td class="border"> </td><td class="border"> </td>
 </table>
 
-<a name="Downloads-OfficialJPA2.0Releases"></a>
-
 ## Official JPA 2.0 Releases
 
 These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/jsr/detail?id=317)
  specification and pass the JPA 2.0 TCK.
-
-<a name="Downloads-2.4.xReleases"></a>
 
 ### 2.4.x Releases
 
@@ -187,8 +214,6 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
 </tr>
 </table>
 
-<a name="Downloads-2.3.xReleases"></a>
-
 ### 2.3.x Releases
 
 <table>
@@ -211,8 +236,6 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
     <td class="border"> </td><td class="border"> </td>
 </tr>
 </table>
-
-<a name="Downloads-2.2.xReleases"></a>
 
 ### 2.2.x Releases
 
@@ -270,8 +293,6 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
 </tr>
 </table>
 
-<a name="Downloads-2.1.xReleases"></a>
-
 ### 2.1.x Releases
 
 <table>
@@ -311,8 +332,6 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
     <td class="border"> </td><td class="border"> </td>
 </tr>
 </table>
-
-<a name="Downloads-2.0.xReleases"></a>
 
 ### 2.0.x Releases
 
@@ -355,14 +374,10 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
 </table>
 
 
-<a name="Downloads-OfficialJPA1.0Releases"></a>
-
 ## Official JPA 1.0 Releases
 
 These releases implement the [JSR-220 Java Persistence 1.0](https://jcp.org/en/jsr/detail?id=220)
  specification and pass the Sun JPA 1.0b Technology Compatibility Kit.
-
-<a name="Downloads-1.2.xReleases"></a>
 
 ### 1.2.x Releases
 
@@ -418,8 +433,6 @@ These releases implement the [JSR-220 Java Persistence 1.0](https://jcp.org/en/j
 </tr>
 </table>
 
-<a name="Downloads-1.1.xReleases"></a>
-
 ### 1.1.x Releases
 
 <table>
@@ -437,8 +450,6 @@ These releases implement the [JSR-220 Java Persistence 1.0](https://jcp.org/en/j
     <td class="border"> </td>
 </tr>
 </table>
-
-<a name="Downloads-1.0.x Releases"></a>
 
 ### 1.0.x Releases
 
@@ -506,8 +517,6 @@ These releases implement the [JSR-220 Java Persistence 1.0](https://jcp.org/en/j
 </tr>
 </table>
 
-<a name="Downloads-VerifyingReleaseVersionandRevision"></a>
-
 ## Verifying Release Version and Revision
 
 OpenJPA jar is self-describing and after downloading a release, you can find out the revision number included in the build by:
@@ -523,8 +532,6 @@ which will print the version and revision numbers, for example:
 which designates that the 2.1.0 release includes Apache SVN revision
 *1071315* as the latest.
 
-<a name="Downloads-VerifyingReleases"></a>
-
 ## Verifying Releases
 
 We strongly recommend you verify the integrity of the downloaded files with
@@ -536,23 +543,17 @@ Make sure you get these files from the main distribution directory, rather
 than from a mirror. Then verify the signatures using one of the following
 sets of commands:
 
-<a name="Downloads-VerifyingReleaseFilesusingthepgpkUtility"></a>
-
 #### Verifying Release Files using the pgpk Utility
 
     % pgpk -a KEYS
     % pgpv openjpa-*.zip.asc
 
 
-<a name="Downloads-VerifyingReleaseFilesusingthepgpUtility"></a>
-
 #### Verifying Release Files using the pgp Utility
 
     % pgp -ka KEYS
     % pgp openjpa-*.zip.asc
 
-
-<a name="Downloads-VerifyingReleaseFilesusingthegpgUtility"></a>
 
 #### Verifying Release Files using the gpg Utility
 
@@ -570,7 +571,7 @@ distributions. \*sum is also available as part of [GNU Textutils](https://www.gn
 
 ----
 
-<a name="missing.asm"></a>
+### Missing ASM
 
 **(\*\*)** asm-3.2.jar can be found from <https://search.maven.org/remotecontent?filepath=asm/asm/3.2/asm-3.2.jar>
 .

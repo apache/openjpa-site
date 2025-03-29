@@ -23,10 +23,10 @@ These distributions are built and deployed nightly, and contain up-to-date
 fixes and improvements. However, their stability cannot be guaranteed. Use
 at your own risk.
 
-## Snapshot builds 
+## Snapshot builds
 Snapshot (nightly) builds for all active releases are published to the Apache snapshot repository.
 
-**Version 1.2.x, 1.3.x, 2.0.x, 2.1.x, 2.2.x, 2.2.1.x, 3.2.x and main (4.0.x as of this writing)**
+**Version 1.2.x, 1.3.x, 2.0.x, 2.1.x, 2.2.x, 2.2.1.x, 3.2.x and main (4.1.x as of this writing)**
 can be found in the snapshot repository on repository.apache.org. A maven
 project can access this snapshot repository by adding the following
 repository in pom.xml:
@@ -61,9 +61,9 @@ snapshot repository at the following locations:
 
 <table>
 <tr><th> SNAPSHOT version </th><th> binaries </th><th> source </th></tr>
-<tr><td class="border"> 4.0.2 </td>
-    <td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa/4.0.2-SNAPSHOT/">apache-openjpa-4.0.2-SNAPSHOT-binary.zip</a>
-    <td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa/4.0.2-SNAPSHOT/">apache-openjpa-4.0.2-SNAPSHOT-source.zip</a>
+<tr><td class="border"> 4.1.1 </td>
+    <td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa/4.1.1-SNAPSHOT/">apache-openjpa-4.1.1-SNAPSHOT-binary.zip</a>
+    <td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa/4.1.1-SNAPSHOT/">apache-openjpa-4.1.1-SNAPSHOT-source.zip</a>
 </tr>
 <tr><td class="border"> 3.2.3 </td>
     <td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa/3.2.3-SNAPSHOT/">apache-openjpa-3.2.3-SNAPSHOT-binary.zip</a>

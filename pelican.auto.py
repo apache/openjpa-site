@@ -6,7 +6,7 @@ SITEDOMAIN = 'openjpa.apache.org'
 SITEURL = 'https://openjpa.apache.org'
 SITELOGO = 'https://openjpa.apache.org/images/openjpa-logo.png'
 SITEREPOSITORY = 'https://github.com/apache/openjpa-site/blob/main/content/'
-CURRENTYEAR = 2024
+CURRENTYEAR = 2025
 TRADEMARKS = 'Apache, the Apache feather logo, and "Project" are trademarks or registered trademarks'
 TIMEZONE = 'UTC'
 # Theme includes templates and possibly static files
