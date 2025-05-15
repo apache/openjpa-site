@@ -1,0 +1,77 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>4.&nbsp;OpenJPA 3.2.0</title><base href="display"><link rel="stylesheet" type="text/css" href="css/docbook.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="manual.html" title="Apache OpenJPA 3.2 User's Guide"><link rel="up" href="migration_considerations.html" title="Appendix&nbsp;3.&nbsp; Migration Considerations"><link rel="prev" href="jpa_2.3.html" title="3.&nbsp; OpenJPA 2.3.0"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.&nbsp;OpenJPA 3.2.0</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="jpa_2.3.html">Prev</a>&nbsp;</td><th width="60%" align="center">Appendix&nbsp;3.&nbsp;
+        Migration Considerations
+    </th><td width="20%" align="right">&nbsp;</td></tr></table><hr></div><div class="section" id="jpa_3.2"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.&nbsp;OpenJPA 3.2.0</h2></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_incompatibilities">4.1. Incompatibilities</a></span></dt><dd><dl><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_SumDouble">4.1.1. SUM now always returns Double</a></span></dt><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_InvalidColumnNames">4.1.2. Invalid Column Name Changes</a></span></dt><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_HsqlMappingTool">4.1.3. MappingTool Behavior for HSQLDB</a></span></dt><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_OracleTimestampPrecision">4.1.4. Respect TIMESTAMP precision in Oracle</a></span></dt><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_UnaryOps">4.1.5. Unary Operations return types</a></span></dt><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_PostgreSqlQueryTimeout">4.1.6. PostgreSQL now supports setQueryTimeOut</a></span></dt></dl></dd></dl></div>
+        
+        <div class="section" id="jpa_3.2_incompatibilities"><div class="titlepage"><div><div><h3 class="title">4.1.&nbsp;Incompatibilities</h3></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_SumDouble">4.1.1. SUM now always returns Double</a></span></dt><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_InvalidColumnNames">4.1.2. Invalid Column Name Changes</a></span></dt><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_HsqlMappingTool">4.1.3. MappingTool Behavior for HSQLDB</a></span></dt><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_OracleTimestampPrecision">4.1.4. Respect TIMESTAMP precision in Oracle</a></span></dt><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_UnaryOps">4.1.5. Unary Operations return types</a></span></dt><dt><span class="section"><a href="jpa_3.2.html#jpa_3.2_PostgreSqlQueryTimeout">4.1.6. PostgreSQL now supports setQueryTimeOut</a></span></dt></dl></div>
+            
+            <p>
+                The following sections indicate changes that are incompatible
+                between OpenJPA 3.1.x releases and the 3.2.0 release.
+            </p>
+            <div class="section" id="jpa_3.2_SumDouble"><div class="titlepage"><div><div><h4 class="title">4.1.1.&nbsp;SUM now always returns Double</h4></div></div></div>
+                
+                <p>
+                    We did fix the SUM operation to always return <code class="classname">Double</code> as requested by the spec.
+                    Previously we did return whatever Numeric the JDBC driver did serve, resulting in non portable code.
+                </p>
+            </div>
+            <div class="section" id="jpa_3.2_InvalidColumnNames"><div class="titlepage"><div><div><h4 class="title">4.1.2.&nbsp;Invalid Column Name Changes</h4></div></div></div>
+                
+                <p>
+                    We did review and update the list of invalid column names for most <code class="classname">DBDicationary</code>.
+                    The list of tested reserved words got enriched with previously forbidden column names to avoid backward
+                    incompatibility issues.
+                    The list can ge retrieved and configured via
+                    <a class="ulink" href="../../apidocs/org/apache/openjpa/jdbc/sql/DBDictionary.html#getInvalidColumnWordSet()" target="_top">
+                        <code class="methodname">DBDictionary.getInvalidColumnWordSet</code></a>
+                </p>
+            </div>
+            <div class="section" id="jpa_3.2_HsqlMappingTool"><div class="titlepage"><div><div><h4 class="title">4.1.3.&nbsp;MappingTool Behavior for HSQLDB</h4></div></div></div>
+                
+                <p>
+                    There have been 2 changes for Hypersonic (HSQLDB).
+                    We fixed a bug which did cause <code class="classname">long</code> fields getting mapped to <code class="literal">INTEGER</code>
+                    instead of <code class="literal">BIGINT</code>.
+                </p>
+                <p>
+                    Java <code class="classname">double</code> fields previously got mapped to <code class="literal">NUMERIC</code> which
+                    does lack fraction digits. Thus the value <code class="literal">7.3425343</code> got truncated to <code class="literal">7</code>.
+                    We now map <code class="classname">double</code> fields in Entities to <code class="literal">DOUBLE</code> SQL column types.
+                </p>
+            </div>
+            <div class="section" id="jpa_3.2_OracleTimestampPrecision"><div class="titlepage"><div><div><h4 class="title">4.1.4.&nbsp;Respect TIMESTAMP precision in Oracle</h4></div></div></div>
+                
+                <p>
+                    Due to a bug we did hardcoded round at 3 digits precision.
+                    So we essentially only allowed millis, even on a TIMESTAMP(6) field.
+                    The new code does respect the second fractions and now defaults to 6.
+                    It should be compatible but it might behave very subtle different.
+                </p>
+            </div>
+            <div class="section" id="jpa_3.2_UnaryOps"><div class="titlepage"><div><div><h4 class="title">4.1.5.&nbsp;Unary Operations return types</h4></div></div></div>
+                
+                <p>
+                    Before OpenJPA-3.2.0 Unary Operations like <code class="literal">MIN</code>, <code class="literal">MAX</code>, <code class="literal">SUM</code>, etc
+                    did return whatever type got returned by the JDBC driver. For certain column types this could also have been internal
+                    classes of that very JDBC driver. E.g. a <code class="literal">SELECT MAX(a.someLocalDateField) ..</code> might have returned
+                    an instance of types <code class="classname">com.oracle.jdbc....</code> or <code class="literal">com.microsoft.sqlserver...</code>, etc.
+                    We now use the respective <a class="ulink" href="../../apidocs/org/apache/openjpa/jdbc/sql/DBDictionary.html" target="_top">
+                    <code class="methodname">DBDictionary</code></a> to request the correct type from the <code class="classname">ResultSet</code>.
+                </p>
+            </div>
+            <div class="section" id="jpa_3.2_PostgreSqlQueryTimeout"><div class="titlepage"><div><div><h4 class="title">4.1.6.&nbsp;PostgreSQL now supports setQueryTimeOut</h4></div></div></div>
+                
+                <p>
+                    PostgreSQL does now support client side setQueryTimeout.
+                    User might see this come alive and now return different when the situation occurs.
+                    This flag is automatically enabled if running against PostgreSQL 10 or later.
+                    It can also be configured manually via
+                    <code class="literal">DBDictionary.supportsQueryTimeout</code>
+                </p>
+            </div>
+        </div>
+    </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="jpa_2.3.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="migration_considerations.html">Up</a></td><td width="40%" align="right">&nbsp;</td></tr><tr><td width="40%" align="left" valign="top">3.&nbsp;
+            OpenJPA 2.3.0
+        &nbsp;</td><td width="20%" align="center"><a accesskey="h" href="manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;</td></tr></table></div></body></html>
