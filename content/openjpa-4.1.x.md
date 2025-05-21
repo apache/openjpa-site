@@ -8,6 +8,18 @@ This distribution is based on the Jakarta Persistence API 3.1.
 
 Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org).
 
+# Changes in OpenJPA 4.1.1
+
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2925'>OPENJPA-2925</a>] -         Accessing a non-recursive relation of an instance that has been loaded via a recursive relation may produce wrong result
+</li>
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2936'>OPENJPA-2936</a>] -         Usage of JPA @Index without name prevents creating schema and queries
+</li>
+</ul>
+
+
 # Changes in OpenJPA 4.1.0
 
 <h2>        Bug

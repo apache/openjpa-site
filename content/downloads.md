@@ -22,6 +22,23 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
 
 <table>
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
+<tr><td class="border"> OpenJPA 4.1.1 Binary </td>
+    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.1.1/apache-openjpa-4.1.1-binary.zip">apache-openjpa-4.1.1-binary.zip</a></td>
+    <td class="border"> May 15 2025 </td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.1/apache-openjpa-4.1.1-binary.zip.sha512">sha512</a></td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.1/apache-openjpa-4.1.1-binary.zip.asc">PGP</a></td>
+</tr>
+<tr><td class="border"> OpenJPA 4.1.1 Source </td>
+    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.1.1/openjpa-parent-4.1.1-source-release.zip">openjpa-parent-4.1.1-source-release.zip</a>
+    <td class="border"> May 15 2025 </td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.1/openjpa-parent-4.1.1-source-release.zip.sha512">sha512</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.1/openjpa-parent-4.1.1-source-release.zip.asc">PGP</a>
+</tr>
+<tr><td class="border"> OpenJPA 4.1.1 Release Notes </td>
+    <td class="border"> <a href="https://openjpa.apache.org/builds/4.1.1/apache-openjpa/RELEASE-NOTES.html">RELEASE-NOTES.html</a>
+    <td class="border"> May 15 2025 </td>
+    <td class="border"> </td><td class="border"> </td>
+</tr>
 <tr><td class="border"> OpenJPA 4.1.0 Binary </td>
     <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.1.0/apache-openjpa-4.1.0-binary.zip">apache-openjpa-4.1.0-binary.zip</a></td>
     <td class="border"> Mar 24 2025 </td>
@@ -38,6 +55,7 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
     <td class="border"> <a href="https://openjpa.apache.org/builds/4.1.0/apache-openjpa/RELEASE-NOTES.html">RELEASE-NOTES.html</a>
     <td class="border"> Mar 24 2025 </td>
     <td class="border"> </td><td class="border"> </td>
+</tr>
 </table>
 
 

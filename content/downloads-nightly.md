@@ -61,9 +61,9 @@ snapshot repository at the following locations:
 
 <table>
 <tr><th> SNAPSHOT version </th><th> binaries </th><th> source </th></tr>
-<tr><td class="border"> 4.1.1 </td>
-    <td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa/4.1.1-SNAPSHOT/">apache-openjpa-4.1.1-SNAPSHOT-binary.zip</a>
-    <td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa/4.1.1-SNAPSHOT/">apache-openjpa-4.1.1-SNAPSHOT-source.zip</a>
+<tr><td class="border"> 4.1.2 </td>
+    <td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa/4.1.2-SNAPSHOT/">apache-openjpa-4.1.2-SNAPSHOT-binary.zip</a>
+    <td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa/4.1.2-SNAPSHOT/">apache-openjpa-4.1.2-SNAPSHOT-source.zip</a>
 </tr>
 <tr><td class="border"> 3.2.3 </td>
     <td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa/3.2.3-SNAPSHOT/">apache-openjpa-3.2.3-SNAPSHOT-binary.zip</a>

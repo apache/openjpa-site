@@ -24,6 +24,13 @@ The online OpenJPA documentation can be found here.
 
 <table>
 <tr><th>Version</th><th> HTML Manual</th><th> HTML Manual (Single Page)</th><th>PDF Manual</th><th>Javadocs</th><th>Release Notes</th></tr>
+<tr><td class="border"> OpenJPA 4.1.1
+ </td><td class="border"> <a href="/builds/4.1.1/apache-openjpa/docs/main.html">manual</a>
+ </td><td class="border"> <a href="/builds/4.1.1/apache-openjpa/docs/manual.html">manual</a>
+ </td><td class="border"> <a href="/builds/4.1.1/apache-openjpa/docs/manual.pdf">manual</a>
+ </td><td class="border"> <a href="/builds/4.1.1/apidocs/index.html">javadoc</a>
+ </td><td class="border"><A href="/builds/4.1.1/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
+</td></tr>
 <tr><td class="border"> OpenJPA 4.1.0
  </td><td class="border"> <a href="/builds/4.1.0/apache-openjpa/docs/main.html">manual</a>
  </td><td class="border"> <a href="/builds/4.1.0/apache-openjpa/docs/manual.html">manual</a>
@@ -31,7 +38,6 @@ The online OpenJPA documentation can be found here.
  </td><td class="border"> <a href="/builds/4.1.0/apidocs/index.html">javadoc</a>
  </td><td class="border"><A href="/builds/4.1.0/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
 </td></tr>
-<tr>
 </table>
 
 ## OpenJPA 4.0.x releases
@@ -52,7 +58,6 @@ The online OpenJPA documentation can be found here.
  </td><td class="border"> <a href="/builds/4.0.0/apidocs/index.html">javadoc</a>
  </td><td class="border"><A href="/builds/4.0.0/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
 </td></tr>
-<tr>
 </table>
 
 ## OpenJPA 3.2.x releases
@@ -66,7 +71,6 @@ The online OpenJPA documentation can be found here.
  </td><td class="border"> <a href="/builds/3.2.2/apidocs/index.html">javadoc</a>
  </td><td class="border"><A href="/builds/3.2.2/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
 </td></tr>
-<tr>
 <tr><td class="border"> OpenJPA 3.2.1
  </td><td class="border"> <a href="/builds/3.2.1/apache-openjpa/docs/main.html">manual</a>
  </td><td class="border"> <a href="/builds/3.2.1/apache-openjpa/docs/manual.html">manual</a>
@@ -74,7 +78,6 @@ The online OpenJPA documentation can be found here.
  </td><td class="border"> <a href="/builds/3.2.1/apidocs/index.html">javadoc</a>
  </td><td class="border"><A href="/builds/3.2.1/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
 </td></tr>
-<tr>
 <tr><td class="border"> OpenJPA 3.2.0
  </td><td class="border"> <a href="/builds/3.2.0/apache-openjpa/docs/main.html">manual</a>
  </td><td class="border"> <a href="/builds/3.2.0/apache-openjpa/docs/manual.html">manual</a>
@@ -82,7 +85,6 @@ The online OpenJPA documentation can be found here.
  </td><td class="border"> <a href="/builds/3.2.0/apidocs/index.html">javadoc</a>
  </td><td class="border"><A href="/builds/3.2.0/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
 </td></tr>
-<tr>
 </table>
 
 ## OpenJPA 3.1.x releases
@@ -96,7 +98,6 @@ The online OpenJPA documentation can be found here.
  </td><td class="border"> <a href="/builds/3.1.2/apidocs/index.html">javadoc</a>
  </td><td class="border"><A href="openjpa-3.1.x.html#changes-in-openjpa-312">Release Notes</A>
 </td></tr>
-<tr>
 <tr><td class="border"> OpenJPA 3.1.1
  </td><td class="border"> <a href="/builds/3.1.1/apache-openjpa/docs/main.html">manual</a>
  </td><td class="border"> <a href="/builds/3.1.1/apache-openjpa/docs/manual.html">manual</a>
@@ -104,7 +105,6 @@ The online OpenJPA documentation can be found here.
  </td><td class="border"> <a href="/builds/3.1.1/apidocs/index.html">javadoc</a>
  </td><td class="border"><A href="openjpa-3.1.x.html#changes-in-openjpa-311">Release Notes</A>
 </td></tr>
-<tr>
 <tr><td class="border"> OpenJPA 3.1.0
  </td><td class="border"> <a href="/builds/3.1.0/apache-openjpa/docs/main.html">manual</a>
  </td><td class="border"> <a href="/builds/3.1.0/apache-openjpa/docs/manual.html">manual</a>
@@ -112,7 +112,6 @@ The online OpenJPA documentation can be found here.
  </td><td class="border"> <a href="/builds/3.1.0/apidocs/index.html">javadoc</a>
  </td><td class="border"><A href="openjpa-3.1.x.html#changes-in-openjpa-310">Release Notes</A>
 </td></tr>
-<tr>
 </table>
 
 ## OpenJPA 3.0.x releases
@@ -127,7 +126,6 @@ Javadocs </th><th>Release Notes</th></tr>
  </td><td class="border"> <a href="/builds/3.0.0/apidocs/index.html">javadoc</a>
  </td><td class="border"> <A href="openjpa-3.0.x.html">Release Notes</A>
  </td></tr>
-<tr>
 </table>
 
 ## OpenJPA 2.4.x releases
@@ -348,3 +346,5 @@ Javadocs </th></tr>
  </td><td class="border"> </td><td class="border"> <a href="/docs/openjpa-0.9.0-incubating/manual/manual.html">manual</a>
  </td><td class="border"> </td><td class="border"> <a href="/docs/openjpa-0.9.0-incubating/javadoc/index.html">javadoc</a>
  </td></tr>
+</table>
+
