@@ -55,7 +55,7 @@ bean validation specification defines a small set of constraints that must
 be included with every validation provider.  This small set covers most
 types of simple validation in addition to a powerful regular expression
 based validator.  If the built-in constraints don't fit the bill, you can
-very easily build your own custom validators and matching constraints. 
+very easily build your own custom validators and matching constraints.
 Let's start by looking at some simple constraints and then move to creating
 some custom constraints.
 
@@ -72,9 +72,9 @@ must include a valid JPEG or GIF extension.  The code below shows the
 annotated Image entity with some built-in bean validation constraints
 applied.
 
-    
+
     package org.apache.openjpa.example.gallery.model;
-    
+
     import javax.persistence.Entity;
     import javax.persistence.EnumType;
     import javax.persistence.Enumerated;
@@ -82,55 +82,55 @@ applied.
     import javax.persistence.Id;
     import javax.validation.constraints.NotNull;
     import javax.validation.constraints.Pattern;
-    
+
     @Entity
     public class Image {
-    
+
         private long id;
         private ImageType type;
         private String fileName;
         private byte[] data;
-    
+
         @Id
         @GeneratedValue
         public long getId() {
         	return id;
         }
-    
+
         public void setId(long id) {
         	this.id = id;
         }
-    
+
         @NotNull(message="Image type must be specified.")
         @Enumerated(EnumType.STRING)
         public ImageType getType() {
         	return type;
         }
-    
+
         public void setType(ImageType type) {
         	this.type = type;
         }
-    
+
         @Pattern(regexp = ".*\\.jpg|.*\\.jpeg|.*\\.gif",
     	         message="Only images of type JPEG or GIF are supported.")
         public String getFileName() {
         	return fileName;
         }
-    
+
         public void setFileName(String fileName) {
     	    this.fileName = fileName;
         }
-    
+
         public byte[] getData() {
     	    return data;
         }
-    
+
         public void setData(byte[] data) {
     	    this.data = data;
         }
     }
-  
-  
+
+
 The [Image](http://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/image-gallery/src/main/java/org/apache/openjpa/example/gallery/model/Image.java)
  class uses two built in constraints @NotNull and @Pattern. The @NotNull
 constraint ensures that an [ImageType](http://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/image-gallery/src/main/java/org/apache/openjpa/example/gallery/ImageType.java)
@@ -141,7 +141,7 @@ executed at runtime when the Image entity is validated.  If either
 constraint is not met, the JPA provider will throw a
 ConstraintViolationException with the defined message.	The [JSR-303 specification](http://jcp.org/en/jsr/detail?id=303)
  also makes provisions for the use of a variable within the message
-attribute.  The variable references a keyed message in a resource bundle. 
+attribute.  The variable references a keyed message in a resource bundle.
 That allows for environment specific messages and localization of messages.
  See the [JSR-303 specification](http://jcp.org/en/jsr/detail?id=303)
 , section 4.1.3 for additional details regarding the customization and
@@ -160,21 +160,21 @@ inflexible and will get messy.	A custom constraint and validator provides
 a more robust and flexible solution.  First, let's create a custom method
 level constraint annotation named [ImageContent](http://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/image-gallery/src/main/java/org/apache/openjpa/example/gallery/constraint/ImageContent.java).
 
-  
+
     package org.apache.openjpa.example.gallery.constraint;
-    
+
     import java.lang.annotation.Documented;
     import java.lang.annotation.Retention;
     import java.lang.annotation.Target;
     import static java.lang.annotation.ElementType.METHOD;
     import static java.lang.annotation.ElementType.FIELD;
     import static java.lang.annotation.RetentionPolicy.RUNTIME;
-    
+
     import javax.validation.Constraint;
     import javax.validation.Payload;
-    
+
     import org.apache.openjpa.example.gallery.model.ImageType;
-    
+
     @Documented
     @Constraint(validatedBy = ImageContentValidator.class)
     @Target({ METHOD, FIELD })
@@ -186,8 +186,8 @@ level constraint annotation named [ImageContent](http://svn.apache.org/repos/asf
         ImageType[] value() default { ImageType.GIF, ImageType.JPEG };
     }
 
-  
-  
+
+
 
 Now, let's create the validator class, [ImageContentValidator](http://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/image-gallery/src/main/java/org/apache/openjpa/example/gallery/constraint/ImageContentValidator.java)
 .  The logic within this validator gets executed by validation provider
@@ -196,15 +196,15 @@ the constraint annotation via the validatedBy attribute on the @Constraint
 annotation.
 
     package org.apache.openjpa.example.gallery.constraint;
-    
+
     import java.util.Arrays;
     import java.util.List;
-    
+
     import javax.validation.ConstraintValidator;
     import javax.validation.ConstraintValidatorContext;
-    
+
     import org.apache.openjpa.example.gallery.model.ImageType;
-    
+
     /**
      * Simple check that file format is of a supported type
      */
@@ -218,7 +218,7 @@ annotation.
         public void initialize(ImageContent constraint) {
     	    allowedTypes = Arrays.asList(constraint.value());
         }
-    
+
         /**
          * Validate a specified value.
          */
@@ -253,12 +253,12 @@ annotation.
 Finally, let's apply the new constraint to the getData() method on our
 Image class.
 
-  
+
         @ImageContent
         public byte[] getData() {
     	    return data;
         }
-  
+
 
 When validation of the "data" attribute occurs, the isValid() method in our [ImageContentValidator](http://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/image-gallery/src/main/java/org/apache/openjpa/example/gallery/constraint/ImageContentValidator.java)
  will fire.  This method contains logic for performing simple validation of
@@ -295,9 +295,9 @@ simpler option is a type-level constraint.  Let's modify our Image class to
 use a custom type-level constraint.  Here is the updated Image entity with
 the new type-level constraint.
 
-  
+
     package org.apache.openjpa.example.gallery.model;
-    
+
     import javax.persistence.Embedded;
     import javax.persistence.Entity;
     import javax.persistence.EnumType;
@@ -307,53 +307,53 @@ the new type-level constraint.
     import javax.persistence.ManyToOne;
     import javax.validation.Valid;
     import javax.validation.constraints.NotNull;
-    
+
     import org.apache.openjpa.example.gallery.constraint.ImageConstraint;
     import org.apache.openjpa.example.gallery.constraint.SequencedImageGroup;
-    
+
     @Entity
     @ImageConstraint(groups=ImageGroup.class)
     public class Image {
-    
+
         private long id;
         private ImageType type;
         private String fileName;
         private byte[] data;
-    
+
         @Id
         @GeneratedValue
         public long getId() {
     	    return id;
         }
-    
+
         public void setId(long id) {
     	    this.id = id;
         }
-    
+
         @NotNull(message="Image type must be specified.")
         @Enumerated(EnumType.STRING)
         public ImageType getType() {
     	    return type;
         }
-    
+
         public void setType(ImageType type) {
     	    this.type = type;
         }
-    
+
         @NotNull(message="Image file name must not be null.")
         public String getFileName() {
     	    return fileName;
         }
-    
+
         public void setFileName(String fileName) {
     	    this.fileName = fileName;
         }
-    
+
         @NotNull(message="Image data must not be null.")
         public byte[] getData() {
     	    return data;
         }
-    
+
         public void setData(byte[] data) {
     	    this.data = data;
         }
@@ -371,18 +371,18 @@ Here is the code for the new [ImageConstraint](http://svn.apache.org/repos/asf/o
  annotation:
 
     package org.apache.openjpa.example.gallery.constraint;
-    
+
     import java.lang.annotation.Documented;
     import java.lang.annotation.Retention;
     import java.lang.annotation.Target;
     import static java.lang.annotation.ElementType.TYPE;
     import static java.lang.annotation.RetentionPolicy.RUNTIME;
-    
+
     import javax.validation.Constraint;
     import javax.validation.Payload;
-    
+
     import org.apache.openjpa.example.gallery.model.ImageType;
-    
+
     @Documented
     @Constraint(validatedBy = ImageValidator.class)
     @Target({ TYPE })
@@ -403,16 +403,16 @@ class, [ImageValidator](http://svn.apache.org/repos/asf/openjpa/trunk/openjpa-ex
 .
 
     package org.apache.openjpa.example.gallery.constraint;
-    
+
     import java.util.Arrays;
     import java.util.List;
-    
+
     import javax.validation.ConstraintValidator;
     import javax.validation.ConstraintValidatorContext;
-    
+
     import org.apache.openjpa.example.gallery.model.Image;
     import org.apache.openjpa.example.gallery.model.ImageType;
-    
+
     /**
      * Simple check that an Image is consistent in type, name, and format.
      */
@@ -426,7 +426,7 @@ class, [ImageValidator](http://svn.apache.org/repos/asf/openjpa/trunk/openjpa-ex
         public void initialize(ImageConstraint constraint) {
     	    allowedTypes = Arrays.asList(constraint.value());
         }
-    
+
         /**
          * Validate a specified value.
          */
@@ -434,13 +434,13 @@ class, [ImageValidator](http://svn.apache.org/repos/asf/openjpa/trunk/openjpa-ex
     	    if (value == null) {
     	        return true;
     	    }
-    
+
     	    // All these fields will be pre-validated with @NotNull constraints
     	    // so they are safe to use without null checks.
             byte[] data = value.getData();
     	    String fileName = value.getFileName();
     	    ImageType type = value.getType();
-    
+
         	// Verify the GIF type is correct, has the correct extension and
         	// the data header is either GIF87 or GIF89
     	    if (allowedTypes.contains(ImageType.GIF) &&
@@ -507,7 +507,7 @@ The persistent types [Album](http://svn.apache.org/repos/asf/openjpa/trunk/openj
 collection of its Image entities.  The Creator entity contains a reference
 to the Album album entities the image Creator contributed to and a
 reference to the Image entities they've created.  This provides full
-navigational capabilities to and from each of the entities in the domain. 
+navigational capabilities to and from each of the entities in the domain.
 An embeddable, Location, has been added to Image to allow location
 information to be stored along with the Image.
 
@@ -519,13 +519,13 @@ an image a new field and corresponding persistent properties were added to
 the Image class:
 
         private Location location;
-    
+
         @Valid
         @Embedded
         public Location getLocation() {
         	return location;
         }
-    
+
         public void setLocation(Location location) {
         	this.location = location;
         }
@@ -555,11 +555,11 @@ if a validation group or multiple groups is not specified on an individual
 constraint, it will be validated using the
 **javax.validation.groups.Default** group.  Creating a custom group is as
 simple as creating a new interface definition.
-  
+
     package org.apache.openjpa.example.gallery.constraint;
-    
+
     public interface ImageGroup {
-    
+
     }
 
 This new [ImageGroup](http://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/image-gallery/src/main/java/org/apache/openjpa/example/gallery/constraint/ImageGroup.java)
@@ -570,7 +570,7 @@ This new [ImageGroup](http://svn.apache.org/repos/asf/openjpa/trunk/openjpa-exam
 	    return data;
     }
 
-  
+
 
 This @ImageContent constraint in this example will validate when either or
 both the Default and/or [ImageGroup](http://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/image-gallery/src/main/java/org/apache/openjpa/example/gallery/constraint/ImageGroup.java)
@@ -588,20 +588,20 @@ lightweight validation such as @NotNull or @Size constraints to validate
 before heavyweight constraints.  The Image class uses a group sequence to
 validate its lightweight @NotNull constraints (which use the Default
 validation group) before validating its heavyweight constraint
-@ImageValidator (which validates when the ImageGroup) is validated. 
+@ImageValidator (which validates when the ImageGroup) is validated.
 Sequenced validation can be accomplished by defining a new validation
 group.
 
     package org.apache.openjpa.example.gallery.constraint;
-    
+
     import javax.validation.GroupSequence;
     import javax.validation.groups.Default;
-    
+
     @GroupSequence({Default.class, ImageGroup.class})
     public interface SequencedImageGroup {
-    
+
     }
-  
+
 
 This group is then specified during validation.  How to specify which
 groups will be validated in a JPA environment is explained in the sections
@@ -636,7 +636,7 @@ as simple as modifying the root element of your persistence.xml to:
 
 
 <table class="info"><tr>
-  <td valign="top"><img src="images/information.gif" width="16" height="16" border="0">
+  <td valign="top"><svg class="size-1 text-info" alt="" loading="lazy"><use href="#info-circle-fill"/></svg>
   <td><b>**NOTE**</b><br/>
 While the JPA 2.0 specification is backward compatible
 with JPA 1.0, there are some OpenJPA specific extensions that are not.	By
@@ -675,7 +675,7 @@ There are two means to configure validation modes in JPA 2.0.  Perhaps the
 simplest is to add a validation-mode element to your persistence.xml with
 the desired validation mode.
 
-  
+
         <persistence-unit name="auto-validation">
     	    ...
     	    <!-- Validation modes: AUTO, CALLBACK, NONE -->
@@ -692,9 +692,9 @@ factory.
 
     	Map<String, String> props = new HashMap<String,String>();
     	props.put("javax.persistence.validation.mode", "callback");
-    	EntityManagerFactory emf = 
+    	EntityManagerFactory emf =
     	    Persistence.createEntityManagerFactory("validation", props);
-  
+
 
 <a name="BeanValidationPrimer-ValidationinJPA"></a>
 
@@ -726,7 +726,7 @@ lifecycle event in the [persistence.xml](http://svn.apache.org/repos/asf/openjpa
    	            value="javax.validation.groups.Default"/>
 	    </properties>
     </persistence-unit>
-  
+
 
 Now that we've gone through validation basics and JPA configuration
 options, the validation part is a piece of cake.  In general, you simply
@@ -734,25 +734,25 @@ need to handle validation exceptions that may result from various JPA
 operations.  Here are some simple examples for the persist, update, and
 remove operations.  We'll get to more in-depth exception handling in a
 moment.
-  
 
-    	EntityManagerFactory emf = 
+
+    	EntityManagerFactory emf =
     	    Persistence.createEntityManagerFactory("BeanValidation");
     	EntityManager em = emf.createEntityManager();
-    
+
     	Location loc = new Location();
     	loc.setCity("Rochester");
     	loc.setState("MN");
     	loc.setZipCode("55901");
     	loc.setCountry("USA");
-    
+
     	// Create an Image with non-matching type and file extension
     	Image img = new Image();
     	img.setType(ImageType.JPEG);
     	img.setFileName("Winter_01.gif");
     	loadImage(img);
     	img.setLocation(loc);
-            
+
     	// *** PERSIST ***
     	try {
     	    em.getTransaction().begin();
@@ -768,11 +768,11 @@ moment.
     	    em.persist(img);
     	    em.getTransaction().commit();
     	}
-    
+
     	// *** UPDATE ***
     	try {
     	    em.getTransaction().begin();
-    	    // Modify the file name to a non-matching file name 
+    	    // Modify the file name to a non-matching file name
     	    // and commit to trigger an update
     	    img.setFileName("Winter_01.jpg");
     	    em.getTransaction().commit();
@@ -781,10 +781,10 @@ moment.
     	    // was already rolled back.
     	    handleConstraintViolation(cve);
     	}
-    	// The update failure caused img to be detached. It must be merged back 
+    	// The update failure caused img to be detached. It must be merged back
     	// into the persistence context.
     	img = em.merge(img);
-    
+
     	// *** REMOVE ***
     	em.getTransaction().begin();
     	try {
@@ -816,7 +816,7 @@ failure.  Here is a sample exception handling routine:
 
     private void handleConstraintViolation(ConstraintViolationException cve) {
         Set<ConstraintViolation<?>> cvs = cve.getConstraintViolations();
-        for (ConstraintViolation<?> cv : cvs) {    	 
+        for (ConstraintViolation<?> cv : cvs) {
             System.out.println("------------------------------------------------");
             System.out.println("Violation: " + cv.getMessage());
     	    System.out.println("Entity: " + cv.getRootBeanClass().getSimpleName());
@@ -829,7 +829,7 @@ failure.  Here is a sample exception handling routine:
     	    System.out.println("Invalid value: " + cv.getInvalidValue());
         }
     }
-  
+
 
 Constraint violation processing is not quite as straight forward when using
 type-level level validators with type-level constraints as using attribute
@@ -878,7 +878,7 @@ classpath before openjpa-all-2.0.0.jar**.
 If you are a maven user, dependency management is much simpler.  Here are
 the dependencies you'll need in order to use OpenJPA 2.0 and the current
 (as of this writing) snapshot of Apache Bean Validation.
-  
+
 
       <dependencies>
         <!-- When using OpenJPA 2.0.0 with bval, commons-lang must be in the dependency -->
@@ -939,7 +939,7 @@ provider jars.
 ## Running the Sample Application
 
 Currently, the sample only runs a jUnit which shows how bean validation can
-be used within the context of JPA persist, update, and remove operations. 
+be used within the context of JPA persist, update, and remove operations.
 To build and run the sample using maven:
 
 1. Goto the **openjpa-parent/openjpa-examples/image-gallery** directory
@@ -951,7 +951,7 @@ This command builds the image-gallery sample, enhances the entity classes,
 and runs the jUnits.  Within the Maven output, you should see output
 similar to the following.
 
-  
+
     Persisting an entity with non-matching extension and type
     ------------------------------------------------
     Violation: Image data is not a supported format.
@@ -980,7 +980,7 @@ similar to the following.
     Invalid value: null
     ------------------------------------------------
     Done
-  
+
 
 <a name="BeanValidationPrimer-ImportingtheSampleintoEclipse"></a>
 

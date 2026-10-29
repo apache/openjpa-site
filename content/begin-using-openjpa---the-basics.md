@@ -81,7 +81,7 @@ not know how to do that, follow the instructions found at the [Geronimo website]
      When the New Project settings dialog appears, use the following settings:
 
      ![images/image001.jpg](/images/image001.jpg)
-  
+
 1. Under the **Target Runtime** section, select **Apache Geronimo v2.2**.
 
     * If you do not already have Geronimo setup in Eclipse then you will have
@@ -91,50 +91,50 @@ not know how to do that, follow the instructions found at the [Geronimo website]
       the dialog. If the adapter does not appear in that list then follow the [directions from the Geronimo site](http://geronimo.apache.org/geronimo-eclipse-plugin-installation-instructions.html).
 
       ![images/image002.jpg](/images/image002.jpg)
-  
+
     * Select **Apache->Apache Geronimo v2.2**
     * Click **Next**.
 
       ![images/image003.jpg](/images/image003.jpg)
-  
+
     * Set the JRE to **jre6** if it is not already set.
     * Browse for the install directory of Geronimo v2.2 on your system.
     * Click **Finish**. You should see the following:
 
       ![images/image001.jpg](/images/image001.jpg)
-  
+
 1. Now, click the **Next** button. You should see this:
 
    ![images/image004.jpg](/images/image004.jpg)
-   
+
    * Check the **Generate application.xml deployment descriptor** option.
    * Click the **New Module...** button:
 
      ![images/image005.jpg](/images/image005.jpg)
-  
+
    * De-select **Create default modules**.
    * Select	the **Web** option.
    * Click **Next**.
 
      ![images/image006.jpg](/images/image006.jpg)
-  
+
    * Click **Finish**. You will see the following:
 
      ![images/image007.jpg](/images/image007.jpg)
- 
+
    * Click **Finish**.
-  
-  
+
+
 1. Now, your Project Explorer should look like this (partially expanded):
 
    ![images/image008.jpg](/images/image008.jpg)
 
-  
+
    * If you double-click on the **Deployment Descriptor: OpenJPATutorial**, you
      should see the application.xml open:
-  
+
      ![images/image009.jpg](/images/image009.jpg)
-  
+
 1. Now we will bring in the sample code. The easiest way to add the sample code is
    to find the source provided with this tutorial and copy it to the src folder
    under the **OpenJPATutorialWeb** folder in your project directory in Windows Explorer:
@@ -145,14 +145,14 @@ not know how to do that, follow the instructions found at the [Geronimo website]
      and select **Refresh,** or press the **F5** key on your keyboard. Now you will see this:
 
      ![images/image011.jpg](/images/image011.jpg)
-  
+
      Notice that all the source files compile without error. That is because Geronimo comes with OpenJPA v1.1 built in.
-  
-1. Now copy the index.jsp file from the tutorial into the Web Content directory under the Project directory in Windows Explorer:  
+
+1. Now copy the index.jsp file from the tutorial into the Web Content directory under the Project directory in Windows Explorer:
 
    ![images/image012.jpg](/images/image012.jpg)
-  
-   * Got to the Project Explorer and refresh the project. You should see this:  
+
+   * Got to the Project Explorer and refresh the project. You should see this:
 
    ![images/image013.jpg](/images/image013.jpg)
 
@@ -167,38 +167,38 @@ quick instructions to get you started.
 1. Type the command:
 
         start-server
-  
+
    ![images/image014.jpg](/images/image014.jpg)
-        
+
    Press the *Enter* key.
 
    ![images/image015.jpg](/images/image015.jpg)
-  
+
 1. Open a web browser and go to the address:
 
    http://localhost:8080/console
 
    ![images/image016.jpg](/images/image016.jpg)
-  
+
    The default password is _manager_.
-  
+
 1. You will come to the Welcome page. On the left menu, at the bottom, find the section
    for the Embedded DB. This is the Derby database control page.
 
    ![images/image017.jpg](/images/image017.jpg)
-  
+
 1. Click on the link for the **DB Manager**
 1. You will see two sections: **DB Viewer** and **Run SQL**.
 1. In the Run SQL section, in the text field labeled Create DB, type in **StoreSystem**.
    This is the name of the database that the OpenJPA sample is configured to transact.
 
    ![images/image018.jpg](/images/image018.jpg)
-  
+
 1. Click on the **Create** button. You should now see the **StoreSystem** database appear in
    the **DB Viewer** section.
 
    ![images/image019.jpg](/images/image019.jpg)
-  
+
 1. We are now ready to deploy and run the sample code.
 
 <a name="BeginusingOpenJPA-TheBasics-RunningandDeployingtheSampleCodeinGeronimo"></a>
@@ -219,19 +219,19 @@ sample code follow these instructions:
    project and select: **Export->EAR file**.
 
    ![images/image020.jpg](/images/image020.jpg)
-  
+
 1. In the Ear Export dialog, find a convenient place to put the exported EAR file.
 1. Check the **Overwrite existing file** check box.
 
    ![images/image021.jpg](/images/image021.jpg)
-  
+
 1. Click **Finish**.
 1. Go out to Windows Explorer and copy the file **TutorialDeploymentPlan.xml**
    to the location of the exported ear. This is the deployment plan that
    Geronimo requires to deploy the application.
 
    ![images/image022.jpg](/images/image022.jpg)
-  
+
 1. Open the Geronimo console in a web browser and log in.
 1. In the Console Navigation menu on the left, under the **Applications**
    section, click on the **Deploy New** item.
@@ -239,18 +239,18 @@ sample code follow these instructions:
    XML file.
 
    ![images/image023.jpg](/images/image023.jpg)
-  
+
 1. Click on the **Install** button. You should see this.
 
    ![images/image024.jpg](/images/image024.jpg)
-  
+
 1. In the Console Navigation menu on the left, under the **Applications**
    section, click on the **Web App WARs** item.
    * Notice that the OpenJPATutorial application is now listed and that there
      is a clickable link under the URL heading:
 
      ![images/image025.jpg](/images/image025.jpg)
-  
+
 1. Click on the link **OpenJPATutorial** and now you should see this:
 
    ![images/image026.jpg](/images/image026.jpg)
@@ -260,7 +260,7 @@ sample code follow these instructions:
 
    * Add a some categories and items
    * Make sure you test each of the buttons and see the results.
-  
+
 <a name="BeginusingOpenJPA-TheBasics-ExaminingtheSampleCode"></a>
 
 # Examining the Sample Code
@@ -305,42 +305,42 @@ locate the code that corresponds to explanations as you follow along.
         import javax.persistence.Id;
         import javax.persistence.OneToMany;
         import javax.persistence.Version;
-    
+
         @Entity
         public class InventoryCategory
         {
            private int version;
            private int id;
-    
+
            private String categoryName;
            private String categoryDescription;
-    
+
            List<InventoryItem> items;
-    
+
            public InventoryCategory(){}
-    
+
            @Column(name = "categoryName")
            public String getCategoryName()
            {
               return categoryName;
            }
-    
+
            public void setCategoryName(String name)
            {
               this.categoryName = name;
            }
-    
+
            @Column(name = "itemDescription")
            public String getCategoryDescription()
            {
               return categoryDescription;
            }
-    
+
            public void setCategoryDescription(String description)
            {
               this.categoryDescription = description;
            }
-    
+
            @Version
            @Column(name = "version_field")
            // not required
@@ -348,24 +348,24 @@ locate the code that corresponds to explanations as you follow along.
            {
                return version;
            }
-    
+
            public void setVersion(int version)
            {
               this.version = version;
            }
-    
+
            @Id
            @GeneratedValue(strategy = GenerationType.AUTO)
            public int getId()
            {
               return id;
            }
-    
+
            public void setId(int id)
            {
               this.id = id;
            }
-    
+
            @OneToMany(targetEntity=tutorial.InventoryItem.class,
               cascade=CascadeType.ALL,
               mappedBy="category")
@@ -373,22 +373,22 @@ locate the code that corresponds to explanations as you follow along.
            {
               return items;
            }
-    
+
            public void setItems(List<InventoryItem> items)
            {
               this.items = items;
            }
-    
+
            public void addItem(InventoryItem item)
            {
               this.items.add(item);
            }
         }
     </div>
-  
+
 <table class="info"><tr>
-  <td valign="top"> <IMG src="images/information.gif" width="16" height="16" border="0">
-  <td> <B>Note</B><BR>  
+  <td valign="top"> <svg class="size-1 text-info" alt="" loading="lazy"><use href="#info-circle-fill"/></svg>
+  <td> <B>Note</B><BR>
 In this example, the property annotations (
 <font color="#646464">@Column, @Version</font>, and
 <font color="#646464">@Id</font>) are placed on the getter methods. They can
@@ -420,11 +420,11 @@ convention must be observed.
   persistence.xml must be located with the source files.
 
   ![images/image027.jpg](/images/image027.jpg)
-  
+
   In the following example, the file only requires a few fields.
-  
+
   <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>META-INF/persistence.xml</B></DIV>
-    
+
         <persistence xmlns=http://java.sun.com/xml/ns/persistence
             xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance
             version="1.0">
@@ -432,18 +432,18 @@ convention must be observed.
 	        <class>tutorial.InventoryItem</class>
 	        <class>tutorial.InventoryCategory</class>
 	        <properties>
-	            <property name="openjpa.jdbc.SynchronizeMappings" 
+	            <property name="openjpa.jdbc.SynchronizeMappings"
 	                     value="buildSchema"/>
-	            <property name="openjpa.ConnectionURL" 
+	            <property name="openjpa.ConnectionURL"
 	                     value="jdbc:derby://localhost:1527/StoreSystem"/>
-	            <property name="openjpa.ConnectionDriverName" 
+	            <property name="openjpa.ConnectionDriverName"
 	                     value="org.apache.derby.jdbc.ClientDriver"/>
 	        </properties>
          </persistence-unit>
     </persistence>
 
   </div>
-    
+
 * The following elements are specific to this tutorial:
   * **persistence-unit**: the **name** is the table name to bind. In this case it is 'person'.
   * **class**: the java class that is bound to the table 'person'.
@@ -465,13 +465,13 @@ convention must be observed.
 
             EntityManagerFactory factory = Persistence.
                 createEntityManagerFactory("InventorySystem", System.getProperties());
-                  
+
             EntityManager em = factory.createEntityManager();
 
   * Note that the name, **"InventorySystem"**, is the same one identified in the persistence.xml.
   * This code can be placed just before a query or transaction or they can be class properties.
   * Regardless of the scope, the EntityManager and the EntityManagerFactory should be closed when they are no longer needed:
-  
+
               ...
               em.close();
               factory.close();
@@ -480,18 +480,18 @@ convention must be observed.
   * The EntityManagerFactory and EntityManager full descriptions are in the following OpenJPA documentation:
     * EntityManagerFactory: http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_emfactory.html
     * EntityManager: http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_em.html
-    
+
 * DB interface class. In this example, the InventoryEntityBroker class contains all the OpenJPA database interaction code.
   This is not required but it is a good idea for keeping the functionality componentized. For example, if you want
   to pull all of the records from the InventoryItem table, the code would look like this:
 
   <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryEntityBroker.java</B></DIV>
-    
+
         ...
         List<Person> getAllItems()
         {
              Query q = em.createQuery("SELECT item FROM InventoryItem item");
-        
+
              return (List<InventoryItem>)q.getResultList();
         }
         ...
@@ -499,13 +499,13 @@ convention must be observed.
   </div>
 
   <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>index.jsp</B></DIV>
-    
+
         ...
 		List<InventoryItem> itemList = getAllItems();
 		...
 
   </div>
-	
+
   * All of the specific APIs are described in the OpenJPA [javadoc](http:/openjpa.apache.org/builds/latest/docs/javadoc/index.html)
   * Notice that the Query is not standard SQL. It is actually JPQL, which is a specialized form of query language specifically designed for JPA.
     * In the JPQL statement, "<font color="#2a00ff">SELECT item FROM InventoryItem item</font>", notice that InventoryItem has the same case as the class
@@ -515,13 +515,13 @@ convention must be observed.
     * JPQL provides an object oriented query language that is independent of the database being queried.&nbsp; So, regardless of which database being
       used, the JPQL does not change.&nbsp; The JPA runtime takes care of doing the translation from the object world to the desired relational database.
     * For more information on JPQL, check out this [Java Persistence Query Language reference](http://java.sun.com/javaee/5/docs/tutorial/backup/update3/doc/QueryLanguage.html)
-        
+
 * Also in the InventoryEntityBroker is code to add entries the database tables. Since you did not create a table for InventoryItem in the
   StoreSystem database in Derby, OpenJPA 2.0 will create the table the first time an _"add"_ is attempted.
   * Consider the following code:
-    
+
   <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryEntityBroker</B></DIV>
-        
+
             ...
             void addItem(String name, String description, float price, int categoryID)
             {
@@ -529,7 +529,7 @@ convention must be observed.
                 item.setName(name);
                 item.setDescription(description);
                 ...
-            
+
                 em.persist(item);
             }
             ...
@@ -544,9 +544,9 @@ convention must be observed.
 
             ...
             em.getTransaction().begin();
-            
+
             addItem(...);
-            
+
             em.getTransaction().commit();
             ...
 
@@ -565,7 +565,7 @@ convention must be observed.
   following code:
 
   <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryCategory.java</B></DIV>
-        
+
             ...
             @OneToMany(targetEntity=tutorial.InventoryItem.class,
                 cascade=CascadeType.ALL,
@@ -584,7 +584,7 @@ convention must be observed.
     InventoryItem.java and find the following code:
 
   <DIV style="border-style:solid;border-width: 0px;"><DIV style="border-bottom-width: 1px;border-bottom-style: solid;"><B>InventoryItem.java</B></DIV>
-    
+
             ...
             @ManyToOne
             @JoinColumn(name="CAT_ID", nullable=false)
@@ -600,9 +600,9 @@ convention must be observed.
   * The annotation <font color="#646464">@JoinColumn</font> identifies that:
     * The column in the database table that holds the InventoryCategory
       reference by the attribute: name=<font color="##2a00ff">"CAT_ID"</font>.
-  
+
 <table class="info"><tr>
-  <td valign="top"> <IMG src="images/information.gif" width="16" height="16" border="0">
+  <td valign="top"> <svg class="size-1 text-info" alt="" loading="lazy"><use href="#info-circle-fill"/></svg>
   <td> <B>Remember</B><BR>
 These annotations contribute to the creation of the tables and the
 relationships. It is important to put as much thought into how these
@@ -640,8 +640,8 @@ create a many-to-many relationship using @ManyToMany*.
 \*To make these changes you may have to delete the existing database
 tables so that they can recreated with the new relationship fields.
 
-  
-  
+
+
 
 <a name="BeginusingOpenJPA-TheBasics-References"></a>
 
