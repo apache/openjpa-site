@@ -21,7 +21,7 @@ the JSR-317 specification
 * Enhanced map collection support
 * Support for standard javax.persistence configuration properties
 * A new prepared query cache for the caching of the SQL underlying JPQL and
-find queries 
+find queries
 * Support for derived identities
 * The ability to specify an order column on ordered collections
 * Significant enhancements to JPQL
@@ -36,7 +36,7 @@ query method level
 query method level
 * Specification of explicit persistent access type on persistent classes
 and attributes
-* Many more...	
+* Many more...
 
 This early access distribution is based upon the contributions provided in
 development iterations through iteration 7, as defined in the [JPA 2.0 Roadmap](http://cwiki.apache.org/confluence/display/openjpa/JPA+2.0+Roadmap)
@@ -64,7 +64,7 @@ Please review the [LICENSE](https://svn.apache.org/repos/asf/openjpa/branches/2.
  files in svn, source or binary distributions for more details.
 
 <table class="note"><tr>
-  <td valign="top"> <IMG src="images/warning.gif" width="16" height="16" border="0">
+  <td valign="top"> <svg class="size-1 text-warning" alt="" loading="lazy"><use href="#exclamation-triangle-fill"/></svg>
   <td> This is an implementation of an early-draft specification developed under
 the Java Community Process (JCP) and is *made available for testing and
 evaluation purposes only*. The code is not compatible with any
@@ -153,9 +153,9 @@ builds, see the [Obtaining](obtaining.html)
 * [OpenJPA 2.0.0 Early Access](https://svn.apache.org/repos/asf/openjpa/branches/2.0.0-EA2/)
 * [Geronimo JPA 2.0 Early Access Spec](https://svn.apache.org/repos/asf/geronimo/specs/branches/geronimo-jpa_2.0_spec-1.0-EA2/)
 * [Geronimo Validation 1.0 Early Access Spec](https://svn.apache.org/repos/asf/geronimo/specs/branches/geronimo-validation_1.0_spec-1.0-EA/)
-  
-  
 
-  
-  
+
+
+
+
 

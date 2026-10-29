@@ -64,7 +64,7 @@ Title: Development
 </UL></LI>
 <LI><A href="release-management.html" title="Release Management">Release Management</A>
 <UL>
-<LI><A href="apache-nexus-release-process-(1.2.x-2.1.x).html" title="Apache Nexus Release Process (1.2.x-present)">Apache Nexus Release Process (1.2.x-present)</A>
+<LI><A href="apache-nexus-release-process-_1.2.x-2.1.x_.html" title="Apache Nexus Release Process (1.2.x-present)">Apache Nexus Release Process (1.2.x-present)</A>
 <UL>
 <LI><A href="release-setup.html" title="Release Setup">Release Setup</A></LI>
 </UL></LI>

@@ -20,7 +20,7 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
 
 ### 4.1.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 4.1.1 Binary </td>
     <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.1.1/apache-openjpa-4.1.1-binary.zip">apache-openjpa-4.1.1-binary.zip</a></td>
@@ -63,7 +63,7 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
 
 ### 4.0.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 4.0.1 Binary </td>
     <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.0.1/apache-openjpa-4.0.1-binary.zip">apache-openjpa-4.0.1-binary.zip</a></td>
@@ -106,7 +106,7 @@ These releases raised the minimum Java version to Java 8 and implement most of
 
 ### 3.2.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 3.2.2 Binary </td>
     <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/3.2.2/apache-openjpa-3.2.2-binary.zip">apache-openjpa-3.2.2-binary.zip</a></td>
@@ -128,7 +128,7 @@ These releases raised the minimum Java version to Java 8 and implement most of
 
 ### 3.1.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 3.1.2 Binary </td>
     <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/3.1.2/apache-openjpa-3.1.2-binary.zip">apache-openjpa-3.1.2-binary.zip</a></td>
@@ -150,7 +150,7 @@ These releases raised the minimum Java version to Java 8 and implement most of
 
 ### 3.0.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 3.0.0 Binary </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.0.0/apache-openjpa-3.0.0-binary.zip">apache-openjpa-3.0.0-binary.zip</a></td>
@@ -177,7 +177,7 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
 
 ### 2.4.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 2.4.3 Binary </td>
     <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/2.4.3/apache-openjpa-2.4.3-binary.zip">apache-openjpa-2.4.3-binary.zip</a></td>
@@ -234,7 +234,7 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
 
 ### 2.3.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 2.3.0 Binary </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.3.0/apache-openjpa-2.3.0-binary.zip">apache-openjpa-2.3.0-binary.zip</a></td>
@@ -257,7 +257,7 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
 
 ### 2.2.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 2.2.2 Binary </td>
     <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/2.2.2/apache-openjpa-2.2.2-binary.zip">apache-openjpa-2.2.2-binary.zip</a></td>
@@ -313,7 +313,7 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
 
 ### 2.1.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 2.1.1 Binary </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.1.1/apache-openjpa-2.1.1-binary.zip">apache-openjpa-2.1.1-binary.zip</a>
@@ -353,7 +353,7 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
 
 ### 2.0.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 2.0.1 Binary </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.0.1/apache-openjpa-2.0.1-binary.zip">apache-openjpa-2.0.1-binary.zip</a>
@@ -399,7 +399,7 @@ These releases implement the [JSR-220 Java Persistence 1.0](https://jcp.org/en/j
 
 ### 1.2.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Signatures </th><th> Release Notes </th></tr>
 <tr><td class="border"> OpenJPA 1.2.3 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/1.2.3/apache-openjpa-1.2.3-binary.zip">apache-openjpa-1.2.3-binary.zip</a></td>
@@ -453,7 +453,7 @@ These releases implement the [JSR-220 Java Persistence 1.0](https://jcp.org/en/j
 
 ### 1.1.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Signatures </th><th> Release Notes </th></tr>
 <tr><td class="border"> OpenJPA 1.1.0 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/1.1.0/apache-openjpa-1.1.0-binary.zip">apache-openjpa-1.1.0-binary.zip</a>
@@ -471,7 +471,7 @@ These releases implement the [JSR-220 Java Persistence 1.0](https://jcp.org/en/j
 
 ### 1.0.x Releases
 
-<table>
+<table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Signatures </th><th> Release Notes </th></tr>
 <tr><td class="border"> OpenJPA 1.0.4 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/1.0.4/apache-openjpa-1.0.4-binary.zip">apache-openjpa-1.0.4-binary.zip</a>

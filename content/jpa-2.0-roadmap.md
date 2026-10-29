@@ -44,7 +44,7 @@ The Iteration content can be found on the [JPA 2.0 Iterations](jpa-2.0-iteration
     * Iteration 1 (Dec. 1, 2008 - Dec. 19, 2008) - [OPENJPA-800](https://issues.apache.org/jira/browse/OPENJPA-800)
     * Iteration 1a (Dec. 22, 2008 - Jan. 2, 2009) - [OPENJPA-831](https://issues.apache.org/jira/browse/OPENJPA-831)
     * Iteration 2 (Jan. 5, 2009 - Jan. 23, 2009) - [OPENJPA-807](https://issues.apache.org/jira/browse/OPENJPA-807)
-    
+
 * **Milestone 2**
 
     * Iteration 3 (Jan. 26, 2009 - Feb. 13, 2009) - [OPENJPA-808](https://issues.apache.org/jira/browse/OPENJPA-808)
@@ -60,14 +60,14 @@ The Iteration content can be found on the [JPA 2.0 Iterations](jpa-2.0-iteration
     * Iteration 10 (Aug. 3, 2009 - Aug. 28, 2009) - [OPENJPA-1209](https://issues.apache.org/jira/browse/OPENJPA-1209)
     * Iteration 11 (Aug. 31, 2009 - Oct. 2, 2009) - [OPENJPA-1268](https://issues.apache.org/jira/browse/OPENJPA-1268)
     * [Released](#milestone-3.html) (Oct. 12, 2009)
-    
+
 * **Beta**
 
     * Iteration 12 (Oct. 5, 2009 - Oct. 30, 2009) - [OPENJPA-1337](https://issues.apache.org/jira/browse/OPENJPA-1337)
     * Iteration 13 (Nov. 2, 2009 - Dec. 4, 2009) - [OPENJPA-1373](https://issues.apache.org/jira/browse/OPENJPA-1373)
     * Iteration 14 (Dec. 7, 2009 - Jan. 1, 2010) - [OPENJPA-1426](https://issues.apache.org/jira/browse/OPENJPA-1426)
     * [Released](#beta.html) - Jan. 28, 2010
-        
+
 * [Beta 2](#beta2) - Released Feb. 27, 2010
 * **2.0.x Branch** - March 22, 2010
 * [Beta 3]#beta3) - Released March 29, 2010
@@ -81,8 +81,8 @@ The Iteration content can be found on the [JPA 2.0 Iterations](jpa-2.0-iteration
 The individual tasks and status can be fond on the [JPA 2.0 Tasks](jpa-2.0-tasks.html)
  page.
 
-  
-  
+
+
 
 ----
 
@@ -99,28 +99,20 @@ The [OpenJPA 2.0.0](openjpa-2.0.0.html)
 distribution of the release is available [here](openjpa-2.0.0.html)
  for download or the code can be checked out from svn.
 
-<TABLE class="sectionMacro" border="0" cellpadding="5" cellspacing="0" width="100%"><TBODY><TR>
-<TD class="confluenceTd" valign="top" width="5%"></TD>
-<TD class="confluenceTd" valign="top" width="20%"><DIV class="table-wrap">
-<TABLE class="confluenceTable"><TBODY>
-<TR>
-<TD class="confluenceTd"><SPAN class="image-wrap" style=""><IMG src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Download.png" style="border: 0px solid black"></SPAN></TD>
-<TD class="confluenceTd"> <A href="http://openjpa.apache.org/openjpa-200.html" class="external-link" rel="nofollow">Download 2.0.0</A> </TD>
-</TR>
-</TBODY></TABLE>
-</DIV>
-</TD>
-<TD class="confluenceTd" valign="top" width="5%"></TD>
-<TD class="confluenceTd" valign="top" width="20%"><DIV class="table-wrap">
-<TABLE class="confluenceTable"><TBODY>
-<TR>
-<TD class="confluenceTd"><SPAN class="image-wrap" style=""><IMG src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Pencil.png" style="border: 0px solid black"></SPAN></TD>
-<TD class="confluenceTd"> <A href="http://svn.apache.org/viewvc/openjpa/tags/2.0.0/" class="external-link" rel="nofollow">View SVN Files</A> </TD>
-</TR>
-</TBODY></TABLE>  
-</DIV>
-</TD>
-<TD class="confluenceTd" valign="top"></TD></TR></TBODY></TABLE>  
+<div class="row justify-content-around">
+    <div class="col-4">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="Download 2.0.0" href="openjpa-200.html">
+            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
+            <div class="fw-bold d-inline-block">Download 2.0.0</div>
+        </a>
+    </div>
+    <div class="col-4">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View SVN Files" href="https://svn.apache.org/viewvc/openjpa/tags/2.0.0">
+            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#pencil"/></svg>
+            <div class="fw-bold d-inline-block">View SVN Files</div>
+        </a>
+    </div>
+</div>
 
 ----
 
@@ -134,8 +126,8 @@ we still encourage you to upgrade to the final 2.0.0 as soon as possible
 after it is released.  A distribution of the Beta is available [here](openjpa-2.0.0-beta-3.html)
  for download or the code can be checked out from svn.
 
-  
-  
+
+
 
 ----
 
@@ -149,8 +141,8 @@ we still encourage you to upgrade to the final 2.0.0 as soon as possible
 after it is released.  A distribution of the Beta is available [here](openjpa-2.0.0-beta-2.html)
  for download or the code can be checked out from svn.
 
-  
-  
+
+
 
 ----
 
@@ -164,8 +156,8 @@ we still encourage you to upgrade to the final 2.0.0 as soon as possible
 after it is released.  A distribution of the Beta is available [here](openjpa-2.0.0-beta.html)
  for download or the code can be checked out from svn.
 
-  
-  
+
+
 
 ----
 
@@ -181,8 +173,8 @@ the Milestone 3 is available for [download](openjpa-2.0.0-milestone-3.html)
  or the code can be checked out from [svn](https://svn.apache.org/viewvc/openjpa/tags/2.0.0-M3/)
 .
 
-  
-  
+
+
 
 ----
 
@@ -197,8 +189,8 @@ for [download](openjpa-2.0.0-early-access-2.html)
  or the code can be checked out from [svn](https://svn.apache.org/viewvc/openjpa/branches/2.0.0-EA2/)
 .
 
-  
-  
+
+
 
 ----
 
@@ -210,10 +202,10 @@ The Milestone 1 release was never "officially" released, due to the JSR-317
 terms of use issues, but the files were tagged and can be checked out from [svn](https://svn.apache.org/repos/asf/openjpa/branches/2.0.0-M1/)
 .
 
-  
-  
+
+
 
 ----
 
-  
-  
+
+

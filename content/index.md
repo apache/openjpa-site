@@ -32,77 +32,26 @@ The [1.x releases](downloads.html)
  The development of this version is EOL.
 
 
-<TABLE border="0" cellpadding="5" cellspacing="0" width="100%">
-<TBODY><TR>
-<TD valign="top" width="10%"></TD>
-<TD valign="top" width="20%">
- <TABLE style="width:100%;cursor: pointer" cellspacing="0" cellpadding="0" class="lozenge" onclick="document.location.href=&quot;http://openjpa.apache.org/downloads.html&quot;;" onkeypress="document.location.href=&quot;http://openjpa.apache.org/downloads.html&quot;;">
- <TR>
- <TD style="background-image: url('/confluence/download/resources/com.adaptavist.confluence.contentFormattingMacros:lozenge/gfx/lozenge/loz_silver.gif')" class="icon" rowspan="3"><B><A onclick="return false;" href="http://openjpa.apache.org/downloads.html" title="View Download Apache OpenJPA" class="external-link" rel="nofollow"><SPAN class="image-wrap" style=""><IMG src="images/fotolia/Fotolia_9174675_Download.png" style="border: 0px solid black"></SPAN></a>
-</B></TD>
- <TD class="top" colspan="2"></TD>
- <TD class="topRight"></TD>
- </TR>
- <TR>
- <TD class="breaker">&nbsp;</TD>
- <TD style="width:auto" class="body" height="59" align="left" valign="top" bgcolor="#F3F3E9">
-  <B><A onclick="return false;" href="http://openjpa.apache.org/downloads.html" title="View Download Apache OpenJPA" class="external-link" rel="nofollow">Download Apache OpenJPA</A></B> <BR>
- </TD>
- <TD class="right">&nbsp;</TD>
- </TR>
- <TR>
- <TD class="bottom" colspan="2"></TD>
- <TD class="bottomRight"></TD>
- </TR>
- </TABLE>
-</TD>
-<TD valign="top" width="10%"></TD>
- <TD valign="top" width="20%">
- <TABLE style="width:100%;cursor: pointer" cellspacing="0" cellpadding="0" class="lozenge" onclick="document.location.href=&quot;http://openjpa.apache.org/quick-start.html&quot;;" onkeypress="document.location.href=&quot;http://openjpa.apache.org/quick-start.html&quot;;">
- <TR>
- <TD style="background-image: url('/confluence/download/resources/com.adaptavist.confluence.contentFormattingMacros:lozenge/gfx/lozenge/loz_silver.gif')" class="icon" rowspan="3"><B><A onclick="return false;" href="http://openjpa.apache.org/quick-start.html" title="View Quick Start Guide" class="external-link" rel="nofollow"><SPAN class="image-wrap" style=""><IMG src="images/fotolia/Fotolia_9174675_Clock.png" style="border: 0px solid black"></SPAN></a>
-</B></TD>
- <TD class="top" colspan="2"></TD>
- <TD class="topRight"></TD>
- </TR>
- <TR>
- <TD class="breaker">&nbsp;</TD>
- <TD style="width:auto" class="body" height="59" align="left" valign="top" bgcolor="#F3F3E9">
-  <B><A onclick="return false;" href="http://openjpa.apache.org/quick-start.html" title="View Quick Start Guide" class="external-link" rel="nofollow">Quick Start Guide</A></B> <BR>
- </TD>
- <TD class="right">&nbsp;</TD>
- </TR>
- <TR>
- <TD class="bottom" colspan="2"></TD>
- <TD class="bottomRight"></TD>
- </TR>
- </TABLE>
-</TD>
-<TD valign="top" width="10%"></TD>
- <TD valign="top" width="20%">
- <TABLE style="width:100%;cursor: pointer" cellspacing="0" cellpadding="0" class="lozenge" onclick="document.location.href=&quot;http://openjpa.apache.org/documentation.html&quot;;" onkeypress="document.location.href=&quot;http://openjpa.apache.org/documentation.html&quot;;">
- <TR>
- <TD style="background-image: url('/confluence/download/resources/com.adaptavist.confluence.contentFormattingMacros:lozenge/gfx/lozenge/loz_silver.gif')" class="icon" rowspan="3"><B><A onclick="return false;" href="http://openjpa.apache.org/documentation.html" title="View User's Guide" class="external-link" rel="nofollow"><SPAN class="image-wrap" style=""><IMG src="images/fotolia/Fotolia_9174675_Information.png" style="border: 0px solid black"></SPAN></a>
-</B></TD>
- <TD class="top" colspan="2"></TD>
- <TD class="topRight"></TD>
- </TR>
- <TR>
- <TD class="breaker">&nbsp;</TD>
- <TD style="width:auto" class="body" height="59" align="left" valign="top" bgcolor="#F3F3E9">
-  <B><A onclick="return false;" href="http://openjpa.apache.org/documentation.html" title="View User's Guide" class="external-link" rel="nofollow">User's Guide</A></B> <BR>
- </TD>
- <TD class="right">&nbsp;</TD>
- </TR>
- <TR>
- <TD class="bottom" colspan="2"></TD>
- <TD class="bottomRight"></TD>
- </TR>
- </TABLE>
-</TD>
-<TD valign="top" width="10%"></TD>
-</TR></TBODY></TABLE>
-
+<div class="row">
+    <div class="col">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Download Apache OpenJPA" href="downloads.html">
+            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
+            <div class="fw-bold d-inline-block">Download Apache OpenJPA</div>
+        </a>
+    </div>
+    <div class="col">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Quick Start Guide" href="quick-start.html">
+            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#clock"/></svg>
+            <div class="fw-bold d-inline-block">Quick Start Guide</div>
+        </a>
+    </div>
+    <div class="col">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Quick Start Guide" href="documentation.html">
+            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#info-square"/></svg>
+            <div class="fw-bold d-inline-block">User's Guide</div>
+        </a>
+    </div>
+</div>
 
 
 <a name="Index-Resources"></a>
@@ -128,184 +77,106 @@ The [1.x releases](downloads.html)
 
 ## Events and News
 
- <DIV class="blog-post-listing">
-
- <DIV class="logo-heading-block">
-   <SPAN class="logoBlock">
-     <A class="userLogoLink" data-username="ilgrosso@apache.org" href="http://people.apache.org/committer-index.html#ilgrosso">
-       <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: ilgrosso@apache.org" title="ilgrosso@apache.org"/>
-     </A>
-   </SPAN>
-   <SPAN class="blogHeading">
-     <DIV class="page-metadata not-personal">
-       <A href="http://people.apache.org/committer-index.html#ilgrosso" class="url fn confluence-userlink" data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2025-05-15
-     </DIV>
-     <A class="blogHeading" href="openjpa-4.1.x.html">OpenJPA 4.1.1 Released!</A>
-   </SPAN>
- </DIV>
-
- <DIV class="wiki-content">
-   <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 4.1.1!</P>
- </DIV>
- <hr>
-
- <DIV class="logo-heading-block">
-   <SPAN class="logoBlock">
-     <A class="userLogoLink" data-username="ilgrosso@apache.org" href="http://people.apache.org/committer-index.html#ilgrosso">
-       <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: ilgrosso@apache.org" title="ilgrosso@apache.org"/>
-     </A>
-   </SPAN>
-   <SPAN class="blogHeading">
-     <DIV class="page-metadata not-personal">
-       <A href="http://people.apache.org/committer-index.html#ilgrosso" class="url fn confluence-userlink" data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2025-03-24
-     </DIV>
-     <A class="blogHeading" href="openjpa-4.1.x.html">OpenJPA 4.1.0 Released!</A>
-   </SPAN>
- </DIV>
-
- <DIV class="wiki-content">
-   <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 4.1.0!</P>
- </DIV>
- <hr>
-
- <DIV class="logo-heading-block">
-   <SPAN class="logoBlock">
-     <A class="userLogoLink" data-username="ilgrosso@apache.org" href="http://people.apache.org/committer-index.html#ilgrosso">
-       <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: ilgrosso@apache.org" title="ilgrosso@apache.org"/>
-     </A>
-   </SPAN>
-   <SPAN class="blogHeading">
-     <DIV class="page-metadata not-personal">
-       <A href="http://people.apache.org/committer-index.html#ilgrosso" class="url fn confluence-userlink" data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2024-09-23
-     </DIV>
-     <A class="blogHeading" href="openjpa-4.0.x.html">OpenJPA 4.0.1 Released!</A>
-   </SPAN>
- </DIV>
-
- <DIV class="wiki-content">
-   <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 4.0.1!</P>
- </DIV>
- <hr>
-
- <DIV class="logo-heading-block">
-   <SPAN class="logoBlock">
-     <A class="userLogoLink" data-username="struberg@apache.org" href="http://people.apache.org/committer-index.html#struberg">
-       <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: struberg@apache.org" title="struberg@apache.org">
-     </A>
-   </SPAN>
-   <SPAN class="blogHeading">
-     <DIV class="page-metadata not-personal">
-       <A href="http://people.apache.org/committer-index.html#struberg" class="url fn confluence-userlink" data-username="struberg@apache.org">Mark Struberg</A> posted on 2024-02-14
-     </DIV>
-     <A class="blogHeading" href="openjpa-4.0.x.html">OpenJPA 4.0.0 Released!</A>
-   </SPAN>
- </DIV>
-
- <DIV class="wiki-content">
-   <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 4.0.0!</P>
- </DIV>
- <hr>
-
- <DIV class="logo-heading-block">
-   <SPAN class="logoBlock">
-     <A class="userLogoLink" data-username="ilgrosso@apache.org" href="http://people.apache.org/committer-index.html#ilgrosso">
-       <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: ilgrosso@apache.org" title="ilgrosso@apache.org"/>
-     </A>
-   </SPAN>
-   <SPAN class="blogHeading">
-     <DIV class="page-metadata not-personal">
-       <A href="http://people.apache.org/committer-index.html#ilgrosso" class="url fn confluence-userlink" data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2022-03-19
-     </DIV>
-     <A class="blogHeading" href="openjpa-3.2.x.html">OpenJPA 3.2.2 Released!</A>
-   </SPAN>
- </DIV>
-
- <DIV class="wiki-content">
-   <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 3.2.2!</P>
- </DIV>
- <hr>
-
- <DIV class="logo-heading-block">
-   <SPAN class="logoBlock">
-     <A class="userLogoLink" data-username="struberg@apache.org" href="http://people.apache.org/committer-index.html#struberg">
-       <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: struberg@apache.org" title="struberg@apache.org">
-     </A>
-   </SPAN>
-   <SPAN class="blogHeading">
-     <DIV class="page-metadata not-personal">
-       <A href="http://people.apache.org/committer-index.html#struberg" class="url fn confluence-userlink" data-username="struberg@apache.org">Mark Struberg</A> posted on 2020-09-04
-     </DIV>
-     <A class="blogHeading" href="openjpa-3.1.x.html">OpenJPA 3.1.2 Released!</A>
-   </SPAN>
- </DIV>
-
- <DIV class="wiki-content">
-   <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 3.1.2!</P>
- </DIV>
- <hr>
-
- <DIV class="logo-heading-block">
- <SPAN class="logoBlock">
- <A class="userLogoLink" data-username="ilgrosso@apache.org" href="http://people.apache.org/committer-index.html#ilgrosso">
- <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: ilgrosso@apache.org" title="ilgrosso@apache.org">
-
- </A>
- </SPAN>
- <SPAN class="blogHeading">
- <DIV class="page-metadata not-personal"><A href="http://people.apache.org/committer-index.html#ilgrosso" class="url fn confluence-userlink" data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2018-06-14</DIV>
- <A class="blogHeading" href="openjpa-2.4.x.html#OpenJPA-2.4.3">OpenJPA 2.4.3</A> and <A class="blogHeading" href="openjpa-3.0.x.html#OpenJPA-3.0.0">OpenJPA 3.0.0</A> Released!
- </SPAN>
- </DIV>
-
-<DIV class="wiki-content">
- <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 2.4.3 and 3.0.0!</P>
-
- </DIV>
- </DIV>
- <hr>
-
- <DIV class="blog-post-listing">
- <DIV class="logo-heading-block">
- <SPAN class="logoBlock">
- <A class="userLogoLink" data-username="ilgrosso@apache.org" href="http://people.apache.org/committer-index.html#ilgrosso">
- <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: ilgrosso@apache.org" title="ilgrosso@apache.org">
-
- </A>            </SPAN>
- <SPAN class="blogHeading">
- <DIV class="page-metadata not-personal"><A href="http://people.apache.org/committer-index.html#ilgrosso" class="url fn confluence-userlink" data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2017-01-06</DIV>
- <A class="blogHeading" href="openjpa-2.4.x.html#OpenJPA-2.4.2">OpenJPA 2.4.2 Released!</A>
- </SPAN>
- </DIV>
-
-<DIV class="wiki-content">
- <P>The Apache OpenJPA community is proud to announce the release of OpenJPA 2.4.2!</P>
-
- </DIV>
- </DIV>
- <hr>
-
- <DIV class="blog-post-listing">
- <DIV class="logo-heading-block">
- <SPAN class="logoBlock">
- <A class="userLogoLink" data-username="struberg@apache.org" href="http://people.apache.org/committer-index.html#struberg">
- <IMG class="userLogo logo" src="https://cwiki.apache.org/confluence/images/icons/profilepics/user1.png" alt="User icon: struberg@apache.org" title="struberg@apache.org">
-
- </A>            </SPAN>
- <SPAN class="blogHeading">
- <DIV class="page-metadata not-personal"><A href="http://people.apache.org/committer-index.html#struberg" class="url fn confluence-userlink" data-username="struberg@apache.org">Mark Struberg</A> posted on 2016-08-18</DIV>
- <A class="blogHeading" href="openjpa-3.0.x.html">Work on OpenJPA 3.0.0 started!</A>
- </SPAN>
- </DIV>
-
-<DIV class="wiki-content">
- <P>The Apache OpenJPA community started working on OpenJPA 3.0.0!<br>
- Trunk got switched over to the new effort.<br>
- This version will target the JPA-2.1 specification.</P>
-
- </DIV>
- </DIV>
- <hr>
-
-
-
-
+<div class="blog-post-listing">
+    <div class="card mb-2">
+        <div class="card-body">
+            <h5 class="card-title"><A class="blogHeading" href="openjpa-4.1.x.html">OpenJPA 4.1.1 Released!</A></h5>
+            <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 4.1.1!</p>
+            <figcaption class="blockquote-footer">
+                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
+                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2025-05-15
+                </a>
+            </figcaption>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <div class="card-body">
+            <h5 class="card-title"><A class="blogHeading" href="openjpa-4.1.x.html">OpenJPA 4.1.0 Released!</A></h5>
+            <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 4.1.0!</p>
+            <figcaption class="blockquote-footer">
+                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
+                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2025-03-24
+                </a>
+            </figcaption>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <div class="card-body">
+            <h5 class="card-title"><A class="blogHeading" href="openjpa-4.0.x.html">OpenJPA 4.0.1 Released!</A></h5>
+            <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 4.0.1!</p>
+            <figcaption class="blockquote-footer">
+                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
+                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2024-09-23
+                </a>
+            </figcaption>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <div class="card-body">
+            <h5 class="card-title"><A class="blogHeading" href="openjpa-4.0.x.html">OpenJPA 4.0.0 Released!</A></h5>
+            <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 4.0.0!</p>
+            <figcaption class="blockquote-footer">
+                <a href="https://home.apache.org/phonebook.html?uid=struberg" class="url fn confluence-userlink"
+                        data-username="struberg@apache.org">Mark Struberg</A> posted 2024-02-14
+                </a>
+            </figcaption>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <div class="card-body">
+            <h5 class="card-title"><A class="blogHeading" href="openjpa-3.2.x.html">OpenJPA 3.2.2 Released!</A></h5>
+            <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 3.2.2!</p>
+            <figcaption class="blockquote-footer">
+                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
+                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2022-03-19
+                </a>
+            </figcaption>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <div class="card-body">
+            <h5 class="card-title"><A class="blogHeading" href="openjpa-3.1.x.html">OpenJPA 3.1.2 Released!</A></h5>
+            <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 3.1.2!</p>
+            <figcaption class="blockquote-footer">
+                <a href="https://home.apache.org/phonebook.html?uid=struberg" class="url fn confluence-userlink"
+                        data-username="struberg@apache.org">Mark Struberg</A> posted 2020-09-04
+                </a>
+            </figcaption>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <div class="card-body">
+            <h5 class="card-title"><A class="blogHeading" href="openjpa-2.4.x.html">OpenJPA 2.4.3 Released!</A></h5>
+            <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 2.4.3!</p>
+            <figcaption class="blockquote-footer">
+                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
+                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2018-06-14
+                </a>
+            </figcaption>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <div class="card-body">
+            <h5 class="card-title"><A class="blogHeading" href="openjpa-2.4.x.html">OpenJPA 2.4.2 Released!</A></h5>
+            <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 2.4.2!</p>
+            <figcaption class="blockquote-footer">
+                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
+                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2017-01-06
+                </a>
+            </figcaption>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <div class="card-body">
+            <h5 class="card-title"><A class="blogHeading" href="openjpa-3.0.x.html">Work on OpenJPA 3.0.0 started!</A></h5>
+            <p class="card-text">The Apache OpenJPA community started working on OpenJPA 3.0.0!<br/>
+            Trunk got switched over to the new effort.<br/>
+            This version will target the JPA-2.1 specification.</p>
+            <figcaption class="blockquote-footer">
+                <a href="https://home.apache.org/phonebook.html?uid=struberg" class="url fn confluence-userlink"
+                        data-username="struberg@apache.org">Mark Struberg</A> posted 2016-08-18
+                </a>
+            </figcaption>
+        </div>
+    </div>
+</div>

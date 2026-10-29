@@ -17,5 +17,5 @@ Most of the OpenJPA discussions happen on the [mailto:dev@openjpa.apache.org](ma
  * [Building OpenJPA](building.html)
  * The initial OpenJPA proposal can be found at: <http://wiki.apache.org/incubator/OpenJPAProposal>
  * [DistributionStrategy](distributionstrategy.html)
- * [Release procedures](releasing-openjpa-1.0.x-or-1.1.x-(old-scp-steps).html)
+ * [Release procedures](releasing-openjpa-1.0.x-or-1.1.x-_old-scp-steps_.html)
  * [Development Process](development-process.html)

@@ -1,180 +1,285 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!doctype html>
 <!--
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with
-this work for additional information regarding copyright ownership.
-The ASF licenses this file to You under the Apache License, Version 2.0
-(the "License"); you may not use this file except in compliance with
-the License.  You may obtain a copy of the License at
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
+         https://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
     <head>
-        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
-        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
-        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
-        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
-        <META name="Description" content="Apache OpenJPA -- {{ page.title }}" />
-        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
-        <META name="Owner" content="dev@openjpa.apache.org" />
-        <META name="Robots" content="index, follow" />
-        <META name="Security" content="Public" />
-        <META name="Source" content="wiki template" />
-        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
-        <META name="DC.Language" scheme="rfc1766" content="en" />
-        <META name="DC.Rights" content="Copyright © 2006,{{CURRENTYEAR}} The Apache Software Foundation" />
-        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
-	<style>
-	  {% include "styles.css" %}
-	</style>
-        <title>Apache OpenJPA -- {{page.title}}</title>
+        {% block head %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{{ SITENAME }} - {{ page.title }}</title>
+        {% endblock %}
+
+        <!-- Start favicon styles - use apache feather -->
+        <link rel="shortcut icon" href="https://www.apache.org/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="https://www.apache.org/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://www.apache.org/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://www.apache.org/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://www.apache.org/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://www.apache.org/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://www.apache.org/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://www.apache.org/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://www.apache.org/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://www.apache.org/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="https://www.apache.org/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://www.apache.org/favicons/favicon-194x194.png" sizes="194x194">
+        <link rel="icon" type="image/png" href="https://www.apache.org/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="https://www.apache.org/favicons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="https://www.apache.org/favicons/favicon-16x16.png" sizes="16x16">
+        <meta name="msapplication-TileColor" content="#603cba">
+        <meta name="msapplication-TileImage" content="https://www.apache.org/favicons/mstile-144x144.png">
+        <meta name="msapplication-config" content="https://www.apache.org/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#282661">
+        <!-- End favicon styles - use apache feather -->
+
+        <!-- Start load of stylesheets (will need to upgrade periodically) -->
+        <link href="css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"/>
+        <style>
+            {% include "styles.css" %}
+        </style>
     </head>
-    <body>
-        <div class="white_box">
-            <div class="header">
-                <div class="header_l">
-                    <div class="header_r">
+    <body id="index" class="home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+            <symbol id="download" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                <path fill="currentColor" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+            </symbol>
+            <symbol id="pencil" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+            </symbol>
+            <symbol id="clock" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                <path fill="currentColor" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+            </symbol>
+            <symbol id="info-square" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <path fill="currentColor" d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+            </symbol>
+            <symbol id="file-earmark-text-fill" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1z"/>
+            </symbol>
+            <symbol id="three-dots" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+            </symbol>
+            <symbol id="list" viewBox="0 0 16 16">
+                <path fill="currentColor" fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </symbol>
+            <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+                <path fill="currentColor" d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+            </symbol>
+            <symbol id="sun-fill" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+            </symbol>
+            <symbol id="circle-half" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/>
+            </symbol>
+            <symbol id="check-circle-fill" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </symbol>
+            <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+            </symbol>
+        </svg>
+        <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+            <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+                <div class="bd-navbar-toggle">
+                    <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas"
+                            aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                        <svg class="size-1_5" alt="" loading="lazy"><use href="#list"/></svg>
+                        <span class="d-none fs-6 pe-1">Browse</span>
+                    </button>
+                </div>
+                <a class="navbar-brand p-0 me-0 me-lg-2" href="index.html" aria-label="{{ SITENAME }}">
+                    <img src="images/openjpa-logo.png" alt="OpenJPA Logo" title="{{ SITENAME }}"/>
+                </a>
+
+                <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#topNavCnv" aria-controls="topNavCnv" aria-label="Toggle navigation">
+                    <svg class="size-1_5" alt="" loading="lazy"><use href="#three-dots"/></svg>
+                </button>
+                <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="topNavCnv" aria-labelledby="topNavCnvLabel">
+                    <div class="offcanvas-header px-4 pb-0">
+                        <h5 class="offcanvas-title text-white" id="topNavCnvLabel">Top Nav</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#topNavCnv">
+                        </button>
                     </div>
+                    <div class="offcanvas-body p-4 pt-0 p-lg-0">
+                        <ul class="navbar-nav flex-wrap d-flex align-items-center">
+                            <li class="nav-item col-4 col-lg-auto ms-5 me-2">
+                                <a href="https://www.apache.org/">
+                                    <img src="https://www.apache.org/img/asf_logo.png" alt="The Apache Software Foundation" style="border: 0; margin-top: 2px" width="200">
+                                </a>
+                            </li>
+                            <li class="nav-item col-2 col-lg-auto ms-2 me-2">
+                                <a href="https://www.apache.org/foundation/contributing.html">
+                                    <img src="https://www.apache.org/images/SupportApache-small.png" alt="Support The ASF" height="80" width="80">
+                                </a>
+                            </li>
+                            <li class="nav-item col-3 col-lg-auto ms-2 me-2">
+                                <a class="acevent" data-format="square" data-mode="light" data-event="random"></a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav d-flex flex-wrap ms-md-auto align-items-end">
+                            <li class="nav-item dropdown">
+                                <button class="btn btn-link nav-link px-0 px-lg-2 py-2 dropdown-toggle d-flex align-items-center"
+                                        id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static"
+                                        aria-label="Toggle theme (dark)">
+                                    <svg class="theme-icon-active size-1_5" alt="" loading="lazy"><use href="#moon-stars-fill"/></svg>
+                                    <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+                                    <li>
+                                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                            <svg class="me-2 size-1_5" alt="" loading="lazy"><use href="#sun-fill"/></svg>
+                                            Light
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+                                            <svg class="me-2 size-1_5" alt="" loading="lazy"><use href="#moon-stars-fill"/></svg>
+                                            Dark
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                            <svg class="me-2 size-1_5" alt="" loading="lazy"><use href="#circle-half"/></svg>
+                                            Auto
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    <div class="container bd-layout">
+        <aside class="bd-sidebar">
+            <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="sidebarOffcanvas">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Site menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebarOffcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <nav>
+                        <ul class="list-unstyled">
+                            <li>
+                                <strong class="bd-links-heading fw-semibold align-items-center">
+                                    <a href="overview.html" title="Overview">Overview</a>
+                                </strong>
+                                <ul class="alternate list-unstyled" type="square">
+                                    <li><a href="quick-start.html" title="Quick Start">Quick Start</a></li>
+                                    <li><a href="downloads.html" title="Downloads">Downloads</a></li>
+                                    <li><a href="documentation.html" title="Documentation">Documentation</a></li>
+                                    <li><a href="site-index.html" title="Site Index">Site Index</a></li>
+                                    <li><a href="license.html" title="License">License</a></li>
+                                    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" title="Privacy Policy">Privacy Policy</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong class="bd-links-heading fw-semibold align-items-center">
+                                    <a href="community.html" title="Community">Community</a>
+                                </strong>
+                                <ul class="alternate list-unstyled" type="square">
+                                    <li><a href="index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                    <li><a href="found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                    <li><a href="get-involved.html" title="Get Involved">Get Involved</a></li>
+                                    <li><a href="mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                    <li><a href="committers.html" title="Committers">Committers</a></li>
+                                    <li><a href="integration.html" title="Integration">Integration</a></li>
+                                    <li><a href="powered-by.html" title="Powered By">Powered By</a></li>
+                                    <li><a href="thanks.html" title="Thanks">Thanks</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong class="bd-links-heading fw-semibold align-items-center">
+                                    <a href="development.html" title="Development">Development</a>
+                                </strong>
+                                <ul class="alternate list-unstyled" type="square">
+                                    <li><a href="downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>
+                                    <li><a href="source-code.html" title="Source Code">Source Code</a></li>
+                                    <li><a href="testing.html" title="Testing">Testing</a></li>
+                                    <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                    <li><a href="tools.html" title="Tools">Tools</a></li>
+                                    <li><a href="samples.html" title="Samples">Samples</a></li>
+                                    <li><a href="release-management.html" title="Release Management">Release Management</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong class="bd-links-heading fw-semibold align-items-center">
+                                    <a href="consumers.html" title="Consumers">Consumers</a>
+                                </strong>
+                                <ul class="alternate list-unstyled" type="square">
+                                    <li><a href="tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                    <li><a href="troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong class="bd-links-heading fw-semibold align-items-center">Search</strong>
+                                <div style="padding: 5px 5px 0px 25px;">
+                                    <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                        <input name="ie" type="hidden" value="UTF-8">
+                                        <input name="oe" type="hidden" value="UTF-8">
+                                        <input maxlength="255" name="q" size="15" type="text" value="" class="mb-2 form-control"/>
+                                        <input name="btnG" type="submit" value="Google" class="btn btn-primary"/>
+                                        <input name="domains" type="hidden" value="openjpa.apache.org">
+                                        <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            <div class="content">
-                <div class="content_l">
-                    <div class="content_r">
-                        <div>
-                            <!-- Banner -->
-                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="{{base}}images/header-bg3.png">
-                                <TR>
-                                    <TD valing="top" align="left">
-                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
-                                    </TD>
-                                    <TD width="100%">
-                                        &nbsp;
-                                    </TD>
-                                    <TD valing="top" align="right">
-                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
-                                    </TD>
-                                </TR>
-                            </TABLE>
-
-                            <!-- Navigation Bar -->
-                            <div class="bottom_red_bar">
-                                <div id="site-breadcrumbs">
-                                </div>
-                            </div>
-
-                            <!-- Content -->
-                            <table border="0">
-                                <tbody>
-                                    <tr>
-                                        <td valign="top">
-                                            <div class="navigation">
-                                                <div class="navigation_top">
-                                                    <div class="navigation_bottom">
-                                                        <!-- NavigationBar -->
-                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
-                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
-                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
-                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
-                                                            <li><a href="/license.html" title="License">License</a></li>
-                                                            <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" title="Privacy Policy">Privacy Policy</a></li>
-                                                        </ul>
-
-                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
-                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
-                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
-                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
-                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
-                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
-                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
-                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
-                                                        </ul>
-
-
-                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
-                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
-                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
-                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
-                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
-                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
-                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
-                                                        </ul>
-
-                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
-                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
-                                                        </ul>
-
-                                                        <h3>Search</h3>
-
-                                                        <div style="padding: 5px 5px 0px 25px;">
-                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
-                                                                <input name="ie" type="hidden" value="UTF-8">
-                                                                <input name="oe" type="hidden" value="UTF-8">
-                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
-                                                                <input name="btnG" type="submit" value="Google">
-                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
-                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td valign="top" width="100%" style="overflow:hidden;">
-                                            <div class="wiki-content">
-                                                {% block content %} {% endblock %}
-                                            </div>
-                                        </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="bottom_red_bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="black_box">
-                    <div class="footer">
-                        <div class="footer_l">
-                            <div class="footer_r">
-                                <div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="design_attribution">
-                Copyright &copy; 2006,{{CURRENTYEAR}} The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
-                Apache OpenJPA, OpenJPA, Apache, the Apache logo, and the Apache OpenJPA project logo are either
-                registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.<br />
-                <br />
-                <a href="https://www.apache.org/">Foundation</a> |
-                <a href="https://www.apache.org/events/current-event.html">Events</a> |
-                <a href="https://www.apache.org/licenses/">License</a> |
+        </aside>
+        <main class="bd-main">
+            {% block content %} {% endblock %}
+        </main>
+    </div>
+    <!-- Start footer -->
+    <footer class="">
+        <div class="footer" id="footer">
+            <div class="container-fluid text-center">
+                Copyright &copy; {{ CURRENTYEAR }} The Apache Software Foundation,
+                Licensed under the
+                <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0.</a>
+                <br/>
+                {{ TRADEMARKS }} of <a href="https://www.apache.org/">The Apache Software Foundation.</a><br />
+                Other names may be trademarks of their respective owners.<br />
                 <a href="https://www.apache.org/security/">Security</a> |
                 <a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
-                <a href="https://www.apache.org/foundation/thanks.html">Thanks</a> |
-                <a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a>
-            </div>
+                <a href="https://www.apache.org/foundation/thanks.html">Thanks</a>
+            </div><!-- #container-fluid -->
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <!-- Start the loading of javascript frameworks (will need to upgrade periodically) -->
+    <script src="https://www.apachecon.com/event-images/snippet.js"></script>
+    <script
+        src="js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script type="module" src="js/color-modes.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <!-- End the loading of javascript frameworks -->
+
+    <!-- Source: {{ page.relative_source_path }}; Template: {{ page.default_template }}; Url: {{ page.url }} -->
     </body>
 </html>

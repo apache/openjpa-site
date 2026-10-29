@@ -7,7 +7,7 @@ The online OpenJPA documentation can be found here.
 
 ## Nightly builds
 
-<table>
+<table class="table table-striped">
 <tr><th>Version</th><th> HTML Manual</th><th> HTML Manual (Single Page)</th><th>PDF Manual</th><th>Javadocs</th><th>Schema</th></tr>
 <tr>
  <td class="border"> Nightly build (master)
@@ -22,7 +22,7 @@ The online OpenJPA documentation can be found here.
 
 ## OpenJPA 4.1.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th>Version</th><th> HTML Manual</th><th> HTML Manual (Single Page)</th><th>PDF Manual</th><th>Javadocs</th><th>Release Notes</th></tr>
 <tr><td class="border"> OpenJPA 4.1.1
  </td><td class="border"> <a href="/builds/4.1.1/apache-openjpa/docs/main.html">manual</a>
@@ -42,7 +42,7 @@ The online OpenJPA documentation can be found here.
 
 ## OpenJPA 4.0.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th>Version</th><th> HTML Manual</th><th> HTML Manual (Single Page)</th><th>PDF Manual</th><th>Javadocs</th><th>Release Notes</th></tr>
 <tr><td class="border"> OpenJPA 4.0.1
  </td><td class="border"> <a href="/builds/4.0.1/apache-openjpa/docs/main.html">manual</a>
@@ -62,7 +62,7 @@ The online OpenJPA documentation can be found here.
 
 ## OpenJPA 3.2.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th>Version</th><th> HTML Manual</th><th> HTML Manual (Single Page)</th><th>PDF Manual</th><th>Javadocs</th><th>Release Notes</th></tr>
 <tr><td class="border"> OpenJPA 3.2.2
  </td><td class="border"> <a href="/builds/3.2.2/apache-openjpa/docs/main.html">manual</a>
@@ -89,7 +89,7 @@ The online OpenJPA documentation can be found here.
 
 ## OpenJPA 3.1.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th>Version</th><th> HTML Manual</th><th> HTML Manual (Single Page)</th><th>PDF Manual</th><th>Javadocs</th><th>Release Notes</th></tr>
 <tr><td class="border"> OpenJPA 3.1.2
  </td><td class="border"> <a href="/builds/3.1.2/apache-openjpa/docs/main.html">manual</a>
@@ -116,7 +116,7 @@ The online OpenJPA documentation can be found here.
 
 ## OpenJPA 3.0.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th> Version </th><th> HTML Manual </th><th> HTML Manual (Single Page) </th><th> PDF Manual </th><th>
 Javadocs </th><th>Release Notes</th></tr>
 <tr><td class="border"> OpenJPA 3.0.0
@@ -130,7 +130,7 @@ Javadocs </th><th>Release Notes</th></tr>
 
 ## OpenJPA 2.4.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th> Version </th><th> HTML Manual </th><th> HTML Manual (Single Page) </th><th> PDF Manual </th><th>
 Javadocs </th></tr>
 <tr><td class="border"> OpenJPA 2.4.4-SNAPSHOT
@@ -167,7 +167,7 @@ Javadocs </th></tr>
 
 ## OpenJPA 2.3.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th> Version </th><th> HTML Manual </th><th> HTML Manual (Single Page) </th><th> PDF Manual </th><th>
 Javadocs </th></tr>
 <tr><td class="border"> OpenJPA 2.3.0
@@ -180,7 +180,7 @@ Javadocs </th></tr>
 
 ## OpenJPA 2.2.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th> Version </th><th> HTML Manual </th><th> HTML Manual (Single Page) </th><th> PDF Manual </th><th>
 Javadocs </th></tr>
 <tr><td class="border"> OpenJPA 2.2.3-SNAPSHOT
@@ -211,7 +211,7 @@ Javadocs </th></tr>
 
 ## OpenJPA 2.1.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th> Version </th><th> HTML Manual </th><th> HTML Manual (Single Page) </th><th> PDF Manual </th><th>
 Javadocs </th></tr>
 <tr><td class="border"> OpenJPA 2.1.1
@@ -230,7 +230,7 @@ Javadocs </th></tr>
 
 ## OpenJPA 2.0.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th> Version </th><th> HTML Manual </th><th> HTML Manual (Single Page) </th><th> PDF Manual </th><th>
 Javadocs </th></tr>
 <tr><td class="border"> OpenJPA 2.0.1
@@ -250,7 +250,7 @@ Javadocs </th></tr>
 
 ## OpenJPA 1.2.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th> Version </th><th> HTML Manual </th><th> HTML Manual (Single Page) </th><th> PDF Manual </th><th>
 Javadocs </th></tr>
 <tr><td class="border"> OpenJPA 1.2.3
@@ -281,7 +281,7 @@ Javadocs </th></tr>
 
 ## OpenJPA 1.1.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th> Version </th><th> HTML Manual </th><th> HTML Manual (Single Page) </th><th> PDF Manual </th><th>
 Javadocs </th></tr>
 <tr><td class="border"> OpenJPA 1.1.0
@@ -294,7 +294,7 @@ Javadocs </th></tr>
 
 ## OpenJPA 1.0.x releases
 
-<table>
+<table class="table table-striped">
 <tr><th> Version </th><th> HTML Manual </th><th> HTML Manual (Single Page) </th><th> PDF Manual </th><th>
 Javadocs </th></tr>
 <tr><td class="border"> OpenJPA 1.0.4
@@ -331,7 +331,7 @@ Javadocs </th></tr>
 
 ## Incubating releases
 
-<table>
+<table class="table table-striped">
 <tr><th> Version </th><th> HTML Manual </th><th> HTML Manual (Single Page) </th><th> PDF Manual </th><th>
 Javadocs </th></tr>
 <tr><td class="border"> OpenJPA 0.9.7

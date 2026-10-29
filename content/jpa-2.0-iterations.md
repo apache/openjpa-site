@@ -20,7 +20,7 @@ Title: JPA 2.0 Iterations
  (Dec. 22, 2008 - Jan. 2, 2009) - [OPENJPA-831](https://issues.apache.org/jira/browse/OPENJPA-831)
     * [#Iteration 2](#iteration-2)
  (Jan. 5, 2009 - Jan. 23, 2009) - [OPENJPA-807](https://issues.apache.org/jira/browse/OPENJPA-807)
- 
+
 * [#Milestone 2](#milestone-2)
 
     * [#Iteration 3](#iteration-3)
@@ -33,7 +33,7 @@ Title: JPA 2.0 Iterations
  (Apr. 6, 2009 - May 1, 2009) - [OPENJPA-1007](https://issues.apache.org/jira/browse/OPENJPA-1007)
     * [#Iteration 7](#iteration-7)
  (May 4, 2009 - May 29, 2009) - [OPENJPA-1052](https://issues.apache.org/jira/browse/OPENJPA-1052)
- 
+
 * [#Milestone 3](#milestone-3)
 
     * [#Iteration 8](#iteration-8)
@@ -44,7 +44,7 @@ Title: JPA 2.0 Iterations
  (Aug. 3, 2009 - Aug. 28, 2009) - [OPENJPA-1209](https://issues.apache.org/jira/browse/OPENJPA-1209)
     * [#Iteration 11](#iteration-11)
  (Aug. 31, 2009 - Oct. 2, 2009) - [OPENJPA-1268](https://issues.apache.org/jira/browse/OPENJPA-1268)
- 
+
 * [#Milestone 4](#milestone-4)
 
     * [#Iteration 12](#iteration-12)
@@ -53,10 +53,10 @@ Title: JPA 2.0 Iterations
  (Nov. 2, 2009 - Dec. 4, 2009) - [OPENJPA-1373](https://issues.apache.org/jira/browse/OPENJPA-1373)
     * [#Iteration 14](#iteration-14)
  (Dec. 7, 2009 - Jan. 1, 2010) - [OPENJPA-1426](https://issues.apache.org/jira/browse/OPENJPA-1426)
- 
+
 * [#Beta](#beta)
  (Jan. 28, 2010)
- 
+
 * [#Release Candidate](#release-candidate)
  - Date TBD
 <!--tr></tr>
@@ -64,8 +64,8 @@ Title: JPA 2.0 Iterations
 
 Jump to [#Task List](#task-list)
 
-  
-  
+
+
 
 ----
 
@@ -89,18 +89,18 @@ out using:
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 1 (Dec. 1, 2008 - Dec. 19, 2008)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -110,18 +110,18 @@ out using:
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -132,7 +132,7 @@ out using:
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -142,7 +142,7 @@ out using:
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-800">OPENJPA-800</A>
  </TD>
@@ -152,7 +152,7 @@ out using:
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -169,7 +169,7 @@ new features provided by OpenJPA:
 * The current level of JPA 2.0 API.  You can compile against and use
 implemented methods of the new API.  Unimplemented methods will throw an
 UnsupportedOperationException.
-* Validation using the current JPA 2.0 orm and persistence schemas. 
+* Validation using the current JPA 2.0 orm and persistence schemas.
 Version 2.0 persistence and orm files will validate using these new
 schemas.  Metadata elements provided in iteration 1 (collection-table and
 element-collection) will validate and can be specified in XML.
@@ -202,18 +202,18 @@ on the annotation or in a version 2.0 orm XML.
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 1a (Dec. 22, 2008 - Jan. 2, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -223,18 +223,18 @@ on the annotation or in a version 2.0 orm XML.
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -245,7 +245,7 @@ on the annotation or in a version 2.0 orm XML.
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -255,7 +255,7 @@ on the annotation or in a version 2.0 orm XML.
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-837">OPENJPA-837</A>
  </TD>
@@ -265,7 +265,7 @@ on the annotation or in a version 2.0 orm XML.
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -287,18 +287,18 @@ updated to contain the most current JPA 2.0 schemas.
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 2 (Jan. 5, 2009 - Jan. 23, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -308,18 +308,18 @@ updated to contain the most current JPA 2.0 schemas.
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -330,7 +330,7 @@ updated to contain the most current JPA 2.0 schemas.
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -340,7 +340,7 @@ updated to contain the most current JPA 2.0 schemas.
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-807">OPENJPA-807</A>
  </TD>
@@ -350,7 +350,7 @@ updated to contain the most current JPA 2.0 schemas.
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -388,8 +388,8 @@ of an abstract entity type.
 properties such as javax.persistence.jdbc.driver can now be specified as
 configuration properties.
 
-  
-  
+
+
 
 ----
 
@@ -401,31 +401,22 @@ The Milestone 2 release will not be an official ASF release, but will be
 created as a Early Access 2 SNAPSHOT branch due to the JSR-317 terms of use
 restrictions.  A distribution of the Early Access 2 SNAPSHOT is available [here](http://cwiki.apache.org/confluence/display/openjpa/OpenJPA+2.0.0+Early+Access+2)
  for download or the code can be checked out from svn.
- 
-<TABLE class="sectionMacro" border="0" cellpadding="5" cellspacing="0" width="100%"><TBODY><TR>
-<TD class="confluenceTd" valign="top" width="5%"></TD>
-<TD class="confluenceTd" valign="top" width="20%"><DIV class="table-wrap">
-<TABLE class="confluenceTable"><TBODY>
-<TR>
-<TD class="confluenceTd"><SPAN class="image-wrap" style=""><IMG src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Download.png" style="border: 0px solid black"></SPAN></TD>
-<TD class="confluenceTd"> <A href="http://openjpa.apache.org/openjpa-200-early-access-2.html" class="external-link" rel="nofollow">Download Milestone 2</A> </TD>
-</TR>
-</TBODY></TABLE>
-</DIV>
-</TD>
-<TD class="confluenceTd" valign="top" width="5%"></TD>
-<TD class="confluenceTd" valign="top" width="20%"><DIV class="table-wrap">
-<TABLE class="confluenceTable"><TBODY>
 
-<TR>
-<TD class="confluenceTd"><SPAN class="image-wrap" style=""><IMG src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Pencil.png" style="border: 0px solid black"></SPAN></TD>
-<TD class="confluenceTd"> <A href="http://svn.apache.org/viewvc/openjpa/branches/2.0.0-EA2/" class="external-link" rel="nofollow">View SVN Files</A> </TD>
-</TR>
-</TBODY></TABLE>
-</DIV>
-</TD>
-<TD class="confluenceTd" valign="top"></TD></TR></TBODY></TABLE>
- 
+<div class="row justify-content-around">
+    <div class="col-4">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Early Access M2" href="openjpa-200-early-access-2.html">
+            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
+            <div class="fw-bold d-inline-block">Download Milestone 2</div>
+        </a>
+    </div>
+    <div class="col-4">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View SVN Files" href="https://svn.apache.org/viewvc/openjpa/branches/2.0.0-EA2">
+            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#pencil"/></svg>
+            <div class="fw-bold d-inline-block">View SVN Files</div>
+        </a>
+    </div>
+</div>
+
 <a name="iteration-3"></a>
 
 ### *Iteration 3 Summary* \- [OPENJPA-808](https://issues.apache.org/jira/browse/OPENJPA-808)
@@ -434,18 +425,18 @@ restrictions.  A distribution of the Early Access 2 SNAPSHOT is available [here]
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 3 (Jan. 26, 2009 - Feb. 13, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -455,18 +446,18 @@ restrictions.  A distribution of the Early Access 2 SNAPSHOT is available [here]
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -477,7 +468,7 @@ restrictions.  A distribution of the Early Access 2 SNAPSHOT is available [here]
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -487,7 +478,7 @@ restrictions.  A distribution of the Early Access 2 SNAPSHOT is available [here]
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-808">OPENJPA-808</A>
  </TD>
@@ -497,7 +488,7 @@ restrictions.  A distribution of the Early Access 2 SNAPSHOT is available [here]
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -542,18 +533,18 @@ Query.
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 4 (Feb. 16, 2009 - Mar. 6, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -563,18 +554,18 @@ Query.
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -585,7 +576,7 @@ Query.
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -595,7 +586,7 @@ Query.
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-875">OPENJPA-875</A>
  </TD>
@@ -605,7 +596,7 @@ Query.
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -642,18 +633,18 @@ can now be used within the SELECT clause.
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 5 (Mar. 9, 2009 - Apr. 3, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -663,18 +654,18 @@ can now be used within the SELECT clause.
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -685,7 +676,7 @@ can now be used within the SELECT clause.
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -695,7 +686,7 @@ can now be used within the SELECT clause.
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-956">OPENJPA-956</A>
  </TD>
@@ -705,7 +696,7 @@ can now be used within the SELECT clause.
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -748,18 +739,18 @@ relationships from embeddables.
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 6 (Apr. 6, 2009 - May 1, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -769,18 +760,18 @@ relationships from embeddables.
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -791,7 +782,7 @@ relationships from embeddables.
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -801,7 +792,7 @@ relationships from embeddables.
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-1007">OPENJPA-1007</A>
  </TD>
@@ -811,7 +802,7 @@ relationships from embeddables.
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -850,18 +841,18 @@ value should be used as an argument to a scalar function.
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 7 (May 4, 2009 - May 29, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -871,18 +862,18 @@ value should be used as an argument to a scalar function.
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -893,7 +884,7 @@ value should be used as an argument to a scalar function.
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -903,7 +894,7 @@ value should be used as an argument to a scalar function.
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-1052">OPENJPA-1052</A>
  </TD>
@@ -913,7 +904,7 @@ value should be used as an argument to a scalar function.
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -934,7 +925,7 @@ temporal type.
 * Base support for JSR-303 Bean Validation including basic configuration
 and lifecycle-based event validation.
 * Support the use of delimited identifiers within annotation attributes for
-a subset of mapping annotations when using the Derby and DB2 databases. 
+a subset of mapping annotations when using the Derby and DB2 databases.
 Support for additional databases will be added in future iterations.
 * JPQL subqueries now support derived path expressions and the use of KEY()
 on map collections.
@@ -944,8 +935,8 @@ the use of OpenJPA in an OSGi environment such as [Apache Felix](http://felix.ap
 * OrderBy no longer requires name attribute when applied to a collection of
 basic type.
 
-  
-  
+
+
 
 ----
 
@@ -958,30 +949,20 @@ upgrade to the final 2.0.0 as soon as possible after it is released.  A
 distribution of the Milestone 3 is available [here](http://cwiki.apache.org/confluence/display/openjpa/OpenJPA+2.0.0+Milestone+3)
  for download or the code can be checked out from svn.
 
-<TABLE class="sectionMacro" border="0" cellpadding="5" cellspacing="0" width="100%"><TBODY><TR>
-<TD class="confluenceTd" valign="top" width="5%"></TD>
-<TD class="confluenceTd" valign="top" width="20%"><DIV class="table-wrap">
-<TABLE class="confluenceTable"><TBODY>
-<TR>
-<TD class="confluenceTd"><SPAN class="image-wrap" style=""><IMG src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Download.png" style="border: 0px solid black"></SPAN></TD>
-<TD class="confluenceTd"> <A href="http://openjpa.apache.org/openjpa-200-milestone-3.html" class="external-link" rel="nofollow">Download Milestone 3</A> </TD>
-</TR>
-</TBODY></TABLE>
-</DIV>
-</TD>
-<TD class="confluenceTd" valign="top" width="5%"></TD>
-<TD class="confluenceTd" valign="top" width="20%"><DIV class="table-wrap">
-<TABLE class="confluenceTable"><TBODY>
-
-<TR>
-<TD class="confluenceTd"><SPAN class="image-wrap" style=""><IMG src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Pencil.png" style="border: 0px solid black"></SPAN></TD>
-<TD class="confluenceTd"> <A href="http://svn.apache.org/viewvc/openjpa/tags/2.0.0-M3/" class="external-link" rel="nofollow">View SVN Files</A> </TD>
-</TR>
-</TBODY></TABLE>
-</DIV>
-</TD>
-<TD class="confluenceTd" valign="top"></TD></TR></TBODY></TABLE>
-
+<div class="row justify-content-around">
+    <div class="col-4">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Early Access M3" href="openjpa-200-milestone-3.html">
+            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
+            <div class="fw-bold d-inline-block">Download Milestone 3</div>
+        </a>
+    </div>
+    <div class="col-4">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View SVN Files" href="https://svn.apache.org/viewvc/openjpa/tags/2.0.0-M3">
+            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#pencil"/></svg>
+            <div class="fw-bold d-inline-block">View SVN Files</div>
+        </a>
+    </div>
+</div>
 
 <a name="iteration-8"></a>
 
@@ -991,18 +972,18 @@ distribution of the Milestone 3 is available [here](http://cwiki.apache.org/conf
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 8 (June 1, 2009 - July 3, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -1012,18 +993,18 @@ distribution of the Milestone 3 is available [here](http://cwiki.apache.org/conf
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -1034,7 +1015,7 @@ distribution of the Milestone 3 is available [here](http://cwiki.apache.org/conf
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -1044,7 +1025,7 @@ distribution of the Milestone 3 is available [here](http://cwiki.apache.org/conf
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-1105">OPENJPA-1105</A>
  </TD>
@@ -1054,7 +1035,7 @@ distribution of the Milestone 3 is available [here](http://cwiki.apache.org/conf
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -1087,18 +1068,18 @@ performance gain in some benchmarks.
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 9 (July 6, 2009 - July 31, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -1108,18 +1089,18 @@ performance gain in some benchmarks.
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -1130,7 +1111,7 @@ performance gain in some benchmarks.
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -1140,7 +1121,7 @@ performance gain in some benchmarks.
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-1152">OPENJPA-1152</A>
  </TD>
@@ -1150,7 +1131,7 @@ performance gain in some benchmarks.
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -1178,7 +1159,7 @@ interfaces provide methods to determine the load state of a persistent
 entity or attribute.  In addition, PersistenceUnitUtil can be used to get
 the identifier of an entity.
 * Significant improvements to OpenJPA's subquery processing.
-* OpenJPA now includes the ability to use a pluggable encryption provider. 
+* OpenJPA now includes the ability to use a pluggable encryption provider.
 This provider can be used to support encrypted database passwords in the
 persistence.xml. See the [Encryption Provider](http://openjpa.apache.org/builds/latest/docs/manual/ref_guide_encryption.html)
  chapter in the documentation for more details.
@@ -1192,18 +1173,18 @@ persistence.xml. See the [Encryption Provider](http://openjpa.apache.org/builds/
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 10 (Aug. 3, 2009 - Aug. 28, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -1213,18 +1194,18 @@ persistence.xml. See the [Encryption Provider](http://openjpa.apache.org/builds/
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -1235,7 +1216,7 @@ persistence.xml. See the [Encryption Provider](http://openjpa.apache.org/builds/
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -1245,7 +1226,7 @@ persistence.xml. See the [Encryption Provider](http://openjpa.apache.org/builds/
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-1209">OPENJPA-1209</A>
  </TD>
@@ -1255,7 +1236,7 @@ persistence.xml. See the [Encryption Provider](http://openjpa.apache.org/builds/
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -1284,7 +1265,7 @@ to provide backward compatibility for OpenJPA version 1.x applications.
 * Lob, Temporal, and Enumeration can now be specified on element
 collections.
 * JPQL now supports multiple constructors in the query projection list.
-* Support for the shared-cache-mode element in the persistence.xml. 
+* Support for the shared-cache-mode element in the persistence.xml.
 Provides configuration/enablement options for L2 cache.
 * Support for Cacheable annotation and CacheStoreMode/CacheRetriveMode
 properties.  Allows per class configuration of L2 cacheing and
@@ -1303,18 +1284,18 @@ Criteria queries.
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 11 (Aug. 31, 2009 - Oct. 2, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -1324,18 +1305,18 @@ Criteria queries.
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -1346,7 +1327,7 @@ Criteria queries.
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -1356,7 +1337,7 @@ Criteria queries.
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-1268">OPENJPA-1268</A>
  </TD>
@@ -1366,7 +1347,7 @@ Criteria queries.
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -1396,8 +1377,8 @@ SQL Server.
 matrix is available [here](http://cwiki.apache.org/confluence/display/openjpa/JPA+2.0+Test+Coverage)
 .
 
-  
-  
+
+
 
 ----
 
@@ -1413,18 +1394,18 @@ matrix is available [here](http://cwiki.apache.org/confluence/display/openjpa/JP
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 12 (Oct. 5, 2009 - Oct. 30, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -1434,18 +1415,18 @@ matrix is available [here](http://cwiki.apache.org/confluence/display/openjpa/JP
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -1456,7 +1437,7 @@ matrix is available [here](http://cwiki.apache.org/confluence/display/openjpa/JP
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -1466,7 +1447,7 @@ matrix is available [here](http://cwiki.apache.org/confluence/display/openjpa/JP
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-1337">OPENJPA-1337</A>
  </TD>
@@ -1476,7 +1457,7 @@ matrix is available [here](http://cwiki.apache.org/confluence/display/openjpa/JP
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -1488,7 +1469,7 @@ matrix is available [here](http://cwiki.apache.org/confluence/display/openjpa/JP
 
 
 With the completion of iteration 12, OpenJPA includes several additional
-JPA 2.0 features 
+JPA 2.0 features
 and bug fixes. Here is a summary of the new features provided by OpenJPA:
 
 * Support for extended lock scope via the javax.persistence.lock.scope
@@ -1497,12 +1478,12 @@ property.
  Bean Validation API.
 * Many documentation updates, notably for Criteria API and Metamodel
 tooling.
-* More improvements to test coverage for additional database platforms. 
+* More improvements to test coverage for additional database platforms.
 The current test matrix is available [here](http://cwiki.apache.org/confluence/display/openjpa/JPA+2.0+Test+Coverage)
 .
 
-  
-  
+
+
 
 <a name="iteration-13"></a>
 
@@ -1512,18 +1493,18 @@ The current test matrix is available [here](http://cwiki.apache.org/confluence/d
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 13 (Nov. 2, 2009 - Dec. 4, 2009)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -1533,18 +1514,18 @@ The current test matrix is available [here](http://cwiki.apache.org/confluence/d
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -1555,7 +1536,7 @@ The current test matrix is available [here](http://cwiki.apache.org/confluence/d
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -1565,7 +1546,7 @@ The current test matrix is available [here](http://cwiki.apache.org/confluence/d
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-1373">OPENJPA-1373</A>
  </TD>
@@ -1575,7 +1556,7 @@ The current test matrix is available [here](http://cwiki.apache.org/confluence/d
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -1587,7 +1568,7 @@ The current test matrix is available [here](http://cwiki.apache.org/confluence/d
 
 
 With the completion of iteration 13, OpenJPA includes several additional
-JPA 2.0 features 
+JPA 2.0 features
 and bug fixes. Here is a summary of the new features provided by OpenJPA:
 
 * Support for CacheRetrieveMode and CacheStoreMode on find and refresh
@@ -1595,8 +1576,8 @@ operations.
 * Support for find and refresh entity manager operations that accept
 properties.
 
-  
-  
+
+
 
 <a name="iteration-14"></a>
 
@@ -1606,18 +1587,18 @@ properties.
  <TR>
  <TD width="1%" nowrap="">
  <B>Iteration 14 (Dec. 7, 2009 - Jan. 1, 2010)</B>&nbsp;
- 
+
  </TD>
- 
+
  <TD width="100%">
  &nbsp;
  </TD>
- 
+
  <TD style="border-width: 1px 1px 0 1px; border-style: solid; border-color: #bbb;" width="1%">
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
  <TD height="6" nowrap="true" valign="middle" align="right"><FONT size="1">&nbsp;Issue Progress:&nbsp;</FONT></TD>
- 
+
  <TD>
  <TABLE height="6" valign="middle" align="right" cellspacing="0" cellpadding="0" border="0">
  <TR height="6">
@@ -1627,18 +1608,18 @@ properties.
  </TR>
  </TABLE>
  </TD>
- 
+
  </TR>
  </TABLE>
  </TD>
  </TR>
  </TABLE>
- 
+
  <TABLE width="100%" cellspacing="0" class="grid">
  <TR>
  <TH width="1%" style="text-align: left;">
  &nbsp;
- 
+
  </TH>
  <TH style="text-align: left;">
  Key
@@ -1649,7 +1630,7 @@ properties.
  <TH style="text-align: left;">
  Assignee
  </TH>
- 
+
  <TH style="text-align: left;">
  Pr
  </TH>
@@ -1659,7 +1640,7 @@ properties.
  </TR>
  <TR class="rowNormal">
  <TD><DIV style="background-color:ccffcc"><STRIKE>1.</STRIKE></DIV></TD>
- 
+
  <TD nowrap="true">
  <A href="http://issues.apache.org/jira/browse/OPENJPA-1426">OPENJPA-1426</A>
  </TD>
@@ -1669,7 +1650,7 @@ properties.
  <TD nowrap="true">
  Jeremy Bauer
  </TD>
- 
+
  <TD nowrap="true">
  <IMG src="http://issues.apache.org/jira/images/icons/priority_major.gif" alt="Major" border="0">
  </TD>
@@ -1681,14 +1662,14 @@ properties.
 
 
 With the completion of iteration 13, OpenJPA includes several additional
-JPA 2.0 features 
+JPA 2.0 features
 and bug fixes. Here is a summary of the new features provided by OpenJPA:
 
 * Support for delimited identifiers.
 * Added support for testing with JPA 2.0 TCK
 
-  
-  
+
+
 
 ----
 
@@ -1701,31 +1682,21 @@ but we encourage you to upgrade to the final 2.0.0 as soon as possible
 after it is released.  A distribution of the Beta is available [here](http://cwiki.apache.org/confluence/display/openjpa/OpenJPA+2.0.0+Beta)
  for download or the code can be checked out from svn.
 
-<TABLE class="sectionMacro" border="0" cellpadding="5" cellspacing="0" width="100%"><TBODY><TR>
-<TD class="confluenceTd" valign="top" width="5%"></TD>
-<TD class="confluenceTd" valign="top" width="20%"><DIV class="table-wrap">
-<TABLE class="confluenceTable"><TBODY>
-<TR>
-<TD class="confluenceTd"><SPAN class="image-wrap" style=""><IMG src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Download.png" style="border: 0px solid black"></SPAN></TD>
-<TD class="confluenceTd"> <A href="http://openjpa.apache.org/openjpa-200-beta.html" class="external-link" rel="nofollow">Download Beta</A> </TD>
-</TR>
+<div class="row justify-content-around">
+    <div class="col-4">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Beta" href="openjpa-200-beta.html">
+            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
+            <div class="fw-bold d-inline-block">Download Beta</div>
+        </a>
+    </div>
+    <div class="col-4">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View SVN Files" href="https://svn.apache.org/viewvc/openjpa/tags/2.0.0-beta">
+            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#pencil"/></svg>
+            <div class="fw-bold d-inline-block">View SVN Files</div>
+        </a>
+    </div>
+</div>
 
-</TBODY></TABLE>
-</DIV>
-</TD>
-<TD class="confluenceTd" valign="top" width="5%"></TD>
-<TD class="confluenceTd" valign="top" width="20%"><DIV class="table-wrap">
-<TABLE class="confluenceTable"><TBODY>
-<TR>
-<TD class="confluenceTd"><SPAN class="image-wrap" style=""><IMG src="http://openjpa.apache.org/images/fotolia/Fotolia_9174675_Pencil.png" style="border: 0px solid black"></SPAN></TD>
-<TD class="confluenceTd"> <A href="http://svn.apache.org/viewvc/openjpa/tags/2.0.0-beta/" class="external-link" rel="nofollow">View SVN Files</A> </TD>
-</TR>
-</TBODY></TABLE>
-</DIV>
-</TD>
-<TD class="confluenceTd" valign="top"></TD></TR></TBODY></TABLE>
-  
-  
 
 ----
 
@@ -1735,7 +1706,7 @@ after it is released.  A distribution of the Beta is available [here](http://cwi
 
 <a name="iteration-15"></a>
 
-### Remaining Work Items - 
+### Remaining Work Items -
 * Performance improvements
 * L2 Cache provider improvements
 * TBD
