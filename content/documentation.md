@@ -11,11 +11,11 @@ The online OpenJPA documentation can be found here.
 <tr><th>Version</th><th> HTML Manual</th><th> HTML Manual (Single Page)</th><th>PDF Manual</th><th>Javadocs</th><th>Schema</th></tr>
 <tr>
  <td class="border"> Nightly build (master)
- </td><td class="border"><a href="/builds/latest/docs/docbook/manual/main.html">manual</a>
- </td><td class="border"><a href="/builds/latest/docs/docbook/manual.html">manual</a>
- </td><td class="border"><a href="/builds/latest/docs/docbook/manual.pdf">manual PDF</a>
- </td><td class="border"><a href="/builds/latest/docs/javadoc/index.html">JavaDocs</a>
- </td><td class="border"><a href="/builds/latest/docs/schema/">Schema</a>
+ </td><td class="border"><a href="https://nightlies.apache.org/openjpa/builds/latest/multihtml/manual.html">manual</a>
+ </td><td class="border"><a href="https://nightlies.apache.org/openjpa/builds/latest/html/manual.html">manual</a>
+ </td><td class="border"><a href="https://nightlies.apache.org/openjpa/builds/latest/manual.pdf">manual PDF</a>
+ </td><td class="border"><a href="https://nightlies.apache.org/openjpa/builds/latest/javadoc/index.html">JavaDocs</a>
+ </td><td class="border"><a href="https://nightlies.apache.org/openjpa/builds/latest/schema/">Schema</a>
  </td></tr>
 </table>
 

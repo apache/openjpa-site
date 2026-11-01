@@ -8,7 +8,7 @@ Title: Build and Runtime Dependencies
 
 ## Java versions
 
-* OpenJPA trunk (i.e. OpenJPA 3.1.x currently) require JDK 1.8 or later.
+* OpenJPA `master` (i.e. OpenJPA 4.x currently) require JDK 17 or later.
 * OpenJPA 2.1.x..2.4.x branches require JDK 1.6 or later.
 * OpenJPA 2.0.x branch requires JDK 1.6 or 1.5. Note that some functionality that requires JDK 1.6 will not be available if you choose to build with JDK 1.5.
 * Building javadoc from 2.0.x branch or newer requires JDK 1.6.
@@ -19,6 +19,7 @@ Title: Build and Runtime Dependencies
 <a name="BuildandRuntimeDependencies-Mavenversions"></a>
 
 ## Maven versions
+* 4.x branches require Maven 3.9 or later
 * 2.4.x and 3.x branches require Maven 3.3 or later
 * 2.2.x, 2.2.1.x, 2.1.x and 2.0.x branches require Maven 2.2.1.
 * 1.3.x, 1.2.x, 1.1.x and 1.0.x branches require Maven 2.0.9.
@@ -205,7 +206,3 @@ which in turn includes classes from the following packages:
 * geronimo-jta_1.1_spec-1.1.1.jar
 * org.apache.bval.bundle-0.2-incubating.jar
 * serp-1.13.1.jar
-
-
-  
-  

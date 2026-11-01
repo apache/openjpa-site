@@ -72,7 +72,7 @@ If you run into the following exception during the build:
         </div>
 
     1. Inspect the files in your local target directories to ensure:
-        * All jars and zips include:	LICENSE and NOTICE files
+        * All jars and zips include:    LICENSE and NOTICE files
         * The NOTICE files cover all third-party included files (like XSD schemas)
         * The LICENSE files include any third-party licenses (like XSD schemas)
         * The openjpa and openjpa-all jars include the right packages.
@@ -87,7 +87,8 @@ If you run into the following exception during the build:
   4. Checkout a clean copy of the trunk/branch to release using command line svn.
     1. Do not use Eclipse to do the checkout. The extra dot (.) files created by Eclipse throws off the rat:check processing and will get included in the source distribution.
 
-            $ svn checkout https://svn.apache.org/repos/asf/openjpa/branches/2.0.x/ 2.0.1-rc1/
+            $ git clone https://github.com/apache/openjpa 2.0.1-rc1
+            git checkout 2.0.x
 
         <span class="note">Make sure you use https:// protocol because the following release:prepare step requires update to the svn repository.</span>
 
@@ -145,7 +146,7 @@ Different arguments and steps are required as there are problems with the maven-
         cd 2.0.1-rc1
 
   8. Perform the release
-    1. This step will create a maven staging repository and site for use in testing and voting. You will be prompted for your repository.apache.org and people.apache.org password several times if you have not added server profiles to your settings.xml.	See [Release Setup](http://openjpa.apache.org/release-setup.html) for more information.
+    1. This step will create a maven staging repository and site for use in testing and voting. You will be prompted for your repository.apache.org and people.apache.org password several times if you have not added server profiles to your settings.xml.    See [Release Setup](http://openjpa.apache.org/release-setup.html) for more information.
 
             $ mvn release:perform -Papache-release -Duser.name=<your-apache-uid>
 
@@ -178,8 +179,8 @@ Different arguments and steps are required as there are problems with the maven-
                 To: dev@
                 Subject: [VOTE] Apache OpenJPA 2.0.1 Release Candidate
                 I've created a 2.0.1 release candidate, with the following artifacts up for a vote:
-                SVN source tag (rXXXXXX):
-                https://svn.apache.org/repos/asf/openjpa/tags/2.0.1/
+                Git tag:
+                https://github.com/apache/openjpa/tree/2.0.1
 
                 Maven staging repo:
                 https://repository.apache.org/content/repositories/orgapacheopenjpa-XXX/
@@ -210,8 +211,8 @@ Different arguments and steps are required as there are problems with the maven-
                 (rXXXXXX).
 
                 For more information on the release process, checkout -
-                http://www.apache.org/dev/release.html
-                http://incubator.apache.org/guides/releasemanagement.html
+                https://www.apache.org/dev/release.html
+                https://incubator.apache.org/guides/releasemanagement.html
 
                 Some of the things to check before voting are:
                 - does "mvn apache-rat:check" pass on the source
@@ -223,8 +224,8 @@ Different arguments and steps are required as there are problems with the maven-
                 - does the release pass the TCK
 
     3. Perform a review of the release and cast your vote. See the following for more details on Apache releases -
-        1. [http://www.apache.org/dev/release.html](http://www.apache.org/dev/release.html)
-        1. [http://incubator.apache.org/guides/releasemanagement.html](http://incubator.apache.org/guides/releasemanagement.html)
+        1. [https://www.apache.org/dev/release.html](http://www.apache.org/dev/release.html)
+        1. [https://incubator.apache.org/guides/releasemanagement.html](http://incubator.apache.org/guides/releasemanagement.html)
     4. A -1 vote does not necessarily mean that the vote must be redone, however it is usually a good idea to rollback the release if a -1 vote is received. See - [Recovering from a vetoed release](#recoverFromVetoRelease)
     5. After the vote has been open for at least 72 hours, has at least three +1 PMC votes and no -1 votes, then post the results to the vote thread by -
         1. Reply to the initial email and prepend to the original subject -
@@ -240,8 +241,8 @@ Different arguments and steps are required as there are problems with the maven-
         3. Select/check org.apache.openjpa-xxx and select Release.
 
     2. Copy documentation contents (RELEASE.NOTES, javadoc and manual) from the staged site over to the
-    <http://openjpa.apache.org/builds>/${RELEASE} site. The content of this site is located on
-    <https://svn.apache.org/repos/infra/websites/production/openjpa/content/builds>.
+    <https://openjpa.apache.org/builds>/${RELEASE} site. The content of this site is located on
+    <https://github.com/apache/openjpa-site `builds` branch>.
         1. Assume the following environment variable definitions (you need to adjust to your configuration):
 
                 # Release designation
@@ -255,29 +256,30 @@ Different arguments and steps are required as there are problems with the maven-
 
         2. Prepare the "check out" environment for artifact collection
 
-        		$ rm -rf ${RELBUILDS}
-        		$ svn co https://svn.apache.org/repos/infra/websites/production/openjpa/content/builds ${RELBUILDS} --depth empty
+                $ rm -rf ${RELBUILDS}
+                $ git clone https://github.com/apache/openjpa-site ${RELBUILDS}
+                $ git checkout builds
 
-        		$ mkdir ${RELBUILDS}/${RELEASE}
-        		$ mkdir ${RELBUILDS}/${RELEASE}/apache-openjpa
+                $ mkdir ${RELBUILDS}/${RELEASE}
+                $ mkdir ${RELBUILDS}/${RELEASE}/apache-openjpa
 
         3. Collect RELEASE.NOTES.html, manual style sheet and images,
 
-        		$ cd ${RELBUILDS}/${RELEASE}
-        		$ cp ${RCDIR}/openjpa-project/RELEASE-NOTES.html apache-openjpa
-        		$ cp -r ${RCDIR}/openjpa-project/src/doc/manual/css apache-openjpa/docs
-        		$ cp -r ${RCDIR}/openjpa-project/src/doc/manual/img apache-openjpa/docs
+                $ cd ${RELBUILDS}/${RELEASE}
+                $ cp ${RCDIR}/openjpa-project/RELEASE-NOTES.html apache-openjpa
+                $ cp -r ${RCDIR}/openjpa-project/src/doc/manual/css apache-openjpa/docs
+                $ cp -r ${RCDIR}/openjpa-project/src/doc/manual/img apache-openjpa/docs
 
         4. Collect manual and javadoc
 
-        		$ scp -r ${ojUser}@people.apache.org:~/public_html/openjpa/${RELEASE}/staging-site/apache-openjpa/docs apache-openjpa
-        		$ scp -r ${ojUser}@people.apache.org:~/public_html/openjpa/${RELEASE}/staging-site/apidocs apidocs
+                $ scp -r ${ojUser}@people.apache.org:~/public_html/openjpa/${RELEASE}/staging-site/apache-openjpa/docs apache-openjpa
+                $ scp -r ${ojUser}@people.apache.org:~/public_html/openjpa/${RELEASE}/staging-site/apidocs apidocs
 
         5. Commit content to svn repository.  (The commit will take a l-o-n-g time due to the many, many file updates...  May have to break it into several individual commits.)
 
-        		$ cd ${RELBUILDS}
-        		$ svn add ${RELEASE}
-        		$ svn commit -m "Commit ${RELEASE} RELEASE-NOTES, javadoc and manual to http://openjpa.apache.org/builds"
+                $ cd ${RELBUILDS}
+                $ svn add ${RELEASE}
+                $ svn commit -m "Commit ${RELEASE} RELEASE-NOTES, javadoc and manual to http://openjpa.apache.org/builds"
 
         6. Verify that /www/openjpa.apache.org/builds/${RELEASE}/docs/manual is populated correctly by comparing it to a previous release.
 
@@ -325,9 +327,9 @@ Different arguments and steps are required as there are problems with the maven-
     1. After the distribution and build files have been mirrored out to the external sites (takes about an hour):
         1. Update the [Documentation](http://openjpa.apache.org/documentation.html) wiki page:
 
-   			* Update the new SNAPSHOT manual and javadoc links
-   			* Add a newly created release entry
-   			* Update SNAPSHOT documentation source URL in <https://svn.apache.org/repos/asf/openjpa/site/trunk/content/.htaccess>. For example:
+               * Update the new SNAPSHOT manual and javadoc links
+               * Add a newly created release entry
+               * Update SNAPSHOT documentation source URL in <https://svn.apache.org/repos/asf/openjpa/site/trunk/content/.htaccess>. For example:
 
                     From
                       Redirect Permanent /builds/apache-openjpa-2.2.2-SNAPSHOT/docs   http://ci.apache.org/projects/openjpa/2.2.x
@@ -347,8 +349,8 @@ Different arguments and steps are required as there are problems with the maven-
 
         4. Update the [Nightly Downloads](http://openjpa.apache.org/downloads-nightly.html) wiki page:
 
-        	* Update the binary and source links in the "Pre-packaged binaries for SNAPSHOT releases" section
-        	to the new SNAPSHOT.
+            * Update the binary and source links in the "Pre-packaged binaries for SNAPSHOT releases" section
+            to the new SNAPSHOT.
 
     3. Push all the Wiki page changes to the openjpa.apache.org site using CMS "Publish Site" function.
 
@@ -419,5 +421,3 @@ signatures -
 
     gpg: Good signature from ...
     gpg: Signature made ...
-
-
