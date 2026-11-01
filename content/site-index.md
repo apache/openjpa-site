@@ -300,7 +300,7 @@ Title: Site Index
  <svg class="size-1" alt="" loading="lazy" title="JPA 2.0 Presentations"><use href="#file-earmark-text-fill"/></svg>
  <A href="jpa-20-presentations.html">JPA 2.0 Presentations</A>
  <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Presentations  We'll document the major new features of the JPA 2.0 specification and how they are being implemented in OpenJPA on this page.   Bean Validation Integration in JPA 2.0 JPA 2.0 Bean Validation 20090717.pdf (20090717) by Jeremy Bauer and Donald ... </DIV>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Presentations  We'll document the major new features of the JPA 2.0 specification and how they are being implemented in OpenJPA on this page.   Bean Validation Integration in JPA 2.0 JPA_2.0_Bean_Validation_20090717.pdf (20090717) by Jeremy Bauer and Donald ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="JPA 2.0 Roadmap"><use href="#file-earmark-text-fill"/></svg>
  <A href="jpa-20-roadmap.html">JPA 2.0 Roadmap</A>
