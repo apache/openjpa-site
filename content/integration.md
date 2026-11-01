@@ -17,36 +17,21 @@ See [Build and Runtime Dependencies](build-and-runtime-dependencies.html)
 
 ## Integration with Apache TomEE
 
-[Apache TomEE](http://tomee.apache.org/) is a distribution of Tomcat bundled with OpenJPA and the other necessary components to make it a Java EE 6 compliant Web Profile implementation.  Apache TomEE 1.0.0 and later include OpenJPA 2.2.x.  TomEE works in [Eclipse using the Tomcat adapter](http://www.youtube.com/watch?v=Lr8pxEACVRI) and you can simply deploy a web archive that contains a persistence unit without the need to include OpenJPA in the webapp.  Unlike putting OpenJPA in Tomcat, TomEE supports full container managed EntityManagers and JTA persistence units.
-
-<a name="Integration-IntegratingwithApacheGeronimo:"></a>
-
-## Integrating with Apache Geronimo:
-
-[Apache Geronimo](http://geronimo.apache.org/)
- V2.0.2 through 2.1.3 include OpenJPA 1.0.x and you can simply deploy an
-enterprise archive, web archive, or EJB-JAR that contains a persistence
-unit.
-Apache Geronimo V2.1.4 includes OpenJPA 1.2.x and you can simply deploy an
-enterprise archive, web archive, or EJB-JAR that contains a persistence
-unit.
+[Apache TomEE](http://tomee.apache.org/) is a distribution of Tomcat bundled with OpenJPA and the other necessary components to make it a Java EE 6-8 and Jakarta EE 9+ compliant Web Profile implementation.  Apache TomEE 1.0.0 and later include OpenJPA 2.2.x.  TomEE works in [Eclipse using the Tomcat adapter](http://www.youtube.com/watch?v=Lr8pxEACVRI) and you can simply deploy a web archive that contains a persistence unit without the need to include OpenJPA in the webapp.  Unlike putting OpenJPA in Tomcat, TomEE supports full container managed EntityManagers and JTA persistence units.
 
 <a name="Integration-IntegratingwithGlassFish:"></a>
 
 ## Integrating with GlassFish:
 
 Since [GlassFish](http://glassfish.dev.java.net)
- implements the Java Persistence API 1.0 SPI, it is very easy to use
-OpenJPA in Glassfish. See [Sahoo's blog](http://weblogs.java.net/blog/ss141213/archive/2006/07/using_openjpa_a.html)
- for further details.
+ implements the Jakarta Persistence API, you must [add openjpa-VERSION.jar and xbean-asm9-shaded-VERSION.jar to its libs](https://glassfish.org/docs/latest/reference-manual.html#add-library) and define explicitly in persistence.xml file that your provider is org.apache.openjpa.persistence.PersistenceProviderImpl.
 
 <a name="Integration-IntegratingwithSunJavaSystemApplicationServer9.x:"></a>
 
 ## Integrating with Sun Java System Application Server 9.x:
 
 Since Sun Java System Application Server is based on code from the [GlassFish project](http://glassfish.dev.java.net)
-, the instructions to use OpenJPA in GlassFish and Sun Java System
-Application Server remain the same. 
+, the instructions to use OpenJPA in GlassFish and Sun Java System Application Server remain the same. 
 
 <a name="Integration-IntegratingwithIBMWebSphereApplicationServer:"></a>
 

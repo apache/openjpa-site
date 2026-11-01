@@ -12,15 +12,19 @@ Apache OpenJPA is a Java persistence project at [The Apache Software Foundation]
  into any Java EE compliant container and many other lightweight
 frameworks, such as Tomcat and Spring.
 
-The [4.1.x releases](downloads.html) is an implementation of the Jakarta Persistence API 3.1 specification is the most current production ready release.
+The [4.2.x releases](downloads.html) is an implementation of the
+ [Jakarta Persistence API 3.2](https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2.html) specification is the most current production ready release.
 
-The [4.0.x releases](downloads.html) is an implementation of the Jakarta Persistence API 3.0 specification.
+The [4.1.x releases](downloads.html) is an implementation of the
+ [Jakarta Persistence API 3.1](https://jakarta.ee/specifications/persistence/3.1/jakarta-persistence-spec-3.1.html) specification.
+
+The [4.0.x releases](downloads.html) is an implementation of the
+ [Jakarta Persistence API 3.0](https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html) specification.
 
 The [3.x releases](downloads.html) targetting the [JSR-338 Java Persistence 2.2](http://jcp.org/en/jsr/detail?id=338).
 It is fully backward compatible compatible to our JPA 2.1, 2.0 and 1.0 releases.
 
-The [2.x releases](downloads.html)
- (2.4.3 is the latest) are a production ready, compliant implementation of
+The [2.x releases](downloads.html) are a production ready, compliant implementation of
 the [JSR-317 Java Persistence 2.0](http://jcp.org/en/jsr/detail?id=317)
  specification, which is backwards compatible to the JPA 1.0 specification
 and passes the Sun JPA 2.0 Technology Compatibility Kit.

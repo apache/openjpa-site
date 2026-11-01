@@ -37,11 +37,14 @@ If you would like to become a committer, please see the [Get Involved](get-invol
 <tr><td class="border"> Kevin Sutter</td><td class="border"> IBM Corporation </td><td class="border"> <svg class="size-1 text-success" alt="" loading="lazy"><use href="#check-circle-fill"/></svg> </td></tr>
 <tr><td class="border"> Marc Prud'hommeaux </td><td class="border"> </td><td class="border"> </td></tr>
 <tr><td class="border"> Mark Struberg </td><td class="border"> </td><td class="border"> <svg class="size-1 text-success" alt="" loading="lazy"><use href="#check-circle-fill"/></svg> </td></tr>
+<tr><td class="border"> Maxim Solodovnik </td><td class="border"> </td><td class="border"> <svg class="size-1 text-success" alt="" loading="lazy"><use href="#check-circle-fill"/></svg> </td></tr>
 <tr><td class="border"> Michael Dick</td><td class="border"></td><td class="border"> <svg class="size-1 text-success" alt="" loading="lazy"><use href="#check-circle-fill"/></svg> </td></tr>
 <tr><td class="border"> Milosz Tylenda </td><td class="border"></td><td class="border"> <svg class="size-1 text-success" alt="" loading="lazy"><use href="#check-circle-fill"/></svg> </td></tr>
 <tr><td class="border"> Patrick Linkskey</td><td class="border"></td><td class="border"> <svg class="size-1 text-success" alt="" loading="lazy"><use href="#check-circle-fill"/></svg> </td></tr>
+<tr><td class="border"> Paulo Cristovão de Araújo Silva Filho </td><td class="border"> </td><td class="border"> <svg class="size-1 text-success" alt="" loading="lazy"><use href="#check-circle-fill"/></svg> </td></tr>
 <tr><td class="border"> Pinaki Poddar</td><td class="border"></td><td class="border"> <svg class="size-1 text-success" alt="" loading="lazy"><use href="#check-circle-fill"/></svg> </td></tr>
 <tr><td class="border"> Ravi Palacherla </td><td class="border"> Oracle Corporation </td><td class="border"> </td></tr>
+<tr><td class="border"> Richard Zowalla </td><td class="border"> </td><td class="border"> <svg class="size-1 text-success" alt="" loading="lazy"><use href="#check-circle-fill"/></svg> </td></tr>
 <tr><td class="border"> Rick Curtis</td><td class="border">IBM Corporation</td><td class="border"> <svg class="size-1 text-success" alt="" loading="lazy"><use href="#check-circle-fill"/></svg> </td></tr>
 <tr><td class="border"> Srinivasa Segu </td><td class="border"> Oracle Corporation </td><td class="border"> </td></tr>
 <tr><td class="border"> Stephen Kim </td><td class="border"> </td><td class="border"> </td></tr>
