@@ -16,7 +16,7 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
  page. For information on building OpenJPA from source, see the [Building](building.html)
  page.
 
-## Official JPA 4.1 Releases
+## Official OpenJPA 4.1 Releases
 
 ### 4.1.x Releases
 
@@ -59,7 +59,7 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
 </table>
 
 
-## Official JPA 4.0 Releases
+## Official OpenJPA 4.0 Releases
 
 ### 4.0.x Releases
 
@@ -99,7 +99,7 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
     <td class="border"> </td><td class="border"> </td>
 </table>
 
-## Official JPA 3.2 Releases
+## Official OpenJPA 3.x Releases
 
 These releases raised the minimum Java version to Java 8 and implement most of
 [JSR-338 Java Persistence 2.2](httpss://jcp.org/en/jsr/detail?id=338) features.
@@ -170,7 +170,7 @@ These releases raised the minimum Java version to Java 8 and implement most of
     <td class="border"> </td><td class="border"> </td>
 </table>
 
-## Official JPA 2.0 Releases
+## Official OpenJPA 2.x Releases
 
 These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/jsr/detail?id=317)
  specification and pass the JPA 2.0 TCK.
@@ -392,7 +392,7 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
 </table>
 
 
-## Official JPA 1.0 Releases
+## Official OpenJPA 1.x Releases
 
 These releases implement the [JSR-220 Java Persistence 1.0](https://jcp.org/en/jsr/detail?id=220)
  specification and pass the Sun JPA 1.0b Technology Compatibility Kit.
@@ -543,12 +543,12 @@ OpenJPA jar is self-describing and after downloading a release, you can find out
 
 which will print the version and revision numbers, for example:
 
-    OpenJPA 2.1.0
-    version id: openjpa-2.1.0-r422266:1071315
-    Apache svn revision: 422266:1071315
+    OpenJPA 4.2.0
+    version id: openjpa-4.2.0-rfe379a8
+    Apache git revision: fe379a8
 
-which designates that the 2.1.0 release includes Apache SVN revision
-*1071315* as the latest.
+which designates that the 4.2.0 release includes Apache git revision
+*fe379a8* as the latest.
 
 ## Verifying Releases
 
