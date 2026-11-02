@@ -1161,7 +1161,7 @@ the identifier of an entity.
 * Significant improvements to OpenJPA's subquery processing.
 * OpenJPA now includes the ability to use a pluggable encryption provider.
 This provider can be used to support encrypted database passwords in the
-persistence.xml. See the [Encryption Provider](http://openjpa.apache.org/builds/latest/docs/manual/ref_guide_encryption.html)
+persistence.xml. See the [Encryption Provider](https://openjpa.apache.org/builds/latest/docs/manual/ref_guide_encryption.html)
  chapter in the documentation for more details.
 
 

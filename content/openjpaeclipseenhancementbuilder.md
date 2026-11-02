@@ -20,7 +20,7 @@ the OpenJPA JARs from the Eclipse plug-in into a lib directory of the Java
 project, and add them as Referenced Libraries. (In a normal existing
 project you'll already have them via Maven or whatever so you'll not use /
 want to deactivate this; for new or test projects this is convenient.)
-    1. choose enhancement options, if you need any. These are the [same options as the CLI PCEnhancer supports](http://openjpa.apache.org/builds/latest/docs/manual/ref_guide_pc_enhance.html#ref_guide_pc_enhance_build)
+    1. choose enhancement options, if you need any. These are the [same options as the CLI PCEnhancer supports](https://openjpa.apache.org/builds/latest/docs/manual/ref_guide_pc_enhance.html#ref_guide_pc_enhance_build)
 .
 1. menu Project > Properties (or right-click on Project > Properties) should
 now show the "OpenJPA PC-Enhancer Project Builder" added after the usual
@@ -65,7 +65,7 @@ eclipse.ini (each option on a separate line) for the enhancement builder
 * In order to be sure that you're actually using build time enhancement,
 and not enhancing dynamically at run-time, you may wish to set the
 openjpa.RuntimeUnenhancedClasses=unsupported property in your
-persistence.xml or wherever you bootstrap OpenJPA (see [Omitting the OpenJPA enhancer](http://openjpa.apache.org/builds/latest/docs/manual/ref_guide_pc_enhance.html#ref_guide_pc_enhance_unenhanced_types)
+persistence.xml or wherever you bootstrap OpenJPA (see [Omitting the OpenJPA enhancer](https://openjpa.apache.org/builds/latest/docs/manual/ref_guide_pc_enhance.html#ref_guide_pc_enhance_unenhanced_types)
 )
 
 

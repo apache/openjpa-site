@@ -6,7 +6,7 @@ Title: Bean Validation Primer
 
 A new feature defined by the JPA 2.0 specification is the ability to
 seamlessly integrate with a [JSR-303](http://jcp.org/en/jsr/detail?id=303)
- bean validation provider.   With minimal effort, [OpenJPA 2.0](http://openjpa.apache.org/openjpa-200.html)
+ bean validation provider.   With minimal effort, [OpenJPA 2.0](https://openjpa.apache.org/openjpa-200.html)
  can be coupled with a [JSR-303](http://jcp.org/en/jsr/detail?id=303)
  validation provider to provide runtime data validation.  By combining
 these two technologies, you get a standardized persistence solution with
@@ -641,8 +641,8 @@ as simple as modifying the root element of your persistence.xml to:
 While the JPA 2.0 specification is backward compatible
 with JPA 1.0, there are some OpenJPA specific extensions that are not.	By
 switching to a 2.0 persistence.xml, in some cases you may need to specify
-compatibility flags in order to get OpenJPA 1.0 behavior.  See the [migration considerations](http://openjpa.apache.org/builds/latest/docs/manual/migration_considerations.html)
-section of the [OpenJPA 2.x manual](http://openjpa.apache.org/builds/latest/docs/manual/main.html)
+compatibility flags in order to get OpenJPA 1.0 behavior.  See the [migration considerations](https://openjpa.apache.org/builds/latest/docs/manual/migration_considerations.html)
+section of the [OpenJPA 2.x manual](https://openjpa.apache.org/builds/latest/docs/manual/main.html)
 for additional information.
 </tr></table>
 
@@ -854,7 +854,7 @@ be a very stable environment.  Here are the libraries you'll need.
 
 * Apache OpenJPA 2.0 provides an "all" library which makes it very simple
 to get OpenJPA 2.0 and all its dependencies in a single jar.  Download and
-extract the [OpenJPA 2.0 binary package](http://www.apache.org/dyn/closer.cgi/openjpa/2.0.0/apache-openjpa-2.0.0-binary.zip)
+extract the [OpenJPA 2.0 binary package](https://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-binary.zip)
  and reference the openjpa-all-2.0.0.jar on your build and runtime
 classpath.
 
@@ -868,7 +868,7 @@ spec API directly from the maven repository.
     * [Apache Bean Validation JSR-303](https://repository.apache.org/content/groups/public/org/apache/bval/bval-jsr303/0.1-incubating/bval-jsr303-0.1-incubating.jar)
     * [Apache Geronimo Bean Validation Spec API](https://repository.apache.org/content/groups/public/org/apache/geronimo/specs/geronimo-validation_1.0_spec/1.1/geronimo-validation_1.0_spec-1.1.jar )
     * [Apache Commons Bean Utils](http://commons.apache.org/beanutils/download_beanutils.cgi) - Extract the distribution and include commons-beanutils-1.8.3.jar on your runtime classpath.
-    * [Apache Commons Lang](http://archive.apache.org/dist/commons/lang/binaries/commons-lang-2.4-bin.zip) - Extract the distribution and **include commons-lang-2.4.jar in your
+    * [Apache Commons Lang](https://archive.apache.org/dist/commons/lang/binaries/commons-lang-2.4-bin.zip) - Extract the distribution and **include commons-lang-2.4.jar in your
 classpath before openjpa-all-2.0.0.jar**.
 
 <a name="BeanValidationPrimer-MavenConfiguration"></a>
@@ -1002,5 +1002,5 @@ repository in order to get the project to build.
 
    * [JSR-317 - JPA 2.0 Specification](http://jcp.org/en/jsr/detail?id=317)
    * [JSR-303 - Bean Validation Specification](http://jcp.org/en/jsr/detail?id=303)
-   * [OpenJPA 2.0 Release](http://openjpa.apache.org/openjpa-200.html)
+   * [OpenJPA 2.0 Release](https://openjpa.apache.org/openjpa-200.html)
    * [Apache Bean Validation Home](http://projects.apache.org/projects/bean_validation__incubating_.html)

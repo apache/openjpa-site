@@ -56,7 +56,7 @@ implementation:
 * geronimo-jta_1.1_spec-1.1.jar
 
 The following artifact under lib/ is optional, as you should include the
-JDBC driver artifacts required by your database provider and [supported](http://openjpa.apache.org/builds/1.2.2/apache-openjpa-1.2.2/docs/manual/supported_databases.html#d0e32625)
+JDBC driver artifacts required by your database provider and [supported](https://openjpa.apache.org/builds/1.2.2/apache-openjpa-1.2.2/docs/manual/supported_databases.html#d0e32625)
  by OpenJPA:
 
 * derby-10.2.2.0.jar
@@ -86,7 +86,7 @@ implementation:
 * geronimo-jta_1.1_spec-1.1.1.jar
 
 The following artifact under lib/ is optional, as you should include the
-JDBC driver artifacts required by your database provider and [supported](http://openjpa.apache.org/builds/1.2.2/apache-openjpa-1.2.2/docs/manual/supported_databases.html#d0e32625)
+JDBC driver artifacts required by your database provider and [supported](https://openjpa.apache.org/builds/1.2.2/apache-openjpa-1.2.2/docs/manual/supported_databases.html#d0e32625)
  by OpenJPA:
 
 * derby-10.2.2.0.jar
@@ -132,7 +132,7 @@ implementation:
 * geronimo-jta_1.1_spec-1.1.1.jar
 
 The following artifact under lib/ is optional, as you should include the
-JDBC driver artifacts required by your database provider and [supported](http://openjpa.apache.org/builds/2.0.1/apache-openjpa-2.0.1/docs/manual/dbsupport.html#d0e36152)
+JDBC driver artifacts required by your database provider and [supported](https://openjpa.apache.org/builds/2.0.1/apache-openjpa-2.0.1/docs/manual/dbsupport.html#d0e36152)
  by OpenJPA:
 
 * derby-10.5.3.0_1.jar
@@ -178,7 +178,7 @@ implementation:
 * geronimo-jta_1.1_spec-1.1.1.jar
 
 The following artifact under lib/ is optional, as you should include the
-JDBC driver artifacts required by your database provider and [supported](http://openjpa.apache.org/builds/2.1.1/apache-openjpa/docs/dbsupport.html)
+JDBC driver artifacts required by your database provider and [supported](https://openjpa.apache.org/builds/2.1.1/apache-openjpa/docs/dbsupport.html)
  by OpenJPA:
 
 * derby-10.5.3.0_1.jar

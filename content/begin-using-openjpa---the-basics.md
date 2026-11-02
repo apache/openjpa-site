@@ -29,7 +29,7 @@ the IDE and Microsoft Windows as the operating system of choice.&nbsp;
 
 ## Prerequisites
 
-**Geronimo V2.2:** You can get it [here](http://www.apache.org/dyn/closer.cgi/geronimo/2.2/geronimo-tomcat6-javaee5-2.2-bin.zip)
+**Geronimo V2.2:** You can get it [here](https://archive.apache.org/dist/geronimo/2.2/geronimo-tomcat6-javaee5-2.2-bin.zip)
 . Download this file and unzip it to a permanent location. There is no
 installer. The server will run from the command line.
 
@@ -44,7 +44,7 @@ Eclipse 3.2 or later.
 
 **Apache OpenJPA library:** For the purpose of implementing this tutorial you
 can select
-OpenJPA v1.2 or greater. You can download [Apache OpenJPA](http://openjpa.apache.org/downloads.html)
+OpenJPA v1.2 or greater. You can download [Apache OpenJPA](https://openjpa.apache.org/downloads.html)
  from the Apache site. Note that the Milestone (openjpa-all-2.0.0-M3.jar as
 of this writing) is an early release of OpenJPA 2.0 and may have some
 instabilities. No issues have been noted for the usage in this tutorial.
@@ -394,7 +394,7 @@ In this example, the property annotations (
 <font color="#646464">@Id</font>) are placed on the getter methods. They can
 alternatively be placed on the property declarations. For more information
 on these annotations and to see what other annotations are in OpenJPA, see
-the <a href="http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_meta.html">Apache OpenJPA 2.0 User's Guide: Chapter 5</a>
+the <a href="https://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_meta.html">Apache OpenJPA 2.0 User's Guide: Chapter 5</a>
 <ul>
 <li> The annotated class and property declarations are all that are required.
 <li> The <font color="#646464">@Id</font> annotation is needed as the unique
@@ -454,7 +454,7 @@ convention must be observed.
     driver for Derby. This must be available via the classpath. In this
     tutorial, the driver is built into Geronimo so no extra actions are needed.
 
-* A complete explanation of the persistence.xml is in the [Apache OpenJPAV2.0 user's Guide: Chapter 6](http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_persistence.html)
+* A complete explanation of the persistence.xml is in the [Apache OpenJPAV2.0 user's Guide: Chapter 6](https://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_persistence.html)
 
 * Create the Entity Manager. In the provided code, the EntityManager is a
   property of the InventoryEntityBroker class. The Entity Manager controls
@@ -478,8 +478,8 @@ convention must be observed.
               ...
 
   * The EntityManagerFactory and EntityManager full descriptions are in the following OpenJPA documentation:
-    * EntityManagerFactory: http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_emfactory.html
-    * EntityManager: http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_em.html
+    * EntityManagerFactory: https://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_emfactory.html
+    * EntityManager: https://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_em.html
 
 * DB interface class. In this example, the InventoryEntityBroker class contains all the OpenJPA database interaction code.
   This is not required but it is a good idea for keeping the functionality componentized. For example, if you want
@@ -609,7 +609,7 @@ relationships. It is important to put as much thought into how these
 objects relate to each other as you would if you were designing the
 database tables because you are designing the database tables.
 You can see more about the relationship annotations at the Apache OpenJPA
-site. The&nbsp; <a href="http://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_meta_field.html">documentation is here</a>
+site. The&nbsp; <a href="https://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_meta_field.html">documentation is here</a>
 .
 </tr></table>
 
@@ -654,11 +654,11 @@ tables so that they can recreated with the new relationship fields.
     * **Geronimo**
         * [Geronimo Homepage](http://geronimo.apache.org/)
         * [Gernimo V2.2 Server Documentation](http://cwiki.apache.org/GMOxDOC22/documentation.html)
-        * [Geronimo V2.2 Server download](http://www.apache.org/dyn/closer.cgi/geronimo/2.2/geronimo-tomcat6-javaee5-2.2-bin.zip)
+        * [Geronimo V2.2 Server download](https://archive.apache.org/dist/geronimo/2.2/geronimo-tomcat6-javaee5-2.2-bin.zip)
     * **JPA**
-        * [Apache OpenJPA home page](http://openjpa.apache.org/)
-        * [Apache OpenJPA download](http://openjpa.apache.org/downloads.html)
-        * [Apache OpenJPA documentation](http://openjpa.apache.org/documentation.html)
+        * [Apache OpenJPA home page](https://openjpa.apache.org/)
+        * [Apache OpenJPA download](https://openjpa.apache.org/downloads.html)
+        * [Apache OpenJPA documentation](https://openjpa.apache.org/documentation.html)
 &nbsp;&nbsp;
 
 * **Annotations**

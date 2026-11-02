@@ -92,12 +92,12 @@ Title: Site Index
  <svg class="size-1" alt="" loading="lazy" title="Banner"><use href="#file-earmark-text-fill"/></svg>
  <A href="banner.html">Banner</A>
  <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">div id=&quot;headerbackground&quot;&gt; 	  &lt;div id=&quot;openjpalogo&quot;&gt;         &lt;a style=&quot;float:left; width:280px;display:block;textindent:5000px;textdecoration:none;lineheight:60px; margintop:10px; marginleft:100px;&quot; href=&quot;http://openjpa.apache.org&quot;&gt;OpenJPA&lt;/a&gt; 	  &lt;/div&gt;      &lt;div id ... </DIV>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">div id=&quot;headerbackground&quot;&gt; 	  &lt;div id=&quot;openjpalogo&quot;&gt;         &lt;a style=&quot;float:left; width:280px;display:block;textindent:5000px;textdecoration:none;lineheight:60px; margintop:10px; marginleft:100px;&quot; href=&quot;https://openjpa.apache.org&quot;&gt;OpenJPA&lt;/a&gt; 	  &lt;/div&gt;      &lt;div id ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="Bean Validation Primer"><use href="#file-earmark-text-fill"/></svg>
  <A href="bean-validation-primer.html">Bean Validation Primer</A>
  <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Bean Validation Primer  A new feature defined by the JPA 2.0 specification is the ability to seamlessly integrate with a JSR303 http://jcp.org/en/jsr/detail?id=303 bean validation provider.  With minimal effort, OpenJPA 2.0 http://openjpa.apache.org ... </DIV>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Bean Validation Primer  A new feature defined by the JPA 2.0 specification is the ability to seamlessly integrate with a JSR303 http://jcp.org/en/jsr/detail?id=303 bean validation provider.  With minimal effort, OpenJPA 2.0 https://openjpa.apache.org ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="Begin using OpenJPA - The Basics"><use href="#file-earmark-text-fill"/></svg>
  <A href="begin-using-openjpa-the-basics.html">Begin using OpenJPA - The Basics</A>
@@ -173,7 +173,7 @@ Title: Site Index
  <svg class="size-1" alt="" loading="lazy" title="Documentation"><use href="#file-earmark-text-fill"/></svg>
  <A href="documentation.html">Documentation</A>
  <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Documentation    OpenJPA Documentation  The online OpenJPA documentation can be found here.   Latest (2.1.0SNAPSHOT)    Version  HTML Manual  HTML Manual (Single Page)  PDF Manual  Javadocs    Nightly build (trunk)  manual http://openjpa.apache.org/builds/latest ... </DIV>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Documentation    OpenJPA Documentation  The online OpenJPA documentation can be found here.   Latest (2.1.0SNAPSHOT)    Version  HTML Manual  HTML Manual (Single Page)  PDF Manual  Javadocs    Nightly build (trunk)  manual https://openjpa.apache.org/builds/latest ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="Documentation Top Link"><use href="#file-earmark-text-fill"/></svg>
  <A href="documentation.html">Documentation Top Link</A>
@@ -315,7 +315,7 @@ Title: Site Index
  <svg class="size-1" alt="" loading="lazy" title="JPA 2.0 Test Coverage"><use href="#file-earmark-text-fill"/></svg>
  <A href="jpa-20-test-coverage.html">JPA 2.0 Test Coverage</A>
  <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Test Coverage  Starting with OpenJPA 2.0.0, we have split the supported databases  http://openjpa.apache.org/builds/latest/docs/manual/supporteddatabases.html into verified and compatible categories. The automated database testing performed by IBM and regular testing performed ... </DIV>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Test Coverage  Starting with OpenJPA 2.0.0, we have split the supported databases  https://openjpa.apache.org/builds/latest/docs/manual/supporteddatabases.html into verified and compatible categories. The automated database testing performed by IBM and regular testing performed ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="JPA M2 Demo"><use href="#file-earmark-text-fill"/></svg>
  <A href="jpa-m2-demo.html">JPA M2 Demo</A>
@@ -512,7 +512,7 @@ Title: Site Index
  <svg class="size-1" alt="" loading="lazy" title="Performance guide"><use href="#file-earmark-text-fill"/></svg>
  <A href="performance-guide.html">Performance guide</A>
  <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Performance Guide    OpenJPA Performance Guide  OpenJPA has numerous configuration properties that apply to many different use cases. The complete list of properties can be found in the most current user manual http://openjpa.apache.org/builds/latest/docs ... </DIV>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Performance Guide    OpenJPA Performance Guide  OpenJPA has numerous configuration properties that apply to many different use cases. The complete list of properties can be found in the most current user manual https://openjpa.apache.org/builds/latest/docs ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="Powered By"><use href="#file-earmark-text-fill"/></svg>
  <A href="powered-by.html">Powered By</A>

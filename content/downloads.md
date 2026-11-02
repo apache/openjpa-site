@@ -23,13 +23,13 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
 <table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 4.1.1 Binary </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.1.1/apache-openjpa-4.1.1-binary.zip">apache-openjpa-4.1.1-binary.zip</a></td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.1/apache-openjpa-4.1.1-binary.zip">apache-openjpa-4.1.1-binary.zip</a></td>
     <td class="border"> May 15 2025 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.1/apache-openjpa-4.1.1-binary.zip.sha512">sha512</a></td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.1/apache-openjpa-4.1.1-binary.zip.asc">PGP</a></td>
 </tr>
 <tr><td class="border"> OpenJPA 4.1.1 Source </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.1.1/openjpa-parent-4.1.1-source-release.zip">openjpa-parent-4.1.1-source-release.zip</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.1/openjpa-parent-4.1.1-source-release.zip">openjpa-parent-4.1.1-source-release.zip</a>
     <td class="border"> May 15 2025 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.1/openjpa-parent-4.1.1-source-release.zip.sha512">sha512</a>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.1/openjpa-parent-4.1.1-source-release.zip.asc">PGP</a>
@@ -40,13 +40,13 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
     <td class="border"> </td><td class="border"> </td>
 </tr>
 <tr><td class="border"> OpenJPA 4.1.0 Binary </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.1.0/apache-openjpa-4.1.0-binary.zip">apache-openjpa-4.1.0-binary.zip</a></td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.0/apache-openjpa-4.1.0-binary.zip">apache-openjpa-4.1.0-binary.zip</a></td>
     <td class="border"> Mar 24 2025 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.0/apache-openjpa-4.1.0-binary.zip.sha512">sha512</a></td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.0/apache-openjpa-4.1.0-binary.zip.asc">PGP</a></td>
 </tr>
 <tr><td class="border"> OpenJPA 4.1.0 Source </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.1.0/openjpa-parent-4.1.0-source-release.zip">openjpa-parent-4.1.0-source-release.zip</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.0/openjpa-parent-4.1.0-source-release.zip">openjpa-parent-4.1.0-source-release.zip</a>
     <td class="border"> Mar 24 2025 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.0/openjpa-parent-4.1.0-source-release.zip.sha512">sha512</a>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.1.0/openjpa-parent-4.1.0-source-release.zip.asc">PGP</a>
@@ -66,13 +66,13 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
 <table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 4.0.1 Binary </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.0.1/apache-openjpa-4.0.1-binary.zip">apache-openjpa-4.0.1-binary.zip</a></td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.1/apache-openjpa-4.0.1-binary.zip">apache-openjpa-4.0.1-binary.zip</a></td>
     <td class="border"> Sep 23 2024 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.1/apache-openjpa-4.0.1-binary.zip.sha512">sha512</a></td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.1/apache-openjpa-4.0.1-binary.zip.asc">PGP</a></td>
 </tr>
 <tr><td class="border"> OpenJPA 4.0.1 Source </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.0.1/openjpa-parent-4.0.1-source-release.zip">openjpa-parent-4.0.1-source-release.zip</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.1/openjpa-parent-4.0.1-source-release.zip">openjpa-parent-4.0.1-source-release.zip</a>
     <td class="border"> Sep 23 2024 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.1/openjpa-parent-4.0.1-source-release.zip.sha512">sha512</a>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.1/openjpa-parent-4.0.1-source-release.zip.asc">PGP</a>
@@ -82,13 +82,13 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
     <td class="border"> Sep 23 2024 </td>
     <td class="border"> </td><td class="border"> </td>
 <tr><td class="border"> OpenJPA 4.0.0 Binary </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.0.0/apache-openjpa-4.0.0-binary.zip">apache-openjpa-4.0.0-binary.zip</a></td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.0/apache-openjpa-4.0.0-binary.zip">apache-openjpa-4.0.0-binary.zip</a></td>
     <td class="border"> Feb 02 2024 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.0/apache-openjpa-4.0.0-binary.zip.sha512">sha512</a></td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.0/apache-openjpa-4.0.0-binary.zip.asc">PGP</a></td>
 </tr>
 <tr><td class="border"> OpenJPA 4.0.0 Source </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.0.0/openjpa-parent-4.0.0-source-release.zip">openjpa-parent-4.0.0-source-release.zip</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.0/openjpa-parent-4.0.0-source-release.zip">openjpa-parent-4.0.0-source-release.zip</a>
     <td class="border"> Feb 02 2024 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.0/openjpa-parent-4.0.0-source-release.zip.sha512">sha512</a>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/4.0.0/openjpa-parent-4.0.0-source-release.zip.asc">PGP</a>
@@ -97,6 +97,7 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
     <td class="border"> <a href="https://openjpa.apache.org/builds/4.0.0/apache-openjpa/RELEASE-NOTES.html">RELEASE-NOTES.html</a>
     <td class="border"> Feb 02 2024 </td>
     <td class="border"> </td><td class="border"> </td>
+</tr>
 </table>
 
 ## Official OpenJPA 3.x Releases
@@ -109,21 +110,22 @@ These releases raised the minimum Java version to Java 8 and implement most of
 <table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 3.2.2 Binary </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/3.2.2/apache-openjpa-3.2.2-binary.zip">apache-openjpa-3.2.2-binary.zip</a></td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.2.2/apache-openjpa-3.2.2-binary.zip">apache-openjpa-3.2.2-binary.zip</a></td>
     <td class="border"> 16 Mar 2022 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.2.2/apache-openjpa-3.2.2-binary.zip.sha512">sha512</a></td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.2.2/apache-openjpa-3.2.2-binary.zip.asc">PGP</a></td>
 </tr>
 <tr><td class="border"> OpenJPA 3.2.2 Source </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/3.2.2/openjpa-parent-3.2.2-source-release.zip">openjpa-parent-3.2.2-source-release.zip</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.2.2/apache-openjpa-3.2.2-source.zip">openjpa-parent-3.2.2-source-release.zip</a>
     <td class="border"> 16 Mar 2022 </td>
-    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.2.2/openjpa-parent-3.2.2-source-release.zip.sha512">sha512</a>
-    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.2.2/openjpa-parent-3.2.2-source-release.zip.asc">PGP</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.2.2/apache-openjpa-3.2.2-source.zip.sha512">sha512</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.2.2/apache-openjpa-3.2.2-source.zip.asc">PGP</a>
 </tr>
 <tr><td class="border"> OpenJPA 3.2.2 Release Notes </td>
     <td class="border"> <a href="https://openjpa.apache.org/builds/3.2.2/apache-openjpa/RELEASE-NOTES.html">RELEASE-NOTES.html</a>
     <td class="border"> 16 Mar 2022 </td>
     <td class="border"> </td><td class="border"> </td>
+</tr>
 </table>
 
 ### 3.1.x Releases
@@ -131,13 +133,13 @@ These releases raised the minimum Java version to Java 8 and implement most of
 <table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 3.1.2 Binary </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/3.1.2/apache-openjpa-3.1.2-binary.zip">apache-openjpa-3.1.2-binary.zip</a></td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.1.2/apache-openjpa-3.1.2-binary.zip">apache-openjpa-3.1.2-binary.zip</a></td>
     <td class="border"> 07 Jul 2020 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.1.2/apache-openjpa-3.1.2-binary.zip.sha512">sha512</a></td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.1.2/apache-openjpa-3.1.2-binary.zip.asc">PGP</a></td>
 </tr>
 <tr><td class="border"> OpenJPA 3.1.2 Source </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/3.1.2/openjpa-parent-3.1.2-source-release.zip">openjpa-parent-3.1.2-source-release.zip</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.1.2/openjpa-parent-3.1.2-source-release.zip">openjpa-parent-3.1.2-source-release.zip</a>
     <td class="border"> 07 Jul 2020 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.1.2/openjpa-parent-3.1.2-source-release.zip.sha512">sha512</a>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/3.1.2/openjpa-parent-3.1.2-source-release.zip.asc">PGP</a>
@@ -146,6 +148,7 @@ These releases raised the minimum Java version to Java 8 and implement most of
     <td class="border"> <a href="https://openjpa.apache.org/openjpa-3.1.x.html#changes-in-openjpa-312">RELEASE-NOTES.html</a>
     <td class="border"> 07 Jul 2020 </td>
     <td class="border"> </td><td class="border"> </td>
+</tr>
 </table>
 
 ### 3.0.x Releases
@@ -168,6 +171,7 @@ These releases raised the minimum Java version to Java 8 and implement most of
     <td class="border"> <a href="https://openjpa.apache.org/openjpa-3.0.x.html#changes-in-openjpa-300">RELEASE-NOTES.html</a>
     <td class="border"> 12 Jun 2018 </td>
     <td class="border"> </td><td class="border"> </td>
+</tr>
 </table>
 
 ## Official OpenJPA 2.x Releases
@@ -180,13 +184,13 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
 <table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 2.4.3 Binary </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/2.4.3/apache-openjpa-2.4.3-binary.zip">apache-openjpa-2.4.3-binary.zip</a></td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.4.3/apache-openjpa-2.4.3-binary.zip">apache-openjpa-2.4.3-binary.zip</a></td>
     <td class="border"> 12 Jun 2018 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.4.3/apache-openjpa-2.4.3-binary.zip.sha1">sha1</a></td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.4.3/apache-openjpa-2.4.3-binary.zip.asc">PGP</a></td>
 </tr>
 <tr><td class="border"> OpenJPA 2.4.3 Source </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/2.4.3/openjpa-parent-2.4.3-source-release.zip">openjpa-parent-2.4.3-source-release.zip</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.4.3/openjpa-parent-2.4.3-source-release.zip">openjpa-parent-2.4.3-source-release.zip</a>
     <td class="border"> 12 Jun 2018 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.4.3/openjpa-parent-2.4.3-source-release.zip.sha1">sha1</a>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.4.3/openjpa-parent-2.4.3-source-release.zip.asc">PGP</a>
@@ -260,13 +264,13 @@ These releases implement the [JSR-317 Java Persistence 2.0](https://jcp.org/en/j
 <table class="table table-striped">
 <tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
 <tr><td class="border"> OpenJPA 2.2.2 Binary </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/2.2.2/apache-openjpa-2.2.2-binary.zip">apache-openjpa-2.2.2-binary.zip</a></td>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.2.2/apache-openjpa-2.2.2-binary.zip">apache-openjpa-2.2.2-binary.zip</a></td>
     <td class="border"> 22 April 2013 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.2.2/apache-openjpa-2.2.2-binary.zip.md5">MD5</a></td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.2.2/apache-openjpa-2.2.2-binary.zip.asc">PGP</a></td>
 </tr>
 <tr><td class="border"> OpenJPA 2.2.2 Source </td>
-    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/2.2.2/apache-openjpa-2.2.2-source.zip">apache-openjpa-2.2.2-source.zip</a>
+    <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.2.2/apache-openjpa-2.2.2-source.zip">apache-openjpa-2.2.2-source.zip</a>
     <td class="border"> 22 April 2013 </td>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.2.2/apache-openjpa-2.2.2-source.zip.md5">MD5</a>
     <td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.2.2/apache-openjpa-2.2.2-source.zip.asc">PGP</a>

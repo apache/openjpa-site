@@ -8,9 +8,9 @@ Title: Performance guide
 # OpenJPA Performance Guide
 
 OpenJPA has numerous configuration properties that apply to many different
-use cases. The complete list of properties can be found in the most current [user manual](http://openjpa.apache.org/builds/latest/docs/manual/manual.html#ref_guide_optimization)
+use cases. The complete list of properties can be found in the most current [user manual](https://openjpa.apache.org/builds/latest/docs/manual/manual.html#ref_guide_optimization)
 . The remainder of this guide is going to walk through the properties that
-will generally provide the most performance improvement. 
+will generally provide the most performance improvement.
 
 <a name="Performanceguide-Caching"></a>
 
@@ -28,7 +28,7 @@ will generally provide the most performance improvement.
 
 <a name="Performanceguide-JPA2.0Caching"></a>
 
-### JPA 2.0 Caching 
+### JPA 2.0 Caching
 
 <a name="Performanceguide-UsingMBeanperformancemonitor"></a>
 
@@ -43,7 +43,7 @@ will generally provide the most performance improvement.
 
 <a name="Performanceguide-Enhancement"></a>
 
-## Enhancement 
+## Enhancement
 
 
 
@@ -55,4 +55,4 @@ will generally provide the most performance improvement.
 
 <a name="Performanceguide-"></a>
 
-## 
+##

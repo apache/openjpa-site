@@ -146,7 +146,7 @@ Different arguments and steps are required as there are problems with the maven-
         cd 2.0.1-rc1
 
   8. Perform the release
-    1. This step will create a maven staging repository and site for use in testing and voting. You will be prompted for your repository.apache.org and people.apache.org password several times if you have not added server profiles to your settings.xml.    See [Release Setup](http://openjpa.apache.org/release-setup.html) for more information.
+    1. This step will create a maven staging repository and site for use in testing and voting. You will be prompted for your repository.apache.org and people.apache.org password several times if you have not added server profiles to your settings.xml.    See [Release Setup](https://openjpa.apache.org/release-setup.html) for more information.
 
             $ mvn release:perform -Papache-release -Duser.name=<your-apache-uid>
 
@@ -279,7 +279,7 @@ Different arguments and steps are required as there are problems with the maven-
 
                 $ cd ${RELBUILDS}
                 $ svn add ${RELEASE}
-                $ svn commit -m "Commit ${RELEASE} RELEASE-NOTES, javadoc and manual to http://openjpa.apache.org/builds"
+                $ svn commit -m "Commit ${RELEASE} RELEASE-NOTES, javadoc and manual to https://openjpa.apache.org/builds"
 
         6. Verify that /www/openjpa.apache.org/builds/${RELEASE}/docs/manual is populated correctly by comparing it to a previous release.
 
@@ -325,7 +325,7 @@ Different arguments and steps are required as there are problems with the maven-
 
   12. Update wiki pages
     1. After the distribution and build files have been mirrored out to the external sites (takes about an hour):
-        1. Update the [Documentation](http://openjpa.apache.org/documentation.html) wiki page:
+        1. Update the [Documentation](https://openjpa.apache.org/documentation.html) wiki page:
 
                * Update the new SNAPSHOT manual and javadoc links
                * Add a newly created release entry
@@ -336,18 +336,18 @@ Different arguments and steps are required as there are problems with the maven-
                     to
                       Redirect Permanent /builds/apache-openjpa-2.2.3-SNAPSHOT/docs   http://ci.apache.org/projects/openjpa/2.2.x
 
-        2. If new branch is created, one will need to submit requests to infrastructure team to create or update the buildbot process for the new branch. See [BuildBot Doc Build](http://openjpa.apache.org/buildbot.tips.n.techniques.html) for doc build tips, see the [Jenkins wiki](http://wiki.apache.org/general/Jenkins?action=show&redirect=Hudson) for information on the Jenkins build process.  Also, reference the following JIRAs for learning further about the process.
+        2. If new branch is created, one will need to submit requests to infrastructure team to create or update the buildbot process for the new branch. See [BuildBot Doc Build](https://openjpa.apache.org/buildbot.tips.n.techniques.html) for doc build tips, see the [Jenkins wiki](http://wiki.apache.org/general/Jenkins?action=show&redirect=Hudson) for information on the Jenkins build process.  Also, reference the following JIRAs for learning further about the process.
 
             * Example [doc builds JIRA](https://issues.apache.org/jira/browse/INFRA-7738)
             * Example [Jenkins build JIRA](https://issues.apache.org/jira/browse/INFRA-7739)
 
-        3. Update the [Downloads](http://openjpa.apache.org/downloads.html) wiki page:
+        3. Update the [Downloads](https://openjpa.apache.org/downloads.html) wiki page:
 
             * Add the newly ${RELEASE} binary and source links to the dynamic distributed servers
             * Add the newly ${RELEASE} RELEASE-NOTES.html link.
             * Update previous release links to the corresponding entry in //archive.apache.org/dist/openjpa/*
 
-        4. Update the [Nightly Downloads](http://openjpa.apache.org/downloads-nightly.html) wiki page:
+        4. Update the [Nightly Downloads](https://openjpa.apache.org/downloads-nightly.html) wiki page:
 
             * Update the binary and source links in the "Pre-packaged binaries for SNAPSHOT releases" section
             to the new SNAPSHOT.

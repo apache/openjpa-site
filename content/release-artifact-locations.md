@@ -60,10 +60,10 @@ restricted and become read-only.
     <tr><td class="border"> <a href="http://www.apache.org/dist/openjpa">/\*\*</a> </td><td class="border"> Current distribution content.</tr>
     </table>
 
-6. [//people.apache.org/www/archive.apache.org/dist/openjpa](http://archive.apache.org/dist/openjpa)
+6. [//people.apache.org/www/archive.apache.org/dist/openjpa](https://archive.apache.org/dist/openjpa)
 
     <table>
     <tr><th> Folder </th><th> Descriptions</th></tr>
-    <tr><td class="border"> <a href="http://archive.apache.org/dist/openjpa">/\*\*</a> </td><td class="border"> Archive contents from //people.apache.org/www/www.apache.org/dist/openjpa; read only.</tr>
+    <tr><td class="border"> <a href="https://archive.apache.org/dist/openjpa">/\*\*</a> </td><td class="border"> Archive contents from //people.apache.org/www/www.apache.org/dist/openjpa; read only.</tr>
     </table>
 

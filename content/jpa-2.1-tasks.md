@@ -28,7 +28,7 @@ code integrated...
 <tr><td class="border"> <font color="red">Done</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-2459">OPENJPA-2459</a>
  </td><td class="border"> Upgrade trunk to Java 7 for build and test</td></tr>
 <tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-????">OPENJPA-????</a>
- </td><td class="border"> Prep for JPA 2.1 TCK <a href="http://openjpa.apache.org/running-the-sun-tck-for-jpa.html">(Existing JPA 2.0 TCK instructions)</a> </td></tr>
+ </td><td class="border"> Prep for JPA 2.1 TCK <a href="https://openjpa.apache.org/running-the-sun-tck-for-jpa.html">(Existing JPA 2.0 TCK instructions)</a> </td></tr>
 
 <!--
 <tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1103">OPENJPA-1103</a>

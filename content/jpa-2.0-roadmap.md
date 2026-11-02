@@ -184,9 +184,7 @@ the Milestone 3 is available for [download](openjpa-2.0.0-milestone-3.html)
 
 The Milestone 2 release will not be an official ASF release, but will be
 created as a Early Access 2 SNAPSHOT branch due to the JSR-317 terms of use
-restrictions.  A distribution of the Early Access 2 SNAPSHOT is available
-for [download](openjpa-2.0.0-early-access-2.html)
- or the code can be checked out from [svn](https://svn.apache.org/viewvc/openjpa/branches/2.0.0-EA2/)
+restrictions.  The code can be checked out from [svn](https://svn.apache.org/viewvc/openjpa/branches/2.0.0-EA2/)
 .
 
 

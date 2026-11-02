@@ -13,7 +13,7 @@ compatible with the prior 1.2.x releases based on the Java Persistence API
 3.0).  For a list of all the new features of JPA 2.0, please checkout the [OpenJPA 2.0.0](openjpa-2.0.0.html)
  release notes.
 
-Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org)
+Additional information on the OpenJPA project may be found at [the project web site](https://openjpa.apache.org)
 .
 
 
@@ -40,7 +40,7 @@ Additional information on the OpenJPA project may be found at [the project web s
  SybaseDictionary should try both JDBC column names and Sybase specific
 column names
 * [OPENJPA-1668](https://issues.apache.org/jira/browse/OPENJPA-1668)
- User's ''DBDictionary.sequenceSQL' setting not being honored on zOS 
+ User's ''DBDictionary.sequenceSQL' setting not being honored on zOS
 * [OPENJPA-1678](https://issues.apache.org/jira/browse/OPENJPA-1678)
  SQL Parameter values may contain sensitive information and should not be
 logged by default.
@@ -49,7 +49,7 @@ logged by default.
 * [OPENJPA-1690](https://issues.apache.org/jira/browse/OPENJPA-1690)
  DistinctResultList is not Serializable
 * [OPENJPA-1704](https://issues.apache.org/jira/browse/OPENJPA-1704)
- PCEnhancer incorrectly generates readExternal 
+ PCEnhancer incorrectly generates readExternal
 * [OPENJPA-1713](https://issues.apache.org/jira/browse/OPENJPA-1713)
  OutOfMemory caused by EntityManagerImpl.push/popFetchPlan processing
 * [OPENJPA-1714](https://issues.apache.org/jira/browse/OPENJPA-1714)
@@ -59,14 +59,14 @@ mode to apply to a named query
  OpenJPA generates wrong SQL if a result variable that references an
 aggregate expression is used in ORDER BY clause
 * [OPENJPA-1719](https://issues.apache.org/jira/browse/OPENJPA-1719)
- Prepared SQL cache ordering problem with subqueries. 
+ Prepared SQL cache ordering problem with subqueries.
 * [OPENJPA-1722](https://issues.apache.org/jira/browse/OPENJPA-1722)
  Problem serializing DistinctResultList when EntityManager is closed
 * [OPENJPA-1737](https://issues.apache.org/jira/browse/OPENJPA-1737)
  The openjpa-2.0.0.jar does not have its MANIFEST.MF has the first entry
 * [OPENJPA-1742](https://issues.apache.org/jira/browse/OPENJPA-1742)
  Recover if connectionFactory on EntityManagerFactory is invalid but cf
-on EntityManager is valid. 
+on EntityManager is valid.
 * [OPENJPA-1749](https://issues.apache.org/jira/browse/OPENJPA-1749)
  Throw exception if using datacache / synchronize mappings and specifying
 datasource name at EM creation.
