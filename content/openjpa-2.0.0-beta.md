@@ -30,14 +30,14 @@ expressions for KEY, ENTRY, VALUE
     * Support for CASE and TYPE expressions along with IN expressions for
 Collection parameters
     * Support for native date/time/timestamp literals
-    * Support for INDEX expressions on an OrderColumn 
+    * Support for INDEX expressions on an OrderColumn
 * L2 Cache -
     * Provides cache operations such as entity eviction and cache mode
 behaviors to use, bypass or refresh items
     * Per-entity annotation to specify whether an entity should be cached
 * Bean Validation - supports using a JSR 303 implementation for entity
 validation for persist and remove operations
-* Metamodel API - 
+* Metamodel API -
     * Provides API to dynamically retrieve metamodel information for a
 persistence unit
     * Currently limited to persistent state and relationships
@@ -52,15 +52,15 @@ enforcement
 and Metamodel APIs
 * EntityManager API - updated for new Query and Query Result APIs, Hints,
 Properties, LockModeType, and Detach
-* And many more...  
+* And many more...
 
 This beta distribution is based upon the contributions provided in
 development iterations 1 through 14, as defined in the [JPA 2.0 Roadmap](jpa-2.0-roadmap.html)
 , which contains a complete list of included features, including what is on
 deck for future iterations.
 
-  
-  
+
+
 
 ----
 
@@ -84,8 +84,8 @@ builds, see the [Obtaining](obtaining.html)
 
 <table>
 <tr><th> Description </th><th> Download </th><th> Signatures </th></tr>
-<tr><td> OpenJPA 2.0.0 Beta </td><td> <a href="http://www.apache.org/dyn/closer.cgi/openjpa/2.0.0-beta/apache-openjpa-2.0.0-beta-binary.zip.html">apache-openjpa-2.0.0-beta-binary.zip</a>
- </td><td> <a href="http://www.apache.org/dyn/closer.cgi/openjpa/2.0.0-beta/apache-openjpa-2.0.0-beta-binary.zip.asc">PGP</a>
+<tr><td> OpenJPA 2.0.0 Beta </td><td> <a href="https://archive.apache.org/dist/openjpa/2.0.0-beta/apache-openjpa-2.0.0-beta-binary.zip">apache-openjpa-2.0.0-beta-binary.zip</a>
+ </td><td> <a href="https://archive.apache.org/dist/openjpa/2.0.0-beta/apache-openjpa-2.0.0-beta-binary.zip.asc">PGP</a>
  </td></tr>
 </table>
 
@@ -96,8 +96,8 @@ builds, see the [Obtaining](obtaining.html)
 
 <table>
 <tr><th> Description </th><th> Download </th><th> Signatures </th></tr>
-<tr><td> OpenJPA 2.0.0 Beta Source Code </td><td> <a href="http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa/downloads/apache-openjpa-2.0.0-beta-source.zip.html">apache-openjpa-2.0.0-beta-source.zip</a>
- </td><td> <a href="http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa/downloads/apache-openjpa-2.0.0-beta-source.zip.asc">PGP</a>
+<tr><td> OpenJPA 2.0.0 Beta Source Code </td><td> <a href="https://archive.apache.org/dist/openjpa/2.0.0-beta/apache-openjpa-2.0.0-beta-source.zip">apache-openjpa-2.0.0-beta-source.zip</a>
+ </td><td> <a href="https://archive.apache.org/dist/openjpa/2.0.0-beta/apache-openjpa-2.0.0-beta-source.zip.asc">PGP</a>
  </td></tr>
 <tr><td> Geronimo JPA 2.0 Spec API v1.0 source code </td><td> <a href="https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0/geronimo-jpa_2.0_spec-1.0-sources.jar">geronimo-jpa_2.0_spec-1.0-sources.jar</a>
  </td><td> <a href="https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0/geronimo-jpa_2.0_spec-1.0-sources.jar.asc">PGP</a>
@@ -107,8 +107,8 @@ builds, see the [Obtaining](obtaining.html)
  </td></tr>
 </table>
 
-  
-  
+
+
 
 ----
 
@@ -120,8 +120,8 @@ builds, see the [Obtaining](obtaining.html)
 
 ### Documentation
 
-* [Release Notes](http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/RELEASE-NOTES.html)
-* [HTML Manual](http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/docs/manual/)
+* [Release Notes](https://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/RELEASE-NOTES.html)
+* [HTML Manual](https://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/docs/manual/)
 
 <a name="OpenJPA2.0.0Beta-QuickStart"></a>
 
@@ -139,8 +139,8 @@ builds, see the [Obtaining](obtaining.html)
 
 ### Maven Artifacts
 
-* [OpenJPA 2.0.0 Beta JAR](http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/openjpa-2.0.0-beta.jar)
-* [OpenJPA 2.0.0 Beta JAR w/ depends](http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/openjpa-all-2.0.0-beta.jar)
+* [OpenJPA 2.0.0 Beta JAR](https://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/openjpa-2.0.0-beta.jar)
+* [OpenJPA 2.0.0 Beta JAR w/ depends](https://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/openjpa-all-2.0.0-beta.jar)
 * [Geronimo JPA 2.0 Spec API artifacts](https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0/)
 * [Geronimo Bean Validation 1.0 Spec API artifacts](https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-validation_1.0_spec/1.0/)
 
@@ -151,11 +151,11 @@ builds, see the [Obtaining](obtaining.html)
 * [OpenJPA 2.0.0 Beta](https://svn.apache.org/repos/asf/openjpa/tags/2.0.0-beta/)
 * [Geronimo JPA 2.0 Spec API](https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-jpa_2.0_spec-1.0/)
 * [Geronimo Bean Validation 1.0 Spec API](https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-validation_1.0_spec-1.0/)
-  
-  
 
-  
-  
+
+
+
+
 
 ----
 
@@ -174,10 +174,10 @@ Apache OpenJPA is bundled with the schemas from the JPA specifications, by
 Sun Microsystems and licensed under the CDDL 1.0. The source code is
 available at: <https://glassfish.dev.java.net/source/browse/glassfish/>
 
-Please review the [LICENSE](http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/LICENSE.txt)
- and [NOTICE](http://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/NOTICE.txt)
+Please review the [LICENSE](https://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/LICENSE.txt)
+ and [NOTICE](https://openjpa.apache.org/builds/2.0.0-beta/apache-openjpa-2.0.0-beta/NOTICE.txt)
  files in svn, source or binary distributions for more details.
 ----
-  
-  
+
+
 

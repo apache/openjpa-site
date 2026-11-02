@@ -32,7 +32,7 @@ JDK over IBM JDK)
 1. For Windows users, install [Cygwin](http://cygwin.com/)
  in addition to the above utilities
 1. * Make sure the Net/openssh and Utils/gnupg packages are installed that
-come with Cygwin installation. 
+come with Cygwin installation.
 
 <a name="ReleasingOpenJPA1.2.x(OldSCPSteps)-Tasksthatneedtobeperformedforeachrelease"></a>
 
@@ -41,8 +41,8 @@ come with Cygwin installation.
 _The example below uses 1.2.x as the new branch and 1.2.0 as the new
 release._
 
-  
-  
+
+
 * Cleanup JIRA so the Fix Version in issues resolved since the last release
 includes this release version correctly.
 * Update the files in openjpa-project -
@@ -54,8 +54,8 @@ release reports from JIRA.
 trying to release.
 * Perform a full build (IANAL + tests) and TCK runs before trying to
 release.
-  
-  
+
+
 * set MAVEN_OPTS=-Xmx1024m -XX:MaxPermSize=256m (especially for Java SE 6)
 * Use Sun JDK (if possible)
 ** If using IBM JDK, then also set the system property test.jvm.arguments
@@ -75,32 +75,32 @@ with the release. A branch can be made by running: \\
     {code:none}
     $ mvn release:branch -DbranchName=1.2.x
 
-  
-  
+
+
 * Do not use Eclipse to do the checkout.  The extra dot (.) files created
-by Eclipse throws off the rat:check processing. 
+by Eclipse throws off the rat:check processing.
 {code:none} $ svn checkout
 https://svn.apache.org/repos/asf/openjpa/branches/1.2.x 1.2.x
 $ cd 1.2.x {code}||
-  
-  
+
+
 <table>
 <tr></tr>
-  
-  
+
+
 {code:none} $ svn commit -m "updating text files for 1.2.0 release"
 
     || Monday, 12:11 \\ | Do a dry run of the release plugin. The dry run will
 not commit any changes back to SVN and gives you the opportunity to verify
 that the release process will complete as expected. You will be prompted
 for the following information :
-    # The new release number (default 1.2.0) 
+    # The new release number (default 1.2.0)
     # The SCM tag (default apache-openjpa-1.2.0) *this should be changed to
 just 1.2.0
-    # The new development version (default 1.2.1) 
+    # The new development version (default 1.2.1)
     # _optional_ if you have not specified a GPG passphrase in settings.xml you
-will be prompted for it. 
-    {code:none}$ mvn -Prelease,docbook-profile release:prepare -DdryRun=true  
+will be prompted for it.
+    {code:none}$ mvn -Prelease,docbook-profile release:prepare -DdryRun=true
         <snip>
      [INFO]
  [release:prepare]
@@ -113,11 +113,11 @@ will be prompted for it.
      [INFO]
  Checking dependencies and plugins for snapshots ...
         What is the release version for "OpenJPA"?
-(org.apache.openjpa:openjpa-parent) 1.2.0: : 
+(org.apache.openjpa:openjpa-parent) 1.2.0: :
         What is SCM release tag or label for "OpenJPA"?
 (org.apache.openjpa:openjpa-parent) openjpa-parent-1.2.0: : 1.2.0
         What is the new development version for "OpenJPA"?
-(org.apache.openjpa:openjpa-parent) 1.2.1-SNAPSHOT: : 
+(org.apache.openjpa:openjpa-parent) 1.2.1-SNAPSHOT: :
         {code} ||
     || Monday, 12:30 \\ | Validate that the release process completed as
 expected. The release plugin will create pom.xml.tag files which contain
@@ -125,16 +125,16 @@ the changes that would have been committed to SVN. The only differences
 between pom.xml.tag and it's corresponding pom.xml file should be the
 version number. If other formatting changes have been made you should
 rollback the release and commit the changes manually.
-    {code:none}$ mvn -Prelease,docbook-profile release:rollback 
+    {code:none}$ mvn -Prelease,docbook-profile release:rollback
     # make changes
     $ svn commit -m "fixing formatting for 1.2.0 release" {code} ||
     || Monday, 12:31 \\ | Assuming the .tag files look OK you may proceed and
 do any other validation you feel necessary. The following list may be
-helpful 
+helpful
     * verify signatures [Verifying release signatures]
     * run examples. [Running OpenJPA Examples]
     * if you have access to the TCK, run it [Running the TCK]
-|| 
+||
     || Monday, 12:52 \\ | Prepare the release. You'll be prompted for the
 version information and optionally your GPG passphrase again.
     {code:none} $ mvn -Dmaven.test.execute=false -Prelease release:prepare
@@ -147,7 +147,7 @@ the maven-jar-plugin and maven-release-plugin when using the test-jar goal.
     {code:none} $ mvn -DskipTests=true -Prelease release:prepare
 -DpreparationGoals="clean install"
      $ mvn clean install -Dtest=false -DfailIfNoTests=false
--Dmaven.test.execute=false 
+-Dmaven.test.execute=false
      $ mvn -DskipTests=true -Prelease release:prepare -DpreparationGoals="clean
 install" {code} ||
     || Monday, 13:12 \\ | Check release.properties and make sure that the scm
@@ -161,55 +161,55 @@ repository for use in testing on
 people.apache.org:/home/userName/public_html/openjpa/newVersion. You will
 may be prompted for your people.apache.org password several times if you
 have not added a ssh key to .authorized_keys. [#One time setup#people.apache.org]
-. 
-    {code:none}$ mvn -Prelease,docbook-profile release:perform {code} 
+.
+    {code:none}$ mvn -Prelease,docbook-profile release:perform {code}
     For the 2.0.x code, you'll need additional parameters, due to the test-jar
 issues.
     {code:none}$ mvn -Prelease,docbook-profile,test-derby release:perform
-{code} 
+{code}
     {info} If your local OS userid doesn't match your Apache userid, then
 you'll have to set -Duser.name=<your_apache_id> on the cmdline and/or
 update your release profile in settings.xml {info} ||
     || Monday, 13:40 \\ | Create and upload the site. This step also uploads
-data to people.apache.org. 
+data to people.apache.org.
     For 1.x releases:
-    {code:none} 
+    {code:none}
     $ cd target/checkout
-    $ mvn -Prelease,docbook-profile site site:deploy {code} 
+    $ mvn -Prelease,docbook-profile site site:deploy {code}
     {warning} *For 2.x releases*, this step is not needed, as the
 maven-release-plugin is configured with goals "deploy site site:deploy"
 {warning} ||
     || Monday, 13:41 \\ | Unzip the binary archive the staging site directory
     {code:none}
-    # ssh to people.apache.org 
+    # ssh to people.apache.org
     $ cd ~/public_html/openjpa/${pom.version}/staging-site
     $ unzip -qq
-apache-openjpa/downloads/apache-openjpa-${pom.version}-binary.zip 
+apache-openjpa/downloads/apache-openjpa-${pom.version}-binary.zip
 
 Verify that the HTML links in staging-site/index.html are correct (usually
 only the downloads and docs links need to be updated to be prefixed with
 apache-openjpa/)
-  
-  
+
+
 See [http://people.apache.org/~henkp/repo/faq.html](http://people.apache.org/~henkp/repo/faq.html)
  and [http://www.apache.org/dev/release-signing.html#openpgp-ascii-detach-sig]
  {note}
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
 {code:none} $ mvn stage:copy
 -Dsource="http://people.apache.org/~mikedd/openjpa/1.2.0/staging-repo" \
- 
+
 -Dtarget="scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository"
 \
   -Dversion=1.2.0 \
   -DtargetRepositoryId=apache.releases
 
     After the stage plugin completes it's a good idea to check the permissions
-on the file system. 
+on the file system.
 
 $ ssh people.apache.org
 $ cd
@@ -225,7 +225,7 @@ $ for file in `find
 /www/people.apache.org/repo/m2-ibiblio-rsync-repository/org/apache/openjpa/
 -type d -iname '1.2.0'`\
   do \
-  chmod -R g+w ${file} \ 
+  chmod -R g+w ${file} \
   done
 
 $ ls -l openjpa-examples/1.2.0
@@ -235,44 +235,44 @@ $ ls -l openjpa-examples/1.2.0
 openjpa-examples-1.2.0-javadoc.jar
 
     || Thursday, 14:00 \\ | Copy build artifacts to the openjpa/builds location
-on people.apache.org. 
+on people.apache.org.
     {code:none}# ssh to people.apache.org
     $ cp -r ~/public_html/openjpa/1.2.0/staging-site/
 /www/openjpa.apache.org/builds/1.2.0
     $ chmod -R g+w /www/openjpa.apache.org/builds/1.2.0
     # verify that /www/openjpa.apache.org/builds/1.2.0/docs/manual is populated
-correctly by comparing it to a previous release. 
+correctly by comparing it to a previous release.
     $ rm /www/openjpa.apache.org/docs/latest
     $ ln -fvs ../builds/1.2.0/apache-openjpa/docs/
 /www/openjpa.apache.org/docs/latest {code} ||
     || Thursday, 14:10 \\ | Copy the distribution files to dist on
-people.apache.org. 
-    {code:none} 
+people.apache.org.
+    {code:none}
     # ssh to people.apache.org
-    
+
     # verify that md5 and sha1 files were generated for the download artifacts
     ls /www/openjpa.apache.org/builds/1.2.0/apache-openjpa/downloads/*.md5
     ls /www/openjpa.apache.org/builds/1.2.0/apache-openjpa/downloads/*.sha1
-    
-    # if no md5 and sha1 files are present, generate them. 
+
+    # if no md5 and sha1 files are present, generate them.
     # Alternatively you can copy the artifacts from the staging-repo directory
 the checksums are generated there.
-    for file in `ls . ` 
-    do 
+    for file in `ls . `
+    do
     md5 -q ${file} > ${file}.md5
     sha1 -q ${file} > ${file}.sha1
     done
-    
+
     mkdir /www/www.apache.org/dist/openjpa/1.2.0
     cp -r /www/openjpa.apache.org/builds/1.2.0/apache-openjpa/downloads/*
 /www/www.apache.org/dist/openjpa/1.2.0
     chgrp -R openjpa /www/www.apache.org/dist/openjpa/1.2.0
     chmod -R g+w /www/www.apache.org/dist/openjpa/1.2.0
-    
+
     # remove the previous version from /dist. Ie if you're publishing 1.2.1 you
 would remove 1.2.0.
     # For this example we wouldn't remove anything, but for the next release
-(1.2.1) we'd do the following : 
+(1.2.1) we'd do the following :
     $ rm -Rf /www/openjpa.apache.org/dist/openjpa/1.2.0
 
 <table>
@@ -332,13 +332,13 @@ key generation.  The keys will be saved in ~/.ssh/id_dsa (private) and
     {info} ||
     || 3 | {{scp}} your SSH public key ~/.ssh/id_dsa.pub created in last step
 to ~/id_dsa.pub on people.apache.org.
-    {code:none} 
+    {code:none}
     $ cd ~/.ssh
-    $ scp id_dsa.pub <your userid>@people.apache.org:id_dsa.pub 
+    $ scp id_dsa.pub <your userid>@people.apache.org:id_dsa.pub
     $ You will be prompted for your password.
 
 <table>
-<tr><th> 4 </td><td> Use ssh to login to people.apache.org 
+<tr><th> 4 </td><td> Use ssh to login to people.apache.org
 </tr>
 {code:none}
 $ cd ~
@@ -410,7 +410,7 @@ private key used to sign all the OpenJPA release materials.
     || 4 | Add your public key to {{[https://svn.apache.org/repos/asf/openjpa/site/docs/KEYS]
 }} and {{http://www.apache.org/dist/openjpa/KEYS}}. See the commands
 describe at the beginning of this KEYS file to perform this task. The gpg
-key-pair is used to sign the published artifacts for the OpenJPA releases. 
+key-pair is used to sign the published artifacts for the OpenJPA releases.
     {code:none}
     $ gpg --list-sigs <Real Name> && gpg --armor -- export <Real Name>
 
@@ -448,7 +448,7 @@ http://maven.apache.org/xsd/settings-1.0.0.xsd">
 	  <directoryPermissions>775</directoryPermissions>
 	  <filePermissions>644</filePermissions>
        </server>
-    </servers>	  
+    </servers>
 </settings>
 
     {info}
@@ -456,13 +456,13 @@ http://maven.apache.org/xsd/settings-1.0.0.xsd">
 userid.
     * {{$PATH_TO_PRIVATE_KEY}} is the path to the private key generated for
 ssh. E.g. /home/yourLocalUserId/.ssh/id_dsa.  For Windows' cygwin users,
-you will need to enter the full cygwin path: 
+you will need to enter the full cygwin path:
 /cygdrive/c/cygwin/home/yourLocalUserId/.ssh/id_dsa.
     * You can also enter a PGP passphrase stanza:  <passphrase>..</passphrase>.
  If you don't use this in your settings.xml file, then you will be prompted
 for it during the Release processing.
     {info} |
-    
+
     h3. Expose a copy of known hosts to Maven
     {info}
     Is this step even necessary?  Due to the question mark below without an
@@ -471,18 +471,18 @@ performed these steps.	And, the release process still seemed to work okay
 for me...  The next person to use these instructions can verify whether any
 tricks had to be played with the .ssh folders...
     {info}
-    
+
     || 1 | From cygwin, ssh to people.apache.org, save the public key if
 prompted, and exit ||
     | | cygwin will save the known hosts to your {{\~/.ssh}} folder, but the
 script cannot access it there (from Windows) |
     || 2 | From cygwin (not Windows) create another {{.ssh}} folder at (?) ||
     || 3 | Copy the {{known_hosts}} file to the new {{.ssh}} folder ||
-    
+
     h2. Troubleshooting
-    
+
     h3. Space Character in Build Root Path
-    
+
     || Description | If there are spaces in the path to the build root
 subdirectory, the maven task uses to generate the revision number for the
 org.apache.openjpa.revision.properties yields incorrect data. For example:
@@ -504,8 +504,8 @@ parameters being passed to it, i.e. the source and target URL properties.
 When this plugin is used under Cygwin, make sure the following practices
 are used:
 </tr>
-  
-  
+
+
 Problem symptom:
 
     $ find . -name m2-repository -not -path "*openjpa-project*" \
@@ -530,7 +530,7 @@ Problem symptom:
     [INFO]
  Error copying repository from
 file://./openjpa-all/target/site/m2-repository to \
-          
+
 scp://allee8285@people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
 
 * Quote and use the drive name in the path.
@@ -560,9 +560,9 @@ Problem symptom:
  Error copying repository from
 file:///cygdrive/c/OpenJPA.1.0.1.Release/1.0.1/openjpa-all/target/site/m2-repository
 to
-          
+
 scp://allee8285@people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
-    
+
     Embedded error: Could not read from file:
 c:\cygdrive\c\OpenJPA.1.0.1.Release\1.0.1\openjpa-all\target\site\m2-repository
     \cygdrive\c\OpenJPA.1.0.1.Release\1.0.1\openjpa-all\target\site\m2-repository
@@ -573,7 +573,7 @@ Problem symptom:
 
     $ find "c:/OpenJPA.1.0.1.Release/1.0.1" -name m2-repository -not -path
 "*openjpa-project*" \
-       -exec mvn -f "c:/tmp/maven-stage-plugin/pom.xml" stage:copy 
+       -exec mvn -f "c:/tmp/maven-stage-plugin/pom.xml" stage:copy
        -Dsource=file://{}
 -Dtarget=scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
 \
@@ -604,7 +604,7 @@ Problem symptom:
  Error copying repository from
 file://c:/OpenJPA.1.0.1.Release/1.0.1/openjpa-all/target/site/m2-repository
 to \
-          
+
 scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
 
 <table>
@@ -616,7 +616,7 @@ scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
 "*openjpa-project*" \
         -exec mvn -f "c:/tmp/maven-stage-plugin/pom.xml" stage:copy \
         -Dsource=file://{} \
-       
+
 -Dtarget=scp://allee8285@people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
 \
         -Dversion=1.0.1 \;

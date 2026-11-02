@@ -9,16 +9,16 @@ Title: Release Management
 If you are looking for JPA Specification Development, check this [page](jpa-specification-development.html) instead.
 
 <UL>
-<LI><A href="apache-nexus-release-process-(1.2.x-2.1.x).html" title="Apache Nexus Release Process (1.2.x-2.x)">Apache Nexus Release Process (1.2.x-2.x)</A>
+<LI><A href="apache-nexus-release-process-_1.2.x-2.1.x_.html" title="Apache Nexus Release Process (1.2.x-2.x)">Apache Nexus Release Process (1.2.x-2.x)</A>
  <UL>
  <LI><A href="release-setup.html" title="Release Setup">Release Setup</A></LI>
  <LI><A href="release-artifact-locations.html" title="Release Artifact Locations">Release Artifact Locations</A></LI>
  </UL></LI>
 <LI><A href="publishing-serp-to-maven-central-repository.html" title="Publishing Serp to Maven Central Repository">Publishing Serp to Maven Central Repository</A></LI>
-<LI><A href="releasing-openjpa-1.0.x-or-1.1.x-(old-scp-steps).html" title="Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)">Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</A>
+<LI><A href="releasing-openjpa-1.0.x-or-1.1.x-_old-scp-steps_.html" title="Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)">Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</A>
  <UL><LI><A href="openjpa-release-policy.html" title="OpenJPA Release Policy">OpenJPA Release Policy</A></LI>
  </UL></LI>
-<LI><A href="releasing-openjpa-1.2.x-(old-scp-steps).html" title="Releasing OpenJPA 1.2.x (Old SCP Steps)">Releasing OpenJPA 1.2.x (Old SCP Steps)</A>
+<LI><A href="releasing-openjpa-1.2.x-_old-scp-steps_.html" title="Releasing OpenJPA 1.2.x (Old SCP Steps)">Releasing OpenJPA 1.2.x (Old SCP Steps)</A>
  <UL>
  <LI><A href="recovering-from-a-vetoed-release.html" title="Recovering from a vetoed release">Recovering from a vetoed release</A></LI>
  <LI><A href="running-openjpa-examples.html" title="Running OpenJPA Examples">Running OpenJPA Examples</A></LI>
@@ -30,27 +30,27 @@ If you are looking for JPA Specification Development, check this [page](jpa-spec
 
 <a name="ReleaseManagement-WhereshouldIputmyfix?"></a>
 
-## Where should I put my fix? 
+## Where should I put my fix?
 Fixes should be targeted and committed on trunk first. Any other open
-releases are fair game, but may require approval from a release manager. 
+releases are fair game, but may require approval from a release manager.
 
 <a name="ReleaseManagement-RegardingReleaseManagers"></a>
 
 ## Regarding Release Managers
-Once a formal release of OpenJPA has been approved, a release manager is assigned. The release manager is often (but not always) the same developer who performed the release. This release manager role is intended to be a long term branch maintainer who looks after the stability of a formal release. 
+Once a formal release of OpenJPA has been approved, a release manager is assigned. The release manager is often (but not always) the same developer who performed the release. This release manager role is intended to be a long term branch maintainer who looks after the stability of a formal release.
 
 The release manager(s) is(are) responsible for targeting fixes into a given version of OpenJPA.
 
-* Release managers may indicate this by targeting a JIRA issue for their branch or may issue a blanket statement that any fix will be accepted. 
-* In general only the release manager(s) should target a JIRA issue for a branch which they support. 
-    * An exception to this rule is if the RM has committed changes for their branch and forgot to update the JIRA issue. 
-* Fixes should not be committed without RM approval. These changes may be reverted by the release manager. 
+* Release managers may indicate this by targeting a JIRA issue for their branch or may issue a blanket statement that any fix will be accepted.
+* In general only the release manager(s) should target a JIRA issue for a branch which they support.
+    * An exception to this rule is if the RM has committed changes for their branch and forgot to update the JIRA issue.
+* Fixes should not be committed without RM approval. These changes may be reverted by the release manager.
 
 <a name="ReleaseManagement-Somegeneralguidelinesforreleasemanagers"></a>
 
 ## Some general guidelines for release managers
 * Fixes which are committed to an earlier release should also be present
-"up-stream". Ie a fix for 1.0.x should also appear in 1.2.x. 
+"up-stream". Ie a fix for 1.0.x should also appear in 1.2.x.
 * Issues may not apply to every release, so the previous guideline may not
 always apply.
 
@@ -59,8 +59,8 @@ always apply.
 ## Release Managers for active branches.
 The current release managers for the active branches of OpenJPA are :
 
-<table border="0.5">
-<tr bgcolor="lightyellow"><th> branch </th><th> internal release number </th><th> release manager(s)</th><th> Contact
+<table  class="table table-striped">
+<tr><th> branch </th><th> internal release number </th><th> release manager(s)</th><th> Contact
 Release Manager before committing </th></tr>
 <tr><td class="border"> 0.9.7-r547073 </td><td class="border"> </td><td class="border"> Srinivasa Segu </td><td class="border"> Yes </td></tr>
 <tr><td class="border"> 1.0.x </td><td class="border"> 1.0.5-SNAPSHOT </td><td class="border"> Heath Thomann, Donald Woods </td><td class="border"> Yes </td></tr>

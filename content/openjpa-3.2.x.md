@@ -4,7 +4,7 @@ Title: OpenJPA 3.2.X
 
 This distribution is based on the final [JSR 338 Java Persistence API, Version 2.2](http://jcp.org/en/jsr/detail?id=338) specification.
 
-Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org).
+Additional information on the OpenJPA project may be found at [the project web site](https://openjpa.apache.org).
 
 # Changes in OpenJPA 3.2.2
 
@@ -14,7 +14,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2713'>OPENJPA-2713</a>] -         [JPA-2.2] add support for Java8 Date/Time types
 </li>
 </ul>
-                            
+
 <h2>        Improvement
 </h2>
 <ul>
@@ -32,7 +32,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 </li>
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2876'>OPENJPA-2876</a>] -         running &#39;refresh&#39; schema action creates wrong SQL output
 </li>
-<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2877'>OPENJPA-2877</a>] -         [JPA-2.1] implement AttributeConverter 
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2877'>OPENJPA-2877</a>] -         [JPA-2.1] implement AttributeConverter
 </li>
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2882'>OPENJPA-2882</a>] -         Exception passing javax.persistence.* String values to createEntityManager(Map)
 </li>
@@ -45,7 +45,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2896'>OPENJPA-2896</a>] -         Automatic module name is not set for bundles
 </li>
 </ul>
-                
+
 <h2>        Improvement
 </h2>
 <ul>
@@ -56,7 +56,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2893'>OPENJPA-2893</a>] -         H2 2.x is not working with OpenJPA
 </li>
 </ul>
-            
+
 <h2>        Task
 </h2>
 <ul>
@@ -75,7 +75,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-1594'>OPENJPA-1594</a>] -         Tests not handling new QueryTimeOut and LockTimeOut exceptions correctly
 </li>
 </ul>
-            
+
 <h2>        Bug
 </h2>
 <ul>
@@ -119,7 +119,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 </li>
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2854'>OPENJPA-2854</a>] -         fix OffsetTime handling for PostgreSQL
 </li>
-<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2855'>OPENJPA-2855</a>] -         primary keys do no respect naming rules 
+<li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2855'>OPENJPA-2855</a>] -         primary keys do no respect naming rules
 </li>
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2856'>OPENJPA-2856</a>] -         [MariaDB] improve TIME handling
 </li>
@@ -146,7 +146,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2871'>OPENJPA-2871</a>] -         upgrade to xbean-4.20 to remove transitive ASM dependency
 </li>
 </ul>
-            
+
 <h2>        New Feature
 </h2>
 <ul>
@@ -155,7 +155,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2873'>OPENJPA-2873</a>] -         Add ProductDerivation for persistence_2_2.xsd
 </li>
 </ul>
-    
+
 <h2>        Improvement
 </h2>
 <ul>
@@ -182,7 +182,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2870'>OPENJPA-2870</a>] -         update specification-version to 2.2
 </li>
 </ul>
-            
+
 <h2>        Task
 </h2>
 <ul>

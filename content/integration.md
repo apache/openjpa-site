@@ -17,36 +17,113 @@ See [Build and Runtime Dependencies](build-and-runtime-dependencies.html)
 
 ## Integration with Apache TomEE
 
-[Apache TomEE](http://tomee.apache.org/) is a distribution of Tomcat bundled with OpenJPA and the other necessary components to make it a Java EE 6 compliant Web Profile implementation.  Apache TomEE 1.0.0 and later include OpenJPA 2.2.x.  TomEE works in [Eclipse using the Tomcat adapter](http://www.youtube.com/watch?v=Lr8pxEACVRI) and you can simply deploy a web archive that contains a persistence unit without the need to include OpenJPA in the webapp.  Unlike putting OpenJPA in Tomcat, TomEE supports full container managed EntityManagers and JTA persistence units.
-
-<a name="Integration-IntegratingwithApacheGeronimo:"></a>
-
-## Integrating with Apache Geronimo:
-
-[Apache Geronimo](http://geronimo.apache.org/)
- V2.0.2 through 2.1.3 include OpenJPA 1.0.x and you can simply deploy an
-enterprise archive, web archive, or EJB-JAR that contains a persistence
-unit.
-Apache Geronimo V2.1.4 includes OpenJPA 1.2.x and you can simply deploy an
-enterprise archive, web archive, or EJB-JAR that contains a persistence
-unit.
+[Apache TomEE](http://tomee.apache.org/) is a distribution of Tomcat bundled with OpenJPA and the other necessary components to make it a Java EE 6-8 and Jakarta EE 9+ compliant Web Profile implementation.  Apache TomEE 1.0.0 and later include OpenJPA 2.2.x.  TomEE works in [Eclipse using the Tomcat adapter](http://www.youtube.com/watch?v=Lr8pxEACVRI) and you can simply deploy a web archive that contains a persistence unit without the need to include OpenJPA in the webapp.  Unlike putting OpenJPA in Tomcat, TomEE supports full container managed EntityManagers and JTA persistence units.
 
 <a name="Integration-IntegratingwithGlassFish:"></a>
 
 ## Integrating with GlassFish:
 
 Since [GlassFish](http://glassfish.dev.java.net)
- implements the Java Persistence API 1.0 SPI, it is very easy to use
-OpenJPA in Glassfish. See [Sahoo's blog](http://weblogs.java.net/blog/ss141213/archive/2006/07/using_openjpa_a.html)
- for further details.
+ implements the Jakarta Persistence API, you must [add openjpa-VERSION.jar and xbean-asm9-shaded-VERSION.jar to its libs](https://glassfish.org/docs/latest/reference-manual.html#add-library) and define explicitly in persistence.xml file that your provider is org.apache.openjpa.persistence.PersistenceProviderImpl.
 
+ 
 <a name="Integration-IntegratingwithSunJavaSystemApplicationServer9.x:"></a>
 
 ## Integrating with Sun Java System Application Server 9.x:
 
 Since Sun Java System Application Server is based on code from the [GlassFish project](http://glassfish.dev.java.net)
-, the instructions to use OpenJPA in GlassFish and Sun Java System
-Application Server remain the same. 
+, the instructions to use OpenJPA in GlassFish and Sun Java System Application Server remain the same. 
+
+<a name="Integration-IntegratingwithOpenLibertyServer:"></a>
+
+## Integrating with OpenLiberty Server
+
+If you want to integrate OpenJPA on your application using OpenLiberty maven plugin, add the following configuration to the pom.xml:
+
+
+    <plugins>
+    ...
+    <plugin>
+        <groupId>io.openliberty.tools</groupId>
+        <artifactId>liberty-maven-plugin</artifactId>
+        <version>${openliberty.maven.version}</version>
+        <configuration>
+            <copyDependencies>
+                <dependencyGroup>
+                    <location>jdbc</location>
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>${postgresql.version}</version>
+                    </dependency>
+                </dependencyGroup>
+                <dependencyGroup>
+                    <location>lib/global</location>
+                    <dependency>
+                        <groupId>org.apache.openjpa</groupId>
+                        <artifactId>openjpa</artifactId>
+                        <version>${openjpa.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.xbean</groupId>
+                        <artifactId>xbean-asm9-shaded</artifactId>
+                        <version>4.31</version>
+                    </dependency>
+                </dependencyGroup>
+            </copyDependencies>
+        </configuration>
+    </plugin>
+    </plugins>
+
+Remember to configure the database jdbc in src/main/liberty/config/server.xml:
+
+
+    <server description="openjpa-liberty-server">
+        <featureManager>
+            <feature>webProfile-10.0</feature>
+        </featureManager>
+
+        <basicRegistry id="basic" realm="BasicRealm">
+        </basicRegistry>
+
+        <httpEndpoint id="defaultHttpEndpoint" httpPort="9080" httpsPort="9443" />
+
+        <!-- Automatically expand WAR files and EAR files -->
+        <applicationManager autoExpand="true" />
+
+        <!-- Configures the application on a specified context root -->
+        <webApplication contextRoot="/APP-WEB-ROOT" location="APP-NAME-1.0.0-SNAPSHOT.war" />
+
+        <library id="postgresql-jdbclib">
+            <fileset dir="jdbc" includes="postgresql*.jar" />
+        </library>
+
+        <dataSource jndiName="jdbc/your-datasource">
+            <jdbcDriver libraryRef="postgresql-jdbclib" />
+            <properties.postgresql serverName="DATABASE_HOST" databaseName="DATABASE_NAME" user="DATABASE_USER"
+                password="DATABASE_PASSWORD" />
+        </dataSource>
+        <!-- Default SSL configuration enables trust for default certificates from the Java runtime -->
+        <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
+    </server>
+
+
+As occurs with Glassfish, as the default JPA provider of OpenLiberty is not OpenJPA, you must define OpenJPA as the provider in persistence.xml:
+
+
+    <persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+        <persistence-unit name="YOUR-PERSISTENCE-UNIT-NAME" transaction-type="JTA">
+            <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+            <jta-data-source>jdbc/your-datasource</jta-data-source>
+            <properties>
+                <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)" />
+            </properties>
+        </persistence-unit>
+    </persistence>
+
+After that, you may run ```mvn -Pyour-liberty-profile liberty:dev```.
 
 <a name="Integration-IntegratingwithIBMWebSphereApplicationServer:"></a>
 

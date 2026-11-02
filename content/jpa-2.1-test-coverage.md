@@ -6,19 +6,19 @@ Title: JPA 2.1 Test Coverage
 # JPA 2.1 Test Coverage
 
  <table class="note"><tr>
-  <td valign="top"> <IMG src="images/warning.gif" width="16" height="16" border="0">
-  <td>Under Construction...  The exact database types and versions still need to be determined for this new JPA 2.0 release...    	
+  <td valign="top"> <svg class="size-1 text-warning" alt="" loading="lazy"><use href="#exclamation-triangle-fill"/></svg>
+  <td>Under Construction...  The exact database types and versions still need to be determined for this new JPA 2.0 release...
  </tr></table>
 
 
-Starting with OpenJPA 2.0.0, we have split the [supported databases ](-http://openjpa.apache.org/builds/latest/docs/manual/supported_databases.html.html)
+Starting with OpenJPA 2.0.0, we have split the [supported databases ](-https://openjpa.apache.org/builds/latest/docs/manual/supported_databases.html.html)
  into verified and compatible categories.  The automated database testing
 performed by IBM and regular testing performed by the OpenJPA community in
 the lists below are used to determine which databases will be listed as
 *verified* instead of just *compatible*.
 
-  
-  
+
+
 
 <a name="JPA2.1TestCoverage-AutomatedDatabaseCoverage"></a>
 
@@ -47,8 +47,8 @@ using Java SE 6 (either IBM SDK or Sun JDK).
 5 (x) in locking </td><td class="border"> 1 (x) + locking </td></tr>
 </table>
 
-  
-  
+
+
 
 <a name="JPA2.1TestCoverage-ManualDatabaseCoverage"></a>
 
@@ -85,5 +85,5 @@ with MVCC option turned on there are 23 failures from locking tests, <a href="ht
 </table>
 
 
-  
-  
+
+

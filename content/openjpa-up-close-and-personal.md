@@ -43,7 +43,7 @@ like to talk about today, what we'd like to focus on that came up
 yesterday, and other topics that have occurred to people since yesterday</td><td class="border"> </td><td class="border">
 </td><td class="border"> </td></tr>
 <tr><td class="border">10:00 - 10:30</td><td class="border">JIRA triage</td><td class="border"> </td><td class="border"> </td><td class="border">Craig Russell</td><td class="border"> </td></tr>
-<tr><td class="border">10:30 - 11:00</td><td class="border">XML column support</td><td class="border"> </td><td class="border">Catalina Wei</td><td class="border">Patrick Linskey</td><td class="border"> <a href="artifacts/JPA XMLColumn mapping.ppt">JPA XMLColumn Mapping.ppt</a>
+<tr><td class="border">10:30 - 11:00</td><td class="border">XML column support</td><td class="border"> </td><td class="border">Catalina Wei</td><td class="border">Patrick Linskey</td><td class="border"> <a href="artifacts/JPA_XMLColumn_mapping.ppt">JPA_XMLColumn_mapping.ppt</a>
 </td></tr>
 <tr><td class="border">11:30 - 12:00</td><td class="border">API Design and Forwards-Compatibility</td><td class="border">OpenJPA has a number of APIs that we expect to be visible to developers. These should be stable over time, and should be well-designed to meet the needs of our developers. This is currently not always the case (OpenJPAEntityManagerFactory extends a billion interfaces, for example, our event frameworks sometimes require code changes for people who implement the event interfaces, and we use a combination of enums and symbolic constants even in our org.apache.openjpa.persistence interfaces). I'd like to discuss this to raise awareness about the issue, and also discuss how to improve things in the short term. I'd also like to bring up the idea of an API jar that should contain enough for the average development team to link against.</td><td class="border">Patrick Linskey</td><td class="border">Patrick Linskey</td><td class="border"><a href="apidiscussionfollowup.html">APIDiscussionFollowUp</a>
 </td></tr>
@@ -98,7 +98,7 @@ Dial-in information:
 > Webex information for day 1:<br/>
 > Meeting number: 923 554 073 <br/>
 > Meeting password: openjpa <br/>
-> <a href="https://bea.webex.com/bea/j.php?ED=94343937&UID=0">https://bea.webex.com/bea/j.php?ED=94343937&UID=0</a> 
+> <a href="https://bea.webex.com/bea/j.php?ED=94343937&UID=0">https://bea.webex.com/bea/j.php?ED=94343937&UID=0</a>
 
 > Webex information for day 2:<br/>
 > Meeting number: 924 199 496 <br/>

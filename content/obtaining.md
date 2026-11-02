@@ -6,10 +6,21 @@ Title: Obtaining
 OpenJPA official releases can be downloaded at the [Downloads](downloads.html)
  page.
 
-Released binaries can also by accessed from Maven pom.xml files by pointing
-them to the repository at
-<http://people.apache.org/repo/m2-incubating-repository>. An example pom.xml
-that will use the 0.9.0-incubating release is as follows:
+Released binaries can also by accessed from Maven Central Repositories adding the
+ following to the dependencies section on your pom.xml:
+
+
+    <dependency>
+        <groupId>org.apache.openjpa</groupId>
+        <artifactId>openjpa-all</artifactId>
+        <version>4.2.0</version>
+    </dependency>
+ 
+ 
+
+If you wish to use a STAGING version, you must point your pom.xml
+to the repository at <https://repository.apache.org/content/groups/staging/>. 
+An example pom.xml that will use the 4.2.1 release is as follows:
 
 
     <?xml version="1.0" encoding="UTF-8"?>
@@ -22,26 +33,22 @@ that will use the 0.9.0-incubating release is as follows:
         <version>1.0.0</version>
         <repositories>
     	<repository>
-    	    <id>central</id>
-    	    <url>http://www.ibiblio.org/maven2</url>
-    	</repository>
-    	<repository>
-    	    <id>apache-snapshots</id>    	   
-            <url>http://people.apache.org/repo/m2-incubating-repository</url>
+    	    <id>apache-staging</id>    	   
+            <url>https://repository.apache.org/content/groups/staging/</url>
     	</repository>
         </repositories>
         <dependencies>
     	<dependency>
     	    <groupId>org.apache.openjpa</groupId>
     	    <artifactId>openjpa-all</artifactId>
-    	    <version>0.9.6-incubating</version>
+    	    <version>4.2.1</version>
     	</dependency>
         </dependencies>
     </project>
 
 
 
-Also, there is a snapshot repository set up for maven located at <http://people.apache.org/repo/m2-snapshot-repository/org/apache/openjpa/>
+Also, there is a snapshot repository set up for maven located at <https://repository.apache.org/content/repositories/snapshots/>
  where development snapshot jars will be stored. Maven projects can be
 configured to depend on the openjpa snapshots by setting up their pom.xml
 as follows:
@@ -49,8 +56,8 @@ as follows:
 ----
 > **Update Version**
 >
->In the example below replace 0.9.8-SNAPSHOT with the version you wish to
-use. Ex. 1.2.0, or 1.3.0-SNAPSHOT
+>In the example below replace 4.1.1-SNAPSHOT with the version you wish to
+use. Ex. 4.2.0
 ----
 
     <?xml version="1.0" encoding="UTF-8"?>
@@ -63,19 +70,15 @@ use. Ex. 1.2.0, or 1.3.0-SNAPSHOT
         <version>1.0.0</version>
         <repositories>
     	<repository>
-    	    <id>central</id>
-    	    <url>http://www.ibiblio.org/maven2</url>
-    	</repository>
-    	<repository>
     	    <id>apache-snapshots</id>
-    	    <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+    	    <url>https://repository.apache.org/content/repositories/snapshots/</url>
     	</repository>
         </repositories>
         <dependencies>
     	<dependency>
     	    <groupId>org.apache.openjpa</groupId>
     	    <artifactId>openjpa-all</artifactId>
-    	    <version>0.9.8-incubating-SNAPSHOT</version>
+    	    <version>4.2.1-SNAPSHOT</version>
     	</dependency>
         </dependencies>
     </project>

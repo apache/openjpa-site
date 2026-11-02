@@ -6,11 +6,11 @@ Title: JPA 2.1 Tasks
 ## OpenJPA 2.1 Tasks
 
  <table class="note"><tr>
-  <td valign="top"> <IMG src="images/warning.gif" width="16" height="16" border="0">
+  <td valign="top"> <svg class="size-1 text-warning" alt="" loading="lazy"><use href="#exclamation-triangle-fill"/></svg>
   <td>Under Construction...  This is just an initial cut...  We will need these tasks further broken down into
-manageable two week iteration chunks of work...  And, I have probably forgotten some new features or minor update...  We will also need to create corresponding JIRAs to get the 
+manageable two week iteration chunks of work...  And, I have probably forgotten some new features or minor update...  We will also need to create corresponding JIRAs to get the
 code integrated...
-<br><br>But, this will give us an idea of the amount of work ahead of us...  	
+<br><br>But, this will give us an idea of the amount of work ahead of us...
  </tr></table>
 
 <a name="JPA2.1Tasks-GeneralTasks"></a>
@@ -28,7 +28,7 @@ code integrated...
 <tr><td class="border"> <font color="red">Done</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-2459">OPENJPA-2459</a>
  </td><td class="border"> Upgrade trunk to Java 7 for build and test</td></tr>
 <tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-????">OPENJPA-????</a>
- </td><td class="border"> Prep for JPA 2.1 TCK <a href="http://openjpa.apache.org/running-the-sun-tck-for-jpa.html">(Existing JPA 2.0 TCK instructions)</a> </td></tr>
+ </td><td class="border"> Prep for JPA 2.1 TCK <a href="https://openjpa.apache.org/running-the-sun-tck-for-jpa.html">(Existing JPA 2.0 TCK instructions)</a> </td></tr>
 
 <!--
 <tr><td class="border"> <font color="green">Complete</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-1103">OPENJPA-1103</a>
@@ -44,14 +44,14 @@ released </td></tr>
 <table>
 <tr><th> Status </th><th> JIRA(s) </th><th> Effort </th><th> Summary </th><th> Area </th><th> JPA 2.1 Spec
 Reference(s) </th></tr>
-  
-  
+
+
 <tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-????">OPENJPA-????</a>
- </td><td class="border"> High </td><td class="border"> Add ON condition to JPQL query.  
+ </td><td class="border"> High </td><td class="border"> Add ON condition to JPQL query.
 <br><br>Will require BNF change (see jpql.jjt). Can ripple across the codebase. </td><td class="border"> JPQL </td><td class="border">
 4.4.5.2, 4.14 </td></tr>
 <tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-????">OPENJPA-????</a>
- </td><td class="border"> High </td><td class="border"> Downcast relation paths with TREAT operator in JPQL queries.  Will require BNF change. The BNF changes will be non-trivial as TREAT can appear as a path component e.g. p.TREAT(p.items as Book).pageCount.  
+ </td><td class="border"> High </td><td class="border"> Downcast relation paths with TREAT operator in JPQL queries.  Will require BNF change. The BNF changes will be non-trivial as TREAT can appear as a path component e.g. p.TREAT(p.items as Book).pageCount.
 <br><br>JPQLEpressionBuilder will require change to process the treated path. The downstream changes on building the appropriate expression will not be a heavy task as the current kernel expressions support the notion of implicit types.
  </td><td class="border"> JPQL </td><td class="border">
 4.4, 4.4.4.1, 4.4.5, 4.4.9, 4.6.16, 4.14 </td></tr>
@@ -60,7 +60,7 @@ Reference(s) </th></tr>
  </td><td class="border"> JPQL </td><td class="border">
 4.6.17.3, 4.14 </td></tr>
 <tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-????">OPENJPA-????</a>
- </td><td class="border"> Low </td><td class="border"> Object construction in mapping results from native SQL query The support for this feature exists in ResultShape object. 
+ </td><td class="border"> Low </td><td class="border"> Object construction in mapping results from native SQL query The support for this feature exists in ResultShape object.
  </td><td class="border"> Query </td><td class="border">
 3.10.16.2.2, 3.10.16.3, 12.3 </td></tr>
 <tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-????">OPENJPA-????</a>
@@ -80,7 +80,7 @@ Reference(s) </th></tr>
  </td><td class="border"> Criteria </td><td class="border">
 6.3.1, 6.3.5, 6.5.15 </td></tr>
 <tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-????">OPENJPA-????</a>
- </td><td class="border"> Very High </td><td class="border"> Invoke Stored Procedure. The basic support for CallableStatement exists in OpenJPA. However, this feature is going to impact several aspects of current query execution model. A stored procedure can result into multiple types of result sets while the current execution model assumes that a query returns a single type of result. It is unclear at this point how best to handle such multiplicity. Also parameter processing (always a rather weak/heuristic aspect of OpenJPA) requires extension. 
+ </td><td class="border"> Very High </td><td class="border"> Invoke Stored Procedure. The basic support for CallableStatement exists in OpenJPA. However, this feature is going to impact several aspects of current query execution model. A stored procedure can result into multiple types of result sets while the current execution model assumes that a query returns a single type of result. It is unclear at this point how best to handle such multiplicity. Also parameter processing (always a rather weak/heuristic aspect of OpenJPA) requires extension.
  </td><td class="border"> Query </td><td class="border">
 3.1.1, 3.10.17, 10.4.3, 10.4.4, 12.2, 12.2.2.9, 12.2.3.20, 12.3 </td></tr>
 <tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-????">OPENJPA-????</a>
@@ -120,7 +120,7 @@ Reference(s) </th></tr>
 <tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-????">OPENJPA-????</a>
  </td><td class="border"> High </td><td class="border"> Entity Graph for query and find operations. Though OpenJPA has extensive support for fetch plans, the EntityGraph specification uses a rather different (and perhaps incomplete) way to define these subgraphs. It will be some work to translate the specification's way of defining these subgraphs to equivalent OpenJPA constructs.
 <br><br>The path navigation includes key field of a Map-type attribute. No equivalent exists in OpenJPA.
-<br><br>javax.persistence.loadgraph is similar to named fetch group concept. 
+<br><br>javax.persistence.loadgraph is similar to named fetch group concept.
  </td><td class="border"> Query </td><td class="border">
 3.1.1, 3.2.7, 3.7, 7.4, 10.3, 12.2.3.17, 12.3 </td></tr>
 <tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-????">OPENJPA-????</a>
@@ -137,7 +137,7 @@ Reference(s) </th></tr>
  </td><td class="border"> Parser </td><td class="border">
 8.3, 12.3 </td></tr>
 <tr><td class="border"> <font color="red">Not Started</font> </td><td class="border"> <a href="https://issues.apache.org/jira/browse/OPENJPA-????">OPENJPA-????</a>
- </td><td class="border"> High </td><td class="border"> Unwrap Cache, EntityManager etc. The EntityManager in the container had a derivation that supported unwrapping. That derivation may now be integrated with OpenJPA implementation. 
+ </td><td class="border"> High </td><td class="border"> Unwrap Cache, EntityManager etc. The EntityManager in the container had a derivation that supported unwrapping. That derivation may now be integrated with OpenJPA implementation.
  </td><td class="border"> EM </td><td class="border">
 3.1.1, 7.9.1, 7.10 </td></tr>
 

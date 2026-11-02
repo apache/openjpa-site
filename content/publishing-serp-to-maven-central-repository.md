@@ -11,7 +11,7 @@ Title: Publishing Serp to Maven Central Repository
 ## Serp Project
 Serp is used by OpenJPA for the bytecode enhancement processing.  It is
 maintained as a [SourceForge project](http://sourceforge.net/projects/serp)
-.  Serp has been a very solid third-party dependent software project. 
+.  Serp has been a very solid third-party dependent software project.
 OpenJPA has had a dependency on Serp v1.13.1 for a long time.  Recently, a
 problem was discovered [JIRA OPENJPA-2240](http://issues.apache.org/jira/browse/OPENJPA-2240) which
 required an update to Serp.  Eventually, it was determined that this
@@ -29,18 +29,18 @@ Serp sourcecode:  <http://serp.cvs.sourceforge.net/serp> <br/>
 
 ## Maven Instructions
 The easiest way to get the updated artifacts for Serp 1.14.1 into Maven
-Central was to follow the instructions on <a href="https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+The+Central+Repository">this page</a>. 
-You will need a GPG utility and signature (instructions on that page). 
+Central was to follow the instructions on <a href="https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+The+Central+Repository">this page</a>.
+You will need a GPG utility and signature (instructions on that page).
 You will also need a login for Sonatype's Nexus server (instructions also
 on that page).
 
 <table class="note"><tr>
-  <td valign="top"> <IMG src="images/warning.gif" width="16" height="16" border="0">
-  <td> <B>Update to the Sonatype documentation...</B><BR>The above referenced wiki page 
-is no longer in service.  I talked with Joel Orlina (jorlina@sonatype.com) and he pointed 
-me at this <a href="http://central.sonatype.org/pages/producers.html">updated documentation</a>.  
+  <td valign="top"> <svg class="size-1 text-warning" alt="" loading="lazy"><use href="#exclamation-triangle-fill"/></svg>
+  <td> <B>Update to the Sonatype documentation...</B><BR>The above referenced wiki page
+is no longer in service.  I talked with Joel Orlina (jorlina@sonatype.com) and he pointed
+me at this <a href="http://central.sonatype.org/pages/producers.html">updated documentation</a>.
 We should attempt to follow these updated, simpler instructions for publishing Serp
-to Maven Central.  But, for historical reference, Sonatype also has the 
+to Maven Central.  But, for historical reference, Sonatype also has the
 <a href="https://web.archive.org/web/20140903200507/https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+The+Central+Repository">original wiki page in archive</a>.
 
 </tr></table>
@@ -84,12 +84,12 @@ outlined on that [original wiki page](https://web.archive.org/web/20140903200507
 .
 
 <table class="note"><tr>
-  <td valign="top"> <IMG src="images/warning.gif" width="16" height="16" border="0">
+  <td valign="top"> <svg class="size-1 text-warning" alt="" loading="lazy"><use href="#exclamation-triangle-fill"/></svg>
   <td> <B>Not documented..</B><BR>One process point that was not documented on that
 <a href="https://web.archive.org/web/20140903200507/https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+The+Central+Repository">original wiki page</a>
 was the need for a JIRA to be created against the OSSRH project (Open
 Source Project Repository Hosting).  This JIRA should include the Central
-Repository staging URL that is provided after you upload the bundle. 
+Repository staging URL that is provided after you upload the bundle.
 Here's an <a href="https://issues.sonatype.org/browse/OSSRH-4247">example JIRA</a>
  that worked for me.  If all else fails, contact Joel Orlina,
 jorlina@sonatype.com.
@@ -113,7 +113,7 @@ committed these changes to HEAD (1.14.2 snapshot) for future reference:
     	    </execution>
     	  </executions>
         </plugin>
-        
+
         <plugin>
     	  <artifactId>maven-javadoc-plugin</artifactId>
     	  <executions>
@@ -128,7 +128,7 @@ committed these changes to HEAD (1.14.2 snapshot) for future reference:
 
 
 If we continue to require changes to Serp, we may want to do more extensive
-changes in the maven processing to make it easier to deploy the artifacts. 
+changes in the maven processing to make it easier to deploy the artifacts.
 Several of the deployment locations in the pom.xml no longer exist.  I made
 a couple of updates, but the permissions don't show up right, so the
 deployment step is still manual.

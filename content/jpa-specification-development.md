@@ -28,7 +28,6 @@ management of OpenJPA releases (ie. 1.x, 2.x, etc) can be found [here](release-m
  <LI><A href="openjpa-2.0.0-beta.html" title="OpenJPA 2.0.0 Beta">OpenJPA 2.0.0 Beta</A></LI>
  <LI><A href="openjpa-2.0.0-beta-2.html" title="OpenJPA 2.0.0 Beta 2">OpenJPA 2.0.0 Beta 2</A></LI>
  <LI><A href="openjpa-2.0.0-beta-3.html" title="OpenJPA 2.0.0 Beta 3">OpenJPA 2.0.0 Beta 3</A></LI>
- <LI><A href="openjpa-2.0.0-early-access-2.html" title="OpenJPA 2.0.0 Early Access 2">OpenJPA 2.0.0 Early Access 2</A></LI>
  <LI><A href="openjpa-2.0.0-milestone-3.html" title="OpenJPA 2.0.0 Milestone 3">OpenJPA 2.0.0 Milestone 3</A></LI>
  <LI><A href="openjpa-2.0.1.html" title="OpenJPA 2.0.1">OpenJPA 2.0.1</A></LI>
  </UL></LI>

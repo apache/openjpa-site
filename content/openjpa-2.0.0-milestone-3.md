@@ -46,7 +46,7 @@ Criteria queries.
 * [Improved test coverage](openjpa:jpa-2.0-test-coverage.html)
  for many database platforms and separation of database support into
 verified and compatible categories.
-* Many more...	
+* Many more...
 
 This early access distribution is based upon the contributions provided in
 development iterations 8 through 12, as defined in the [JPA 2.0 Roadmap](http://cwiki.apache.org/confluence/display/openjpa/JPA+2.0+Roadmap)
@@ -69,8 +69,8 @@ Apache OpenJPA is bundled with the schemas from the JPA specifications, by
 Sun Microsystems and licensed under the CDDL 1.0. The source code is
 available at: https://glassfish.dev.java.net/source/browse/glassfish/
 
-Please review the [LICENSE](http://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/LICENSE.txt)
- and [NOTICE|http://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/NOTICE.txt]
+Please review the [LICENSE](https://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/LICENSE.txt)
+ and [NOTICE|https://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/NOTICE.txt]
  files in svn, source or binary distributions for more details.
 
 {note}
@@ -106,8 +106,8 @@ builds, see the [Obtaining](obtaining.html)
 
 <table>
 <tr><th> Description </th><th> Download </th><th> Signatures </th></tr>
-<tr><td class="border"> OpenJPA 2.0.0 Milestone 3 </td><td class="border"> <a href="http://www.apache.org/dyn/closer.cgi/openjpa/2.0.0-m3/apache-openjpa-2.0.0-m3-binary.zip.html">apache-openjpa-2.0.0-M3-binary.zip</a>
- </td><td class="border"> <a href="http://www.apache.org/dyn/closer.cgi/openjpa/2.0.0-M3/apache-openjpa-2.0.0-M3-binary.zip.asc">PGP</a>
+<tr><td class="border"> OpenJPA 2.0.0 Milestone 3 </td><td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.0.0-M3/apache-openjpa-2.0.0-M3-binary.zip">apache-openjpa-2.0.0-M3-binary.zip</a>
+ </td><td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.0.0-M3/apache-openjpa-2.0.0-M3-binary.zip.asc">PGP</a>
  </td></tr>
 </table>
 
@@ -118,8 +118,8 @@ builds, see the [Obtaining](obtaining.html)
 
 <table>
 <tr><th> Description </th><th> Download </th><th> Signatures </th></tr>
-<tr><td class="border"> OpenJPA 2.0.0 Milestone 3 Source Code </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa/downloads/apache-openjpa-2.0.0-M3-source.zip">apache-openjpa-2.0.0-M3-source.zip</a>
- </td><td class="border"> <a href="http://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa/downloads/apache-openjpa-2.0.0-M3-source.zip.asc">PGP</a>
+<tr><td class="border"> OpenJPA 2.0.0 Milestone 3 Source Code </td><td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.0.0-M3/apache-openjpa-2.0.0-M3-source.zip">apache-openjpa-2.0.0-M3-source.zip</a>
+ </td><td class="border"> <a href="https://archive.apache.org/dist/openjpa/2.0.0-M3/apache-openjpa-2.0.0-M3-source.zip.asc">PGP</a>
  </td></tr>
 <tr><td class="border"> Geronimo JPA 2.0 PFD2 source code </td><td class="border"> <a href="https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0-PFD2/geronimo-jpa_2.0_spec-1.0-PFD2-sources.jar">geronimo-jpa_2.0_spec-1.0-PFD2-sources.jar</a>
  </td><td class="border"> <a href="https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0-PFD2/geronimo-jpa_2.0_spec-1.0-PFD2-sources.jar.asc">PGP</a>
@@ -138,8 +138,8 @@ builds, see the [Obtaining](obtaining.html)
 
 ### Documentation
 
-* [Release Notes](http://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/RELEASE-NOTES.html)
-* [HTML Manual](http://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/docs/manual/)
+* [Release Notes](https://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/RELEASE-NOTES.html)
+* [HTML Manual](https://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/docs/manual/)
 
 <a name="OpenJPA2.0.0Milestone3-QuickStart"></a>
 
@@ -157,8 +157,8 @@ builds, see the [Obtaining](obtaining.html)
 
 ### Maven Artifacts
 
-* [OpenJPA 2.0.0 Milestone 3 JAR](http://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/apache-openjpa-2.0.0-M3.jar)
-* [OpenJPA 2.0.0 Milestone 3 JAR w/ depends](http://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/apache-openjpa-2.0.0-M3.jar)
+* [OpenJPA 2.0.0 Milestone 3 JAR](https://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/apache-openjpa-2.0.0-M3.jar)
+* [OpenJPA 2.0.0 Milestone 3 JAR w/ depends](https://openjpa.apache.org/builds/2.0.0-M3/apache-openjpa-2.0.0-M3/apache-openjpa-2.0.0-M3.jar)
 * [Geronimo JPA 2.0 PFD2 Spec artifacts](https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0-PFD2/)
 * [Geronimo Validation 1.0 CR5 Spec artifacts](https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-validation_1.0_spec/1.0-CR5/)
 
@@ -169,9 +169,9 @@ builds, see the [Obtaining](obtaining.html)
 * [OpenJPA 2.0.0 Milestone 3](https://svn.apache.org/repos/asf/openjpa/tags/2.0.0-M3/)
 * [Geronimo JPA 2.0 PFD2 Spec](https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-jpa_2.0_spec-1.0-PFD2/)
 * [Geronimo Validation 1.0 CR5 Spec](https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-validation_1.0_spec-1.0-CR5/)
-  
-  
 
-  
-  
+
+
+
+
 

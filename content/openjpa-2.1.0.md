@@ -13,7 +13,7 @@ compatible with the prior 1.2.x releases based on the Java Persistence API
 3.0).  For a list of all the new features of JPA 2.0, please checkout the [OpenJPA 2.0.1](openjpa-2.0.1.html)
  release notes.
 
-Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org)
+Additional information on the OpenJPA project may be found at [the project web site](https://openjpa.apache.org)
 .
 
 <a name="OpenJPA2.1.0-ChangesinOpenJPA2.1.0"></a>

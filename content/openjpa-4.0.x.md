@@ -4,7 +4,7 @@ Title: OpenJPA 4.0.X
 
 This distribution is based on the Jakarta Persistence API 3.0.
 
-Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org).
+Additional information on the OpenJPA project may be found at [the project web site](https://openjpa.apache.org).
 
 # Changes in OpenJPA 4.0.1
 

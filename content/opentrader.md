@@ -14,9 +14,9 @@ Web Toolkit (GWT) and OpenJPA running in Tomcat Servlet Container. These
 pages describe various aspects of this end-to-end application. The
 following sections are fairly independent of each other and can be followed
 as such based on your interest.
- 
+
 * [Architecture](opentraderarchitecture.html)
- and core design goals 
+ and core design goals
 * The [computing environment](opentraderenvironment.html)
  requirement
 * Developing a [GWT Client](opentraderclient.html)
@@ -46,11 +46,11 @@ client is using.
 * a library of interactive visual widgets such as dialog boxes,
 combo-boxes, tables etc. This Java based library realizes the widget as the
 elements of a Document Object Model (DOM) for a browser to render them in
-HTML. For example, an instance of **com.google.gwt.user.client.ui.FlexTable** 
+HTML. For example, an instance of **com.google.gwt.user.client.ui.FlexTable**
 urns into a **&lt;table&gt;** in the
 displayed HTML page by the framework. The widget library not only provides
 rendering support, it also comes with a event dispatching model for the
-client application to handle the user interaction. 
+client application to handle the user interaction.
 
 OpenTrader - the sample example described in these pages - demonstrates how
 to develop a GWT client for a transactional, server application based on
@@ -61,7 +61,7 @@ between multiple widgets in the client. Also the sample application covers
 a realistic use case where the core server application is defined
 independent of both GWT and JPA -- and then demonstrates how these two
 technologies are used to _implement_ an end-to-end service running inside a
-Tomcat Servlet Container. 
+Tomcat Servlet Container.
 
 
 
@@ -78,7 +78,7 @@ Checkout the source files in a directory.
 
 $ svn checkout <https://svn.apache.org/repos/asf/openjpa/trunk/openjpa-examples/opentrader>
 
-The source tree comes with 
+The source tree comes with
 
    * Ant build script: *build.xml* and *build.properties*
    * Java source code for OpenTrader application under *src/main/java*
@@ -86,14 +86,14 @@ The source tree comes with
    * Persistence descriptor : *persistence.xml* under *src/main/resources/META-INF*
    * web descriptor	    : *web.xml* under *src/main/resources/WEB-INF*
    * cascading style sheet  : *OpenTrader.css* under *src/main/resources/css*
-   
+
 
 <a name="OpenTrader-2.Build"></a>
 
 ### 2. Build
 
-To build OpenTrader you will require following other libraries. 
-   
+To build OpenTrader you will require following other libraries.
+
    * **Google Web Toolkit**: We have built it with GWT version 2.0.4 which
 can be downloaded from [here](http://google-web-toolkit.googlecode.com/files/gwt-2.0.4.zip)
 .
@@ -102,13 +102,13 @@ to be too un-cool. Download version 1.3.1 from [here](http://code.google.com/p/c
 .
    * and, of course, **OpenJPA libraries**: OpenJPA now comes with all its
 dependencies neatly packaged in a single jar including the JPA API.
-Download from [this site](http://www.apache.org/dyn/closer.cgi/openjpa/2.0.0/apache-openjpa-2.0.0-binary.zip)
-. 
+Download from [this site](https://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-binary.zip)
+.
 
-#### 2.1 Configure build environment 
-      
+#### 2.1 Configure build environment
+
 Edit  **build.properties** to point to the dependent libraries you
-have downloaded. The file contains the instructions as comments. 
+have downloaded. The file contains the instructions as comments.
 
 #### 2.2 Compile with Ant
 
@@ -118,19 +118,19 @@ GWT cross-compiler that translates Java code into JavaScript. And finally
 OpenJPA compilation that adds few bytecodes to the persistent classes to
 manage their persistent behavior (which is also known as bytecode
 enhancement).
-     
+
     $ ant compile
 
 GWT Compiler takes ages. Even though it only compiles for a single
 browser (FireFox). This is controlled by the following directives in the
 module descriptor *OpenTrader.gwt.xml*
 
-	<set-property name="user.agent" value="gecko1_8"/> 
+	<set-property name="user.agent" value="gecko1_8"/>
 
 <a name="OpenTrader-3.Run"></a>
 
 ### 3. Run
-    
+
 You can run either in _hosted_ mode - an environment provided by GWT to
 run within a Jetty container - or in a proper servlet container such as
 Tomcat, Geronimo or GlassFish or even heavy-duty ones such as WebSphere or
@@ -142,7 +142,7 @@ database used by OpenTrader.
 	<property name="openjpa.ConnectionURL" value="jdbc:mysql://localhost/exchange"/>
 	<property name="openjpa.ConnectionUserName" value="whoami"/>
 	<property name="openjpa.ConnectionPassword" value="secret"/>
- 
+
 Also edit the **jdbc.driver** in **build.properties** for the
 driver/database you have selected.
 
@@ -160,10 +160,10 @@ dialog box
 
 ![OpenTrader-login.gif](images/OpenTrader-login.gif)
 
-Once you have entered OpenTrader, the browser application looks like 
+Once you have entered OpenTrader, the browser application looks like
 
 ![OpenTrader-screenshot.gif](images/OpenTrader-screenshot.gif)
-    
+
 In this page, you can place a trade offer to sell or buy some stocks. To
 really commit a trade you will need a matching offer. Now as a trader offer
 can only match to another trader's offer, you need to open another browser

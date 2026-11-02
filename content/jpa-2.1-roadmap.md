@@ -5,9 +5,9 @@ Title: JPA 2.1 Development Roadmap
 #JPA 2.1 Development Roadmap
 
  <table class="note"><tr>
-  <td valign="top"> <IMG src="images/warning.gif" width="16" height="16" border="0">
+  <td valign="top"> <svg class="size-1 text-warning" alt="" loading="lazy"><use href="#exclamation-triangle-fill"/></svg>
   <td>Under Construction...
-This page is modeled after the [JPA 2.0 development roadmap](jpa-2.0-roadmap.html).  Reference that often while constructing this page...    	
+This page is modeled after the [JPA 2.0 development roadmap](jpa-2.0-roadmap.html).  Reference that often while constructing this page...
  </tr></table>
 
 Apache OpenJPA 2.x will be developed in trunk and will be a JPA 2.1
@@ -56,8 +56,8 @@ For a list of databases being tested and current status, checkout the [JPA 2.1 T
 The individual tasks and status can be fond on the [JPA 2.1 Tasks](jpa-2.1-tasks.html)
  page.
 
-  
-  
+
+
 
 ----
 
@@ -66,10 +66,10 @@ The individual tasks and status can be fond on the [JPA 2.1 Tasks](jpa-2.1-tasks
 ## Releases
 
  <table class="note"><tr>
-  <td valign="top"> <IMG src="images/warning.gif" width="16" height="16" border="0">
-  <td>Under Construction...    	
+  <td valign="top"> <svg class="size-1 text-warning" alt="" loading="lazy"><use href="#exclamation-triangle-fill"/></svg>
+  <td>Under Construction...
  </tr></table>
 
 
-  
-  
+
+
