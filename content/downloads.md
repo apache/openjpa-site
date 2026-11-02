@@ -103,7 +103,7 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
 ## Official OpenJPA 3.x Releases
 
 These releases raised the minimum Java version to Java 8 and implement most of
-[JSR-338 Java Persistence 2.2](httpss://jcp.org/en/jsr/detail?id=338) features.
+[JSR-338 Java Persistence 2.2](https://jcp.org/en/jsr/detail?id=338) features.
 
 ### 3.2.x Releases
 

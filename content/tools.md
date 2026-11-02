@@ -3,12 +3,12 @@ Title: Tools
 <a name="Tools-ToolsforOpenJPA"></a>
 
 # Tools for OpenJPA
-  
+
 This page will host description of design-time and runtime tools for
 OpenJPA.
 The tools mentioned below are available as command-line utilities. In the
 future, they may be made available as interactive graphical tools
-integrated into popular IDEs such as Eclipse or IntelliJ. 
+integrated into popular IDEs such as Eclipse or IntelliJ.
 
 <a name="Tools-ExistingOpenJPATools"></a>
 
@@ -19,11 +19,11 @@ tools to:
 
 * [Entity Enhancement](entity-enhancement.html)
  for enhancing the bytecode of POJO domain classes
-* [reverse map](/builds/latest/docs/docbook/manual.html#ref_guide_pc_reverse)
- a database schema to Java source code 
-* [create/synchronize](/builds/latest/docs/docbook/manual.html#ref_guide_mapping_mappingtool_examples)
+* [reverse map](https://nightlies.apache.org/openjpa/builds/latest/html/manual.html#ref_guide_pc_reverse)
+ a database schema to Java source code
+* [create/synchronize](https://nightlies.apache.org/openjpa/builds/latest/html/manual.html#ref_guide_mapping_mappingtool_examples)
  a Java persistent domain model to a database schema
-* [generate](/builds/latest/docs/docbook/manual.html#d0e11103)
+* [generate](https://nightlies.apache.org/openjpa/builds/latest/html/manual.html#_generation_of_canonical_metamodel_classes)
  canonical metamodel classes for strictly-typed Criteria queries
 
 
@@ -41,8 +41,8 @@ tools that are decoupled from a specific OpenJPA release.
 * [Fetch Statistics](fetch-statistics.html)  - monitors persistent field access and determines which fields are never used.
 
 
-  
-  
 
-  
-  
+
+
+
+

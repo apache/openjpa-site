@@ -43,7 +43,7 @@ Criteria queries.
 * Performance enhancements to class reflection utility.
 * OpenJPA now includes the ability to use a pluggable encryption provider.
 * New example which showcases the use of embeddables.
-* [Improved test coverage](openjpa:jpa-2.0-test-coverage.html)
+* [Improved test coverage](jpa-2.0-test-coverage.html)
  for many database platforms and separation of database support into
 verified and compatible categories.
 * Many more...

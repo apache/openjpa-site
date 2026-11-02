@@ -454,7 +454,7 @@ convention must be observed.
     driver for Derby. This must be available via the classpath. In this
     tutorial, the driver is built into Geronimo so no extra actions are needed.
 
-* A complete explanation of the persistence.xml is in the [Apache OpenJPAV2.0 user's Guide: Chapter 6](https://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_persistence.html)
+* A complete explanation of the persistence.xml is in the [Apache OpenJPAV2.0 user's Guide: Chapter 6](https://nightlies.apache.org/openjpa/builds/latest/multihtml/jpa_overview_persistence.html)
 
 * Create the Entity Manager. In the provided code, the EntityManager is a
   property of the InventoryEntityBroker class. The Entity Manager controls
@@ -478,8 +478,8 @@ convention must be observed.
               ...
 
   * The EntityManagerFactory and EntityManager full descriptions are in the following OpenJPA documentation:
-    * EntityManagerFactory: https://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_emfactory.html
-    * EntityManager: https://openjpa.apache.org/builds/latest/docs/manual/jpa_overview_em.html
+    * EntityManagerFactory: https://nightlies.apache.org/openjpa/builds/latest/multihtml/jpa_overview_emfactory.html
+    * EntityManager: https://nightlies.apache.org/openjpa/builds/latest/multihtml/jpa_overview_em.html
 
 * DB interface class. In this example, the InventoryEntityBroker class contains all the OpenJPA database interaction code.
   This is not required but it is a good idea for keeping the functionality componentized. For example, if you want
@@ -506,7 +506,7 @@ convention must be observed.
 
   </div>
 
-  * All of the specific APIs are described in the OpenJPA [javadoc](http:/openjpa.apache.org/builds/latest/docs/javadoc/index.html)
+  * All of the specific APIs are described in the OpenJPA [javadoc](https://nightlies.apache.org/openjpa/builds/latest/javadoc/index.html)
   * Notice that the Query is not standard SQL. It is actually JPQL, which is a specialized form of query language specifically designed for JPA.
     * In the JPQL statement, "<font color="#2a00ff">SELECT item FROM InventoryItem item</font>", notice that InventoryItem has the same case as the class
       InventoryItem.

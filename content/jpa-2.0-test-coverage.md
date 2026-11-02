@@ -4,7 +4,7 @@ Title: JPA 2.0 Test Coverage
 
 # JPA 2.0 Test Coverage
 
-Starting with OpenJPA 2.0.0, we have split the [supported databases ](-https://openjpa.apache.org/builds/latest/docs/manual/supported_databases.html.html)
+Starting with OpenJPA 2.0.0, we have split the [supported databases ](https://nightlies.apache.org/openjpa/builds/latest/multihtml/supported_databases.html)
  into verified and compatible categories.  The automated database testing
 performed by IBM and regular testing performed by the OpenJPA community in
 the lists below, are used to determine which databases will be listed as

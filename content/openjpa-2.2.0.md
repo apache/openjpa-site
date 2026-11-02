@@ -156,8 +156,7 @@ same location twice
 * OPENJPA-2011 - Prevent reparsing annotation metadata for queries
 * OPENJPA-2013 - columnDefinition for TEXT types ends up in wrong sql
 statement
-* OPENJPA-2025]
- - Byte[](.html) and Char[ should be treated as SingularAttributes, not lists by
+* OPENJPA-2025 - Byte[] and Char[] should be treated as SingularAttributes, not lists by
 the metamodel generator
 * OPENJPA-2027 - Metamodel genereated at runtime expects ListAttribute
 for all arrays - not just PersistentCollections.
@@ -174,10 +173,8 @@ AnnotationProcessor
 after a EntityManager.flush is executed.
 * OPENJPA-2056 - Postgres V9.1 issue with LIKE clause and Escape
 Strings
-* OPENJPA-2059 - Missing localizer.properties for
-org.apache.openjpa.persistence.util.SourceCode
-* OPENJPA-2060]
- - AnnotationProcess failed to generate metadata for List<String>[
+* OPENJPA-2059 - Missing localizer.properties for org.apache.openjpa.persistence.util.SourceCode
+* OPENJPA-2060 - AnnotationProcess failed to generate metadata for List<String>[
 attribute in entity
 * OPENJPA-2065 - JPA 2.0 Spec. Violation?
 EntityManager#createNamedQuery(String, Class) bombs with non-entity Class

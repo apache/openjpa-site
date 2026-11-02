@@ -24,7 +24,7 @@ Title: Development
 <LI><A href="runtime-enhancement.html" title="Runtime Enhancement">Runtime Enhancement</A></LI>
 </UL></LI>
 <LI><A href="integration.html" title="Integration">Integration</A> &mdash; <SPAN class="smalltext">How to integrate OpenJPA with various containers and application servers</SPAN></LI>
-<LI><A href="jest.html" title="JEST">JEST</A> &mdash; <SPAN class="smalltext">JEST</SPAN>
+<LI><A href="jest-usage.html" title="JEST">JEST</A> &mdash; <SPAN class="smalltext">JEST</SPAN>
 <UL>
 <LI><A href="jest-examples.html" title="JEST Examples">JEST Examples</A></LI>
 <LI><A href="jest-representation.html" title="JEST Representation">JEST Representation</A></LI>
@@ -68,11 +68,11 @@ Title: Development
 <LI><A href="release-setup.html" title="Release Setup">Release Setup</A></LI>
 </UL></LI>
 <LI><A href="publishing-serp-to-maven-central-repository.html" title="Publishing Serp to Maven Central Repository">Publishing Serp to Maven Central Repository</A></LI>
-<LI><A href="releasing-openjpa-10x-or-11x-old-scp-steps.html" title="Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)">Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</A> &mdash; <SPAN class="smalltext">Instructions for creating an official OpenJPA release</SPAN>
+<LI><A href="releasing-openjpa-1.0.x-or-1.1.x-_old-scp-steps_.html" title="Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)">Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</A> &mdash; <SPAN class="smalltext">Instructions for creating an official OpenJPA release</SPAN>
 <UL>
 <LI><A href="openjpa-release-policy.html" title="OpenJPA Release Policy">OpenJPA Release Policy</A></LI>
 </UL></LI>
-<LI><A href="releasing-openjpa-12x-old-scp-steps.html" title="Releasing OpenJPA 1.2.x (Old SCP Steps)">Releasing OpenJPA 1.2.x (Old SCP Steps)</A> &mdash; <SPAN class="smalltext">Instructions for creating an official OpenJPA release</SPAN>
+<LI><A href="releasing-openjpa-1.2.x-_old-scp-steps_.html" title="Releasing OpenJPA 1.2.x (Old SCP Steps)">Releasing OpenJPA 1.2.x (Old SCP Steps)</A> &mdash; <SPAN class="smalltext">Instructions for creating an official OpenJPA release</SPAN>
 <UL>
 <LI><A href="recovering-from-a-vetoed-release.html" title="Recovering from a vetoed release">Recovering from a vetoed release</A></LI>
 <LI><A href="running-openjpa-examples.html" title="Running OpenJPA Examples">Running OpenJPA Examples</A></LI>
@@ -83,10 +83,10 @@ Title: Development
 <LI><A href="samples.html" title="Samples">Samples</A> &mdash; <SPAN class="smalltext">OpenJPA Examples</SPAN>
 <UL>
 <LI><A href="bean-validation-primer.html" title="Bean Validation Primer">Bean Validation Primer</A></LI>
-<LI><A href="begin-using-openjpa-the-basics.html" title="Begin using OpenJPA - The Basics">Begin using OpenJPA - The Basics</A></LI>
+<LI><A href="begin-using-openjpa---the-basics.html" title="Begin using OpenJPA - The Basics">Begin using OpenJPA - The Basics</A></LI>
 <LI><A href="embeddable-samples.html" title="Embeddable samples">Embeddable samples</A> &mdash; <SPAN class="smalltext">Embeddable samples</SPAN></LI>
 <LI><A href="getting-started.html" title="Getting started">Getting started</A></LI>
-<LI><A href="openbooks-featuring-jpa-20.html" title="OpenBooks - Featuring JPA 2.0">OpenBooks - Featuring JPA 2.0</A>
+<LI><A href="openbooks---featuring-jpa-2.0.html" title="OpenBooks - Featuring JPA 2.0">OpenBooks - Featuring JPA 2.0</A>
 <UL>
 <LI><A href="building-and-running-openbooks.html" title="Building and Running OpenBooks">Building and Running OpenBooks</A></LI>
 </UL></LI>

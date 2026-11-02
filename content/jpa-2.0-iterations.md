@@ -402,21 +402,6 @@ created as a Early Access 2 SNAPSHOT branch due to the JSR-317 terms of use
 restrictions.  A distribution of the Early Access 2 SNAPSHOT is available [here](http://cwiki.apache.org/confluence/display/openjpa/OpenJPA+2.0.0+Early+Access+2)
  for download or the code can be checked out from svn.
 
-<div class="row justify-content-around">
-    <div class="col-4">
-        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Early Access M2" href="openjpa-200-early-access-2.html">
-            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
-            <div class="fw-bold d-inline-block">Download Milestone 2</div>
-        </a>
-    </div>
-    <div class="col-4">
-        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View SVN Files" href="https://svn.apache.org/viewvc/openjpa/branches/2.0.0-EA2">
-            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#pencil"/></svg>
-            <div class="fw-bold d-inline-block">View SVN Files</div>
-        </a>
-    </div>
-</div>
-
 <a name="iteration-3"></a>
 
 ### *Iteration 3 Summary* \- [OPENJPA-808](https://issues.apache.org/jira/browse/OPENJPA-808)
@@ -951,7 +936,7 @@ distribution of the Milestone 3 is available [here](http://cwiki.apache.org/conf
 
 <div class="row justify-content-around">
     <div class="col-4">
-        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Early Access M3" href="openjpa-200-milestone-3.html">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Early Access M3" href="openjpa-2.0.0-milestone-3.html">
             <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
             <div class="fw-bold d-inline-block">Download Milestone 3</div>
         </a>
@@ -1684,7 +1669,7 @@ after it is released.  A distribution of the Beta is available [here](http://cwi
 
 <div class="row justify-content-around">
     <div class="col-4">
-        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Beta" href="openjpa-200-beta.html">
+        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Beta" href="openjpa-2.0.0-beta.html">
             <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
             <div class="fw-bold d-inline-block">Download Beta</div>
         </a>

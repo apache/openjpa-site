@@ -55,14 +55,14 @@ Title: Site Index
     <TR valign="top">        <td class="border"><H4 style="margin-top: 0px"><A name="index-0-9"></A>0-9</H4>
 
  <svg class="size-1" alt="" loading="lazy" title="2.1 Roadmap"><use href="#file-earmark-text-fill"/></svg>
- <A href="21-roadmap.html">2.1 Roadmap</A>
+ <A href="2.1-roadmap.html">2.1 Roadmap</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.1 Roadmap  We'll try to maintain this page with delivered and planned features for the OpenJPA 2.1.0 release, so check back often.   Planned Features   Builtin connection pooling for Java SE applications  Inclusion of commonsdbcp in openjpaall.jar and the binary distribution ... </DIV>
  </TD>
  <td class="border"><H4 style="margin-top: 0px"><A name="index-A"></A>A</H4>
 
  <svg class="size-1" alt="" loading="lazy" title="Apache Nexus Release Process (1.2.x-2.1.x)"><use href="#file-earmark-text-fill"/></svg>
- <A href="apache-nexus-release-process-12x-21x.html">Apache Nexus Release Process (1.2.x-2.1.x)</A>
+ <A href="apache-nexus-release-process-_1.2.x-2.1.x_.html">Apache Nexus Release Process (1.2.x-2.1.x)</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">We're starting to move our builds over to using the Apache Nexus repository (repository.apache.org) for releasing SNAPSHOT and release artifacts. More details on releasing artifacts and using Nexus can be found on the Maven website at http://maven.apache.org/developers/release/apacherelease.html ... </DIV>
 
@@ -100,7 +100,7 @@ Title: Site Index
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Bean Validation Primer  A new feature defined by the JPA 2.0 specification is the ability to seamlessly integrate with a JSR303 http://jcp.org/en/jsr/detail?id=303 bean validation provider.  With minimal effort, OpenJPA 2.0 https://openjpa.apache.org ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="Begin using OpenJPA - The Basics"><use href="#file-earmark-text-fill"/></svg>
- <A href="begin-using-openjpa-the-basics.html">Begin using OpenJPA - The Basics</A>
+ <A href="begin-using-openjpa---the-basics.html">Begin using OpenJPA - The Basics</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Introduction OpenJPA is an open source implementation of the Java JPA (Java Persistence API) specification from Apache. JPA provides an agnostic Javabased API for storing and retrieving information to a backend database. It has a canonical query language named ... </DIV>
 
@@ -282,38 +282,33 @@ Title: Site Index
  </TR><TR valign="top">
  <td class="border"><H4 style="margin-top: 0px"><A name="index-J"></A>J</H4>
 
- <svg class="size-1" alt="" loading="lazy" title="Javadoc"><use href="#file-earmark-text-fill"/></svg>
- <A href="javadoc.html">Javadoc</A>
- <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Documentation</DIV>
-
  <svg class="size-1" alt="" loading="lazy" title="JPA 2.0 Development Process"><use href="#file-earmark-text-fill"/></svg>
- <A href="jpa-20-development-process.html">JPA 2.0 Development Process</A>
+ <A href="jpa-2.0-development-process.html">JPA 2.0 Development Process</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Development Process    JPA 2.0 Roadmap The OpenJPA roadmap and iteration detail for developing JPA 2.0 functionality is documented here JPA 2.0 Roadmap. The process to be used for this development effort will be documented on this Development Process page.   Overview JPA ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="JPA 2.0 Iterations"><use href="#file-earmark-text-fill"/></svg>
- <A href="jpa-20-iterations.html">JPA 2.0 Iterations</A>
+ <A href="jpa-2.0-iterations.html">JPA 2.0 Iterations</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">set( $jira = $rss.fetch(&quot;https://issues.apache.org/jira/sr/jira.issueviews:searchrequestxml/temp/SearchRequest.xml?pid=12310351&amp;status=1&amp;status=5&amp;status=6&amp;version=12314148&amp;version=12313483&amp;version=12313624&amp;version=12314149&amp;version=12314019&amp;version ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="JPA 2.0 Presentations"><use href="#file-earmark-text-fill"/></svg>
- <A href="jpa-20-presentations.html">JPA 2.0 Presentations</A>
+ <A href="jpa-2.0-presentations.html">JPA 2.0 Presentations</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Presentations  We'll document the major new features of the JPA 2.0 specification and how they are being implemented in OpenJPA on this page.   Bean Validation Integration in JPA 2.0 JPA_2.0_Bean_Validation_20090717.pdf (20090717) by Jeremy Bauer and Donald ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="JPA 2.0 Roadmap"><use href="#file-earmark-text-fill"/></svg>
- <A href="jpa-20-roadmap.html">JPA 2.0 Roadmap</A>
+ <A href="jpa-2.0-roadmap.html">JPA 2.0 Roadmap</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Road Map  Apache OpenJPA 2.0.0 is being developed in trunk and will be a JPA 2.0 certified release of the JSR317 http://jcp.org/en/jsr/detail?id=317 specification.   Development Process  The process that OpenJPA will be following for developing JPA ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="JPA 2.0 Tasks"><use href="#file-earmark-text-fill"/></svg>
- <A href="jpa-20-tasks.html">JPA 2.0 Tasks</A>
+ <A href="jpa-2.0-tasks.html">JPA 2.0 Tasks</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0 Tasks    JPA 2.0 Spec Features    Status  JIRA(s)  Effort  Summary  Area  JPA 2.0 Spec Reference(s)    Complete  OPENJPA962 https://issues.apache.org/jira/browse/OPENJPA962 \\ OPENJPA1115 https://issues.apache.org/jira/browse/OPENJPA1115  Medium  New database ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="JPA 2.0 Test Coverage"><use href="#file-earmark-text-fill"/></svg>
- <A href="jpa-20-test-coverage.html">JPA 2.0 Test Coverage</A>
+ <A href="jpa-2.0-test-coverage.html">JPA 2.0 Test Coverage</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Test Coverage  Starting with OpenJPA 2.0.0, we have split the supported databases  https://openjpa.apache.org/builds/latest/docs/manual/supporteddatabases.html into verified and compatible categories. The automated database testing performed by IBM and regular testing performed ... </DIV>
 
@@ -338,10 +333,6 @@ Title: Site Index
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA license: Apache License v2.0    Apache License v2.0                   Apache License             Version 2.0, January 2004            http://www.apache.org/licenses/     TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION    1. Definitions.     &quot;License&quot; shall mean the terms and conditions for use ... </DIV>
 
- <svg class="size-1" alt="" loading="lazy" title="Logo Contest"><use href="#file-earmark-text-fill"/></svg>
- <A href="logo-contest.html">Logo Contest</A>
- <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Apache OpenJPA Logo Contest Rules and Submissions    Announcing the OpenJPA Logo Contest! !paint200x150.png align=left! Submissions accepted through June 30, 2009 Round 1 Voting runs from July 1 through July 8 Round ... </DIV>
  </TD>
  <td class="border"><H4 style="margin-top: 0px"><A name="index-M"></A>M</H4>
 
@@ -367,44 +358,84 @@ Title: Site Index
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">How to obtain OpenJPA   OpenJPA official releases can be downloaded at the Downloads page.  Released binaries can also by accessed from Maven pom.xml files by pointing them to the repository at http://people.apache.org/repo/m2incubatingrepository . An example pom.xml that will use the 0.9.0incubating ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="OpenBooks - Featuring JPA 2.0"><use href="#file-earmark-text-fill"/></svg>
- <A href="openbooks-featuring-jpa-20.html">OpenBooks - Featuring JPA 2.0</A>
+ <A href="openbooks---featuring-jpa-2.0.html">OpenBooks - Featuring JPA 2.0</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenBooks is a sample (and perhaps, simple) application featuring some of the new features in JPA 2.0. This demonstration features usage of new JPA 2.0 features such as   Criteria Query   Compound, Derived identity   Orphan Delete   Persistent Domain Model API   The sample ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="OpenJPA 2.0.0"><use href="#file-earmark-text-fill"/></svg>
- <A href="openjpa-200.html">OpenJPA 2.0.0</A>
+ <A href="openjpa-2.0.0.html">OpenJPA 2.0.0</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.0  The Apache OpenJPA community is proud to announce the release of Apache OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id=317 specification and passes ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="OpenJPA 2.0.0 Beta"><use href="#file-earmark-text-fill"/></svg>
- <A href="openjpa-200-beta.html">OpenJPA 2.0.0 Beta</A>
+ <A href="openjpa-2.0.0-beta.html">OpenJPA 2.0.0 Beta</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Beta  The Apache OpenJPA community is proud to release a Beta distribution of OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id=317 specification ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="OpenJPA 2.0.0 Beta 2"><use href="#file-earmark-text-fill"/></svg>
- <A href="openjpa-200-beta-2.html">OpenJPA 2.0.0 Beta 2</A>
+ <A href="openjpa-2.0.0-beta-2.html">OpenJPA 2.0.0 Beta 2</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Beta 2  The Apache OpenJPA community is proud to release a Beta 2 distribution of OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="OpenJPA 2.0.0 Beta 3"><use href="#file-earmark-text-fill"/></svg>
- <A href="openjpa-200-beta-3.html">OpenJPA 2.0.0 Beta 3</A>
+ <A href="openjpa-2.0.0-beta-3.html">OpenJPA 2.0.0 Beta 3</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Beta 3  The Apache OpenJPA community is proud to release a Beta 3 distribution of OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id ... </DIV>
 
- <svg class="size-1" alt="" loading="lazy" title="OpenJPA 2.0.0 Early Access 2"><use href="#file-earmark-text-fill"/></svg>
- <A href="openjpa-200-early-access-2.html">OpenJPA 2.0.0 Early Access 2</A>
- <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Early Access 2    OpenJPA 2.0.0 Early Access 2  The Apache OpenJPA community is proud to provide an early access distribution of OpenJPA 2.0. This distribution is based on the 03/13/2009 draft of the JPA 2.0/JSR317 specification. Included are many ... </DIV>
-
  <svg class="size-1" alt="" loading="lazy" title="OpenJPA 2.0.0 Milestone 3"><use href="#file-earmark-text-fill"/></svg>
- <A href="openjpa-200-milestone-3.html">OpenJPA 2.0.0 Milestone 3</A>
+ <A href="openjpa-2.0.0-milestone-3.html">OpenJPA 2.0.0 Milestone 3</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Milestone 3    OpenJPA 2.0.0 Milestone 3  The Apache OpenJPA community is proud to provide a Milestone 3 distribution of OpenJPA 2.0. This distribution is based on the 20090922 Proposed Final Draft 2 of the JSR317 JPA 2.0 specification. Included ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="OpenJPA 2.0.1"><use href="#file-earmark-text-fill"/></svg>
- <A href="openjpa-201.html">OpenJPA 2.0.1</A>
+ <A href="openjpa-2.0.1.html">OpenJPA 2.0.1</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.1  The Apache OpenJPA community is proud to announce the maintenance release of Apache OpenJPA 2.0.1. As with the prior 2.0.0 release, this distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail ... </DIV>
+
+ <svg class="size-1" alt="" loading="lazy" title="OpenJPA 2.1.0"><use href="#file-earmark-text-fill"/></svg>
+ <A href="openjpa-2.1.0.html">OpenJPA 2.1.0</A>
+ <BR>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.1.0 ... </DIV>
+
+ <svg class="size-1" alt="" loading="lazy" title="OpenJPA 2.2.0"><use href="#file-earmark-text-fill"/></svg>
+ <A href="openjpa-2.2.0.html">OpenJPA 2.2.0</A>
+ <BR>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.2.0 ... </DIV>
+
+ <svg class="size-1" alt="" loading="lazy" title="OpenJPA 2.3.x"><use href="#file-earmark-text-fill"/></svg>
+ <A href="openjpa-2.3.x.html">OpenJPA 2.3.x</A>
+ <BR>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.3.x ... </DIV>
+
+ <svg class="size-1" alt="" loading="lazy" title="OpenJPA 2.4.x"><use href="#file-earmark-text-fill"/></svg>
+ <A href="openjpa-2.4.x.html">OpenJPA 2.4.x</A>
+ <BR>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.4.x ... </DIV>
+
+ <svg class="size-1" alt="" loading="lazy" title="OpenJPA 3.0.x"><use href="#file-earmark-text-fill"/></svg>
+ <A href="openjpa-3.0.x.html">OpenJPA 3.0.x</A>
+ <BR>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 3.0.x ... </DIV>
+
+ <svg class="size-1" alt="" loading="lazy" title="OpenJPA 3.1.x"><use href="#file-earmark-text-fill"/></svg>
+ <A href="openjpa-3.1.x.html">OpenJPA 3.1.x</A>
+ <BR>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 3.1.x ... </DIV>
+
+ <svg class="size-1" alt="" loading="lazy" title="OpenJPA 3.2.x"><use href="#file-earmark-text-fill"/></svg>
+ <A href="openjpa-3.2.x.html">OpenJPA 3.2.x</A>
+ <BR>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 3.2.x ... </DIV>
+
+ <svg class="size-1" alt="" loading="lazy" title="OpenJPA 4.0.x"><use href="#file-earmark-text-fill"/></svg>
+ <A href="openjpa-4.0.x.html">OpenJPA 4.0.x</A>
+ <BR>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 4.0.x ... </DIV>
+
+ <svg class="size-1" alt="" loading="lazy" title="OpenJPA 4.1.x"><use href="#file-earmark-text-fill"/></svg>
+ <A href="openjpa-4.1.x.html">OpenJPA 4.1.x</A>
+ <BR>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 4.1.x ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="OpenJPA Confluence User Groups"><use href="#file-earmark-text-fill"/></svg>
  <A href="openjpa-confluence-user-groups.html">OpenJPA Confluence User Groups</A>
@@ -415,21 +446,6 @@ Title: Site Index
  <A href="openjpa-development-resources.html">OpenJPA Development Resources</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Getting Involved  Most of the OpenJPA discussions happen on the mailto:dev@openjpa.apache.org mailing list. For more details see OpenJPA mailing lists OpenJPAEmail. For more general discussion about Apache mailing lists, see the Apache mailing lists http://www.apache.org ... </DIV>
-
- <svg class="size-1" alt="" loading="lazy" title="OpenJPA Logo Contest - Round 1"><use href="#file-earmark-text-fill"/></svg>
- <A href="openjpa-logo-contest-round-1.html">OpenJPA Logo Contest - Round 1</A>
- <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Logo Submissions  Logos submitted for Round #1 voting from July 1 July 9:  # !http://os.oles.biz/openjpalogoideas/variant1.png vspace=5! Georgi Naplatanov goshoatolesbiz # !http://os.oles.biz/openjpalogoideas/variant2.png vspace=5! Georgi Naplatanov goshoatolesbiz # !http://os.oles.biz ... </DIV>
-
- <svg class="size-1" alt="" loading="lazy" title="OpenJPA Logo Contest - Round 2"><use href="#file-earmark-text-fill"/></svg>
- <A href="openjpa-logo-contest-round-2.html">OpenJPA Logo Contest - Round 2</A>
- <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Logo Submissions  The results of the first round of voting can be found at OpenJPA Logo Contest Round 1  The following are the finalists for Round 2 of voting from July 9 14:  # !http://people.apache.org/dwoods/openjpa/logos/openjpalogo1.png vspace=5! #7 ... </DIV>
-
- <svg class="size-1" alt="" loading="lazy" title="OpenJPA Logo Contest - Run-off"><use href="#file-earmark-text-fill"/></svg>
- <A href="openjpa-logo-contest-run-off.html">OpenJPA Logo Contest - Run-off</A>
- <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Logo Submissions  The results of the first round of voting can be found at OpenJPA Logo Contest Round 1  The results of the second round of voting can be found at OpenJPA Logo Contest Round 2  The following are the finalists for a runoff round of voting. Please ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="OpenJPA Release Policy"><use href="#file-earmark-text-fill"/></svg>
  <A href="openjpa-release-policy.html">OpenJPA Release Policy</A>
@@ -442,7 +458,7 @@ Title: Site Index
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Summer 2007 Meeting Information  The meeting is on the 6th and 7th of August, 2007.   Agenda   Monday 6 August  Time Title Description Presenter Sponsor Presentation   9:30 10:00 Introductions      10:00 12:00 OpenJPA Architecture ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="OpenJPA+Email"><use href="#file-earmark-text-fill"/></svg>
- <A href="openjpaemail.html">OpenJPA+Email</A>
+ <A href="openjpa-email.html">OpenJPA+Email</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA email aliases   dev@openjpa.apache.org This alias is primarily for the developers on the OpenJPA project.  To subscribe, send mail to mailto:devsubscribe@openjpa.apache.org To unsubscribe, send mail to mailto:devunsubscribe@openjpa.apache.org Archives can be found at http://mailarchives.apache.org/modmbox/openjpadev   users@openjpa.apache.org This alias is primarily for users ... </DIV>
 
@@ -561,12 +577,12 @@ Title: Site Index
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">setup steps only need to be performed on a particular machine once.  Developers using Linux workstations can skip over the references to Cygwin. If using Windows, install cygwin, including Utils/gnupg and Net/openssh packages.     Create and install a SSH ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)"><use href="#file-earmark-text-fill"/></svg>
- <A href="releasing-openjpa-10x-or-11x-old-scp-steps.html">Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</A>
+ <A href="releasing-openjpa-1.0.x-or-1.1.x-_old-scp-steps_.html">Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Instructions for creating an official OpenJPA release     Making an OpenJPA 1.0.x or 1.1.x Release  These instructions guide the release manager through the steps of making an official OpenJPA release.   Prerequisites  # You should read the OpenJPA Release Policy ... </DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="Releasing OpenJPA 1.2.x (Old SCP Steps)"><use href="#file-earmark-text-fill"/></svg>
- <A href="releasing-openjpa-12x-old-scp-steps.html">Releasing OpenJPA 1.2.x (Old SCP Steps)</A>
+ <A href="releasing-openjpa-1.2.x-_old-scp-steps_.html">Releasing OpenJPA 1.2.x (Old SCP Steps)</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Instructions for creating an official OpenJPA release   Releasing OpenJPA These instructions guide the release manager through the steps of making an official OpenJPA release.  Work in progress. Times are just guesses and some information may be missing.   Prerequisites  // TODO ... </DIV>
 
@@ -659,11 +675,6 @@ Title: Site Index
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Tools for OpenJPA   This page will host description of designtime and runtime tools for OpenJPA. The tools mentioned below are available as commandline utilities. In the future, they may be made available as interactive graphical tools integrated into popular IDEs such as Eclipse or IntelliJ.    Existing OpenJPA Tools ... </DIV>
 
- <svg class="size-1" alt="" loading="lazy" title="Top Navigation Bar"><use href="#file-earmark-text-fill"/></svg>
- <A href="top-navigation-bar.html">Top Navigation Bar</A>
- <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px"></DIV>
-
  <svg class="size-1" alt="" loading="lazy" title="Trouble Shooting OpenJPA problems"><use href="#file-earmark-text-fill"/></svg>
  <A href="troubleshoot.html">Trouble Shooting OpenJPA problems.</A>
  <BR>
@@ -698,11 +709,6 @@ Title: Site Index
  <A href="whither-openjpa.html">Whither OpenJPA</A>
  <BR>
  <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Discussion topics: OpenJPA 1.0, OpenJPA 1.1, JPA 2.0, SDO, etc.   JPA 2.0: Any of OpenJPA members on the expert group?  Patrick will be on the EG. There will be a lurker list set up by each EG member for internal discussions.   Does Apache ... </DIV>
-
- <svg class="size-1" alt="" loading="lazy" title="Wiki"><use href="#file-earmark-text-fill"/></svg>
- <A href="wiki.html">Wiki</A>
- <BR>
- <DIV class="smalltext text-break" style="margin: 0 0 0 36px">TODO</DIV>
 
  <svg class="size-1" alt="" loading="lazy" title="Writing Test Cases For OpenJPA"><use href="#file-earmark-text-fill"/></svg>
  <A href="writing-test-cases-for-openjpa.html">Writing Test Cases For OpenJPA</A>

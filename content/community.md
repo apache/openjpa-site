@@ -4,7 +4,6 @@ Title: Community
 
 <UL>
 <LI><A href="committers.html" title="Committers">Committers</A> &mdash; <SPAN class="smalltext">List of people with commit access to the OpenJPA repository</SPAN></LI>
-<LI><A href="events-and-news.html" title="Events and News">Events and News</A> &mdash; <SPAN class="smalltext">OpenJPA related events</SPAN></LI>
 <LI><A href="found-a-bug.html" title="Found a Bug">Found a Bug</A> &mdash; <SPAN class="smalltext">How to report a bug you find in OpenJPA</SPAN></LI>
 <LI><A href="get-involved.html" title="Get Involved">Get Involved</A> &mdash; <SPAN class="smalltext">Information on getting involved with the OpenJPA project</SPAN></LI>
 <LI><A href="mailing-lists.html" title="Mailing Lists">Mailing Lists</A> &mdash; <SPAN class="smalltext">Mailing lists for OpenJPA discussions</SPAN></LI>
