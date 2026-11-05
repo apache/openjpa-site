@@ -25,7 +25,7 @@ available in your path:
 1. For Windows users, install [Cygwin](http://cygwin.com/)
  in addition to the above utilities
     * Make sure the Net/openssh and Utils/gnupg packages are installed that
-come with Cygwin installation. 
+come with Cygwin installation.
     * Optional: [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
 
 <a name="ReleasingOpenJPA1.0.xor1.1.x(OldSCPSteps)-Tasksthatneedtobeperformedforeachrelease"></a>
@@ -35,10 +35,10 @@ come with Cygwin installation.
 {info}In the examples below, it is assumed that the release name will be
 **1.0.1**, and that the current checked-in version name is **1.0.1-SNAPSHOT**
 and stored in the branch named *1.0.x*.{info}
-  
-  
-  
-  
+
+
+
+
 {code:none}
 svn copy -m "OpenJPA Release 1.0.1 branch" \
   https://svn.apache.org/repos/asf/openjpa/branches/1.0.x \
@@ -52,8 +52,8 @@ release: \\
 
 {note}Make sure there is no space characters in the path to the build root subdirectory, i.e. "c:\OpenJPA 1.0.1 Release\build". See "[#Space Character in Build Root Path](#space-character-in-build-root-path.html)
 "{note} ||
-  
-  
+
+
 {code:none}
 perl -pi -e
 "s;<version>1.0.1-SNAPSHOT</version>;<version>1.0.1</version>;g" \
@@ -87,8 +87,8 @@ html change log may also be generated via JIRA.\\
     {code:none}
     svn commit -m "Updated to version 1.0.1 for the release"
 
-  
-  
+
+
 {code:none}
 mvn clean install -Dtest=false
 
@@ -100,18 +100,18 @@ run through the JPA TCK, build the source and binariy assemblies in
     {code:none}
     export MAVEN_OPTS=-Xmx1000m
     mvn --batch-mode deploy site \
-       
+
 -Ptck-profile,examples-profile,license-verify-profile,javadoc-profile,docbook-profile,sign-release
 \
         -Djava14.jar=${JAVA_HOME}/../../1.4/Classes/classes.jar \
         -Dtck.zip=${HOME}/.m2/privaterepos/jpa-1_0b-tck.zip
 
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
 {note} The *examples-profile* has problem running automatically in this
 maven build task. You will need to run the examples manually. Run the maven
 command without the *examples-profile*, then perform the following steps
@@ -129,18 +129,18 @@ openjpa-integration\examples\target\examples\apache-openjpa-1.0.1\examples\hello
     ant
 
 {note} ||
-  
-  
+
+
 {code:none}
 gpg --multifile --verify target/site/downloads/*.asc
 
-    || Monday, 13:01 | Upload the release candidate to [http://openjpa.apache.org/builds/1.0.1/downloads/]
+    || Monday, 13:01 | Upload the release candidate to [https://openjpa.apache.org/builds/1.0.1/downloads/]
 : \\
     {code:none}
     mvn site:deploy
 
 Bear in mind that uploads to
-*people.apache.org/www/openjpa.apache.org/builds/* are not visible at [http://openjpa.apache.org/builds](http://openjpa.apache.org/builds)
+*people.apache.org/www/openjpa.apache.org/builds/* are not visible at [https://openjpa.apache.org/builds](https://openjpa.apache.org/builds)
  until after the hourly synchronization has taken place, as described at [http://www.apache.org/dev/project-site.html]
 .
 {warning}||
@@ -151,10 +151,10 @@ are considered binding for this vote. For an example of the mail, see [this arch
  </th></tr>
 <tr><th> Tuesday, Wednesday </td><td> While waiting for the vote to complete, perform
 whatever manual review and testing on the release you deem appropriate. </th></tr>
-  
-  
-  
-  
+
+
+
+
 {code:none}
 ssh people.apache.org
 cp -r /www/openjpa.apache.org/builds/1.0.1/downloads/*
@@ -162,7 +162,7 @@ cp -r /www/openjpa.apache.org/builds/1.0.1/downloads/*
 chgrp -R openjpa /www/www.apache.org/dist/openjpa/1.0.1
 chmod -R g+w /www/www.apache.org/dist/openjpa/1.0.1
 
-    The OpenJPA binary release will be available via the link [http://www.apache.org/dyn/closer.cgi/openjpa/1.0.1/apache-openjpa-1.0.1-binary.zip]
+    The OpenJPA binary release will be available via the link [https://archive.apache.org/dist/openjpa/1.0.1/apache-openjpa-1.0.1-binary.zip]
  after 24 hours, as per the [Apache mirroring information|http://apache.org/dev/mirrors.html]
 .
     {warning}||
@@ -173,8 +173,8 @@ writeable 1.0.1 branch to a (du jure) read-only tag: \\
       https://svn.apache.org/repos/asf/openjpa/branches/1.0.1 \
       https://svn.apache.org/repos/asf/openjpa/tags/1.0.1
 
-  
-  
+
+
 {code:none}
 svn checkout https://svn.apache.org/repos/asf/openjpa/branches/1.0.x
 cd 1.0.x
@@ -190,7 +190,7 @@ templates. {note}All artifacts (*apache-openjpa-1.0.1-binary.zip* and
 signatures (*apache-openjpa-1.0.1-binary.zip.asc* and
 *apache-openjpa-1.0.1-source.zip.asc*) *must not* link to mirrors.{note}||
     || Thursday, 15:30 | The documentation on the server-side must manually be
-extracted on *people.apache.org*, and the links at [http://openjpa.apache.org/documentation.html]
+extracted on *people.apache.org*, and the links at [https://openjpa.apache.org/documentation.html]
  need to be updated with the new versions and the "latest" documentation
 symbolic links need to be updated: \\
     {code:none}
@@ -200,20 +200,20 @@ symbolic links need to be updated: \\
     ln -fvs ../builds/1.0.1/apache-openjpa-1.0.1/docs/
 /www/openjpa.apache.org/docs/latest
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
 <table>
 <tr></tr>
-  
-  
+
+
 {code:none}
 svn co
 http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-stage-plugin/ \
@@ -223,7 +223,7 @@ for i in $(find openjpa-* -name m2-repository | egrep -v
 "openjpa-project|openjpa-integration|openjpa-examples"); do
     cd $i
     mvn stage:copy -Dsource=file://. \
-   
+
 -Dtarget=scp://people.apache.org:/www/people.apache.org/repo/m2-ibiblio-rsync-repository
 \
     -Dversion=1.0.1
@@ -264,29 +264,29 @@ newline somewhere).{note} ||
     || Friday, 17:00 | Have a beer and enjoy your weekend while the world's
 grateful programmers revel in yet another high-quality release of Apache
 OpenJPA! ||
-    
+
     h2. One time setup
-    
+
     These setup steps only need to be performed on a particular machine once.
     {info}Developers using Linux workstations can skip over the references to
 PuTTY and Cygwin
     {info}
-    
+
     h3. Create and install a SSH key
-    
+
     || 1 | Install PuTTY ||
     || 2a | Use ssh-keygen to create a SSH key.
     {info} See [Authenticating By Public Key (OpenSSH)|http://www.networknewz.com/networknewz-10-20030707AuthenticatingbyPublicKeyOpenSSH.html]
  for a good description on why and how to perform this task.
     {info} ||
     || 2b | In Windows platform, use PuttyGen to create a SSH key (see Putty
-help for details). 
+help for details).
     {info}
     * Use "*SSH-2 DSA*" key type and *1024*-bit key size.
     * Copy the content of the "Public key for pasting...." and save it to a
 file named {{authorized_keys}} for later use.
     * The private key saved by PuTTYGen can only be used in Putty
-configuration.	
+configuration.
     {info} ||
     || 3 | {{pscp}} your SSH public key {{authorized_keys}} saved in last step
 to {{\~/authorized_keys}} ||
@@ -300,15 +300,15 @@ and change its file mode to 600.
 dsa-key-20071107}}"
     * '#' in the first column is a comment line.
     {info} ||
-    || 7 | Configure putty to use your private key and save the session 
+    || 7 | Configure putty to use your private key and save the session
     {info}
     Specify your private key in the "Connection -> SSH -> Auth" category in
 Putty configuration.
     {info}
     ||
-    
+
     h3. Create a PGP key
-    
+
     || 1 | Install cgywin, including *Utils/gnupg* and *Net/openssh* packages, or install gpg from {{[http://www.gnupg.org/(en)/download/index.html]
 }} ||
     || 2 | Generate a key-pair with {{$ gpg \--gen-key}} using default key kind
@@ -329,9 +329,9 @@ is used to sign the published artifacts for the OpenJPA releases. ||
     || 6 | Submit your public key to a key server. E.g. [http://pgp.surfnet.nl:11371/]
  or [http://pgp.mit.edu/]
 ||
-    
+
     h3. Update Maven settings for our servers
-    
+
     || 1 | Create a settings.xml under .m2 (in your Document and Settings
 folder in Windows) ||
     | | {code:xml|title=settings.xml|borderStyle=solid}
@@ -347,7 +347,7 @@ http://maven.apache.org/xsd/settings-1.0.0.xsd">
     	  <directoryPermissions>775</directoryPermissions>
     	  <filePermissions>644</filePermissions>
            </server>
-        </servers>	  
+        </servers>
     </settings>
 
 {info}
@@ -399,8 +399,8 @@ parameters being passed to it, i.e. the source and target URL properties.
 When this plugin is used under Cygwin, make sure the following practices
 are used:
 </tr>
-  
-  
+
+
 Problem symptom:
 
     $ find . -name m2-repository -not -path "*openjpa-project*" \
@@ -425,7 +425,7 @@ Problem symptom:
     [INFO]
  Error copying repository from
 file://./openjpa-all/target/site/m2-repository to \
-          
+
 scp://allee8285@people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
 
 * Quote and use the drive name in the path.
@@ -455,9 +455,9 @@ Problem symptom:
  Error copying repository from
 file:///cygdrive/c/OpenJPA.1.0.1.Release/1.0.1/openjpa-all/target/site/m2-repository
 to
-          
+
 scp://allee8285@people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
-    
+
     Embedded error: Could not read from file:
 c:\cygdrive\c\OpenJPA.1.0.1.Release\1.0.1\openjpa-all\target\site\m2-repository
     \cygdrive\c\OpenJPA.1.0.1.Release\1.0.1\openjpa-all\target\site\m2-repository
@@ -468,7 +468,7 @@ Problem symptom:
 
     $ find "c:/OpenJPA.1.0.1.Release/1.0.1" -name m2-repository -not -path
 "*openjpa-project*" \
-       -exec mvn -f "c:/tmp/maven-stage-plugin/pom.xml" stage:copy 
+       -exec mvn -f "c:/tmp/maven-stage-plugin/pom.xml" stage:copy
        -Dsource=file://{}
 -Dtarget=scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
 \
@@ -499,7 +499,7 @@ Problem symptom:
  Error copying repository from
 file://c:/OpenJPA.1.0.1.Release/1.0.1/openjpa-all/target/site/m2-repository
 to \
-          
+
 scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository
 
 <table>

@@ -7,9 +7,9 @@ Title: Running OpenJPA Examples
 
 The examples are packaged so that they run after extracting the openjpa
 binary distribution. Running directly from the source tree may take some
-work (not documented here). 
+work (not documented here).
 
-1. Build the openjpa binaries 
+1. Build the openjpa binaries
 
         $ mvn clean install
 
@@ -34,13 +34,10 @@ work (not documented here).
 1. run the reversemapping sample
 
 <table class="info"><tr>
-      <td valign="top"><img src="images/information.gif" width="16" height="16" border="0">
+      <td valign="top"><svg class="size-1 text-info" alt="" loading="lazy"><use href="#info-circle-fill"/></svg>
       <td>Currently only works on unix platforms
 </tr></table>
 
         $ cd reversemapping
         $ ant
         $ cd ..
-        
-
-

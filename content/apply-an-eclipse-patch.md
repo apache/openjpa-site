@@ -44,7 +44,7 @@ Import DayTrader projects into Eclipse.
 Replace the following files in your local file system copy of  DayTrader:
 
 * the pom.xml file in the root (*Daytrader/branches/2.1.3*)  directory with [pom.xml](artifacts/pom.xml).
-* for Geronimo only - the createDerbyDB.bat\|.sh file in the *DayTrader/branches/2.1.3/bin/dbscripts/derby* directory with the appropriate one of the following:&nbsp;[createDerbyDB.bat](artifacts/createderbydb.bat) or [createDerbyDB.sh](artifacts/createDerbyDB.sh)
+* for Geronimo only - the createDerbyDB.bat\|.sh file in the *DayTrader/branches/2.1.3/bin/dbscripts/derby* directory with the appropriate one of the following:&nbsp;[createDerbyDB.bat](artifacts/createDerbyDB.bat) or [createDerbyDB.sh](artifacts/createDerbyDB.sh)
 
 Apply these changes:
 
@@ -54,7 +54,7 @@ Apply these changes:
 Apply the eclipse based patch using the following:
 
 1. Download the appropriate patch:&nbsp;
-     1. for Geronimo \-&nbsp; [daytrader_geronimo_eclipse.patch](dartifacts/aytrader_geronimo_eclipse.patch)
+     1. for Geronimo \-&nbsp; [daytrader_geronimo_eclipse.patch](artifacts/daytrader_geronimo_eclipse.patch)
      1. for WebSphere - [daytrader_websphere_eclipse.patch](artifacts/daytrader_websphere_eclipse.patch)
 1. In the Package Explorer view, select all daytrader projects
 1. Right click and select Team \-> Apply Patch

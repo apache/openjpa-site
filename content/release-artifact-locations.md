@@ -6,12 +6,12 @@ Title: Release Artifact Locations
 ## Release Artifact Locations
 
 These mappings locate where the release artifacts are being stored:
- 
+
 <table class="info"><tr>
-  <td valign="top"><img src="images/information.gif" width="16" height="16" border="0">
+  <td valign="top"><svg class="size-1 text-info" alt="" loading="lazy"><use href="#info-circle-fill"/></svg>
   <td> Content in //people.apache.org/www/openjpa.org is now under Apache's control. This
 folder used to contain build and documentation contents. After CMS migration, this folder is
-restricted and become read-only.  
+restricted and become read-only.
 </tr></table>
 
 
@@ -27,7 +27,7 @@ restricted and become read-only.
     <tr><td class="border"> <a href="https://svn.apache.org/repos/asf/openjpa/site/trunk/templates/standard.html">/templates/standard.html</a> </td><td class="border">overall frame with navigation, header and footer</td></tr>
     </table>
 
-2. [https://svn.apache.org/repos/infra/websites/production/openjpa/content](https://svn.apache.org/repos/infra/websites/production/openjpa/content) 
+2. [https://svn.apache.org/repos/infra/websites/production/openjpa/content](https://svn.apache.org/repos/infra/websites/production/openjpa/content)
 
     <table>
     <tr><th> Folder </th><th> Descriptions</th></tr>
@@ -35,7 +35,7 @@ restricted and become read-only.
     <tr><td class="border"> <a href="https://svn.apache.org/repos/infra/websites/production/openjpa/content/builds">/builds</a> </td><td class="border"> Manuals, Javadoc and RELEASE-NOTES.html of all the official OpenJPA releases.</tr>
     <tr><td class="border"> <a href="https://svn.apache.org/repos/infra/websites/production/openjpa/content/docs">/docs</a> </td><td class="border"> Manuals and Javadoc of incubating OpenJPA releases.</tr>
     <tr><td class="border"> <a href="https://svn.apache.org/repos/infra/websites/production/openjpa/content/mail">/mail</a> </td><td class="border"> Mail archives.</tr>
-    </table>   
+    </table>
 
 3. [//people.apache.org/www/openjpa.apache.org/content](https://openjpa.apache.org)
 
@@ -52,19 +52,18 @@ restricted and become read-only.
     <tr><td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa">/\*\*-SNAPSHOT</a> </td><td class="border"> Nightly build binary and source contents from [Jenkin](https://builds.apache.org/)</tr>
     <tr><td class="border"> OPENJPA.\*</td><td class="border"> [Jenkin](https://builds.apache.org/) OpenJPA build jobs</tr>
     </table>
-  
+
 5. [//people.apache.org/www/www.apache.org/dist/openjpa](http://www.apache.org/dist/openjpa)
 
     <table>
     <tr><th> Folder </th><th> Descriptions</th></tr>
     <tr><td class="border"> <a href="http://www.apache.org/dist/openjpa">/\*\*</a> </td><td class="border"> Current distribution content.</tr>
     </table>
-  
-6. [//people.apache.org/www/archive.apache.org/dist/openjpa](http://archive.apache.org/dist/openjpa)
+
+6. [//people.apache.org/www/archive.apache.org/dist/openjpa](https://archive.apache.org/dist/openjpa)
 
     <table>
     <tr><th> Folder </th><th> Descriptions</th></tr>
-    <tr><td class="border"> <a href="http://archive.apache.org/dist/openjpa">/\*\*</a> </td><td class="border"> Archive contents from //people.apache.org/www/www.apache.org/dist/openjpa; read only.</tr>
+    <tr><td class="border"> <a href="https://archive.apache.org/dist/openjpa">/\*\*</a> </td><td class="border"> Archive contents from //people.apache.org/www/www.apache.org/dist/openjpa; read only.</tr>
     </table>
 
-  

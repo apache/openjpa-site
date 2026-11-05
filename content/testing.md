@@ -17,15 +17,15 @@ Once you have downloaded and built OpenJPA (see [Building](building.html)
 example:
 
     mvn test -DfailIfNoTests=false -Dtest=TestPersistence
-    
+
  <table class="note"><tr>
-  <td valign="top"> <IMG src="images/warning.gif" width="16" height="16" border="0">
+  <td valign="top"> <svg class="size-1 text-warning" alt="" loading="lazy"><use href="#exclamation-triangle-fill"/></svg>
   <td>By default Maven will fail if there are no testcases found in any
 module you build. The examples solve this by specifying
 -DfailIfNoTests=false but you can also change your personal default by
 adding the following to ${user.home}/.m2/settings.xml :
 
- 
+
     	<profile>
     	    <id>enable-no-tests</id>
     	    <activation>
@@ -35,7 +35,7 @@ adding the following to ${user.home}/.m2/settings.xml :
     		<failIfNoTests>false</failIfNoTests>
     	    </properties>
     	</profile>
-    	
+
  </tr></table>
 
 To get more debugging information (e.g., to see the SQL that is being
@@ -43,14 +43,14 @@ executed against the database), you can enable trace-level logging from the
 command line using the "openjpa.Log" system property. For example:
 
     $ mvn test -DfailIfNoTests=false -Dtest=TestPersistence -Dopenjpa.Log=DefaultLevel=TRACE
-    
+
     [INFO] Scanning for projects...
-    [INFO] Reactor build order: 
+    [INFO] Reactor build order:
     ...
-    690  test  TRACE  [main] openjpa.jdbc.SQL - <t 4261185, conn 3061987> executing prepstmnt 12659709 
-       INSERT INTO AllFieldTypes (id, arrayOfStrings, booleanField, byteField, charField, dateField, 
-       doubleField, floatField, intField, longField, shortField, stringField) 
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [params=(long) 601, (null) null, (int) 0, (byte) 0, 
+    690  test  TRACE  [main] openjpa.jdbc.SQL - <t 4261185, conn 3061987> executing prepstmnt 12659709
+       INSERT INTO AllFieldTypes (id, arrayOfStrings, booleanField, byteField, charField, dateField,
+       doubleField, floatField, intField, longField, shortField, stringField)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [params=(long) 601, (null) null, (int) 0, (byte) 0,
        (int) 0, (null) null, (double) 0.0, (float) 0.0, (int) 0, (long) 0, (short) 0, (null) null]
     701  test  TRACE  [main] openjpa.jdbc.SQL - <t 4261185, conn 3061987> [11 ms] spent
     701  test  TRACE  [main] openjpa.jdbc.JDBC - <t 4261185, conn 3061987> [0 ms] commit
@@ -93,15 +93,15 @@ For example, to avoid enhancement warnings, get detailed SQL information,
 and write the log data to a file:
 
     mvn test -Dtest=TestPersistence -Dopenjpa.Log=Enhance=ERROR,SQL=TRACE,file=openjpa.log
-    
+
 # Testing against alternate databases
-    
+
 By default, OpenJPA uses the [Derby](http://db.apache.org/derby/)
 database for testing. The `openjpa-persistence-jdbc/pom.xml` POM
 declares various pre-defined databases against which tests can be executed.
 For example, to test against the stand-alone [HSQLDB](http://hsqldb.org/)
  database, you can run with the "test-hsqldb" profile:
-    
+
     mvn test -DfailIfNoTests=false -Dtest=TestPersistence -Ptest-hsqldb
 
 For databases that are not in the pre-defined list, you can manually
@@ -129,9 +129,9 @@ permanently declare the database connection parameters in the
     	<profile>
     	    <id>test-oracle</id>
     	    <properties>
-    		<test-custom>true</test-custom>    	       
+    		<test-custom>true</test-custom>
             <openjpa.custom.driverjar>${user.home}/.m2/privaterepos/jdbc-oracle-10_2_0_1_0.jar</openjpa.custom.driverjar>
-            <openjpa.custom.driverclass>oracle.jdbc.driver.OracleDriver</openjpa.custom.driverclass>    	       
+            <openjpa.custom.driverclass>oracle.jdbc.driver.OracleDriver</openjpa.custom.driverclass>
             <openjpa.custom.url>jdbc:oracle:thin:@HOST:PORT:DBNAME</openjpa.custom.url>
     		<openjpa.custom.username>USERNAME</openjpa.custom.username>
     		<openjpa.custom.password>PASSWORD</openjpa.custom.password>
@@ -144,53 +144,3 @@ permanently declare the database connection parameters in the
 This profile can then be executed by running:
 
     mvn test -DfailIfNoTests=false -Dtest=TestPersistence -Ptest-custom,test-oracle
-
-<a name="Testing-RunningJUnitsinEclipse"></a>
-
-# Running JUnits in Eclipse
-
-You'll probably want to setup a Debug Configuration in Eclipse for running
-the JUnit testcases.
-
-1. Run --> Debug Configurations...  Create a new JUnit configuration
-
-    ![eclipse_dbgcfg_1.png](images/eclipse_dbgcfg_1.png)
-
-1. For the Test tab - Give the configuration a Name, select a Project and
-Test class, and you'll probably want to select the "Keep JUnit running..."
-option.
-
-    ![eclipse_dbgcfg_2.png](images/eclipse_dbgcfg_2.png)
-
-1. For the Arguments tab - Press the Variables... button. This will allow us
-to define variables that can be shared across other Release/Debug
-Configurations within this workspace.
-
-    ![eclipse_dbgcfg_3.png](images/eclipse_dbgcfg_3.png)
-
-1. For the Select Variable window - Press the Edit Variables... button.
-
-    ![eclipse_dbgcfg_4.png](images/eclipse_dbgcfg_4.png)
-
-1. For the Preferences windows - Press New... to add two variables.
-    ![eclipse_dbgcfg_5.png](images/eclipse_dbgcfg_5.png)
-
-        Name = openjpa.trace
-        Value = -Dopenjpa.Log=DefaultLevel=TRACE
-        Description = Set OpenJPA logging to TRACE
-
-    ![eclipse_dbgcfg_6.png](images/eclipse_dbgcfg_6.png)
-
-        Name = connect.derby
-        Value = -Dopenjpa.ConnectionDriverName=org.apache.derby.jdbc.EmbeddedDriver
-            -Dopenjpa.ConnectionURL=jdbc:derby:target/database/openjpa-derby-database;create=true
-        Description = Connection properties for Derby
-
-    ![eclipse_dbgcfg_7.png](images/eclipse_dbgcfg_7.png)
-
-1. After the above are created and saved, add the new variables as VM Arguments.
-
-        ${openjpa.trace}
-        ${connect.derby}
-
-    ![eclipse_dbgcfg_8.png](images/eclipse_dbgcfg_8.png)

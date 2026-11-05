@@ -1,6 +1,80 @@
 .headerlink {
-  visibility: hidden;
+    visibility: hidden;
 }
-dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
-  visibility: visible
+
+dt:hover>.headerlink,
+p:hover>.headerlink,
+td:hover>.headerlink,
+h1:hover>.headerlink,
+h2:hover>.headerlink,
+h3:hover>.headerlink,
+h4:hover>.headerlink,
+h5:hover>.headerlink,
+h6:hover>.headerlink {
+    visibility: visible
+}
+
+.bd-layout {
+    display: grid;
+    grid-template-areas: "sidebar main";
+    grid-template-columns: 1fr 4fr;
+    gap: 1.5rem;
+}
+.bd-sidebar {
+    grid-area: sidebar;
+    position: sticky;
+    top: 9rem;
+    height: calc(100vh - 14rem);
+    overflow-y: auto;
+}
+.bd-main {
+    grid-area: main;
+}
+.bd-links-heading {
+    color: var(--bs-emphasis-color);
+}
+.bd-sidebar li a {
+    text-decoration: none;
+    color: var(--bs-body-color);
+}
+.bd-sidebar li a:hover {
+    color: var(--bs-emphasis-color);
+    background-color: var(--bs-secondary-bg);
+}
+.bd-sidebar li a.active {
+    font-weight: 600;
+    background-color: var(--bs-highlight-bg);
+}
+.bd-sidebar li>a {
+    padding-inline-start: 1em;
+}
+header, footer {
+    background-color: var(--bs-light-bg-subtle);
+}
+@media (max-width: 991.98px) {
+    header img:not(.offcanvas-lg img) {
+        max-height: 3em;
+        width: auto;
+        height: auto;
+    }
+}
+
+.size-3 {
+    min-width: 3rem;
+    min-height: 3rem;
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+.size-1_5 {
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+}
+.size-1 {
+    min-width: 1rem;
+    min-height: 1rem;
+    max-width: 1rem;
+    max-height: 1rem;
 }

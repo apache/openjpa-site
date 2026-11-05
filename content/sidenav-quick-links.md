@@ -4,4 +4,4 @@ Title: SideNav Quick Links
 - [License](license.html)
 - [ASF](http://apache.org)
 - [Downloads](downloads.html)
-- [Site Map](site-map.html)
+- [Site Map](site-index.html)

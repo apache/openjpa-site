@@ -9,7 +9,7 @@ The Apache OpenJPA community is proud to announce the release of Apache
 OpenJPA 2.0.0.	This distribution is based on the final [JSR 317 Java Persistence API, Version 2.0](http://jcp.org/en/jsr/detail?id=317)
  specification and passes the JPA 2.0 TCK, while remaining backwards
 compatible with prior releases based on the Java Persistence API (JPA 1.0)
-part of Java Community Process JSR-220 (Enterprise JavaBeans 3.0). 
+part of Java Community Process JSR-220 (Enterprise JavaBeans 3.0).
 Included are many enhancements, fixes, and new functionality; giving
 developers access to all the new features of JPA 2.0, including:
 
@@ -33,14 +33,14 @@ expressions for KEY, ENTRY, VALUE
     * Support for CASE and TYPE expressions along with IN expressions for
 Collection parameters
     * Support for native date/time/timestamp literals
-    * Support for INDEX expressions on an OrderColumn 
+    * Support for INDEX expressions on an OrderColumn
 * L2 Cache -
     * Provides cache operations such as entity eviction and cache mode
 behaviors to use, bypass or refresh items
     * Per-entity annotation to specify whether an entity should be cached
 * Bean Validation - supports using a JSR 303 implementation for entity
 validation for persist and remove operations
-* Metamodel API - 
+* Metamodel API -
     * Provides API to dynamically retrieve metamodel information for a
 persistence unit
     * Used with Criteria API to generate and execute type safe queries
@@ -57,17 +57,17 @@ Properties, LockModeType, and Detach
 * OSGi - support for the Persistence Unit Service Specification 1.0 in the
 OSGi Service Platform Release 4 Enterprise Version 4.2 specifications has
 been provided by integration with the Apache Aries JPA module
-* And many more...  
+* And many more...
 
 This distribution is based upon the contributions provided in all of the
 development iterations for 2.0, as defined in the [OpenJPA 2.0 Roadmap](jpa-2.0-roadmap.html)
 .
 
-Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org)
+Additional information on the OpenJPA project may be found at [the project web site](https://openjpa.apache.org)
 .
 
-  
-  
+
+
 
 ----
 
@@ -87,18 +87,18 @@ builds, see the [Obtaining](obtaining.html)
 
 <table>
 <tr><th> Description </th><th> Download </th><th> Checksums </th><th> Signatures </th></tr>
-<tr><td class="border"> OpenJPA 2.0.0 Binary </td><td class="border"> [apache-openjpa-2.0.0-binary.zip](http://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-binary.zip)
- </td><td class="border"> [MD5</td><td class="border">http://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-binary.zip.md5]
- </td><td class="border"> [PGP</td><td class="border">http://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-binary.zip.asc]
+<tr><td class="border"> OpenJPA 2.0.0 Binary </td><td class="border"> [apache-openjpa-2.0.0-binary.zip](https://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-binary.zip)
+ </td><td class="border"> [MD5</td><td class="border">https://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-binary.zip.md5]
+ </td><td class="border"> [PGP</td><td class="border">https://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-binary.zip.asc]
  </td></tr>
-<tr><td class="border"> OpenJPA 2.0.0 Source Code </td><td class="border"> [apache-openjpa-2.0.0-source.zip](-http://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-source.zip.html)
- </td><td class="border"> [MD5</td><td class="border">http://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-source.zip.md5]
- </td><td class="border"> [PGP</td><td class="border">http://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-source.zip.asc]
+<tr><td class="border"> OpenJPA 2.0.0 Source Code </td><td class="border"> [apache-openjpa-2.0.0-source.zip](-https://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-source.zip)
+ </td><td class="border"> [MD5</td><td class="border">https://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-source.zip.md5]
+ </td><td class="border"> [PGP</td><td class="border">https://archive.apache.org/dist/openjpa/2.0.0/apache-openjpa-2.0.0-source.zip.asc]
  </td></tr>
 </table>
 
-  
-  
+
+
 
 ----
 
@@ -110,10 +110,10 @@ builds, see the [Obtaining](obtaining.html)
 
 ### Documentation
 
-* [Release Notes](http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/RELEASE-NOTES.html)
-* [User Guide (HTML)](http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/docs/manual/)
-* [User Guide (PDF)](http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/docs/manual/manual.pdf)
-* [Java API Docs](http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/docs/javadoc/)
+* [Release Notes](https://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/RELEASE-NOTES.html)
+* [User Guide (HTML)](https://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/docs/manual/)
+* [User Guide (PDF)](https://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/docs/manual/manual.pdf)
+* [Java API Docs](https://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/docs/javadoc/)
 
 <a name="OpenJPA2.0.0-QuickStart"></a>
 
@@ -131,8 +131,8 @@ builds, see the [Obtaining](obtaining.html)
 
 ### Maven Artifacts
 
-* [OpenJPA 2.0.0 JAR](http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/openjpa-2.0.0.jar)
-* [OpenJPA 2.0.0 JAR w/ depends](http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/openjpa-all-2.0.0.jar)
+* [OpenJPA 2.0.0 JAR](https://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/openjpa-2.0.0.jar)
+* [OpenJPA 2.0.0 JAR w/ depends](https://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/openjpa-all-2.0.0.jar)
 * [Geronimo JPA 2.0 Spec API artifacts](https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0/)
 * [Geronimo Bean Validation 1.0 Spec API artifacts](https://repository.apache.org/content/repositories/releases/org/apache/geronimo/specs/geronimo-validation_1.0_spec/1.0/)
 
@@ -143,11 +143,11 @@ builds, see the [Obtaining](obtaining.html)
 * [OpenJPA 2.0.0 ](https://svn.apache.org/repos/asf/openjpa/tags/2.0.0/)
 * [Geronimo JPA 2.0 Spec API](https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-jpa_2.0_spec-1.0/)
 * [Geronimo Bean Validation 1.0 Spec API](https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-validation_1.0_spec-1.0/)
-  
-  
 
-  
-  
+
+
+
+
 
 ----
 
@@ -164,9 +164,9 @@ Apache OpenJPA is bundled with the schemas from the JPA specifications, by
 Sun Microsystems and licensed under the CDDL 1.0. The source code is
 available at: <https://glassfish.dev.java.net/source/browse/glassfish/>
 
-Please review the [LICENSE](http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/LICENSE.txt)
- and [NOTICE](http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/NOTICE.txt)
+Please review the [LICENSE](https://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/LICENSE.txt)
+ and [NOTICE](https://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/NOTICE.txt)
  files in svn, source or binary distributions for more details.
 ----
-  
-  
+
+

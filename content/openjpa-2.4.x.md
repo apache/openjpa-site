@@ -14,7 +14,7 @@ compatible with the prior 1.2.x releases based on the Java Persistence API
 (JPA 1.0) part of Java Community Process JSR-220 (Enterprise JavaBeans
 3.0).
 
-Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org).
+Additional information on the OpenJPA project may be found at [the project web site](https://openjpa.apache.org).
 
 <a name="OpenJPA-2.4.3"></a>
 
@@ -36,21 +36,21 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2725'>OPENJPA-2725</a>] -         fix ConcurrentModificationException during unrefed dependents cleanup
 </li>
 </ul>
-        
+
 <h2>        New Feature
 </h2>
 <ul>
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2598'>OPENJPA-2598</a>] -         Support SQL server Offset Fetch syntax for pagination
 </li>
 </ul>
-        
+
 <h2>        Improvement
 </h2>
 <ul>
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2581'>OPENJPA-2581</a>] -         openjpa-maven-plugin: drop and create schema regardless of the current database state
 </li>
 </ul>
-                                                                    
+
 <h2>        Dependency upgrade
 </h2>
 <ul>
@@ -90,7 +90,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2684'>OPENJPA-2684</a>] -         Persistence entities not recognized in Wildfly 10 if in a JAR
 </li>
 </ul>
-                        
+
 <h2>        Improvement
 </h2>
 <ul>

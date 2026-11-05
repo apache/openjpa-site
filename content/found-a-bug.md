@@ -33,7 +33,7 @@ and of course, confirm that the problem is
 actually fixed. Then, go to the root directory of your OpenJPA checkout,
 and run a command like 
 
-     svn diff > OPENJPA-<JIRA_NUMBER>-<BRANCH_ID>.patch 
+     git diff > OPENJPA-<JIRA_NUMBER>-<BRANCH_ID>.patch 
 
 to generate a patch file.
 

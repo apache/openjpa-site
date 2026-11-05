@@ -1,3 +1,5 @@
 __pycache__/
 site-generated
 theme/plugins/__pycache__/
+.vscode
+

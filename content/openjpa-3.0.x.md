@@ -10,7 +10,7 @@ The Apache OpenJPA community is currently working on Apache OpenJPA 3.0.0.
 This distribution is based on the final [JSR 338 Java Persistence API,
 Version 2.2](http://jcp.org/en/jsr/detail?id=338) specification.
 
-Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org).
+Additional information on the OpenJPA project may be found at [the project web site](https://openjpa.apache.org).
 
 <a name="OpenJPA-2.4.3"></a>
 
@@ -23,7 +23,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2663'>OPENJPA-2663</a>] -         cleanup ConcreteClassGenerator and move to ASM
 </li>
 </ul>
-        
+
 <h2>        Bug
 </h2>
 <ul>
@@ -54,7 +54,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2725'>OPENJPA-2725</a>] -         fix ConcurrentModificationException during unrefed dependents cleanup
 </li>
 </ul>
-        
+
 <h2>        New Feature
 </h2>
 <ul>
@@ -63,7 +63,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2598'>OPENJPA-2598</a>] -         Support SQL server Offset Fetch syntax for pagination
 </li>
 </ul>
-        
+
 <h2>        Improvement
 </h2>
 <ul>
@@ -72,7 +72,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2669'>OPENJPA-2669</a>] -         Add apache karaf feature for openjpa and adapt OSGi imports
 </li>
 </ul>
-            
+
 <h2>        Task
 </h2>
 <ul>
@@ -97,7 +97,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2677'>OPENJPA-2677</a>] -         upgrade to BVAL-1.1.2
 </li>
 </ul>
-                                                        
+
 <h2>        Dependency upgrade
 </h2>
 <ul>

@@ -13,7 +13,7 @@ compatible with the prior 1.2.x releases based on the Java Persistence API
 3.0).  For a list of all the new features of JPA 2.0, please checkout the [OpenJPA 2.1.0](openjpa-2.1.0.html)
  release notes.
 
-Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org)
+Additional information on the OpenJPA project may be found at [the project web site](https://openjpa.apache.org)
 .
 
 <a name="OpenJPA2.2.0-ChangesinOpenJPA2.2.0"></a>
@@ -156,8 +156,7 @@ same location twice
 * OPENJPA-2011 - Prevent reparsing annotation metadata for queries
 * OPENJPA-2013 - columnDefinition for TEXT types ends up in wrong sql
 statement
-* OPENJPA-2025]
- - Byte[](.html) and Char[ should be treated as SingularAttributes, not lists by
+* OPENJPA-2025 - Byte[] and Char[] should be treated as SingularAttributes, not lists by
 the metamodel generator
 * OPENJPA-2027 - Metamodel genereated at runtime expects ListAttribute
 for all arrays - not just PersistentCollections.
@@ -174,10 +173,8 @@ AnnotationProcessor
 after a EntityManager.flush is executed.
 * OPENJPA-2056 - Postgres V9.1 issue with LIKE clause and Escape
 Strings
-* OPENJPA-2059 - Missing localizer.properties for
-org.apache.openjpa.persistence.util.SourceCode
-* OPENJPA-2060]
- - AnnotationProcess failed to generate metadata for List<String>[
+* OPENJPA-2059 - Missing localizer.properties for org.apache.openjpa.persistence.util.SourceCode
+* OPENJPA-2060 - AnnotationProcess failed to generate metadata for List<String>[
 attribute in entity
 * OPENJPA-2065 - JPA 2.0 Spec. Violation?
 EntityManager#createNamedQuery(String, Class) bombs with non-entity Class

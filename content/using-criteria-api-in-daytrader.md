@@ -37,7 +37,7 @@ Maven needs a repository. Typically it is at the following:
 * **Windows** - C:\Documents and Settings\<userid>\.m2\repository
 * **Linux/unix** - \~/.m2/repository
 
-From the **DayTrader/branches/2.1.3** directory, type "mvn clean install" to build the project. (Note: If you see errors that say "java.util.zip.ZipException: error in opening zip file", ignore them for this exercise.) 
+From the **DayTrader/branches/2.1.3** directory, type "mvn clean install" to build the project. (Note: If you see errors that say "java.util.zip.ZipException: error in opening zip file", ignore them for this exercise.)
 
 <a name="UsingCriteriaAPIinDayTrader-ApplytheDayTraderPatch"></a>
 
@@ -73,7 +73,7 @@ You can also [Apply an Eclipse Patch](apply-an-eclipse-patch.html)
 ## Re-create the DayTrader ear file
 
 From the **DayTrader/branches/2.1.3** directory, type "mvn clean install" to build the project.
-                                                                 
+
 <a name="UsingCriteriaAPIinDayTrader-RunDayTraderonGeronimo"></a>
 
 ## Run DayTrader on Geronimo
@@ -129,7 +129,7 @@ Download the following jython script. This script is used to configure the
 objects needed by DayTrader (data sources, JMS queues and topics) and
 install the application.
 
-[daytrader_singleServer.py](artifacts/daytrader_singleserver.py)
+[daytrader_singleServer.py](artifacts/daytrader_singleServer.py)
 
 
 Within the bin directory of the augmented profile:

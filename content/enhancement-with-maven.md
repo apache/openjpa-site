@@ -4,7 +4,7 @@ Title: Enhancement with Maven
 
 ## Using the openjpa-maven-plugin
 
-The full OpenJPA Maven plugin documentation can be found [here](http://openjpa.apache.org/builds/3.1.2/openjpa-maven-plugin/index.html).
+The full OpenJPA Maven plugin documentation can be found [here](https://openjpa.apache.org/builds/3.1.2/openjpa-maven-plugin/index.html).
 
 For example, to enhance you source entity classes after they have been
 compiled (but exclude any POJO classes that rely upon orm.xml maappings),
@@ -19,7 +19,7 @@ add the openjpa-maven-plugin to the <build> section of your pom.xml, like -
             <configuration>
                 <includes>**/entities/*.class</includes>
                 <excludes>**/entities/XML*.class</excludes>
-                <addDefaultConstructor>true</addDefaultConstructor>               
+                <addDefaultConstructor>true</addDefaultConstructor>
                 <enforcePropertyRestrictions>true</enforcePropertyRestrictions>
             </configuration>
             <executions>
@@ -62,7 +62,7 @@ directory, but I did for this write-up).
           </resource>
         </resources>
         <plugins>
-        .....        
+        .....
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-antrun-plugin</artifactId>

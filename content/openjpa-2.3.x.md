@@ -14,7 +14,7 @@ compatible with the prior 1.2.x releases based on the Java Persistence API
 (JPA 1.0) part of Java Community Process JSR-220 (Enterprise JavaBeans
 3.0).
 
-Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org)
+Additional information on the OpenJPA project may be found at [the project web site](https://openjpa.apache.org)
 .
 <a name="OpenJPA2.3.0-ChangesinOpenJPA2.3.0"></a>
 

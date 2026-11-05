@@ -4,7 +4,7 @@ Title: OpenJPA 3.1.X
 
 This distribution is based on the final [JSR 338 Java Persistence API, Version 2.2](http://jcp.org/en/jsr/detail?id=338) specification.
 
-Additional information on the OpenJPA project may be found at [the project web site](http://openjpa.apache.org).
+Additional information on the OpenJPA project may be found at [the project web site](https://openjpa.apache.org).
 
 # Changes in OpenJPA 3.1.2
 
@@ -85,7 +85,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2710'>OPENJPA-2710</a>] -         Create and update to geronimo-jpa_2.2_spec
 </li>
 </ul>
-        
+
 <h2>        Bug
 </h2>
 <ul>
@@ -132,7 +132,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2791'>OPENJPA-2791</a>] -         Parsing persistence.xml throws premature end of file error
 </li>
 </ul>
-                
+
 <h2>        Improvement
 </h2>
 <ul>
@@ -157,7 +157,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2775'>OPENJPA-2775</a>] -         hsqldb doesn&#39;t support NullTable to retrieve meta information
 </li>
 </ul>
-            
+
 <h2>        Task
 </h2>
 <ul>
@@ -168,7 +168,7 @@ Additional information on the OpenJPA project may be found at [the project web s
 <li>[<a href='https://issues.apache.org/jira/browse/OPENJPA-2758'>OPENJPA-2758</a>] -         JPA 2.2 compliance
 </li>
 </ul>
-                                                        
+
 <h2>        Dependency upgrade
 </h2>
 <ul>

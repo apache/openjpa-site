@@ -1,7 +1,7 @@
 Title: Thanks
 
 The Apache OpenJPA team would like to thank the following individuals and
-organizations. 
+organizations.
 
 <a name="Thanks-ApacheSponsors"></a>
 
@@ -32,7 +32,7 @@ Donald R. Woods
 
 ## Organizations who helped our project . . .
 
-<table>
+<table class="table table-striped">
 <tr><th>Organization </th><th> Donation type </th><th> Organization Contact </th><th> Apache Contact</th></tr>
 <tr>
 <td class="border"> <a href="http://www.ej-technologies.com">ej-technologies</a></td>
@@ -48,5 +48,5 @@ Donald R. Woods
 Other [Related Projects](related-projects.html)
  that OpenJPA depends upon or uses.
 
-  
-  
+
+

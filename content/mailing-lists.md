@@ -7,10 +7,10 @@ Title: Mailing Lists
 
 ## Project Mailing Lists
 
-OpenJPA mailing lists for users, developers and committers are hosted by [Nabble](http://openjpa.208410.n2.nabble.com/) forum.   
+OpenJPA mailing lists for users, developers and committers are hosted by [Nabble](http://openjpa.208410.n2.nabble.com/) forum.
 You can view the current posts, subscribe or unsubscribe, post messages or browse the archives.
 
-<table>
+<table class="table table-striped">
 <tr>
   <th>View Recent Posts</th>
   <th>Subscribe</th>
@@ -18,29 +18,29 @@ You can view the current posts, subscribe or unsubscribe, post messages or brows
   <th>Post a Message</th>
   <th>Browse Archive</th>
   <th> Feeds </th></tr>
-<tr>  
-  <td class="border"><a href="http://openjpa.208410.n2.nabble.com/OpenJPA-Users-f208411.html">OpenJPA User List</a>
-  <td class="border"><a href="mailto:users-subscribe@openjpa.apache.org">users-subscribe</a>
-  <td class="border"><a href="mailto:users-unsubscribe@openjpa.apache.org">users-unsubscribe</a>
-  <td class="border"><a href="mailto:users@openjpa.apache.org">users</a>
-  <td class="border"><a href="http://mail-archives.apache.org/mod_mbox/openjpa-users/">mail-archives.apache.org</a><br/> or <a href="http://openjpa.208410.n2.nabble.com/OpenJPA-Users-f208411.html">Nabble</a>
-  <td class="border"><a href="http://openjpa.208410.n2.nabble.com/OpenJPA-Users-f208411.xml">RSS</a>
+<tr>
+  <td class="border"><a href="https://lists.apache.org/list.html?users@openjpa.apache.org">OpenJPA User List</a></td>
+  <td class="border"><a href="mailto:users-subscribe@openjpa.apache.org">users-subscribe</a></td>
+  <td class="border"><a href="mailto:users-unsubscribe@openjpa.apache.org">users-unsubscribe</a></td>
+  <td class="border"><a href="mailto:users@openjpa.apache.org">users</a></td>
+  <td class="border"><a href="https://lists.apache.org/list.html?users@openjpa.apache.org">lists.apache.org</a></td>
+  <td class="border"><a href="https://lists.apache.org/api/atom?list=users&domain=openjpa.apache.org">RSS</a></td>
 </tr>
-<tr>  
-  <td class="border"><a href="http://openjpa.208410.n2.nabble.com/OpenJPA-Developers-f210739.html">OpenJPA Developer List</a>
-  <td class="border"><a href="mailto:dev-subscribe@openjpa.apache.org">dev-subscribe</a>
-  <td class="border"><a href="mailto:dev-unsubscribe@openjpa.apache.org">dev-unsubscribe</a>
-  <td class="border"><a href="mailto:dev@openjpa.apache.org">dev</a>
-  <td class="border"><a href="http://mail-archives.apache.org/mod_mbox/openjpa-dev/">mail-archives.apache.org</a><br> or <a href="http://openjpa.208410.n2.nabble.com/OpenJPA-Developers-f210739.html">Nabble</a>
-  <td class="border"><a href="http://openjpa.208410.n2.nabble.com/OpenJPA-Developers-f210739.xml">RSS</a>
+<tr>
+  <td class="border"><a href="https://lists.apache.org/list.html?dev@openjpa.apache.org">OpenJPA Developer List</a></td>
+  <td class="border"><a href="mailto:dev-subscribe@openjpa.apache.org">dev-subscribe</a></td>
+  <td class="border"><a href="mailto:dev-unsubscribe@openjpa.apache.org">dev-unsubscribe</a></td>
+  <td class="border"><a href="mailto:dev@openjpa.apache.org">dev</a></td>
+  <td class="border"><a href="https://lists.apache.org/list.html?dev@openjpa.apache.org">lists.apache.org</a></td>
+  <td class="border"><a href="https://lists.apache.org/api/atom?list=dev&domain=openjpa.apache.org">RSS</a></td>
 </tr>
-<tr>  
-  <td class="border"><a href="http://openjpa.208410.n2.nabble.com/OpenJPA-Commits-f218414.html">OpenJPA Commits List</a>
-  <td class="border"><a href="mailto:commits-subscribe@openjpa.apache.org">commits-subscribe</a>
-  <td class="border"><a href="mailto:commits-unsubscribe@openjpa.apache.org">commits-unsubscribe</a>
-  <td class="border"><a href="mailto:commits@openjpa.apache.org">commits</a>
-  <td class="border"><a href="http://mail-archives.apache.org/mod_mbox/openjpa-commits/">mail-archives.apache.org</a><br/> <a href="http://openjpa.208410.n2.nabble.com/OpenJPA-Commits-f218414.html">Nabble</a>
-  <td class="border"><a href="http://openjpa.208410.n2.nabble.com/OpenJPA-Commits-f218414.xml">RSS</a>
+<tr>
+  <td class="border"><a href="https://lists.apache.org/list.html?commits@openjpa.apache.org">OpenJPA Commits List</a></td>
+  <td class="border"><a href="mailto:commits-subscribe@openjpa.apache.org">commits-subscribe</a></td>
+  <td class="border"><a href="mailto:commits-unsubscribe@openjpa.apache.org">commits-unsubscribe</a></td>
+  <td class="border"><a href="mailto:commits@openjpa.apache.org">commits</a></td>
+  <td class="border"><a href="https://lists.apache.org/list.html?commits@openjpa.apache.org">lists.apache.org</a></td>
+  <td class="border"><a href="https://lists.apache.org/api/atom?list=commits&domain=openjpa.apache.org">RSS</a></td>
 </tr>
 </table>
 
