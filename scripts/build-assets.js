@@ -103,12 +103,14 @@ try {
   results.highlight_js = { path: hljsBundleOut, integrity: calculateSRI(hljsBundleOut) };
   console.log('✓ Built local highlight.js bundle (js/highlight/highlight.js) with common languages');
 
-  // Copy a highlight.js theme (light) for syntax colors
-  const hljsThemeSrc = path.join(PROJECT_ROOT, 'node_modules', 'highlight.js', 'styles', 'github.min.css');
+  // Copy a highlight.js theme (light) for syntax colors - IntelliJ IDEA theme
+  const hljsThemeSrc = path.join(PROJECT_ROOT, 'node_modules', 'highlight.js', 'styles', 'idea.min.css');
   const hljsThemeDest = path.join(CSS_DIR, 'highlight.css');
   if (fs.existsSync(hljsThemeSrc)) {
     copyFile(hljsThemeSrc, hljsThemeDest);
-    console.log('✓ Copied highlight.js theme (github.min.css -> css/highlight.css)');
+    console.log('✓ Copied highlight.js theme (idea.min.css -> css/highlight.css)');
+  } else {
+    console.warn('⚠ highlight.js theme not found (idea.min.css)');
   }
 } catch (e) {
   console.warn('⚠ highlight.js bundling failed - run "npm install" first (esbuild + highlight.js): ' + (e.message || e));
