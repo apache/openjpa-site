@@ -1,156 +1,340 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!doctype html>
 <!--
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with
-this work for additional information regarding copyright ownership.
-The ASF licenses this file to You under the Apache License, Version 2.0
-(the "License"); you may not use this file except in compliance with
-the License.  You may obtain a copy of the License at
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
+         https://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
     <head>
-        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
-        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
-        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
-        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
-        <META name="Description" content="Apache OpenJPA -- Site Index" />
-        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
-        <META name="Owner" content="dev@openjpa.apache.org" />
-        <META name="Robots" content="index, follow" />
-        <META name="Security" content="Public" />
-        <META name="Source" content="wiki template" />
-        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
-        <META name="DC.Language" scheme="rfc1766" content="en" />
-        <META name="DC.Rights" content="Copyright © 2006,2026 The Apache Software Foundation" />
-        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
-	<style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Apache OpenJPA - Site Index</title>
+
+        <!-- Start favicon styles - use apache feather -->
+        <link rel="shortcut icon" href="https://www.apache.org/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="https://www.apache.org/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://www.apache.org/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://www.apache.org/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://www.apache.org/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://www.apache.org/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://www.apache.org/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://www.apache.org/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://www.apache.org/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://www.apache.org/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="https://www.apache.org/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://www.apache.org/favicons/favicon-194x194.png" sizes="194x194">
+        <link rel="icon" type="image/png" href="https://www.apache.org/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="https://www.apache.org/favicons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="https://www.apache.org/favicons/favicon-16x16.png" sizes="16x16">
+        <meta name="msapplication-TileColor" content="#603cba">
+        <meta name="msapplication-TileImage" content="https://www.apache.org/favicons/mstile-144x144.png">
+        <meta name="msapplication-config" content="https://www.apache.org/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#282661">
+        <!-- End favicon styles - use apache feather -->
+
+        <!-- Start load of stylesheets (will need to upgrade periodically) -->
+        <link href="css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"/>
+        <style>
 .headerlink {
-  visibility: hidden;
+    visibility: hidden;
 }
-dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
-  visibility: visible
-}	</style>
-        <title>Apache OpenJPA -- Site Index</title>
+
+dt:hover>.headerlink,
+p:hover>.headerlink,
+td:hover>.headerlink,
+h1:hover>.headerlink,
+h2:hover>.headerlink,
+h3:hover>.headerlink,
+h4:hover>.headerlink,
+h5:hover>.headerlink,
+h6:hover>.headerlink {
+    visibility: visible
+}
+
+.bd-layout {
+    display: grid;
+    grid-template-areas: "sidebar main";
+    grid-template-columns: 1fr 4fr;
+    gap: 1.5rem;
+}
+.bd-sidebar {
+    grid-area: sidebar;
+    position: sticky;
+    top: 9rem;
+    height: calc(100vh - 14rem);
+    overflow-y: auto;
+}
+.bd-main {
+    grid-area: main;
+}
+.bd-links-heading {
+    color: var(--bs-emphasis-color);
+}
+.bd-sidebar li a {
+    text-decoration: none;
+    color: var(--bs-body-color);
+}
+.bd-sidebar li a:hover {
+    color: var(--bs-emphasis-color);
+    background-color: var(--bs-secondary-bg);
+}
+.bd-sidebar li a.active {
+    font-weight: 600;
+    background-color: var(--bs-highlight-bg);
+}
+.bd-sidebar li>a {
+    padding-inline-start: 1em;
+}
+header, footer {
+    background-color: var(--bs-light-bg-subtle);
+}
+@media (max-width: 991.98px) {
+    header img:not(.offcanvas-lg img) {
+        max-height: 3em;
+        width: auto;
+        height: auto;
+    }
+}
+
+.size-3 {
+    min-width: 3rem;
+    min-height: 3rem;
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+.size-1_5 {
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+}
+.size-1 {
+    min-width: 1rem;
+    min-height: 1rem;
+    max-width: 1rem;
+    max-height: 1rem;
+}        </style>
     </head>
-    <body>
-        <div class="white_box">
-            <div class="header">
-                <div class="header_l">
-                    <div class="header_r">
+    <body id="index" class="home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+            <symbol id="download" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                <path fill="currentColor" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+            </symbol>
+            <symbol id="pencil" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+            </symbol>
+            <symbol id="clock" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                <path fill="currentColor" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+            </symbol>
+            <symbol id="info-square" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <path fill="currentColor" d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+            </symbol>
+            <symbol id="file-earmark-text-fill" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1z"/>
+            </symbol>
+            <symbol id="three-dots" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+            </symbol>
+            <symbol id="list" viewBox="0 0 16 16">
+                <path fill="currentColor" fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </symbol>
+            <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+                <path fill="currentColor" d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+            </symbol>
+            <symbol id="sun-fill" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+            </symbol>
+            <symbol id="circle-half" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/>
+            </symbol>
+            <symbol id="check-circle-fill" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </symbol>
+            <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+            </symbol>
+            <symbol id="info-circle-fill" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+            </symbol>
+        </svg>
+        <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+            <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+                <div class="bd-navbar-toggle">
+                    <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas"
+                            aria-controls="sidebarOffcanvas" aria-label="Toggle navigation">
+                        <svg class="size-1_5" alt="" loading="lazy"><use href="#list"/></svg>
+                        <span class="d-none fs-6 pe-1">Browse</span>
+                    </button>
+                </div>
+                <a class="navbar-brand p-0 me-0 me-lg-2" href="index.html" aria-label="Apache OpenJPA">
+                    <img src="images/openjpa-logo.png" alt="OpenJPA Logo" title="Apache OpenJPA"/>
+                </a>
+
+                <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#topNavCnv" aria-controls="topNavCnv" aria-label="Toggle navigation">
+                    <svg class="size-1_5" alt="" loading="lazy"><use href="#three-dots"/></svg>
+                </button>
+                <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="topNavCnv" aria-labelledby="topNavCnvLabel">
+                    <div class="offcanvas-header px-4 pb-0">
+                        <h5 class="offcanvas-title text-white" id="topNavCnvLabel">Top Nav</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#topNavCnv">
+                        </button>
+                    </div>
+                    <div class="offcanvas-body p-4 pt-0 p-lg-0">
+                        <ul class="navbar-nav flex-wrap d-flex align-items-center">
+                            <li class="nav-item col-4 col-lg-auto ms-5 me-2">
+                                <a href="https://www.apache.org/">
+                                    <img src="https://www.apache.org/img/asf_logo.png" alt="The Apache Software Foundation" style="border: 0; margin-top: 2px" width="200">
+                                </a>
+                            </li>
+                            <li class="nav-item col-2 col-lg-auto ms-2 me-2">
+                                <a href="https://www.apache.org/foundation/contributing.html">
+                                    <img src="https://www.apache.org/images/SupportApache-small.png" alt="Support The ASF" height="80" width="80">
+                                </a>
+                            </li>
+                            <li class="nav-item col-3 col-lg-auto ms-2 me-2">
+                                <a class="acevent" data-format="square" data-mode="light" data-event="random"></a>
+                                <!-- Actual link will be added with JS, this one for site-checker
+                                   https://www.apache.org/events/current-event -->
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav d-flex flex-wrap ms-md-auto align-items-end">
+                            <li class="nav-item dropdown">
+                                <button class="btn btn-link nav-link px-0 px-lg-2 py-2 dropdown-toggle d-flex align-items-center"
+                                        id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static"
+                                        aria-label="Toggle theme (dark)">
+                                    <svg class="theme-icon-active size-1_5" alt="" loading="lazy"><use href="#moon-stars-fill"/></svg>
+                                    <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+                                    <li>
+                                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                            <svg class="me-2 size-1_5" alt="" loading="lazy"><use href="#sun-fill"/></svg>
+                                            Light
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+                                            <svg class="me-2 size-1_5" alt="" loading="lazy"><use href="#moon-stars-fill"/></svg>
+                                            Dark
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                            <svg class="me-2 size-1_5" alt="" loading="lazy"><use href="#circle-half"/></svg>
+                                            Auto
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="content">
-                <div class="content_l">
-                    <div class="content_r">
-                        <div>
-                            <!-- Banner -->
-                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
-                                <TR>
-                                    <TD valing="top" align="left">
-                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
-                                    </TD>
-                                    <TD width="100%">
-                                        &nbsp;
-                                    </TD>
-                                    <TD valing="top" align="right">
-                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
-                                    </TD>
-                                </TR>
-                            </TABLE>
-
-                            <!-- Navigation Bar -->
-                            <div class="bottom_red_bar">
-                                <div id="site-breadcrumbs">
+            </nav>
+        </header>
+    <div class="container bd-layout">
+        <aside class="bd-sidebar">
+            <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="sidebarOffcanvas">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Site menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebarOffcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <nav>
+                        <ul class="list-unstyled">
+                            <li>
+                                <strong class="bd-links-heading fw-semibold align-items-center">
+                                    <a href="overview.html" title="Overview">Overview</a>
+                                </strong>
+                                <ul class="alternate list-unstyled" type="square">
+                                    <li><a href="quick-start.html" title="Quick Start">Quick Start</a></li>
+                                    <li><a href="downloads.html" title="Downloads">Downloads</a></li>
+                                    <li><a href="documentation.html" title="Documentation">Documentation</a></li>
+                                    <li><a href="site-index.html" title="Site Index">Site Index</a></li>
+                                    <li><a href="license.html" title="License">License</a></li>
+                                    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" title="Privacy Policy">Privacy Policy</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong class="bd-links-heading fw-semibold align-items-center">
+                                    <a href="community.html" title="Community">Community</a>
+                                </strong>
+                                <ul class="alternate list-unstyled" type="square">
+                                    <li><a href="index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
+                                    <li><a href="found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
+                                    <li><a href="get-involved.html" title="Get Involved">Get Involved</a></li>
+                                    <li><a href="mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
+                                    <li><a href="committers.html" title="Committers">Committers</a></li>
+                                    <li><a href="integration.html" title="Integration">Integration</a></li>
+                                    <li><a href="powered-by.html" title="Powered By">Powered By</a></li>
+                                    <li><a href="thanks.html" title="Thanks">Thanks</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong class="bd-links-heading fw-semibold align-items-center">
+                                    <a href="development.html" title="Development">Development</a>
+                                </strong>
+                                <ul class="alternate list-unstyled" type="square">
+                                    <li><a href="downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>
+                                    <li><a href="source-code.html" title="Source Code">Source Code</a></li>
+                                    <li><a href="testing.html" title="Testing">Testing</a></li>
+                                    <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
+                                    <li><a href="tools.html" title="Tools">Tools</a></li>
+                                    <li><a href="samples.html" title="Samples">Samples</a></li>
+                                    <li><a href="release-management.html" title="Release Management">Release Management</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong class="bd-links-heading fw-semibold align-items-center">
+                                    <a href="consumers.html" title="Consumers">Consumers</a>
+                                </strong>
+                                <ul class="alternate list-unstyled" type="square">
+                                    <li><a href="tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
+                                    <li><a href="troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong class="bd-links-heading fw-semibold align-items-center">Search</strong>
+                                <div style="padding: 5px 5px 0px 25px;">
+                                    <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
+                                        <input name="ie" type="hidden" value="UTF-8">
+                                        <input name="oe" type="hidden" value="UTF-8">
+                                        <input maxlength="255" name="q" size="15" type="text" value="" class="mb-2 form-control"/>
+                                        <input name="btnG" type="submit" value="Google" class="btn btn-primary"/>
+                                        <input name="domains" type="hidden" value="openjpa.apache.org">
+                                        <input name="sitesearch" type="hidden" value="openjpa.apache.org">
+                                    </form>
                                 </div>
-                            </div>
-
-                            <!-- Content -->
-                            <table border="0">
-                                <tbody>
-                                    <tr>
-                                        <td valign="top">
-                                            <div class="navigation">
-                                                <div class="navigation_top">
-                                                    <div class="navigation_bottom">
-                                                        <!-- NavigationBar -->
-                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
-                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
-                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
-                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
-                                                            <li><a href="/license.html" title="License">License</a></li>
-                                                            <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" title="Privacy Policy">Privacy Policy</a></li>
-                                                        </ul>
-
-                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
-                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
-                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
-                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
-                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
-                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
-                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
-                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
-                                                        </ul>
-
-
-                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
-                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
-                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
-                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
-                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
-                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
-                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
-                                                        </ul>
-
-                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
-                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
-                                                        </ul>
-
-                                                        <h3>Search</h3>
-
-                                                        <div style="padding: 5px 5px 0px 25px;">
-                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
-                                                                <input name="ie" type="hidden" value="UTF-8">
-                                                                <input name="oe" type="hidden" value="UTF-8">
-                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
-                                                                <input name="btnG" type="submit" value="Google">
-                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
-                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td valign="top" width="100%" style="overflow:hidden;">
-                                            <div class="wiki-content">
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+        <main class="bd-main">
     <p><a name="Site-Index"></a></p>
 <h2 id="space-index">Space Index<a class="headerlink" href="#space-index" title="Permalink">&para;</a></h2>
-<table cellspacing="0" class="grid" width="99%">
-<tr>
-<td colspan="2">
-<table width="100%">
+<table class="table table-striped caption-top">
+<caption>
+<table class="table table-striped table-bordered">
 <tr> <td class="border"><a href="#index-0-9">0-9</a> ... 1</td>
 <td class="border"><a href="#index-A">A</a> ... 5</td>
 <td class="border"><a href="#index-B">B</a> ... 7</td>
@@ -187,170 +371,169 @@ dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover 
 <td class="border">&nbsp;</td>
 </tr>
 </table>
-</td>
-</tr>
+</caption>
 <tr valign="top"> <td class="border"><h4 id="0-9" style="margin-top: 0px"><a name="index-0-9"></a>0-9<a class="headerlink" href="#0-9" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="2.1 Roadmap" width="16"/>
-<a href="21-roadmap.html">2.1 Roadmap</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA 2.1 Roadmap  We'll try to maintain this page with delivered and planned features for the OpenJPA 2.1.0 release, so check back often.   Planned Features   Builtin connection pooling for Java SE applications  Inclusion of commonsdbcp in openjpaall.jar and the binary distribution ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="2.1 Roadmap"><use href="#file-earmark-text-fill"></use></svg>
+<a href="2.1-roadmap.html">2.1 Roadmap</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.1 Roadmap  We'll try to maintain this page with delivered and planned features for the OpenJPA 2.1.0 release, so check back often.   Planned Features   Builtin connection pooling for Java SE applications  Inclusion of commonsdbcp in openjpaall.jar and the binary distribution ... </div>
 </td>
 <td class="border"><h4 id="a" style="margin-top: 0px"><a name="index-A"></a>A<a class="headerlink" href="#a" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Apache Nexus Release Process (1.2.x-2.1.x)" width="16"/>
-<a href="apache-nexus-release-process-12x-21x.html">Apache Nexus Release Process (1.2.x-2.1.x)</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">We're starting to move our builds over to using the Apache Nexus repository (repository.apache.org) for releasing SNAPSHOT and release artifacts. More details on releasing artifacts and using Nexus can be found on the Maven website at http://maven.apache.org/developers/release/apacherelease.html ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="APIDiscussionFollowUp" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Apache Nexus Release Process (1.2.x-2.1.x)"><use href="#file-earmark-text-fill"></use></svg>
+<a href="apache-nexus-release-process-_1.2.x-2.1.x_.html">Apache Nexus Release Process (1.2.x-2.1.x)</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">We're starting to move our builds over to using the Apache Nexus repository (repository.apache.org) for releasing SNAPSHOT and release artifacts. More details on releasing artifacts and using Nexus can be found on the Maven website at http://maven.apache.org/developers/release/apacherelease.html ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="APIDiscussionFollowUp"><use href="#file-earmark-text-fill"></use></svg>
 <a href="apidiscussionfollowup.html">APIDiscussionFollowUp</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">After our meeting, Patrick did some analysis of our current API and where we might want to take it. Here are some initial observations. Please comment as appropriate.  OpenJPAEntityManager extends EntityTransaction; should it? clr no, I like your ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Apply an Eclipse Patch" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">After our meeting, Patrick did some analysis of our current API and where we might want to take it. Here are some initial observations. Please comment as appropriate.  OpenJPAEntityManager extends EntityTransaction; should it? clr no, I like your ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Apply an Eclipse Patch"><use href="#file-earmark-text-fill"></use></svg>
 <a href="apply-an-eclipse-patch.html">Apply an Eclipse Patch</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Apply an Eclipse Patch to DayTrader You can apply an Eclipse patch to DayTrader for the Criteria API changes  Setting up Eclipse First install eclipse by going to&amp;nbsp;http:/www.eclipse.org http://www.eclipse.org and downloading a version of it. These instructions ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Architecture Notes" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Apply an Eclipse Patch to DayTrader You can apply an Eclipse patch to DayTrader for the Criteria API changes  Setting up Eclipse First install eclipse by going to&amp;nbsp;http:/www.eclipse.org http://www.eclipse.org and downloading a version of it. These instructions ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Architecture Notes"><use href="#file-earmark-text-fill"></use></svg>
 <a href="architecture-notes.html">Architecture Notes</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Architecture notes:  Design point: object persistence; ORM but other stores also supported by the architecture  domain model: user's responsibility; other areas are OpenJPA  persistence kernel is central part delegates to other stores via data cache ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Automated Builds" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Architecture notes:  Design point: object persistence; ORM but other stores also supported by the architecture  domain model: user's responsibility; other areas are OpenJPA  persistence kernel is central part delegates to other stores via data cache ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Automated Builds"><use href="#file-earmark-text-fill"></use></svg>
 <a href="automated-builds.html">Automated Builds</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">We're using the Apache Hudson build server for continuous builds for several of the OpenJPA code streams and some of the artifacts in the Tools subproject.   Hudson Jobs OpenJPA  OpenJPA 1.2.x build and deploy http://hudson.apache.org/hudson/job/OpenJPA12x/ This build runs on the Ubuntu ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">We're using the Apache Hudson build server for continuous builds for several of the OpenJPA code streams and some of the artifacts in the Tools subproject.   Hudson Jobs OpenJPA  OpenJPA 1.2.x build and deploy http://hudson.apache.org/hudson/job/OpenJPA12x/ This build runs on the Ubuntu ... </div>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="b" style="margin-top: 0px"><a name="index-B"></a>B<a class="headerlink" href="#b" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Banner" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Banner"><use href="#file-earmark-text-fill"></use></svg>
 <a href="banner.html">Banner</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">div id="headerbackground"&gt; 	  &lt;div id="openjpalogo"&gt;         &lt;a style="float:left; width:280px;display:block;textindent:5000px;textdecoration:none;lineheight:60px; margintop:10px; marginleft:100px;" href="http://openjpa.apache.org"&gt;OpenJPA&lt;/a&gt; 	  &lt;/div&gt;      &lt;div id ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Bean Validation Primer" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">div id="headerbackground"&gt; 	  &lt;div id="openjpalogo"&gt;         &lt;a style="float:left; width:280px;display:block;textindent:5000px;textdecoration:none;lineheight:60px; margintop:10px; marginleft:100px;" href="https://openjpa.apache.org"&gt;OpenJPA&lt;/a&gt; 	  &lt;/div&gt;      &lt;div id ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Bean Validation Primer"><use href="#file-earmark-text-fill"></use></svg>
 <a href="bean-validation-primer.html">Bean Validation Primer</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Bean Validation Primer  A new feature defined by the JPA 2.0 specification is the ability to seamlessly integrate with a JSR303 http://jcp.org/en/jsr/detail?id=303 bean validation provider.  With minimal effort, OpenJPA 2.0 http://openjpa.apache.org ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Begin using OpenJPA - The Basics" width="16"/>
-<a href="begin-using-openjpa-the-basics.html">Begin using OpenJPA - The Basics</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Introduction OpenJPA is an open source implementation of the Java JPA (Java Persistence API) specification from Apache. JPA provides an agnostic Javabased API for storing and retrieving information to a backend database. It has a canonical query language named ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Beginners Performance Guide" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Bean Validation Primer  A new feature defined by the JPA 2.0 specification is the ability to seamlessly integrate with a JSR303 http://jcp.org/en/jsr/detail?id=303 bean validation provider.  With minimal effort, OpenJPA 2.0 https://openjpa.apache.org ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Begin using OpenJPA - The Basics"><use href="#file-earmark-text-fill"></use></svg>
+<a href="begin-using-openjpa---the-basics.html">Begin using OpenJPA - The Basics</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Introduction OpenJPA is an open source implementation of the Java JPA (Java Persistence API) specification from Apache. JPA provides an agnostic Javabased API for storing and retrieving information to a backend database. It has a canonical query language named ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Beginners Performance Guide"><use href="#file-earmark-text-fill"></use></svg>
 <a href="beginners-performance-guide.html">Beginners Performance Guide</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Intro to tuning OpenJPA     OpenJPA Beginners Performance Guide  This guide is targeted at new users of OpenJPA that would like to know some of the important performance tuning properties. Please do not mistake this for an exhaustive tuning guide. This is just enough information ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Build and Runtime Dependencies" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Intro to tuning OpenJPA     OpenJPA Beginners Performance Guide  This guide is targeted at new users of OpenJPA that would like to know some of the important performance tuning properties. Please do not mistake this for an exhaustive tuning guide. This is just enough information ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Build and Runtime Dependencies"><use href="#file-earmark-text-fill"></use></svg>
 <a href="build-and-runtime-dependencies.html">Build and Runtime Dependencies</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Build and Runtime Dependencies    Java versions   Trunk (i.e. OpenJPA 2.1.0 currently) and 2.0.x branch require JDK 1.6 or 1.5. Note that some functionality that requires JDK 1.6 will not be available if you choose to build with JDK 1.5.  Building ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Building" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Build and Runtime Dependencies    Java versions   Trunk (i.e. OpenJPA 2.1.0 currently) and 2.0.x branch require JDK 1.6 or 1.5. Note that some functionality that requires JDK 1.6 will not be available if you choose to build with JDK 1.5.  Building ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Building"><use href="#file-earmark-text-fill"></use></svg>
 <a href="building.html">Building</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">How to build OpenJPA from source    Contents     Building OpenJPA  See Build and Runtime Dependencies for details on the required Java levels.   Maven   Command Line Builds  These instructions describe how to check out the current OpenJPA source code (from ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Building and Running OpenBooks" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">How to build OpenJPA from source    Contents     Building OpenJPA  See Build and Runtime Dependencies for details on the required Java levels.   Maven   Command Line Builds  These instructions describe how to check out the current OpenJPA source code (from ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Building and Running OpenBooks"><use href="#file-earmark-text-fill"></use></svg>
 <a href="building-and-running-openbooks.html">Building and Running OpenBooks</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Instructions to download and run OpenBooks Demo   OpenBooks comes with      complete source code   build scripts to demonstrate how to build a typical OpenJPA application and package it for JSE or JEE environment   scripts to run OpenBooks in on your local database installation.        Follow ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Instructions to download and run OpenBooks Demo   OpenBooks comes with      complete source code   build scripts to demonstrate how to build a typical OpenJPA application and package it for JSE or JEE environment   scripts to run OpenBooks in on your local database installation.        Follow ... </div>
 </td>
 <td class="border"><h4 id="c" style="margin-top: 0px"><a name="index-C"></a>C<a class="headerlink" href="#c" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Coding Standards" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Coding Standards"><use href="#file-earmark-text-fill"></use></svg>
 <a href="coding-standards.html">Coding Standards</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Coding standards for OpenJPA source code    Coding Standards   ASF Requirements   Copyright notices for submitted patches  Please see http://www.apache.org/legal/srcheaders.html for details of the following summary.  Apache does not require you to assign ownership or copyright for any ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Committers" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Coding standards for OpenJPA source code    Coding Standards   ASF Requirements   Copyright notices for submitted patches  Please see http://www.apache.org/legal/srcheaders.html for details of the following summary.  Apache does not require you to assign ownership or copyright for any ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Committers"><use href="#file-earmark-text-fill"></use></svg>
 <a href="committers.html">Committers</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">List of people with commit access to the OpenJPA repository   The people listed below have made significant contributions to OpenJPA by working long and hard to make quality software for the rest of the world to use.  If you would like to contribute to OpenJPA, please see ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Community" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">List of people with commit access to the OpenJPA repository   The people listed below have made significant contributions to OpenJPA by working long and hard to make quality software for the rest of the world to use.  If you would like to contribute to OpenJPA, please see ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Community"><use href="#file-earmark-text-fill"></use></svg>
 <a href="community.html">Community</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Community Links</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Community Top Link" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Community Links</div>
+<p><svg alt="" class="size-1" loading="lazy" title="Community Top Link"><use href="#file-earmark-text-fill"></use></svg>
 <a href="community.html">Community Top Link</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Community</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Consumers Top Link" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Community</div>
+<p><svg alt="" class="size-1" loading="lazy" title="Consumers Top Link"><use href="#file-earmark-text-fill"></use></svg>
 <a href="consumers.html">Consumers Top Link</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Consumers</div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Consumers</div>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="d" style="margin-top: 0px"><a name="index-D"></a>D<a class="headerlink" href="#d" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Development" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Development"><use href="#file-earmark-text-fill"></use></svg>
 <a href="development.html">Development</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Development    OpenJPA Development</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Development Process" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Development    OpenJPA Development</div>
+<p><svg alt="" class="size-1" loading="lazy" title="Development Process"><use href="#file-earmark-text-fill"></use></svg>
 <a href="development-process.html">Development Process</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">DRAFT OpenJPA Development Process   Tracking issues and changes  A JIRA issue is required for any substantive change. In order to keep the list of JIRA issues under control, it is expected that any controversial issue or user request for a feature or design change be discussed ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Development Top Link" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">DRAFT OpenJPA Development Process   Tracking issues and changes  A JIRA issue is required for any substantive change. In order to keep the list of JIRA issues under control, it is expected that any controversial issue or user request for a feature or design change be discussed ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Development Top Link"><use href="#file-earmark-text-fill"></use></svg>
 <a href="development.html">Development Top Link</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Development</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Documentation" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Development</div>
+<p><svg alt="" class="size-1" loading="lazy" title="Documentation"><use href="#file-earmark-text-fill"></use></svg>
 <a href="documentation.html">Documentation</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Documentation    OpenJPA Documentation  The online OpenJPA documentation can be found here.   Latest (2.1.0SNAPSHOT)    Version  HTML Manual  HTML Manual (Single Page)  PDF Manual  Javadocs    Nightly build (trunk)  manual http://openjpa.apache.org/builds/latest ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Documentation Top Link" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Documentation    OpenJPA Documentation  The online OpenJPA documentation can be found here.   Latest (2.1.0SNAPSHOT)    Version  HTML Manual  HTML Manual (Single Page)  PDF Manual  Javadocs    Nightly build (trunk)  manual https://openjpa.apache.org/builds/latest ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Documentation Top Link"><use href="#file-earmark-text-fill"></use></svg>
 <a href="documentation.html">Documentation Top Link</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Documentation</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Downloads" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Documentation</div>
+<p><svg alt="" class="size-1" loading="lazy" title="Downloads"><use href="#file-earmark-text-fill"></use></svg>
 <a href="downloads.html">Downloads</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Downloads for the OpenJPA project    OpenJPA Downloads  Use the links below to download a distribution of Apache OpenJPA. It is good practice to verify the integrity #Verifying Releases of the distribution files.  For information on obtaining OpenJPA binaries, see the Obtaining page. For information on building OpenJPA ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Downloads Top Link" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Downloads for the OpenJPA project    OpenJPA Downloads  Use the links below to download a distribution of Apache OpenJPA. It is good practice to verify the integrity #Verifying Releases of the distribution files.  For information on obtaining OpenJPA binaries, see the Obtaining page. For information on building OpenJPA ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Downloads Top Link"><use href="#file-earmark-text-fill"></use></svg>
 <a href="downloads.html">Downloads Top Link</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Downloads</div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Downloads</div>
 </td>
 <td class="border"><h4 id="e" style="margin-top: 0px"><a name="index-E"></a>E<a class="headerlink" href="#e" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Embeddable samples" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Embeddable samples"><use href="#file-earmark-text-fill"></use></svg>
 <a href="embeddable-samples.html">Embeddable samples</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Embeddable samples    Embeddable classes An entity may use other finegrained classes to represent entity state. Instances of these classes, unlike entity instances, do not have persistent identity of their own. Instead, they exist only as part of the state of the entity ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Enhancement with ANT" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Embeddable samples    Embeddable classes An entity may use other finegrained classes to represent entity state. Instances of these classes, unlike entity instances, do not have persistent identity of their own. Instead, they exist only as part of the state of the entity ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Enhancement with ANT"><use href="#file-earmark-text-fill"></use></svg>
 <a href="enhancement-with-ant.html">Enhancement with ANT</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">following shows how to define a OpenJPA enhancer task and how to invoke the task in ANT.  First you'll need to compile the Entites. (Note: as a prereq to running the enhance task, I copied my persistence.xml file to my /build directory. You ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Enhancement with Eclipse" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">following shows how to define a OpenJPA enhancer task and how to invoke the task in ANT.  First you'll need to compile the Entites. (Note: as a prereq to running the enhance task, I copied my persistence.xml file to my /build directory. You ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Enhancement with Eclipse"><use href="#file-earmark-text-fill"></use></svg>
 <a href="enhancement-with-eclipse.html">Enhancement with Eclipse</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Enhancing Entities with Eclipse  If you are using Eclipse to write and deploy your application, then you have two choices for build time enhancement of your entities. But, if you're using orm.xml to map the Entities, then you can only use the Custom ANT ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Enhancement with Maven" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Enhancing Entities with Eclipse  If you are using Eclipse to write and deploy your application, then you have two choices for build time enhancement of your entities. But, if you're using orm.xml to map the Entities, then you can only use the Custom ANT ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Enhancement with Maven"><use href="#file-earmark-text-fill"></use></svg>
 <a href="enhancement-with-maven.html">Enhancement with Maven</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Using the openjpamavenplugin  There is a Maven plugin provided by the Codehaus project http://mojo.codehaus.org/openjpamavenplugin/index.html, which uses OpenJPA to enhance entities during a Maven build.  For example, to enhance you source entity classes after they have been compiled (but exclude ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Entity Enhancement" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Using the openjpamavenplugin  There is a Maven plugin provided by the Codehaus project http://mojo.codehaus.org/openjpamavenplugin/index.html, which uses OpenJPA to enhance entities during a Maven build.  For example, to enhance you source entity classes after they have been compiled (but exclude ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Entity Enhancement"><use href="#file-earmark-text-fill"></use></svg>
 <a href="entity-enhancement.html">Entity Enhancement</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">How to enhance entity classes    What is Enhancement Anyway?  The JPA spec requires some type of monitoring of Entity objects, but the spec does not define how to implement this monitoring. Some JPA providers autogenerate new subclasses or proxy objects that front ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Events and News" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">How to enhance entity classes    What is Enhancement Anyway?  The JPA spec requires some type of monitoring of Entity objects, but the spec does not define how to implement this monitoring. Some JPA providers autogenerate new subclasses or proxy objects that front ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Events and News"><use href="#file-earmark-text-fill"></use></svg>
 <a href="index.html#Index-eventsandnews">Events and News</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA related events    News Archive</div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA related events    News Archive</div>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="f" style="margin-top: 0px"><a name="index-F"></a>F<a class="headerlink" href="#f" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="FAQ" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="FAQ"><use href="#file-earmark-text-fill"></use></svg>
 <a href="faq.html">FAQ</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Frequently Asked Questions about the OpenJPA project    FAQ      General   What is OpenJPA?  OpenJPA is a 100% opensource implementation of the Java Persistence API (JPA), which is the persistence component for EJB in the Java EE 5 specification http://java.sun.com/javaee/.   What ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="FindBugs Presentation Notes" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Frequently Asked Questions about the OpenJPA project    FAQ      General   What is OpenJPA?  OpenJPA is a 100% opensource implementation of the Java Persistence API (JPA), which is the persistence component for EJB in the Java EE 5 specification http://java.sun.com/javaee/.   What ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="FindBugs Presentation Notes"><use href="#file-earmark-text-fill"></use></svg>
 <a href="findbugs-presentation-notes.html">FindBugs Presentation Notes</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Bill Pugh  (side note: compiling with "target jsr14" will allow us to use generics and compile to JDK 1.4 usable code)  Static analysis   Analyzes program w/out executing   Not a replacement for testing  Find bugs that are one step removed ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Found a Bug" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Bill Pugh  (side note: compiling with "target jsr14" will allow us to use generics and compile to JDK 1.4 usable code)  Static analysis   Analyzes program w/out executing   Not a replacement for testing  Find bugs that are one step removed ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Found a Bug"><use href="#file-earmark-text-fill"></use></svg>
 <a href="found-a-bug.html">Found a Bug</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">How to report a bug you find in OpenJPA    Found a Bug?  If you think you've found a problem with OpenJPA, there are several ways to proceed.  You can begin by raising the issue on the OpenJPA User or Developer mailing lists (see Mailing Lists ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">How to report a bug you find in OpenJPA    Found a Bug?  If you think you've found a problem with OpenJPA, there are several ways to proceed.  You can begin by raising the issue on the OpenJPA User or Developer mailing lists (see Mailing Lists ... </div>
 </td>
 <td class="border"><h4 id="g" style="margin-top: 0px"><a name="index-G"></a>G<a class="headerlink" href="#g" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Get Involved" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Get Involved"><use href="#file-earmark-text-fill"></use></svg>
 <a href="get-involved.html">Get Involved</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Information on getting involved with the OpenJPA project    Join the Apache OpenJPA Community  The Apache OpenJPA project is being built by the open source community for the open source community we welcome your input and contributions!   What we are looking for   Source code ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Getting started" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Information on getting involved with the OpenJPA project    Join the Apache OpenJPA Community  The Apache OpenJPA project is being built by the open source community for the open source community we welcome your input and contributions!   What we are looking for   Source code ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Getting started"><use href="#file-earmark-text-fill"></use></svg>
 <a href="getting-started.html">Getting started</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Notes These instructions detail the steps required to run a give sample for a number of different environments. You can substitute any of the directories in the \binary download\\examples\ directory for hellojpa in the instructions below to run a different sample.   Getting Started with the Eclipse  # Download ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Notes These instructions detail the steps required to run a give sample for a number of different environments. You can substitute any of the directories in the \binary download\\examples\ directory for hellojpa in the instructions below to run a different sample.   Getting Started with the Eclipse  # Download ... </div>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="h" style="margin-top: 0px"><a name="index-H"></a>H<a class="headerlink" href="#h" title="Permalink">&para;</a></h4>
@@ -359,366 +542,370 @@ dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover 
 <img align="absmiddle" border="0" height="16" src="https://cwiki.apache.org/confluence/s/1810/9/_/images/icons/home_16.gif" title="Index (Space Home Page)" width="16"/>
 <a href="index.html">Index</a>
 <br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Welcome to Apache OpenJPA     \\                             \\   News Events and News   \\     \\   Resources   Quick Start Guide to OpenJPA Quick Start  Obtaining OpenJPA Obtaining  OpenJPA Documentation Documentation  Integration with Containers and Application Servers Integration  Enhancing entities with Maven2 Entity Enhancement  OpenJPA ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Index Top Link" width="16"/>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Welcome to Apache OpenJPA     \\                             \\   News Events and News   \\     \\   Resources   Quick Start Guide to OpenJPA Quick Start  Obtaining OpenJPA Obtaining  OpenJPA Documentation Documentation  Integration with Containers and Application Servers Integration  Enhancing entities with Maven2 Entity Enhancement  OpenJPA ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Index Top Link"><use href="#file-earmark-text-fill"></use></svg>
 <a href="index.html">Index Top Link</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Index</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Integration" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Index</div>
+<p><svg alt="" class="size-1" loading="lazy" title="Integration"><use href="#file-earmark-text-fill"></use></svg>
 <a href="integration.html">Integration</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">How to integrate OpenJPA with various containers and application servers    Runtime Dependencies  The binary release download of OpenJPA includes all of the code needed to run in a standalone Java SE JVM or within a Java EE application server. See Build and Runtime ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Intro" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">How to integrate OpenJPA with various containers and application servers    Runtime Dependencies  The binary release download of OpenJPA includes all of the code needed to run in a standalone Java SE JVM or within a Java EE application server. See Build and Runtime ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Intro"><use href="#file-earmark-text-fill"></use></svg>
 <a href="intro.html">Intro</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Apache OpenJPA is a Java persistence project at The Apache Software Foundation http://apache.org that can be used as a standalone POJO http://en.wikipedia.org/wiki/POJO persistence layer or integrated Integration into any Java EE compliant container and many other lightweight ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Apache OpenJPA is a Java persistence project at The Apache Software Foundation http://apache.org that can be used as a standalone POJO http://en.wikipedia.org/wiki/POJO persistence layer or integrated Integration into any Java EE compliant container and many other lightweight ... </div>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="j" style="margin-top: 0px"><a name="index-J"></a>J<a class="headerlink" href="#j" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Javadoc" width="16"/>
-<a href="javadoc.html">Javadoc</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Documentation</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="JPA 2.0 Development Process" width="16"/>
-<a href="jpa-20-development-process.html">JPA 2.0 Development Process</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">JPA 2.0 Development Process    JPA 2.0 Roadmap The OpenJPA roadmap and iteration detail for developing JPA 2.0 functionality is documented here JPA 2.0 Roadmap. The process to be used for this development effort will be documented on this Development Process page.   Overview JPA ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="JPA 2.0 Iterations" width="16"/>
-<a href="jpa-20-iterations.html">JPA 2.0 Iterations</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">set( $jira = $rss.fetch("https://issues.apache.org/jira/sr/jira.issueviews:searchrequestxml/temp/SearchRequest.xml?pid=12310351&amp;status=1&amp;status=5&amp;status=6&amp;version=12314148&amp;version=12313483&amp;version=12313624&amp;version=12314149&amp;version=12314019&amp;version ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="JPA 2.0 Presentations" width="16"/>
-<a href="jpa-20-presentations.html">JPA 2.0 Presentations</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">JPA 2.0 Presentations  We'll document the major new features of the JPA 2.0 specification and how they are being implemented in OpenJPA on this page.   Bean Validation Integration in JPA 2.0 JPA 2.0 Bean Validation 20090717.pdf (20090717) by Jeremy Bauer and Donald ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="JPA 2.0 Roadmap" width="16"/>
-<a href="jpa-20-roadmap.html">JPA 2.0 Roadmap</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">JPA 2.0 Road Map  Apache OpenJPA 2.0.0 is being developed in trunk and will be a JPA 2.0 certified release of the JSR317 http://jcp.org/en/jsr/detail?id=317 specification.   Development Process  The process that OpenJPA will be following for developing JPA ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="JPA 2.0 Tasks" width="16"/>
-<a href="jpa-20-tasks.html">JPA 2.0 Tasks</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA 2.0 Tasks    JPA 2.0 Spec Features    Status  JIRA(s)  Effort  Summary  Area  JPA 2.0 Spec Reference(s)    Complete  OPENJPA962 https://issues.apache.org/jira/browse/OPENJPA962 \\ OPENJPA1115 https://issues.apache.org/jira/browse/OPENJPA1115  Medium  New database ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="JPA 2.0 Test Coverage" width="16"/>
-<a href="jpa-20-test-coverage.html">JPA 2.0 Test Coverage</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">JPA 2.0 Test Coverage  Starting with OpenJPA 2.0.0, we have split the supported databases  http://openjpa.apache.org/builds/latest/docs/manual/supporteddatabases.html into verified and compatible categories. The automated database testing performed by IBM and regular testing performed ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="JPA M2 Demo" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="JPA 2.0 Development Process"><use href="#file-earmark-text-fill"></use></svg>
+<a href="jpa-2.0-development-process.html">JPA 2.0 Development Process</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Development Process    JPA 2.0 Roadmap The OpenJPA roadmap and iteration detail for developing JPA 2.0 functionality is documented here JPA 2.0 Roadmap. The process to be used for this development effort will be documented on this Development Process page.   Overview JPA ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="JPA 2.0 Iterations"><use href="#file-earmark-text-fill"></use></svg>
+<a href="jpa-2.0-iterations.html">JPA 2.0 Iterations</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">set( $jira = $rss.fetch("https://issues.apache.org/jira/sr/jira.issueviews:searchrequestxml/temp/SearchRequest.xml?pid=12310351&amp;status=1&amp;status=5&amp;status=6&amp;version=12314148&amp;version=12313483&amp;version=12313624&amp;version=12314149&amp;version=12314019&amp;version ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="JPA 2.0 Presentations"><use href="#file-earmark-text-fill"></use></svg>
+<a href="jpa-2.0-presentations.html">JPA 2.0 Presentations</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Presentations  We'll document the major new features of the JPA 2.0 specification and how they are being implemented in OpenJPA on this page.   Bean Validation Integration in JPA 2.0 JPA_2.0_Bean_Validation_20090717.pdf (20090717) by Jeremy Bauer and Donald ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="JPA 2.0 Roadmap"><use href="#file-earmark-text-fill"></use></svg>
+<a href="jpa-2.0-roadmap.html">JPA 2.0 Roadmap</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Road Map  Apache OpenJPA 2.0.0 is being developed in trunk and will be a JPA 2.0 certified release of the JSR317 http://jcp.org/en/jsr/detail?id=317 specification.   Development Process  The process that OpenJPA will be following for developing JPA ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="JPA 2.0 Tasks"><use href="#file-earmark-text-fill"></use></svg>
+<a href="jpa-2.0-tasks.html">JPA 2.0 Tasks</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0 Tasks    JPA 2.0 Spec Features    Status  JIRA(s)  Effort  Summary  Area  JPA 2.0 Spec Reference(s)    Complete  OPENJPA962 https://issues.apache.org/jira/browse/OPENJPA962 \\ OPENJPA1115 https://issues.apache.org/jira/browse/OPENJPA1115  Medium  New database ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="JPA 2.0 Test Coverage"><use href="#file-earmark-text-fill"></use></svg>
+<a href="jpa-2.0-test-coverage.html">JPA 2.0 Test Coverage</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Test Coverage  Starting with OpenJPA 2.0.0, we have split the supported databases  https://openjpa.apache.org/builds/latest/docs/manual/supporteddatabases.html into verified and compatible categories. The automated database testing performed by IBM and regular testing performed ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="JPA M2 Demo"><use href="#file-earmark-text-fill"></use></svg>
 <a href="jpa-m2-demo.html">JPA M2 Demo</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">M2 Demo We have created a demo that shows off a subset of the new features that were added during the second milestone Release Management#Milestone 2. The code that is being demoed can be found in the openjpaexamples module under the src/jpastore ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="JSR-317 20081031 Public Draft Tasks" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">M2 Demo We have created a demo that shows off a subset of the new features that were added during the second milestone Release Management#Milestone 2. The code that is being demoed can be found in the openjpaexamples module under the src/jpastore ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="JSR-317 20081031 Public Draft Tasks"><use href="#file-earmark-text-fill"></use></svg>
 <a href="jsr-317-20081031-public-draft-tasks.html">JSR-317 20081031 Public Draft Tasks</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">JPA 2.0 Spec Features based on JSR317 10/31/2008 public draft  For the most recent task list see the JPA 2.0 Roadmap JPA 2.0 Roadmap.    Status  JIRA(s)  Effort  Summary  JPA 2.0 Spec Reference(s)    Complete   OPENJPA782 ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">JPA 2.0 Spec Features based on JSR317 10/31/2008 public draft  For the most recent task list see the JPA 2.0 Roadmap JPA 2.0 Roadmap.    Status  JIRA(s)  Effort  Summary  JPA 2.0 Spec Reference(s)    Complete   OPENJPA782 ... </div>
 </td>
 <td class="border"><h4 id="k" style="margin-top: 0px"><a name="index-K"></a>K<a class="headerlink" href="#k" title="Permalink">&para;</a></h4>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="l" style="margin-top: 0px"><a name="index-L"></a>L<a class="headerlink" href="#l" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="License" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="License"><use href="#file-earmark-text-fill"></use></svg>
 <a href="license.html">License</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA license: Apache License v2.0    Apache License v2.0                   Apache License             Version 2.0, January 2004            http://www.apache.org/licenses/     TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION    1. Definitions.     "License" shall mean the terms and conditions for use ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Logo Contest" width="16"/>
-<a href="logo-contest.html">Logo Contest</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Apache OpenJPA Logo Contest Rules and Submissions    Announcing the OpenJPA Logo Contest! !paint200x150.png align=left! Submissions accepted through June 30, 2009 Round 1 Voting runs from July 1 through July 8 Round ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA license: Apache License v2.0    Apache License v2.0                   Apache License             Version 2.0, January 2004            http://www.apache.org/licenses/     TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION    1. Definitions.     "License" shall mean the terms and conditions for use ... </div>
 </td>
 <td class="border"><h4 id="m" style="margin-top: 0px"><a name="index-M"></a>M<a class="headerlink" href="#m" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Mailing Lists" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Mailing Lists"><use href="#file-earmark-text-fill"></use></svg>
 <a href="mailing-lists.html">Mailing Lists</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Mailing lists for OpenJPA discussions    Project Mailing Lists  OpenJPA mailing lists for users, developers and committers are hosted by Nabble http://n2.nabble.com/OpenJPAf208410.html forum.  You can view the current posts, subscribe or unsubscribe, post messages or browse the archives ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Migration Tool" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Mailing lists for OpenJPA discussions    Project Mailing Lists  OpenJPA mailing lists for users, developers and committers are hosted by Nabble http://n2.nabble.com/OpenJPAf208410.html forum.  You can view the current posts, subscribe or unsubscribe, post messages or browse the archives ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Migration Tool"><use href="#file-earmark-text-fill"></use></svg>
 <a href="migration-tool.html">Migration Tool</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Migration Tool  This commandline utility translates proprietary mapping descriptors to standard JPA mapping descriptors.   Download  The latest OpenJPA Tools JAR file can be download from the SNAPSHOT Repository https://repository.apache.org/content/repositories/snapshots/org/apache ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Migration Tool  This commandline utility translates proprietary mapping descriptors to standard JPA mapping descriptors.   Download  The latest OpenJPA Tools JAR file can be download from the SNAPSHOT Repository https://repository.apache.org/content/repositories/snapshots/org/apache ... </div>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="n" style="margin-top: 0px"><a name="index-N"></a>N<a class="headerlink" href="#n" title="Permalink">&para;</a></h4>
 </td>
 <td class="border"><h4 id="o" style="margin-top: 0px"><a name="index-O"></a>O<a class="headerlink" href="#o" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Obtaining" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Obtaining"><use href="#file-earmark-text-fill"></use></svg>
 <a href="obtaining.html">Obtaining</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">How to obtain OpenJPA   OpenJPA official releases can be downloaded at the Downloads page.  Released binaries can also by accessed from Maven pom.xml files by pointing them to the repository at http://people.apache.org/repo/m2incubatingrepository . An example pom.xml that will use the 0.9.0incubating ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenBooks - Featuring JPA 2.0" width="16"/>
-<a href="openbooks-featuring-jpa-20.html">OpenBooks - Featuring JPA 2.0</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenBooks is a sample (and perhaps, simple) application featuring some of the new features in JPA 2.0. This demonstration features usage of new JPA 2.0 features such as   Criteria Query   Compound, Derived identity   Orphan Delete   Persistent Domain Model API   The sample ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA 2.0.0" width="16"/>
-<a href="openjpa-200.html">OpenJPA 2.0.0</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA 2.0.0  The Apache OpenJPA community is proud to announce the release of Apache OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id=317 specification and passes ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA 2.0.0 Beta" width="16"/>
-<a href="openjpa-200-beta.html">OpenJPA 2.0.0 Beta</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Beta  The Apache OpenJPA community is proud to release a Beta distribution of OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id=317 specification ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA 2.0.0 Beta 2" width="16"/>
-<a href="openjpa-200-beta-2.html">OpenJPA 2.0.0 Beta 2</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Beta 2  The Apache OpenJPA community is proud to release a Beta 2 distribution of OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA 2.0.0 Beta 3" width="16"/>
-<a href="openjpa-200-beta-3.html">OpenJPA 2.0.0 Beta 3</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Beta 3  The Apache OpenJPA community is proud to release a Beta 3 distribution of OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA 2.0.0 Early Access 2" width="16"/>
-<a href="openjpa-200-early-access-2.html">OpenJPA 2.0.0 Early Access 2</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Early Access 2    OpenJPA 2.0.0 Early Access 2  The Apache OpenJPA community is proud to provide an early access distribution of OpenJPA 2.0. This distribution is based on the 03/13/2009 draft of the JPA 2.0/JSR317 specification. Included are many ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA 2.0.0 Milestone 3" width="16"/>
-<a href="openjpa-200-milestone-3.html">OpenJPA 2.0.0 Milestone 3</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Milestone 3    OpenJPA 2.0.0 Milestone 3  The Apache OpenJPA community is proud to provide a Milestone 3 distribution of OpenJPA 2.0. This distribution is based on the 20090922 Proposed Final Draft 2 of the JSR317 JPA 2.0 specification. Included ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA 2.0.1" width="16"/>
-<a href="openjpa-201.html">OpenJPA 2.0.1</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA 2.0.1  The Apache OpenJPA community is proud to announce the maintenance release of Apache OpenJPA 2.0.1. As with the prior 2.0.0 release, this distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA Confluence User Groups" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">How to obtain OpenJPA   OpenJPA official releases can be downloaded at the Downloads page.  Released binaries can also by accessed from Maven pom.xml files by pointing them to the repository at http://people.apache.org/repo/m2incubatingrepository . An example pom.xml that will use the 0.9.0incubating ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenBooks - Featuring JPA 2.0"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openbooks---featuring-jpa-2.0.html">OpenBooks - Featuring JPA 2.0</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenBooks is a sample (and perhaps, simple) application featuring some of the new features in JPA 2.0. This demonstration features usage of new JPA 2.0 features such as   Criteria Query   Compound, Derived identity   Orphan Delete   Persistent Domain Model API   The sample ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 2.0.0"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-2.0.0.html">OpenJPA 2.0.0</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.0  The Apache OpenJPA community is proud to announce the release of Apache OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id=317 specification and passes ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 2.0.0 Beta"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-2.0.0-beta.html">OpenJPA 2.0.0 Beta</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Beta  The Apache OpenJPA community is proud to release a Beta distribution of OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id=317 specification ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 2.0.0 Beta 2"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-2.0.0-beta-2.html">OpenJPA 2.0.0 Beta 2</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Beta 2  The Apache OpenJPA community is proud to release a Beta 2 distribution of OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 2.0.0 Beta 3"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-2.0.0-beta-3.html">OpenJPA 2.0.0 Beta 3</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Beta 3  The Apache OpenJPA community is proud to release a Beta 3 distribution of OpenJPA 2.0.0. This distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail?id ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 2.0.0 Milestone 3"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-2.0.0-milestone-3.html">OpenJPA 2.0.0 Milestone 3</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.0 Milestone 3    OpenJPA 2.0.0 Milestone 3  The Apache OpenJPA community is proud to provide a Milestone 3 distribution of OpenJPA 2.0. This distribution is based on the 20090922 Proposed Final Draft 2 of the JSR317 JPA 2.0 specification. Included ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 2.0.1"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-2.0.1.html">OpenJPA 2.0.1</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.0.1  The Apache OpenJPA community is proud to announce the maintenance release of Apache OpenJPA 2.0.1. As with the prior 2.0.0 release, this distribution is based on the final JSR 317 Java Persistence API, Version 2.0 http://jcp.org/en/jsr/detail ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 2.1.0"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-2.1.0.html">OpenJPA 2.1.0</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.1.0 ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 2.2.0"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-2.2.0.html">OpenJPA 2.2.0</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.2.0 ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 2.3.x"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-2.3.x.html">OpenJPA 2.3.x</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.3.x ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 2.4.x"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-2.4.x.html">OpenJPA 2.4.x</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 2.4.x ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 3.0.x"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-3.0.x.html">OpenJPA 3.0.x</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 3.0.x ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 3.1.x"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-3.1.x.html">OpenJPA 3.1.x</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 3.1.x ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 3.2.x"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-3.2.x.html">OpenJPA 3.2.x</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 3.2.x ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 4.0.x"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-4.0.x.html">OpenJPA 4.0.x</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 4.0.x ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA 4.1.x"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-4.1.x.html">OpenJPA 4.1.x</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA 4.1.x ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA Confluence User Groups"><use href="#file-earmark-text-fill"></use></svg>
 <a href="openjpa-confluence-user-groups.html">OpenJPA Confluence User Groups</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px"></div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA Development Resources" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px"></div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA Development Resources"><use href="#file-earmark-text-fill"></use></svg>
 <a href="openjpa-development-resources.html">OpenJPA Development Resources</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Getting Involved  Most of the OpenJPA discussions happen on the mailto:dev@openjpa.apache.org mailing list. For more details see OpenJPA mailing lists OpenJPAEmail. For more general discussion about Apache mailing lists, see the Apache mailing lists http://www.apache.org ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA Logo Contest - Round 1" width="16"/>
-<a href="openjpa-logo-contest-round-1.html">OpenJPA Logo Contest - Round 1</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Logo Submissions  Logos submitted for Round #1 voting from July 1 July 9:  # !http://os.oles.biz/openjpalogoideas/variant1.png vspace=5! Georgi Naplatanov goshoatolesbiz # !http://os.oles.biz/openjpalogoideas/variant2.png vspace=5! Georgi Naplatanov goshoatolesbiz # !http://os.oles.biz ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA Logo Contest - Round 2" width="16"/>
-<a href="openjpa-logo-contest-round-2.html">OpenJPA Logo Contest - Round 2</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Logo Submissions  The results of the first round of voting can be found at OpenJPA Logo Contest Round 1  The following are the finalists for Round 2 of voting from July 9 14:  # !http://people.apache.org/dwoods/openjpa/logos/openjpalogo1.png vspace=5! #7 ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA Logo Contest - Run-off" width="16"/>
-<a href="openjpa-logo-contest-run-off.html">OpenJPA Logo Contest - Run-off</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Logo Submissions  The results of the first round of voting can be found at OpenJPA Logo Contest Round 1  The results of the second round of voting can be found at OpenJPA Logo Contest Round 2  The following are the finalists for a runoff round of voting. Please ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA Release Policy" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Getting Involved  Most of the OpenJPA discussions happen on the mailto:dev@openjpa.apache.org mailing list. For more details see OpenJPA mailing lists OpenJPAEmail. For more general discussion about Apache mailing lists, see the Apache mailing lists http://www.apache.org ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA Release Policy"><use href="#file-earmark-text-fill"></use></svg>
 <a href="openjpa-release-policy.html">OpenJPA Release Policy</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Release Policy   Release Numbering The release number consists of three digits separated by decimal points, followed by an optional status e.g. 2.1.6beta2. The first digit is the major release number; the second is the minor release number; the third is the patch ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA Up Close and Personal" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Release Policy   Release Numbering The release number consists of three digits separated by decimal points, followed by an optional status e.g. 2.1.6beta2. The first digit is the major release number; the second is the minor release number; the third is the patch ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA Up Close and Personal"><use href="#file-earmark-text-fill"></use></svg>
 <a href="openjpa-up-close-and-personal.html">OpenJPA Up Close and Personal</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Summer 2007 Meeting Information  The meeting is on the 6th and 7th of August, 2007.   Agenda   Monday 6 August  Time Title Description Presenter Sponsor Presentation   9:30 10:00 Introductions      10:00 12:00 OpenJPA Architecture ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPA+Email" width="16"/>
-<a href="openjpaemail.html">OpenJPA+Email</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA email aliases   dev@openjpa.apache.org This alias is primarily for the developers on the OpenJPA project.  To subscribe, send mail to mailto:devsubscribe@openjpa.apache.org To unsubscribe, send mail to mailto:devunsubscribe@openjpa.apache.org Archives can be found at http://mailarchives.apache.org/modmbox/openjpadev   users@openjpa.apache.org This alias is primarily for users ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPAEclipseEnhancementBuilder" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Summer 2007 Meeting Information  The meeting is on the 6th and 7th of August, 2007.   Agenda   Monday 6 August  Time Title Description Presenter Sponsor Presentation   9:30 10:00 Introductions      10:00 12:00 OpenJPA Architecture ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPA+Email"><use href="#file-earmark-text-fill"></use></svg>
+<a href="openjpa-email.html">OpenJPA+Email</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA email aliases   dev@openjpa.apache.org This alias is primarily for the developers on the OpenJPA project.  To subscribe, send mail to mailto:devsubscribe@openjpa.apache.org To unsubscribe, send mail to mailto:devunsubscribe@openjpa.apache.org Archives can be found at http://mailarchives.apache.org/modmbox/openjpadev   users@openjpa.apache.org This alias is primarily for users ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPAEclipseEnhancementBuilder"><use href="#file-earmark-text-fill"></use></svg>
 <a href="openjpaeclipseenhancementbuilder.html">OpenJPAEclipseEnhancementBuilder</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Eclipse Tooling   How to use the OpenJPA Eclipse Tooling Builder for Bytecode Enhancement  Once you have installed the OpenJPA Eclipse tooling OpenJPAEclipseInstallation, here is how to add the Bytecode Enhancement Builder to a Java project:  # rightclick on Project, click ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPAEclipseInstallation" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Eclipse Tooling   How to use the OpenJPA Eclipse Tooling Builder for Bytecode Enhancement  Once you have installed the OpenJPA Eclipse tooling OpenJPAEclipseInstallation, here is how to add the Bytecode Enhancement Builder to a Java project:  # rightclick on Project, click ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPAEclipseInstallation"><use href="#file-earmark-text-fill"></use></svg>
 <a href="openjpaeclipseinstallation.html">OpenJPAEclipseInstallation</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Eclipse Tooling    http://people.apache.org/dwoods/openjpa/devtools/updatesite/ is the current Update Site of the OpenJPA Eclipse Tooling. (It will probably still change.)     How to install the OpenJPA Eclipse Tooling  # Get Eclipse min. version 3.4 # Install the OpenJPA ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenJPAEclipseToolingDevAndBuild" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Eclipse Tooling    http://people.apache.org/dwoods/openjpa/devtools/updatesite/ is the current Update Site of the OpenJPA Eclipse Tooling. (It will probably still change.)     How to install the OpenJPA Eclipse Tooling  # Get Eclipse min. version 3.4 # Install the OpenJPA ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenJPAEclipseToolingDevAndBuild"><use href="#file-earmark-text-fill"></use></svg>
 <a href="openjpaeclipsetoolingdevandbuild.html">OpenJPAEclipseToolingDevAndBuild</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Eclipse Tooling   How to develop on and build the OpenJPA Eclipse Tooling   IDE  # get Eclipse with PDE # check out the https://svn.apache.org/repos/asf/openjpa/devtools/trunk/ (not just the individual project directories, but really the trunk, so that you ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenTrader" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Eclipse Tooling   How to develop on and build the OpenJPA Eclipse Tooling   IDE  # get Eclipse with PDE # check out the https://svn.apache.org/repos/asf/openjpa/devtools/trunk/ (not just the individual project directories, but really the trunk, so that you ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenTrader"><use href="#file-earmark-text-fill"></use></svg>
 <a href="opentrader.html">OpenTrader</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenTrader: a transactional, web application with Google Web Toolkit, OpenJPA/Slice on Tomcat  !OpenTraderlogin.gif!   OpenTrader is a sample web application to demonstrate integration of Google Web Toolkit (GWT) and OpenJPA running in Tomcat Servlet Container. These pages describe various aspects ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenTraderArchitecture" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenTrader: a transactional, web application with Google Web Toolkit, OpenJPA/Slice on Tomcat  !OpenTraderlogin.gif!   OpenTrader is a sample web application to demonstrate integration of Google Web Toolkit (GWT) and OpenJPA running in Tomcat Servlet Container. These pages describe various aspects ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenTraderArchitecture"><use href="#file-earmark-text-fill"></use></svg>
 <a href="opentraderarchitecture.html">OpenTraderArchitecture</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">State the design goals Describe the architecture  One of the good practices of software development is to start with a set of basic requirements and then express these requirements more formally through a set the interfaces. So let us begin by listing the requirements for OpenTrader sample.    a trader ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenTraderBuild" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">State the design goals Describe the architecture  One of the good practices of software development is to start with a set of basic requirements and then express these requirements more formally through a set the interfaces. So let us begin by listing the requirements for OpenTrader sample.    a trader ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenTraderBuild"><use href="#file-earmark-text-fill"></use></svg>
 <a href="opentraderbuild.html">OpenTraderBuild</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Build instructions</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenTraderClient" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Build instructions</div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenTraderClient"><use href="#file-earmark-text-fill"></use></svg>
 <a href="opentraderclient.html">OpenTraderClient</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Describe the client side development</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenTraderCommunication" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Describe the client side development</div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenTraderCommunication"><use href="#file-earmark-text-fill"></use></svg>
 <a href="opentradercommunication.html">OpenTraderCommunication</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Describe the communication between client and server between client communications</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenTraderDeploy" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Describe the communication between client and server between client communications</div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenTraderDeploy"><use href="#file-earmark-text-fill"></use></svg>
 <a href="opentraderdeploy.html">OpenTraderDeploy</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px"></div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenTraderEnvironment" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px"></div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenTraderEnvironment"><use href="#file-earmark-text-fill"></use></svg>
 <a href="opentraderenvironment.html">OpenTraderEnvironment</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">What do we need to download</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="OpenTraderServer" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">What do we need to download</div>
+<p><svg alt="" class="size-1" loading="lazy" title="OpenTraderServer"><use href="#file-earmark-text-fill"></use></svg>
 <a href="opentraderserver.html">OpenTraderServer</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Describe the server</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Overview" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Describe the server</div>
+<p><svg alt="" class="size-1" loading="lazy" title="Overview"><use href="#file-earmark-text-fill"></use></svg>
 <a href="overview.html">Overview</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Overview    Overview</div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Overview    Overview</div>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="p" style="margin-top: 0px"><a name="index-P"></a>P<a class="headerlink" href="#p" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Performance guide" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Performance guide"><use href="#file-earmark-text-fill"></use></svg>
 <a href="performance-guide.html">Performance guide</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Performance Guide    OpenJPA Performance Guide  OpenJPA has numerous configuration properties that apply to many different use cases. The complete list of properties can be found in the most current user manual http://openjpa.apache.org/builds/latest/docs ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Powered By" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Performance Guide    OpenJPA Performance Guide  OpenJPA has numerous configuration properties that apply to many different use cases. The complete list of properties can be found in the most current user manual https://openjpa.apache.org/builds/latest/docs ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Powered By"><use href="#file-earmark-text-fill"></use></svg>
 <a href="powered-by.html">Powered By</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Other products and projects using OpenJPA   This page list products and companies that are currently using OpenJPA.   !http://activemq.apache.org/images/activemqlogo.png! ActiveMQ http://activemq.apache.org: Apache ActiveMQ is the most popular and powerful open source Message Broker which supports ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Privacy Policy" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Other products and projects using OpenJPA   This page list products and companies that are currently using OpenJPA.   !http://activemq.apache.org/images/activemqlogo.png! ActiveMQ http://activemq.apache.org: Apache ActiveMQ is the most popular and powerful open source Message Broker which supports ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Privacy Policy"><use href="#file-earmark-text-fill"></use></svg>
 <a href="privacy-policy.html">Privacy Policy</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">All materials provided on the Apache OpenJPA website (openjpa.apache.org) is Copyright &copy; 20052009, The Apache Software Foundation and Licensed under Apache License, v2.0 http://www.apache.org/licenses/LICENSE2.0.  Privacy Policy Last Updated: April 29, 2009  Information about your use ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">All materials provided on the Apache OpenJPA website (openjpa.apache.org) is Copyright &copy; 20052009, The Apache Software Foundation and Licensed under Apache License, v2.0 http://www.apache.org/licenses/LICENSE2.0.  Privacy Policy Last Updated: April 29, 2009  Information about your use ... </div>
 </td>
 <td class="border"><h4 id="q" style="margin-top: 0px"><a name="index-Q"></a>Q<a class="headerlink" href="#q" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Query Notes" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Query Notes"><use href="#file-earmark-text-fill"></use></svg>
 <a href="query-notes.html">Query Notes</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">name conflict: QueryImpl from JDBC vs. QueryImpl from kernel openjpa.kernel.jpql.JPQLParser joins are done by SelectImpl subselects have some issues especially with nonrelationship  src/main/jjtree/org/apache/openjpa/kernel/jpql/JPQL.jjt has rules ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Quick Start" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">name conflict: QueryImpl from JDBC vs. QueryImpl from kernel openjpa.kernel.jpql.JPQLParser joins are done by SelectImpl subselects have some issues especially with nonrelationship  src/main/jjtree/org/apache/openjpa/kernel/jpql/JPQL.jjt has rules ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Quick Start"><use href="#file-earmark-text-fill"></use></svg>
 <a href="quick-start.html">Quick Start</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Getting Started with OpenJPA    Quick Start Guide  We know it can be hard to find the right help sometimes and search engines can be overwhelming, so we will try to put the most commonly asked for topics with some overview and links to more ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Getting Started with OpenJPA    Quick Start Guide  We know it can be hard to find the right help sometimes and search engines can be overwhelming, so we will try to put the most commonly asked for topics with some overview and links to more ... </div>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="r" style="margin-top: 0px"><a name="index-R"></a>R<a class="headerlink" href="#r" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Recovering from a vetoed release" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Recovering from a vetoed release"><use href="#file-earmark-text-fill"></use></svg>
 <a href="recovering-from-a-vetoed-release.html">Recovering from a vetoed release</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Recovering from a bad release or a vetoed release  Recovering from a bad release actually isn't that difficult. You'll have to delete the bad tag in SVN and rollback the version numbers in all of our pom.xml files.    Delete the tag in svn   $ svn ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Related Projects" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Recovering from a bad release or a vetoed release  Recovering from a bad release actually isn't that difficult. You'll have to delete the bad tag in SVN and rollback the version numbers in all of our pom.xml files.    Delete the tag in svn   $ svn ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Related Projects"><use href="#file-earmark-text-fill"></use></svg>
 <a href="related-projects.html">Related Projects</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Projects related to OpenJPA    JDO http://db.apache.org/jdo/    TODO: More Links</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Release Management" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Projects related to OpenJPA    JDO http://db.apache.org/jdo/    TODO: More Links</div>
+<p><svg alt="" class="size-1" loading="lazy" title="Release Management"><use href="#file-earmark-text-fill"></use></svg>
 <a href="release-management.html">Release Management</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Release Management     Where should I put my fix? Fixes should be targeted and committed on trunk first. Any other open releases are fair game, but may require approval from a release manager.    Regarding Release Managers Once ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Release Setup" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Release Management     Where should I put my fix? Fixes should be targeted and committed on trunk first. Any other open releases are fair game, but may require approval from a release manager.    Regarding Release Managers Once ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Release Setup"><use href="#file-earmark-text-fill"></use></svg>
 <a href="release-setup.html">Release Setup</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">setup steps only need to be performed on a particular machine once.  Developers using Linux workstations can skip over the references to Cygwin. If using Windows, install cygwin, including Utils/gnupg and Net/openssh packages.     Create and install a SSH ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)" width="16"/>
-<a href="releasing-openjpa-10x-or-11x-old-scp-steps.html">Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Instructions for creating an official OpenJPA release     Making an OpenJPA 1.0.x or 1.1.x Release  These instructions guide the release manager through the steps of making an official OpenJPA release.   Prerequisites  # You should read the OpenJPA Release Policy ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Releasing OpenJPA 1.2.x (Old SCP Steps)" width="16"/>
-<a href="releasing-openjpa-12x-old-scp-steps.html">Releasing OpenJPA 1.2.x (Old SCP Steps)</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Instructions for creating an official OpenJPA release   Releasing OpenJPA These instructions guide the release manager through the steps of making an official OpenJPA release.  Work in progress. Times are just guesses and some information may be missing.   Prerequisites  // TODO ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Running OpenJPA Examples" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">setup steps only need to be performed on a particular machine once.  Developers using Linux workstations can skip over the references to Cygwin. If using Windows, install cygwin, including Utils/gnupg and Net/openssh packages.     Create and install a SSH ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)"><use href="#file-earmark-text-fill"></use></svg>
+<a href="releasing-openjpa-1.0.x-or-1.1.x-_old-scp-steps_.html">Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Instructions for creating an official OpenJPA release     Making an OpenJPA 1.0.x or 1.1.x Release  These instructions guide the release manager through the steps of making an official OpenJPA release.   Prerequisites  # You should read the OpenJPA Release Policy ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Releasing OpenJPA 1.2.x (Old SCP Steps)"><use href="#file-earmark-text-fill"></use></svg>
+<a href="releasing-openjpa-1.2.x-_old-scp-steps_.html">Releasing OpenJPA 1.2.x (Old SCP Steps)</a>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Instructions for creating an official OpenJPA release   Releasing OpenJPA These instructions guide the release manager through the steps of making an official OpenJPA release.  Work in progress. Times are just guesses and some information may be missing.   Prerequisites  // TODO ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Running OpenJPA Examples"><use href="#file-earmark-text-fill"></use></svg>
 <a href="running-openjpa-examples.html">Running OpenJPA Examples</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Running the OpenJPA Examples  The examples are packaged so that they run after extracting the openjpa binary distribution. Running directly from the source tree may take some work (not documented here).   # Build the openjpa binaries   $ mvn clean install   # extract ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Running the Sun TCK for JPA" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Running the OpenJPA Examples  The examples are packaged so that they run after extracting the openjpa binary distribution. Running directly from the source tree may take some work (not documented here).   # Build the openjpa binaries   $ mvn clean install   # extract ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Running the Sun TCK for JPA"><use href="#file-earmark-text-fill"></use></svg>
 <a href="running-the-sun-tck-for-jpa.html">Running the Sun TCK for JPA</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Running the Sun TCK for JPA  Sun's Technology Compatibility Kit for JPA is available to OpenJPA committers (other TCKs are available to Apache committers in general).    Requesting access to the TCK  # Review the section "Testing with TCKs" on theApache JCP participation page  http ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Runtime Enhancement" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Running the Sun TCK for JPA  Sun's Technology Compatibility Kit for JPA is available to OpenJPA committers (other TCKs are available to Apache committers in general).    Requesting access to the TCK  # Review the section "Testing with TCKs" on theApache JCP participation page  http ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Runtime Enhancement"><use href="#file-earmark-text-fill"></use></svg>
 <a href="runtime-enhancement.html">Runtime Enhancement</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">first runtime enhancement method is to provide a javaagent when launching the JVM that OpenJPA is going run in.  javaagent:&lt;openjpajarlocation&gt;   For Eclipse, specify the above javaagent value on the Run Configuration page.  For ANT, provide the javaagent value as a jvmarg when launching an ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">first runtime enhancement method is to provide a javaagent when launching the JVM that OpenJPA is going run in.  javaagent:&lt;openjpajarlocation&gt;   For Eclipse, specify the above javaagent value on the Run Configuration page.  For ANT, provide the javaagent value as a jvmarg when launching an ... </div>
 </td>
 <td class="border"><h4 id="s" style="margin-top: 0px"><a name="index-S"></a>S<a class="headerlink" href="#s" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Samples" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Samples"><use href="#file-earmark-text-fill"></use></svg>
 <a href="samples.html">Samples</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">OpenJPA Examples    OpenJPA Examples  This page provides samples for OpenJPA. For further information, the documentation provides comprehensive documentation on all aspects of configuring and using OpenJPA.  For more information on using OpenJPA within a Java EE application server, please see ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">OpenJPA Examples    OpenJPA Examples  This page provides samples for OpenJPA. For further information, the documentation provides comprehensive documentation on all aspects of configuring and using OpenJPA.  For more information on using OpenJPA within a Java EE application server, please see ... </div>
 <!--
- <IMG src="images/docs_16.gif" height="16" width="16" border="0" align="absmiddle" title="SideNav">
+ <svg class="size-1" alt="" loading="lazy" title="SideNav"><use href="#file-earmark-text-fill"/></svg>
  <A href="sidenav.html">SideNav</A>
  <BR>
- <DIV class="smalltext" style="margin: 0 0 0 36px">Overview      Community      Development      Search    &lt;DIV style=&quot;padding: 5px 5px 0px 25px;&quot;&gt; &lt;FORM action=&quot;http://www.google.com/search&quot; method=&quot;get&quot; style=&quot;fontsize: 10px;&quot;&gt; &lt;INPUT name=&quot;ie&quot; type=&quot;hidden&quot; value=&quot;UTF8&quot;&gt;&lt;/INPUT&gt; &lt;INPUT ... </DIV>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px">Overview      Community      Development      Search    &lt;DIV style=&quot;padding: 5px 5px 0px 25px;&quot;&gt; &lt;FORM action=&quot;http://www.google.com/search&quot; method=&quot;get&quot; style=&quot;fontsize: 10px;&quot;&gt; &lt;INPUT name=&quot;ie&quot; type=&quot;hidden&quot; value=&quot;UTF8&quot;&gt;&lt;/INPUT&gt; &lt;INPUT ... </DIV>
  -->
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="SideNav Community" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="SideNav Community"><use href="#file-earmark-text-fill"></use></svg>
 <a href="sidenav-community.html">SideNav Community</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Events and News  Found a Bug?  Get Involved  Mailing Lists  Committers  Integration  Powered By  Thanks</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="SideNav Development" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Events and News  Found a Bug?  Get Involved  Mailing Lists  Committers  Integration  Powered By  Thanks</div>
+<p><svg alt="" class="size-1" loading="lazy" title="SideNav Development"><use href="#file-earmark-text-fill"></use></svg>
 <a href="sidenav-development.html">SideNav Development</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Issue Tracker http://issues.apache.org/jira/browse/OPENJPA  Source Code  Testing  Tools  Samples  Release Management</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="SideNav Overview" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Issue Tracker http://issues.apache.org/jira/browse/OPENJPA  Source Code  Testing  Tools  Samples  Release Management</div>
+<p><svg alt="" class="size-1" loading="lazy" title="SideNav Overview"><use href="#file-earmark-text-fill"></use></svg>
 <a href="sidenav-overview.html">SideNav Overview</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Quick Start  Documentation  Downloads  Site Index  License  Privacy Policy</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="SideNav Quick Links" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Quick Start  Documentation  Downloads  Site Index  License  Privacy Policy</div>
+<p><svg alt="" class="size-1" loading="lazy" title="SideNav Quick Links"><use href="#file-earmark-text-fill"></use></svg>
 <a href="sidenav-quick-links.html">SideNav Quick Links</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Home Index  License  ASF http://apache.org  Downloads  Site Map</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Site Index" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Home Index  License  ASF http://apache.org  Downloads  Site Map</div>
+<p><svg alt="" class="size-1" loading="lazy" title="Site Index"><use href="#file-earmark-text-fill"></use></svg>
 <a href="">Site Index</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px"></div>
-<!-- 
- <IMG src="images/docs_16.gif" height="16" width="16" border="0" align="absmiddle" title="Site Map">
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px"></div>
+<!--
+ <svg class="size-1" alt="" loading="lazy" title="Site Map"><use href="#file-earmark-text-fill"/></svg>
  <A href="site-map.html">Site Map</A>
  <BR>
- <DIV class="smalltext" style="margin: 0 0 0 36px"></DIV>
+ <DIV class="smalltext text-break" style="margin: 0 0 0 36px"></DIV>
 -->
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Source Code" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Source Code"><use href="#file-earmark-text-fill"></use></svg>
 <a href="source-code.html">Source Code</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Source code access    Source Code  OpenJPA uses Subversion http://subversion.apache.org/ to manage its source code. Instructions on Subversion use can be found here http://svnbook.redbean.com.   Web Access  The source code for OpenJPA can be freely browsed ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Source code access    Source Code  OpenJPA uses Subversion http://subversion.apache.org/ to manage its source code. Instructions on Subversion use can be found here http://svnbook.redbean.com.   Web Access  The source code for OpenJPA can be freely browsed ... </div>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="t" style="margin-top: 0px"><a name="index-T"></a>T<a class="headerlink" href="#t" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Testing" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Testing"><use href="#file-earmark-text-fill"></use></svg>
 <a href="testing.html">Testing</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Running and Writing Writing Test Cases For OpenJPA OpenJPA unit tests    Running and Writing Writing Test Cases For OpenJPA Tests with OpenJPA  OpenJPA's unit tests are written using JUnit. For a template for a simple test case, see the code for TestPersistence.java ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Thanks" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Running and Writing Writing Test Cases For OpenJPA OpenJPA unit tests    Running and Writing Writing Test Cases For OpenJPA Tests with OpenJPA  OpenJPA's unit tests are written using JUnit. For a template for a simple test case, see the code for TestPersistence.java ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Thanks"><use href="#file-earmark-text-fill"></use></svg>
 <a href="thanks.html">Thanks</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Thanks to helpful people and organizations  The Apache OpenJPA team would like to thank the following individuals and organizations.    Apache Sponsors Without those sponsors, the ASF would simply not exist or sustain its activities : http://www.apache.org/foundation/thanks.html  For those ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Tips and Techniques" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Thanks to helpful people and organizations  The Apache OpenJPA team would like to thank the following individuals and organizations.    Apache Sponsors Without those sponsors, the ASF would simply not exist or sustain its activities : http://www.apache.org/foundation/thanks.html  For those ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Tips and Techniques"><use href="#file-earmark-text-fill"></use></svg>
 <a href="tips-n-techniques.html">Tips and Techniques</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Tips and techniques to maximize OpenJPA useage.</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Tools" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Tips and techniques to maximize OpenJPA useage.</div>
+<p><svg alt="" class="size-1" loading="lazy" title="Tools"><use href="#file-earmark-text-fill"></use></svg>
 <a href="tools.html">Tools</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Tools for OpenJPA   This page will host description of designtime and runtime tools for OpenJPA. The tools mentioned below are available as commandline utilities. In the future, they may be made available as interactive graphical tools integrated into popular IDEs such as Eclipse or IntelliJ.    Existing OpenJPA Tools ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Top Navigation Bar" width="16"/>
-<a href="top-navigation-bar.html">Top Navigation Bar</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px"></div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Trouble Shooting OpenJPA problems" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Tools for OpenJPA   This page will host description of designtime and runtime tools for OpenJPA. The tools mentioned below are available as commandline utilities. In the future, they may be made available as interactive graphical tools integrated into popular IDEs such as Eclipse or IntelliJ.    Existing OpenJPA Tools ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Trouble Shooting OpenJPA problems"><use href="#file-earmark-text-fill"></use></svg>
 <a href="troubleshoot.html">Trouble Shooting OpenJPA problems.</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">List of documents for trouble shooting OpenJPA problems.</div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">List of documents for trouble shooting OpenJPA problems.</div>
 </td>
 <td class="border"><h4 id="u" style="margin-top: 0px"><a name="index-U"></a>U<a class="headerlink" href="#u" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Update release text files" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Update release text files"><use href="#file-earmark-text-fill"></use></svg>
 <a href="update-release-text-files.html">Update release text files</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Instructions for updating .text files shipped with OpenJPA    Updating release text files.    Obtaining the list of resolved issues from JIRA.&amp;nbsp;  # Go to the main JIRA releases page at http://issues.apache.org/jira/browse/OPENJPA?report=com.sourcelabs.jira.plugin.portlet.releases:releasesprojecttab ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Using Criteria API in DayTrader" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Instructions for updating .text files shipped with OpenJPA    Updating release text files.    Obtaining the list of resolved issues from JIRA.&amp;nbsp;  # Go to the main JIRA releases page at http://issues.apache.org/jira/browse/OPENJPA?report=com.sourcelabs.jira.plugin.portlet.releases:releasesprojecttab ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Using Criteria API in DayTrader"><use href="#file-earmark-text-fill"></use></svg>
 <a href="using-criteria-api-in-daytrader.html">Using Criteria API in DayTrader</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Using Criteria API in DayTrader A current DayTrader project implementation in Apache Geronimo contains several JPQL queries. These can easily be converted to JPA Criteria API queries. A sample with this conversion can be created to run on either the Apache Geronimo server ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Using Criteria API in DayTrader A current DayTrader project implementation in Apache Geronimo contains several JPQL queries. These can easily be converted to JPA Criteria API queries. A sample with this conversion can be created to run on either the Apache Geronimo server ... </div>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="v" style="margin-top: 0px"><a name="index-V"></a>V<a class="headerlink" href="#v" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Verifying release signatures" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Verifying release signatures"><use href="#file-earmark-text-fill"></use></svg>
 <a href="verifying-release-signatures.html">Verifying release signatures</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">unix platforms the following command can be executed :   for file in `find . type f iname '.asc'` do   gpg verify $  done    You'll need to look at the output contains only good signaturesie :   gpg: Good signature from "Michael Dick ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">unix platforms the following command can be executed :   for file in `find . type f iname '.asc'` do   gpg verify $  done    You'll need to look at the output contains only good signaturesie :   gpg: Good signature from "Michael Dick ... </div>
 </td>
 <td class="border"><h4 id="w" style="margin-top: 0px"><a name="index-W"></a>W<a class="headerlink" href="#w" title="Permalink">&para;</a></h4>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Whither OpenJPA" width="16"/>
+<p><svg alt="" class="size-1" loading="lazy" title="Whither OpenJPA"><use href="#file-earmark-text-fill"></use></svg>
 <a href="whither-openjpa.html">Whither OpenJPA</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Discussion topics: OpenJPA 1.0, OpenJPA 1.1, JPA 2.0, SDO, etc.   JPA 2.0: Any of OpenJPA members on the expert group?  Patrick will be on the EG. There will be a lurker list set up by each EG member for internal discussions.   Does Apache ... </div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Wiki" width="16"/>
-<a href="wiki.html">Wiki</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">TODO</div>
-<img align="absmiddle" border="0" height="16" src="images/docs_16.gif" title="Writing Test Cases For OpenJPA" width="16"/>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Discussion topics: OpenJPA 1.0, OpenJPA 1.1, JPA 2.0, SDO, etc.   JPA 2.0: Any of OpenJPA members on the expert group?  Patrick will be on the EG. There will be a lurker list set up by each EG member for internal discussions.   Does Apache ... </div>
+<p><svg alt="" class="size-1" loading="lazy" title="Writing Test Cases For OpenJPA"><use href="#file-earmark-text-fill"></use></svg>
 <a href="writing-test-cases-for-openjpa.html">Writing Test Cases For OpenJPA</a>
-<br/>
-<div class="smalltext" style="margin: 0 0 0 36px">Tips on writing TestCase for OpenJPA  You are welcome to contribute new test cases. Following are few suggestions and guidelines on how to contribute new test case to OpenJPA repository of 2000 test cases spread across 400 classes.    Unit Tests ... </div>
+<br/></p>
+<div class="smalltext text-break" style="margin: 0 0 0 36px">Tips on writing TestCase for OpenJPA  You are welcome to contribute new test cases. Following are few suggestions and guidelines on how to contribute new test case to OpenJPA repository of 2000 test cases spread across 400 classes.    Unit Tests ... </div>
 </td>
 </tr><tr valign="top">
 <td class="border"><h4 id="x" style="margin-top: 0px"><a name="index-X"></a>X<a class="headerlink" href="#x" title="Permalink">&para;</a></h4>
@@ -733,39 +920,36 @@ dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover 
 </tr>
 </table>
 
-                                            </div>
-                                        </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="bottom_red_bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="black_box">
-                    <div class="footer">
-                        <div class="footer_l">
-                            <div class="footer_r">
-                                <div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="design_attribution">
-                Copyright &copy; 2006,2026 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
-                Apache OpenJPA, OpenJPA, Apache, the Apache logo, and the Apache OpenJPA project logo are either
-                registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.<br />
-                <br />
-                <a href="https://www.apache.org/">Foundation</a> |
-                <a href="https://www.apache.org/events/current-event.html">Events</a> |
-                <a href="https://www.apache.org/licenses/">License</a> |
+        </main>
+    </div>
+    <!-- Start footer -->
+    <footer class="">
+        <div class="footer" id="footer">
+            <div class="container-fluid text-center">
+                Copyright &copy; 2026 The Apache Software Foundation,
+                Licensed under the
+                <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0.</a>
+                <br/>
+                Apache, the Apache feather logo, and "Project" are trademarks or registered trademarks of <a href="https://www.apache.org/">The Apache Software Foundation.</a><br />
+                Other names may be trademarks of their respective owners.<br />
                 <a href="https://www.apache.org/security/">Security</a> |
                 <a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
-                <a href="https://www.apache.org/foundation/thanks.html">Thanks</a> |
-                <a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a>
-            </div>
+                <a href="https://www.apache.org/foundation/thanks.html">Thanks</a>
+            </div><!-- #container-fluid -->
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <!-- Start the loading of javascript frameworks (will need to upgrade periodically) -->
+    <script src="https://www.apachecon.com/event-images/snippet.js"></script>
+    <script
+        src="js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script type="module" src="js/color-modes.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <!-- End the loading of javascript frameworks -->
+
+    <!-- Source: site-index.md; Template: page; Url: pages/.html -->
     </body>
 </html>
