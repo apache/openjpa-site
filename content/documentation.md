@@ -3,7 +3,42 @@ Title: Documentation
 
 # OpenJPA Documentation
 
-The online OpenJPA documentation can be found here.
+Apache OpenJPA provides complete reference documentation covering installation, configuration,
+mapping, enhancement, and the Jakarta Persistence API. The current documentation is generated
+from the project source and published as a standalone manual for each release.
+
+## Latest manual
+
+<div class="latest-doc-grid">
+    <div class="latest-doc-card">
+        <div class="latest-doc-head">
+            <i class="bi bi-book-half" aria-hidden="true"></i>
+            <div>
+                <h5>Nightly build (master)</h5>
+                <p>Developer documentation generated from the latest source.</p>
+            </div>
+        </div>
+        <div class="latest-doc-links">
+            <a class="doc-tile" href="https://nightlies.apache.org/openjpa/builds/latest/multihtml/manual.html"><i class="bi bi-collection" aria-hidden="true"></i>Multiple pages</a>
+            <a class="doc-tile" href="https://nightlies.apache.org/openjpa/builds/latest/html/manual.html"><i class="bi bi-file-text" aria-hidden="true"></i>Single page</a>
+            <a class="doc-tile" href="https://nightlies.apache.org/openjpa/builds/latest/manual.pdf"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
+            <a class="doc-tile" href="https://nightlies.apache.org/openjpa/builds/latest/javadoc/index.html"><i class="bi bi-code-slash" aria-hidden="true"></i>Javadocs</a>
+            <a class="doc-tile" href="https://nightlies.apache.org/openjpa/builds/latest/schema/"><i class="bi bi-diagram-3" aria-hidden="true"></i>Schema</a>
+        </div>
+    </div>
+</div>
+
+### Also in this guide
+
+* [Quick Start Guide](quick-start.html) - get an OpenJPA application running quickly.
+* [Performance Guide](performance-guide.html) - tune your OpenJPA applications.
+* [Entity Enhancement](entity-enhancement.html) - instrument your persistent classes.
+* [Integration Guide](integration.html) - run OpenJPA inside application servers and containers.
+
+## Release manuals
+
+Each release line publishes its own manual, javadocs and release notes.<br>
+The tables below link to those generated documents.
 
 ## Nightly builds
 

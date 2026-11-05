@@ -273,6 +273,50 @@ def generate_toc(content, tags, title, toc_headers):
         tree_soup = ''
 
 
+# Build a TOC from all in-page headings (no [TOC] placeholder required).
+# Used by the theme's right-side "On This Page" navigation.
+# `soup` is the SAME parsed document that already has heading ids assigned by
+# headingid_transform, so the generated toc-href anchors match real ids.
+def auto_generate_toc(content, title, toc_headers, soup=None):
+    if soup is None:
+        soup = BeautifulSoup(content._content, 'html.parser')
+    heading_re = re.compile(toc_headers)
+    heading_tags = soup.findAll(heading_re)
+    # Ignore a single H1 page title if that is all there is; we want a
+    # meaningful sub-navigation, so require at least 2 headings total.
+    if len(heading_tags) < 2:
+        content.toc = ''
+        return
+    tree = node = HtmlTreeNode(None, title, 'h0', '')
+    for header in heading_tags:
+        node, _new_header = node.add(header)
+    tree_string = '{}'.format(tree)
+    tree_soup = BeautifulSoup(tree_string, 'html.parser')
+    content.toc = tree_soup.decode(formatter='html')
+
+
+# Normalize whitespace for a case-insensitive title comparison.
+def normalize_text(value):
+    return re.sub(r'\s+', ' ', str(value)).strip().lower()
+
+
+# Remove a leading H1 that duplicates the page title. The theme always renders
+# the title as its own page <h1>, so without this the title shows twice (e.g.
+# news and manual pages migrated from a wiki that repeated the title).
+def _strip_duplicate_title_h1(soup, title):
+    h1s = soup.find_all('h1')
+    if not h1s:
+        return
+    first = h1s[0]
+    # Drop the genid permalink anchor (and its '¶' char) so the comparison is
+    # against the heading's visible text, not the appended permalink marker.
+    for a in first.find_all('a', class_='headerlink'):
+        a.decompose()
+    text = first.get_text().strip()
+    if text and normalize_text(text) == normalize_text(str(title)):
+        first.decompose()
+
+
 # create breadcrumb html
 def make_breadcrumbs(rel_source_path, title):
     parts = rel_source_path.split('/')
@@ -377,11 +421,25 @@ def generate_id(content):
         for tag in soup.findAll(TABLE_RE, _class=False):
             tag['class'] = 'table'
 
-    # step 8 - find TOC tag and generate Table of Contents
+    # step 7.5 - drop a leading H1 that duplicates the page title.
+    # The theme always renders `page.title` as the styled page `<h1>`, so a
+    # matching `# Title` in the body would show the title twice. Remove the
+    # first top-level H1 when it equals the title (trimmed). This also keeps
+    # the generated Table of Contents from repeating the page title.
+    _strip_duplicate_title_h1(soup, title)
+
+    # step 8 - generate Table of Contents for the page
     if asf_genid['toc']:
         tags = soup('p', text='[TOC]')
         if tags:
             generate_toc(content, tags, title, asf_genid['toc_headers'])
+        else:
+            # Auto-generate the page TOC (used by the right sidebar) whenever
+            # the page has 2+ headings, even without an explicit [TOC]
+            # placeholder. This makes every documentation page navigable.
+            # The TOC is built from the SAME `soup` that carries the heading
+            # ids from steps 4-7, so toc-href anchors match real heading ids.
+            auto_generate_toc(content, title, asf_genid['toc_headers'], soup=soup)
 
     # step 9 - reset the html content
     content._content = soup.decode(formatter='html')
@@ -403,8 +461,22 @@ def tb_connect(pel_ob):
         sys.exit(4)
 
 
+def set_prev_next(pg):
+    """Give each Page a working `.previous` / `.next` so the prev/next nav in
+    the template renders. Uses the generator's already-ordered page list.
+    Note: the flat site has no editorial hierarchy, so this uses the natural
+    page order (alphabetical by filename by default), which provides stable
+    prev/next navigation across the whole documentation set.
+    """
+    pages = getattr(pg, 'pages', None) or []
+    for i, page in enumerate(pages):
+        setattr(page, 'previous', pages[i - 1] if i > 0 else None)
+        setattr(page, 'next', pages[i + 1] if i < len(pages) - 1 else None)
+
+
 def register():
     pelican.plugins.signals.initialized.connect(init_default_config)
+    pelican.plugins.signals.page_generator_finalized.connect(set_prev_next)
 
 
 pelican.plugins.signals.content_object_init.connect(tb_connect)

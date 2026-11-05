@@ -1,80 +1,452 @@
-.headerlink {
-    visibility: hidden;
+/*
+ * ============================================================================
+ * Apache OpenJPA Documentation Styling
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ============================================================================
+ */
+
+/* Modern color palette following Apache branding guidelines */
+:root {
+  /* Apache brand colors */
+  --asf-blue: #1e3a8a;
+  --asf-dark-blue: #0c2a5f;
+  --asf-accent: #c2943a;
+  
+  /* Documentation theme colors */
+  --docs-bg: #ffffff;
+  --docs-text: #212529;
+  --docs-text-muted: #6c757d;
+  --docs-border: #e9ecef;
+  --docs-link: #0062cc;
+  --docs-link-hover: #004085;
+  --docs-code-bg: #f8f9fa;
+  --docs-toc-bg: #f8f9fa;
+  --docs-sidebar-bg: #ffffff;
+  --docs-sidebar-border: #e9ecef;
+  
+  /* Theme variables for Bootstrap integration */
+  --bs-body-color: var(--docs-text);
+  --bs-body-bg: var(--docs-bg);
+  --bs-emphasis-color: var(--asf-blue);
+  --bs-link-color: var(--docs-link);
+  --bs-link-hover-color: var(--docs-link-hover);
+  --bs-border-color: var(--docs-border);
+  --bs-secondary-bg: #f8f9fa;
+  --bs-highlight-bg: #e7f1ff;
 }
 
-dt:hover>.headerlink,
-p:hover>.headerlink,
-td:hover>.headerlink,
-h1:hover>.headerlink,
-h2:hover>.headerlink,
-h3:hover>.headerlink,
-h4:hover>.headerlink,
-h5:hover>.headerlink,
-h6:hover>.headerlink {
-    visibility: visible
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--asf-blue);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 1000;
+  transition: top 0.15s ease-in-out;
+  border-bottom-right-radius: 0.25rem;
 }
 
+.skip-link:focus {
+  top: 0;
+}
+
+/* Enhanced layout with sidebar and TOC */
 .bd-layout {
-    display: grid;
-    grid-template-areas: "sidebar main";
-    grid-template-columns: 1fr 4fr;
-    gap: 1.5rem;
+  display: grid;
+  grid-template-areas: "sidebar main toc";
+  grid-template-columns: 280px 1fr 300px;
+  gap: 1.5rem;
+  min-height: calc(100vh - 6.5rem);
 }
-.bd-sidebar {
-    grid-area: sidebar;
-    position: sticky;
-    top: 9rem;
-    height: calc(100vh - 14rem);
-    overflow-y: auto;
-}
-.bd-main {
-    grid-area: main;
-}
-.bd-links-heading {
-    color: var(--bs-emphasis-color);
-}
-.bd-sidebar li a {
-    text-decoration: none;
-    color: var(--bs-body-color);
-}
-.bd-sidebar li a:hover {
-    color: var(--bs-emphasis-color);
-    background-color: var(--bs-secondary-bg);
-}
-.bd-sidebar li a.active {
-    font-weight: 600;
-    background-color: var(--bs-highlight-bg);
-}
-.bd-sidebar li>a {
-    padding-inline-start: 1em;
-}
-header, footer {
-    background-color: var(--bs-light-bg-subtle);
-}
+
 @media (max-width: 991.98px) {
-    header img:not(.offcanvas-lg img) {
-        max-height: 3em;
-        width: auto;
-        height: auto;
-    }
+  .bd-layout {
+    grid-template-areas: 
+      "sidebar"
+      "main"
+      "toc";
+    grid-template-columns: 1fr;
+  }
 }
 
-.size-3 {
-    min-width: 3rem;
-    min-height: 3rem;
-    max-width: 3rem;
-    max-height: 3rem;
+@media (max-width: 767.98px) {
+  .bd-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .bd-sidebar,
+  .bd-toc {
+    position: static;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
 }
 
-.size-1_5 {
-    min-width: 1.5rem;
-    min-height: 1.5rem;
-    max-width: 1.5rem;
-    max-height: 1.5rem;
+/* Sidebar styling */
+.bd-sidebar {
+  grid-area: sidebar;
+  position: sticky;
+  top: 3rem;
+  height: calc(100vh - 8rem);
+  overflow-y: auto;
+  border-right: 1px solid var(--docs-sidebar-border);
+  padding-right: 1rem;
 }
-.size-1 {
-    min-width: 1rem;
-    min-height: 1rem;
-    max-width: 1rem;
-    max-height: 1rem;
+
+/* Right TOC styling */
+.bd-toc {
+  grid-area: toc;
+  position: sticky;
+  top: 3rem;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+}
+
+.bd-toc-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--docs-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--docs-border);
+}
+
+.bd-toc-title svg {
+  margin-right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.bd-toc ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.bd-toc li {
+  margin-bottom: 0.25rem;
+  padding-left: 0.25rem;
+}
+
+.bd-toc a {
+  text-decoration: none;
+  color: var(--docs-text-muted);
+  font-size: 0.9rem;
+  display: block;
+  padding: 0.25rem 0.5rem 0.25rem 0;
+  border-radius: 0.25rem;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.bd-toc a:hover {
+  background-color: var(--docs-sidebar-bg);
+  color: var(--asf-blue);
+}
+
+.bd-toc .active {
+  font-weight: 600;
+  color: var(--asf-blue);
+  background-color: var(--docs-highlight-bg);
+}
+
+.bd-sidebar-nav .bd-links-heading {
+  color: var(--docs-text);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Breadcrumb styling */
+.bd-breadcrumb {
+  font-size: 0.8125rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--docs-border);
+}
+
+.breadcrumb {
+  --bs-breadcrumb-item-padding-inline-end: 0.5rem;
+  --bs-breadcrumb-item-padding-inline-start: 0;
+}
+
+.breadcrumb-item {
+  color: var(--docs-text-muted);
+}
+
+.breadcrumb-item a {
+  color: var(--docs-link);
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item + .breadcrumb-divider::before {
+  content: "›";
+}
+
+/* Code block improvements */
+pre {
+  background-color: var(--docs-code-bg);
+  border: 1px solid var(--docs-border);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  position: relative;
+}
+
+pre code {
+  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", 
+               "Fira Code", "DejaVu Sans Mono", "Consolas", 
+               "Monaco", monospace;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre;
+}
+
+pre .hljs {
+  padding: 0;
+  margin: 0;
+}
+
+code {
+  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", 
+               "Fira Code", "DejaVu Sans Mono", "Consolas", 
+               "Monaco", monospace;
+}
+
+.hljs {
+  background-color: #f8f9fa;
+}
+
+/* Copy button for code blocks */
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #e9ecef;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+  font-family: inherit;
+}
+
+pre:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  background: #dee2e6;
+}
+
+/* Prev/Next navigation */
+.bd-pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--docs-border);
+}
+
+.bd-page-prev,
+.bd-page-next {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--docs-link);
+  font-weight: 500;
+  transition: color 0.15s ease-in-out;
+}
+
+.bd-page-prev:hover,
+.bd-page-next:hover {
+  color: var(--docs-link-hover);
+}
+
+.bd-page-prev svg,
+.bd-page-next svg {
+  margin: 0 0.5rem 0 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Enhanced header styling */
+.bd-header {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.bd-navbar-brand img {
+  max-height: 2.5rem;
+  width: auto;
+}
+
+/* Icon sizing for new template */
+.icon {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+}
+
+/* Navbar toggle button */
+.navbar-toggler {
+  padding: 0.25rem;
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+  margin-top: 0.25rem;
+}
+
+.dropdown-item {
+  font-size: 0.875rem;
+}
+
+/* Footer styling */
+.bd-footer {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--docs-border);
+}
+
+.bd-footer h5 {
+  color: var(--docs-text);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.bd-footer ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.bd-footer li {
+  margin-bottom: 0.25rem;
+}
+
+.bd-footer .footer-link {
+  color: var(--docs-text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.bd-footer .footer-link:hover {
+  color: var(--asf-blue);
+  text-decoration: underline;
+}
+
+/* Table improvements */
+table {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  border-collapse: collapse;
+}
+
+table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  vertical-align: top;
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 1px solid var(--docs-border);
+}
+
+/* Page title improvements */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--docs-text);
+  line-height: 1.2;
+}
+
+/* Mobile-responsive adjustments */
+@media (max-width: 991.98px) {
+  .bd-layout {
+    gap: 1rem;
+  }
+  
+  .bd-sidebar {
+    padding-right: 0;
+  }
+  
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .bd-footer .row {
+    margin-bottom: 1rem;
+  }
+  
+  .bd-footer .col-12 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .bd-layout {
+    gap: 0.75rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .bd-header,
+  .bd-sidebar,
+  .bd-toc,
+  .bd-pagination,
+  .skip-link,
+  .copy-btn {
+    display: none !important;
+  }
+  
+  .bd-footer {
+    border-top: none;
+    margin-top: 0;
+  }
+  
+  .page-content {
+    max-width: 100% !important;
+  }
 }

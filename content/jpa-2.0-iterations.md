@@ -937,7 +937,7 @@ distribution of the Milestone 3 is available [here](http://cwiki.apache.org/conf
 <div class="row justify-content-around">
     <div class="col-4">
         <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Early Access M3" href="openjpa-2.0.0-milestone-3.html">
-            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
+            <i class="bi bi-download me-2" aria-hidden="true"></i>
             <div class="fw-bold d-inline-block">Download Milestone 3</div>
         </a>
     </div>
@@ -1670,7 +1670,7 @@ after it is released.  A distribution of the Beta is available [here](http://cwi
 <div class="row justify-content-around">
     <div class="col-4">
         <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Beta" href="openjpa-2.0.0-beta.html">
-            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
+            <i class="bi bi-download me-2" aria-hidden="true"></i>
             <div class="fw-bold d-inline-block">Download Beta</div>
         </a>
     </div>

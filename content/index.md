@@ -1,4 +1,5 @@
 Title: Index
+Summary: Apache OpenJPA is an open source Java persistence framework that provides a production-ready implementation of the Jakarta Persistence API (JPA), usable standalone or embedded in any Java EE compliant application server.
 
 
 <a name="Index-WelcometotheApacheOpenJPAproject"></a>
@@ -6,55 +7,74 @@ Title: Index
 
 ## Welcome to the Apache OpenJPA project
 
+**Apache OpenJPA software** provides a complete, production-ready implementation of the
+[Jakarta Persistence API (JPA)](https://jakarta.ee/specifications/persistence/) for building
+portable, standards-based Java persistence applications. It can be used as a stand-alone
+Java persistence layer or [integrated](integration.html) into any Java EE compliant
+application server and many lightweight frameworks, such as Tomcat and Spring.
+
 Apache OpenJPA is a Java persistence project at [The Apache Software Foundation](http://apache.org)
  that can be used as a stand-alone [POJO](http://en.wikipedia.org/wiki/POJO)
  persistence layer or [integrated](integration.html)
  into any Java EE compliant container and many other lightweight
 frameworks, such as Tomcat and Spring.
 
-The [4.2.x releases](downloads.html) is an implementation of the
- [Jakarta Persistence API 3.2](https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2.html) specification is the most current production ready release.
+### Specification support
 
-The [4.1.x releases](downloads.html) is an implementation of the
- [Jakarta Persistence API 3.1](https://jakarta.ee/specifications/persistence/3.1/jakarta-persistence-spec-3.1.html) specification.
-
-The [4.0.x releases](downloads.html) is an implementation of the
- [Jakarta Persistence API 3.0](https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html) specification.
-
-The [3.x releases](downloads.html) targetting the [JSR-338 Java Persistence 2.2](http://jcp.org/en/jsr/detail?id=338).
-It is fully backward compatible compatible to our JPA 2.1, 2.0 and 1.0 releases.
-
-The [2.x releases](downloads.html) are a production ready, compliant implementation of
-the [JSR-317 Java Persistence 2.0](http://jcp.org/en/jsr/detail?id=317)
- specification, which is backwards compatible to the JPA 1.0 specification
-and passes the Sun JPA 2.0 Technology Compatibility Kit.
-
-The [1.x releases](downloads.html)
- (1.2.3 is the latest) are an
- implementation of the Java Persistence API (JPA) 1.0 part of the [JSR-220 Enterprise Java Beans 3.0](http://jcp.org/en/jsr/detail?id=220)
- specification.
- The development of this version is EOL.
-
-
-<div class="row">
-    <div class="col">
-        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Download Apache OpenJPA" href="downloads.html">
-            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
-            <div class="fw-bold d-inline-block">Download Apache OpenJPA</div>
-        </a>
+<div class="spec-card">
+    <div class="spec-item spec-current">
+        <a href="downloads.html">4.2.x releases</a>
+        <span class="spec-badge">Current</span>
+        <span class="spec-detail">Jakarta Persistence API 3.2</span>
     </div>
-    <div class="col">
-        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Quick Start Guide" href="quick-start.html">
-            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#clock"/></svg>
-            <div class="fw-bold d-inline-block">Quick Start Guide</div>
-        </a>
+    <div class="spec-item">
+        <a href="downloads.html">4.1.x releases</a>
+        <span class="spec-detail">Jakarta Persistence API 3.1</span>
     </div>
-    <div class="col">
-        <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="View Quick Start Guide" href="documentation.html">
-            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#info-square"/></svg>
-            <div class="fw-bold d-inline-block">User's Guide</div>
-        </a>
+    <div class="spec-item">
+        <a href="downloads.html">4.0.x releases</a>
+        <span class="spec-detail">Jakarta Persistence API 3.0</span>
     </div>
+    <div class="spec-item">
+        <a href="downloads.html">3.x releases</a>
+        <span class="spec-detail">JSR-338 Java Persistence 2.2 (backward compatible with JPA 2.1, 2.0, 1.0)</span>
+    </div>
+    <div class="spec-item">
+        <a href="downloads.html">2.x releases</a>
+        <span class="spec-detail">JSR-317 Java Persistence 2.0 (passes the Sun JPA 2.0 TCK)</span>
+    </div>
+    <div class="spec-item">
+        <a href="downloads.html">1.x releases</a>
+        <span class="spec-detail">Java Persistence API 1.0 (JSR-220 EJB 3.0, latest 1.2.3)</span>
+    </div>
+</div>
+
+
+<div class="feature-grid" role="list">
+    <a class="feature-card" title="View Download Apache OpenJPA" href="downloads.html" role="listitem">
+        <span class="feature-icon" aria-hidden="true"><i class="bi bi-download"></i></span>
+        <span class="feature-body">
+            <span class="feature-title">Download OpenJPA</span>
+            <span class="feature-desc">Get the latest stable release of Apache OpenJPA.</span>
+        </span>
+        <span class="feature-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    </a>
+    <a class="feature-card" title="View Quick Start Guide" href="quick-start.html" role="listitem">
+        <span class="feature-icon" aria-hidden="true"><i class="bi bi-lightning-charge"></i></span>
+        <span class="feature-body">
+            <span class="feature-title">Quick Start Guide</span>
+            <span class="feature-desc">Be productive with Jakarta Persistence in minutes.</span>
+        </span>
+        <span class="feature-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    </a>
+    <a class="feature-card" title="View User's Guide" href="documentation.html" role="listitem">
+        <span class="feature-icon" aria-hidden="true"><i class="bi bi-book"></i></span>
+        <span class="feature-body">
+            <span class="feature-title">User's Guide</span>
+            <span class="feature-desc">Browse the full Apache OpenJPA documentation.</span>
+        </span>
+        <span class="feature-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    </a>
 </div>
 
 
@@ -82,105 +102,112 @@ The [1.x releases](downloads.html)
 ## Events and News
 
 <div class="blog-post-listing">
-    <div class="card mb-2">
+    <article class="card news-card">
         <div class="card-body">
-            <h5 class="card-title"><A class="blogHeading" href="openjpa-4.1.x.html">OpenJPA 4.1.1 Released!</A></h5>
+            <div class="news-head">
+                <span class="news-date"><time datetime="2025-05-15">May 15, 2025</time></span>
+                <h5 class="card-title"><a class="blogHeading" href="openjpa-4.1.x.html">OpenJPA 4.1.1 Released!</a></h5>
+            </div>
             <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 4.1.1!</p>
-            <figcaption class="blockquote-footer">
-                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
-                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2025-05-15
-                </a>
-            </figcaption>
+            <footer class="blockquote-footer">
+                by <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" rel="author">Francesco Chicchiriccò</a>
+            </footer>
         </div>
-    </div>
-    <div class="card mb-2">
+    </article>
+    <article class="card news-card">
         <div class="card-body">
-            <h5 class="card-title"><A class="blogHeading" href="openjpa-4.1.x.html">OpenJPA 4.1.0 Released!</A></h5>
+            <div class="news-head">
+                <span class="news-date"><time datetime="2025-03-24">Mar 24, 2025</time></span>
+                <h5 class="card-title"><a class="blogHeading" href="openjpa-4.1.x.html">OpenJPA 4.1.0 Released!</a></h5>
+            </div>
             <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 4.1.0!</p>
-            <figcaption class="blockquote-footer">
-                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
-                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2025-03-24
-                </a>
-            </figcaption>
+            <footer class="blockquote-footer">
+                by <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" rel="author">Francesco Chicchiriccò</a>
+            </footer>
         </div>
-    </div>
-    <div class="card mb-2">
+    </article>
+    <article class="card news-card">
         <div class="card-body">
-            <h5 class="card-title"><A class="blogHeading" href="openjpa-4.0.x.html">OpenJPA 4.0.1 Released!</A></h5>
+            <div class="news-head">
+                <span class="news-date"><time datetime="2024-09-23">Sep 23, 2024</time></span>
+                <h5 class="card-title"><a class="blogHeading" href="openjpa-4.0.x.html">OpenJPA 4.0.1 Released!</a></h5>
+            </div>
             <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 4.0.1!</p>
-            <figcaption class="blockquote-footer">
-                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
-                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2024-09-23
-                </a>
-            </figcaption>
+            <footer class="blockquote-footer">
+                by <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" rel="author">Francesco Chicchiriccò</a>
+            </footer>
         </div>
-    </div>
-    <div class="card mb-2">
+    </article>
+    <article class="card news-card">
         <div class="card-body">
-            <h5 class="card-title"><A class="blogHeading" href="openjpa-4.0.x.html">OpenJPA 4.0.0 Released!</A></h5>
+            <div class="news-head">
+                <span class="news-date"><time datetime="2024-02-14">Feb 14, 2024</time></span>
+                <h5 class="card-title"><a class="blogHeading" href="openjpa-4.0.x.html">OpenJPA 4.0.0 Released!</a></h5>
+            </div>
             <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 4.0.0!</p>
-            <figcaption class="blockquote-footer">
-                <a href="https://home.apache.org/phonebook.html?uid=struberg" class="url fn confluence-userlink"
-                        data-username="struberg@apache.org">Mark Struberg</A> posted 2024-02-14
-                </a>
-            </figcaption>
+            <footer class="blockquote-footer">
+                by <a href="https://home.apache.org/phonebook.html?uid=struberg" rel="author">Mark Struberg</a>
+            </footer>
         </div>
-    </div>
-    <div class="card mb-2">
+    </article>
+    <article class="card news-card">
         <div class="card-body">
-            <h5 class="card-title"><A class="blogHeading" href="openjpa-3.2.x.html">OpenJPA 3.2.2 Released!</A></h5>
+            <div class="news-head">
+                <span class="news-date"><time datetime="2022-03-19">Mar 19, 2022</time></span>
+                <h5 class="card-title"><a class="blogHeading" href="openjpa-3.2.x.html">OpenJPA 3.2.2 Released!</a></h5>
+            </div>
             <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 3.2.2!</p>
-            <figcaption class="blockquote-footer">
-                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
-                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2022-03-19
-                </a>
-            </figcaption>
+            <footer class="blockquote-footer">
+                by <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" rel="author">Francesco Chicchiriccò</a>
+            </footer>
         </div>
-    </div>
-    <div class="card mb-2">
+    </article>
+    <article class="card news-card">
         <div class="card-body">
-            <h5 class="card-title"><A class="blogHeading" href="openjpa-3.1.x.html">OpenJPA 3.1.2 Released!</A></h5>
+            <div class="news-head">
+                <span class="news-date"><time datetime="2020-09-04">Sep 04, 2020</time></span>
+                <h5 class="card-title"><a class="blogHeading" href="openjpa-3.1.x.html">OpenJPA 3.1.2 Released!</a></h5>
+            </div>
             <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 3.1.2!</p>
-            <figcaption class="blockquote-footer">
-                <a href="https://home.apache.org/phonebook.html?uid=struberg" class="url fn confluence-userlink"
-                        data-username="struberg@apache.org">Mark Struberg</A> posted 2020-09-04
-                </a>
-            </figcaption>
+            <footer class="blockquote-footer">
+                by <a href="https://home.apache.org/phonebook.html?uid=struberg" rel="author">Mark Struberg</a>
+            </footer>
         </div>
-    </div>
-    <div class="card mb-2">
+    </article>
+    <article class="card news-card">
         <div class="card-body">
-            <h5 class="card-title"><A class="blogHeading" href="openjpa-2.4.x.html">OpenJPA 2.4.3 Released!</A></h5>
+            <div class="news-head">
+                <span class="news-date"><time datetime="2018-06-14">Jun 14, 2018</time></span>
+                <h5 class="card-title"><a class="blogHeading" href="openjpa-2.4.x.html">OpenJPA 2.4.3 Released!</a></h5>
+            </div>
             <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 2.4.3!</p>
-            <figcaption class="blockquote-footer">
-                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
-                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2018-06-14
-                </a>
-            </figcaption>
+            <footer class="blockquote-footer">
+                by <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" rel="author">Francesco Chicchiriccò</a>
+            </footer>
         </div>
-    </div>
-    <div class="card mb-2">
+    </article>
+    <article class="card news-card">
         <div class="card-body">
-            <h5 class="card-title"><A class="blogHeading" href="openjpa-2.4.x.html">OpenJPA 2.4.2 Released!</A></h5>
+            <div class="news-head">
+                <span class="news-date"><time datetime="2017-01-06">Jan 06, 2017</time></span>
+                <h5 class="card-title"><a class="blogHeading" href="openjpa-2.4.x.html">OpenJPA 2.4.2 Released!</a></h5>
+            </div>
             <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 2.4.2!</p>
-            <figcaption class="blockquote-footer">
-                <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" class="url fn confluence-userlink"
-                        data-username="ilgrosso@apache.org">Francesco Chicchiriccò</A> posted on 2017-01-06
-                </a>
-            </figcaption>
+            <footer class="blockquote-footer">
+                by <a href="https://home.apache.org/phonebook.html?uid=ilgrosso" rel="author">Francesco Chicchiriccò</a>
+            </footer>
         </div>
-    </div>
-    <div class="card mb-2">
+    </article>
+    <article class="card news-card">
         <div class="card-body">
-            <h5 class="card-title"><A class="blogHeading" href="openjpa-3.0.x.html">Work on OpenJPA 3.0.0 started!</A></h5>
-            <p class="card-text">The Apache OpenJPA community started working on OpenJPA 3.0.0!<br/>
-            Trunk got switched over to the new effort.<br/>
-            This version will target the JPA-2.1 specification.</p>
-            <figcaption class="blockquote-footer">
-                <a href="https://home.apache.org/phonebook.html?uid=struberg" class="url fn confluence-userlink"
-                        data-username="struberg@apache.org">Mark Struberg</A> posted 2016-08-18
-                </a>
-            </figcaption>
+            <div class="news-head">
+                <span class="news-date"><time datetime="2016-08-18">Aug 18, 2016</time></span>
+                <h5 class="card-title"><a class="blogHeading" href="openjpa-3.0.x.html">Work on OpenJPA 3.0.0 started!</a></h5>
+            </div>
+            <p class="card-text">The Apache OpenJPA community started working on OpenJPA 3.0.0! Trunk got switched over to the new effort. This version will target the JPA-2.1 specification.</p>
+            <footer class="blockquote-footer">
+                by <a href="https://home.apache.org/phonebook.html?uid=struberg" rel="author">Mark Struberg</a>
+            </footer>
         </div>
-    </div>
+    </article>
 </div>
