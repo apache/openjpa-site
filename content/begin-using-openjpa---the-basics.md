@@ -80,7 +80,7 @@ not know how to do that, follow the instructions found at the [Geronimo website]
      list. Then click on the **Next** button).
      When the New Project settings dialog appears, use the following settings:
 
-     ![images/image001.jpg](/images/image001.jpg)
+     ![images/image001.jpg](images/image001.jpg)
 
 1. Under the **Target Runtime** section, select **Apache Geronimo v2.2**.
 
@@ -90,71 +90,71 @@ not know how to do that, follow the instructions found at the [Geronimo website]
       click the **Download additional server adapters** link at the top right of
       the dialog. If the adapter does not appear in that list then follow the [directions from the Geronimo site](http://geronimo.apache.org/geronimo-eclipse-plugin-installation-instructions.html).
 
-      ![images/image002.jpg](/images/image002.jpg)
+      ![images/image002.jpg](images/image002.jpg)
 
     * Select **Apache->Apache Geronimo v2.2**
     * Click **Next**.
 
-      ![images/image003.jpg](/images/image003.jpg)
+      ![images/image003.jpg](images/image003.jpg)
 
     * Set the JRE to **jre6** if it is not already set.
     * Browse for the install directory of Geronimo v2.2 on your system.
     * Click **Finish**. You should see the following:
 
-      ![images/image001.jpg](/images/image001.jpg)
+      ![images/image001.jpg](images/image001.jpg)
 
 1. Now, click the **Next** button. You should see this:
 
-   ![images/image004.jpg](/images/image004.jpg)
+   ![images/image004.jpg](images/image004.jpg)
 
    * Check the **Generate application.xml deployment descriptor** option.
    * Click the **New Module...** button:
 
-     ![images/image005.jpg](/images/image005.jpg)
+     ![images/image005.jpg](images/image005.jpg)
 
    * De-select **Create default modules**.
    * Select	the **Web** option.
    * Click **Next**.
 
-     ![images/image006.jpg](/images/image006.jpg)
+     ![images/image006.jpg](images/image006.jpg)
 
    * Click **Finish**. You will see the following:
 
-     ![images/image007.jpg](/images/image007.jpg)
+     ![images/image007.jpg](images/image007.jpg)
 
    * Click **Finish**.
 
 
 1. Now, your Project Explorer should look like this (partially expanded):
 
-   ![images/image008.jpg](/images/image008.jpg)
+   ![images/image008.jpg](images/image008.jpg)
 
 
    * If you double-click on the **Deployment Descriptor: OpenJPATutorial**, you
      should see the application.xml open:
 
-     ![images/image009.jpg](/images/image009.jpg)
+     ![images/image009.jpg](images/image009.jpg)
 
 1. Now we will bring in the sample code. The easiest way to add the sample code is
    to find the source provided with this tutorial and copy it to the src folder
    under the **OpenJPATutorialWeb** folder in your project directory in Windows Explorer:
 
-   ![images/image010.jpg](/images/image010.jpg)
+   ![images/image010.jpg](images/image010.jpg)
 
    * Now go back to Eclipse. Right-click on the **OpenJPATutorialWeb** folder in the Project Explorer view
      and select **Refresh,** or press the **F5** key on your keyboard. Now you will see this:
 
-     ![images/image011.jpg](/images/image011.jpg)
+     ![images/image011.jpg](images/image011.jpg)
 
      Notice that all the source files compile without error. That is because Geronimo comes with OpenJPA v1.1 built in.
 
 1. Now copy the index.jsp file from the tutorial into the Web Content directory under the Project directory in Windows Explorer:
 
-   ![images/image012.jpg](/images/image012.jpg)
+   ![images/image012.jpg](images/image012.jpg)
 
    * Got to the Project Explorer and refresh the project. You should see this:
 
-   ![images/image013.jpg](/images/image013.jpg)
+   ![images/image013.jpg](images/image013.jpg)
 
 <a name="BeginusingOpenJPA-TheBasics-RunningandConfiguringGeronimoandDerby"></a>
 
@@ -168,36 +168,36 @@ quick instructions to get you started.
 
         start-server
 
-   ![images/image014.jpg](/images/image014.jpg)
+   ![images/image014.jpg](images/image014.jpg)
 
    Press the *Enter* key.
 
-   ![images/image015.jpg](/images/image015.jpg)
+   ![images/image015.jpg](images/image015.jpg)
 
 1. Open a web browser and go to the address:
 
    http://localhost:8080/console
 
-   ![images/image016.jpg](/images/image016.jpg)
+   ![images/image016.jpg](images/image016.jpg)
 
    The default password is _manager_.
 
 1. You will come to the Welcome page. On the left menu, at the bottom, find the section
    for the Embedded DB. This is the Derby database control page.
 
-   ![images/image017.jpg](/images/image017.jpg)
+   ![images/image017.jpg](images/image017.jpg)
 
 1. Click on the link for the **DB Manager**
 1. You will see two sections: **DB Viewer** and **Run SQL**.
 1. In the Run SQL section, in the text field labeled Create DB, type in **StoreSystem**.
    This is the name of the database that the OpenJPA sample is configured to transact.
 
-   ![images/image018.jpg](/images/image018.jpg)
+   ![images/image018.jpg](images/image018.jpg)
 
 1. Click on the **Create** button. You should now see the **StoreSystem** database appear in
    the **DB Viewer** section.
 
-   ![images/image019.jpg](/images/image019.jpg)
+   ![images/image019.jpg](images/image019.jpg)
 
 1. We are now ready to deploy and run the sample code.
 
@@ -218,19 +218,19 @@ sample code follow these instructions:
 1. In Eclipse, in the Project Explorer, right click on the OpenJPATutorial
    project and select: **Export->EAR file**.
 
-   ![images/image020.jpg](/images/image020.jpg)
+   ![images/image020.jpg](images/image020.jpg)
 
 1. In the Ear Export dialog, find a convenient place to put the exported EAR file.
 1. Check the **Overwrite existing file** check box.
 
-   ![images/image021.jpg](/images/image021.jpg)
+   ![images/image021.jpg](images/image021.jpg)
 
 1. Click **Finish**.
 1. Go out to Windows Explorer and copy the file **TutorialDeploymentPlan.xml**
    to the location of the exported ear. This is the deployment plan that
    Geronimo requires to deploy the application.
 
-   ![images/image022.jpg](/images/image022.jpg)
+   ![images/image022.jpg](images/image022.jpg)
 
 1. Open the Geronimo console in a web browser and log in.
 1. In the Console Navigation menu on the left, under the **Applications**
@@ -238,22 +238,22 @@ sample code follow these instructions:
 1. Browse to the location of the exported EAR file and the deployment plan
    XML file.
 
-   ![images/image023.jpg](/images/image023.jpg)
+   ![images/image023.jpg](images/image023.jpg)
 
 1. Click on the **Install** button. You should see this.
 
-   ![images/image024.jpg](/images/image024.jpg)
+   ![images/image024.jpg](images/image024.jpg)
 
 1. In the Console Navigation menu on the left, under the **Applications**
    section, click on the **Web App WARs** item.
    * Notice that the OpenJPATutorial application is now listed and that there
      is a clickable link under the URL heading:
 
-     ![images/image025.jpg](/images/image025.jpg)
+     ![images/image025.jpg](images/image025.jpg)
 
 1. Click on the link **OpenJPATutorial** and now you should see this:
 
-   ![images/image026.jpg](/images/image026.jpg)
+   ![images/image026.jpg](images/image026.jpg)
 
    Each of the buttons will execute OpenJPA code. The lists are filled by
    running queries on the Derby database.
@@ -419,7 +419,7 @@ convention must be observed.
   be created in the META-INF directory. The META-INF directory containing the
   persistence.xml must be located with the source files.
 
-  ![images/image027.jpg](/images/image027.jpg)
+  ![images/image027.jpg](images/image027.jpg)
 
   In the following example, the file only requires a few fields.
 

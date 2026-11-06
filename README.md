@@ -29,45 +29,60 @@ source venv/bin/activate
 
 ### Installing Dependencies
 
-Once the virtual environment is activated:
+The easiest way to install all dependencies (Python + npm) is the `install` Make target, which creates a virtual environment and installs everything:
 
 ```bash
-# Install Python dependencies
-pip install pelican markdown beautifulsoup4
+make install
+```
 
-# Install npm dependencies
+This performs the equivalent of:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install pelican markdown beautifulsoup4
 npm install
 ```
 
+You do NOT need to activate the virtual environment manually: the `dev` and `build` Make targets handle activation for you.
+
 ### Building the Site
+
+The recommended workflow uses the Make targets:
 
 #### Development Build (with live reload)
 ```bash
-# Build static assets (Bootstrap CSS/JS from npm packages)
-npm run prepare
-
-# Build and serve with live reload
-pelican content -s pelican.auto.py -l
+make dev
 ```
+
+`make dev` builds the static assets (Bootstrap CSS/JS from npm packages) and starts Pelican with live reload at http://localhost:8000.
 
 #### Production Build
 ```bash
-# Full build process
+make build
+```
+
+`make build` builds the static assets and produces the final site in the `output/` directory.
+
+#### Manual build (advanced)
+
+If you prefer to run the underlying commands directly:
+
+```bash
+# Build static assets first (required - missing assets cause a 'no index file' error)
 npm run prepare
+
+# Development (with live reload)
+source venv/bin/activate
+pelican content -s pelican.auto.py -lr
+
+# Production
+source venv/bin/activate
 pelican content -s pelican.auto.py
 ```
 
-#### Using Make (if available)
-```bash
-# Development
-make dev
-
-# Production
-make build
-
-# Clean build artifacts
-make clean
-```
+> **Important:** Always run `npm run prepare` before `pelican`. The generated static assets in `theme/apache/static/` are gitignored and only exist after that step, so skipping it leaves the favicon/logo referencing files that are not yet present.
 
 ### Output Location
 
@@ -109,8 +124,8 @@ project-root/
 ## Development Workflow
 
 1. **Edit content** in `content/*.md`
-2. **Build assets**: `npm run prepare`
-3. **Preview changes**: `pelican content -s pelican.auto.py -l`
+2. **Run `make dev`** to build assets and preview with live reload at http://localhost:8000
+3. **Run `make build`** to produce the production site in `output/`
 4. **Commit changes**: Changes to `content/` trigger automatic CI/CD builds
 
 ## Apache Compliance
@@ -139,17 +154,19 @@ pip install pelican markdown beautifulsoup4
 ### Missing Bootstrap Files
 If CSS/JS files are missing:
 ```bash
+make prepare
+```
+
+Or manually:
+```bash
 npm ci
 npm run prepare
 ```
 
 ### Live Reload Not Working
 ```bash
-# Use the serve script
-npm run serve
-# Or manually run both:
-npm run prepare &
-pelican content -s pelican.auto.py -l
+# The dev target rebuilds assets and serves with live reload
+make dev
 ```
 
 ## Contributing
@@ -157,7 +174,7 @@ pelican content -s pelican.auto.py -l
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Run `npm run prepare` to update assets
+4. Run `npm run prepare` to update assets (or `make build` to build and verify)
 5. Commit and push
 6. Open a pull request
 

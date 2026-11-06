@@ -31,18 +31,7 @@ dist/
 
 # Generated static assets - NOT committed to repo, generated during build
 # These are created from npm packages during CI/CD build
-theme/apache/static/css/bootstrap.min.css
-theme/apache/static/js/bootstrap.bundle.min.js
-theme/apache/static/js/highlight.min.js
-theme/apache/static/js/highlight/highlight.js
-theme/apache/static/css/highlight.css
-theme/apache/static/css/bootstrap-icons.css
-theme/apache/static/fonts/
-theme/apache/static/integrity.json
-theme/apache/static/bundles/
-
-# Generated static build artifact shadows under scripts/
-scripts/theme/apache/static/
+theme/apache/static/
 
 # Python cache
 *.pyc
