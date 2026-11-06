@@ -13,7 +13,7 @@ the following problem when:
 
 &#20;
 
-    [err] javax.jms.MessageFormatException: CWSIA0122E: An exception occurred deserializing a message, exception: \ 
+    [err] javax.jms.MessageFormatException: CWSIA0122E: An exception occurred deserializing a message, exception: \
             java.io.InvalidClassException: com.ibm.wssvt.acme.annuity.common.bean.jpa.AbstractPersistebleObject; \
             Serializable incompatible with Externalizable.
     [err]     at com.ibm.ws.sib.api.jms.impl.JmsObjectMessageImpl.getObject(JmsObjectMessageImpl.java:271)
@@ -26,7 +26,7 @@ the following problem when:
     [err]     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
     [err]     at java.lang.reflect.Method.invoke(Method.java:611)
     [err]     at [internal classes]
-    [err] Caused by: 
+    [err] Caused by:
     [err] java.io.InvalidClassException: com.ibm.wssvt.acme.annuity.common.bean.jpa.AbstractPersistebleObject; \
             Serializable incompatible with Externalizable
     [err]     at java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:647)
@@ -49,10 +49,10 @@ the following problem when:
 
 ## Solution
 
-When `DetachedStateField=true` option is specified, the client application intends to take advantage of the detached entity 
+When `DetachedStateField=true` option is specified, the client application intends to take advantage of the detached entity
 field update management feature provided by OpenJPA. This requires entities to be enhanced and OpenJPA runtime
 be accessible by the application. If application does not have or require the enhanced entity or OpenJPA runtime
 on the client side, `DetachedStateField=[false|transient]` option should be used.
- 
+
 See [DetachedStateField options](http://ci.apache.org/projects/openjpa/trunk/docbook/manual.html#ref_guide_detach_graph) section for
-details of the `DetachedStateField` options as well the enhancement and runtime requirements.  
+details of the `DetachedStateField` options as well the enhancement and runtime requirements.

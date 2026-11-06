@@ -43,10 +43,10 @@ function copyFile(src, dest) {
  */
 function buildCss() {
   console.log('📦 Building vendor.css...');
-  
+
   const bootstrapCssPath = path.join(STATIC_DIR, 'css', 'bootstrap.min.css');
   const customCssPath = path.join(STATIC_DIR, 'css', 'custom.css');
-  
+
   if (!fs.existsSync(bootstrapCssPath)) {
     console.error('✗ Bootstrap CSS not found. Run "npm install" first.');
     return null;
@@ -54,7 +54,7 @@ function buildCss() {
 
   // Read bootstrap CSS
   let cssContent = fs.readFileSync(bootstrapCssPath, 'utf8');
-  
+
   // Append custom CSS
   if (fs.existsSync(customCssPath)) {
     const customCss = fs.readFileSync(customCssPath, 'utf8');
@@ -65,12 +65,12 @@ function buildCss() {
   const hashResult = copyFile(bootstrapCssPath, path.join(BUNDLES_DIR, 'temp.css'));
   const hash = crypto.createHash('sha256').update(cssContent).digest('base64').substring(0, 8);
   const outputName = `vendor.${hash}.css`;
-  
+
   // Write combined CSS
   fs.writeFileSync(path.join(BUNDLES_DIR, outputName), cssContent);
-  
+
   console.log(`  ✓ Created ${outputName}`);
-  
+
   return { filename: outputName, sri: hashResult.sri };
 }
 
@@ -79,7 +79,7 @@ function buildCss() {
  */
 function buildJs() {
   console.log('📦 Building JS bundles...');
-  
+
   // Vendor JS (Bootstrap)
   const bootstrapJsPath = path.join(STATIC_DIR, 'js', 'bootstrap.bundle.min.js');
   if (fs.existsSync(bootstrapJsPath)) {
@@ -142,7 +142,7 @@ function buildAll() {
           integrity: calculateHash(path.join(BUNDLES_DIR, vendorJs))
         };
       }
-      
+
       const openjpaJs = jsFiles.find(f => f.startsWith('openjpa.'));
       if (openjpaJs) {
         const hash = openjpaJs.match(/openjpa\.([a-f0-9]+)\.js/)?.[1] || 'unknown';
@@ -166,7 +166,7 @@ function buildAll() {
       openjpaJs: manifest.assets.openjpa?.js || 'openjpa.js',
       builtAt: manifest.timestamp
     };
-    
+
     fs.writeFileSync(
       path.join(BUNDLES_DIR, 'versions.json'),
       JSON.stringify(versions, null, 2)
@@ -177,7 +177,7 @@ function buildAll() {
     console.log('\nGenerated files:');
     console.log('  - manifest.json (full metadata with SRI hashes)');
     console.log('  - versions.json (template-friendly names)');
-    
+
     if (cssFile) console.log(`  - CSS: ${cssFile}`);
     jsFiles.forEach(f => console.log(`  - JS: ${f}`));
 

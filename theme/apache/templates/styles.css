@@ -24,7 +24,7 @@
   --asf-blue: #1e3a8a;
   --asf-dark-blue: #0c2a5f;
   --asf-accent: #c2943a;
-  
+
   /* Documentation theme colors */
   --docs-bg: #ffffff;
   --docs-text: #212529;
@@ -36,7 +36,7 @@
   --docs-toc-bg: #f8f9fa;
   --docs-sidebar-bg: #ffffff;
   --docs-sidebar-border: #e9ecef;
-  
+
   /* Theme variables for Bootstrap integration */
   --bs-body-color: var(--docs-text);
   --bs-body-bg: var(--docs-bg);
@@ -77,7 +77,7 @@
 
 @media (max-width: 991.98px) {
   .bd-layout {
-    grid-template-areas: 
+    grid-template-areas:
       "sidebar"
       "main"
       "toc";
@@ -89,7 +89,7 @@
   .bd-layout {
     grid-template-columns: 1fr;
   }
-  
+
   .bd-sidebar,
   .bd-toc {
     position: static;
@@ -221,8 +221,8 @@ pre {
 }
 
 pre code {
-  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", 
-               "Fira Code", "DejaVu Sans Mono", "Consolas", 
+  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro",
+               "Fira Code", "DejaVu Sans Mono", "Consolas",
                "Monaco", monospace;
   font-size: inherit;
   color: inherit;
@@ -235,8 +235,8 @@ pre .hljs {
 }
 
 code {
-  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", 
-               "Fira Code", "DejaVu Sans Mono", "Consolas", 
+  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro",
+               "Fira Code", "DejaVu Sans Mono", "Consolas",
                "Monaco", monospace;
 }
 
@@ -402,19 +402,19 @@ th, td {
   .bd-layout {
     gap: 1rem;
   }
-  
+
   .bd-sidebar {
     padding-right: 0;
   }
-  
+
   .hero-section {
     padding: 2rem 0;
   }
-  
+
   .bd-footer .row {
     margin-bottom: 1rem;
   }
-  
+
   .bd-footer .col-12 {
     margin-bottom: 1rem;
   }
@@ -424,7 +424,7 @@ th, td {
   .bd-layout {
     gap: 0.75rem;
   }
-  
+
   .page-title {
     font-size: 1.5rem;
   }
@@ -440,12 +440,12 @@ th, td {
   .copy-btn {
     display: none !important;
   }
-  
+
   .bd-footer {
     border-top: none;
     margin-top: 0;
   }
-  
+
   .page-content {
     max-width: 100% !important;
   }

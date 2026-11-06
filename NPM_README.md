@@ -5,7 +5,7 @@ This project uses an npm-based build process to manage embedded assets (CSS, JS)
 ## Prerequisites
 
 - Node.js 22.x or later
-- Python 3.11+ 
+- Python 3.11+
 - pip
 
 ## Setup

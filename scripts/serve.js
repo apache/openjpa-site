@@ -27,23 +27,23 @@ function log(message) {
 function copyAssets() {
   const bootstrapCssSrc = path.join(PROJECT_ROOT, 'node_modules', 'bootstrap', 'dist', 'css', 'bootstrap.min.css');
   const bootstrapJsSrc = path.join(PROJECT_ROOT, 'node_modules', 'bootstrap', 'dist', 'js', 'bootstrap.bundle.min.js');
-  
+
   // Ensure directories exist
   if (!fs.existsSync(CSS_DIR)) fs.mkdirSync(CSS_DIR, { recursive: true });
   if (!fs.existsSync(JS_DIR)) fs.mkdirSync(JS_DIR, { recursive: true });
-  
+
   if (fs.existsSync(bootstrapCssSrc)) {
     fs.copyFileSync(bootstrapCssSrc, path.join(CSS_DIR, 'bootstrap.min.css'));
   }
-  
+
   if (fs.existsSync(bootstrapJsSrc)) {
     fs.copyFileSync(bootstrapJsSrc, path.join(JS_DIR, 'bootstrap.bundle.min.js'));
   }
-  
+
   // Generate hashes
   const cssHash = crypto.createHash('sha384').update(fs.readFileSync(path.join(CSS_DIR, 'bootstrap.min.css'))).digest('base64');
   const jsHash = crypto.createHash('sha384').update(fs.readFileSync(path.join(JS_DIR, 'bootstrap.bundle.min.js'))).digest('base64');
-  
+
   fs.writeFileSync(
     path.join(STATIC_DIR, 'integrity.json'),
     JSON.stringify({
@@ -56,17 +56,17 @@ function copyAssets() {
 
 function startPelicanServer() {
   log('Starting Pelican development server...');
-  
+
   if (pelicanProcess) {
     pelicanProcess.kill();
   }
-  
+
   pelicanProcess = spawn('pelican', ['content', '-s', 'pelican.auto.py', '-l'], {
     cwd: PROJECT_ROOT,
     stdio: 'inherit',
     env: { ...process.env, BROWSER: 'open' }
   });
-  
+
   pelicanProcess.on('exit', (code) => {
     if (code !== 0) {
       log(`Pelican server exited with code ${code}`);

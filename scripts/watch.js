@@ -22,21 +22,21 @@ function log(message) {
 
 function startPelicanWatch() {
   log('🔨 Starting Pelican rebuild...');
-  
+
   if (pelicanProcess) {
     pelicanProcess.kill();
     pelicanProcess = null;
   }
-  
+
   pelicanProcess = spawn('pelican', ['content', '-s', 'pelican.auto.py', '-l'], {
     cwd: PROJECT_ROOT,
     stdio: 'pipe'
   });
-  
+
   pelicanProcess.stdout.on('data', (data) => {
     process.stdout.write(data.toString());
   });
-  
+
   pelicanProcess.stderr.on('data', (data) => {
     process.stderr.write(data.toString());
   });
