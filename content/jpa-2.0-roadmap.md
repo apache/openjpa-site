@@ -102,7 +102,7 @@ distribution of the release is available [here](openjpa-2.0.0.html)
 <div class="row justify-content-around">
     <div class="col-4">
         <a class="mb-3 btn d-flex align-items-center btn-outline-danger" title="Download 2.0.0" href="openjpa-2.0.0.html">
-            <svg class="p-2 size-3" alt="" loading="lazy"><use href="#download"/></svg>
+            <i class="bi bi-download me-2" aria-hidden="true"></i>
             <div class="fw-bold d-inline-block">Download 2.0.0</div>
         </a>
     </div>

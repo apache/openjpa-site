@@ -7,4 +7,3 @@ Title: Consumers
 
 * [Tips and Techniques](tips-n-techniques.html) &mdash; <SPAN class="smalltext">Tips and Techniques</SPAN>
 * [Trouble Shoot](troubleshoot.html) &mdash; <SPAN class="smalltext">Trouble Shooting OpenJPA Problems</SPAN>
- 

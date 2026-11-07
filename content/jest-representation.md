@@ -9,11 +9,11 @@ JEST response is either XML or JSON.
 <a name="JESTRepresentation-XMLRepresentation"></a>
 
 ## XML Representation
-		
+
 JEST represents persistent Java object graph in a schema-compliant XML. The
-schema is metamodel-driven and hence invariant to particular domain model. 
+schema is metamodel-driven and hence invariant to particular domain model.
 The schema *jest-instance.xsd* is as follows:
-		
+
   <DIV style="border-style: solid;border-width: 0px;"><DIV class="codeHeader panelHeader" style="border-bottom-width: 1px;border-bottom-style: solid;"><B>Metamodel-driven schema for JEST XML</B></DIV>
 
     <!-- ========================================================================= -->
@@ -28,8 +28,8 @@ The schema *jest-instance.xsd* is as follows:
 	 Describes closure of managed persistence instance.
 	 Each instance is described by all its loaded persistent attribute.
 	 The related instances are resolved within the document root.
-	 Document root represents zero or more instances. 
-          
+	 Document root represents zero or more instances.
+
 	 The file must be named "jest-instance.xsd".
          ]]>
 		    </xsd:documentation>
@@ -54,27 +54,27 @@ The schema *jest-instance.xsd* is as follows:
 	    <!-- See org.apache.openjpa.persistence.jest.MetamodelHelper for further details.	      -->
 	    <xsd:complexType name="instance-type">
 		    <xsd:sequence>
-			    <xsd:element name="id"	               type="basic-attr-type"	   
+			    <xsd:element name="id"	               type="basic-attr-type"
 			      				minOccurs="0" maxOccurs="unbounded"/>
-			    <xsd:element name="version"            type="basic-attr-type"	   
+			    <xsd:element name="version"            type="basic-attr-type"
 			    				minOccurs="0" maxOccurs="unbounded"/>
-			    <xsd:element name="basic"              type="basic-attr-type"	   
+			    <xsd:element name="basic"              type="basic-attr-type"
 			    				minOccurs="0" maxOccurs="unbounded"/>
-    			<xsd:element name="enum"               type="basic-attr-type"	   
+    			<xsd:element name="enum"               type="basic-attr-type"
     							minOccurs="0" maxOccurs="unbounded"/>
-	    		<xsd:element name="embedded"           type="instance-type"	       
+	    		<xsd:element name="embedded"           type="instance-type"
 	    						minOccurs="0" maxOccurs="unbounded"/>
-		    	<xsd:element name="lob" 	           type="lob-attr-type"	       
+		    	<xsd:element name="lob" 	           type="lob-attr-type"
 		    					minOccurs="0" maxOccurs="unbounded"/>
-			    <xsd:element name="one-to-one"         type="singular-attr-type"   
+			    <xsd:element name="one-to-one"         type="singular-attr-type"
 			    				minOccurs="0" maxOccurs="unbounded"/>
-    			<xsd:element name="many-to-one"        type="singular-attr-type"   
+    			<xsd:element name="many-to-one"        type="singular-attr-type"
     							minOccurs="0" maxOccurs="unbounded"/>
-	    		<xsd:element name="element-collection" type="collection-attr-type" 
+	    		<xsd:element name="element-collection" type="collection-attr-type"
 	    						minOccurs="0" maxOccurs="unbounded"/>
-		    	<xsd:element name="one-to-many"        type="collection-attr-type" 
+		    	<xsd:element name="one-to-many"        type="collection-attr-type"
 		    					minOccurs="0" maxOccurs="unbounded"/>
-			    <xsd:element name="many-to-many"       type="map-attr-type"	       
+			    <xsd:element name="many-to-many"       type="map-attr-type"
 			    				minOccurs="0" maxOccurs="unbounded"/>
     		</xsd:sequence>
 	    	<xsd:attribute name="id" type="xsd:ID" use="required" />
@@ -88,7 +88,7 @@ The schema *jest-instance.xsd* is as follows:
 			    </xsd:extension>
 		    </xsd:simpleContent>
 	    </xsd:complexType>
-	
+
 	    <!-- A null reference				-->
 	    <xsd:complexType name="ref-null">
 		    <xsd:simpleContent>
@@ -109,7 +109,7 @@ The schema *jest-instance.xsd* is as follows:
 		    	</xsd:extension>
     		</xsd:simpleContent>
 	    </xsd:complexType>
-	
+
     	<!-- Large Binary Objects (LOB) represented as hex array -->
 	    <xsd:complexType name="lob-attr-type">
 		    <xsd:simpleContent>
@@ -179,15 +179,15 @@ The schema *jest-instance.xsd* is as follows:
 			    <xsd:element name="value" type="member-type" minOccurs="1" maxOccurs="1" />
     		</xsd:sequence>
 	    </xsd:complexType>
-	
+
     </xsd:schema>
 
-    
+
 ## Example of a serialized object graph
 The example shows a Person (primary key p1) who is her own partner.
-    
+
   <DIV style="border-style: solid;border-width: 0px;"><DIV class="codeHeader panelHeader" style="border-bottom-width: 1px;border-bottom-style: solid;"><B>Example of Object Graph with Circular Reference</B></DIV>
-  
+
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <instances>
       <instance id="Person-p1">
@@ -195,7 +195,7 @@ The example shows a Person (primary key p1) who is her own partner.
         <basic name="dob" type="Date">Fri Sep 08 00:00:00 CDT 1989</basic>
         <basic name="firstName" type="String">Mary</basic>
         <basic name="gender" type="Gender">Female</basic>
-    
+
         <basic name="lastName" type="String">Smith</basic>
         <singular name="address" type="Address">
           <instance id="Address-101">
@@ -203,7 +203,7 @@ The example shows a Person (primary key p1) who is her own partner.
     	<basic name="country" type="String">C1</basic>
     	<basic name="state" type="String">State1</basic>
     	<basic name="street" type="String">Street1</basic>
-    
+
     	<basic name="zip" type="int">10001</basic>
           </instance>
         </singular>
@@ -223,7 +223,7 @@ or more succinct JSON form has to address the critical issue of circular
 reference, because persistent object graphs
 often contains circular reference. JSON, at this point of writing, does not
 address circular reference. Hence JEST introduces special semantics within
-JSON format to refer to 
+JSON format to refer to
 instances in a serialized graph. However, the enhanced JSON can be parsed
 by standard JSON parsers.
 
@@ -231,5 +231,4 @@ Enhanced JSON representation in JEST introduces two _special_ fields named
 `$id` and `$ref` to address circular reference. Each JSON object
 carries a `$id` field whose value is the persistent identity of the
 corresponding entity. When JSON serialization encounters a circular
-reference a   
-		
+reference a

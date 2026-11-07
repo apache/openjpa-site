@@ -1,0 +1,23 @@
+{
+  "name": "openjpa-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Apache OpenJPA documentation site with modern tooling",
+  "scripts": {
+    "prepare": "node scripts/build-assets.js",
+    "build": "node scripts/build-bundle.js && pelican content -s pelican.auto.py",
+    "build:dev": "node scripts/build-assets.js && pelican content -s pelican.auto.py -l",
+    "watch": "node scripts/watch.js",
+    "serve": "node scripts/serve.js",
+    "clean": "rm -rf theme/apache/static/bundles theme/apache/static/integrity.json"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "highlight.js": "^11.10.0"
+  },
+  "devDependencies": {
+    "chokidar": "^3.6.0",
+    "esbuild": "^0.28.2"
+  }
+}

@@ -25,3 +25,9 @@ github:
         - root
       restrict_deletion: true
       restrict_force_push: true
+  labels:
+    - infra
+  topics:
+    - website
+    - pelican
+    - markdown

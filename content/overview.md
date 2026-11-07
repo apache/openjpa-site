@@ -13,5 +13,4 @@ Title: Overview
 <LI><A href="license.html" title="License">License</A> &mdash; <SPAN class="smalltext">OpenJPA license: Apache License v2.0</SPAN></LI>
 <LI><A href="privacy-policy.html" title="Privacy Policy">Privacy Policy</A></LI>
 <LI><A href="quick-start.html" title="Quick Start">Quick Start</A> &mdash; <SPAN class="smalltext">Getting Started with OpenJPA</SPAN></LI>
-</UL> 
- 
+</UL>

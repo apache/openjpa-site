@@ -1,4 +1,134 @@
 {% extends "base.html" %}
+
+{#
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.
+#}
+
 {% block content %}
-    {{ page.content }}
+<div class="bd-layout">
+    {# Left sidebar - site navigation (server-rendered, no-JS safe) #}
+    <aside class="bd-sidebar" aria-label="Page navigation">
+        <button class="btn btn-link sidebar-collapse-btn d-lg-none" type="button"
+                data-bs-toggle="collapse" data-bs-target="#sidebarNav" aria-expanded="false"
+                aria-controls="sidebarNav">
+            <i class="bi bi-layout-text-sidebar-reverse me-2" aria-hidden="true"></i>Contents
+        </button>
+        <nav class="collapse d-lg-block sidebar-nav" id="sidebarNav" aria-label="Sidebar">
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Quick Start</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="quick-start.html">Quick Start Guide</a></li>
+                    <li><a class="sidebar-link" href="getting-started.html">Getting Started</a></li>
+                    <li><a class="sidebar-link" href="samples.html">Samples</a></li>
+                    <li><a class="sidebar-link" href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Documentation</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="documentation.html">Manuals &amp; Guides</a></li>
+                    <li><a class="sidebar-link" href="overview.html">Overview</a></li>
+                    <li><a class="sidebar-link" href="performance-guide.html">Performance Guide</a></li>
+                    <li><a class="sidebar-link" href="migration-tool.html">Migration Tool</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Downloads</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="downloads.html">Releases</a></li>
+                    <li><a class="sidebar-link" href="downloads-nightly.html">Nightly Builds</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Community</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="community.html">Community</a></li>
+                    <li><a class="sidebar-link" href="mailing-lists.html">Mailing Lists</a></li>
+                    <li><a class="sidebar-link" href="source-code.html">Source Code</a></li>
+                    <li><a class="sidebar-link" href="https://issues.apache.org/jira/browse/OPENJPA">Issue Tracker</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Development</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="development.html">Development</a></li>
+                    <li><a class="sidebar-link" href="building.html">Building</a></li>
+                    <li><a class="sidebar-link" href="testing.html">Testing</a></li>
+                    <li><a class="sidebar-link" href="release-management.html">Release Management</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    {# Main content #}
+    <main id="main-content" class="bd-main" tabindex="-1">
+        {# Breadcrumb #}
+        <nav aria-label="breadcrumb" class="bd-breadcrumb mb-3">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="./"><i class="bi bi-house-door-fill me-1" aria-hidden="true"></i>Home</a></li>
+                {% if page.parent and page.parent.name %}
+                <li class="breadcrumb-item"><a href="{{ page.parent.url }}">{{ page.parent.name }}</a></li>
+                {% endif %}
+                <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+            </ol>
+        </nav>
+
+        {% block page_heading %}
+        {% if page.title and page.url != 'index.html' %}
+        <div class="d-flex align-items-start justify-content-between gap-3 flex-wrap">
+            <h1 class="page-title mb-0">{{ page.title }}</h1>
+            {% if page.relative_source_path %}
+            <a class="edit-github"
+               href="{{ SITEREPOSITORY }}{{ page.relative_source_path }}"
+               target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-pencil-square me-1" aria-hidden="true"></i>Edit on GitHub
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endblock %}
+
+        <article class="page-content">
+            {{ page.content }}
+        </article>
+
+        {# Prev/Next cards #}
+        {% if page.previous or page.next %}
+        <nav class="bd-pagination" aria-label="Page navigation">
+            {% if page.previous %}
+            <a href="{{ page.previous.url }}" class="bd-page-card prev">
+                <span class="bd-page-label"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Previous</span>
+                <span class="bd-page-title">{{ page.previous.title }}</span>
+            </a>
+            {% else %}
+            <span></span>
+            {% endif %}
+            {% if page.next %}
+            <a href="{{ page.next.url }}" class="bd-page-card next text-end">
+                <span class="bd-page-label">Next<i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></span>
+                <span class="bd-page-title">{{ page.next.title }}</span>
+            </a>
+            {% else %}
+            <span></span>
+            {% endif %}
+        </nav>
+        {% endif %}
+    </main>
+
+    {# Right TOC #}
+    <aside class="bd-toc" aria-label="Table of contents">
+        <div class="bd-toc-title">
+            <i class="bi bi-list-ul me-2" aria-hidden="true"></i>
+            <span>On This Page</span>
+        </div>
+        {% if page.toc %}
+        <div class="toc-content">
+            {{ page.toc }}
+        </div>
+        {% else %}
+        <p class="text-muted small mb-0">No table of contents available.</p>
+        {% endif %}
+    </aside>
+</div>
 {% endblock %}
