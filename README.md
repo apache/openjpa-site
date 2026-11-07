@@ -75,6 +75,7 @@ npm run prepare
 
 # Development (with live reload)
 source venv/bin/activate
+pelican content -s pelican.auto.py
 pelican content -s pelican.auto.py -lr
 
 # Production

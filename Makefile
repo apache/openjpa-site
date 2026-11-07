@@ -64,6 +64,7 @@ install:
 	@echo "Next steps:"
 	@echo "  source venv/bin/activate"
 	@echo "  npm run prepare"
+	@echo "  pelican content -s pelican.auto.py"
 	@echo "  pelican content -s pelican.auto.py -l"
 
 ## prepare: Build static assets from npm packages
@@ -78,7 +79,7 @@ dev: prepare
 	@echo "Edit content/*.md files to see changes automatically"
 	@echo "Site available at http://localhost:8000 (Ctrl-C to stop)"
 	@echo ""
-	@source venv/bin/activate && pelican content -s pelican.auto.py -lr
+	@source venv/bin/activate && pelican content -s pelican.auto.py && pelican content -s pelican.auto.py -lr
 
 ## build: Production build
 build: prepare
