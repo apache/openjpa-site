@@ -1,0 +1,84 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+name: Publish staging website
+
+# Builds the selected branch and pushes the result to asf-staging,
+# which is served at https://openjpa.staged.apache.org/
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          npm install --ignore-scripts
+          pip install pelican markdown
+          pip install -r requirements.txt
+
+      - name: Build static assets
+        run: |
+          node scripts/build-assets.js
+
+      - name: Build site
+        run: |
+          pelican content -s pelican.auto.py
+          test -f output/index.html
+
+      - name: Checkout asf-staging
+        uses: actions/checkout@v4
+        with:
+          ref: asf-staging
+          path: asf-staging
+
+      - name: Copy build to asf-staging
+        run: |
+          rsync -a --delete output/ asf-staging/output/
+
+      - name: Commit and push
+        working-directory: asf-staging
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+          else
+            git commit -m "Publish ${GITHUB_REF_NAME} ${GITHUB_SHA::8}"
+            git push
+          fi
