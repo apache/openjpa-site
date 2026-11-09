@@ -118,7 +118,7 @@ project-root/
 ├── package.json       # npm configuration
 ├── requirements.txt   # Python dependencies
 ├── pelican.auto.py     # Pelican configuration
-├── .asf.yaml          # ASF build configuration
+├── .asf.yaml          # ASF repository and website configuration
 └── Makefile           # Convenience build commands
 ```
 
@@ -127,7 +127,21 @@ project-root/
 1. **Edit content** in `content/*.md`
 2. **Run `make dev`** to build assets and preview with live reload at http://localhost:8000
 3. **Run `make build`** to produce the production site in `output/`
-4. **Commit changes**: Changes to `content/` trigger automatic CI/CD builds
+4. **Open a pull request**: CI builds the site for every pull request
+
+## Publishing
+
+The site is built and published with GitHub Actions; the ASF Pelican buildbot is not used
+(do not add a `pelican:` block to `.asf.yaml`, it would overwrite the published site).
+
+| Site | Branch | How it gets there |
+|------|--------|-------------------|
+| https://openjpa.apache.org/ | `asf-site` | every push to `main` (`build.yml`) |
+| https://openjpa.staged.apache.org/ | `asf-staging` | manually: Actions → *Publish staging website* → choose a branch |
+
+Both workflows build the site and copy `output/` into the `output/` directory of the target branch.
+Each target branch has its own `.asf.yaml` (`publish:` resp. `staging:`); the blocks in `main`'s
+`.asf.yaml` have no effect there.
 
 ## Apache Compliance
 
@@ -137,11 +151,12 @@ All resources are either:
 
 No external CDNs are used for critical assets.
 
-## Repository Topics
+## Repository Settings
 
-Suggested GitHub Topics to apply to the `apache/openjpa-site` repository (set via the repository's GitHub settings):
+Description, homepage and topics of the GitHub repository are set in `.asf.yaml` (`github:` section,
+topics as `labels`); changes made in the GitHub settings are overwritten.
 
-`apache`, `openjpa`, `jpa`, `jakarta`, `jakarta-persistence`, `persistence`, `documentation`, `static-site`, `pelican`, `java`, `apache-docs`
+## Troubleshooting
 
 ### PEP 668 Error
 If you see "externally-managed-environment" error:
@@ -160,7 +175,7 @@ make prepare
 
 Or manually:
 ```bash
-npm ci
+npm install
 npm run prepare
 ```
 
