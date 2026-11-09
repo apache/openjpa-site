@@ -71,46 +71,47 @@ jobs:
           test -f output/index.html || (echo "ERROR: index.html missing" && exit 1)
           echo "✓ Build validation passed"
 
+      - name: Upload site
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: output/
+          include-hidden-files: true
+          retention-days: 1
+
+  # Pushes the build to asf-site, which is served at https://openjpa.apache.org/
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
 
     steps:
-      - name: Checkout repository
+      - name: Download site
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: output
+
+      - name: Checkout asf-site
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          persist-credentials: false
+          ref: asf-site
+          path: asf-site
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install dependencies
+      - name: Copy build to asf-site
         run: |
-          npm ci --ignore-scripts
-          pip install pelican markdown
-          pip install -r requirements.txt
+          rsync -a --delete output/ asf-site/output/
 
-      - name: Build static assets
+      - name: Commit and push
+        working-directory: asf-site
         run: |
-          node scripts/build-assets.js
-
-      - name: Build documentation
-        run: |
-          pelican content -s pelican.auto.py
-
-      - name: Deploy to asf-site
-        uses: apache/infrastructure-actions/pelican@main
-        with:
-          destination: asf-site
-          gfm: 'true'
-          publish: true
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+          else
+            git commit -m "Publish ${GITHUB_SHA::8}"
+            git push
+          fi
