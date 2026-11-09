@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns="https://github.com/apache/openjpa-site"
+         xml:lang="en"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:asq="https://amqp.apache.org/directory/qpid#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:doap="http://usefulinc.com/ns/doap#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:osoc="https://opensourcetracking.org#">
+
+  <doap:Project>
+    <doap:name>OpenJPA</doap:name>
+    <doap:description>A Java persistence project at The Apache Software Foundation</doap:description>
+    <doap:homepage rdf:resource="https://openjpa.apache.org/"/>
+    <doap:download-page rdf:resource="https://openjpa.apache.org/downloads.html"/>
+    <doap:programming-language>Java</doap:programming-language>
+    <doap:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
+    <doap:repository>
+      <doap:Git>
+        <doap:location>https://github.com/apache/openjpa</doap:location>
+      </doap:Git>
+    </doap:repository>
+    <doap:wiki rdf:resource="https://cwiki.apache.org/confluence/display/OPENJPA"/>
+    <doap:mailing-list rdf:resource="https://openjpa.apache.org/mailing-lists.html"/>
+    <doap:bug-database rdf:resource="https://issues.apache.org/jira/browse/OPENJPA"/>
+    <doap:development-community>
+      <foaf:Organization>
+        <foaf:name>The Apache Software Foundation</foaf:name>
+        <foaf:homepage rdf:resource="https://www.apache.org/"/>
+      </foaf:Organization>
+    </doap:development-community>
+    <doap:maintainer>
+      <foaf:Person>
+        <foaf:name>The Apache OpenJPA Project Management Committee</foaf:name>
+        <foaf:mbox rdf:resource="mailto:dev@openjpa.apache.org"/>
+      </foaf:Person>
+    </doap:maintainer>
+    <doap:category rdf:resource="https://projects.apache.org/classification/database"/>
+    <doap:tag>JPA</doap:tag>
+    <doap:tag>Persistence</doap:tag>
+    <doap:tag>ORM</doap:tag>
+    <doap:tag>Java EE</doap:tag>
+    <doap:tag>Jakarta EE</doap:tag>
+    <osoc:platform>Jakarta Persistence</osoc:platform>
+    <osoc:platform>Java SE</osoc:platform>
+    <osoc:platform>Java EE</osoc:platform>
+  </doap:Project>
+</rdf:RDF>

@@ -1,0 +1,276 @@
+<!doctype html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.
+
+         https://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Apache OpenJPA - OpenJPA+Email</title>
+    <meta name="description" content="OpenJPA email aliases dev@openjpa.apache.org¶ This alias is primarily for the developers on the OpenJPA project. To subscribe, send mail to mailto:dev-subscribe@openjpa.apache.org To unsubscribe, send mail to mailto:dev-unsubscribe@openjpa.apache.org Archives can be found at http://mail-archives.apache.org/mod_mbox/openjpa-dev users …">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="images/openjpa-logo.png">
+
+    <!-- Primary stylesheets (all local, SRI-protected) -->
+    <link href="theme/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"
+          integrity="">
+    <link href="theme/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="theme/css/custom.css" rel="stylesheet">
+    <link href="theme/css/highlight.css" rel="stylesheet">
+</head>
+<body class="site-body">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header sticky-top">
+        <nav class="navbar navbar-expand-lg container-xxl" aria-label="Main navigation">
+            <div class="navbar-brand-wrap me-2">
+                <a class="navbar-brand nav-home text-logo" href="./" aria-label="Apache OpenJPA home">
+                    <span class="text-logo-name">Open<span class="text-logo-strong">JPA</span></span>
+                </a>
+            </div>
+
+            <button class="navbar-toggler order-lg-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
+
+            <div class="collapse navbar-collapse order-lg-2" id="primaryNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="overview.html">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quick-start.html">Quick Start</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentation.html">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="downloads.html">Downloads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+                    <li class="nav-item"><a class="nav-link" href="development.html">Development</a></li>
+                </ul>
+                <ul class="navbar-nav d-flex align-items-center">
+                    <li class="nav-item search-wrap me-2 d-none d-md-block">
+                        <div class="position-relative">
+                            <i class="bi bi-search search-icon" aria-hidden="true"></i>
+                            <input class="form-control form-control-sm site-search" type="search"
+                                   placeholder="Search docs..." aria-label="Search documentation"
+                                   autocomplete="off" spellcheck="false">
+                        </div>
+                        <div class="search-results shadow" hidden></div>
+                    </li>
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link" href="https://github.com/apache/openjpa" target="_blank"
+                           rel="noopener noreferrer" aria-label="GitHub repository">
+                            <i class="bi bi-github" aria-hidden="true"></i><span class="visually-hidden">GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="https://www.apache.org/" class="asf-badge d-none d-lg-inline-flex order-lg-4 ms-3"
+               rel="noopener noreferrer">
+                <img src="https://www.apache.org/img/asf_logo.png" alt="The Apache Software Foundation"
+                     width="120" height="auto">
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main layout -->
+    <div class="container-xxl site-container">
+<div class="bd-layout">
+    <aside class="bd-sidebar" aria-label="Page navigation">
+        <button class="btn btn-link sidebar-collapse-btn d-lg-none" type="button"
+                data-bs-toggle="collapse" data-bs-target="#sidebarNav" aria-expanded="false"
+                aria-controls="sidebarNav">
+            <i class="bi bi-layout-text-sidebar-reverse me-2" aria-hidden="true"></i>Contents
+        </button>
+        <nav class="collapse d-lg-block sidebar-nav" id="sidebarNav" aria-label="Sidebar">
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Quick Start</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="quick-start.html">Quick Start Guide</a></li>
+                    <li><a class="sidebar-link" href="getting-started.html">Getting Started</a></li>
+                    <li><a class="sidebar-link" href="samples.html">Samples</a></li>
+                    <li><a class="sidebar-link" href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Documentation</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="documentation.html">Manuals &amp; Guides</a></li>
+                    <li><a class="sidebar-link" href="overview.html">Overview</a></li>
+                    <li><a class="sidebar-link" href="performance-guide.html">Performance Guide</a></li>
+                    <li><a class="sidebar-link" href="migration-tool.html">Migration Tool</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Downloads</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="downloads.html">Releases</a></li>
+                    <li><a class="sidebar-link" href="downloads-nightly.html">Nightly Builds</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Community</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="community.html">Community</a></li>
+                    <li><a class="sidebar-link" href="mailing-lists.html">Mailing Lists</a></li>
+                    <li><a class="sidebar-link" href="source-code.html">Source Code</a></li>
+                    <li><a class="sidebar-link" href="https://issues.apache.org/jira/browse/OPENJPA">Issue Tracker</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Development</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="development.html">Development</a></li>
+                    <li><a class="sidebar-link" href="building.html">Building</a></li>
+                    <li><a class="sidebar-link" href="testing.html">Testing</a></li>
+                    <li><a class="sidebar-link" href="release-management.html">Release Management</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <main id="main-content" class="bd-main" tabindex="-1">
+        <nav aria-label="breadcrumb" class="bd-breadcrumb mb-3">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="./"><i class="bi bi-house-door-fill me-1" aria-hidden="true"></i>Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">OpenJPA+Email</li>
+            </ol>
+        </nav>
+
+        <div class="d-flex align-items-start justify-content-between gap-3 flex-wrap">
+            <h1 class="page-title mb-0">OpenJPA+Email</h1>
+            <a class="edit-github"
+               href="https://github.com/apache/openjpa-site/blob/main/content/openjpa-email.md"
+               target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-pencil-square me-1" aria-hidden="true"></i>Edit on GitHub
+            </a>
+        </div>
+
+        <article class="page-content">
+            <p><a name="OpenJPA+Email-OpenJPAemailaliases"></a></p>
+<h1 id="openjpa-email-aliases">OpenJPA email aliases</h1>
+<p><a name="OpenJPA+Email-dev@openjpa.apache.org"></a></p>
+<h2 id="devopenjpaapacheorg">dev@openjpa.apache.org<a class="headerlink" href="#devopenjpaapacheorg" title="Permalink">&para;</a></h2>
+<p>This alias is primarily for the developers on the OpenJPA project.</p>
+<p>To subscribe, send mail to <a href="mailto:dev-subscribe@openjpa.apache.org.html">mailto:dev-subscribe@openjpa.apache.org</a><br/>
+To unsubscribe, send mail to <a href="mailto:dev-unsubscribe@openjpa.apache.org.html">mailto:dev-unsubscribe@openjpa.apache.org</a><br/>
+Archives can be found at <a href="http://mail-archives.apache.org/mod_mbox/openjpa-dev">http://mail-archives.apache.org/mod_mbox/openjpa-dev</a></p>
+<p><a name="OpenJPA+Email-users@openjpa.apache.org"></a></p>
+<h2 id="usersopenjpaapacheorg">users@openjpa.apache.org<a class="headerlink" href="#usersopenjpaapacheorg" title="Permalink">&para;</a></h2>
+<p>This alias is primarily for users of OpenJPA.</p>
+<p>To subscribe, send mail to <a href="mailto:users-subscribe@openjpa.apache.org.html">users-subscribe@openjpa.apache.org</a><br/>
+To unsubscribe, send mail to <a href="mailto:users-subscribe@openjpa.apache.org.html">users-unsubscribe@openjpa.apache.org</a><br/>
+Archives can be found at <a href="http://mail-archives.apache.org/mod_mbox/openjpa-users">http://mail-archives.apache.org/mod_mbox/openjpa-users</a></p>
+<p><a name="OpenJPA+Email-commits@openjpa.apache.org"></a></p>
+<h2 id="commitsopenjpaapacheorg">commits@openjpa.apache.org<a class="headerlink" href="#commitsopenjpaapacheorg" title="Permalink">&para;</a></h2>
+<p>This alias tracks all changes to the OpenJPA svn repository.</p>
+<p>To subscribe, send mail to <a href="mailto:commits-subscribe@openjpa.apache.org.html">commits-subscribe@openjpa.apache.org</a><br/>
+To unsubscribe, send mail to <a href="mailto:commits-subscribe@openjpa.apache.org.html">commits-unsubscribe@openjpa.apache.org</a><br/>
+Archives can be found at <a href="http://mail-archives.apache.org/mod_mbox/openjpa-commits">http://mail-archives.apache.org/mod_mbox/openjpa-commits</a></p>
+        </article>
+
+        <nav class="bd-pagination" aria-label="Page navigation">
+            <a href="openjpa-development-resources.html" class="bd-page-card prev">
+                <span class="bd-page-label"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Previous</span>
+                <span class="bd-page-title">OpenJPA Development Resources</span>
+            </a>
+            <a href="openjpa-release-policy.html" class="bd-page-card next text-end">
+                <span class="bd-page-label">Next<i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></span>
+                <span class="bd-page-title">OpenJPA Release Policy</span>
+            </a>
+        </nav>
+    </main>
+
+    <aside class="bd-toc" aria-label="Table of contents">
+        <div class="bd-toc-title">
+            <i class="bi bi-list-ul me-2" aria-hidden="true"></i>
+            <span>On This Page</span>
+        </div>
+        <div class="toc-content">
+            <div id="toc"><ul><li><a class="toc-href" href="#openjpa-email-aliases" title="OpenJPA email aliases">OpenJPA email aliases</a><ul><li><a class="toc-href" href="#devopenjpaapacheorg" title="dev@openjpa.apache.org">dev@openjpa.apache.org</a></li><li><a class="toc-href" href="#usersopenjpaapacheorg" title="users@openjpa.apache.org">users@openjpa.apache.org</a></li><li><a class="toc-href" href="#commitsopenjpaapacheorg" title="commits@openjpa.apache.org">commits@openjpa.apache.org</a></li></ul></li></ul></div>
+        </div>
+    </aside>
+</div>
+    </div>
+
+    <!-- Footer (ASF mandated links preserved) -->
+    <footer class="site-footer mt-5">
+        <div class="container-xxl">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <a href="https://www.apache.org/">
+                        <img src="https://www.apache.org/img/asf_logo.png" alt="Apache Software Foundation"
+                             style="max-height:2.5rem;width:auto;">
+                    </a>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Community</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="https://community.apache.org/">Get Involved</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://github.com/apache/openjpa">GitHub</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://issues.apache.org/jira/browse/OPENJPA">Issue Tracker</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Download</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="downloads.html">Binary Distributions</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://archive.apache.org/dist/openjpa/">Source Distributions</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://archive.apache.org/dist/openjpa/KEYS">KEYS</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="license.html">License</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/marks/">Trademarks</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/security/">Security</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/events/current-event.html">Apache Events</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-hr">
+            <div class="row footer-legal">
+                <div class="col-12">
+                    <p class="mb-1">
+                        Copyright &copy; 2026 The Apache Software Foundation, Licensed under the
+                        <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+                    </p>
+                    <p class="mb-0 text-muted small">
+                        Apache, the Apache feather logo, and Apache OpenJPA are trademarks or registered trademarks of
+                        The Apache Software Foundation in the United States and/or other countries.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Local, SRI-protected scripts -->
+    <script src="theme/js/bootstrap.bundle.min.js" crossorigin="anonymous"
+            integrity=""></script>
+    <script src="theme/js/highlight/highlight.js" defer></script>
+    <script src="theme/js/doc-enhancements.js" defer></script>
+</body>
+</html>
