@@ -32,6 +32,3 @@ github:
       restrict_deletion: true
       restrict_force_push: true
   del_branch_on_merge: true
-  topics:
-    - website
-    - pelican
