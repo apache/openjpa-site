@@ -1,391 +1,464 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!doctype html>
 <!--
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with
-this work for additional information regarding copyright ownership.
-The ASF licenses this file to You under the Apache License, Version 2.0
-(the "License"); you may not use this file except in compliance with
-the License.  You may obtain a copy of the License at
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.
 
-http://www.apache.org/licenses/LICENSE-2.0
+         https://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
-<html lang="en">
-    <head>
-        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
-        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
-        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
-        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
-        <META name="Description" content="Apache OpenJPA -- License" />
-        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
-        <META name="Owner" content="dev@openjpa.apache.org" />
-        <META name="Robots" content="index, follow" />
-        <META name="Security" content="Public" />
-        <META name="Source" content="wiki template" />
-        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
-        <META name="DC.Language" scheme="rfc1766" content="en" />
-        <META name="DC.Rights" content="Copyright © 2006,2026 The Apache Software Foundation" />
-        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
-	<style>
-.headerlink {
-  visibility: hidden;
-}
-dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
-  visibility: visible
-}	</style>
-        <title>Apache OpenJPA -- License</title>
-    </head>
-    <body>
-        <div class="white_box">
-            <div class="header">
-                <div class="header_l">
-                    <div class="header_r">
-                    </div>
-                </div>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Apache OpenJPA - License</title>
+    <meta name="description" content="Apache License v2.0¶ Apache License Version 2.0, January 2004 http://www.apache.org/licenses/ TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION 1. Definitions. "License" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document. "Licensor" shall …">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="images/openjpa-logo.png">
+
+    <!-- Primary stylesheets (all local, SRI-protected) -->
+    <link href="theme/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"
+          integrity="">
+    <link href="theme/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="theme/css/custom.css" rel="stylesheet">
+    <link href="theme/css/highlight.css" rel="stylesheet">
+</head>
+<body class="site-body">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header sticky-top">
+        <nav class="navbar navbar-expand-lg container-xxl" aria-label="Main navigation">
+            <div class="navbar-brand-wrap me-2">
+                <a class="navbar-brand nav-home text-logo" href="./" aria-label="Apache OpenJPA home">
+                    <span class="text-logo-name">Open<span class="text-logo-strong">JPA</span></span>
+                </a>
             </div>
-            <div class="content">
-                <div class="content_l">
-                    <div class="content_r">
-                        <div>
-                            <!-- Banner -->
-                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
-                                <TR>
-                                    <TD valing="top" align="left">
-                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
-                                    </TD>
-                                    <TD width="100%">
-                                        &nbsp;
-                                    </TD>
-                                    <TD valing="top" align="right">
-                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
-                                    </TD>
-                                </TR>
-                            </TABLE>
 
-                            <!-- Navigation Bar -->
-                            <div class="bottom_red_bar">
-                                <div id="site-breadcrumbs">
-                                </div>
-                            </div>
+            <button class="navbar-toggler order-lg-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
 
-                            <!-- Content -->
-                            <table border="0">
-                                <tbody>
-                                    <tr>
-                                        <td valign="top">
-                                            <div class="navigation">
-                                                <div class="navigation_top">
-                                                    <div class="navigation_bottom">
-                                                        <!-- NavigationBar -->
-                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+            <div class="collapse navbar-collapse order-lg-2" id="primaryNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="overview.html">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quick-start.html">Quick Start</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentation.html">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="downloads.html">Downloads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+                    <li class="nav-item"><a class="nav-link" href="development.html">Development</a></li>
+                </ul>
+                <ul class="navbar-nav d-flex align-items-center">
+                    <li class="nav-item search-wrap me-2 d-none d-md-block">
+                        <div class="position-relative">
+                            <i class="bi bi-search search-icon" aria-hidden="true"></i>
+                            <input class="form-control form-control-sm site-search" type="search"
+                                   placeholder="Search docs..." aria-label="Search documentation"
+                                   autocomplete="off" spellcheck="false">
+                        </div>
+                        <div class="search-results shadow" hidden></div>
+                    </li>
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link" href="https://github.com/apache/openjpa" target="_blank"
+                           rel="noopener noreferrer" aria-label="GitHub repository">
+                            <i class="bi bi-github" aria-hidden="true"></i><span class="visually-hidden">GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
-                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
-                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
-                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
-                                                            <li><a href="/license.html" title="License">License</a></li>
-                                                            <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" title="Privacy Policy">Privacy Policy</a></li>
-                                                        </ul>
+            <a href="https://www.apache.org/" class="asf-badge d-none d-lg-inline-flex order-lg-4 ms-3"
+               rel="noopener noreferrer">
+                <img src="https://www.apache.org/img/asf_logo.png" alt="The Apache Software Foundation"
+                     width="120" height="auto">
+            </a>
+        </nav>
+    </header>
 
-                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+    <!-- Main layout -->
+    <div class="container-xxl site-container">
+<div class="bd-layout">
+    <aside class="bd-sidebar" aria-label="Page navigation">
+        <button class="btn btn-link sidebar-collapse-btn d-lg-none" type="button"
+                data-bs-toggle="collapse" data-bs-target="#sidebarNav" aria-expanded="false"
+                aria-controls="sidebarNav">
+            <i class="bi bi-layout-text-sidebar-reverse me-2" aria-hidden="true"></i>Contents
+        </button>
+        <nav class="collapse d-lg-block sidebar-nav" id="sidebarNav" aria-label="Sidebar">
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Quick Start</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="quick-start.html">Quick Start Guide</a></li>
+                    <li><a class="sidebar-link" href="getting-started.html">Getting Started</a></li>
+                    <li><a class="sidebar-link" href="samples.html">Samples</a></li>
+                    <li><a class="sidebar-link" href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Documentation</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="documentation.html">Manuals &amp; Guides</a></li>
+                    <li><a class="sidebar-link" href="overview.html">Overview</a></li>
+                    <li><a class="sidebar-link" href="performance-guide.html">Performance Guide</a></li>
+                    <li><a class="sidebar-link" href="migration-tool.html">Migration Tool</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Downloads</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="downloads.html">Releases</a></li>
+                    <li><a class="sidebar-link" href="downloads-nightly.html">Nightly Builds</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Community</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="community.html">Community</a></li>
+                    <li><a class="sidebar-link" href="mailing-lists.html">Mailing Lists</a></li>
+                    <li><a class="sidebar-link" href="source-code.html">Source Code</a></li>
+                    <li><a class="sidebar-link" href="https://issues.apache.org/jira/browse/OPENJPA">Issue Tracker</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Development</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="development.html">Development</a></li>
+                    <li><a class="sidebar-link" href="building.html">Building</a></li>
+                    <li><a class="sidebar-link" href="testing.html">Testing</a></li>
+                    <li><a class="sidebar-link" href="release-management.html">Release Management</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
 
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
-                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
-                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
-                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
-                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
-                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
-                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
-                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
-                                                        </ul>
+    <main id="main-content" class="bd-main" tabindex="-1">
+        <nav aria-label="breadcrumb" class="bd-breadcrumb mb-3">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="./"><i class="bi bi-house-door-fill me-1" aria-hidden="true"></i>Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">License</li>
+            </ol>
+        </nav>
 
+        <div class="d-flex align-items-start justify-content-between gap-3 flex-wrap">
+            <h1 class="page-title mb-0">License</h1>
+            <a class="edit-github"
+               href="https://github.com/apache/openjpa-site/blob/main/content/license.md"
+               target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-pencil-square me-1" aria-hidden="true"></i>Edit on GitHub
+            </a>
+        </div>
 
-                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
-                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
-                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
-                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
-                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
-                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
-                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
-                                                        </ul>
-
-                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
-                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
-                                                        </ul>
-
-                                                        <h3>Search</h3>
-
-                                                        <div style="padding: 5px 5px 0px 25px;">
-                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
-                                                                <input name="ie" type="hidden" value="UTF-8">
-                                                                <input name="oe" type="hidden" value="UTF-8">
-                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
-                                                                <input name="btnG" type="submit" value="Google">
-                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
-                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td valign="top" width="100%" style="overflow:hidden;">
-                                            <div class="wiki-content">
-    <p><a name="License-ApacheLicensev2.0"></a></p>
+        <article class="page-content">
+            <p><a name="License-ApacheLicensev2.0"></a></p>
 <h2 id="apache-license-v20">Apache License v2.0<a class="headerlink" href="#apache-license-v20" title="Permalink">&para;</a></h2>
 <div class="preformattedContent panelContent">
-<pre><code>                           Apache License
-                      Version 2.0, January 2004
-                   http://www.apache.org/licenses/
 
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
-   1. Definitions.
+                               Apache License
+                          Version 2.0, January 2004
+                       http://www.apache.org/licenses/
 
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
 
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
+       TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
+       1. Definitions.
 
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
+          "License" shall mean the terms and conditions for use, reproduction,
+          and distribution as defined by Sections 1 through 9 of this document.
 
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
+          "Licensor" shall mean the copyright owner or entity authorized by
+          the copyright owner that is granting the License.
 
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
+          "Legal Entity" shall mean the union of the acting entity and all
+          other entities that control, are controlled by, or are under common
+          control with that entity. For the purposes of this definition,
+          "control" means (i) the power, direct or indirect, to cause the
+          direction or management of such entity, whether by contract or
+          otherwise, or (ii) ownership of fifty percent (50%) or more of the
+          outstanding shares, or (iii) beneficial ownership of such entity.
 
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
+          "You" (or "Your") shall mean an individual or Legal Entity
+          exercising permissions granted by this License.
 
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
+          "Source" form shall mean the preferred form for making modifications,
+          including but not limited to software source code, documentation
+          source, and configuration files.
 
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted"
-      means any form of electronic, verbal, or written communication sent
-      to the Licensor or its representatives, including but not limited to
-      communication on electronic mailing lists, source code control systems,
-      and issue tracking systems that are managed by, or on behalf of, the
-      Licensor for the purpose of discussing and improving the Work, but
-      excluding communication that is conspicuously marked or otherwise
-      designated in writing by the copyright owner as "Not a Contribution."
+          "Object" form shall mean any form resulting from mechanical
+          transformation or translation of a Source form, including but
+          not limited to compiled object code, generated documentation,
+          and conversions to other media types.
 
-      "Contributor" shall mean Licensor and any individual or Legal Entity
-      on behalf of whom a Contribution has been received by Licensor and
-      subsequently incorporated within the Work.
+          "Work" shall mean the work of authorship, whether in Source or
+          Object form, made available under the License, as indicated by a
+          copyright notice that is included in or attached to the work
+          (an example is provided in the Appendix below).
 
-   2. Grant of Copyright License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      copyright license to reproduce, prepare Derivative Works of,
-      publicly display, publicly perform, sublicense, and distribute the
-      Work and such Derivative Works in Source or Object form.
+          "Derivative Works" shall mean any work, whether in Source or Object
+          form, that is based on (or derived from) the Work and for which the
+          editorial revisions, annotations, elaborations, or other modifications
+          represent, as a whole, an original work of authorship. For the purposes
+          of this License, Derivative Works shall not include works that remain
+          separable from, or merely link (or bind by name) to the interfaces of,
+          the Work and Derivative Works thereof.
 
-   3. Grant of Patent License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      (except as stated in this section) patent license to make, have made,
-      use, offer to sell, sell, import, and otherwise transfer the Work,
-      where such license applies only to those patent claims licensable
-      by such Contributor that are necessarily infringed by their
-      Contribution(s) alone or by combination of their Contribution(s)
-      with the Work to which such Contribution(s) was submitted. If You
-      institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
-      or a Contribution incorporated within the Work constitutes direct
-      or contributory patent infringement, then any patent licenses
-      granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
+          "Contribution" shall mean any work of authorship, including
+          the original version of the Work and any modifications or additions
+          to that Work or Derivative Works thereof, that is intentionally
+          submitted to Licensor for inclusion in the Work by the copyright owner
+          or by an individual or Legal Entity authorized to submit on behalf of
+          the copyright owner. For the purposes of this definition, "submitted"
+          means any form of electronic, verbal, or written communication sent
+          to the Licensor or its representatives, including but not limited to
+          communication on electronic mailing lists, source code control systems,
+          and issue tracking systems that are managed by, or on behalf of, the
+          Licensor for the purpose of discussing and improving the Work, but
+          excluding communication that is conspicuously marked or otherwise
+          designated in writing by the copyright owner as "Not a Contribution."
 
-   4. Redistribution. You may reproduce and distribute copies of the
-      Work or Derivative Works thereof in any medium, with or without
-      modifications, and in Source or Object form, provided that You
-      meet the following conditions:
+          "Contributor" shall mean Licensor and any individual or Legal Entity
+          on behalf of whom a Contribution has been received by Licensor and
+          subsequently incorporated within the Work.
 
-      (a) You must give any other recipients of the Work or
-	  Derivative Works a copy of this License; and
+       2. Grant of Copyright License. Subject to the terms and conditions of
+          this License, each Contributor hereby grants to You a perpetual,
+          worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+          copyright license to reproduce, prepare Derivative Works of,
+          publicly display, publicly perform, sublicense, and distribute the
+          Work and such Derivative Works in Source or Object form.
 
-      (b) You must cause any modified files to carry prominent notices
-	  stating that You changed the files; and
+       3. Grant of Patent License. Subject to the terms and conditions of
+          this License, each Contributor hereby grants to You a perpetual,
+          worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+          (except as stated in this section) patent license to make, have made,
+          use, offer to sell, sell, import, and otherwise transfer the Work,
+          where such license applies only to those patent claims licensable
+          by such Contributor that are necessarily infringed by their
+          Contribution(s) alone or by combination of their Contribution(s)
+          with the Work to which such Contribution(s) was submitted. If You
+          institute patent litigation against any entity (including a
+          cross-claim or counterclaim in a lawsuit) alleging that the Work
+          or a Contribution incorporated within the Work constitutes direct
+          or contributory patent infringement, then any patent licenses
+          granted to You under this License for that Work shall terminate
+          as of the date such litigation is filed.
 
-      (c) You must retain, in the Source form of any Derivative Works
-	  that You distribute, all copyright, patent, trademark, and
-	  attribution notices from the Source form of the Work,
-	  excluding those notices that do not pertain to any part of
-	  the Derivative Works; and
+       4. Redistribution. You may reproduce and distribute copies of the
+          Work or Derivative Works thereof in any medium, with or without
+          modifications, and in Source or Object form, provided that You
+          meet the following conditions:
 
-      (d) If the Work includes a "NOTICE" text file as part of its
-	  distribution, then any Derivative Works that You distribute must
-	  include a readable copy of the attribution notices contained
-	  within such NOTICE file, excluding those notices that do not
-	  pertain to any part of the Derivative Works, in at least one
-	  of the following places: within a NOTICE text file distributed
-	  as part of the Derivative Works; within the Source form or
-	  documentation, if provided along with the Derivative Works; or,
-	  within a display generated by the Derivative Works, if and
-	  wherever such third-party notices normally appear. The contents
-	  of the NOTICE file are for informational purposes only and
-	  do not modify the License. You may add Your own attribution
-	  notices within Derivative Works that You distribute, alongside
-	  or as an addendum to the NOTICE text from the Work, provided
-	  that such additional attribution notices cannot be construed
-	  as modifying the License.
+          (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
 
-      You may add Your own copyright statement to Your modifications and
-      may provide additional or different license terms and conditions
-      for use, reproduction, or distribution of Your modifications, or
-      for any such Derivative Works as a whole, provided Your use,
-      reproduction, and distribution of the Work otherwise complies with
-      the conditions stated in this License.
+          (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
 
-   5. Submission of Contributions. Unless You explicitly state otherwise,
-      any Contribution intentionally submitted for inclusion in the Work
-      by You to the Licensor shall be under the terms and conditions of
-      this License, without any additional terms or conditions.
-      Notwithstanding the above, nothing herein shall supersede or modify
-      the terms of any separate license agreement you may have executed
-      with Licensor regarding such Contributions.
+          (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
 
-   6. Trademarks. This License does not grant permission to use the trade
-      names, trademarks, service marks, or product names of the Licensor,
-      except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
+          (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
 
-   7. Disclaimer of Warranty. Unless required by applicable law or
-      agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-      implied, including, without limitation, any warranties or conditions
-      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-      PARTICULAR PURPOSE. You are solely responsible for determining the
-      appropriateness of using or redistributing the Work and assume any
-      risks associated with Your exercise of permissions under this License.
+          You may add Your own copyright statement to Your modifications and
+          may provide additional or different license terms and conditions
+          for use, reproduction, or distribution of Your modifications, or
+          for any such Derivative Works as a whole, provided Your use,
+          reproduction, and distribution of the Work otherwise complies with
+          the conditions stated in this License.
 
-   8. Limitation of Liability. In no event and under no legal theory,
-      whether in tort (including negligence), contract, or otherwise,
-      unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
-      liable to You for damages, including any direct, indirect, special,
-      incidental, or consequential damages of any character arising as a
-      result of this License or out of the use or inability to use the
-      Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
-      has been advised of the possibility of such damages.
+       5. Submission of Contributions. Unless You explicitly state otherwise,
+          any Contribution intentionally submitted for inclusion in the Work
+          by You to the Licensor shall be under the terms and conditions of
+          this License, without any additional terms or conditions.
+          Notwithstanding the above, nothing herein shall supersede or modify
+          the terms of any separate license agreement you may have executed
+          with Licensor regarding such Contributions.
 
-   9. Accepting Warranty or Additional Liability. While redistributing
-      the Work or Derivative Works thereof, You may choose to offer,
-      and charge a fee for, acceptance of support, warranty, indemnity,
-      or other liability obligations and/or rights consistent with this
-      License. However, in accepting such obligations, You may act only
-      on Your own behalf and on Your sole responsibility, not on behalf
-      of any other Contributor, and only if You agree to indemnify,
-      defend, and hold each Contributor harmless for any liability
-      incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.
+       6. Trademarks. This License does not grant permission to use the trade
+          names, trademarks, service marks, or product names of the Licensor,
+          except as required for reasonable and customary use in describing the
+          origin of the Work and reproducing the content of the NOTICE file.
 
-   END OF TERMS AND CONDITIONS
+       7. Disclaimer of Warranty. Unless required by applicable law or
+          agreed to in writing, Licensor provides the Work (and each
+          Contributor provides its Contributions) on an "AS IS" BASIS,
+          WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+          implied, including, without limitation, any warranties or conditions
+          of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+          PARTICULAR PURPOSE. You are solely responsible for determining the
+          appropriateness of using or redistributing the Work and assume any
+          risks associated with Your exercise of permissions under this License.
 
-   APPENDIX: How to apply the Apache License to your work.
+       8. Limitation of Liability. In no event and under no legal theory,
+          whether in tort (including negligence), contract, or otherwise,
+          unless required by applicable law (such as deliberate and grossly
+          negligent acts) or agreed to in writing, shall any Contributor be
+          liable to You for damages, including any direct, indirect, special,
+          incidental, or consequential damages of any character arising as a
+          result of this License or out of the use or inability to use the
+          Work (including but not limited to damages for loss of goodwill,
+          work stoppage, computer failure or malfunction, or any and all
+          other commercial damages or losses), even if such Contributor
+          has been advised of the possibility of such damages.
 
-      To apply the Apache License to your work, attach the following
-      boilerplate notice, with the fields enclosed by brackets "[]"
-      replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
-      comment syntax for the file format. We also recommend that a
-      file or class name and description of purpose be included on the
-      same "printed page" as the copyright notice for easier
-      identification within third-party archives.
+       9. Accepting Warranty or Additional Liability. While redistributing
+          the Work or Derivative Works thereof, You may choose to offer,
+          and charge a fee for, acceptance of support, warranty, indemnity,
+          or other liability obligations and/or rights consistent with this
+          License. However, in accepting such obligations, You may act only
+          on Your own behalf and on Your sole responsibility, not on behalf
+          of any other Contributor, and only if You agree to indemnify,
+          defend, and hold each Contributor harmless for any liability
+          incurred by, or claims asserted against, such Contributor by reason
+          of your accepting any such warranty or additional liability.
 
-   Copyright [yyyy] [name of copyright owner]
+       END OF TERMS AND CONDITIONS
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+       APPENDIX: How to apply the Apache License to your work.
 
-       http://www.apache.org/licenses/LICENSE-2.0
+          To apply the Apache License to your work, attach the following
+          boilerplate notice, with the fields enclosed by brackets "[]"
+          replaced with your own identifying information. (Don't include
+          the brackets!)  The text should be enclosed in the appropriate
+          comment syntax for the file format. We also recommend that a
+          file or class name and description of purpose be included on the
+          same "printed page" as the copyright notice for easier
+          identification within third-party archives.
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
-</code></pre>
+       Copyright [yyyy] [name of copyright owner]
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+           http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
 </div>
+        </article>
 
-                                            </div>
-                                        </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="bottom_red_bar"></div>
-                            </div>
-                        </div>
-                    </div>
+        <nav class="bd-pagination" aria-label="Page navigation">
+            <a href="jsr-317-20081031-public-draft-tasks.html" class="bd-page-card prev">
+                <span class="bd-page-label"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Previous</span>
+                <span class="bd-page-title">JSR-317 20081031 Public Draft Tasks</span>
+            </a>
+            <a href="mailing-lists.html" class="bd-page-card next text-end">
+                <span class="bd-page-label">Next<i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></span>
+                <span class="bd-page-title">Mailing Lists</span>
+            </a>
+        </nav>
+    </main>
+
+    <aside class="bd-toc" aria-label="Table of contents">
+        <div class="bd-toc-title">
+            <i class="bi bi-list-ul me-2" aria-hidden="true"></i>
+            <span>On This Page</span>
+        </div>
+        <p class="text-muted small mb-0">No table of contents available.</p>
+    </aside>
+</div>
+    </div>
+
+    <!-- Footer (ASF mandated links preserved) -->
+    <footer class="site-footer mt-5">
+        <div class="container-xxl">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <a href="https://www.apache.org/">
+                        <img src="https://www.apache.org/img/asf_logo.png" alt="Apache Software Foundation"
+                             style="max-height:2.5rem;width:auto;">
+                    </a>
                 </div>
-                <div class="black_box">
-                    <div class="footer">
-                        <div class="footer_l">
-                            <div class="footer_r">
-                                <div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-6 col-md-2">
+                    <h5>Community</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="https://community.apache.org/">Get Involved</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://github.com/apache/openjpa">GitHub</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://issues.apache.org/jira/browse/OPENJPA">Issue Tracker</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Download</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="downloads.html">Binary Distributions</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://archive.apache.org/dist/openjpa/">Source Distributions</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://archive.apache.org/dist/openjpa/KEYS">KEYS</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="license.html">License</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/marks/">Trademarks</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/security/">Security</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/events/current-event.html">Apache Events</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="design_attribution">
-                Copyright &copy; 2006,2026 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
-                Apache OpenJPA, OpenJPA, Apache, the Apache logo, and the Apache OpenJPA project logo are either
-                registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.<br />
-                <br />
-                <a href="https://www.apache.org/">Foundation</a> |
-                <a href="https://www.apache.org/events/current-event.html">Events</a> |
-                <a href="https://www.apache.org/licenses/">License</a> |
-                <a href="https://www.apache.org/security/">Security</a> |
-                <a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
-                <a href="https://www.apache.org/foundation/thanks.html">Thanks</a> |
-                <a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a>
+            <hr class="footer-hr">
+            <div class="row footer-legal">
+                <div class="col-12">
+                    <p class="mb-1">
+                        Copyright &copy; 2026 The Apache Software Foundation, Licensed under the
+                        <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+                    </p>
+                    <p class="mb-0 text-muted small">
+                        Apache, the Apache feather logo, and Apache OpenJPA are trademarks or registered trademarks of
+                        The Apache Software Foundation in the United States and/or other countries.
+                    </p>
+                </div>
             </div>
-    </body>
+        </div>
+    </footer>
+
+    <!-- Local, SRI-protected scripts -->
+    <script src="theme/js/bootstrap.bundle.min.js" crossorigin="anonymous"
+            integrity=""></script>
+    <script src="theme/js/highlight/highlight.js" defer></script>
+    <script src="theme/js/doc-enhancements.js" defer></script>
+</body>
 </html>

@@ -1,151 +1,167 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!doctype html>
 <!--
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with
-this work for additional information regarding copyright ownership.
-The ASF licenses this file to You under the Apache License, Version 2.0
-(the "License"); you may not use this file except in compliance with
-the License.  You may obtain a copy of the License at
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.
 
-http://www.apache.org/licenses/LICENSE-2.0
+         https://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
-<html lang="en">
-    <head>
-        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
-        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
-        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
-        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
-        <META name="Description" content="Apache OpenJPA -- FAQ" />
-        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
-        <META name="Owner" content="dev@openjpa.apache.org" />
-        <META name="Robots" content="index, follow" />
-        <META name="Security" content="Public" />
-        <META name="Source" content="wiki template" />
-        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
-        <META name="DC.Language" scheme="rfc1766" content="en" />
-        <META name="DC.Rights" content="Copyright © 2006,2026 The Apache Software Foundation" />
-        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
-	<style>
-.headerlink {
-  visibility: hidden;
-}
-dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
-  visibility: visible
-}	</style>
-        <title>Apache OpenJPA -- FAQ</title>
-    </head>
-    <body>
-        <div class="white_box">
-            <div class="header">
-                <div class="header_l">
-                    <div class="header_r">
-                    </div>
-                </div>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Apache OpenJPA - FAQ</title>
+    <meta name="description" content="General¶ What is OpenJPA? What is the history of OpenJPA? What is the current relationship between Kodo and OpenJPA? What is the current status of the project? Where can I download OpenJPA? Does OpenJPA work with my application server or container? How can I contribute to OpenJPA? How do I …">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="images/openjpa-logo.png">
+
+    <!-- Primary stylesheets (all local, SRI-protected) -->
+    <link href="theme/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"
+          integrity="">
+    <link href="theme/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="theme/css/custom.css" rel="stylesheet">
+    <link href="theme/css/highlight.css" rel="stylesheet">
+</head>
+<body class="site-body">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header sticky-top">
+        <nav class="navbar navbar-expand-lg container-xxl" aria-label="Main navigation">
+            <div class="navbar-brand-wrap me-2">
+                <a class="navbar-brand nav-home text-logo" href="./" aria-label="Apache OpenJPA home">
+                    <span class="text-logo-name">Open<span class="text-logo-strong">JPA</span></span>
+                </a>
             </div>
-            <div class="content">
-                <div class="content_l">
-                    <div class="content_r">
-                        <div>
-                            <!-- Banner -->
-                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
-                                <TR>
-                                    <TD valing="top" align="left">
-                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
-                                    </TD>
-                                    <TD width="100%">
-                                        &nbsp;
-                                    </TD>
-                                    <TD valing="top" align="right">
-                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
-                                    </TD>
-                                </TR>
-                            </TABLE>
 
-                            <!-- Navigation Bar -->
-                            <div class="bottom_red_bar">
-                                <div id="site-breadcrumbs">
-                                </div>
-                            </div>
+            <button class="navbar-toggler order-lg-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
 
-                            <!-- Content -->
-                            <table border="0">
-                                <tbody>
-                                    <tr>
-                                        <td valign="top">
-                                            <div class="navigation">
-                                                <div class="navigation_top">
-                                                    <div class="navigation_bottom">
-                                                        <!-- NavigationBar -->
-                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+            <div class="collapse navbar-collapse order-lg-2" id="primaryNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="overview.html">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quick-start.html">Quick Start</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentation.html">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="downloads.html">Downloads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+                    <li class="nav-item"><a class="nav-link" href="development.html">Development</a></li>
+                </ul>
+                <ul class="navbar-nav d-flex align-items-center">
+                    <li class="nav-item search-wrap me-2 d-none d-md-block">
+                        <div class="position-relative">
+                            <i class="bi bi-search search-icon" aria-hidden="true"></i>
+                            <input class="form-control form-control-sm site-search" type="search"
+                                   placeholder="Search docs..." aria-label="Search documentation"
+                                   autocomplete="off" spellcheck="false">
+                        </div>
+                        <div class="search-results shadow" hidden></div>
+                    </li>
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link" href="https://github.com/apache/openjpa" target="_blank"
+                           rel="noopener noreferrer" aria-label="GitHub repository">
+                            <i class="bi bi-github" aria-hidden="true"></i><span class="visually-hidden">GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
-                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
-                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
-                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
-                                                            <li><a href="/license.html" title="License">License</a></li>
-                                                            <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" title="Privacy Policy">Privacy Policy</a></li>
-                                                        </ul>
+            <a href="https://www.apache.org/" class="asf-badge d-none d-lg-inline-flex order-lg-4 ms-3"
+               rel="noopener noreferrer">
+                <img src="https://www.apache.org/img/asf_logo.png" alt="The Apache Software Foundation"
+                     width="120" height="auto">
+            </a>
+        </nav>
+    </header>
 
-                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+    <!-- Main layout -->
+    <div class="container-xxl site-container">
+<div class="bd-layout">
+    <aside class="bd-sidebar" aria-label="Page navigation">
+        <button class="btn btn-link sidebar-collapse-btn d-lg-none" type="button"
+                data-bs-toggle="collapse" data-bs-target="#sidebarNav" aria-expanded="false"
+                aria-controls="sidebarNav">
+            <i class="bi bi-layout-text-sidebar-reverse me-2" aria-hidden="true"></i>Contents
+        </button>
+        <nav class="collapse d-lg-block sidebar-nav" id="sidebarNav" aria-label="Sidebar">
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Quick Start</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="quick-start.html">Quick Start Guide</a></li>
+                    <li><a class="sidebar-link" href="getting-started.html">Getting Started</a></li>
+                    <li><a class="sidebar-link" href="samples.html">Samples</a></li>
+                    <li><a class="sidebar-link" href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Documentation</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="documentation.html">Manuals &amp; Guides</a></li>
+                    <li><a class="sidebar-link" href="overview.html">Overview</a></li>
+                    <li><a class="sidebar-link" href="performance-guide.html">Performance Guide</a></li>
+                    <li><a class="sidebar-link" href="migration-tool.html">Migration Tool</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Downloads</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="downloads.html">Releases</a></li>
+                    <li><a class="sidebar-link" href="downloads-nightly.html">Nightly Builds</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Community</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="community.html">Community</a></li>
+                    <li><a class="sidebar-link" href="mailing-lists.html">Mailing Lists</a></li>
+                    <li><a class="sidebar-link" href="source-code.html">Source Code</a></li>
+                    <li><a class="sidebar-link" href="https://issues.apache.org/jira/browse/OPENJPA">Issue Tracker</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Development</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="development.html">Development</a></li>
+                    <li><a class="sidebar-link" href="building.html">Building</a></li>
+                    <li><a class="sidebar-link" href="testing.html">Testing</a></li>
+                    <li><a class="sidebar-link" href="release-management.html">Release Management</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
 
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
-                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
-                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
-                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
-                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
-                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
-                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
-                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
-                                                        </ul>
+    <main id="main-content" class="bd-main" tabindex="-1">
+        <nav aria-label="breadcrumb" class="bd-breadcrumb mb-3">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="./"><i class="bi bi-house-door-fill me-1" aria-hidden="true"></i>Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+            </ol>
+        </nav>
 
+        <div class="d-flex align-items-start justify-content-between gap-3 flex-wrap">
+            <h1 class="page-title mb-0">FAQ</h1>
+            <a class="edit-github"
+               href="https://github.com/apache/openjpa-site/blob/main/content/faq.md"
+               target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-pencil-square me-1" aria-hidden="true"></i>Edit on GitHub
+            </a>
+        </div>
 
-                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
-                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
-                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
-                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
-                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
-                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
-                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
-                                                        </ul>
-
-                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
-                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
-                                                        </ul>
-
-                                                        <h3>Search</h3>
-
-                                                        <div style="padding: 5px 5px 0px 25px;">
-                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
-                                                                <input name="ie" type="hidden" value="UTF-8">
-                                                                <input name="oe" type="hidden" value="UTF-8">
-                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
-                                                                <input name="btnG" type="submit" value="Google">
-                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
-                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td valign="top" width="100%" style="overflow:hidden;">
-                                            <div class="wiki-content">
-    <p><a name="FAQ-General"></a></p>
+        <article class="page-content">
+            <p><a name="FAQ-General"></a></p>
 <h2 id="general">General<a class="headerlink" href="#general" title="Permalink">&para;</a></h2>
 <ul>
 <li><a href="#what">What is OpenJPA?</a></li>
@@ -186,7 +202,7 @@ purchased SolarMetric in November of 2005, and soon thereafter announced that th
 <p><a name="contribute"></a></p>
 <h2 id="how-can-i-contribute-to-openjpa">How can I contribute to OpenJPA?<a class="headerlink" href="#how-can-i-contribute-to-openjpa" title="Permalink">&para;</a></h2>
 <p>Check out the <a href="get-involved.html">Get Involved</a>
-page.</p>
+ page.</p>
 <p><a name="version"></a></p>
 <h2 id="how-do-i-figure-out-which-version-of-openjpa-i-am-running">How do I figure out which version of OpenJPA I am running?<a class="headerlink" href="#how-do-i-figure-out-which-version-of-openjpa-i-am-running" title="Permalink">&para;</a></h2>
 <p>You can get version number and other details of OpenJPA jar you are using
@@ -194,49 +210,49 @@ by:</p>
 <p><a name="sql"></a></p>
 <h2 id="how-do-i-see-the-sql-that-openjpa-is-executing">How do I see the SQL that OpenJPA is executing?<a class="headerlink" href="#how-do-i-see-the-sql-that-openjpa-is-executing" title="Permalink">&para;</a></h2>
 <p>OpenJPA provides configurable channel-based logging, as described in the
-chapter on <a href="/builds/latest/docs/manual/manual.html#ref_guide_logging">Logging</a>
+chapter on <a href="https://nightlies.apache.org/openjpa/builds/latest/html/manual.html#ref_guide_logging">Logging</a>
 . The simplest example of enabling verbose logging is by using the
 following property in your {{persistence.xml}} file:</p>
-<pre><code>&lt;persistence xmlns="http://java.sun.com/xml/ns/persistence"
+<div class="highlight"><pre><span></span><code>&lt;persistence xmlns="http://java.sun.com/xml/ns/persistence"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     version="1.0"&gt;
     &lt;persistence-unit name="example-logging"
-</code></pre>
+</code></pre></div>
 <p>transaction-type="RESOURCE_LOCAL"&gt;
-<properties>
+        <properties>
 <property name="openjpa.Log" value="SQL=TRACE"></property>
 </properties>
 
 </p>
-<a name="pooling"></a>
-## How do I enable connection pooling in OpenJPA?
+<p><a name="pooling"></a></p>
+<h2 id="how-do-i-enable-connection-pooling-in-openjpa">How do I enable connection pooling in OpenJPA?<a class="headerlink" href="#how-do-i-enable-connection-pooling-in-openjpa" title="Permalink">&para;</a></h2>
 <p>As of the 2.1.0 release, OpenJPA includes the <a href="http://jakarta.apache.org/commons/dbcp/">Apache DBCP</a>
-connection pool. You can also use any third-party connection pool that is
+ connection pool. You can also use any third-party connection pool that is
 configurable via the JDBC DataSource API (which most are). The following
 <em>persistence.xml</em> example shows how to use OpenJPA with a [Apache Derby|http://db.apache.org/derby/]
-database and the [Apache DBCP|http://jakarta.apache.org/commons/dbcp/]
-connection pool:</p>
-<pre><code>    &lt;persistence xmlns="http://java.sun.com/xml/ns/persistence"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        version="1.0"&gt;
-        &lt;persistence-unit name="example-derby"
-            transaction-type="RESOURCE_LOCAL"&gt;
-    	&lt;properties&gt;
-    	    &lt;property name="openjpa.ConnectionProperties" 
-    		value="DriverClassName=org.apache.derby.jdbc.ClientDriver,
-    		  Url=jdbc:derby://localhost:1527/database, 
-    		  MaxActive=100, 
-    		  MaxWait=10000, 
-    		  TestOnBorrow=true, 
-    		  Username=user, 
-    		  Password=secret"/&gt;
-    	    &lt;property name="openjpa.ConnectionDriverName" 
-    		value="org.apache.commons.dbcp.BasicDataSource"/&gt;
-    	&lt;/properties&gt;
-        &lt;/persistence-unit&gt;
-    &lt;/persistence&gt;
-</code></pre>
-<p>See the documentation on <a href="/builds/latest/docs/manual/manual.html#ref_guide_dbsetup_thirdparty">Using a Third-Party DataSource</a> for further details.</p>
+ database and the [Apache DBCP|http://jakarta.apache.org/commons/dbcp/]
+ connection pool:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;persistence</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://java.sun.com/xml/ns/persistence"</span>
+<span class="w">        </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="w">        </span><span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;persistence-unit</span><span class="w"> </span><span class="na">name=</span><span class="s">"example-derby"</span>
+<span class="w">            </span><span class="na">transaction-type=</span><span class="s">"RESOURCE_LOCAL"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;properties&gt;</span>
+<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"openjpa.ConnectionProperties"</span>
+<span class="w">            </span><span class="na">value=</span><span class="s">"DriverClassName=org.apache.derby.jdbc.ClientDriver,</span>
+<span class="s">              Url=jdbc:derby://localhost:1527/database,</span>
+<span class="s">              MaxActive=100,</span>
+<span class="s">              MaxWait=10000,</span>
+<span class="s">              TestOnBorrow=true,</span>
+<span class="s">              Username=user,</span>
+<span class="s">              Password=secret"</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"openjpa.ConnectionDriverName"</span>
+<span class="w">            </span><span class="na">value=</span><span class="s">"org.apache.commons.dbcp.BasicDataSource"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/properties&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/persistence-unit&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/persistence&gt;</span>
+</code></pre></div>
+<p>See the documentation on <a href="https://nightlies.apache.org/openjpa/builds/latest/html/manual.html#ref_guide_dbsetup_thirdparty">Using a Third-Party DataSource</a> for further details.</p>
 <p><a name="reorder"></a></p>
 <h2 id="can-openjpa-reorder-sql-statements-to-satisfy-database-foreign-key-constraints">Can OpenJPA reorder SQL statements to satisfy database foreign key constraints?<a class="headerlink" href="#can-openjpa-reorder-sql-statements-to-satisfy-database-foreign-key-constraints" title="Permalink">&para;</a></h2>
 <p>Yes. OpenJPA can reorder and/or batch the SQL statements using different
@@ -244,17 +260,17 @@ configurable strategies. The default strategy is capable of reordering the
 SQL statements to satisfy foreign key constraints. However ,you must tell
 OpenJPA to read the existing foreign key information from the database
 schema:</p>
-<pre><code>  &lt;property name="openjpa.jdbc.SchemaFactory" value="native(ForeignKeys=true)"/&gt;
-</code></pre>
-<p>See the documentation on <a href="/builds/latest/docs/manual/manual.html#ref_guide_schema_info_list">Schema Factory</a> for further details.</p>
+<div class="highlight"><pre><span></span><code>  &lt;property name="openjpa.jdbc.SchemaFactory" value="native(ForeignKeys=true)"/&gt;
+</code></pre></div>
+<p>See the documentation on <a href="https://nightlies.apache.org/openjpa/builds/latest/html/manual.html#ref_guide_schema_info_list">Schema Factory</a> for further details.</p>
 <p><a name="fk"></a></p>
 <h2 id="why-openjpa-is-not-creating-foreign-key-constraints-on-the-database-tables">Why OpenJPA is not creating foreign key constraints on the database tables?<a class="headerlink" href="#why-openjpa-is-not-creating-foreign-key-constraints-on-the-database-tables" title="Permalink">&para;</a></h2>
 <p>By default, OpenJPA does not create foreign key constraints on new tables
 that gets created according to O-R mapping annotation/descriptors. You can
 change this default behavior via following configuration property :</p>
-<pre><code>  &lt;property name="openjpa.jdbc.MappingDefaults" \
+<div class="highlight"><pre><span></span><code>  &lt;property name="openjpa.jdbc.MappingDefaults" \
            value="ForeignKeyDeleteAction=restrict,JoinForeignKeyDeleteAction=restrict"/&gt;
-</code></pre>
+</code></pre></div>
 <p>to create foreign key constraints on the database tables generated by OpenJPA.</p>
 <p><a name="crosstable"></a></p>
 <h2 id="can-openjpa-map-a-one-sided-one-many-association-without-a-cross-table">Can OpenJPA map a one-sided one-many association without a cross table?<a class="headerlink" href="#can-openjpa-map-a-one-sided-one-many-association-without-a-cross-table" title="Permalink">&para;</a></h2>
@@ -265,62 +281,118 @@ like to create a one-to-many association based on an inverse foreign key
 mapping via {{@ElementJoinColumn}} annotation. The following example will
 map the collection of {{LineItem}} of a {{Subscription}} via a foreign key
 of {{LINEITEM}} table referring to primary key of {{SUBSCRIPTION}} table.
-{code:JAVA}
-package org.mag.subscribe;</p>
-<pre><code>import org.apache.openjpa.persistence.jdbc.*;
+    {code:JAVA}
+    package org.mag.subscribe;</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.openjpa.persistence.jdbc.</span><span class="o">*</span><span class="p">;</span>
 
-@Entity
-public class LineItem {
-    // has no inverse relation to Subscription
-}
+<span class="nd">@Entity</span>
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">LineItem</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">has</span> <span class="n">no</span> <span class="n">inverse</span> <span class="n">relation</span> <span class="n">to</span> <span class="n">Subscription</span>
+<span class="p">}</span>
 
-@Entity
-@Table(name="SUB", schema="CNTRCT")
-public class Subscription {
-    @Id 
-    private long id;
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"SUB"</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="s2">"CNTRCT"</span><span class="p">)</span>
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Subscription</span> <span class="p">{</span>
+    <span class="nd">@Id</span>
+    <span class="n">private</span> <span class="n">long</span> <span class="nb">id</span><span class="p">;</span>
 
-    @OneToMany
-    @ElementJoinColumn(name="SUB_ID", referencedColumnName="ID")
-    private Collection&lt;LineItem&gt; items;
+    <span class="nd">@OneToMany</span>
+    <span class="nd">@ElementJoinColumn</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"SUB_ID"</span><span class="p">,</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s2">"ID"</span><span class="p">)</span>
+    <span class="n">private</span> <span class="n">Collection</span><span class="o">&lt;</span><span class="n">LineItem</span><span class="o">&gt;</span> <span class="n">items</span><span class="p">;</span>
 
-    ...
-}
-</code></pre>
+    <span class="o">...</span>
+<span class="p">}</span>
+</code></pre></div>
+        </article>
 
-                                            </div>
-                                        </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="bottom_red_bar"></div>
-                            </div>
-                        </div>
-                    </div>
+        <nav class="bd-pagination" aria-label="Page navigation">
+            <a href="entity-enhancement.html" class="bd-page-card prev">
+                <span class="bd-page-label"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Previous</span>
+                <span class="bd-page-title">Entity Enhancement</span>
+            </a>
+            <a href="fetch-statistics.html" class="bd-page-card next text-end">
+                <span class="bd-page-label">Next<i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></span>
+                <span class="bd-page-title">Fetch Statistics</span>
+            </a>
+        </nav>
+    </main>
+
+    <aside class="bd-toc" aria-label="Table of contents">
+        <div class="bd-toc-title">
+            <i class="bi bi-list-ul me-2" aria-hidden="true"></i>
+            <span>On This Page</span>
+        </div>
+        <div class="toc-content">
+            <div id="toc"><ul><li><a class="toc-href" href="#general" title="General">General</a></li><li><a class="toc-href" href="#what-is-openjpa" title="What is OpenJPA?">What is OpenJPA?</a></li><li><a class="toc-href" href="#what-is-the-history-of-openjpa" title="What is the history of OpenJPA?">What is the history of OpenJPA?</a></li><li><a class="toc-href" href="#what-is-the-current-relationship-between-kodo-and-openjpa" title="What is the current relationship between Kodo and OpenJPA?">What is the current relationship between Kodo and OpenJPA?</a></li><li><a class="toc-href" href="#what-is-the-current-status-of-the-project" title="What is the current status of the project?">What is the current status of the project?</a></li><li><a class="toc-href" href="#where-can-i-download-openjpa" title="Where can I download OpenJPA?">Where can I download OpenJPA?</a></li><li><a class="toc-href" href="#does-openjpa-work-with-my-application-server-or-container" title="Does OpenJPA work with my application server or container?">Does OpenJPA work with my application server or container?</a></li><li><a class="toc-href" href="#how-can-i-contribute-to-openjpa" title="How can I contribute to OpenJPA?">How can I contribute to OpenJPA?</a></li><li><a class="toc-href" href="#how-do-i-figure-out-which-version-of-openjpa-i-am-running" title="How do I figure out which version of OpenJPA I am running?">How do I figure out which version of OpenJPA I am running?</a></li><li><a class="toc-href" href="#how-do-i-see-the-sql-that-openjpa-is-executing" title="How do I see the SQL that OpenJPA is executing?">How do I see the SQL that OpenJPA is executing?</a></li><li><a class="toc-href" href="#how-do-i-enable-connection-pooling-in-openjpa" title="How do I enable connection pooling in OpenJPA?">How do I enable connection pooling in OpenJPA?</a></li><li><a class="toc-href" href="#can-openjpa-reorder-sql-statements-to-satisfy-database-foreign-key-constraints" title="Can OpenJPA reorder SQL statements to satisfy database foreign key constraints?">Can OpenJPA reorder SQL statements to satisfy database foreign key constraints?</a></li><li><a class="toc-href" href="#why-openjpa-is-not-creating-foreign-key-constraints-on-the-database-tables" title="Why OpenJPA is not creating foreign key constraints on the database tables?">Why OpenJPA is not creating foreign key constraints on the database tables?</a></li><li><a class="toc-href" href="#can-openjpa-map-a-one-sided-one-many-association-without-a-cross-table" title="Can OpenJPA map a one-sided one-many association without a cross table?">Can OpenJPA map a one-sided one-many association without a cross table?</a></li></ul></div>
+        </div>
+    </aside>
+</div>
+    </div>
+
+    <!-- Footer (ASF mandated links preserved) -->
+    <footer class="site-footer mt-5">
+        <div class="container-xxl">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <a href="https://www.apache.org/">
+                        <img src="https://www.apache.org/img/asf_logo.png" alt="Apache Software Foundation"
+                             style="max-height:2.5rem;width:auto;">
+                    </a>
                 </div>
-                <div class="black_box">
-                    <div class="footer">
-                        <div class="footer_l">
-                            <div class="footer_r">
-                                <div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-6 col-md-2">
+                    <h5>Community</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="https://community.apache.org/">Get Involved</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://github.com/apache/openjpa">GitHub</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://issues.apache.org/jira/browse/OPENJPA">Issue Tracker</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Download</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="downloads.html">Binary Distributions</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://archive.apache.org/dist/openjpa/">Source Distributions</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://archive.apache.org/dist/openjpa/KEYS">KEYS</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="license.html">License</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/marks/">Trademarks</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/security/">Security</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/events/current-event.html">Apache Events</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="design_attribution">
-                Copyright &copy; 2006,2026 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
-                Apache OpenJPA, OpenJPA, Apache, the Apache logo, and the Apache OpenJPA project logo are either
-                registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.<br />
-                <br />
-                <a href="https://www.apache.org/">Foundation</a> |
-                <a href="https://www.apache.org/events/current-event.html">Events</a> |
-                <a href="https://www.apache.org/licenses/">License</a> |
-                <a href="https://www.apache.org/security/">Security</a> |
-                <a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
-                <a href="https://www.apache.org/foundation/thanks.html">Thanks</a> |
-                <a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a>
+            <hr class="footer-hr">
+            <div class="row footer-legal">
+                <div class="col-12">
+                    <p class="mb-1">
+                        Copyright &copy; 2026 The Apache Software Foundation, Licensed under the
+                        <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+                    </p>
+                    <p class="mb-0 text-muted small">
+                        Apache, the Apache feather logo, and Apache OpenJPA are trademarks or registered trademarks of
+                        The Apache Software Foundation in the United States and/or other countries.
+                    </p>
+                </div>
             </div>
-    </body>
+        </div>
+    </footer>
+
+    <!-- Local, SRI-protected scripts -->
+    <script src="theme/js/bootstrap.bundle.min.js" crossorigin="anonymous"
+            integrity=""></script>
+    <script src="theme/js/highlight/highlight.js" defer></script>
+    <script src="theme/js/doc-enhancements.js" defer></script>
+</body>
 </html>

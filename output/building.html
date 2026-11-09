@@ -1,153 +1,169 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!doctype html>
 <!--
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with
-this work for additional information regarding copyright ownership.
-The ASF licenses this file to You under the Apache License, Version 2.0
-(the "License"); you may not use this file except in compliance with
-the License.  You may obtain a copy of the License at
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.
 
-http://www.apache.org/licenses/LICENSE-2.0
+         https://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
-<html lang="en">
-    <head>
-        <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-        <link href="/styles/site.css" rel="stylesheet" type="text/css"/>
-        <!-- <link href="/styles/type-settings.css" rel="stylesheet" type="text/css"/> -->
-        <link href="/css/type-settings.css" rel="stylesheet" type="text/css"/>
-        <LINK rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
-        <META name="Description" content="Apache OpenJPA -- Building" />
-        <META name="Keywords" content="Apache OpenJPA, JPA, JPA 1.0, JSR-220, JPA2, JPA 2.0, JSR-317, " />
-        <META name="Owner" content="dev@openjpa.apache.org" />
-        <META name="Robots" content="index, follow" />
-        <META name="Security" content="Public" />
-        <META name="Source" content="wiki template" />
-        <META name="DC.Date" scheme="iso8601" content="2010-08-11" />
-        <META name="DC.Language" scheme="rfc1766" content="en" />
-        <META name="DC.Rights" content="Copyright © 2006,2026 The Apache Software Foundation" />
-        <META http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))'/>
-	<style>
-.headerlink {
-  visibility: hidden;
-}
-dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink {
-  visibility: visible
-}	</style>
-        <title>Apache OpenJPA -- Building</title>
-    </head>
-    <body>
-        <div class="white_box">
-            <div class="header">
-                <div class="header_l">
-                    <div class="header_r">
-                    </div>
-                </div>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Apache OpenJPA - Building</title>
+    <meta name="description" content="Contents Building OpenJPA Maven Command Line Builds Executing various Maven build tasks Running just the "TestPersistence" test case Running tests with Java 2 security enabled Building and running only the examples included in the distribution Building just the javadoc Building just the docbook documentation Building with JDK 1.4 module …">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="images/openjpa-logo.png">
+
+    <!-- Primary stylesheets (all local, SRI-protected) -->
+    <link href="theme/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"
+          integrity="">
+    <link href="theme/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="theme/css/custom.css" rel="stylesheet">
+    <link href="theme/css/highlight.css" rel="stylesheet">
+</head>
+<body class="site-body">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header sticky-top">
+        <nav class="navbar navbar-expand-lg container-xxl" aria-label="Main navigation">
+            <div class="navbar-brand-wrap me-2">
+                <a class="navbar-brand nav-home text-logo" href="./" aria-label="Apache OpenJPA home">
+                    <span class="text-logo-name">Open<span class="text-logo-strong">JPA</span></span>
+                </a>
             </div>
-            <div class="content">
-                <div class="content_l">
-                    <div class="content_r">
-                        <div>
-                            <!-- Banner -->
-                            <TABLE valign="top" border="0" cellspacing="0" cellpadding="5" width="100%" background="images/header-bg3.png">
-                                <TR>
-                                    <TD valing="top" align="left">
-                                        <A href="https://openjpa.apache.org/"><IMG src="/images/openjpa-logo.png" border="0" alt="OpenJPA Logo"></A>
-                                    </TD>
-                                    <TD width="100%">
-                                        &nbsp;
-                                    </TD>
-                                    <TD valing="top" align="right">
-                                        <A href="https://www.apache.org/"><IMG src="/images/asf_logo_wide2.png" border="0" alt="ASF Logo"></A>
-                                    </TD>
-                                </TR>
-                            </TABLE>
 
-                            <!-- Navigation Bar -->
-                            <div class="bottom_red_bar">
-                                <div id="site-breadcrumbs">
-                                </div>
-                            </div>
+            <button class="navbar-toggler order-lg-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
 
-                            <!-- Content -->
-                            <table border="0">
-                                <tbody>
-                                    <tr>
-                                        <td valign="top">
-                                            <div class="navigation">
-                                                <div class="navigation_top">
-                                                    <div class="navigation_bottom">
-                                                        <!-- NavigationBar -->
-                                                        <h3><a name="SideNav-Overview"></a><a href="/overview.html" title="Overview">Overview</a></h3>
+            <div class="collapse navbar-collapse order-lg-2" id="primaryNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="overview.html">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quick-start.html">Quick Start</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentation.html">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="downloads.html">Downloads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+                    <li class="nav-item"><a class="nav-link" href="development.html">Development</a></li>
+                </ul>
+                <ul class="navbar-nav d-flex align-items-center">
+                    <li class="nav-item search-wrap me-2 d-none d-md-block">
+                        <div class="position-relative">
+                            <i class="bi bi-search search-icon" aria-hidden="true"></i>
+                            <input class="form-control form-control-sm site-search" type="search"
+                                   placeholder="Search docs..." aria-label="Search documentation"
+                                   autocomplete="off" spellcheck="false">
+                        </div>
+                        <div class="search-results shadow" hidden></div>
+                    </li>
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link" href="https://github.com/apache/openjpa" target="_blank"
+                           rel="noopener noreferrer" aria-label="GitHub repository">
+                            <i class="bi bi-github" aria-hidden="true"></i><span class="visually-hidden">GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/quick-start.html" title="Quick Start">Quick Start</a></li>
-                                                            <li><a href="/downloads.html" title="Downloads">Downloads</a></li>
-                                                            <li><a href="/documentation.html" title="Documentation">Documentation</a></li>
-                                                            <li><a href="/site-index.html" title="Site Index">Site Index</a></li>
-                                                            <li><a href="/license.html" title="License">License</a></li>
-                                                            <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" title="Privacy Policy">Privacy Policy</a></li>
-                                                        </ul>
+            <a href="https://www.apache.org/" class="asf-badge d-none d-lg-inline-flex order-lg-4 ms-3"
+               rel="noopener noreferrer">
+                <img src="https://www.apache.org/img/asf_logo.png" alt="The Apache Software Foundation"
+                     width="120" height="auto">
+            </a>
+        </nav>
+    </header>
 
-                                                        <h3><a name="SideNav-Community"></a><a href="/community.html" title="Community">Community</a></h3>
+    <!-- Main layout -->
+    <div class="container-xxl site-container">
+<div class="bd-layout">
+    <aside class="bd-sidebar" aria-label="Page navigation">
+        <button class="btn btn-link sidebar-collapse-btn d-lg-none" type="button"
+                data-bs-toggle="collapse" data-bs-target="#sidebarNav" aria-expanded="false"
+                aria-controls="sidebarNav">
+            <i class="bi bi-layout-text-sidebar-reverse me-2" aria-hidden="true"></i>Contents
+        </button>
+        <nav class="collapse d-lg-block sidebar-nav" id="sidebarNav" aria-label="Sidebar">
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Quick Start</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="quick-start.html">Quick Start Guide</a></li>
+                    <li><a class="sidebar-link" href="getting-started.html">Getting Started</a></li>
+                    <li><a class="sidebar-link" href="samples.html">Samples</a></li>
+                    <li><a class="sidebar-link" href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Documentation</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="documentation.html">Manuals &amp; Guides</a></li>
+                    <li><a class="sidebar-link" href="overview.html">Overview</a></li>
+                    <li><a class="sidebar-link" href="performance-guide.html">Performance Guide</a></li>
+                    <li><a class="sidebar-link" href="migration-tool.html">Migration Tool</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Downloads</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="downloads.html">Releases</a></li>
+                    <li><a class="sidebar-link" href="downloads-nightly.html">Nightly Builds</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Community</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="community.html">Community</a></li>
+                    <li><a class="sidebar-link" href="mailing-lists.html">Mailing Lists</a></li>
+                    <li><a class="sidebar-link" href="source-code.html">Source Code</a></li>
+                    <li><a class="sidebar-link" href="https://issues.apache.org/jira/browse/OPENJPA">Issue Tracker</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <span class="sidebar-heading">Development</span>
+                <ul class="list-unstyled">
+                    <li><a class="sidebar-link" href="development.html">Development</a></li>
+                    <li><a class="sidebar-link" href="building.html">Building</a></li>
+                    <li><a class="sidebar-link" href="testing.html">Testing</a></li>
+                    <li><a class="sidebar-link" href="release-management.html">Release Management</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
 
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/index.html#Index-eventsandnews" title="Events and News">Events and News</a></li>
-                                                            <li><a href="/found-a-bug.html" title="Found a Bug">Found a Bug</a>?</li>
-                                                            <li><a href="/get-involved.html" title="Get Involved">Get Involved</a></li>
-                                                            <li><a href="/mailing-lists.html" title="Mailing Lists">Mailing Lists</a></li>
-                                                            <li><a href="/committers.html" title="Committers">Committers</a></li>
-                                                            <li><a href="/integration.html" title="Integration">Integration</a></li>
-                                                            <li><a href="/powered-by.html" title="Powered By">Powered By</a></li>
-                                                            <li><a href="/thanks.html" title="Thanks">Thanks</a></li>
-                                                        </ul>
+    <main id="main-content" class="bd-main" tabindex="-1">
+        <nav aria-label="breadcrumb" class="bd-breadcrumb mb-3">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="./"><i class="bi bi-house-door-fill me-1" aria-hidden="true"></i>Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Building</li>
+            </ol>
+        </nav>
 
+        <div class="d-flex align-items-start justify-content-between gap-3 flex-wrap">
+            <h1 class="page-title mb-0">Building</h1>
+            <a class="edit-github"
+               href="https://github.com/apache/openjpa-site/blob/main/content/building.md"
+               target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-pencil-square me-1" aria-hidden="true"></i>Edit on GitHub
+            </a>
+        </div>
 
-                                                        <h3><a name="SideNav-Development"></a><a href="/development.html" title="Development">Development</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/downloads-nightly.html" title="Downloads">Nightly Downloads</a></li>                                        
-                                                            <li><a href="/source-code.html" title="Source Code">Source Code</a></li>
-                                                            <li><a href="/testing.html" title="Testing">Testing</a></li>
-                                                            <li><a href="https://issues.apache.org/jira/browse/OPENJPA" class="external-link" rel="nofollow">Issue Tracker</a></li>
-                                                            <li><a href="/tools.html" title="Tools">Tools</a></li>
-                                                            <li><a href="/samples.html" title="Samples">Samples</a></li>
-                                                            <li><a href="/release-management.html" title="Release Management">Release Management</a></li>
-                                                        </ul>
-
-                                                        <h3><a name="SideNav-Consumers"></a><a href="/consumers.html" title="Consumers">Consumers</a></h3>
-
-                                                        <ul class="alternate" type="square">
-                                                            <li><a href="/tips-n-techniques.html" title="Tips and Techniques">Tips and Techniques</a></li>
-                                                            <li><a href="/troubleshoot.html" title="Trouble Shoot">Trouble Shoot</a></li>
-                                                        </ul>
-
-                                                        <h3>Search</h3>
-
-                                                        <div style="padding: 5px 5px 0px 25px;">
-                                                            <form action="https://www.google.com/search" method="get" style="font-size: 10px;">
-                                                                <input name="ie" type="hidden" value="UTF-8">
-                                                                <input name="oe" type="hidden" value="UTF-8">
-                                                                <input maxlength="255" name="q" size="15" type="text" value=""><br><br>
-                                                                <input name="btnG" type="submit" value="Google">
-                                                                <input name="domains" type="hidden" value="openjpa.apache.org">
-                                                                <input name="sitesearch" type="hidden" value="openjpa.apache.org">
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td valign="top" width="100%" style="overflow:hidden;">
-                                            <div class="wiki-content">
-    <p><a name="Building"></a></p>
+        <article class="page-content">
+            <p><a name="Building"></a></p>
 <p><a name="Building-Contents"></a></p>
-<h1 id="contents">Contents<a class="headerlink" href="#contents" title="Permalink">&para;</a></h1>
+<h1 id="contents">Contents</h1>
 <ul>
 <li>
 <p><a href="#Building-BuildingOpenJPA">Building OpenJPA</a></p>
@@ -155,9 +171,7 @@ dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover 
 <li>
 <p><a href="#Building-Maven">Maven</a></p>
 <ul>
-<li>
-<p><a href="#Building-CommandLineBuilds">Command Line Builds</a></p>
-</li>
+<li><a href="#Building-CommandLineBuilds">Command Line Builds</a></li>
 <li>
 <p><a href="#Building-ExecutingvariousMavenbuildtasks">Executing various Maven build tasks</a></p>
 <ul>
@@ -174,9 +188,7 @@ dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover 
 <li>
 <p><a href="#Building-EclipsewithCommand-lineMavenutilities">Eclipse with Command-line Maven utilities</a></p>
 </li>
-<li>
-<p><a href="#Building-EclipsewithM2Eclipseplugin">Eclipse with M2Eclipse plugin</a></p>
-</li>
+<li><a href="#Building-EclipsewithM2Eclipseplugin">Eclipse with M2Eclipse plugin</a></li>
 <li>
 <p><a href="#Building-Common2.xBuildProblems">Common 2.x Build Problems</a></p>
 <ul>
@@ -192,7 +204,7 @@ dt:hover > .headerlink, p:hover > .headerlink, td:hover > .headerlink, h1:hover 
 <p><a name="Building-BuildingOpenJPA"></a></p>
 <h1 id="building-openjpa">Building OpenJPA<a class="headerlink" href="#building-openjpa" title="Permalink">&para;</a></h1>
 <p>See <a href="build-and-runtime-dependencies.html">Build and Runtime Dependencies</a>
-for details on the required Java levels.</p>
+ for details on the required Java levels.</p>
 <p><a name="Building-Maven"></a></p>
 <h2 id="maven">Maven<a class="headerlink" href="#maven" title="Permalink">&para;</a></h2>
 <p><a name="Building-CommandLineBuilds"></a></p>
@@ -202,9 +214,8 @@ code (from the Subversion source code management repository) and build it
 (using the Apache Maven 2 build tool). They are written for use from the
 console, and are known to work on Linux, Mac OSX and Windows.</p>
 <ol>
-<li>
-<p>Ensure that you have Java installed and in your path by running: <code>java -fullversion</code></p>
-</li>
+<li>Ensure that you have Java installed and in your path by running: <code>java
+-fullversion</code></li>
 <li>
 <p>Set following maven options to avoid out of memory error:</p>
 <p>set MAVEN_OPTS="-XX:MaxPermSize=128m -Xms512m -Xmx1024m"</p>
@@ -212,218 +223,209 @@ console, and are known to work on Linux, Mac OSX and Windows.</p>
 <li>
 <p>Install the build tool, Apache Maven 2.2.1 or later, from
 <a href="http://maven.apache.org/">http://maven.apache.org/</a>. If it is installed correctly, typing <em>mvn -v</em>
-from the console will result in text like <code>Apache Maven 2.2.1 (r801777; 2009-08-06 21:16:01+0200)</code></p>
+from the console will result in text like <code>Apache Maven 2.2.1 (r801777;
+2009-08-06 21:16:01+0200)</code></p>
 </li>
-<li>
-<p>Install Subversion v1.4.x or newer from <a href="http://subversion.apache.org/">http://subversion.apache.org/</a>.
+<li>Install Subversion v1.4.x or newer from <a href="http://subversion.apache.org/">http://subversion.apache.org/</a>.
 If it is installed correctly, typing the following command should output
-help information: <strong>svn help</strong> or <strong>svn --version</strong></p>
-</li>
-<li>
-<p>Create a new directory you want to do your work in, then change to that
-directory from the console.</p>
-</li>
-<li>
-<p>Check out the sources by running: <code>svn co</code>
+help information: <strong>svn help</strong> or <strong>svn --version</strong></li>
+<li>Create a new directory you want to do your work in, then change to that
+directory from the console.</li>
+<li>Check out the sources by running: <code>svn co</code>
 <a href="https://svn.apache.org/repos/asf/openjpa/trunk">https://svn.apache.org/repos/asf/openjpa/trunk</a> <code>openjpa-trunk</code>. It will
 check out the sources to the openjpa-trunk directory. More information on
 checking out the OpenJPA sources can be found on the <a href="source-code.html">Source Code</a>
-page.</p>
-</li>
-<li>
-<p>Change to the openjpa-trunk directory, which has already been created in
-the previous step.</p>
-</li>
-<li>
-<p>Build OpenJPA by running: <code>mvn package</code> or better <code>mvn install</code>. The
+ page.</li>
+<li>Change to the openjpa-trunk directory, which has already been created in
+the previous step.</li>
+<li>Build OpenJPA by running: <code>mvn package</code> or better <code>mvn install</code>. The
 first time you run the build, many dependencies are automatically resolved
 and downloaded. <strong>It is common for dependency downloading to fail the first
 time, which will fail the build.</strong> If any of these dependency downloads
 fail, just re-run the command. You may also add the following to your
-<code>~/.m2/setting.xml</code> file (see <a href="http://maven.apache.org/guides/mini/guide-mirror-settings.html">http://maven.apache.org/guides/mini/guide-mirror-settings.html</a>)</p>
-<pre><code> &lt;settings&gt;
-     &lt;mirrors&gt;
-         &lt;mirror&gt;
-             &lt;id&gt;repo.mergere.com&lt;/id&gt;
-             &lt;url&gt;http://repo.mergere.com/maven2&lt;/url&gt;
-             &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-         &lt;/mirror&gt;
-     &lt;/mirrors&gt;
- &lt;/settings&gt;
-</code></pre>
+<code>~/.m2/setting.xml</code> file (see <a href="http://maven.apache.org/guides/mini/guide-mirror-settings.html">http://maven.apache.org/guides/mini/guide-mirror-settings.html</a>)<div class="highlight"><pre><span></span><code><span class="nt">&lt;settings&gt;</span>
+<span class="w">    </span><span class="nt">&lt;mirrors&gt;</span>
+<span class="w">        </span><span class="nt">&lt;mirror&gt;</span>
+<span class="w">            </span><span class="nt">&lt;id&gt;</span>repo.mergere.com<span class="nt">&lt;/id&gt;</span>
+<span class="w">            </span><span class="nt">&lt;url&gt;</span>http://repo.mergere.com/maven2<span class="nt">&lt;/url&gt;</span>
+<span class="w">            </span><span class="nt">&lt;mirrorOf&gt;</span>central<span class="nt">&lt;/mirrorOf&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/mirror&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/mirrors&gt;</span>
+<span class="nt">&lt;/settings&gt;</span>
+</code></pre></div>
 </li>
 </ol>
 <p>If any tests fail, and you want to ignore the failures, instead run:</p>
-<pre><code>mvn package -DfailIfNoTests=false
+<div class="highlight"><pre><span></span><code><span class="nx">mvn</span><span class="w"> </span><span class="kn">package</span><span class="w"> </span><span class="o">-</span><span class="nx">DfailIfNoTests</span><span class="p">=</span><span class="kc">false</span>
 
-  or
+<span class="w">  </span><span class="k">or</span>
 
-mvn package -DskipTests
-</code></pre>
+<span class="nx">mvn</span><span class="w"> </span><span class="kn">package</span><span class="w"> </span><span class="o">-</span><span class="nx">DskipTests</span>
+</code></pre></div>
 <p>An example session is as follows:</p>
-<pre><code>$ cd /tmp/
+<div class="highlight"><pre><span></span><code><span class="err">$</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span>
 
-$ java -version
+<span class="err">$</span><span class="w"> </span><span class="n">java</span><span class="w"> </span><span class="o">-</span><span class="n">version</span>
 
-java version "1.6.0"
-Java(TM) SE Runtime Environment (build 1.6.0-b105)
-Java HotSpot(TM) Client VM (build 1.6.0-b105, mixed mode, sharing)
+<span class="n">java</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="ss">"1.6.0"</span>
+<span class="n">Java</span><span class="p">(</span><span class="n">TM</span><span class="p">)</span><span class="w"> </span><span class="n">SE</span><span class="w"> </span><span class="n">Runtime</span><span class="w"> </span><span class="n">Environment</span><span class="w"> </span><span class="p">(</span><span class="n">build</span><span class="w"> </span><span class="mf">1.6.0</span><span class="o">-</span><span class="n">b105</span><span class="p">)</span>
+<span class="n">Java</span><span class="w"> </span><span class="n">HotSpot</span><span class="p">(</span><span class="n">TM</span><span class="p">)</span><span class="w"> </span><span class="n">Client</span><span class="w"> </span><span class="n">VM</span><span class="w"> </span><span class="p">(</span><span class="n">build</span><span class="w"> </span><span class="mf">1.6.0</span><span class="o">-</span><span class="n">b105</span><span class="p">,</span><span class="w"> </span><span class="n">mixed</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="n">sharing</span><span class="p">)</span>
 
-$ mvn -v
+<span class="err">$</span><span class="w"> </span><span class="n">mvn</span><span class="w"> </span><span class="o">-</span><span class="n">v</span>
 
-Apache Maven 2.2.1 (r801777; 2009-08-06 21:16:01+0200)
-Java version: 1.6.0
-Java home: /alt/sun160/jre
-Default locale: en_US, platform encoding: UTF-8
-OS name: "linux" version: "2.6.18-1.2798.fc6" arch: "i386" Family: "unix"
+<span class="n">Apache</span><span class="w"> </span><span class="n">Maven</span><span class="w"> </span><span class="mf">2.2.1</span><span class="w"> </span><span class="p">(</span><span class="n">r801777</span><span class="p">;</span><span class="w"> </span><span class="mi">2009</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">06</span><span class="w"> </span><span class="mi">21</span><span class="err">:</span><span class="mi">16</span><span class="err">:</span><span class="mi">01</span><span class="o">+</span><span class="mi">0200</span><span class="p">)</span>
+<span class="n">Java</span><span class="w"> </span><span class="nl">version</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6.0</span>
+<span class="n">Java</span><span class="w"> </span><span class="nl">home</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">alt</span><span class="o">/</span><span class="n">sun160</span><span class="o">/</span><span class="n">jre</span>
+<span class="k">Default</span><span class="w"> </span><span class="nl">locale</span><span class="p">:</span><span class="w"> </span><span class="n">en_US</span><span class="p">,</span><span class="w"> </span><span class="n">platform</span><span class="w"> </span><span class="nl">encoding</span><span class="p">:</span><span class="w"> </span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">OS</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="ss">"linux"</span><span class="w"> </span><span class="nl">version</span><span class="p">:</span><span class="w"> </span><span class="ss">"2.6.18-1.2798.fc6"</span><span class="w"> </span><span class="nl">arch</span><span class="p">:</span><span class="w"> </span><span class="ss">"i386"</span><span class="w"> </span><span class="nl">Family</span><span class="p">:</span><span class="w"> </span><span class="ss">"unix"</span>
 
-$ svn --version
+<span class="err">$</span><span class="w"> </span><span class="n">svn</span><span class="w"> </span><span class="c1">--version</span>
 
-svn, version 1.4.3 (r23084)
-   compiled Jan 18 2007, 07:47:40
+<span class="n">svn</span><span class="p">,</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">1.4.3</span><span class="w"> </span><span class="p">(</span><span class="n">r23084</span><span class="p">)</span>
+<span class="w">   </span><span class="n">compiled</span><span class="w"> </span><span class="n">Jan</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="mi">2007</span><span class="p">,</span><span class="w"> </span><span class="mi">07</span><span class="err">:</span><span class="mi">47</span><span class="err">:</span><span class="mi">40</span>
 
-$ svn co https://svn.apache.org/repos/asf/openjpa/trunk/
+<span class="err">$</span><span class="w"> </span><span class="n">svn</span><span class="w"> </span><span class="n">co</span><span class="w"> </span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">repos</span><span class="o">/</span><span class="n">asf</span><span class="o">/</span><span class="n">openjpa</span><span class="o">/</span><span class="n">trunk</span><span class="o">/</span>
 
-A  trunk/openjpa-lib
-A  trunk/openjpa-lib/src
-A  trunk/openjpa-lib/src/test
-A  trunk/openjpa-lib/src/test/java
-A  trunk/openjpa-lib/src/test/java/org
-A  trunk/openjpa-lib/src/test/java/org/apache
-A  trunk/openjpa-lib/src/test/java/org/apache/openjpa
-A  trunk/openjpa-lib/src/test/java/org/apache/openjpa/lib
-A  trunk/openjpa-lib/src/test/java/org/apache/openjpa/lib/test
-A  trunk/openjpa-lib/src/test/java/org/apache/openjpa/lib/test/AbstractTestCase.java
+<span class="n">A</span><span class="w">  </span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">lib</span>
+<span class="n">A</span><span class="w">  </span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">lib</span><span class="o">/</span><span class="n">src</span>
+<span class="n">A</span><span class="w">  </span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">lib</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">test</span>
+<span class="n">A</span><span class="w">  </span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">lib</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">java</span>
+<span class="n">A</span><span class="w">  </span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">lib</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">java</span><span class="o">/</span><span class="n">org</span>
+<span class="n">A</span><span class="w">  </span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">lib</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">java</span><span class="o">/</span><span class="n">org</span><span class="o">/</span><span class="n">apache</span>
+<span class="n">A</span><span class="w">  </span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">lib</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">java</span><span class="o">/</span><span class="n">org</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">openjpa</span>
+<span class="n">A</span><span class="w">  </span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">lib</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">java</span><span class="o">/</span><span class="n">org</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">openjpa</span><span class="o">/</span><span class="n">lib</span>
+<span class="n">A</span><span class="w">  </span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">lib</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">java</span><span class="o">/</span><span class="n">org</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">openjpa</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">test</span>
+<span class="n">A</span><span class="w">  </span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">lib</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">java</span><span class="o">/</span><span class="n">org</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">openjpa</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">AbstractTestCase</span><span class="p">.</span><span class="n">java</span>
 
- ...
+<span class="w"> </span><span class="p">...</span>
 
-A  trunk/openjpa-persistence/pom.xml
-Checked out revision 1065345.
+<span class="n">A</span><span class="w">  </span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">persistence</span><span class="o">/</span><span class="n">pom</span><span class="p">.</span><span class="nc">xml</span>
+<span class="n">Checked</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">revision</span><span class="w"> </span><span class="mf">1065345.</span>
 
-$ cd trunk/
+<span class="err">$</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">trunk</span><span class="o">/</span>
 
-$ mvn compile
+<span class="err">$</span><span class="w"> </span><span class="n">mvn</span><span class="w"> </span><span class="n">compile</span>
 
-[INFO] Scanning for projects...
-[INFO] Reactor build order: 
-[INFO]   OpenJPA Parent POM
-[INFO]   OpenJPA Utilities Library
-[INFO]   OpenJPA Kernel
-[INFO]   OpenJPA JDBC
-[INFO]   OpenJPA Persistence
-[INFO]   OpenJPA Persistence JDBC
-[INFO]   OpenJPA Persistence Locking Tests
-[INFO]   OpenJPA XML Store
-[INFO]   OpenJPA Slice
-[INFO]   OpenJPA JEST
-[INFO]   OpenJPA Aggregate Jar
-[INFO]   OpenJPA Aggregate Jar with Dependencies
-[INFO]   OpenJPA Project Docs and Assemblies
-[INFO]   OpenJPA Examples
-[INFO]   OpenJPA Examples - Simple
-[INFO]   OpenJPA Examples - image-gallery
-[INFO]   OpenJPA Examples - OpenBooks
-[INFO]   OpenJPA Integration Tests
-[INFO]   OpenJPA Integration Tests - Daytrader
-[INFO]   OpenJPA Integration Tests - Examples
-[INFO]   OpenJPA Integration Tests - SLF4JLogFactory
-[INFO]   OpenJPA Integration Tests - JPA TCK
-[INFO]   OpenJPA Integration Tests - Bean Validation
-[INFO]   OpenJPA Integration Tests - JMX Platform MBeans
-[INFO] ------------------------------------------------------------------------
-[INFO] Building OpenJPA Parent POM
-[INFO]    task-segment: [compile]
-[INFO] ------------------------------------------------------------------------
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Scanning</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">projects</span><span class="p">...</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Reactor</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="k">order</span><span class="err">:</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Parent</span><span class="w"> </span><span class="n">POM</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Utilities</span><span class="w"> </span><span class="n">Library</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Kernel</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">JDBC</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Persistence</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Persistence</span><span class="w"> </span><span class="n">JDBC</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Persistence</span><span class="w"> </span><span class="n">Locking</span><span class="w"> </span><span class="n">Tests</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="nc">XML</span><span class="w"> </span><span class="n">Store</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Slice</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">JEST</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="k">Aggregate</span><span class="w"> </span><span class="n">Jar</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="k">Aggregate</span><span class="w"> </span><span class="n">Jar</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">Dependencies</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="n">Docs</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Assemblies</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Examples</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Examples</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Simple</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Examples</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nc">image</span><span class="o">-</span><span class="n">gallery</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Examples</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">OpenBooks</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Daytrader</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Examples</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">SLF4JLogFactory</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">JPA</span><span class="w"> </span><span class="n">TCK</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Bean</span><span class="w"> </span><span class="n">Validation</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">   </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">JMX</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="n">MBeans</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="c1">------------------------------------------------------------------------</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Building</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Parent</span><span class="w"> </span><span class="n">POM</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w">    </span><span class="n">task</span><span class="o">-</span><span class="nl">segment</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">compile</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="c1">------------------------------------------------------------------------</span>
 
- ...
+<span class="w"> </span><span class="p">...</span>
 
-[INFO]
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary:
-[INFO] ------------------------------------------------------------------------
-[INFO] OpenJPA Parent POM .................................... SUCCESS [1:23.143s]
-[INFO] OpenJPA Utilities Library ............................. SUCCESS [13.749s]
-[INFO] OpenJPA Kernel ........................................ SUCCESS [19.251s]
-[INFO] OpenJPA JDBC .......................................... SUCCESS [14.351s]
-[INFO] OpenJPA Persistence ................................... SUCCESS [10.254s]
-[INFO] OpenJPA Persistence JDBC .............................. SUCCESS [46.774s]
-[INFO] OpenJPA Persistence Locking Tests ..................... SUCCESS [15.183s]
-[INFO] OpenJPA XML Store ..................................... SUCCESS [11.788s]
-[INFO] OpenJPA Slice ......................................... SUCCESS [4.437s]
-[INFO] OpenJPA JEST .......................................... SUCCESS [4.854s]
-[INFO] OpenJPA Aggregate Jar ................................. SUCCESS [10.729s]
-[INFO] OpenJPA Aggregate Jar with Dependencies ............... SUCCESS [6.761s]
-[INFO] OpenJPA Project Docs and Assemblies ................... SUCCESS [1:41.937s]
-[INFO] OpenJPA Examples ...................................... SUCCESS [0.663s]
-[INFO] OpenJPA Examples - Simple ............................. SUCCESS [1.475s]
-[INFO] OpenJPA Examples - image-gallery ...................... SUCCESS [3.920s]
-[INFO] OpenJPA Examples - OpenBooks .......................... SUCCESS [12.961s]
-[INFO] OpenJPA Integration Tests ............................. SUCCESS [0.381s]
-[INFO] OpenJPA Integration Tests - Daytrader ................. SUCCESS [7.565s]
-[INFO] OpenJPA Integration Tests - Examples .................. SUCCESS [0.269s]
-[INFO] OpenJPA Integration Tests - SLF4JLogFactory ........... SUCCESS [1.977s]
-[INFO] OpenJPA Integration Tests - JPA TCK ................... SUCCESS [0.248s]
-[INFO] OpenJPA Integration Tests - Bean Validation ........... SUCCESS [3.213s]
-[INFO] OpenJPA Integration Tests - JMX Platform MBeans ....... SUCCESS [7.729s]
-[INFO] ------------------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESSFUL
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 6 minutes 26 seconds
-[INFO] Finished at: Sun Jan 30 19:43:50 CET 2011
-[INFO] Final Memory: 92M/158M
-[INFO] ------------------------------------------------------------------------
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="c1">------------------------------------------------------------------------</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Reactor</span><span class="w"> </span><span class="nl">Summary</span><span class="p">:</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="c1">------------------------------------------------------------------------</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Parent</span><span class="w"> </span><span class="n">POM</span><span class="w"> </span><span class="p">....................................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">1:23.143s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Utilities</span><span class="w"> </span><span class="n">Library</span><span class="w"> </span><span class="p">.............................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">13.749s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Kernel</span><span class="w"> </span><span class="p">........................................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">19.251s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">JDBC</span><span class="w"> </span><span class="p">..........................................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">14.351s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Persistence</span><span class="w"> </span><span class="p">...................................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">10.254s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Persistence</span><span class="w"> </span><span class="n">JDBC</span><span class="w"> </span><span class="p">..............................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">46.774s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Persistence</span><span class="w"> </span><span class="n">Locking</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="p">.....................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">15.183s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="nc">XML</span><span class="w"> </span><span class="n">Store</span><span class="w"> </span><span class="p">.....................................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">11.788s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Slice</span><span class="w"> </span><span class="p">.........................................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">4.437s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">JEST</span><span class="w"> </span><span class="p">..........................................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">4.854s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="k">Aggregate</span><span class="w"> </span><span class="n">Jar</span><span class="w"> </span><span class="p">.................................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">10.729s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="k">Aggregate</span><span class="w"> </span><span class="n">Jar</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">Dependencies</span><span class="w"> </span><span class="p">...............</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">6.761s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="n">Docs</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Assemblies</span><span class="w"> </span><span class="p">...................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">1:41.937s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Examples</span><span class="w"> </span><span class="p">......................................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">0.663s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Examples</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Simple</span><span class="w"> </span><span class="p">.............................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">1.475s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Examples</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nc">image</span><span class="o">-</span><span class="n">gallery</span><span class="w"> </span><span class="p">......................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">3.920s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Examples</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">OpenBooks</span><span class="w"> </span><span class="p">..........................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">12.961s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="p">.............................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">0.381s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Daytrader</span><span class="w"> </span><span class="p">.................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">7.565s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Examples</span><span class="w"> </span><span class="p">..................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">0.269s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">SLF4JLogFactory</span><span class="w"> </span><span class="p">...........</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">1.977s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">JPA</span><span class="w"> </span><span class="n">TCK</span><span class="w"> </span><span class="p">...................</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">0.248s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Bean</span><span class="w"> </span><span class="n">Validation</span><span class="w"> </span><span class="p">...........</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">3.213s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">OpenJPA</span><span class="w"> </span><span class="n">Integration</span><span class="w"> </span><span class="n">Tests</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">JMX</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="n">MBeans</span><span class="w"> </span><span class="p">.......</span><span class="w"> </span><span class="n">SUCCESS</span><span class="w"> </span><span class="o">[</span><span class="n">7.729s</span><span class="o">]</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="c1">------------------------------------------------------------------------</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="c1">------------------------------------------------------------------------</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">BUILD</span><span class="w"> </span><span class="n">SUCCESSFUL</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="c1">------------------------------------------------------------------------</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Total</span><span class="w"> </span><span class="nc">time</span><span class="err">:</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="mi">26</span><span class="w"> </span><span class="n">seconds</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Finished</span><span class="w"> </span><span class="k">at</span><span class="err">:</span><span class="w"> </span><span class="n">Sun</span><span class="w"> </span><span class="n">Jan</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="mi">19</span><span class="err">:</span><span class="mi">43</span><span class="err">:</span><span class="mi">50</span><span class="w"> </span><span class="n">CET</span><span class="w"> </span><span class="mi">2011</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Final</span><span class="w"> </span><span class="nl">Memory</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="n">M</span><span class="o">/</span><span class="mi">158</span><span class="n">M</span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="c1">------------------------------------------------------------------------</span>
 
 
-$ mvn package -DskipTests
+<span class="err">$</span><span class="w"> </span><span class="n">mvn</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="o">-</span><span class="n">DskipTests</span>
 
-[INFO] Scanning for projects...
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Scanning</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">projects</span><span class="p">...</span>
 
-...
+<span class="p">...</span>
 
-[INFO] Building zip:/tmp/trunk/openjpa-project/target/site/downloads/apache-openjpa-2.2.0-SNAPSHOT-binary.zip
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Building</span><span class="w"> </span><span class="nl">zip</span><span class="p">:</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">trunk</span><span class="o">/</span><span class="n">openjpa</span><span class="o">-</span><span class="n">project</span><span class="o">/</span><span class="n">target</span><span class="o">/</span><span class="n">site</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span><span class="n">apache</span><span class="o">-</span><span class="n">openjpa</span><span class="o">-</span><span class="mf">2.2.0</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">-</span><span class="nc">binary</span><span class="p">.</span><span class="n">zip</span>
 
-... 
+<span class="p">...</span>
 
-$ ls -lh openjpa-project/target/site/downloads/
+<span class="err">$</span><span class="w"> </span><span class="n">ls</span><span class="w"> </span><span class="o">-</span><span class="n">lh</span><span class="w"> </span><span class="n">openjpa</span><span class="o">-</span><span class="n">project</span><span class="o">/</span><span class="n">target</span><span class="o">/</span><span class="n">site</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span>
 
-total 40M
--rw-r--r-- 1 milosz milosz 15M Jan 30 19:41 apache-openjpa-2.2.0-SNAPSHOT-binary.zip
--rw-r--r-- 1 milosz milosz 25M Jan 30 19:43 apache-openjpa-2.2.0-SNAPSHOT-source.zip
-</code></pre>
+<span class="n">total</span><span class="w"> </span><span class="mi">40</span><span class="n">M</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 milosz milosz 15M Jan 30 19:41 apache-openjpa-2.2.0-SNAPSHOT-binary.zip</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="c1">--r-- 1 milosz milosz 25M Jan 30 19:43 apache-openjpa-2.2.0-SNAPSHOT-source.zip</span>
+</code></pre></div>
 <p><a name="Building-ExecutingvariousMavenbuildtasks"></a></p>
 <h3 id="executing-various-maven-build-tasks">Executing various Maven build tasks<a class="headerlink" href="#executing-various-maven-build-tasks" title="Permalink">&para;</a></h3>
 <p><a name="Building-RunningjusttheTestPersistencetestcase"></a></p>
 <h5>Running just the "TestPersistence" test case</h5>
-<pre><code>mvn test -Dtest=TestPersistence
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn test -Dtest=TestPersistence
+</code></pre></div>
 <p><a name="Building-RunningtestswithJava2securityenabled"></a></p>
 <h5>Running tests with Java 2 security enabled</h5>
-<pre><code>mvn test -Penable-security
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn test -Penable-security
+</code></pre></div>
 <p><a name="Building-Buildingandrunningonlytheexamplesincludedinthedistribution"></a></p>
 <h5>Building and running only the examples included in the distribution</h5>
-<pre><code>mvn -DskipTests -Pexamples-profile integration-test
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn -DskipTests -Pexamples-profile integration-test
+</code></pre></div>
 <p><a name="Building-Buildingjustthejavadoc"></a></p>
 <h5>Building just the javadoc</h5>
 <p>First install the jars:</p>
-<pre><code>mvn install -DskipTests
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn install -DskipTests
+</code></pre></div>
 <p>Then build the javadoc:</p>
-<pre><code>mvn package -DskipTests -Pjavadoc-profile
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">mvn</span><span class="w"> </span><span class="kn">package</span><span class="w"> </span><span class="o">-</span><span class="nx">DskipTests</span><span class="w"> </span><span class="o">-</span><span class="nx">Pjavadoc</span><span class="o">-</span><span class="nx">profile</span>
+</code></pre></div>
 <p>The javadoc will be output to <em>target/site/apidocs/index.html</em>.</p>
 <p><a name="Building-Buildingjustthedocbookdocumentation"></a></p>
 <h5>Building just the docbook documentation</h5>
-<pre><code>set MAVEN_OPTS=-Xmx512m
-mvn -f openjpa-project/pom.xml process-resources -Pdocbook-profile
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">set MAVEN_OPTS=-Xmx512m</span>
+<span class="n">mvn -f openjpa-project/pom.xml process-resources -Pdocbook-profile</span>
+</code></pre></div>
 <p>The manual HTML will be output to <code>openjpa-project/target/manual/manual.html</code>.</p>
 <p><a name="Building-BuildingwithJDK1.4moduleverification(onlyforversionsofOpenJPApriortosvnrevision640685)"></a></p>
 <h5>Building with JDK 1.4 module verification (only for versions of OpenJPA prior to svn revision 640685)</h5>
-<pre><code>mvn compile -Djava14.jar=C:\Program Files\Java\j2re1.4.2_07\lib\rt.jar compile
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn compile -Djava14.jar=C:\Program Files\Java\j2re1.4.2_07\lib\rt.jar compile
+</code></pre></div>
 <p>Specifying the "java14.jar" system property will cause the
 JDK-1.4-dependent modules to be compiled with the value as the
 bootclasspath to the compiler. This can be useful to ensure that
@@ -434,21 +436,15 @@ which is why it needs to be manually specified.</p>
 <p><a name="Building-EclipsewithCommand-lineMavenutilities"></a></p>
 <h2 id="eclipse-with-command-line-maven-utilities">Eclipse with Command-line Maven utilities<a class="headerlink" href="#eclipse-with-command-line-maven-utilities" title="Permalink">&para;</a></h2>
 <ol>
-<li>
-<p>Checkout the source as described above</p>
-</li>
-<li>
-<p>Build the source using Maven as described above</p>
-</li>
+<li>Checkout the source as described above</li>
+<li>Build the source using Maven as described above</li>
 <li>
 <p>Create the Eclipse Metadata -</p>
-<pre><code> mvn eclipse:eclipse
-</code></pre>
+<div class="highlight"><pre><span></span><code>mvn eclipse:eclipse
+</code></pre></div>
 <ol>
-<li>
-<p>If this is the first project in your workspace to use maven artifacts you need to create a classpath variable named M2_REPO which contains the full path to your local repository. The eclipse plugin can do this for you with the following command</p>
-<pre><code> mvn eclipse:configure-workspace -Declipse.workspace=${path to your workspace} 
-</code></pre>
+<li>If this is the first project in your workspace to use maven artifacts you need to create a classpath variable named M2_REPO which contains the full path to your local repository. The eclipse plugin can do this for you with the following command<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>eclipse:configure-workspace<span class="w"> </span>-Declipse.workspace=<span class="cp">${</span><span class="n">path</span> <span class="n">to</span> <span class="n">your</span> <span class="n">workspace</span><span class="cp">}</span>
+</code></pre></div>
 </li>
 </ol>
 </li>
@@ -518,33 +514,21 @@ remove an incorrect dependency:</p>
 exclude some Java SE 6 specific classes by performing the following steps
 for the source:</p>
 <ol>
-<li>
-<p>Open the Properties for openjpa-persistence</p>
-</li>
-<li>
-<p>Select Java Build Path --&gt; Source</p>
-</li>
-<li>
-<p>Edit the openjpa-persistence/src/main/java --&gt; Excluded setting to
-include the following:</p>
-<pre><code> org/apache/openjpa/persistence/meta/AnnotationProcessor6.java
- org/apache/openjpa/persistence/meta/CompileTimeLogger.java
- org/apache/openjpa/persistence/meta/SourceAnnotationHandler.java
-</code></pre>
+<li>Open the Properties for openjpa-persistence</li>
+<li>Select Java Build Path --&gt; Source</li>
+<li>Edit the openjpa-persistence/src/main/java --&gt; Excluded setting to
+include the following:<div class="highlight"><pre><span></span><code>org/apache/openjpa/persistence/meta/AnnotationProcessor6.java
+org/apache/openjpa/persistence/meta/CompileTimeLogger.java
+org/apache/openjpa/persistence/meta/SourceAnnotationHandler.java
+</code></pre></div>
 </li>
 </ol>
 <p><a name="Building-EclipsewithM2Eclipseplugin"></a></p>
 <h2 id="eclipse-with-m2eclipse-plugin">Eclipse with M2Eclipse plugin<a class="headerlink" href="#eclipse-with-m2eclipse-plugin" title="Permalink">&para;</a></h2>
 <ol>
-<li>
-<p>Checkout the source as described above</p>
-</li>
-<li>
-<p>Build the source using Maven as described above</p>
-</li>
-<li>
-<p>Start Eclipse (3.5 Galileo is recommended) and create a new workspace</p>
-</li>
+<li>Checkout the source as described above</li>
+<li>Build the source using Maven as described above</li>
+<li>Start Eclipse (3.5 Galileo is recommended) and create a new workspace</li>
 <li>
 <p>Good references for this M2Eclipse plugin (need to install the plugin
 into your Eclipse environment)</p>
@@ -573,35 +557,30 @@ the usage.</li>
 <p>A few fixups will be required to remove the errors that exist in the
 imported projects...</p>
 <ul>
-<li>openjpa-kernel -&gt; Properties -&gt; Java Build Path -&gt; Source -&gt; Add Folders
-<ul>
+<li>openjpa-kernel -&gt; Properties -&gt; Java Build Path -&gt; Source -&gt; Add Folders<ul>
 <li>add target/generated-sources/javacc</li>
 </ul>
 </li>
 <li>openjpa-jdbc -&gt; Properties -&gt; Java Build Path -&gt; Libraries -&gt; JRE System
-Library -&gt; Edit
-<ul>
+Library -&gt; Edit<ul>
 <li>change this to a Java 6 JRE to remove these errors (see below if you
 can not use Java SE 6)</li>
 </ul>
 </li>
 <li>openjpa-persistence -&gt; Properties -&gt; Java Build Path -&gt; Libraries -&gt; JRE
-System Library -&gt; Edit
-<ul>
+System Library -&gt; Edit<ul>
 <li>change this to a Java 6 JRE to remove these errors (see below if you
 can not use Java SE 6)</li>
 </ul>
 </li>
 <li>openjpa-persistence-jdbc -&gt; Properties -&gt; Java Build Path -&gt; Libraries
--&gt; JRE System Library -&gt; Edit
-<ul>
+-&gt; JRE System Library -&gt; Edit<ul>
 <li>change this to a Java 6 JRE to remove these errors (see below if you
 can not use Java SE 6)</li>
 </ul>
 </li>
 <li>openjpa-examples.  Open up src/main/java and select ReverseMapping
-folder.  Right mouse click.
-<ul>
+folder.  Right mouse click.<ul>
 <li>Select Build Path -&gt; Exclude</li>
 </ul>
 </li>
@@ -612,20 +591,14 @@ folder.  Right mouse click.
 exclude some Java SE 6 specific classes by performing the following steps
 for the source:</p>
 <ol>
-<li>
-<p>Open the Properties for BR20-openjpa-persistence (or whatever your naming
-convention is)</p>
-</li>
-<li>
-<p>Select Java Build Path --&gt; Source</p>
-</li>
-<li>
-<p>Edit the openjpa-persistence/src/main/java --&gt; Excluded setting to
-include the following:</p>
-<pre><code> org/apache/openjpa/persistence/meta/AnnotationProcessor6.java
- org/apache/openjpa/persistence/meta/CompileTimeLogger.java
- org/apache/openjpa/persistence/meta/SourceAnnotationHandler.java
-</code></pre>
+<li>Open the Properties for BR20-openjpa-persistence (or whatever your naming
+convention is)</li>
+<li>Select Java Build Path --&gt; Source</li>
+<li>Edit the openjpa-persistence/src/main/java --&gt; Excluded setting to
+include the following:<div class="highlight"><pre><span></span><code>org/apache/openjpa/persistence/meta/AnnotationProcessor6.java
+org/apache/openjpa/persistence/meta/CompileTimeLogger.java
+org/apache/openjpa/persistence/meta/SourceAnnotationHandler.java
+</code></pre></div>
 </li>
 </ol>
 <p><a name="Building-Common2.xBuildProblems"></a></p>
@@ -636,123 +609,179 @@ include the following:</p>
 This was done to force people to use the proper logging facilities. If there is an honest reason that
 you need to have System.out/err.print in your code, you can use the following comments to turn the
 checkstyle scanner off, then back on again.</p>
-<pre><code>// START - ALLOW PRINT STATEMENTS
-System.err.println("This needs to be here!");
-// STOP - ALLOW PRINT STATEMENTS
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// START - ALLOW PRINT STATEMENTS</span>
+<span class="n">System</span><span class="p">.</span><span class="n">err</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"This needs to be here!"</span><span class="p">);</span>
+<span class="c1">// STOP - ALLOW PRINT STATEMENTS</span>
+</code></pre></div>
 <p><a name="Building-WrongMavenLevel"></a></p>
 <h3 id="wrong-maven-level">Wrong Maven Level<a class="headerlink" href="#wrong-maven-level" title="Permalink">&para;</a></h3>
 <p>Example Maven output -</p>
-<pre><code>[INFO] [enforcer:enforce {execution: default}]
-[WARNING] Rule 0: org.apache.maven.plugins.enforcer.RequireMavenVersion failed with message:
-Detected Maven Version: 2.0.10 is not in the allowed range [2.2.1,).
-[INFO] ------------------------------------------------------------------------
-[ERROR] BUILD ERROR
-[INFO] ------------------------------------------------------------------------
-[INFO] Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed.
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="k">[</span><span class="c">enforcer:enforce {execution: default}</span><span class="k">]</span>
+<span class="k">[</span><span class="c">WARNING</span><span class="k">]</span><span class="c"> Rule 0: org</span><span class="nt">.</span><span class="c">apache</span><span class="nt">.</span><span class="c">maven</span><span class="nt">.</span><span class="c">plugins</span><span class="nt">.</span><span class="c">enforcer</span><span class="nt">.</span><span class="c">RequireMavenVersion failed with message:</span>
+<span class="c">Detected Maven Version: 2</span><span class="nt">.</span><span class="c">0</span><span class="nt">.</span><span class="c">10 is not in the allowed range </span><span class="k">[</span><span class="c">2</span><span class="nt">.</span><span class="c">2</span><span class="nt">.</span><span class="c">1</span><span class="nt">,</span><span class="c">)</span><span class="nt">.</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="nb">------------------------------------------------------------------------</span>
+<span class="k">[</span><span class="c">ERROR</span><span class="k">]</span><span class="c"> BUILD ERROR</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="nb">------------------------------------------------------------------------</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Some Enforcer rules have failed</span><span class="nt">.</span><span class="c"> Look above for specific messages explaining why the rule failed</span><span class="nt">.</span>
+</code></pre></div>
 <p>Solution - Upgrade to Maven 2.2.1 or later</p>
 <p><a name="Building-WrongJavaLevel"></a></p>
 <h3 id="wrong-java-level">Wrong Java Level<a class="headerlink" href="#wrong-java-level" title="Permalink">&para;</a></h3>
 <p>Example Maven output -</p>
-<pre><code>[INFO] [enforcer:enforce {execution: default}]
-[WARNING] Rule 1: org.apache.maven.plugins.enforcer.RequireJavaVersion failed with message:
-Detected JDK Version: 1.5.0-19 is not in the allowed range [1.6,).
-[INFO] ------------------------------------------------------------------------
-[ERROR] BUILD ERROR
-[INFO] ------------------------------------------------------------------------
-[INFO] Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed.
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="k">[</span><span class="c">enforcer:enforce {execution: default}</span><span class="k">]</span>
+<span class="k">[</span><span class="c">WARNING</span><span class="k">]</span><span class="c"> Rule 1: org</span><span class="nt">.</span><span class="c">apache</span><span class="nt">.</span><span class="c">maven</span><span class="nt">.</span><span class="c">plugins</span><span class="nt">.</span><span class="c">enforcer</span><span class="nt">.</span><span class="c">RequireJavaVersion failed with message:</span>
+<span class="c">Detected JDK Version: 1</span><span class="nt">.</span><span class="c">5</span><span class="nt">.</span><span class="c">0</span><span class="nb">-</span><span class="c">19 is not in the allowed range </span><span class="k">[</span><span class="c">1</span><span class="nt">.</span><span class="c">6</span><span class="nt">,</span><span class="c">)</span><span class="nt">.</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="nb">------------------------------------------------------------------------</span>
+<span class="k">[</span><span class="c">ERROR</span><span class="k">]</span><span class="c"> BUILD ERROR</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="nb">------------------------------------------------------------------------</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Some Enforcer rules have failed</span><span class="nt">.</span><span class="c"> Look above for specific messages explaining why the rule failed</span><span class="nt">.</span>
+</code></pre></div>
 <p>Solution - Upgrade to latest Sun JDK 1.6.0 or IBM 6 SDK</p>
 <p>Note - OpenJDK and Java SE 7 are not supported at this time.</p>
 <p><a name="Building-MissingLicenseHeaders"></a></p>
 <h3 id="missing-license-headers">Missing License Headers<a class="headerlink" href="#missing-license-headers" title="Permalink">&para;</a></h3>
 <p>Example Maven output -</p>
-<pre><code>. . .
-[INFO] ------------------------------------------------------------------------
-[INFO] Building OpenJPA Parent POM
-[INFO]    task-segment: [clean, install]
-[INFO] ------------------------------------------------------------------------
-. . .
-[INFO] [enforcer:enforce {execution: default}]
-[INFO] [source:test-jar {execution: attach-sources}]
-[INFO] [ianal:verify-legal-files {execution: default}]
-[INFO] [apache-rat:check {execution: default}]
-[INFO] Exclude: **/javax.persistence.spi.PersistenceProvider
-[INFO] Exclude: **/javax.annotation.processing.Processor
-[INFO] Exclude: **/*.rsrc
-[INFO] Exclude: **/org.apache.openjpa.revision.properties
-[INFO] Exclude: scripts/*.list
-[INFO] Exclude: scripts/*.options
-[INFO] Exclude: scripts/*.dict
-[INFO] Exclude: **/.*/**
-[INFO] Exclude: **/target/**/*
-[INFO] Exclude: **/dependency-reduced-pom.xml
-[INFO] Exclude: **/*.log
-[INFO] Exclude: **/maven-eclipse.xml
-[INFO] Exclude: **/rat.txt
-[INFO] Exclude: **/internal-repository/**
-[INFO] ------------------------------------------------------------------------
-[ERROR] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Too many unapproved licenses: 1
-[INFO] ------------------------------------------------------------------------
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">.</span><span class="c"> </span><span class="nt">.</span><span class="c"> </span><span class="nt">.</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="nb">------------------------------------------------------------------------</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Building OpenJPA Parent POM</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c">    task</span><span class="nb">-</span><span class="c">segment: </span><span class="k">[</span><span class="c">clean</span><span class="nt">,</span><span class="c"> install</span><span class="k">]</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="nb">------------------------------------------------------------------------</span>
+<span class="nt">.</span><span class="c"> </span><span class="nt">.</span><span class="c"> </span><span class="nt">.</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="k">[</span><span class="c">enforcer:enforce {execution: default}</span><span class="k">]</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="k">[</span><span class="c">source:test</span><span class="nb">-</span><span class="c">jar {execution: attach</span><span class="nb">-</span><span class="c">sources}</span><span class="k">]</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="k">[</span><span class="c">ianal:verify</span><span class="nb">-</span><span class="c">legal</span><span class="nb">-</span><span class="c">files {execution: default}</span><span class="k">]</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="k">[</span><span class="c">apache</span><span class="nb">-</span><span class="c">rat:check {execution: default}</span><span class="k">]</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: **/javax</span><span class="nt">.</span><span class="c">persistence</span><span class="nt">.</span><span class="c">spi</span><span class="nt">.</span><span class="c">PersistenceProvider</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: **/javax</span><span class="nt">.</span><span class="c">annotation</span><span class="nt">.</span><span class="c">processing</span><span class="nt">.</span><span class="c">Processor</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: **/*</span><span class="nt">.</span><span class="c">rsrc</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: **/org</span><span class="nt">.</span><span class="c">apache</span><span class="nt">.</span><span class="c">openjpa</span><span class="nt">.</span><span class="c">revision</span><span class="nt">.</span><span class="c">properties</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: scripts/*</span><span class="nt">.</span><span class="c">list</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: scripts/*</span><span class="nt">.</span><span class="c">options</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: scripts/*</span><span class="nt">.</span><span class="c">dict</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: **/</span><span class="nt">.</span><span class="c">*/**</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: **/target/**/*</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: **/dependency</span><span class="nb">-</span><span class="c">reduced</span><span class="nb">-</span><span class="c">pom</span><span class="nt">.</span><span class="c">xml</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: **/*</span><span class="nt">.</span><span class="c">log</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: **/maven</span><span class="nb">-</span><span class="c">eclipse</span><span class="nt">.</span><span class="c">xml</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: **/rat</span><span class="nt">.</span><span class="c">txt</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Exclude: **/internal</span><span class="nb">-</span><span class="c">repository/**</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="nb">------------------------------------------------------------------------</span>
+<span class="k">[</span><span class="c">ERROR</span><span class="k">]</span><span class="c"> BUILD FAILURE</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="nb">------------------------------------------------------------------------</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> Too many unapproved licenses: 1</span>
+<span class="k">[</span><span class="c">INFO</span><span class="k">]</span><span class="c"> </span><span class="nb">------------------------------------------------------------------------</span>
+</code></pre></div>
 <p>For the module that failed to build (which in the case above is the root
 pom.xml) open the target/rat.txt file and search for any "????"
 occurrences, like -</p>
-<pre><code>. . .
-*****************************************************
-  Files with Apache License headers will be marked AL
-  Binary files (which do not require AL headers) will be marked B
-  Compressed archives will be marked A
-  Notices, licenses etc will be marked N
-  N	LICENSE.txt
-  N	NOTICE.txt
-  AL	openjpa/pom.xml
-  AL	openjpa/src/main/appended-resources/META-INF/LICENSE.vm
-  AL	openjpa/src/main/appended-resources/META-INF/NOTICE.vm
- !????? OPENJPA-1621.patch
-. . .
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">. . .</span>
+<span class="n">*****************************************************</span>
+<span class="n">  Files with Apache License headers will be marked AL</span>
+<span class="n">  Binary files (which do not require AL headers) will be marked B</span>
+<span class="n">  Compressed archives will be marked A</span>
+<span class="n">  Notices, licenses etc will be marked N</span>
+<span class="n">  N LICENSE.txt</span>
+<span class="n">  N NOTICE.txt</span>
+<span class="n">  AL    openjpa/pom.xml</span>
+<span class="n">  AL    openjpa/src/main/appended-resources/META-INF/LICENSE.vm</span>
+<span class="n">  AL    openjpa/src/main/appended-resources/META-INF/NOTICE.vm</span>
+<span class="n"> !????? OPENJPA-1621.patch</span>
+<span class="n">. . .</span>
+</code></pre></div>
 <p>Solution - either add the missing Apache License v2.0 license header, remove the file
 from your local working directory (if it is a temporary file that should
 not be added to svn), or ask on the dev@openjpa list if the file can be
 added to the exclude list for the apache-rat checks.</p>
+        </article>
 
-                                            </div>
-                                        </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="bottom_red_bar"></div>
-                            </div>
-                        </div>
-                    </div>
+        <nav class="bd-pagination" aria-label="Page navigation">
+            <a href="building-and-running-openbooks.html" class="bd-page-card prev">
+                <span class="bd-page-label"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Previous</span>
+                <span class="bd-page-title">Building and Running OpenBooks</span>
+            </a>
+            <a href="coding-standards.html" class="bd-page-card next text-end">
+                <span class="bd-page-label">Next<i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></span>
+                <span class="bd-page-title">Coding Standards</span>
+            </a>
+        </nav>
+    </main>
+
+    <aside class="bd-toc" aria-label="Table of contents">
+        <div class="bd-toc-title">
+            <i class="bi bi-list-ul me-2" aria-hidden="true"></i>
+            <span>On This Page</span>
+        </div>
+        <div class="toc-content">
+            <div id="toc"><ul><li><a class="toc-href" href="#contents" title="Contents">Contents</a></li><li><a class="toc-href" href="#building-openjpa" title="Building OpenJPA">Building OpenJPA</a><ul><li><a class="toc-href" href="#maven" title="Maven">Maven</a><ul><li><a class="toc-href" href="#command-line-builds" title="Command Line Builds">Command Line Builds</a></li><li><a class="toc-href" href="#executing-various-maven-build-tasks" title="Executing various Maven build tasks">Executing various Maven build tasks</a></li></ul></li><li><a class="toc-href" href="#eclipse-with-command-line-maven-utilities" title="Eclipse with Command-line Maven utilities">Eclipse with Command-line Maven utilities</a></li><li><a class="toc-href" href="#eclipse-with-m2eclipse-plugin" title="Eclipse with M2Eclipse plugin">Eclipse with M2Eclipse plugin</a></li><li><a class="toc-href" href="#common-2x-build-problems" title="Common 2.x Build Problems">Common 2.x Build Problems</a><ul><li><a class="toc-href" href="#checkstyle-failure-due-to-systemoutprint-or-systemerrprint" title="Checkstyle failure due to System.out.print or System.err.print">Checkstyle failure due to System.out.print or System.err.print</a></li><li><a class="toc-href" href="#wrong-maven-level" title="Wrong Maven Level">Wrong Maven Level</a></li><li><a class="toc-href" href="#wrong-java-level" title="Wrong Java Level">Wrong Java Level</a></li><li><a class="toc-href" href="#missing-license-headers" title="Missing License Headers">Missing License Headers</a></li></ul></li></ul></li></ul></div>
+        </div>
+    </aside>
+</div>
+    </div>
+
+    <!-- Footer (ASF mandated links preserved) -->
+    <footer class="site-footer mt-5">
+        <div class="container-xxl">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <a href="https://www.apache.org/">
+                        <img src="https://www.apache.org/img/asf_logo.png" alt="Apache Software Foundation"
+                             style="max-height:2.5rem;width:auto;">
+                    </a>
                 </div>
-                <div class="black_box">
-                    <div class="footer">
-                        <div class="footer_l">
-                            <div class="footer_r">
-                                <div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-6 col-md-2">
+                    <h5>Community</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="https://community.apache.org/">Get Involved</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://github.com/apache/openjpa">GitHub</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://issues.apache.org/jira/browse/OPENJPA">Issue Tracker</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Download</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="downloads.html">Binary Distributions</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://archive.apache.org/dist/openjpa/">Source Distributions</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://archive.apache.org/dist/openjpa/KEYS">KEYS</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="license.html">License</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/marks/">Trademarks</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/security/">Security</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+                        <li class="mb-1"><a class="footer-link" href="https://www.apache.org/events/current-event.html">Apache Events</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="design_attribution">
-                Copyright &copy; 2006,2026 The Apache Software Foundation. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br />
-                Apache OpenJPA, OpenJPA, Apache, the Apache logo, and the Apache OpenJPA project logo are either
-                registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.<br />
-                <br />
-                <a href="https://www.apache.org/">Foundation</a> |
-                <a href="https://www.apache.org/events/current-event.html">Events</a> |
-                <a href="https://www.apache.org/licenses/">License</a> |
-                <a href="https://www.apache.org/security/">Security</a> |
-                <a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
-                <a href="https://www.apache.org/foundation/thanks.html">Thanks</a> |
-                <a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a>
+            <hr class="footer-hr">
+            <div class="row footer-legal">
+                <div class="col-12">
+                    <p class="mb-1">
+                        Copyright &copy; 2026 The Apache Software Foundation, Licensed under the
+                        <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+                    </p>
+                    <p class="mb-0 text-muted small">
+                        Apache, the Apache feather logo, and Apache OpenJPA are trademarks or registered trademarks of
+                        The Apache Software Foundation in the United States and/or other countries.
+                    </p>
+                </div>
             </div>
-    </body>
+        </div>
+    </footer>
+
+    <!-- Local, SRI-protected scripts -->
+    <script src="theme/js/bootstrap.bundle.min.js" crossorigin="anonymous"
+            integrity=""></script>
+    <script src="theme/js/highlight/highlight.js" defer></script>
+    <script src="theme/js/doc-enhancements.js" defer></script>
+</body>
 </html>
