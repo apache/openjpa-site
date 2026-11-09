@@ -143,6 +143,23 @@ Both workflows build the site and copy `output/` into the `output/` directory of
 Each target branch has its own `.asf.yaml` (`publish:` resp. `staging:`); the blocks in `main`'s
 `.asf.yaml` have no effect there.
 
+### Deploying a staged version
+
+Use the staging site to show a change (or a snapshot of the current state) before it goes live:
+
+1. Push your branch to `apache/openjpa-site` (the workflow cannot publish from a fork). The branch must
+   contain `.github/workflows/publish-staging.yml`, so base it on a current `main`.
+2. Open *Actions* → *Publish staging website* → *Run workflow*, select your branch and run it.
+3. After a minute or two the result is at https://openjpa.staged.apache.org/.
+
+The staging site always shows the last published branch; running the workflow on `main` resets it.
+
+### Deploying the live site
+
+Merge the pull request into `main`. The `deploy` job of `build.yml` publishes the result to `asf-site`,
+and https://openjpa.apache.org/ is updated a few minutes later. To publish again without a change,
+run *Build and Deploy Apache OpenJPA Documentation* on `main` from the *Actions* tab.
+
 ## Apache Compliance
 
 All resources are either:
