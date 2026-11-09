@@ -6,12 +6,18 @@ pelican:
   whoami: main
 
 staging:
-  whoami: asf-site
-  autostage: preview/*
+  profile: ~
+  whoami:  asf-staging
 
 publish:
   whoami: asf-site
+
 github:
+  description: "Source for the Apache OpenJPA web site"
+  homepage: https://openjpa.apache.org/
+  labels:
+    - website
+    - pelican
   rulesets:
     - name: "Default Branch Protection"
       type: branch
@@ -25,9 +31,4 @@ github:
         - root
       restrict_deletion: true
       restrict_force_push: true
-  labels:
-    - infra
-  topics:
-    - website
-    - pelican
-    - markdown
+  del_branch_on_merge: true
