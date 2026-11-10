@@ -77,7 +77,7 @@ OpenJPA uses Java serialization in these places:
 - Receiving remote commit events in the TCP remote commit provider (see [Remote Commit Providers](#remote-commit-providers)).
 - Reading the inner broker state of an `EntityManager` that the application deserializes. The outer stream belongs to the application.
 
-On these paths OpenJPA checks class descriptors against a configurable list before the class is loaded. Accepted classes are initialized when they are resolved. The list is controlled by two JVM system properties, read once when the class is initialized:
+On these paths OpenJPA checks class descriptors, and from 4.2.0 also the interface names of dynamic proxies, against a configurable list before the class is loaded. Accepted classes are initialized when they are resolved. The list is controlled by two JVM system properties, read once when the class is initialized:
 
 - `openjpa.serialization.class.blacklist`: comma-separated class name prefixes to reject, or `*` to reject everything that is not whitelisted. The default contains three prefixes: `org.codehaus.groovy.runtime.`, `org.apache.commons.collections4.functors.` and `org.apache.xalan`. Most published gadget chains are not covered by it.
 - `openjpa.serialization.class.whitelist`: comma-separated class name prefixes that are always accepted. It is empty by default.
@@ -95,21 +95,23 @@ This check is defence in depth, not a security boundary. A default deny list can
 
 ## Remote Commit Providers
 
-OpenJPA can notify other JVMs about committed changes so that they evict stale entries from their L2 data and query caches. This is off by default: `openjpa.RemoteCommitProvider` has no default value. Any party that can send events to a node can affect the cache contents of that node, and the events are delivered to any `RemoteCommitListener` the application has registered. Received events are not written to the database. Every party that can send events must therefore be trusted.
+OpenJPA can notify other JVMs about committed changes so that they evict stale entries from their L2 data and query caches. This is off by default: `openjpa.RemoteCommitProvider` has no default value. Any party that can send events to a node can affect the cache contents of that node, and the events are delivered to any `RemoteCommitListener` the application has registered. Received events are not written to the database. From 4.2.0, the type names in a received event are only resolved to persistent types of the persistence unit, and other names are ignored. A named class that is not yet known may be loaded through the persistence unit's class loader to find out whether it is persistent, but it is only initialized if it is. Every party that can send events must still be trusted.
 
 ### TCP provider
 
-The TCP provider (`openjpa.RemoteCommitProvider=tcp(...)`) and every provider that extends it, including subclasses of `DynamicTCPRemoteCommitProvider` such as the Kubernetes provider, open a listening socket (port 5636 by default) and exchange events as Java serialized objects. The protocol has **no authentication and no encryption**. Any host that can open a connection to the port is treated as a cluster member, and the sender information in a message is not verified.
+The TCP provider (`openjpa.RemoteCommitProvider=tcp(...)`) and every provider that extends it, including subclasses of `DynamicTCPRemoteCommitProvider` such as the Kubernetes provider, open a listening socket (port 5636 by default) and exchange events as Java serialized objects. The protocol has **no authentication and no encryption**, and the sender information in a message is not verified. In releases before 4.2.0, any host that can open a connection to the port is treated as a cluster member.
+
+From 4.2.0, the listener only accepts connections from the hosts configured in `Addresses` and from the local host, unless `RestrictToPeers` is set to `false`. The Kubernetes provider sets it to `false` by default, because pods that are not ready yet already send events but are not listed as peers. This check compares IP addresses only. It is not authentication: hosts behind the same NAT gateway or on the same machine as a peer share its address, and peer host names are resolved when the addresses are set.
 
 The TCP provider is meant only for a network that can be reached by the members of the cluster and nothing else. Deployers must:
 
-- Restrict access to the port with a firewall, security group or Kubernetes NetworkPolicy so that only cluster members can connect.
+- Restrict access to the port with a firewall, security group or Kubernetes NetworkPolicy so that only cluster members can connect. `RestrictToPeers` does not replace this.
 - Bind the listener to the cluster-facing interface with the `BindAddress` property (available from 4.2.0). Earlier releases listen on all interfaces, so the firewall is the only control there.
 - Configure the deserialization allow list described in [Serialization](#serialization), or a `jdk.serialFilter`.
 - Not route this traffic over networks where it can be read or modified. Events contain entity class names and object ids.
 - With the Kubernetes provider, control who can create pods with the configured label in the namespace, because every such pod becomes a peer and receives all events. Give the service account only the permission to list pods.
 
-The provider does not limit the number of connections, message size or read time. Anyone who can reach the port can therefore consume threads and memory and evict cache entries. This is another reason the port must only be reachable by cluster members.
+From 4.2.0, the number of receiving connections is limited by `MaxReceiveConnections` (100 by default), and accepted connections use TCP keep-alive so that connections from crashed peers are closed eventually. Earlier releases do not limit the number of connections. The provider does not limit message size or read time in any release, and a host that may connect can hold receiving connections open and use up the limit. Anyone who can reach the port can therefore consume threads and memory and evict cache entries. This is another reason the port must only be reachable by cluster members.
 
 Applications that enable the TCP provider are responsible for these restrictions. [CVE-2024-54676](https://www.cve.org/CVERecord?id=CVE-2024-54676) (Apache OpenMeetings) is an example: the application's clustering setup enabled the TCP provider without configuring the class lists.
 
