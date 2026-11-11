@@ -71,6 +71,9 @@ regular bug reports or other general user queries at this address.
 If you need to report a bug that is already a disclosed security
 vulnerability, please use the regular bug reporting process above.
 
+The [Security Model](security-model.html) describes what OpenJPA trusts
+and which reports we treat as security vulnerabilities.
+
 Questions about:
 
 * how to securely configure OpenJPA
