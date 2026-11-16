@@ -20,7 +20,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Apache OpenJPA - Release Management</title>
-    <meta name="description" content="If you are looking for JPA Specification Development, check this page instead. Apache Nexus Release Process (1.2.x-2.x) Release Setup Release Artifact Locations Publishing Serp to Maven Central Repository Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps) OpenJPA Release Policy Releasing OpenJPA 1.2 …">
+    <meta name="description" content="If you are looking for JPA Specification Development, check this page instead. How to release OpenJPA, including staging, voting and publishing through Apache Trusted Releases (ATR), is described in RELEASING.md in the OpenJPA repository. Version numbering and compatibility rules are in the OpenJPA Release Policy. The pages that described …">
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -164,27 +164,15 @@
             <p><a name="ReleaseManagement-ReleaseManagement"></a></p>
 
 <p>If you are looking for JPA Specification Development, check this <a href="jpa-specification-development.html">page</a> instead.</p>
-<ul>
-<li><a href="apache-nexus-release-process-_1.2.x-2.1.x_.html" title="Apache Nexus Release Process (1.2.x-2.x)">Apache Nexus Release Process (1.2.x-2.x)</a>
-<ul>
-<li><a href="release-setup.html" title="Release Setup">Release Setup</a></li>
-<li><a href="release-artifact-locations.html" title="Release Artifact Locations">Release Artifact Locations</a></li>
-</ul></li>
-<li><a href="publishing-serp-to-maven-central-repository.html" title="Publishing Serp to Maven Central Repository">Publishing Serp to Maven Central Repository</a></li>
-<li><a href="releasing-openjpa-1.0.x-or-1.1.x-_old-scp-steps_.html" title="Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)">Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</a>
-<ul><li><a href="openjpa-release-policy.html" title="OpenJPA Release Policy">OpenJPA Release Policy</a></li>
-</ul></li>
-<li><a href="releasing-openjpa-1.2.x-_old-scp-steps_.html" title="Releasing OpenJPA 1.2.x (Old SCP Steps)">Releasing OpenJPA 1.2.x (Old SCP Steps)</a>
-<ul>
-<li><a href="recovering-from-a-vetoed-release.html" title="Recovering from a vetoed release">Recovering from a vetoed release</a></li>
-<li><a href="running-openjpa-examples.html" title="Running OpenJPA Examples">Running OpenJPA Examples</a></li>
-<li><a href="update-release-text-files.html" title="Update release text files">Update release text files</a></li>
-<li><a href="verifying-release-signatures.html" title="Verifying release signatures">Verifying release signatures</a></li>
-</ul></li>
-</ul>
+<p>How to release OpenJPA, including staging, voting and publishing through
+<a href="https://releases.apache.org/">Apache Trusted Releases (ATR)</a>, is described in
+<a href="https://github.com/apache/openjpa/blob/master/RELEASING.md">RELEASING.md</a> in the OpenJPA repository. Version numbering and compatibility
+rules are in the <a href="openjpa-release-policy.html">OpenJPA Release Policy</a>.</p>
+<p>The pages that described the release process of earlier versions (Nexus process for
+1.2.x-2.x, SCP steps for 1.0.x-1.2.x) are superseded by RELEASING.md.</p>
 <p><a name="ReleaseManagement-WhereshouldIputmyfix?"></a></p>
 <h2 id="where-should-i-put-my-fix">Where should I put my fix?<a class="headerlink" href="#where-should-i-put-my-fix" title="Permalink">&para;</a></h2>
-<p>Fixes should be targeted and committed on trunk first. Any other open
+<p>Fixes should be targeted and committed on master first. Any other open
 releases are fair game, but may require approval from a release manager.</p>
 <p><a name="ReleaseManagement-RegardingReleaseManagers"></a></p>
 <h2 id="regarding-release-managers">Regarding Release Managers<a class="headerlink" href="#regarding-release-managers" title="Permalink">&para;</a></h2>
@@ -206,28 +194,11 @@ releases are fair game, but may require approval from a release manager.</p>
 <li>Issues may not apply to every release, so the previous guideline may not
 always apply.</li>
 </ul>
-<p><a name="ReleaseManagement-ReleaseManagersforactivebranches."></a></p>
-<h2 id="release-managers-for-active-branches">Release Managers for active branches.<a class="headerlink" href="#release-managers-for-active-branches" title="Permalink">&para;</a></h2>
-<p>The current release managers for the active branches of OpenJPA are :</p>
-<table class="table table-striped">
-<tr><th> branch </th><th> internal release number </th><th> release manager(s)</th><th> Contact
-Release Manager before committing </th></tr>
-<tr><td class="border"> 0.9.7-r547073 </td><td class="border"> </td><td class="border"> Srinivasa Segu </td><td class="border"> Yes </td></tr>
-<tr><td class="border"> 1.0.x </td><td class="border"> 1.0.5-SNAPSHOT </td><td class="border"> Heath Thomann, Donald Woods </td><td class="border"> Yes </td></tr>
-<tr><td class="border"> 1.1.x </td><td class="border"> 1.1.1-SNAPSHOT </td><td class="border"> Patrick Linskey, Abe White </td><td class="border"> Yes </td></tr>
-<tr><td class="border"> 1.2.x </td><td class="border"> 1.2.3-SNAPSHOT </td><td class="border"> Heath Thomann, Donald Woods </td><td class="border">  Yes </td></tr>
-<tr><td class="border"> 1.3.x </td><td class="border"> 1.3.0-SNAPSHOT </td><td class="border"> N/A (*) </td><td class="border"> No </td></tr>
-<tr><td class="border"> 2.0.x </td><td class="border"> 2.0.2-SNAPSHOT </td><td class="border"> Donald Woods, Heath Thomann </td><td class="border"> Yes </td></tr>
-<tr><td class="border"> 2.1.x </td><td class="border"> 2.1.1-SNAPSHOT </td><td class="border"> Heath Thomann </td><td class="border"> Yes </td></tr>
-<tr><td class="border"> 2.2.x </td><td class="border"> 2.2.2-SNAPSHOT </td><td class="border"> Heath Thomann, Albert Lee </td><td class="border"> Yes </td></tr>
-<tr><td class="border"> 2.2.1.x </td><td class="border"> 2.2.1.1-SNAPSHOT </td><td class="border"> Heath Thomann, Albert Lee </td><td class="border"> Yes </td></tr>
-<tr><td class="border"> 2.3.x </td><td class="border"> 2.3.0-SNAPSHOT </td><td class="border"> Mark Struberg</td><td class="border"> No </td></tr>
-<tr><td class="border"> 2.4.x </td><td class="border"> 2.4.2-SNAPSHOT </td><td class="border"> Mark Struberg</td><td class="border"> No </td></tr>
-<tr><td class="border"> trunk </td><td class="border"> 3.0.0-SNAPSHOT </td><td class="border"> N/A (*)</td><td class="border"> No </td></tr></table>
-<p><strong>*</strong> There are no formal releases for these branches.</p>
 <p><a name="ReleaseManagement-ContinuousBuilds"></a></p>
 <h2 id="continuous-builds">Continuous Builds<a class="headerlink" href="#continuous-builds" title="Permalink">&para;</a></h2>
-<p>We are using the Apache Hudson server for continuous builds of several releases.  Please checkout the <a href="automated-builds.html">Automated Builds</a> page for more details.</p>
+<p>Every pull request and every push to master is built with GitHub Actions on Derby and H2;
+other databases and the Jakarta Persistence TCK run on a schedule. See the
+<a href="https://github.com/apache/openjpa/actions">workflows</a> of the OpenJPA repository.</p>
         </article>
 
         <nav class="bd-pagination" aria-label="Page navigation">
@@ -248,7 +219,7 @@ Release Manager before committing </th></tr>
             <span>On This Page</span>
         </div>
         <div class="toc-content">
-            <div id="toc"><ul><li><a class="toc-href" href="#where-should-i-put-my-fix" title="Where should I put my fix?">Where should I put my fix?</a></li><li><a class="toc-href" href="#regarding-release-managers" title="Regarding Release Managers">Regarding Release Managers</a></li><li><a class="toc-href" href="#some-general-guidelines-for-release-managers" title="Some general guidelines for release managers">Some general guidelines for release managers</a></li><li><a class="toc-href" href="#release-managers-for-active-branches" title="Release Managers for active branches.">Release Managers for active branches.</a></li><li><a class="toc-href" href="#continuous-builds" title="Continuous Builds">Continuous Builds</a></li></ul></div>
+            <div id="toc"><ul><li><a class="toc-href" href="#where-should-i-put-my-fix" title="Where should I put my fix?">Where should I put my fix?</a></li><li><a class="toc-href" href="#regarding-release-managers" title="Regarding Release Managers">Regarding Release Managers</a></li><li><a class="toc-href" href="#some-general-guidelines-for-release-managers" title="Some general guidelines for release managers">Some general guidelines for release managers</a></li><li><a class="toc-href" href="#continuous-builds" title="Continuous Builds">Continuous Builds</a></li></ul></div>
         </div>
     </aside>
 </div>

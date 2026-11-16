@@ -20,7 +20,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Apache OpenJPA - Update release text files</title>
-    <meta name="description" content="Updating release text files. Obtaining the list of resolved issues from JIRA. ¶ Go to the main JIRA releases page at http://issues.apache.org/jira/browse/OPENJPA?report=com.sourcelabs.jira.plugin.portlet.releases:releases-projecttab Under Unreleased find the version you're about to release and click on "Release Notes". Keep …">
+    <meta name="description" content="This page described the release process of earlier OpenJPA versions and is no longer maintained. It covered updating the text files shipped with a release. The current release process is described in RELEASING.md in the OpenJPA repository. For downloads and how to verify them, see the Downloads page.">
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -161,60 +161,10 @@
         </div>
 
         <article class="page-content">
-            <p><a name="Updatereleasetextfiles-Updatingreleasetextfiles."></a></p>
-<h1 id="updating-release-text-files">Updating release text files.</h1>
-<p><a name="Updatereleasetextfiles-ObtainingthelistofresolvedissuesfromJIRA.&nbsp;"></a></p>
-<h2 id="obtaining-the-list-of-resolved-issues-from-jira">Obtaining the list of resolved issues from JIRA.&nbsp;<a class="headerlink" href="#obtaining-the-list-of-resolved-issues-from-jira" title="Permalink">&para;</a></h2>
-<ol>
-<li>Go to the main JIRA releases page at <a href="http://issues.apache.org/jira/browse/OPENJPA?report=com.sourcelabs.jira.plugin.portlet.releases:releases-projecttab">http://issues.apache.org/jira/browse/OPENJPA?report=com.sourcelabs.jira.plugin.portlet.releases:releases-projecttab</a></li>
-<li>Under Unreleased find the version you're about to release and click on
-"Release Notes".
-Keep this page open since it contains a nice reference point for many of
-the documents you will edit.</li>
-</ol>
-<p><a name="Updatereleasetextfiles-Updatetextfiles"></a></p>
-<h2 id="update-text-files">Update text files<a class="headerlink" href="#update-text-files" title="Permalink">&para;</a></h2>
-<ul>
-<li>openjpa-projects/CHANGES.txt<ul>
-<li>Update the overview paragraph with the new version and a brief description of the release.</li>
-<li>Remove the previous changes section and replace with a url to the location in SVN. <em>This is similar to what HTTPD does in its CHANGES file</em></li>
-<li>Create a new section : OpenJPA x.y.z changes and copy the JIRA issues resolved in this section. You may want to do some minor editing by hand to ensure the file respects the 80 character column width guideline.</li>
-</ul>
-</li>
-<li>
-<p>openjpa-project/RELEASE-NOTES.html</p>
-<ul>
-<li>Similar to CHANGES.txt you need to update the version number and provide a brief description of the release.</li>
-<li>Remove the previous list of changes for the previous release. Replace this with a link to the last release's file in SVN.</li>
-<li>Add a new section. This can be copied from the JIRA page with one exception (see the next step).</li>
-<li>
-<p>Update the links at the top of the file. If you've copied changes from JIRA you'll see a section like this :</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;h2&gt;</span><span class="w"> </span>Bug<span class="w"> </span><span class="nt">&lt;/h2&gt;</span>
-</code></pre></div>
-<p>Replace it with :</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;h4&gt;&lt;a</span><span class="w"> </span><span class="na">name=</span><span class="s">'Bug'</span><span class="nt">&gt;</span>Bug<span class="nt">&lt;/h4&gt;</span>
-</code></pre></div>
-<p>You should also check the links at the top to make sure they are all valid.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>openjpa-project/NOTICE.txt
-NOTICE.txt "usually" does not need to be updated. The exceptions are when a new dependency has been introduced (ie a new version of Serp) or if a new source file containing a copyright notice is introduced.</p>
-</li>
-<li>
-<p>openjpa-project/LICENSE.txt
-Similar to NOTICE.txt this file does not require updating in each release. It should contain the current version of the Apache license, and any other licenses mentioned in NOTICE.txt.</p>
-</li>
-<li>
-<p>openjpa-project/README.txt
-This file rarely needs updating - just make sure the URL is accurate.</p>
-</li>
-<li>
-<p>openjpa-project/BUILDING.txt
-This file rarely needs updating. </p>
-</li>
-</ul>
+            
+<p>This page described the release process of earlier OpenJPA versions and is no longer maintained. It covered updating the text files shipped with a release.</p>
+<p>The current release process is described in <a href="https://github.com/apache/openjpa/blob/master/RELEASING.md#preparation">RELEASING.md</a> in the OpenJPA repository.
+For downloads and how to verify them, see the <a href="downloads.html">Downloads</a> page.</p>
         </article>
 
         <nav class="bd-pagination" aria-label="Page navigation">
@@ -234,9 +184,7 @@ This file rarely needs updating. </p>
             <i class="bi bi-list-ul me-2" aria-hidden="true"></i>
             <span>On This Page</span>
         </div>
-        <div class="toc-content">
-            <div id="toc"><ul><li><a class="toc-href" href="#updating-release-text-files" title="Updating release text files.">Updating release text files.</a><ul><li><a class="toc-href" href="#obtaining-the-list-of-resolved-issues-from-jira" title="Obtaining the list of resolved issues from JIRA.&nbsp;">Obtaining the list of resolved issues from JIRA.&nbsp;</a></li><li><a class="toc-href" href="#update-text-files" title="Update text files">Update text files</a></li></ul></li></ul></div>
-        </div>
+        <p class="text-muted small mb-0">No table of contents available.</p>
     </aside>
 </div>
     </div>

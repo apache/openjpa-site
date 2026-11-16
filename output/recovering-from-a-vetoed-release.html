@@ -20,7 +20,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Apache OpenJPA - Recovering from a vetoed release</title>
-    <meta name="description" content="Recovering from a bad release or a vetoed release¶ Recovering from a bad release actually isn't that difficult. You'll have to delete the bad tag in SVN and rollback the version numbers in all of our pom.xml files. Delete the tag in svn¶ $ svn del https://svn.apache.org …">
+    <meta name="description" content="This page described the release process of earlier OpenJPA versions and is no longer maintained. It covered what to do when a release vote fails. The current release process is described in RELEASING.md in the OpenJPA repository. For downloads and how to verify them, see the Downloads page.">
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -161,19 +161,10 @@
         </div>
 
         <article class="page-content">
-            <p><a name="Recoveringfromavetoedrelease-Recoveringfromabadreleaseoravetoedrelease"></a></p>
-<h2 id="recovering-from-a-bad-release-or-a-vetoed-release">Recovering from a bad release or a vetoed release<a class="headerlink" href="#recovering-from-a-bad-release-or-a-vetoed-release" title="Permalink">&para;</a></h2>
-<p>Recovering from a bad release actually isn't that difficult. You'll have to delete the bad tag in SVN and rollback the version numbers in all of our pom.xml files. </p>
-<p><a name="Recoveringfromavetoedrelease-Deletethetaginsvn"></a></p>
-<h3 id="delete-the-tag-in-svn">Delete the tag in svn<a class="headerlink" href="#delete-the-tag-in-svn" title="Permalink">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>svn<span class="w"> </span>del<span class="w"> </span>https://svn.apache.org/repos/asf/openjpa/tags/1.2.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Rollback release"</span>
-</code></pre></div>
-<h3 id="rollback-version-numbers">Rollback version numbers<a class="headerlink" href="#rollback-version-numbers" title="Permalink">&para;</a></h3>
-<p>If you have perl installed you can do this in a single command for example to rollback from 1.2.1-SNAPSHOT to 1.2.0-SNAPSHOT</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>perl<span class="w"> </span>-pi<span class="w"> </span>-e<span class="w"> </span>"s;<span class="nt">&lt;version&gt;</span>1.2.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>;<span class="nt">&lt;version&gt;</span>1.2.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>;g"<span class="w"> </span>\
-<span class="w">    </span>pom.xml<span class="w"> </span>*/pom.xml<span class="w"> </span>*/*/pom.xml
-</code></pre></div>
-<p>If you do not have perl installed you can use a similar tool to edit multiple files or edit them all by hand.</p>
+            
+<p>This page described the release process of earlier OpenJPA versions and is no longer maintained. It covered what to do when a release vote fails.</p>
+<p>The current release process is described in <a href="https://github.com/apache/openjpa/blob/master/RELEASING.md#if-the-vote-fails">RELEASING.md</a> in the OpenJPA repository.
+For downloads and how to verify them, see the <a href="downloads.html">Downloads</a> page.</p>
         </article>
 
         <nav class="bd-pagination" aria-label="Page navigation">
@@ -193,9 +184,7 @@
             <i class="bi bi-list-ul me-2" aria-hidden="true"></i>
             <span>On This Page</span>
         </div>
-        <div class="toc-content">
-            <div id="toc"><ul><li><a class="toc-href" href="#recovering-from-a-bad-release-or-a-vetoed-release" title="Recovering from a bad release or a vetoed release">Recovering from a bad release or a vetoed release</a><ul><li><a class="toc-href" href="#delete-the-tag-in-svn" title="Delete the tag in svn">Delete the tag in svn</a></li><li><a class="toc-href" href="#rollback-version-numbers" title="Rollback version numbers">Rollback version numbers</a></li></ul></li></ul></div>
-        </div>
+        <p class="text-muted small mb-0">No table of contents available.</p>
     </aside>
 </div>
     </div>

@@ -20,7 +20,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Apache OpenJPA - Release Artifact Locations</title>
-    <meta name="description" content="Release Artifact Locations¶ These mappings locate where the release artifacts are being stored: Content in //people.apache.org/www/openjpa.org is now under Apache's control. This folder used to contain build and documentation contents. After CMS migration, this folder is restricted and become read-only. https://svn.apache.org/repos …">
+    <meta name="description" content="This page described the release process of earlier OpenJPA versions and is no longer maintained. It covered where release artifacts are staged and published. The current release process is described in RELEASING.md in the OpenJPA repository. For downloads and how to verify them, see the Downloads page.">
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -161,69 +161,10 @@
         </div>
 
         <article class="page-content">
-            <p><a name="Release-Artifact-Locations"></a></p>
-<h2 id="release-artifact-locations">Release Artifact Locations<a class="headerlink" href="#release-artifact-locations" title="Permalink">&para;</a></h2>
-<p>These mappings locate where the release artifacts are being stored:</p>
-<table class="info"><tr>
-<td valign="top"><svg alt="" class="size-1 text-info" loading="lazy"><use href="#info-circle-fill"></use></svg>
-<td> Content in //people.apache.org/www/openjpa.org is now under Apache's control. This
-folder used to contain build and documentation contents. After CMS migration, this folder is
-restricted and become read-only.
-</td></td></tr></table>
-<ol>
-<li>
-<p><a href="https://svn.apache.org/repos/asf/openjpa/site/trunk">https://svn.apache.org/repos/asf/openjpa/site/trunk</a></p>
-<p><table>
-<tr><th> Folder </th><th> Descriptions</th></tr>
-<tr><td class="border"> <a href="https://svn.apache.org/repos/asf/openjpa/site/trunk">/</a> </td><td class="border"> Eclipse project home with CMS server start command and build scripts </td></tr>
-<tr><td class="border"> <a href="https://svn.apache.org/repos/asf/openjpa/site/trunk/content">/content</a> </td><td class="border"> OpenJPA home pages (*.mdtext) supported by Apache's Content Management System (CMS)</td></tr>
-<tr><td class="border"> <a href="https://svn.apache.org/repos/asf/openjpa/site/trunk/content/.htaccess">/content/.htacess</a> </td><td class="border"> OpenJPA web pages redirect definitions; use to forward nightly documentation builds to non-svn controlled storage.</td></tr>
-<tr><td class="border"> <a href="https://svn.apache.org/repos/asf/openjpa/site/trunk/content/artifacts">/content/artifacts</a> </td><td class="border"> files for download from pages</td></tr>
-<tr><td class="border"> <a href="https://svn.apache.org/repos/asf/openjpa/site/trunk/content/images">/content/images</a> </td><td class="border">pictures used by .html</td></tr>
-<tr><td class="border"> <a href="https://svn.apache.org/repos/asf/openjpa/site/trunk/templates/standard.html">/templates/standard.html</a> </td><td class="border">overall frame with navigation, header and footer</td></tr>
-</table></p>
-</li>
-<li>
-<p><a href="https://svn.apache.org/repos/infra/websites/production/openjpa/content">https://svn.apache.org/repos/infra/websites/production/openjpa/content</a></p>
-<p><table>
-<tr><th> Folder </th><th> Descriptions</th></tr>
-<tr><td class="border"> <a href="https://svn.apache.org/repos/infra/websites/production/openjpa/content">/</a> </td><td class="border"> *.html pages converted from *.mdtext after commits.</td></tr>
-<tr><td class="border"> <a href="https://svn.apache.org/repos/infra/websites/production/openjpa/content/builds">/builds</a> </td><td class="border"> Manuals, Javadoc and RELEASE-NOTES.html of all the official OpenJPA releases.</td></tr>
-<tr><td class="border"> <a href="https://svn.apache.org/repos/infra/websites/production/openjpa/content/docs">/docs</a> </td><td class="border"> Manuals and Javadoc of incubating OpenJPA releases.</td></tr>
-<tr><td class="border"> <a href="https://svn.apache.org/repos/infra/websites/production/openjpa/content/mail">/mail</a> </td><td class="border"> Mail archives.</td></tr>
-</table></p>
-</li>
-<li>
-<p><a href="https://openjpa.apache.org">//people.apache.org/www/openjpa.apache.org/content</a></p>
-<p><table>
-<tr><th> Folder </th><th> Descriptions</th></tr>
-<tr><td class="border"> <a href="https://openjpa.apache.org">/</a> </td><td class="border"> Published contents from <a href="https://svn.apache.org/repos/infra/websites/production/openjpa/content">https://svn.apache.org/repos/infra/websites/production/openjpa/content</a></td></tr>
-<tr><td class="border"> <a href="https://openjpa.apache.org/builds">/builds</a>, <a href="https://openjpa.apache.org/docs">/docs</a> and <a href="https://openjpa.apache.org/mail">/mail</a> </td><td class="border"> Published contents from https://svn.apache.org/repos/infra/websites/production/openjpa/content/[builds|docs|mail]</td></tr>
-</table></p>
-</li>
-<li>
-<p><a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa">https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa</a></p>
-<p><table>
-<tr><th> Folder </th><th> Descriptions</th></tr>
-<tr><td class="border"> <a href="https://repository.apache.org/snapshots/org/apache/openjpa/apache-openjpa">/**-SNAPSHOT</a> </td><td class="border"> Nightly build binary and source contents from <a href="https://builds.apache.org/">Jenkin</a></td></tr>
-<tr><td class="border"> OPENJPA.*</td><td class="border"> <a href="https://builds.apache.org/">Jenkin</a> OpenJPA build jobs</td></tr>
-</table></p>
-</li>
-<li>
-<p><a href="http://www.apache.org/dist/openjpa">//people.apache.org/www/www.apache.org/dist/openjpa</a></p>
-<p><table>
-<tr><th> Folder </th><th> Descriptions</th></tr>
-<tr><td class="border"> <a href="http://www.apache.org/dist/openjpa">/**</a> </td><td class="border"> Current distribution content.</td></tr>
-</table></p>
-</li>
-<li>
-<p><a href="https://archive.apache.org/dist/openjpa">//people.apache.org/www/archive.apache.org/dist/openjpa</a></p>
-<p><table>
-<tr><th> Folder </th><th> Descriptions</th></tr>
-<tr><td class="border"> <a href="https://archive.apache.org/dist/openjpa">/**</a> </td><td class="border"> Archive contents from //people.apache.org/www/www.apache.org/dist/openjpa; read only.</td></tr>
-</table></p>
-</li>
-</ol>
+            
+<p>This page described the release process of earlier OpenJPA versions and is no longer maintained. It covered where release artifacts are staged and published.</p>
+<p>The current release process is described in <a href="https://github.com/apache/openjpa/blob/master/RELEASING.md">RELEASING.md</a> in the OpenJPA repository.
+For downloads and how to verify them, see the <a href="downloads.html">Downloads</a> page.</p>
         </article>
 
         <nav class="bd-pagination" aria-label="Page navigation">

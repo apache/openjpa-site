@@ -20,7 +20,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Apache OpenJPA - Verifying release signatures</title>
-    <meta name="description" content="On unix platforms the following command can be executed : for file in `find . -type f -iname '*.asc'` do gpg --verify ${file} done You'll need to look at the output contains only good signaturesie : gpg: Good signature from "Michael Dick (CODE SIGNING KEY) <mikedd@apache.org>" gpg: Signature made Tue 12 …">
+    <meta name="description" content="This page described the release process of earlier OpenJPA versions and is no longer maintained. It covered verifying the signatures and checksums of a release. The current release process is described in RELEASING.md in the OpenJPA repository. For downloads and how to verify them, see the Downloads page.">
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -161,21 +161,10 @@
         </div>
 
         <article class="page-content">
-            <p>On unix platforms the following command can be executed : </p>
-<div class="highlight"><pre><span></span><code>for<span class="w"> </span>file<span class="w"> </span>in<span class="w"> </span>`find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-iname<span class="w"> </span>'*.asc'`
-do
-<span class="w">    </span>gpg<span class="w"> </span>--verify<span class="w"> </span><span class="cp">${</span><span class="n">file</span><span class="cp">}</span><span class="w"> </span>
-done
-</code></pre></div>
-<p>You'll need to look at the output contains only good signaturesie :</p>
-<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="nl">gpg</span><span class="p">:</span><span class="w"> </span><span class="n">Good</span><span class="w"> </span><span class="n">signature</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="ss">"Michael Dick (CODE SIGNING KEY) &lt;mikedd@apache.org&gt;"</span>
-<span class="w">        </span><span class="nl">gpg</span><span class="p">:</span><span class="w"> </span><span class="n">Signature</span><span class="w"> </span><span class="n">made</span><span class="w"> </span><span class="n">Tue</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="n">Jan</span><span class="w"> </span><span class="mi">2010</span><span class="w"> </span><span class="mi">05</span><span class="err">:</span><span class="mi">30</span><span class="err">:</span><span class="mi">17</span><span class="w"> </span><span class="n">PM</span><span class="w"> </span><span class="n">CST</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">RSA</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="mi">7412</span><span class="n">AD2C</span>
-<span class="w">        </span><span class="nl">gpg</span><span class="p">:</span><span class="w"> </span><span class="n">Good</span><span class="w"> </span><span class="n">signature</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="ss">"Michael Dick (CODE SIGNING KEY) &lt;mikedd@apache.org&gt;"</span>
-<span class="w">        </span><span class="nl">gpg</span><span class="p">:</span><span class="w"> </span><span class="n">Signature</span><span class="w"> </span><span class="n">made</span><span class="w"> </span><span class="n">Tue</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="n">Jan</span><span class="w"> </span><span class="mi">2010</span><span class="w"> </span><span class="mi">05</span><span class="err">:</span><span class="mi">30</span><span class="err">:</span><span class="mi">18</span><span class="w"> </span><span class="n">PM</span><span class="w"> </span><span class="n">CST</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">RSA</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="mi">7412</span><span class="n">AD2C</span>
-<span class="w">        </span><span class="nl">gpg</span><span class="p">:</span><span class="w"> </span><span class="n">Good</span><span class="w"> </span><span class="n">signature</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="ss">"Michael Dick (CODE SIGNING KEY) &lt;mikedd@apache.org&gt;"</span>
-<span class="w">        </span><span class="nl">gpg</span><span class="p">:</span><span class="w"> </span><span class="n">Signature</span><span class="w"> </span><span class="n">made</span><span class="w"> </span><span class="n">Tue</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="n">Jan</span><span class="w"> </span><span class="mi">2010</span><span class="w"> </span><span class="mi">05</span><span class="err">:</span><span class="mi">30</span><span class="err">:</span><span class="mi">17</span><span class="w"> </span><span class="n">PM</span><span class="w"> </span><span class="n">CST</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">RSA</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="mi">7412</span><span class="n">AD2C</span>
-<span class="w">        </span><span class="nl">gpg</span><span class="p">:</span><span class="w"> </span><span class="n">Good</span><span class="w"> </span><span class="n">signature</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="ss">"Michael Dick (CODE SIGNING KEY) &lt;mikedd@apache.org&gt;"</span>
-</code></pre></div>
+            
+<p>This page described the release process of earlier OpenJPA versions and is no longer maintained. It covered verifying the signatures and checksums of a release.</p>
+<p>The current release process is described in <a href="https://github.com/apache/openjpa/blob/master/RELEASING.md#verifying-a-release-candidate">RELEASING.md</a> in the OpenJPA repository.
+For downloads and how to verify them, see the <a href="downloads.html">Downloads</a> page.</p>
         </article>
 
         <nav class="bd-pagination" aria-label="Page navigation">
