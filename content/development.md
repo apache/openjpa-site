@@ -63,22 +63,10 @@ Title: Development
 </UL></LI>
 <LI><A href="release-management.html" title="Release Management">Release Management</A>
 <UL>
-<LI><A href="apache-nexus-release-process-_1.2.x-2.1.x_.html" title="Apache Nexus Release Process (1.2.x-present)">Apache Nexus Release Process (1.2.x-present)</A>
-<UL>
-<LI><A href="release-setup.html" title="Release Setup">Release Setup</A></LI>
-</UL></LI>
-<LI><A href="publishing-serp-to-maven-central-repository.html" title="Publishing Serp to Maven Central Repository">Publishing Serp to Maven Central Repository</A></LI>
-<LI><A href="releasing-openjpa-1.0.x-or-1.1.x-_old-scp-steps_.html" title="Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)">Releasing OpenJPA 1.0.x or 1.1.x (Old SCP Steps)</A> &mdash; <SPAN class="smalltext">Instructions for creating an official OpenJPA release</SPAN>
-<UL>
+<LI><A href="https://github.com/apache/openjpa/blob/master/RELEASING.md" title="RELEASING.md">RELEASING.md</A> &mdash; <SPAN class="smalltext">How to release OpenJPA (with ATR)</SPAN></LI>
 <LI><A href="openjpa-release-policy.html" title="OpenJPA Release Policy">OpenJPA Release Policy</A></LI>
-</UL></LI>
-<LI><A href="releasing-openjpa-1.2.x-_old-scp-steps_.html" title="Releasing OpenJPA 1.2.x (Old SCP Steps)">Releasing OpenJPA 1.2.x (Old SCP Steps)</A> &mdash; <SPAN class="smalltext">Instructions for creating an official OpenJPA release</SPAN>
-<UL>
-<LI><A href="recovering-from-a-vetoed-release.html" title="Recovering from a vetoed release">Recovering from a vetoed release</A></LI>
+<LI><A href="publishing-serp-to-maven-central-repository.html" title="Publishing Serp to Maven Central Repository">Publishing Serp to Maven Central Repository</A></LI>
 <LI><A href="running-openjpa-examples.html" title="Running OpenJPA Examples">Running OpenJPA Examples</A></LI>
-<LI><A href="update-release-text-files.html" title="Update release text files">Update release text files</A> &mdash; <SPAN class="smalltext">Instructions for updating .text files shipped with OpenJPA</SPAN></LI>
-<LI><A href="verifying-release-signatures.html" title="Verifying release signatures">Verifying release signatures</A></LI>
-</UL></LI>
 </UL></LI>
 <LI><A href="samples.html" title="Samples">Samples</A> &mdash; <SPAN class="smalltext">OpenJPA Examples</SPAN>
 <UL>
