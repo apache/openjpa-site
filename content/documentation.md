@@ -55,6 +55,19 @@ The tables below link to those generated documents.
 </table>
 
 
+## OpenJPA 4.2.x releases
+
+<table class="table table-striped">
+<tr><th>Version</th><th> HTML Manual</th><th> HTML Manual (Single Page)</th><th>PDF Manual</th><th>Javadocs</th><th>Release Notes</th></tr>
+<tr><td class="border"> OpenJPA 4.2.0
+ </td><td class="border"> <a href="/builds/4.2.0/apache-openjpa/docs/main.html">manual</a>
+ </td><td class="border"> <a href="/builds/4.2.0/apache-openjpa/docs/manual.html">manual</a>
+ </td><td class="border"> <a href="/builds/4.2.0/apache-openjpa/docs/manual.pdf">manual</a>
+ </td><td class="border"> <a href="/builds/4.2.0/apidocs/index.html">javadoc</a>
+ </td><td class="border"><A href="/builds/4.2.0/apache-openjpa/RELEASE-NOTES.html">Release Notes</A>
+</td></tr>
+</table>
+
 ## OpenJPA 4.1.x releases
 
 <table class="table table-striped">

@@ -20,7 +20,7 @@ Released binaries can also by accessed from Maven Central Repositories adding th
 
 If you wish to use a STAGING version, you must point your pom.xml
 to the repository at <https://repository.apache.org/content/groups/staging/>. 
-An example pom.xml that will use the 4.2.1 release is as follows:
+An example pom.xml that will use the 4.2.0 release is as follows:
 
 
     <?xml version="1.0" encoding="UTF-8"?>
@@ -41,7 +41,7 @@ An example pom.xml that will use the 4.2.1 release is as follows:
     	<dependency>
     	    <groupId>org.apache.openjpa</groupId>
     	    <artifactId>openjpa-all</artifactId>
-    	    <version>4.2.1</version>
+    	    <version>4.2.0</version>
     	</dependency>
         </dependencies>
     </project>
@@ -56,7 +56,7 @@ as follows:
 ----
 > **Update Version**
 >
->In the example below replace 4.1.1-SNAPSHOT with the version you wish to
+>In the example below replace 4.3.0-SNAPSHOT with the version you wish to
 use. Ex. 4.2.0
 ----
 
@@ -78,7 +78,7 @@ use. Ex. 4.2.0
     	<dependency>
     	    <groupId>org.apache.openjpa</groupId>
     	    <artifactId>openjpa-all</artifactId>
-    	    <version>4.2.1-SNAPSHOT</version>
+    	    <version>4.3.0-SNAPSHOT</version>
     	</dependency>
         </dependencies>
     </project>

@@ -105,6 +105,18 @@ frameworks, such as Tomcat and Spring.
     <article class="card news-card">
         <div class="card-body">
             <div class="news-head">
+                <span class="news-date"><time datetime="2026-11-20">Nov 20, 2026</time></span>
+                <h5 class="card-title"><a class="blogHeading" href="openjpa-4.2.x.html">OpenJPA 4.2.0 Released!</a></h5>
+            </div>
+            <p class="card-text">The Apache OpenJPA community is proud to announce the release of OpenJPA 4.2.0, which implements Jakarta Persistence 3.2. It passes the Jakarta Persistence 3.2 TCK on PostgreSQL, MySQL, MariaDB, Microsoft SQL Server, Oracle and Apache Derby (<a href="tck-results-4.2.0.html">TCK results</a>).</p>
+            <footer class="blockquote-footer">
+                by <a href="https://home.apache.org/phonebook.html?uid=rzo1" rel="author">Richard Zowalla</a>
+            </footer>
+        </div>
+    </article>
+    <article class="card news-card">
+        <div class="card-body">
+            <div class="news-head">
                 <span class="news-date"><time datetime="2025-05-15">May 15, 2025</time></span>
                 <h5 class="card-title"><a class="blogHeading" href="openjpa-4.1.x.html">OpenJPA 4.1.1 Released!</a></h5>
             </div>

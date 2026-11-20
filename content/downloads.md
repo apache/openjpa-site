@@ -16,6 +16,37 @@ For information on obtaining OpenJPA binaries, see the [Obtaining](obtaining.htm
  page. For information on building OpenJPA from source, see the [Building](building.html)
  page.
 
+## Official OpenJPA 4.2 Releases
+
+### 4.2.x Releases
+
+<table class="table table-striped">
+<tr><th> </th><th> Download </th><th> Release Date </th><th> Checksum </th><th> Signatures </th></tr>
+<tr><td class="border"> OpenJPA 4.2.0 Binary </td>
+    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.2.0/apache-openjpa-4.2.0-binary.zip">apache-openjpa-4.2.0-binary.zip</a></td>
+    <td class="border"> Nov 20 2026 </td>
+    <td class="border"> <a href="https://downloads.apache.org/openjpa/4.2.0/apache-openjpa-4.2.0-binary.zip.sha512">sha512</a></td>
+    <td class="border"> <a href="https://downloads.apache.org/openjpa/4.2.0/apache-openjpa-4.2.0-binary.zip.asc">PGP</a></td>
+</tr>
+<tr><td class="border"> OpenJPA 4.2.0 Source </td>
+    <td class="border"> <a href="https://www.apache.org/dyn/closer.lua/openjpa/4.2.0/openjpa-parent-4.2.0-source-release.zip">openjpa-parent-4.2.0-source-release.zip</a></td>
+    <td class="border"> Nov 20 2026 </td>
+    <td class="border"> <a href="https://downloads.apache.org/openjpa/4.2.0/openjpa-parent-4.2.0-source-release.zip.sha512">sha512</a></td>
+    <td class="border"> <a href="https://downloads.apache.org/openjpa/4.2.0/openjpa-parent-4.2.0-source-release.zip.asc">PGP</a></td>
+</tr>
+<tr><td class="border"> OpenJPA 4.2.0 Release Notes </td>
+    <td class="border"> <a href="https://openjpa.apache.org/builds/4.2.0/apache-openjpa/RELEASE-NOTES.html">RELEASE-NOTES.html</a></td>
+    <td class="border"> Nov 20 2026 </td>
+    <td class="border"> </td><td class="border"> </td>
+</tr>
+<tr><td class="border"> OpenJPA 4.2.0 TCK Results </td>
+    <td class="border"> <a href="tck-results-4.2.0.html">Jakarta Persistence 3.2 TCK</a></td>
+    <td class="border"> Nov 20 2026 </td>
+    <td class="border"> </td><td class="border"> </td>
+</tr>
+</table>
+
+
 ## Official OpenJPA 4.1 Releases
 
 ### 4.1.x Releases
