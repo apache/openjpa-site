@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_langref_string_fun" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+<ul class="sectlevel3">
+<li><a href="jpa_query_api.html">2.10.1. JPQL API</a>
+</li>
+<li><a href="jpa_langref.html">2.10.2. JPQL Language Reference</a>
+<ul class="sectlevel4">
+<li><a href="jpa_langref_stmnttypes.html">JPQL Statement Types</a>
+</li>
+<li><a href="jpa_langref_schematypes.html">JPQL Abstract Schema Types and Query Domains</a>
+</li>
+<li><a href="jpa_langref_fromclause.html">JPQL FROM Clause and Navigational Declarations</a>
+</li>
+<li><a href="jpa_langref_where.html">JPQL WHERE Clause</a>
+</li>
+<li><a href="jpa_langref_cond.html">JPQL Conditional Expressions</a>
+</li>
+<li><a href="jpa_langref_scalar_expressions.html">JPQL Scalar Expressions</a>
+<ul class="sectlevel5">
+<li><a href="jpa_langref_math_expressions.html">Arithmetic Expressions</a>
+</li>
+<li><a href="jpa_langref_functional_expressions.html">String, Arithmetic, and Datetime Functional Expressions</a>
+</li>
+<li><a href="jpa_langref_string_fun.html"><span class="toc-current">JPQL String Functions</span></a>
+</li>
+<li><a href="jpa_langref_arithmetic.html">JPQL Arithmetic Functions</a>
+</li>
+<li><a href="jpa_langref_datetime.html">JPQL Datetime Functions</a>
+</li>
+<li><a href="jpa_langref_typecasts_expressions.html">Typecasts</a>
+</li>
+<li><a href="jpa_langref_case_expressions.html">Case Expressions</a>
+</li>
+<li><a href="jpa_langref_entity_type_expressions.html">Entity Type Expressions</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_langref_group.html">JPQL GROUP BY, HAVING</a>
+</li>
+<li><a href="jpa_langref_select_clause.html">JPQL SELECT Clause</a>
+</li>
+<li><a href="jpa_langref_orderby.html">JPQL ORDER BY Clause</a>
+</li>
+<li><a href="jpa_langref_bulk_ops.html">JPQL Bulk Update and Delete</a>
+</li>
+<li><a href="jpa_langref_null_values.html">JPQL Null Values</a>
+</li>
+<li><a href="jpa_langref_equality.html">JPQL Equality and Comparison Semantics</a>
+</li>
+<li><a href="jpa_langref_bnf.html">JPQL BNF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect5">
+<h6 id="jpa_langref_string_fun"><a class="link" href="#jpa_langref_string_fun">2.10.2.6.3. JPQL String Functions</a></h6>
+<div class="ulist">
+<ul>
+<li>
+<p>functions_returning_strings ::= CONCAT(string_primary, string_primary) | SUBSTRING(string_primary, simple_arithmetic_expression[, simple_arithmetic_expression]) | TRIM([[trim_specification] [trim_character] FROM] string_primary) | LOWER(string_primary) | UPPER(string_primary) |  REPLACE(string_expression, string_expression, string_expression) |  LEFT(string_expression, arithmetic_expression) | RIGHT(string_expression, arithmetic_expression)</p>
+</li>
+<li>
+<p>trim_specification ::= LEADING | TRAILING | BOTH</p>
+</li>
+<li>
+<p>functions_returning_numerics ::= LENGTH(string_primary) | LOCATE(string_primary, string_primary[, simple_arithmetic_expression])</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>CONCAT</code> function returns a string that is a concatenation of its arguments.</p>
+</div>
+<div class="paragraph">
+<p>The second and third arguments of the <code>SUBSTRING</code>  function denote the starting position and length of the substring to be returned.
+These arguments are integers.
+The third argument is optional.
+If it is not specified, the substring from the start position to the end of the string is returned.
+The first position of a string is denoted by 1.
+The <code>SUBSTRING</code> function returns a string.</p>
+</div>
+<div class="paragraph">
+<p>The <code>TRIM</code> function trims the specified character from a string.
+If the character to be trimmed is not specified, it is assumed to be space (or blank). The optional trim_character is a single-character string literal or a character-valued input parameter (i.e., char or Character). If a trim specification is not provided, <code>BOTH</code> is assumed.
+The
+<code>TRIM</code> function returns the trimmed string.</p>
+</div>
+<div class="paragraph">
+<p>The <code>LOWER</code> and <code>UPPER</code> functions convert a string to lower and upper case, respectively.
+They return a string.</p>
+</div>
+<div class="paragraph">
+<p>The <code>LOCATE</code> function returns the position of a given string within a string, starting the search at a specified position.
+It returns the first position at which the string was found as an integer.
+The first argument is the string to be located; the second argument is the string to be searched; the optional third argument is an integer that represents the string position at which the search is started (by default, the beginning of the string to be searched). The first position in a string is denoted by 1.
+If the string is not found, 0 is returned.</p>
+</div>
+<div class="paragraph">
+<p>Note that not all databases support the use of a trim character other than the space character; use of this argument may result in queries that are not portable.
+Note that not all databases support the use of the third argument to <code>LOCATE</code>; use of this argument may result in queries that are not portable.</p>
+</div>
+<div class="paragraph">
+<p>The <code>LENGTH</code>  function returns the length of the string in characters as an integer.</p>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_langref_functional_expressions.html">String, Arithmetic, and Datetime Functional Expressions</a> | ↑ Up: <a href="jpa_langref_scalar_expressions.html">JPQL Scalar Expressions</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_langref_arithmetic.html">JPQL Arithmetic Functions</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

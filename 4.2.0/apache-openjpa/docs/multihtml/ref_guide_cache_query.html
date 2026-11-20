@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_cache_query" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_cache.html">3.11.1. Data Cache</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_cache_conf.html">Data Cache Configuration</a>
+</li>
+<li><a href="ref_guide_cache_use.html">Data Cache Usage</a>
+</li>
+<li><a href="ref_guide_cache_statistics.html">Cache Statistics</a>
+</li>
+<li><a href="ref_guide_cache_query.html"><span class="toc-current">Query Cache</span></a>
+</li>
+<li><a href="ref_guide_cache_extension.html">Cache Extension</a>
+</li>
+<li><a href="ref_guide_cache_notes.html">Important Notes</a>
+</li>
+<li><a href="datastore_cache_issues.html">Known Issues and Limitations</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_cache_querycomp.html">3.11.2. Query Compilation Cache</a>
+</li>
+<li><a href="ref_guide_cache_querysql.html">3.11.3. Prepared SQL Cache</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="ref_guide_cache_query"><a class="link" href="#ref_guide_cache_query">3.11.1.4. Query Cache</a></h5>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>In addition to the data cache, the <code>org.apache.openjpa.datacache</code>  package defines service provider interfaces for a query cache.
+The query cache is disabled by default and needs to be enabled separately from the data cache.
+The query cache stores the object ids returned by query executions.
+When you run a query, OpenJPA assembles a key based on the query properties and the parameters used at execution time, and checks for a cached query result.
+If one is found, the object ids in the cached result are looked up, and the resultant persistence-capable objects are returned.
+Otherwise, the query is executed against the database, and the object ids loaded by the query are put into the cache.
+The object id list is not cached until the list returned at query execution time is fully traversed.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA exposes a high-level interface to the query cache through the <a href="../../apidocs/org/apache/openjpa/persistence/QueryResultCache.html">
+org.apache.openjpa.persistence.QueryResultCache</a> class.
+You can access this class through the <code class="class">OpenJPAEntityManagerFactory</code>.</p>
+</div>
+<div id="ref_guide_cache_queryaccess" class="exampleblock">
+<div class="title">Example 152. Accessing the QueryResultCache</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">org.apache.openjpa.persistence.*</span><span class="o">;</span>
+
+<span class="o">...</span>
+
+<span class="nc">OpenJPAEntityManagerFactory</span> <span class="n">oemf</span> <span class="o">=</span> <span class="nc">OpenJPAPersistence</span><span class="o">.</span><span class="na">cast</span><span class="o">(</span><span class="n">emf</span><span class="o">);</span>
+<span class="nc">QueryResultCache</span> <span class="n">qcache</span> <span class="o">=</span> <span class="n">oemf</span><span class="o">.</span><span class="na">getQueryResultCache</span><span class="o">();</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The default query cache implementation caches 100 query executions in a least-recently-used cache.
+This can be changed by setting the cache size in the <code>CacheSize</code> plugin property.
+Like the data cache, the query cache also has a backing soft reference map.
+The <code>SoftReferenceSize</code>  property controls the size of this map.
+It is disabled by default.</p>
+</div>
+<div id="ref_guide_cache_cachesize" class="exampleblock">
+<div class="title">Example 153. Query Cache Size</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.QueryCache"</span> <span class="na">value=</span><span class="s">"true(CacheSize=1000, SoftReferenceSize=100)"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>To disable the query cache (default), set the <code>openjpa.QueryCache</code>  property to <code>false</code>:</p>
+</div>
+<div id="ref_guide_cache_disablequery" class="exampleblock">
+<div class="title">Example 154. Disabling the Query Cache</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.QueryCache"</span> <span class="na">value=</span><span class="s">"false"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Query Cache&#8217;s default behaviour on eviction is to evict all the queries from the cache if any of the entities that are in the access path of the query are modified.
+Scanning through the whole query cache to evict the queries upon an entity update slows down the entity update action.
+The configurable eviction policy "timestamp" is to track the timestamp of the query and the timestamp of last update for each entity class and compare the timestamps when retrieving the query for reuse.
+If the timestamp of the query result is older than the last update time of any entity in the access path of the query, the query result would not be reused and the query result would be evicted from the query cache.
+To configure the <code>EvictPolicy</code> to timestamp, here is an example:</p>
+</div>
+<div id="ref_guide_cache_evictionPolicy" class="exampleblock">
+<div class="title">Example 155. Query Cache Eviction Policy</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.QueryCache"</span> <span class="na">value=</span><span class="s">"true(EvictPolicy='timestamp')"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>There are certain situations in which the query cache is bypassed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Caching is not used for in-memory queries (queries in which the candidates are a collection instead of a class or <code class="class">Extent</code>).</p>
+</li>
+<li>
+<p>Caching is not used in transactions that have <code>IgnoreChanges</code> set to <code>false</code> and in which modifications to classes in the query&#8217;s access path have occurred. If none of the classes in the access path have been touched, then cached results are still valid and are used.</p>
+</li>
+<li>
+<p>Caching is not used in pessimistic transactions, since OpenJPA must go to the database to lock the appropriate rows.</p>
+</li>
+<li>
+<p>Caching is not used when the data cache does not have any cached data for an id in a query result.</p>
+</li>
+<li>
+<p>Queries that use persistence-capable objects as parameters are only cached if the parameter is directly compared to field, as in:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">select</span> <span class="n">e</span> <span class="k">from</span> <span class="n">Employee</span> <span class="n">e</span> <span class="k">where</span> <span class="n">e</span><span class="p">.</span><span class="n">company</span><span class="p">.</span><span class="n">address</span> <span class="o">=</span> <span class="p">:</span><span class="n">addr</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you extract field values from the parameter in your query string, or if the parameter is used in collection element comparisons, the query is not cached.
+* Queries that result in projections of custom field types or <code class="class">BigDecimal</code> or <code class="class">BigInteger</code> fields are not cached.</p>
+</div>
+<div class="paragraph">
+<p>Cache results are removed from the cache when instances of classes in a cached query&#8217;s access path are touched.
+That is, if a query accesses data in class <code class="class">A</code>, and instances of class <code class="class">A</code> are modified, deleted, or inserted, then the cached query result is dropped from the cache.</p>
+</div>
+<div class="paragraph">
+<p>It is possible to tell the query cache that a class has been altered.
+This is only necessary when the changes occur via direct modification of the database outside of OpenJPA&#8217;s control.
+You can also evict individual queries, or clear the entire cache.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">evict</span><span class="o">(</span><span class="nc">Query</span> <span class="n">q</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">evictAll</span><span class="o">(</span><span class="nc">Class</span> <span class="n">cls</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">evictAll</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For JPA queries with parameters, set the desired parameter values into the <a href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/query">
+Query</a> instance before calling the above methods.</p>
+</div>
+<div id="ref_guide_cache_query_classchange" class="exampleblock">
+<div class="title">Example 156. Evicting Queries</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">org.apache.openjpa.persistence.*</span><span class="o">;</span>
+
+<span class="o">...</span>
+
+<span class="nc">OpenJPAEntityManagerFactory</span> <span class="n">oemf</span> <span class="o">=</span> <span class="nc">OpenJPAPersistence</span><span class="o">.</span><span class="na">cast</span><span class="o">(</span><span class="n">emf</span><span class="o">);</span>
+<span class="nc">QueryResultCache</span> <span class="n">qcache</span> <span class="o">=</span> <span class="n">oemf</span><span class="o">.</span><span class="na">getQueryResultCache</span><span class="o">();</span>
+
+<span class="c1">// evict all queries that can be affected by changes to Magazines</span>
+<span class="n">qcache</span><span class="o">.</span><span class="na">evictAll</span><span class="o">(</span><span class="nc">Magazine</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+<span class="c1">// evict an individual query with parameters</span>
+<span class="nc">EntityManager</span> <span class="n">em</span> <span class="o">=</span> <span class="n">emf</span><span class="o">.</span><span class="na">createEntityManager</span><span class="o">();</span>
+<span class="nc">Query</span> <span class="n">q</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(...).</span>
+    <span class="n">setParameter</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">paramVal0</span><span class="o">).</span>
+    <span class="n">setParameter</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">paramVal1</span><span class="o">);</span>
+<span class="n">qcache</span><span class="o">.</span><span class="na">evict</span><span class="o">(</span><span class="n">q</span><span class="o">);</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>When using one of OpenJPA&#8217;s distributed cache implementations, it is necessary to perform this in every JVM - the change notification is not propagated automatically.
+When using a third-party coherent caching solution, it is not necessary to do this in every JVM (although it won&#8217;t hurt to do so), as the cache results are stored directly in the coherent cache.</p>
+</div>
+<div class="paragraph">
+<p>Queries can also be pinned and unpinned through the <code class="class">QueryResultCache</code>.
+The semantics of these operations are the same as pinning and unpinning data from the data cache.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">pin</span><span class="o">(</span><span class="nc">Query</span> <span class="n">q</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">unpin</span><span class="o">(</span><span class="nc">Query</span> <span class="n">q</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For JPA queries with parameters, set the desired parameter values into the <a href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/query">
+Query</a> instance before calling the above methods.</p>
+</div>
+<div class="paragraph">
+<p>The following example shows these APIs in action.</p>
+</div>
+<div id="ref_guide_cache_query_pin" class="exampleblock">
+<div class="title">Example 157. Pinning, and Unpinning Query Results</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">org.apache.openjpa.persistence.*</span><span class="o">;</span>
+
+<span class="o">...</span>
+
+<span class="nc">OpenJPAEntityManagerFactory</span> <span class="n">oemf</span> <span class="o">=</span> <span class="nc">OpenJPAPersistence</span><span class="o">.</span><span class="na">cast</span><span class="o">(</span><span class="n">emf</span><span class="o">);</span>
+<span class="nc">QueryResultCache</span> <span class="n">qcache</span> <span class="o">=</span> <span class="n">oemf</span><span class="o">.</span><span class="na">getQueryResultCache</span><span class="o">();</span>
+<span class="nc">EntityManager</span> <span class="n">em</span> <span class="o">=</span> <span class="n">emf</span><span class="o">.</span><span class="na">createEntityManager</span><span class="o">();</span>
+
+<span class="nc">Query</span> <span class="n">pinQuery</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(...).</span>
+    <span class="n">setParameter</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">paramVal0</span><span class="o">).</span>
+    <span class="n">setParameter</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">paramVal1</span><span class="o">);</span>
+<span class="n">qcache</span><span class="o">.</span><span class="na">pin</span><span class="o">(</span><span class="n">pinQuery</span><span class="o">);</span>
+<span class="nc">Query</span> <span class="n">unpinQuery</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(...).</span>
+    <span class="n">setParameter</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">paramVal0</span><span class="o">).</span>
+    <span class="n">setParameter</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">paramVal1</span><span class="o">);</span>
+<span class="n">qcache</span><span class="o">.</span><span class="na">unpin</span><span class="o">(</span><span class="n">unpinQuery</span><span class="o">);</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Pinning data into the cache instructs the cache to not expire the pinned results when cache flushing occurs.
+However, pinned results will be removed from the cache if an event occurs that invalidates the results.</p>
+</div>
+<div class="paragraph">
+<p>You can disable caching on a per-<code class="class">EntityManager</code> or per-<code class="class">Query</code> basis:</p>
+</div>
+<div id="ref_guide_cache_query_disable" class="exampleblock">
+<div class="title">Example 158. Disabling and Enabling Query Caching</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">org.apache.openjpa.persistence.*</span><span class="o">;</span>
+
+<span class="o">...</span>
+
+<span class="c1">// temporarily disable query caching for all queries created from em</span>
+<span class="nc">OpenJPAEntityManager</span> <span class="n">oem</span> <span class="o">=</span> <span class="nc">OpenJPAPersistence</span><span class="o">.</span><span class="na">cast</span><span class="o">(</span><span class="n">em</span><span class="o">);</span>
+<span class="n">oem</span><span class="o">.</span><span class="na">getFetchPlan</span><span class="o">().</span><span class="na">setQueryResultCacheEnabled</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+
+<span class="c1">// re-enable caching for a particular query</span>
+<span class="nc">OpenJPAQuery</span> <span class="n">oq</span> <span class="o">=</span> <span class="n">oem</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(...);</span>
+<span class="n">oq</span><span class="o">.</span><span class="na">getFetchPlan</span><span class="o">().</span><span class="na">setQueryResultCacheEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_cache_statistics.html">Cache Statistics</a> | ↑ Up: <a href="ref_guide_cache.html">Data Cache</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_cache_extension.html">Cache Extension</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

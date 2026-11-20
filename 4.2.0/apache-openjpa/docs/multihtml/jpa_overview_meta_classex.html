@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_meta_classex" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+<ul class="sectlevel3">
+<li><a href="jpa_overview_meta_class.html">2.5.1. Class Metadata</a>
+<ul class="sectlevel4">
+<li><a href="jpa_overview_meta_entity.html">Entity</a>
+</li>
+<li><a href="jpa_overview_meta_idclass.html">Id Class</a>
+</li>
+<li><a href="jpa_overview_meta_embeddablesuper.html">Mapped Superclass</a>
+</li>
+<li><a href="jpa_overview_meta_embeddable.html">Embeddable</a>
+</li>
+<li><a href="jpa_overview_meta_entity_listeners.html">EntityListeners</a>
+</li>
+<li><a href="jpa_overview_meta_classex.html"><span class="toc-current">Example</span></a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_meta_field.html">2.5.2. Field and Property Metadata</a>
+</li>
+<li><a href="jpa_overview_meta_xml.html">2.5.3. XML Schema</a>
+</li>
+<li><a href="jpa_overview_meta_complete.html">2.5.4. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_overview_meta_classex"><a class="link" href="#jpa_overview_meta_classex">2.5.1.6. Example</a></h5>
+<div class="paragraph">
+<p>Here are the class declarations for our persistent object model, annotated with the appropriate persistence metadata.
+Note that <code class="class">Magazine</code> declares an identity class, and that <code class="class">Document</code> and <code class="class">Address</code> are a mapped superclass and an embeddable class, respectively. <code class="class">LifetimeSubscription</code> and <code class="class">TrialSubscription</code> override the default entity name to supply a shorter alias for use in queries.</p>
+</div>
+<div id="jpa_overview_meta_classlisting" class="exampleblock">
+<div class="title">Example 5. Class Metadata</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">org.mag</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@IdClass</span><span class="o">(</span><span class="nc">Magazine</span><span class="o">.</span><span class="na">MagazineId</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Magazine</span> <span class="o">{</span>
+    <span class="o">...</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">MagazineId</span> <span class="o">{</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Article</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+
+<span class="kn">package</span> <span class="nn">org.mag.pub</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Company</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Author</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="nd">@Embeddable</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Address</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+
+<span class="kn">package</span> <span class="nn">org.mag.subscribe</span><span class="o">;</span>
+
+<span class="nd">@MappedSuperclass</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Document</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Contract</span>
+    <span class="kd">extends</span> <span class="nc">Document</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Subscription</span> <span class="o">{</span>
+    <span class="o">...</span>
+
+    <span class="nd">@Entity</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">LineItem</span>
+        <span class="kd">extends</span> <span class="nc">Contract</span> <span class="o">{</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Lifetime"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LifetimeSubscription</span>
+    <span class="kd">extends</span> <span class="nc">Subscription</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Trial"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TrialSubscription</span>
+    <span class="kd">extends</span> <span class="nc">Subscription</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The equivalent declarations in XML:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;entity-mappings</span> <span class="na">xmlns=</span><span class="s">"http://java.sun.com/xml/ns/persistence/orm"</span>
+    <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">"http://java.sun.com/xml/ns/persistence/orm orm_1_0.xsd"</span>
+    <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapped-superclass</span> <span class="na">class=</span><span class="s">"org.mag.subscribe.Document"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/mapped-superclass&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.Magazine"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;id-class</span> <span class="na">class=</span><span class="s">"org.mag.Magazine$MagazineId"</span><span class="nt">/&gt;</span>
+        ...
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.Article"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.pub.Company"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.pub.Author"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.subscribe.Contract"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.subscribe.LineItem"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.subscribe.LifetimeSubscription"</span> <span class="na">name=</span><span class="s">"Lifetime"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.subscribe.TrialSubscription"</span> <span class="na">name=</span><span class="s">"Trial"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;embeddable</span> <span class="na">class=</span><span class="s">"org.mag.pub.Address"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/embeddable&gt;</span>
+<span class="nt">&lt;/entity-mappings&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_overview_meta_entity_listeners.html">EntityListeners</a> | ↑ Up: <a href="jpa_overview_meta_class.html">Class Metadata</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_meta_field.html">Field and Property Metadata</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

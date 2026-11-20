@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_enterprise_trans" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_deploy_factory.html">3.9.1. Factory Deployment</a>
+</li>
+<li><a href="ref_guide_enterprise_trans.html"><span class="toc-current">3.9.2. Integrating with the Transaction Manager</span></a>
+</li>
+<li><a href="ref_guide_enterprise_xa.html">3.9.3. XA Transactions</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_enterprise_trans"><a class="link" href="#ref_guide_enterprise_trans">3.9.2. Integrating with the Transaction Manager</a></h4>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA <code class="class">EntityManager</code>s have the ability to automatically synchronize their transactions with an external transaction manager.
+Whether or not <code class="class">EntityManager</code>s from a given <code class="class">EntityManagerFactory</code> exhibit this behavior by default depends on the transaction type you set for the factory&#8217;s persistence unit in your <em class="path">persistence.xml</em> file.
+OpenJPA uses the given transaction type internally to set the <a href="openjpa.TransactionMode.html"><code>openjpa.TransactionMode</code> </a> configuration property.
+This property accepts the following modes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>local</code>: Perform transaction operations locally.</p>
+</li>
+<li>
+<p><code>managed</code>: Integrate with the application server&#8217;s managed global transactions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can override the global transaction mode setting when you obtain an <code class="class">EntityManager</code> using the <a href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/entitymanagerfactory">
+EntityManagerFactory</a>'s <code class="method">createEntityManager(Map props)</code> method.
+Simply set the <code>openjpa.TransactionMode</code> key of the given <code class="class">Map</code> to the desired value.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can also override the <code>openjpa.ConnectionUserName</code>, <code>openjpa.ConnectionPassword</code>, and
+<code>openjpa.ConnectionRetainMode</code> settings using the given <code class="class">Map</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p> In order to use global transactions, OpenJPA must be able to access the application server&#8217;s <code class="class">javax.transaction.TransactionManager</code>.
+OpenJPA can automatically discover the transaction manager for most major application servers.
+Occasionally, however, you might have to point OpenJPA to the transaction manager for an unrecognized or non-standard application server setup.
+This is accomplished through the <a href="openjpa.ManagedRuntime.html"><code>openjpa.ManagedRuntime</code></a> configuration property.
+This property describes an <a href="../../apidocs/org/apache/openjpa/ee/ManagedRuntime.html">
+org.apache.openjpa.ee.ManagedRuntime</a> implementation to use for transaction manager discovery.
+You can specify your own implementation, or use one of the built-ins:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>auto</code>: This is the default. It is an alias for the <a href="../../apidocs/org/apache/openjpa/ee/AutomaticManagedRuntime.html"> org.apache.openjpa.ee.AutomaticManagedRuntime</a> class. This managed runtime is able to automatically integrate with several common application servers.</p>
+</li>
+<li>
+<p><code>invocation</code>: An alias for the <a href="../../apidocs/org/apache/openjpa/ee/InvocationManagedRuntime.html"> org.apache.openjpa.ee.InvocationManagedRuntime</a> class. You can configure this runtime to invoke any static method in order to obtain the appserver&#8217;s transaction manager.</p>
+</li>
+<li>
+<p><code>jndi</code>: An alias for the <a href="../../apidocs/org/apache/openjpa/ee/JNDIManagedRuntime.html"> org.apache.openjpa.ee.JNDIManagedRuntime</a> class. You can configure this runtime to look up the transaction manager at any JNDI location.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See the Javadoc for of each class for details on the bean properties you can pass to these plugins in your configuration string.</p>
+</div>
+<div id="ref_guide_enterprise_transex" class="exampleblock">
+<div class="title">Example 128. Configuring Transaction Manager Integration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.TransactionMode"</span> <span class="na">value=</span><span class="s">"managed"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.ManagedRuntime"</span> <span class="na">value=</span><span class="s">"jndi(TransactionManagerName=java:/TransactionManager)"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_deploy_inject.html">EntityManager Injection</a> | ↑ Up: <a href="ref_guide_deploy.html">Deployment</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_enterprise_xa.html">XA Transactions</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

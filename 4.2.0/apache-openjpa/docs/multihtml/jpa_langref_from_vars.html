@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_langref_from_vars" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+<ul class="sectlevel3">
+<li><a href="jpa_query_api.html">2.10.1. JPQL API</a>
+</li>
+<li><a href="jpa_langref.html">2.10.2. JPQL Language Reference</a>
+<ul class="sectlevel4">
+<li><a href="jpa_langref_stmnttypes.html">JPQL Statement Types</a>
+</li>
+<li><a href="jpa_langref_schematypes.html">JPQL Abstract Schema Types and Query Domains</a>
+</li>
+<li><a href="jpa_langref_fromclause.html">JPQL FROM Clause and Navigational Declarations</a>
+<ul class="sectlevel5">
+<li><a href="jpa_langref_from_identifiers.html">JPQL FROM Identifiers</a>
+</li>
+<li><a href="jpa_langref_from_vars.html"><span class="toc-current">JPQL Identification Variables</span></a>
+</li>
+<li><a href="jpa_langref_range.html">JPQL Range Declarations</a>
+</li>
+<li><a href="jpa_langref_path.html">JPQL Path Expressions</a>
+</li>
+<li><a href="jpa_langref_Joins.html">JPQL Joins</a>
+</li>
+<li><a href="jpa_langref_inner_joins.html">JPQL Inner Joins (Relationship Joins)</a>
+</li>
+<li><a href="jpa_langref_outer_joins.html">JPQL Outer Joins</a>
+</li>
+<li><a href="jpa_langref_fetch_joins.html">JPQL Fetch Joins</a>
+</li>
+<li><a href="jpa_langref_collection_dec.html">JPQL Collection Member Declarations</a>
+</li>
+<li><a href="jpa_langref_from_clause_and_sql.html">JPQL FROM Clause and SQL</a>
+</li>
+<li><a href="jpa_langref_polymorph.html">JPQL Polymorphism</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_langref_where.html">JPQL WHERE Clause</a>
+</li>
+<li><a href="jpa_langref_cond.html">JPQL Conditional Expressions</a>
+</li>
+<li><a href="jpa_langref_scalar_expressions.html">JPQL Scalar Expressions</a>
+</li>
+<li><a href="jpa_langref_group.html">JPQL GROUP BY, HAVING</a>
+</li>
+<li><a href="jpa_langref_select_clause.html">JPQL SELECT Clause</a>
+</li>
+<li><a href="jpa_langref_orderby.html">JPQL ORDER BY Clause</a>
+</li>
+<li><a href="jpa_langref_bulk_ops.html">JPQL Bulk Update and Delete</a>
+</li>
+<li><a href="jpa_langref_null_values.html">JPQL Null Values</a>
+</li>
+<li><a href="jpa_langref_equality.html">JPQL Equality and Comparison Semantics</a>
+</li>
+<li><a href="jpa_langref_bnf.html">JPQL BNF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect5">
+<h6 id="jpa_langref_from_vars"><a class="link" href="#jpa_langref_from_vars">2.10.2.3.2. JPQL Identification Variables</a></h6>
+<div class="paragraph">
+<p>An identification variable is a valid identifier declared in the <code>FROM</code>  clause of a query.</p>
+</div>
+<div class="paragraph">
+<p>All identification variables must be declared in the <code>FROM</code> clause.
+Identification variables cannot be declared in other clauses.</p>
+</div>
+<div class="paragraph">
+<p>An identification variable must not be a reserved identifier or have the same name as any entity in the same persistence unit.</p>
+</div>
+<div class="paragraph">
+<p>Identification variables are case insensitive.</p>
+</div>
+<div class="paragraph">
+<p>An identification variable evaluates to a value of the type of the expression used in declaring the variable.
+For example, consider the previous query:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">mag</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">mag</span> <span class="k">JOIN</span> <span class="n">mag</span><span class="p">.</span><span class="n">articles</span> <span class="n">art</span> <span class="k">JOIN</span> <span class="n">art</span><span class="p">.</span><span class="n">author</span> <span class="n">auth</span> <span class="k">WHERE</span> <span class="n">auth</span><span class="p">.</span><span class="n">firstName</span> <span class="o">=</span> <span class="s1">'John'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the <code>FROM</code> clause declaration
+<code>mag.articles</code> <code>art</code>, the identification variable <code>art</code> evaluates to any <code>Article</code> value directly reachable from <code>Magazine</code>.
+The association-field <code>articles</code> is a collection of instances of the abstract schema type <code>Article</code> and the identification variable <code>art</code>  refers to an element of this collection.
+The type of <code>auth</code>  is the abstract schema type of <code>Author</code>.</p>
+</div>
+<div class="paragraph">
+<p>An identification variable can range over an entity, embeddable, or basic abstract schema type.
+An identification variable designates an instance of an entity abstract schema type or an element of a collection of entity abstract schema type instances.</p>
+</div>
+<div class="paragraph">
+<p>Note that for identification variables referring to an instance of an association or collection represented as a <code>java.util.Map</code>, the identification variable is of the abstract schema type of the map <code>value</code>.</p>
+</div>
+<div class="paragraph">
+<p>An identification variable always designates a reference to a single value.
+It is declared in one of three ways: in a range variable declaration, in a join clause, or in a collection member declaration.
+The identification variable declarations are evaluated from left to right in the <code>FROM</code> clause, and an identification variable declaration can use the result of a preceding identification variable declaration of the query string.</p>
+</div>
+<div class="paragraph">
+<p>All identification variables used in the <code>SELECT</code>, <code>WHERE</code>, <code>ORDER BY</code>, <code>GROUP BY</code>, or <code>HAVING</code> clause of a <code>SELECT</code> or <code>DELETE</code> statement must be declared in the <code>FROM</code> clause.
+The identification variables used in the <code>WHERE</code> clause of an <code>UPDATE</code> statement must be declared in the <code>UPDATE</code> clause.</p>
+</div>
+<div class="paragraph">
+<p>Identification variables are existentially quantified in these clauses.
+This means that an identification variable represents a member of a collection or an instance of an entity&#8217;s abstract schema type.
+An identification variable never designates a collection in its entirety.</p>
+</div>
+<div class="paragraph">
+<p>An identification variable is scoped to the query (or subquery) in which it is defined and is also visible to any subqueries within that query scope that do not define an identification variable of the same name.</p>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_langref_from_identifiers.html">JPQL FROM Identifiers</a> | ↑ Up: <a href="jpa_langref_fromclause.html">JPQL FROM Clause and Navigational Declarations</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_langref_range.html">JPQL Range Declarations</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

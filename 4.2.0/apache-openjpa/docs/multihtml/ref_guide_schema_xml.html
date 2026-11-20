@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_schema_xml" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_dbsetup_builtin.html">3.5.1. Using the OpenJPA DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_thirdparty.html">3.5.2. Using a Third-Party DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_sqlconn.html">3.5.3. Runtime Access to DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport.html">3.5.4. Database Support</a>
+</li>
+<li><a href="ref_guide_dbsetup_isolation.html">3.5.5. Setting the Transaction Isolation</a>
+</li>
+<li><a href="ref_guide_dbsetup_sql92.html">3.5.6. Setting the SQL Join Syntax</a>
+</li>
+<li><a href="ref_guide_dbsetup_multidb.html">3.5.7. Accessing Multiple Databases</a>
+</li>
+<li><a href="ref_guide_dbsetup_retain.html">3.5.8. Configuring the Use of JDBC Connections</a>
+</li>
+<li><a href="ref_guide_dbsetup_stmtbatch.html">3.5.9. Statement Batching</a>
+</li>
+<li><a href="ref_guide_dbsetup_lrs.html">3.5.10. Large Result Sets</a>
+</li>
+<li><a href="ref_guide_schema_def.html">3.5.11. Default Schema</a>
+</li>
+<li><a href="ref_guide_schema_info.html">3.5.12. Schema Reflection</a>
+</li>
+<li><a href="ref_guide_schema_schematool.html">3.5.13. Schema Tool</a>
+</li>
+<li><a href="ref_guide_schema_xml.html"><span class="toc-current">3.5.14. XML Schema Format</span></a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_schema_xml"><a class="link" href="#ref_guide_schema_xml">3.5.14. XML Schema Format</a></h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>The <a href="ref_guide_schema_schematool.html">schema tool</a> and <a href="ref_guide_schema_info_factory.html">schema factories</a> all use the same XML format to represent database schema.
+The Document Type Definition (DTD) for schema information is presented below, followed by examples of schema definitions in XML.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="cp">&lt;!ELEMENT schemas (schema)+&gt;</span>
+<span class="cp">&lt;!ELEMENT schema (table|sequence)+&gt;</span>
+<span class="cp">&lt;!ATTLIST schema name CDATA #IMPLIED&gt;</span>
+
+<span class="cp">&lt;!ELEMENT sequence EMPTY&gt;</span>
+<span class="cp">&lt;!ATTLIST sequence name CDATA #REQUIRED&gt;</span>
+<span class="cp">&lt;!ATTLIST sequence initial-value CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ATTLIST sequence increment CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ATTLIST sequence allocate CDATA #IMPLIED&gt;</span>
+
+<span class="cp">&lt;!ELEMENT table (column|index|pk|fk|unique)+&gt;</span>
+<span class="cp">&lt;!ATTLIST table name CDATA #REQUIRED&gt;</span>
+
+<span class="cp">&lt;!ELEMENT column EMPTY&gt;</span>
+<span class="cp">&lt;!ATTLIST column name CDATA #REQUIRED&gt;</span>
+<span class="cp">&lt;!ATTLIST column type (array | bigint | binary | bit | blob | char | clob
+    | date | decimal | distinct | double | float | integer | java_object
+    | longvarbinary | longvarchar | null | numeric | other | real | ref
+    | smallint | struct | time | timestamp | tinyint | varbinary | varchar)
+    #REQUIRED&gt;</span>
+<span class="cp">&lt;!ATTLIST column not-null (true|false) "false"&gt;</span>
+<span class="cp">&lt;!ATTLIST column auto-assign (true|false) "false"&gt;</span>
+<span class="cp">&lt;!ATTLIST column default CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ATTLIST column size CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ATTLIST column decimal-digits CDATA #IMPLIED&gt;</span>
+
+<span class="c">&lt;!-- the type-name attribute can be used when you want OpenJPA to   --&gt;</span>
+<span class="c">&lt;!-- use a particular SQL type declaration when creating the     --&gt;</span>
+<span class="c">&lt;!-- column. It is up to you to ensure that this type is         --&gt;</span>
+<span class="c">&lt;!-- compatible with the JDBC type used in the type attribute.   --&gt;</span>
+<span class="cp">&lt;!ATTLIST column type-name CDATA #IMPLIED&gt;</span>
+
+<span class="c">&lt;!-- the 'column' attribute of indexes, pks, and fks can be used --&gt;</span>
+<span class="c">&lt;!-- when the element has only one column (or for foreign keys,  --&gt;</span>
+<span class="c">&lt;!-- only one local column); in these cases the on/join child    --&gt;</span>
+<span class="c">&lt;!-- elements can be omitted                                     --&gt;</span>
+<span class="cp">&lt;!ELEMENT index (on)*&gt;</span>
+<span class="cp">&lt;!ATTLIST index name CDATA #REQUIRED&gt;</span>
+<span class="cp">&lt;!ATTLIST index column CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ATTLIST index unique (true|false) "false"&gt;</span>
+
+<span class="c">&lt;!-- the 'logical' attribute of pks should be set to 'true' if   --&gt;</span>
+<span class="c">&lt;!-- the primary key does not actually exist in the database,    --&gt;</span>
+<span class="c">&lt;!-- but the given column should be used as a primary key for    --&gt;</span>
+<span class="c">&lt;!-- O-R purposes                                                --&gt;</span>
+<span class="cp">&lt;!ELEMENT pk (on)*&gt;</span>
+<span class="cp">&lt;!ATTLIST pk name CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ATTLIST pk column CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ATTLIST pk logical (true|false) "false"&gt;</span>
+
+<span class="cp">&lt;!ELEMENT on EMPTY&gt;</span>
+<span class="cp">&lt;!ATTLIST on column CDATA #REQUIRED&gt;</span>
+
+<span class="c">&lt;!-- fks with a delete-action of 'none' are similar to logical   --&gt;</span>
+<span class="c">&lt;!-- pks; they do not actually exist in the database, but        --&gt;</span>
+<span class="c">&lt;!-- represent a logical relation between tables (or their       --&gt;</span>
+<span class="c">&lt;!-- corresponding Java classes)                                 --&gt;</span>
+<span class="cp">&lt;!ELEMENT fk (join)*&gt;</span>
+<span class="cp">&lt;!ATTLIST fk name CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ATTLIST fk deferred (true|false) "false"&gt;</span>
+<span class="cp">&lt;!ATTLIST fk to-table CDATA #REQUIRED&gt;</span>
+<span class="cp">&lt;!ATTLIST fk column CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ATTLIST fk delete-action (cascade|default|exception|none|null) "none"&gt;</span>
+
+<span class="cp">&lt;!ELEMENT join EMPTY&gt;</span>
+<span class="cp">&lt;!ATTLIST join column CDATA #REQUIRED&gt;</span>
+<span class="cp">&lt;!ATTLIST join to-column CDATA #REQUIRED&gt;</span>
+<span class="cp">&lt;!ATTLIST join value CDATA #IMPLIED&gt;</span>
+
+<span class="c">&lt;!-- unique constraint --&gt;</span>
+<span class="cp">&lt;!ELEMENT unique (on)*&gt;</span>
+<span class="cp">&lt;!ATTLIST unique name CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ATTLIST unique column CDATA #IMPLIED&gt;</span>
+<span class="cp">&lt;!ATTLIST unique deferred (true|false) "false"&gt;</span></code></pre>
+</div>
+</div>
+<div id="ref_guide_schema_xml_basic" class="exampleblock">
+<div class="title">Example 70. Basic Schema</div>
+<div class="content">
+<div class="paragraph">
+<p>A very basic schema definition.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;schemas&gt;</span>
+    <span class="nt">&lt;schema&gt;</span>
+        <span class="nt">&lt;sequence</span> <span class="na">name=</span><span class="s">"S_ARTS"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"ARTICLE"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"TITLE"</span> <span class="na">type=</span><span class="s">"varchar"</span> <span class="na">size=</span><span class="s">"255"</span> <span class="na">not-null=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"AUTHOR_FNAME"</span> <span class="na">type=</span><span class="s">"varchar"</span> <span class="na">size=</span><span class="s">"28"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"AUTHOR_LNAME"</span> <span class="na">type=</span><span class="s">"varchar"</span> <span class="na">size=</span><span class="s">"28"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"CONTENT"</span> <span class="na">type=</span><span class="s">"clob"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"AUTHOR"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"FIRST_NAME"</span> <span class="na">type=</span><span class="s">"varchar"</span> <span class="na">size=</span><span class="s">"28"</span> <span class="na">not-null=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"LAST_NAME"</span> <span class="na">type=</span><span class="s">"varchar"</span> <span class="na">size=</span><span class="s">"28"</span> <span class="na">not-null=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;/schema&gt;</span>
+<span class="nt">&lt;/schemas&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="ref_guide_schema_xml_full" class="exampleblock">
+<div class="title">Example 71. Full Schema</div>
+<div class="content">
+<div class="paragraph">
+<p>Expansion of the above schema with primary keys, constraints, and indexes, some of which span multiple columns.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;schemas&gt;</span>
+    <span class="nt">&lt;schema&gt;</span>
+        <span class="nt">&lt;sequence</span> <span class="na">name=</span><span class="s">"S_ARTS"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"ARTICLE"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"TITLE"</span> <span class="na">type=</span><span class="s">"varchar"</span> <span class="na">size=</span><span class="s">"255"</span> <span class="na">not-null=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"AUTHOR_FNAME"</span> <span class="na">type=</span><span class="s">"varchar"</span> <span class="na">size=</span><span class="s">"28"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"AUTHOR_LNAME"</span> <span class="na">type=</span><span class="s">"varchar"</span> <span class="na">size=</span><span class="s">"28"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"CONTENT"</span> <span class="na">type=</span><span class="s">"clob"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;pk</span> <span class="na">column=</span><span class="s">"TITLE"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;fk</span> <span class="na">to-table=</span><span class="s">"AUTHOR"</span> <span class="na">delete-action=</span><span class="s">"exception"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;join</span> <span class="na">column=</span><span class="s">"AUTHOR_FNAME"</span> <span class="na">to-column=</span><span class="s">"FIRST_NAME"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;join</span> <span class="na">column=</span><span class="s">"AUTHOR_LNAME"</span> <span class="na">to-column=</span><span class="s">"LAST_NAME"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/fk&gt;</span>
+            <span class="nt">&lt;index</span> <span class="na">name=</span><span class="s">"ARTICLE_AUTHOR"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;on</span> <span class="na">column=</span><span class="s">"AUTHOR_FNAME"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;on</span> <span class="na">column=</span><span class="s">"AUTHOR_LNAME"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/index&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"AUTHOR"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"FIRST_NAME"</span> <span class="na">type=</span><span class="s">"varchar"</span> <span class="na">size=</span><span class="s">"28"</span> <span class="na">not-null=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"LAST_NAME"</span> <span class="na">type=</span><span class="s">"varchar"</span> <span class="na">size=</span><span class="s">"28"</span> <span class="na">not-null=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;pk&gt;</span>
+                <span class="nt">&lt;on</span> <span class="na">column=</span><span class="s">"FIRST_NAME"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;on</span> <span class="na">column=</span><span class="s">"LAST_NAME"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/pk&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;/schema&gt;</span>
+<span class="nt">&lt;/schemas&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_schema_schematool.html">Schema Tool</a> | ↑ Up: <a href="ref_guide_dbsetup.html">JDBC</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_pc.html">Persistent Classes</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

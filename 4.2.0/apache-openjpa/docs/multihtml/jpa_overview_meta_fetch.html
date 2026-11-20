@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_meta_fetch" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+<ul class="sectlevel3">
+<li><a href="jpa_overview_meta_class.html">2.5.1. Class Metadata</a>
+</li>
+<li><a href="jpa_overview_meta_field.html">2.5.2. Field and Property Metadata</a>
+<ul class="sectlevel4">
+<li><a href="jpa_overview_explicit_access.html">Explicit Access</a>
+</li>
+<li><a href="jpa_overview_meta_transient.html">Transient</a>
+</li>
+<li><a href="jpa_overview_meta_id.html">Id</a>
+</li>
+<li><a href="jpa_overview_meta_gen.html">Generated Value</a>
+</li>
+<li><a href="jpa_overview_meta_embedid.html">Embedded Id</a>
+</li>
+<li><a href="jpa_overview_meta_version.html">Version</a>
+</li>
+<li><a href="jpa_overview_meta_basic.html">Basic</a>
+<ul class="sectlevel5">
+<li><a href="jpa_overview_meta_fetch.html"><span class="toc-current">Fetch Type</span></a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_meta_embedded.html">Embedded</a>
+</li>
+<li><a href="jpa_overview_meta_manytoone.html">Many To One</a>
+</li>
+<li><a href="jpa_overview_meta_onetomany.html">One To Many</a>
+</li>
+<li><a href="jpa_overview_meta_onetoone.html">One To One</a>
+</li>
+<li><a href="jpa_overview_meta_manytomany.html">Many To Many</a>
+</li>
+<li><a href="jpa_overview_meta_orderby.html">Order By</a>
+</li>
+<li><a href="jpa_overview_meta_mapkey.html">Map Key</a>
+</li>
+<li><a href="jpa_overview_meta_fielddefaults.html">Persistent Field Defaults</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_meta_xml.html">2.5.3. XML Schema</a>
+</li>
+<li><a href="jpa_overview_meta_complete.html">2.5.4. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect5">
+<h6 id="jpa_overview_meta_fetch"><a class="link" href="#jpa_overview_meta_fetch">2.5.2.7.1. Fetch Type</a></h6>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p>Many metadata annotations in JPA have a <code>fetch</code> property.
+This property can take on one of two values: <code>FetchType.EAGER</code> or <code>FetchType.LAZY</code>. <code>FetchType.EAGER</code> means that the field is loaded by the JPA implementation before it returns the persistent object to you.
+Whenever you retrieve an entity from a query or from the <code class="class">EntityManager</code>, you are guaranteed that all of its eager fields are populated with datastore data.</p>
+</div>
+<div class="paragraph">
+<p><code>FetchType.LAZY</code> is a hint to the JPA runtime that you want to defer loading of the field until you access it.
+This is called <em>lazy
+loading</em>.
+Lazy loading is completely transparent; when you attempt to read the field for the first time, the JPA runtime will load the value from the datastore and populate the field automatically.
+Lazy loading is only a hint and not a directive because some JPA implementations cannot lazy-load certain field types.</p>
+</div>
+<div class="paragraph">
+<p>With a mix of eager and lazily-loaded fields, you can ensure that commonly-used fields load efficiently, and that other state loads transparently when accessed.
+As you will see in <a href="jpa_overview_emfactory_perscontext.html">Persistence Context</a>, you can also use eager fetching to ensure that entities have all needed data loaded before they become <em>detached</em> at the end of a persistence context.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>OpenJPA can lazy-load any field type.
+OpenJPA also allows you to dynamically change which fields are eagerly or lazily loaded at runtime.
+See <a href="ref_guide_fetch.html">Fetch Groups</a> in the Reference Guide for details.</p>
+</div>
+<div class="paragraph">
+<p>The Reference Guide details OpenJPA&#8217;s eager fetching behavior in <a href="ref_guide_perfpack_eager.html">Eager Fetching</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="jpa_overview_meta_basic.html">Basic</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_meta_embedded.html">Embedded</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

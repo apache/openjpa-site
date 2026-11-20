@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_integration_conf" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_integration_ant.html">3.15.1. Apache Ant</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_integration_conf.html"><span class="toc-current">Common Ant Configuration Options</span></a>
+</li>
+<li><a href="ref_guide_integration_enhance.html">Enhancer Ant Task</a>
+</li>
+<li><a href="ref_guide_integration_appidtool.html">Application Identity Tool Ant Task</a>
+</li>
+<li><a href="ref_guide_integration_mappingtool.html">Mapping Tool Ant Task</a>
+</li>
+<li><a href="ref_guide_integration_revmappingtool.html">Reverse Mapping Tool Ant Task</a>
+</li>
+<li><a href="ref_guide_integration_schematool.html">Schema Tool Ant Task</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_integration_dbcp.html">3.15.2. Apache Commons DBCP</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="ref_guide_integration_conf"><a class="link" href="#ref_guide_integration_conf">3.15.1.1. Common Ant Configuration Options</a></h5>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>All OpenJPA tasks accept a nested <code>config</code> element, which defines the configuration environment in which the specified task will run.
+The attributes for the <code>config</code> tag are defined by the <a href="../../apidocs/org/apache/openjpa/jdbc/conf/JDBCConfiguration.html">
+JDBCConfiguration</a> bean methods.
+Note that excluding the <code>config</code> element will cause the Ant task to use the default system configuration mechanism, such as the configuration defined in the <em class="path">org.apache.openjpa.xml</em> file.</p>
+</div>
+<div class="paragraph">
+<p>Following is an example of how to use the nested <code>config</code> tag in a <em class="path">build.xml</em> file:</p>
+</div>
+<div id="ref_guide_integration_conf_config" class="exampleblock">
+<div class="title">Example 166. Using the &lt;config&gt; Ant Tag</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;mappingtool&gt;</span>
+  <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">"${basedir}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;include</span> <span class="na">name=</span><span class="s">"**/model/*.java"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/fileset&gt;</span>
+  <span class="nt">&lt;config</span> <span class="na">connectionUserName=</span><span class="s">"scott"</span> <span class="na">connectionPassword=</span><span class="s">"tiger"</span>
+    <span class="na">connectionURL=</span><span class="s">"jdbc:oracle:thin:@saturn:1521:solarsid"</span>
+    <span class="na">connectionDriverName=</span><span class="s">"oracle.jdbc.driver.OracleDriver"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/mappingtool&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>It is also possible to specify a <code>properties</code> or
+<code>propertiesFile</code> attribute on the <code>config</code> tag, which will be used to locate a properties resource or file.
+The resource will be loaded relative to the current CLASSPATH.</p>
+</div>
+<div id="ref_guide_integration_props" class="exampleblock">
+<div class="title">Example 167. Using the Properties Attribute of the &lt;config&gt; Tag</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;mappingtool&gt;</span>
+  <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">"${basedir}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;include</span> <span class="na">name=</span><span class="s">"**/model/*.java"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/fileset&gt;</span>
+  <span class="nt">&lt;config</span> <span class="na">properties=</span><span class="s">"openjpa-dev.xml"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/mappingtool&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="ref_guide_integration_propsfile" class="exampleblock">
+<div class="title">Example 168. Using the PropertiesFile Attribute of the &lt;config&gt; Tag</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;mappingtool&gt;</span>
+  <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">"${basedir}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;include</span> <span class="na">name=</span><span class="s">"**/model/*.java"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/fileset&gt;</span>
+  <span class="nt">&lt;config</span> <span class="na">propertiesFile=</span><span class="s">"../conf/openjpa-dev.xml"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/mappingtool&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Tasks also accept a nested <code>classpath</code> element, which you can use in place of the default classpath.
+The <code>classpath</code> argument behaves the same as it does for Ant&#8217;s standard <code>javac</code> element.
+It is sometimes the case that projects are compiled to a separate directory than the source tree.
+If the target path for compiled classes is not included in the project&#8217;s classpath, then a <code>classpath</code> element that includes the target class directory needs to be included so the enhancer and mapping tool can locate the relevant classes.</p>
+</div>
+<div class="paragraph">
+<p>Following is an example of using a <code>classpath</code> tag:</p>
+</div>
+<div id="ref_guide_integration_conf_classpath" class="exampleblock">
+<div class="title">Example 169. Using the &lt;classpath&gt; Ant Tag</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;openjpac&gt;</span>
+  <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">"${basedir}/source"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;include</span> <span class="na">name=</span><span class="s">"**/model/*.java"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/fileset&gt;</span>
+  <span class="nt">&lt;classpath&gt;</span>
+    <span class="nt">&lt;pathelement</span> <span class="na">location=</span><span class="s">"${basedir}/classes"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;pathelement</span> <span class="na">location=</span><span class="s">"${basedir}/source"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;pathelement</span> <span class="na">path=</span><span class="s">"${java.class.path}"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/classpath&gt;</span>
+<span class="nt">&lt;/openjpac&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, tasks that invoke code-generation tools like the application identity tool and reverse mapping tool accept a nested <code>codeformat</code> element.
+See the code formatting documentation in <a href="ref_guide_conf_devtools_format.html">Code Formatting</a> for a list of code formatting attributes.</p>
+</div>
+<div id="ref_guide_integration_conf_codeformat" class="exampleblock">
+<div class="title">Example 170. Using the &lt;codeformat&gt; Ant Tag</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;reversemappingtool</span> <span class="na">package=</span><span class="s">"com.xyz.jdo"</span> <span class="na">directory=</span><span class="s">"${basedir}/src"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;codeformat</span> <span class="na">tabSpaces=</span><span class="s">"4"</span> <span class="na">spaceBeforeParen=</span><span class="s">"true"</span> <span class="na">braceOnSameLine=</span><span class="s">"false"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/reversemappingtool&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="ref_guide_integration_ant.html">Apache Ant</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_integration_enhance.html">Enhancer Ant Task</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

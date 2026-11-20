@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_pc_reverse" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_mapping_mappingtool.html">3.8.1. Forward Mapping</a>
+</li>
+<li><a href="ref_guide_pc_reverse.html"><span class="toc-current">3.8.2. Reverse Mapping</span></a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_pc_reverse_custom.html">Customizing Reverse Mapping</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_mapping_middle.html">3.8.3. Meet-in-the-Middle Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_defaults.html">3.8.4. Mapping Defaults</a>
+</li>
+<li><a href="ref_guide_mapping_factory.html">3.8.5. Mapping Factory</a>
+</li>
+<li><a href="ref_guide_mapping_notes_nonstdjoins.html">3.8.6. Non-Standard Joins</a>
+</li>
+<li><a href="ref_guide_mapping_jpa.html">3.8.7. Additional JPA Mappings</a>
+</li>
+<li><a href="ref_guide_mapping_limits.html">3.8.8. Mapping Limitations</a>
+</li>
+<li><a href="ref_guide_mapping_ext.html">3.8.9. Mapping Extensions</a>
+</li>
+<li><a href="ref_guide_mapping_custom.html">3.8.10. Custom Mappings</a>
+</li>
+<li><a href="ref_guide_orphan.html">3.8.11. Orphaned Keys</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_pc_reverse"><a class="link" href="#ref_guide_pc_reverse">3.8.2. Reverse Mapping</a></h4>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA includes a <em>reverse mapping</em> tool for generating persistent class definitions, complete with metadata, from an existing database schema.
+You do not have to use the reverse mapping tool to access an existing schema; you are free to write your classes and mappings yourself, as described in <a href="ref_guide_mapping_middle.html">Meet-in-the-Middle Mapping</a>.
+The reverse mapping tool, however, can give you an excellent starting point from which to grow your persistent classes.</p>
+</div>
+<div class="paragraph">
+<p>To use the reverse mapping tool, follow the steps below:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Use the <a href="ref_guide_schema_schematool.html">schema tool</a> to export your current schema to an XML schema file. You can skip this step and the next step if you want to run the reverse mapping tool directly against the database.</p>
+</li>
+</ol>
+</div>
+<div id="ref_guide_pc_reverse_schemagen" class="exampleblock">
+<div class="title">Example 109. Reflection with the Schema Tool</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">java org.apache.openjpa.jdbc.schema.SchemaTool <span class="nt">-a</span> reflect <span class="nt">-f</span> schema.xml</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Examine the generated schema file. JDBC drivers often provide incomplete or faulty metadata, in which case the file will not exactly match the actual schema. Alter the XML file to match the true schema. The XML format for the schema file is described in <a href="ref_guide_schema_xml.html">XML Schema Format</a>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After fixing any errors in the schema file, modify the XML to include foreign keys between all relations.
+The schema tool will have automatically detected existing foreign key constraints; many schemas, however, do not employ database foreign keys for every relation.
+By manually adding any missing foreign keys, you will give the reverse mapping tool the information it needs to generate the proper relations between the persistent classes it creates.
+. Run the reverse mapping tool on the finished schema file. If you do not supply the schema file to reverse map, the tool will run directly against the schema in the database. The tool can be run via its Java class, <a href="../../apidocs/org/apache/openjpa/jdbc/meta/ReverseMappingTool"> org.apache.openjpa.jdbc.meta.ReverseMappingTool</a>.</p>
+</div>
+<div id="ref_guide_pc_reverse_reversemappingtool" class="exampleblock">
+<div class="title">Example 110. Using the Reverse Mapping Tool</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">java org.apache.openjpa.jdbc.meta.ReverseMappingTool <span class="nt">-pkg</span> com.xyz <span class="nt">-d</span> ~/src <span class="nt">-cp</span> customizer.properties schema.xml</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition to OpenJPA&#8217;s <a href="ref_guide_conf_devtools.html">standard
+configuration flags</a>, including <a href="ref_guide_conf_devtools_format.html">code formatting options</a>, the reverse mapping tool recognizes the following command line arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>-schemas/-s &lt;schema and table names&gt;</code>: A comma-separated list of schema and table names to reverse map, if no XML schema file is supplied. Each element of the list must follow the naming conventions for the <code>openjpa.jdbc.Schemas</code> property described in <a href="ref_guide_schema_info_list.html">Schemas List</a>. In fact, if this flag is omitted, it defaults to the value of the <code>Schemas</code> property. If the <code>Schemas</code> property is not defined, all schemas will be reverse-mapped.</p>
+</li>
+<li>
+<p><code>-package/-pkg &lt;package name&gt;</code>: The package name of the generated classes. If no package name is given, the generated code will not contain package declarations.</p>
+</li>
+<li>
+<p><code>-directory/-d &lt;output directory&gt;</code>: All generated code and metadata will be written to the directory at this path. If the path does not match the package of a class, the package structure will be created beneath this directory. Defaults to the current directory.</p>
+</li>
+<li>
+<p><code>-metadata/-md &lt;class | package | none&gt;</code>: Specify the level the metadata should be generated at. Defaults to generating a single package-level metadata file. Set to <code>none</code> to disable orm.xml generation.</p>
+</li>
+<li>
+<p><code>-annotations/-ann &lt;true/t | false/f&gt;</code>: Set to <code>true</code> to generate JPA annotations in generated Java classes.</p>
+</li>
+<li>
+<p><code>-accessType/-access &lt;field | property&gt;</code>: Change access type for generated annotations. Defaults to field access.</p>
+</li>
+<li>
+<p><code>-useSchemaName/-sn &lt;true/t | false/f&gt;</code>: Set this flag to <code>true</code> to include the schema as well as table name in the name of each generated class. This can be useful when dealing with multiple schemas with same-named tables.</p>
+</li>
+<li>
+<p><code>-useSchemaElement/-se &lt;true/t | false/f&gt;</code>: Set this flag to <code>false</code> to exclude the schema name from the <code>@Table</code> annotation in the generated class for each table. If set to <code>false</code>, the schema name will also be removed from the corresponding XML mapping files (orm.xml) that are generated by the tool. The initialized value is true (in order to preserve backwards compatibility).</p>
+</li>
+<li>
+<p><code>-useForeignKeyName/-fkn &lt;true/t | false/f&gt;</code>: Set this flag to <code>true</code> if you would like field names for relations to be based on the database foreign key name. By default, relation field names are derived from the name of the related class.</p>
+</li>
+<li>
+<p><code>-nullableAsObject/-no &lt;true/t | false/f&gt;</code>: By default, all non-foreign key columns are mapped to primitives. Set this flag to  <code>true</code> to generate primitive wrapper fields instead for columns that allow null values.</p>
+</li>
+<li>
+<p><code>-blobAsObject/-bo &lt;true/t | false/f&gt;</code>: By default, all binary columns are mapped to <code class="class">byte[]</code> fields. Set this flag to <code>true</code> to map them to <code class="class">Object</code> fields instead. Note that when mapped this way, the column is presumed to contain a serialized Java object.</p>
+</li>
+<li>
+<p><code>-primaryKeyOnJoin/-pkj &lt;true/t | false/f&gt;</code>: The standard reverse mapping tool behavior is to map all tables with primary keys to persistent classes. If your schema has primary keys on many-many join tables as well, set this flag to <code>true</code> to avoid creating classes for those tables.</p>
+</li>
+<li>
+<p><code>-inverseRelations/-ir &lt;true/t | false/f&gt;</code>: Set to <code>false</code> to prevent the creation of inverse 1-many/1-1 relations for every many-1/1-1 relation detected.</p>
+</li>
+<li>
+<p><code>-useGenericCollections/-gc &lt;true/t | false/f&gt;</code>: Set to true to use generic collections on OneToMany and ManyToMany relations.</p>
+</li>
+<li>
+<p><code>-useDatastoreIdentity/-ds &lt;true/t | false/f&gt;</code>: Set to <code>true</code> to use datastore identity for tables that have single numeric primary key columns. The tool typically uses application identity for all generated classes.</p>
+</li>
+<li>
+<p><code>-useBuiltinIdentityClass/-bic &lt;true/t | false/f&gt;</code>: Set to <code>false</code> to prevent the tool from using built-in application identity classes when possible. This will force the tool to create custom application identity classes even when there is only one primary key column.</p>
+</li>
+<li>
+<p><code>-innerIdentityClasses/-inn &lt;true/t | false/f&gt;</code>: Set to <code>true</code> to have any generated application identity classes be created as static inner classes within the persistent classes. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><code>-identityClassSuffix/-is &lt;suffix&gt;</code>: Suffix to append to class names to form application identity class names, or for inner identity classes, the inner class name. Defaults to <code>Id</code>.</p>
+</li>
+<li>
+<p><code>-typeMap/-typ &lt;type mapping&gt;</code>: A string that specifies the default Java classes to generate for each SQL type that is seen in the schema. The format is <code>SQLTYPE1=JavaClass1,SQLTYPE2=JavaClass2</code>. The SQL type name first looks for a customization based on <code>SQLTYPE(SIZE,PRECISION)</code>, then <code>SQLTYPE(SIZE)</code>, then <code>SQLTYPE</code>. So if a column whose type name is <code>CHAR</code> is found, it will first look for the  <code>CHAR(50,0)</code> type name specification, then it will look for <code>CHAR(50)</code>, and finally it will just look for <code>CHAR</code>. For example, to generate a char array for every <code>CHAR</code> column whose size is exactly 50, and to generate a <code>short</code> for every type name of <code>INTEGER</code>, you might specify: <code>CHAR(50)=char[],INTEGER=short</code>. Note that since various databases report different type names differently, one database&#8217;s type name specification might not work for another database. Enable <code>TRACE</code> level logging on the <code>MetaData</code> channel to track which type names OpenJPA is examining.</p>
+</li>
+<li>
+<p><code>-customizerClass/-cc &lt;class name&gt;</code>: The full class name of a <a href="../../apidocs/org/apache/openjpa/jdbc/meta/ReverseCustomizer.html"> org.apache.openjpa.jdbc.meta.ReverseCustomizer</a> customization plugin. If you do not specify a reverse customizer of your own, the system defaults to a <a href="../../apidocs/org/apache/openjpa/jdbc/meta/PropertiesReverseCustomizer.html"> PropertiesReverseCustomizer</a>. This customizer allows you to specify simple customization options in the properties file given with the <code>-customizerProperties</code> flag below. We present the available property keys <a href="ref_guide_pc_reverse_custom.html">below</a>.</p>
+</li>
+<li>
+<p><code>-customizerProperties/-cp &lt;properties file or resource&gt;</code> : The path or resource name of a properties file to pass to the reverse customizer on initialization.</p>
+</li>
+<li>
+<p><code>-customizer./-c.&lt;property name&gt; &lt;property value&gt;</code> : The given property name will be matched with the corresponding Java bean property in the specified reverse customizer, and set to the given value.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Running the tool will generate <em class="path">.java</em> files for each generated class (and its application identity class, if applicable), along with JPA annotations (if enabled by setting <code>-annotations true</code>), or an <em class="path">orm.xml</em> file (if not disabled with <code>-metadata none</code>) containing the corresponding persistence metadata.
+. Examine the generated class, metadata, and mapping information, and modify it as necessary. Remember that the reverse mapping tool only provides a starting point, and you are free to make whatever modifications you like to the code it generates.</p>
+</div>
+<div class="paragraph">
+<p>After you are satisfied with the generated classes and their mappings, you should first compile the classes with <code>javac</code>, <code>jikes</code>, or your favorite Java compiler.
+Make sure the classes are located in the directory corresponding to the <code>-package</code> flag you gave the reverse mapping tool.
+Next, if you have generated an <em class="path">orm.xml</em>, move that file to a <em class="path">META-INF</em> directory within a directory in your classpath.
+Finally, enhance the classes if necessary (see <a href="ref_guide_pc_enhance.html">Enhancement</a>).</p>
+</div>
+<div class="paragraph">
+<p>Your persistent classes are now ready to access your existing schema.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="ref_guide_pc_reverse_custom.html">Customizing Reverse Mapping</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_mapping_synch.html">Runtime Forward Mapping</a> | ↑ Up: <a href="ref_guide_mapping.html">Mapping</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_pc_reverse_custom.html">Customizing Reverse Mapping</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

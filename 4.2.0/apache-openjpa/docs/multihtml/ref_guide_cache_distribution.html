@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_cache_distribution" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_cache.html">3.11.1. Data Cache</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_cache_conf.html">Data Cache Configuration</a>
+<ul class="sectlevel5">
+<li><a href="ref_guide_data_cache.html">openjpa.DataCache Configuration</a>
+</li>
+<li><a href="ref_guide_shared_cache_mode_integration.html">Integration with JPA standard shared cache mode</a>
+</li>
+<li><a href="ref_guide_cache_distribution.html"><span class="toc-current">Distributing instances across cache partitions</span></a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_cache_use.html">Data Cache Usage</a>
+</li>
+<li><a href="ref_guide_cache_statistics.html">Cache Statistics</a>
+</li>
+<li><a href="ref_guide_cache_query.html">Query Cache</a>
+</li>
+<li><a href="ref_guide_cache_extension.html">Cache Extension</a>
+</li>
+<li><a href="ref_guide_cache_notes.html">Important Notes</a>
+</li>
+<li><a href="datastore_cache_issues.html">Known Issues and Limitations</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_cache_querycomp.html">3.11.2. Query Compilation Cache</a>
+</li>
+<li><a href="ref_guide_cache_querysql.html">3.11.3. Prepared SQL Cache</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect5">
+<h6 id="ref_guide_cache_distribution"><a class="link" href="#ref_guide_cache_distribution">3.11.1.1.3. Distributing instances across cache partitions</a></h6>
+<div class="paragraph">
+<p>OpenJPA also supports a partitioned cache configuration where the cached instances can be distributed across partitions by an application-defined policy.
+Each partition behaves as a data cache by itself, identified by its name and can be configured individually.
+The distribution policy determines the specific partition that stores the state of a managed instance.
+The default distribution policy distributes the instances by their type as specified by the <code>name</code> attribute in <code>@DataCache</code> annotation.
+Cache distribution policy is a simple interface that can be implemented by an application to distribute among the partitions on a per instance basis.
+To enable a partitioned cache set the <code>openjpa.DataCache</code> property to <code>partitioned</code>, and configure individual partitions as follows:</p>
+</div>
+<div id="ref_guide_cache_conf_partition" class="exampleblock">
+<div class="title">Example 145. Partitioned Data Cache</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.CacheDistributionPolicy"</span> <span class="na">value=</span><span class="s">"org.acme.foo.DistributionPolicy"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.DataCache"</span> <span class="na">value=</span><span class="s">"partitioned(PartitionType=concurrent,partitions=
+                '(name=a,cacheSize=100),(name=b,cacheSize=200)')"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The distribution policy is configured by a full-qualified class name that implements <code>org.apache.openjpa.datacahe.CacheDistributionPolicy</code>.
+The partitions are specified as value of the <code>partitions</code> attribute as a series of individually configurable plug-in strings.
+As the example shows, i) each partition plug-in configuration must be enclosed in parentheses, ii) must be separated by comma and iii) the complete set be enclosed in single quote.
+Each individual partition is a Data Cache by itself and the class that implements the partition can be configured via <code>PartitionType</code> attribute.
+The above example configuration will configure a partitioned cache with two partitions named <code>a</code> and <code>b</code> of cache size 100 and 200, respectively.
+The partitions are of <code>concurrent</code> type which is a mnemonic or alias for <code>org.apache.openjpa.datacache.ConcurrentDataCache</code>.
+The <code>PartitionType</code> is defaulted to <code>concurrent</code> though explicitly mentioned in this example.</p>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_shared_cache_mode_integration.html">Integration with JPA standard shared cache mode</a> | ↑ Up: <a href="ref_guide_cache_conf.html">Data Cache Configuration</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_cache_use.html">Data Cache Usage</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

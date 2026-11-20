@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_logging_channels" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_logging_channels.html"><span class="toc-current">3.4.1. Logging Channels</span></a>
+</li>
+<li><a href="ref_guide_logging_openjpa.html">3.4.2. OpenJPA Logging</a>
+</li>
+<li><a href="ref_guide_logging_noop.html">3.4.3. Disabling Logging</a>
+</li>
+<li><a href="ref_guide_logging_log4j.html">3.4.4. Log4J</a>
+</li>
+<li><a href="ref_guide_logging_commons.html">3.4.5. Apache Commons Logging</a>
+</li>
+<li><a href="ref_guide_logging_slf4j.html">3.4.6. SLF4J</a>
+</li>
+<li><a href="ref_guide_logging_custom.html">3.4.7. Custom Log</a>
+</li>
+<li><a href="ref_guide_audit.html">3.4.8. OpenJPA Audit</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_logging_channels"><a class="link" href="#ref_guide_logging_channels">3.4.1. Logging Channels</a></h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>Logging is done over a number of <em>logging channels</em>, each of which has a <em>logging level</em> which controls the verbosity of log messages recorded for the channel.
+OpenJPA uses the following logging channels:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>openjpa.Tool</code>: Messages issued by the OpenJPA command line and Ant tools. Most messages are basic statements detailing which classes or files the tools are running on. Detailed output is only available via the logging category the tool belongs to, such as <code>openjpa.Enhance</code> for the enhancer (see <a href="ref_guide_pc_enhance.html">Enhancement</a>) or  <code>openjpa.MetaData</code> for the mapping tool (see <a href="ref_guide_mapping_mappingtool.html">Forward Mapping</a>). This logging category is provided so that you can get a general idea of what a tool is doing without having to manipulate logging settings that might also affect runtime behavior.</p>
+</li>
+<li>
+<p><code>openjpa.Enhance</code>: Messages pertaining to enhancement and runtime class generation.</p>
+</li>
+<li>
+<p><code>openjpa.MetaData</code>: Details about the generation of metadata and object-relational mappings.</p>
+</li>
+<li>
+<p><code>openjpa.Runtime</code>: General OpenJPA runtime messages.</p>
+</li>
+<li>
+<p><code>openjpa.Query</code>: Messages about queries. Query strings and any parameter values, if applicable, will be logged to the <code>TRACE</code> level at execution time. Information about possible performance concerns will be logged to the <code>INFO</code> level.</p>
+</li>
+<li>
+<p><code>openjpa.DataCache</code>: Messages from the L2 data cache plugins.</p>
+</li>
+<li>
+<p><code>openjpa.jdbc.JDBC</code>: JDBC connection information. General JDBC information will be logged to the <code>TRACE</code> level. Information about possible performance concerns will be logged to the <code>INFO</code>  level.</p>
+</li>
+<li>
+<p><code>openjpa.jdbc.SQL</code>: This is the most common logging channel to use.
+Detailed information about the execution of SQL statements will be sent to the <code>TRACE</code> level.
+It is useful to enable this channel if you are curious about the exact SQL that OpenJPA issues to the datastore.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The SQL issued to the database may contain sensitive information. By default the
+parameter values used in the prepared statements generated by OpenJPA will not
+be printed in the SQL log - instead you will see a ? for each value. The actual
+values may be printed by adding PrintParameters=True <code>to the <a href="openjpa.ConnectionFactoryProperties.html">`openjpa.ConnectionFactoryProperties</code></a> property. Also
+see <a href="ref_guide_dbsetup_builtin.html"><code>Using the OpenJPA
+DataSource</code></a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When using the built-in OpenJPA logging facilities, you can enable SQL logging by adding <code>SQL=TRACE</code> to your <code>openjpa.Log</code> property.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA can optionally reformat the logged SQL to make it easier to read.
+To enable pretty-printing, add <code>PrettyPrint=true</code> to the <a href="openjpa.ConnectionFactoryProperties.html"><code>openjpa.ConnectionFactoryProperties</code></a> property.
+You can control how many columns wide the pretty-printed SQL will be with the <code>PrettyPrintLineLength</code> property.
+The default line length is 60 columns.</p>
+</div>
+<div class="paragraph">
+<p>While pretty printing makes things easier to read, it can make output harder to process with tools like grep.</p>
+</div>
+<div class="paragraph">
+<p>Pretty-printing properties configuration might look like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.Log"</span> <span class="na">value=</span><span class="s">"SQL=TRACE"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.ConnectionFactoryProperties"</span>
+    <span class="na">value=</span><span class="s">"PrettyPrint=true, PrettyPrintLineLength=72"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>openjpa.jdbc.SQLDiag</code>: This logging channel provides additional information about entity actitvies such as create, find, update or delete, and eager loading of relation or field properties. If you enable this channel, it is recommended that <code>openjpa.jdbc.SQL</code> channel is also enabled. The additional trace can help you relate the entity activities to the execution of SQL statements that OpenJPA issued to the datastore.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When using the built-in OpenJPA logging facilities, you can enable SQLDiag logging by adding <code>SQLDiag=TRACE</code> to your <code>openjpa.Log</code> property.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>openjpa.jdbc.Schema</code>: Details about operations on the database schema.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="ref_guide_logging.html">Logging and Auditing</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_logging_openjpa.html">OpenJPA Logging</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

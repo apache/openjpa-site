@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_4.2_JPQLArithmeticAssociativity" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+<ul class="sectlevel2">
+<li><a href="jpa_4.2_incompatibilities.html">Incompatibilities</a>
+<ul class="sectlevel3">
+<li><a href="jpa_4.2_Requirements.html">Platform and Dependency Requirements</a>
+</li>
+<li><a href="jpa_4.2_SecurityManager.html">SecurityManager Support Removed</a>
+</li>
+<li><a href="jpa_4.2_DynamicEnhancementAgent.html">Dynamic Enhancement Agent</a>
+</li>
+<li><a href="jpa_4.2_JUnitJupiter.html">openjpa-junit5 is now openjpa-junit-jupiter</a>
+</li>
+<li><a href="jpa_4.2_JPQLReservedIdentifiers.html">New JPQL Reserved Identifiers</a>
+</li>
+<li><a href="jpa_4.2_JPQLIntegerLiterals.html">JPQL Integer Literals are typed Integer</a>
+</li>
+<li><a href="jpa_4.2_CriteriaArithmeticResultType.html">Criteria arithmetic takes its result type from both operands</a>
+</li>
+<li><a href="jpa_4.2_JPQLArithmeticResultType.html">JPQL arithmetic ranks Double and Float above BigDecimal</a>
+</li>
+<li><a href="jpa_4.2_JPQLArithmeticAssociativity.html"><span class="toc-current">JPQL arithmetic operators are left associative</span></a>
+</li>
+<li><a href="jpa_4.2_InMemoryNullArithmetic.html">Arithmetic with null is null in memory</a>
+</li>
+<li><a href="jpa_4.2_QueryValueConversion.html">Query value conversion</a>
+</li>
+<li><a href="jpa_4.2_ExtractWeek.html">EXTRACT(WEEK) is the ISO-8601 week</a>
+</li>
+<li><a href="jpa_4.2_QueryResultList.html">Query.getResultList() returns a materialized ArrayList</a>
+</li>
+<li><a href="jpa_4.2_BulkDeleteNoCascade.html">Bulk DELETE no longer cascades</a>
+</li>
+<li><a href="jpa_4.2_SliceBulkTargets.html">Slice target applies to bulk UPDATE and DELETE</a>
+</li>
+<li><a href="jpa_4.2_InMemoryBulkFlush.html">An in-memory bulk operation flushes the persistence context</a>
+</li>
+<li><a href="jpa_4.2_FlushBeforeQueries.html">Completed access paths for Criteria and collection-valued queries</a>
+</li>
+<li><a href="jpa_4.2_RollbackOnException.html">Exceptions mark the transaction rollback-only; closed EntityManager checks</a>
+</li>
+<li><a href="jpa_4.2_FindArgumentValidation.html">Argument validation in find(), getReference(), detach(), contains(), remove()</a>
+</li>
+<li><a href="jpa_4.2_CloseWithActiveTransaction.html">EntityManager.close() with an active resource-local transaction</a>
+</li>
+<li><a href="jpa_4.2_EntityManagerFactoryLifecycle.html">EntityManagerFactory lifecycle and properties</a>
+</li>
+<li><a href="jpa_4.2_QueryParameters.html">Query parameter API</a>
+</li>
+<li><a href="jpa_4.2_StoredProcedureQuery.html">StoredProcedureQuery semantics</a>
+</li>
+<li><a href="jpa_4.2_CriteriaMetamodel.html">Criteria API and Metamodel</a>
+</li>
+<li><a href="jpa_4.2_PersistenceUnitUtilIdentifier.html">PersistenceUnitUtil.getIdentifier() returns the plain identifier</a>
+</li>
+<li><a href="jpa_4.2_CacheModeProperties.html">Cache mode properties on EntityManager.setProperty()</a>
+</li>
+<li><a href="jpa_4.2_MapKeyColumn.html">Default map key column renamed to &lt;field&gt;_KEY</a>
+</li>
+<li><a href="jpa_4.2_MappingResolution.html">Attribute overrides, @OrderBy and inverse map keys</a>
+</li>
+<li><a href="jpa_4.2_SequenceGeneratorName.html">@SequenceGenerator without sequenceName</a>
+</li>
+<li><a href="jpa_4.2_SequenceGeneratorWithoutSequences.html">@SequenceGenerator on a database without sequences</a>
+</li>
+<li><a href="jpa_4.2_AttributeConverters.html">AttributeConverter handling</a>
+</li>
+<li><a href="jpa_4.2_ConverterTypeHierarchy.html">Converter types declared by a generic superclass or interface</a>
+</li>
+<li><a href="jpa_4.2_AutoApplyNonSerializable.html">An auto-apply converter maps an attribute whose type is not serializable</a>
+</li>
+<li><a href="jpa_4.2_AccessType.html">Access type determination and property accessors</a>
+</li>
+<li><a href="jpa_4.2_InstantYearMapping.html">java.time.Instant and java.time.Year mapping</a>
+</li>
+<li><a href="jpa_4.2_GeneratedDDL.html">Generated DDL changes</a>
+</li>
+<li><a href="jpa_4.2_SchemaGeneration.html">Jakarta Persistence schema generation and SQL scripts</a>
+</li>
+<li><a href="jpa_4.2_ColumnTypeConflicts.html">Numeric versus character column type conflicts</a>
+</li>
+<li><a href="jpa_4.2_DeleteCountZero.html">DELETE affecting zero rows tolerated for unversioned entities</a>
+</li>
+<li><a href="jpa_4.2_NonEntityClasses.html">Non-entity classes in persistence.xml</a>
+</li>
+<li><a href="jpa_4.2_KernelLeniency.html">Relaxed kernel checks</a>
+</li>
+<li><a href="jpa_4.2_FlushOrdering.html">Insert ordering across logical foreign keys</a>
+</li>
+<li><a href="jpa_4.2_Enhancer.html">Enhancer and runtime enhancement</a>
+</li>
+<li><a href="jpa_4.2_DelayedProxies.html">Delayed collection proxies on Java 21</a>
+</li>
+<li><a href="jpa_4.2_MetamodelGenerator.html">Static metamodel generator output</a>
+</li>
+<li><a href="jpa_4.2_LifecycleCallbacks.html">Lifecycle callbacks and listeners</a>
+</li>
+<li><a href="jpa_4.2_PersistenceXml.html">persistence.xml resource handling</a>
+</li>
+<li><a href="jpa_4.2_Locale.html">Locale-independent case conversion</a>
+</li>
+<li><a href="jpa_4.2_ReservedWords.html">Reserved word handling and MySQL delimiting</a>
+</li>
+<li><a href="jpa_4.2_LikeEscape.html">LIKE without an ESCAPE clause</a>
+</li>
+<li><a href="jpa_4.2_StoreCharsAsNumbers.html">char attributes are stored as CHAR(1)</a>
+</li>
+<li><a href="jpa_4.2_H2DecimalColumns.html">Decimal columns on H2</a>
+</li>
+<li><a href="jpa_4.2_MySQLDecimalColumns.html">Decimal columns on MySQL and MariaDB</a>
+</li>
+<li><a href="jpa_4.2_PostgreSQL.html">PostgreSQL</a>
+</li>
+<li><a href="jpa_4.2_MySQLMariaDB.html">MySQL and MariaDB</a>
+</li>
+<li><a href="jpa_4.2_MySQLMariaDBReservedWords.html">Names that MySQL and MariaDB reserve</a>
+</li>
+<li><a href="jpa_4.2_SQLServer.html">Microsoft SQL Server</a>
+</li>
+<li><a href="jpa_4.2_SQLServerDecimalColumns.html">Decimal columns on Microsoft SQL Server</a>
+</li>
+<li><a href="jpa_4.2_Oracle.html">Oracle</a>
+</li>
+<li><a href="jpa_4.2_H2BigInteger.html">BigInteger columns on H2</a>
+</li>
+<li><a href="jpa_4.2_HSQLDB.html">HSQLDB</a>
+</li>
+<li><a href="jpa_4.2_HSQLDBDecimalColumns.html">Decimal columns and casts on HSQLDB</a>
+</li>
+<li><a href="jpa_4.2_SPIChanges.html">SPI changes for custom store, dictionary and expression implementations</a>
+</li>
+<li><a href="jpa_4.2_NewFeatures.html">Notable new features</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="jpa_4.2_JPQLArithmeticAssociativity"><a class="link" href="#jpa_4.2_JPQLArithmeticAssociativity">JPQL arithmetic operators are left associative</a></h4>
+<div class="paragraph">
+<p>Operators of equal precedence in a JPQL arithmetic expression are now evaluated from left to right, as required by section 4.8.1 of the specification.
+Previous releases parsed them right associatively, so <code>a - b - c</code> was evaluated as <code>a - (b - c)</code> and <code>a / b * c</code> as <code>a / (b * c)</code>.
+For example, <code>SELECT c.age - 10 - 20 FROM CompUser c</code> returned <code>29</code> for an age of <code>19</code> and now returns <code>-11</code>.</p>
+</div>
+<div class="paragraph">
+<p>Relative precedence of the additive and the multiplicative operators is unchanged.
+Queries that relied on the previous grouping have to be parenthesized explicitly.
+No compatibility option exists.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_4.2_JPQLArithmeticResultType.html">JPQL arithmetic ranks Double and Float above BigDecimal</a> | ↑ Up: <a href="jpa_4.2_incompatibilities.html">Incompatibilities</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_4.2_InMemoryNullArithmetic.html">Arithmetic with null is null in memory</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

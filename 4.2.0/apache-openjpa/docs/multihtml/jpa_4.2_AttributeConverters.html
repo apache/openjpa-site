@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_4.2_AttributeConverters" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+<ul class="sectlevel2">
+<li><a href="jpa_4.2_incompatibilities.html">Incompatibilities</a>
+<ul class="sectlevel3">
+<li><a href="jpa_4.2_Requirements.html">Platform and Dependency Requirements</a>
+</li>
+<li><a href="jpa_4.2_SecurityManager.html">SecurityManager Support Removed</a>
+</li>
+<li><a href="jpa_4.2_DynamicEnhancementAgent.html">Dynamic Enhancement Agent</a>
+</li>
+<li><a href="jpa_4.2_JUnitJupiter.html">openjpa-junit5 is now openjpa-junit-jupiter</a>
+</li>
+<li><a href="jpa_4.2_JPQLReservedIdentifiers.html">New JPQL Reserved Identifiers</a>
+</li>
+<li><a href="jpa_4.2_JPQLIntegerLiterals.html">JPQL Integer Literals are typed Integer</a>
+</li>
+<li><a href="jpa_4.2_CriteriaArithmeticResultType.html">Criteria arithmetic takes its result type from both operands</a>
+</li>
+<li><a href="jpa_4.2_JPQLArithmeticResultType.html">JPQL arithmetic ranks Double and Float above BigDecimal</a>
+</li>
+<li><a href="jpa_4.2_JPQLArithmeticAssociativity.html">JPQL arithmetic operators are left associative</a>
+</li>
+<li><a href="jpa_4.2_InMemoryNullArithmetic.html">Arithmetic with null is null in memory</a>
+</li>
+<li><a href="jpa_4.2_QueryValueConversion.html">Query value conversion</a>
+</li>
+<li><a href="jpa_4.2_ExtractWeek.html">EXTRACT(WEEK) is the ISO-8601 week</a>
+</li>
+<li><a href="jpa_4.2_QueryResultList.html">Query.getResultList() returns a materialized ArrayList</a>
+</li>
+<li><a href="jpa_4.2_BulkDeleteNoCascade.html">Bulk DELETE no longer cascades</a>
+</li>
+<li><a href="jpa_4.2_SliceBulkTargets.html">Slice target applies to bulk UPDATE and DELETE</a>
+</li>
+<li><a href="jpa_4.2_InMemoryBulkFlush.html">An in-memory bulk operation flushes the persistence context</a>
+</li>
+<li><a href="jpa_4.2_FlushBeforeQueries.html">Completed access paths for Criteria and collection-valued queries</a>
+</li>
+<li><a href="jpa_4.2_RollbackOnException.html">Exceptions mark the transaction rollback-only; closed EntityManager checks</a>
+</li>
+<li><a href="jpa_4.2_FindArgumentValidation.html">Argument validation in find(), getReference(), detach(), contains(), remove()</a>
+</li>
+<li><a href="jpa_4.2_CloseWithActiveTransaction.html">EntityManager.close() with an active resource-local transaction</a>
+</li>
+<li><a href="jpa_4.2_EntityManagerFactoryLifecycle.html">EntityManagerFactory lifecycle and properties</a>
+</li>
+<li><a href="jpa_4.2_QueryParameters.html">Query parameter API</a>
+</li>
+<li><a href="jpa_4.2_StoredProcedureQuery.html">StoredProcedureQuery semantics</a>
+</li>
+<li><a href="jpa_4.2_CriteriaMetamodel.html">Criteria API and Metamodel</a>
+</li>
+<li><a href="jpa_4.2_PersistenceUnitUtilIdentifier.html">PersistenceUnitUtil.getIdentifier() returns the plain identifier</a>
+</li>
+<li><a href="jpa_4.2_CacheModeProperties.html">Cache mode properties on EntityManager.setProperty()</a>
+</li>
+<li><a href="jpa_4.2_MapKeyColumn.html">Default map key column renamed to &lt;field&gt;_KEY</a>
+</li>
+<li><a href="jpa_4.2_MappingResolution.html">Attribute overrides, @OrderBy and inverse map keys</a>
+</li>
+<li><a href="jpa_4.2_SequenceGeneratorName.html">@SequenceGenerator without sequenceName</a>
+</li>
+<li><a href="jpa_4.2_SequenceGeneratorWithoutSequences.html">@SequenceGenerator on a database without sequences</a>
+</li>
+<li><a href="jpa_4.2_AttributeConverters.html"><span class="toc-current">AttributeConverter handling</span></a>
+</li>
+<li><a href="jpa_4.2_ConverterTypeHierarchy.html">Converter types declared by a generic superclass or interface</a>
+</li>
+<li><a href="jpa_4.2_AutoApplyNonSerializable.html">An auto-apply converter maps an attribute whose type is not serializable</a>
+</li>
+<li><a href="jpa_4.2_AccessType.html">Access type determination and property accessors</a>
+</li>
+<li><a href="jpa_4.2_InstantYearMapping.html">java.time.Instant and java.time.Year mapping</a>
+</li>
+<li><a href="jpa_4.2_GeneratedDDL.html">Generated DDL changes</a>
+</li>
+<li><a href="jpa_4.2_SchemaGeneration.html">Jakarta Persistence schema generation and SQL scripts</a>
+</li>
+<li><a href="jpa_4.2_ColumnTypeConflicts.html">Numeric versus character column type conflicts</a>
+</li>
+<li><a href="jpa_4.2_DeleteCountZero.html">DELETE affecting zero rows tolerated for unversioned entities</a>
+</li>
+<li><a href="jpa_4.2_NonEntityClasses.html">Non-entity classes in persistence.xml</a>
+</li>
+<li><a href="jpa_4.2_KernelLeniency.html">Relaxed kernel checks</a>
+</li>
+<li><a href="jpa_4.2_FlushOrdering.html">Insert ordering across logical foreign keys</a>
+</li>
+<li><a href="jpa_4.2_Enhancer.html">Enhancer and runtime enhancement</a>
+</li>
+<li><a href="jpa_4.2_DelayedProxies.html">Delayed collection proxies on Java 21</a>
+</li>
+<li><a href="jpa_4.2_MetamodelGenerator.html">Static metamodel generator output</a>
+</li>
+<li><a href="jpa_4.2_LifecycleCallbacks.html">Lifecycle callbacks and listeners</a>
+</li>
+<li><a href="jpa_4.2_PersistenceXml.html">persistence.xml resource handling</a>
+</li>
+<li><a href="jpa_4.2_Locale.html">Locale-independent case conversion</a>
+</li>
+<li><a href="jpa_4.2_ReservedWords.html">Reserved word handling and MySQL delimiting</a>
+</li>
+<li><a href="jpa_4.2_LikeEscape.html">LIKE without an ESCAPE clause</a>
+</li>
+<li><a href="jpa_4.2_StoreCharsAsNumbers.html">char attributes are stored as CHAR(1)</a>
+</li>
+<li><a href="jpa_4.2_H2DecimalColumns.html">Decimal columns on H2</a>
+</li>
+<li><a href="jpa_4.2_MySQLDecimalColumns.html">Decimal columns on MySQL and MariaDB</a>
+</li>
+<li><a href="jpa_4.2_PostgreSQL.html">PostgreSQL</a>
+</li>
+<li><a href="jpa_4.2_MySQLMariaDB.html">MySQL and MariaDB</a>
+</li>
+<li><a href="jpa_4.2_MySQLMariaDBReservedWords.html">Names that MySQL and MariaDB reserve</a>
+</li>
+<li><a href="jpa_4.2_SQLServer.html">Microsoft SQL Server</a>
+</li>
+<li><a href="jpa_4.2_SQLServerDecimalColumns.html">Decimal columns on Microsoft SQL Server</a>
+</li>
+<li><a href="jpa_4.2_Oracle.html">Oracle</a>
+</li>
+<li><a href="jpa_4.2_H2BigInteger.html">BigInteger columns on H2</a>
+</li>
+<li><a href="jpa_4.2_HSQLDB.html">HSQLDB</a>
+</li>
+<li><a href="jpa_4.2_HSQLDBDecimalColumns.html">Decimal columns and casts on HSQLDB</a>
+</li>
+<li><a href="jpa_4.2_SPIChanges.html">SPI changes for custom store, dictionary and expression implementations</a>
+</li>
+<li><a href="jpa_4.2_NewFeatures.html">Notable new features</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="jpa_4.2_AttributeConverters"><a class="link" href="#jpa_4.2_AttributeConverters">AttributeConverter handling</a></h4>
+<div class="paragraph">
+<p>Support for <code>jakarta.persistence.AttributeConverter</code> was reworked. <code>@Converter(autoApply=true)</code> classes found on the classpath are now registered and applied to every basic attribute whose declared type matches (excluding identifiers, version fields, relations, collections and maps) unless the attribute declares its own <code>@Convert</code>; previously <code>autoApply</code> was ignored.
+Class-level <code>@Convert(attributeName=&#8230;&#8203;)</code>/<code>@Converts</code>, converters on embedded attributes, on mapped superclass attributes and on element collection elements are honored (previously ignored or rejected). The database column type is now derived from the converter&#8217;s database type <code>Y</code> instead of the attribute type <code>X</code> (a <code class="class">Boolean</code> to <code class="class">Integer</code> converter now yields an <code>INTEGER</code> column).</p>
+</div>
+<div class="paragraph">
+<p>A converter whose attribute type is the collection or map itself, for example <code>AttributeConverter&lt;List&lt;Item&gt;, String&gt;</code> on a <code class="class">List&lt;Item&gt;</code> attribute, converts the attribute as a whole.
+Such an attribute is now mapped as a basic attribute to one column and is fetched eagerly unless it is declared <code>LAZY</code>.
+In 4.1.x it was left out of the mapping with only a warning, and its contents were not stored.
+Expect a new column for each such attribute.</p>
+</div>
+<div class="paragraph">
+<p>One converter instance per attribute is created lazily through the no-argument constructor and shared between threads, so converters must be stateless. <code class="class">RuntimeException</code>s thrown by a converter surface as <code class="class">jakarta.persistence.PersistenceException</code> instead of <code class="class">MetaDataException</code>. <code>@Convert(disableConversion=true)</code> only cancels an explicit converter on that attribute; it does not prevent an <code>autoApply</code> converter from being applied.</p>
+</div>
+<div class="paragraph">
+<p>A change made in place to an element of a collection or map that is converted as a whole is now written at flush.
+To find it, the converted value of such an attribute is saved when it is loaded and compared before each flush, which calls <code>convertToDatabaseColumn</code> once per load and once per flush for every such instance in the persistence context.
+Clear the persistence context in long batch runs that flush repeatedly.</p>
+</div>
+<div class="paragraph">
+<p>The value of a converted attribute whose type is not a basic, temporal, collection or map type is now the object returned by <code>convertToEntityAttribute</code>.
+In 4.1.x it was replaced by a generated subclass that copied the value through its getter and setter pairs, losing any state without a setter.
+A change made in place to such a value is found by the same check at flush as above.
+Where OpenJPA needs a copy of the value, for <code>detachCopy</code>, for merge, for restoring state on rollback and for the data cache, the copy is made by converting the value to its column value and back.
+The data cache holds the column value of such an attribute.</p>
+</div>
+<div class="paragraph">
+<p>Since such a value has no proxy, a change made to it in place, like a change to an element of a collection or map converted as a whole, does not mark the attribute dirty when it is made.
+The attribute is reported as dirty, for example by <code class="method">OpenJPAStateManager.getDirty</code>, only once the change was found by a flush, by a query that checks for changes before it runs, or when a savepoint is set.
+On rollback, a value changed in place is restored from the converted value saved when it was loaded, also when no flush found the change.</p>
+</div>
+<div class="paragraph">
+<p>A converter is now also consulted for <code>null</code> in both directions, as required by Jakarta Persistence 3.2; in 4.1.x a <code>null</code> attribute or <code>null</code> column value bypassed the converter.
+Converter implementations must therefore be null-safe.
+A converter written without null checks throws on the first <code>null</code> it sees, which surfaces as a <code class="class">jakarta.persistence.PersistenceException</code>.
+This also changes the stored data where a converter maps <code>null</code> to a column default: a <code>null</code> attribute is written as <code>convertToDatabaseColumn(null)</code> and a <code>null</code> column value is read as <code>convertToEntityAttribute(null)</code>.
+Converters on attributes of an embeddable are no exception; note that an embeddable without a mapped null-indicator column is materialized from its all-null columns, so its converted attributes are loaded from a <code>null</code> column value.</p>
+</div>
+<div class="paragraph">
+<p>Queries are unaffected: a <code>null</code> in a query always means SQL <code>NULL</code> and is never passed through the converter, so <code>x IS NULL</code>, <code>x = :nullParameter</code>, <code>SET x = NULL</code> and <code>SET x = :nullParameter</code> keep the same meaning as in 4.1.x.
+A converter that maps <code>null</code> to a column default can therefore not be queried for its null attributes by <code>IS NULL</code>; compare against the substitute value instead.</p>
+</div>
+<div class="paragraph">
+<p>For a <code>@Lob</code> (or <code>&lt;lob/&gt;</code>) attribute with a converter, the kind of LOB now follows the converter&#8217;s database type: a converter to <code class="class">String</code> yields a CLOB (<code>TEXT</code> on PostgreSQL and MySQL) and a converter to <code>byte[]</code> a BLOB (<code>BYTEA</code> on PostgreSQL). In 4.1.x the attribute type decided, so a converter to <code class="class">String</code> on any attribute type other than <code class="class">String</code> produced a BLOB, and a converter to <code>byte[]</code> on a <code class="class">String</code> attribute a CLOB.
+Tables created by 4.1.x for such attributes no longer match the mapping; alter the column type, or pin it with <code>@Column(columnDefinition=&#8230;&#8203;)</code>.</p>
+</div>
+<div class="paragraph">
+<p>With the data cache enabled, a converted attribute is now kept in the cache in its database form.
+The converter&#8217;s <code>convertToDatabaseColumn</code> runs when an instance is put into the cache, and <code>convertToEntityAttribute</code> runs each time an instance is loaded from the cache, so every persistence context gets its own attribute value.
+This applies to attributes converted as a whole and to collections whose elements are converted.
+In 4.1.x the cache held the attribute value itself and handed the same objects to every persistence context without calling the converter, so a change made in place in one context showed up in the others.
+A converter that is costly or has side effects now runs on cache hits as well.
+A converter that throws while the cache is filled leaves that attribute out of the cache, and it is then loaded from the database; one that throws on a cache hit fails the load with a <code class="class">jakarta.persistence.PersistenceException</code>, as a load from the database would.</p>
+</div>
+<div class="paragraph">
+<p>Audit existing <code>@Converter(autoApply=true)</code> classes: attributes of the matching type that were stored unconverted by 4.1.x are now written and read through the converter and their generated column type changes.
+Remove <code>autoApply</code>, declare an explicit converter, or pin the column type with <code>@Column(columnDefinition=&#8230;&#8203;)</code> where the old behavior is required.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_4.2_SequenceGeneratorWithoutSequences.html">@SequenceGenerator on a database without sequences</a> | ↑ Up: <a href="jpa_4.2_incompatibilities.html">Incompatibilities</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_4.2_ConverterTypeHierarchy.html">Converter types declared by a generic superclass or interface</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

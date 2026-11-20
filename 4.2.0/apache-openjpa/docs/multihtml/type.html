@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="type" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_meta_factory.html">3.7.1. Metadata Factory</a>
+</li>
+<li><a href="ref_guide_meta_repository.html">3.7.2. Metadata Repository</a>
+</li>
+<li><a href="ref_guide_meta_jpa.html">3.7.3. Additional JPA Metadata</a>
+</li>
+<li><a href="ref_guide_meta_ext.html">3.7.4. Metadata Extensions</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_meta_class.html">Class Extensions</a>
+</li>
+<li><a href="ref_guide_meta_field.html">Field Extensions</a>
+<ul class="sectlevel5">
+<li><a href="dependent.html">Dependent</a>
+</li>
+<li><a href="load-fetch-group.html">Load Fetch Group</a>
+</li>
+<li><a href="lrs.html">LRS</a>
+</li>
+<li><a href="inverse-logical.html">Inverse-Logical</a>
+</li>
+<li><a href="read-only.html">Read-Only</a>
+</li>
+<li><a href="type.html"><span class="toc-current">Type</span></a>
+</li>
+<li><a href="externalizer.html">Externalizer</a>
+</li>
+<li><a href="factory.html">Factory</a>
+</li>
+<li><a href="external-values.html">External Values</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_meta_example.html">Example</a>
+</li>
+<li><a href="ref_guide_meta_xml.html">XML extensions</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect5">
+<h6 id="type"><a class="link" href="#type">3.7.4.2.6. Type</a></h6>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>OpenJPA has three levels of support for relations:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Relations that hold a reference to an object of a concrete persistent class are supported by storing the primary key values of the related instance in the database.</p>
+</li>
+<li>
+<p>Relations that hold a reference to an object of an unknown persistent class are supported by storing the stringified identity value of the related instance. This level of support does not allow queries across the relation.</p>
+</li>
+<li>
+<p>Relations that hold an unknown object or interface. The only way to support these relations is to serialize their value to the database. This does not allow you to query the field, and is not very efficient.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Clearly, when you declare a field&#8217;s type to be another persistence-capable class, OpenJPA uses level 1 support.
+By default, OpenJPA assumes that any interface-typed fields you declare will be implemented only by other persistent classes, and assigns interfaces level 2 support.
+The exception to this rule is the <code class="class">java.io.Serializable</code> interface.
+If you declare a field to be of type <code class="class">Serializable</code>, OpenJPA lumps it together with <code class="class">java.lang.Object</code> fields and other non-interface, unrecognized field types, which are all assigned level 3 support.</p>
+</div>
+<div class="paragraph">
+<p>With OpenJPA&#8217;s type family of metadata extensions, you can control the level of support given to your unknown/interface-typed fields.
+Setting the value of this extension to <code class="class">Entity</code> indicates that the field value will always be some persistent object, and gives level 2 support.
+Setting the value of this extension to the class of a concrete persistent type is even better; it gives you level 1 support (just as if you had declared your field to be of that type in the first place). Setting this extension to <code class="class">Object</code> uses level 3 support.
+This is useful when you have an interface relation that may <strong>not</strong> hold other persistent objects (recall that OpenJPA assumes interface fields will always hold persistent instances by default).</p>
+</div>
+<div class="paragraph">
+<p>This extension is also used with OpenJPA&#8217;s externalization feature, described in <a href="ref_guide_pc_extern.html">Externalization</a>.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA defines the following type annotations for field values, collection, array, and map elements, and map keys, respectively:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../apidocs/org/apache/openjpa/persistence/Type.html"> org.apache.openjpa.persistence.Type</a></p>
+</li>
+<li>
+<p><a href="../../apidocs/org/apache/openjpa/persistence/ElementType.html"> org.apache.openjpa.persistence.ElementType</a></p>
+</li>
+<li>
+<p><a href="../../apidocs/org/apache/openjpa/persistence/KeyType.html"> org.apache.openjpa.persistence.KeyType</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="read-only.html">&lt;a id="read-only"&gt;&lt;/a&gt;Read-Only</a> | ↑ Up: <a href="ref_guide_meta_field.html">Field Extensions</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="externalizer.html">Externalizer</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

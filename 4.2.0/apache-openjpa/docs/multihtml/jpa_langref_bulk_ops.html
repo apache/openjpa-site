@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_langref_bulk_ops" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+<ul class="sectlevel3">
+<li><a href="jpa_query_api.html">2.10.1. JPQL API</a>
+</li>
+<li><a href="jpa_langref.html">2.10.2. JPQL Language Reference</a>
+<ul class="sectlevel4">
+<li><a href="jpa_langref_stmnttypes.html">JPQL Statement Types</a>
+</li>
+<li><a href="jpa_langref_schematypes.html">JPQL Abstract Schema Types and Query Domains</a>
+</li>
+<li><a href="jpa_langref_fromclause.html">JPQL FROM Clause and Navigational Declarations</a>
+</li>
+<li><a href="jpa_langref_where.html">JPQL WHERE Clause</a>
+</li>
+<li><a href="jpa_langref_cond.html">JPQL Conditional Expressions</a>
+</li>
+<li><a href="jpa_langref_scalar_expressions.html">JPQL Scalar Expressions</a>
+</li>
+<li><a href="jpa_langref_group.html">JPQL GROUP BY, HAVING</a>
+</li>
+<li><a href="jpa_langref_select_clause.html">JPQL SELECT Clause</a>
+</li>
+<li><a href="jpa_langref_orderby.html">JPQL ORDER BY Clause</a>
+</li>
+<li><a href="jpa_langref_bulk_ops.html"><span class="toc-current">JPQL Bulk Update and Delete</span></a>
+</li>
+<li><a href="jpa_langref_null_values.html">JPQL Null Values</a>
+</li>
+<li><a href="jpa_langref_equality.html">JPQL Equality and Comparison Semantics</a>
+</li>
+<li><a href="jpa_langref_bnf.html">JPQL BNF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_langref_bulk_ops"><a class="link" href="#jpa_langref_bulk_ops">2.10.2.10. JPQL Bulk Update and Delete</a></h5>
+<div class="paragraph">
+<p>Bulk update and delete operations apply to entities of a single entity class (together with its subclasses, if any). Only one entity abstract schema type may be specified in the <code>FROM</code> or <code>UPDATE</code>  clause.
+The syntax of these operations is as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>update_statement ::= update_clause [where_clause]</p>
+</li>
+<li>
+<p>update_clause ::= UPDATE entity_name [[AS] identification_variable] SET update_item {, update_item}*</p>
+</li>
+<li>
+<p>update_item ::= [identification_variable.]{state_field | single_valued_object_field} = new_value</p>
+</li>
+<li>
+<p>new_value ::= scalar_expression | simple_entity_expression | NULL</p>
+</li>
+<li>
+<p>delete_statement ::= delete_clause [where_clause]</p>
+</li>
+<li>
+<p>delete_clause ::= DELETE FROM entity_name [[AS] identification_variable]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The syntax of the <code>WHERE</code> clause is described in <a href="jpa_langref_where.html">JPQL WHERE Clause</a>.</p>
+</div>
+<div class="paragraph">
+<p>A delete operation only applies to entities of the specified class and its subclasses.
+It does not cascade to related entities.</p>
+</div>
+<div class="paragraph">
+<p>The <code>new_value</code> specified for an update operation must be compatible in type with the state-field to which it is assigned.</p>
+</div>
+<div class="paragraph">
+<p>Bulk update maps directly to a database update operation, bypassing optimistic locking checks.
+Portable applications must manually update the value of the version column, if desired, and/or manually validate the value of the version column.</p>
+</div>
+<div class="paragraph">
+<p>The persistence context is not synchronized with the result of the bulk update or delete.</p>
+</div>
+<div class="paragraph">
+<p>Caution should be used when executing bulk update or delete operations because they may result in inconsistencies between the database and the entities in the active persistence context.
+In general, bulk update and delete operations should only be performed within a transaction in a new persistence context or at the beginning of a transaction (before entities have been accessed whose state might be affected by such operations).</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">Publisher</span> <span class="n">pub</span> <span class="k">WHERE</span> <span class="n">pub</span><span class="p">.</span><span class="n">revenue</span>  <span class="mi">1000000</span><span class="p">.</span><span class="mi">0</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">Publisher</span> <span class="n">pub</span> <span class="k">WHERE</span> <span class="n">pub</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">AND</span> <span class="n">pub</span><span class="p">.</span><span class="n">magazines</span> <span class="k">IS</span> <span class="n">EMPTY</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">UPDATE</span> <span class="n">Publisher</span> <span class="n">pub</span> <span class="k">SET</span> <span class="n">pub</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="s1">'outstanding'</span>
+    <span class="k">WHERE</span> <span class="n">pub</span><span class="p">.</span><span class="n">revenue</span>  <span class="mi">1000000</span> <span class="k">AND</span> <span class="mi">20</span>  <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">mag</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">pub</span><span class="p">.</span><span class="n">magazines</span> <span class="n">mag</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_langref_orderby.html">JPQL ORDER BY Clause</a> | ↑ Up: <a href="jpa_langref.html">JPQL Language Reference</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_langref_null_values.html">JPQL Null Values</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

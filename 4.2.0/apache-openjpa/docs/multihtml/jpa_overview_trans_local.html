@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_trans_local" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+<ul class="sectlevel3">
+<li><a href="jpa_overview_trans_types.html">2.9.1. Transaction Types</a>
+</li>
+<li><a href="jpa_overview_trans_local.html"><span class="toc-current">2.9.2. The EntityTransaction Interface</span></a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="jpa_overview_trans_local"><a class="link" href="#jpa_overview_trans_local">2.9.2. The EntityTransaction Interface</a></h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/jpa-transaction.png" alt="jpa transaction">
+</div>
+</div>
+<div class="paragraph">
+<p>JPA integrates with your container&#8217;s <em>managed</em> transactions, allowing you to use the container&#8217;s declarative transaction demarcation and its Java Transaction API (JTA) implementation for transaction management.
+Outside of a container, though, you must demarcate transactions manually through JPA.
+The <code class="class">EntityTransaction</code> interface controls unmanaged transactions in JPA.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">begin</span><span class="o">();</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">commit</span><span class="o">();</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">rollback</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>
+
+ The <code class="method">begin</code>, <code class="method">commit</code>, and <code class="method">rollback</code> methods demarcate transaction boundaries.
+The methods should be self-explanatory: <code class="method">begin</code> starts a transaction, <code class="method">commit</code> attempts to commit the transaction&#8217;s changes to the datastore, and <code class="method">rollback</code> aborts the transaction, in which case the datastore is "rolled back" to its previous state.
+JPA implementations will automatically roll back transactions if any exception is thrown during the commit process.</p>
+</div>
+<div class="paragraph">
+<p>Unless you are using an extended persistence context, committing or rolling back also ends the persistence context.
+All managed entities will be detached from the <code class="class">EntityManager</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isActive</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, the <code class="method">isActive</code> method returns <code>true</code>  if the transaction is in progress (<code class="method">begin</code> has been called more recently than <code class="method">commit</code> or <code class="method">rollback</code>), and <code>false</code> otherwise.</p>
+</div>
+<div id="jpa_overview_trans_group" class="exampleblock">
+<div class="title">Example 15. Grouping Operations with Transactions</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">transferFunds</span><span class="o">(</span><span class="nc">EntityManager</span> <span class="n">em</span><span class="o">,</span> <span class="nc">User</span> <span class="n">from</span><span class="o">,</span> <span class="nc">User</span> <span class="n">to</span><span class="o">,</span> <span class="kt">double</span> <span class="n">amnt</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// note: it would be better practice to move the transaction demarcation</span>
+    <span class="c1">// code out of this method, but for the purposes of example...</span>
+    <span class="nc">Transaction</span> <span class="n">trans</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">getTransaction</span><span class="o">();</span>
+    <span class="n">trans</span><span class="o">.</span><span class="na">begin</span><span class="o">();</span>
+    <span class="k">try</span>
+    <span class="o">{</span>
+        <span class="n">from</span><span class="o">.</span><span class="na">decrementAccount</span><span class="o">(</span><span class="n">amnt</span><span class="o">);</span>
+        <span class="n">to</span><span class="o">.</span><span class="na">incrementAccount</span><span class="o">(</span><span class="n">amnt</span><span class="o">);</span>
+        <span class="n">trans</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="k">catch</span> <span class="o">(</span><span class="nc">RuntimeException</span> <span class="n">re</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">trans</span><span class="o">.</span><span class="na">isActive</span><span class="o">())</span>
+            <span class="n">trans</span><span class="o">.</span><span class="na">rollback</span><span class="o">();</span>   <span class="c1">// or could attempt to fix error and retry</span>
+        <span class="k">throw</span> <span class="n">re</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_overview_trans_types.html">Transaction Types</a> | ↑ Up: <a href="jpa_overview_trans.html">Transaction</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_query.html">JPA Query</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

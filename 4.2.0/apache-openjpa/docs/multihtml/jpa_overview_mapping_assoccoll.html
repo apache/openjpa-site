@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_mapping_assoccoll" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+<ul class="sectlevel3">
+<li><a href="jpa_overview_mapping_table.html">2.13.1. Table</a>
+</li>
+<li><a href="jpa_overview_mapping_unq.html">2.13.2. Unique Constraints</a>
+</li>
+<li><a href="jpa_overview_mapping_column.html">2.13.3. Column</a>
+</li>
+<li><a href="jpa_overview_mapping_id.html">2.13.4. Identity Mapping</a>
+</li>
+<li><a href="jpa_overview_mapping_sequence.html">2.13.5. Generators</a>
+</li>
+<li><a href="jpa_overview_mapping_inher.html">2.13.6. Inheritance</a>
+</li>
+<li><a href="jpa_overview_mapping_discrim.html">2.13.7. Discriminator</a>
+</li>
+<li><a href="jpa_overview_mapping_field.html">2.13.8. Field Mapping</a>
+<ul class="sectlevel4">
+<li><a href="jpa_overview_mapping_basic.html">Basic Mapping</a>
+</li>
+<li><a href="jpa_overview_mapping_secondary.html">Secondary Tables</a>
+</li>
+<li><a href="jpa_overview_mapping_embed.html">Embedded Mapping</a>
+</li>
+<li><a href="jpa_overview_mapping_rel.html">Direct Relations</a>
+</li>
+<li><a href="jpa_overview_mapping_assoccoll.html"><span class="toc-current">Join Table</span></a>
+</li>
+<li><a href="jpa_overview_mapping_bidi.html">Bidirectional Mapping</a>
+</li>
+<li><a href="jpa_overview_mapping_map.html">Map Mapping</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_mapping_full.html">2.13.9. The Complete Mappings</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_overview_mapping_assoccoll"><a class="link" href="#jpa_overview_mapping_assoccoll">2.13.8.5. Join Table</a></h5>
+<div class="paragraph">
+<p>
+
+
+</p>
+</div>
+<div class="paragraph">
+<p>A <em>join table</em> consists of two foreign keys.
+Each row of a join table associates two objects together.
+JPA uses join tables to represent collections of entity objects: one foreign key refers back to the collection&#8217;s owner, and the other refers to a collection element.</p>
+</div>
+<div class="paragraph">
+<p><a href="jpa_overview_meta_onetomany.html">one to many</a> and <a href="jpa_overview_meta_manytomany.html">many to many</a> metadata field types can map to join tables.
+Several fields in our model use join table mappings, including <code>Magazine.articles</code> and <code>Article.authors</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/jpa-assoc-table.png" alt="jpa assoc table">
+</div>
+</div>
+<div class="paragraph">
+<p>You define join tables with the <code class="class">JoinTable</code> annotation.
+This annotation has the following properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>String name</code>: Table name. If not given, the name of the table defaults to the name of the owning entity&#8217;s table, plus an underscore, plus the name of the related entity&#8217;s table.</p>
+</li>
+<li>
+<p><code>String catalog</code>: Table catalog.</p>
+</li>
+<li>
+<p><code>String schema</code>: Table schema.</p>
+</li>
+<li>
+<p><code>JoinColumn[] joinColumns</code>: Array of <code class="class">JoinColumn</code> showing how to associate join table records with the owning row in the primary table. This property mirrors the <code>pkJoinColumns</code> property of the <code class="class">SecondaryTable</code> annotation in functionality. See <a href="jpa_overview_mapping_secondary.html">Secondary Tables</a> to refresh your memory on secondary tables.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If this is a bidirectional relation (see <a href="jpa_overview_meta_mappedby.html">Bidirectional Relations</a> ), the name of a join column defaults to the inverse field name, plus an underscore, plus the referenced primary key column name.
+Otherwise, the join column name defaults to the field&#8217;s owning entity name, plus an underscore, plus the referenced primary key column name.
+* <code>JoinColumn[] inverseJoinColumns</code>: Array of <code class="class">JoinColumns</code> showing how to associate join table records with the records that form the elements of the collection. These join columns are used just like the join columns for direct relations, and they have the same naming defaults. Read <a href="jpa_overview_mapping_rel.html">Direct Relations</a> for a review of direct relation mapping.</p>
+</div>
+<div class="paragraph">
+<p><code>join-table</code> is the corresponding XML element.
+It has the same attributes as the <code>table</code> element, but includes the ability to nest <code>join-column</code> and <code>inverse-join-column</code> elements as children.
+We have seen <code>join-column</code> elements already; <code>inverse-join-column</code> elements have the same attributes.</p>
+</div>
+<div class="paragraph">
+<p>Here are the join table mappings for the diagram above.</p>
+</div>
+<div id="jpa_overview_mapping_assoccollex" class="exampleblock">
+<div class="title">Example 38. Join Table Mapping</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">org.mag</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"MAG"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Magazine</span> <span class="o">{</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">length</span><span class="o">=</span><span class="mi">9</span><span class="o">)</span>
+    <span class="nd">@Id</span> <span class="kd">private</span> <span class="nc">String</span> <span class="n">isbn</span><span class="o">;</span>
+    <span class="nd">@Id</span> <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+
+    <span class="nd">@OneToMany</span><span class="o">(...)</span>
+    <span class="nd">@OrderBy</span>
+    <span class="nd">@JoinTable</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"MAG_ARTS"</span><span class="o">,</span>
+        <span class="n">joinColumns</span><span class="o">={</span>
+            <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"MAG_ISBN"</span><span class="o">,</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"ISBN"</span><span class="o">),</span>
+            <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"MAG_TITLE"</span><span class="o">,</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"TITLE"</span><span class="o">)</span>
+        <span class="o">},</span>
+        <span class="n">inverseJoinColumns</span><span class="o">=</span><span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"ART_ID"</span><span class="o">,</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"ID"</span><span class="o">))</span>
+    <span class="kd">private</span> <span class="nc">Collection</span><span class="o">&lt;</span><span class="nc">Article</span><span class="o">&gt;</span> <span class="n">articles</span><span class="o">;</span>
+
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"ART"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Article</span> <span class="o">{</span>
+
+    <span class="nd">@Id</span> <span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="nd">@ManyToMany</span><span class="o">(</span><span class="n">cascade</span><span class="o">=</span><span class="nc">CascadeType</span><span class="o">.</span><span class="na">PERSIST</span><span class="o">)</span>
+    <span class="nd">@OrderBy</span><span class="o">(</span><span class="s">"lastName, firstName"</span><span class="o">)</span>
+    <span class="nd">@JoinTable</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"ART_AUTHS"</span><span class="o">,</span>
+        <span class="n">joinColumns</span><span class="o">=</span><span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"ART_ID"</span><span class="o">,</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"ID"</span><span class="o">),</span>
+        <span class="n">inverseJoinColumns</span><span class="o">=</span><span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"AUTH_ID"</span><span class="o">,</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"AID"</span><span class="o">))</span>
+    <span class="kd">private</span> <span class="nc">Collection</span><span class="o">&lt;</span><span class="nc">Author</span><span class="o">&gt;</span> <span class="n">authors</span><span class="o">;</span>
+
+    <span class="o">...</span>
+<span class="o">}</span>
+
+
+<span class="kn">package</span> <span class="nn">org.mag.pub</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"AUTH"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Author</span> <span class="o">{</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"AID"</span><span class="o">,</span> <span class="n">columnDefinition</span><span class="o">=</span><span class="s">"INTEGER64"</span><span class="o">)</span>
+    <span class="nd">@Id</span> <span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The same metadata expressed in XML:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.Magazine"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"MAG"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;attributes&gt;</span>
+        <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"isbn"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">length=</span><span class="s">"9"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"title"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;one-to-many</span> <span class="na">name=</span><span class="s">"articles"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;order-by/&gt;</span>
+            <span class="nt">&lt;join-table</span> <span class="na">name=</span><span class="s">"MAG_ARTS"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;join-column</span> <span class="na">name=</span><span class="s">"MAG_ISBN"</span> <span class="na">referenced-column-name=</span><span class="s">"ISBN"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;join-column</span> <span class="na">name=</span><span class="s">"MAG_TITLE"</span> <span class="na">referenced-column-name=</span><span class="s">"TITLE"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;inverse-join-column</span> <span class="na">name=</span><span class="s">"ART_ID"</span> <span class="na">referenced-column-name=</span><span class="s">"ID"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/join-table&gt;</span>
+        <span class="nt">&lt;/one-to-many&gt;</span>
+        ...
+    <span class="nt">&lt;/attributes&gt;</span>
+<span class="nt">&lt;/entity&gt;</span>
+<span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.Article"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"ART"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attributes&gt;</span>
+            <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;many-to-many</span> <span class="na">name=</span><span class="s">"authors"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;order-by&gt;</span>lastName, firstName<span class="nt">&lt;/order-by&gt;</span>
+                <span class="nt">&lt;join-table</span> <span class="na">name=</span><span class="s">"ART_AUTHS"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;join-column</span> <span class="na">name=</span><span class="s">"ART_ID"</span> <span class="na">referenced-column-name=</span><span class="s">"ID"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;inverse-join-column</span> <span class="na">name=</span><span class="s">"AUTH_ID"</span> <span class="na">referenced-column-name=</span><span class="s">"AID"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/join-table&gt;</span>
+            <span class="nt">&lt;cascade&gt;</span>
+                <span class="nt">&lt;cascade-persist/&gt;</span>
+            <span class="nt">&lt;/cascade&gt;</span>
+            <span class="nt">&lt;/many-to-many&gt;</span>
+            ...
+       <span class="nt">&lt;/attributes&gt;</span>
+<span class="nt">&lt;/entity&gt;</span>
+<span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.pub.Author"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"AUTH"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;attributes&gt;</span>
+        <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"AID"</span> <span class="na">column-definition=</span><span class="s">"INTEGER64"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/id&gt;</span>
+        ...
+    <span class="nt">&lt;/attributes&gt;</span>
+<span class="nt">&lt;/entity&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_overview_mapping_rel.html">Direct Relations</a> | ↑ Up: <a href="jpa_overview_mapping_field.html">Field Mapping</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_mapping_bidi.html">Bidirectional Mapping</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

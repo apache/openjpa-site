@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_locking_issues" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_runtime_arch.html">3.10.1. Architecture</a>
+</li>
+<li><a href="ref_guide_runtime_jpa.html">3.10.2. JPA Extensions</a>
+</li>
+<li><a href="ref_guide_locking.html">3.10.3. Object Locking</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_locking_default.html">Configuring Default Locking</a>
+</li>
+<li><a href="ref_guide_locking_runtime.html">Configuring Lock Levels at Runtime</a>
+</li>
+<li><a href="ref_guide_locking_apis.html">Object Locking APIs</a>
+</li>
+<li><a href="ref_guide_locking_lockmgr.html">Lock Manager</a>
+</li>
+<li><a href="ref_guide_locking_rules.html">Rules for Locking Behavior</a>
+</li>
+<li><a href="ref_guide_locking_issues.html"><span class="toc-current">Known Issues and Limitations</span></a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_savepoints.html">3.10.4. Savepoints</a>
+</li>
+<li><a href="ref_guide_enterprise_methodql.html">3.10.5. MethodQL</a>
+</li>
+<li><a href="ref_guide_sequence.html">3.10.6. Generators</a>
+</li>
+<li><a href="ref_guide_runtime_pm_event.html">3.10.7. Transaction Events</a>
+</li>
+<li><a href="ref_guide_enterprise_abstractstore.html">3.10.8. Non-Relational Stores</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="ref_guide_locking_issues"><a class="link" href="#ref_guide_locking_issues">3.10.3.6. Known Issues and Limitations</a></h5>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>Due to performance concerns and database limitations, locking cannot be perfect.
+You should be aware of the issues outlined in this section, as they may affect your application.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Typically, during optimistic transactions OpenJPA does not start an actual database transaction until you flush or the optimistic transaction commits. This allows for very long-lived transactions without consuming database resources. When using the pessimistic lock manager, however, OpenJPA must begin a database transaction whenever you decide to lock an object during an optimistic transaction. This is because the pessimistic lock manager uses database locks, and databases cannot lock rows without a transaction in progress. OpenJPA will log an INFO message to the <code>openjpa.Runtime</code> logging channel when it begins a datastore transaction just to lock an object.</p>
+</li>
+<li>
+<p>In order to maintain reasonable performance levels when loading object state, OpenJPA can only guarantee that an object is locked at the proper lock level <em>after</em> the state has been retrieved from the database. This means that it is technically possible for another transaction to "sneak in" and modify the database record after OpenJPA retrieves the state, but before it locks the object. The only way to positively guarantee that the object is locked and has the most recent state to refresh the object after locking it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When using the pessimistic lock manager, the case above can only occur when OpenJPA cannot issue the state-loading SELECT as a locking statement due to database limitations.
+For example, some databases cannot lock SELECTs that use joins.
+The pessimistic lock manager will log an INFO message to the
+<code>openjpa.Runtime</code> logging channel whenever it cannot lock the initial SELECT due to database limitations.
+By paying attention to these log messages, you can see where you might consider using an object refresh to guarantee that you have the most recent state, or where you might rethink the way you load the state in question to circumvent the database limitations that prevent OpenJPA from issuing a locking SELECT in the first place.
+* When using the pessimistic lock manager and named queries you will see the following <code>WARNING</code> message logged if you do not specify a lockMode on the named query or you explicitly set it to <code>LockModeType.NONE</code>. When using the pessimistic lock manager a <code>LockModeType.NONE</code> will always be promoted to <code>LockModeType.READ</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="log">WARN   [main] openjpa.MetaData - Encountered a read lock level less than LockModeType.READ when processing the NamedQuery annotation "findEmployeeById" in class "org.apache.openjpa.persistence.lockmgr.LockEmployee". Setting query lock level to LockModeType.READ.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you are using the pessimistic lock manager and you truly do want to set the lock mode to NONE for a given query, you can use a fetch plan to do so.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">OpenJPAQuery</span> <span class="n">q</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">createNamedQuery</span><span class="o">(</span><span class="s">"findEmployeeById"</span><span class="o">);</span>
+<span class="nc">FetchPlan</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="na">getFetchPlan</span><span class="o">();</span>
+<span class="n">fp</span><span class="o">.</span><span class="na">setReadLockMode</span><span class="o">(</span><span class="nc">LockModeType</span><span class="o">.</span><span class="na">NONE</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_locking_rules.html">Rules for Locking Behavior</a> | ↑ Up: <a href="ref_guide_locking.html">Object Locking</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_savepoints.html">Savepoints</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

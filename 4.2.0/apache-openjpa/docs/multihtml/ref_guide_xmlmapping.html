@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_xmlmapping" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_mapping_mappingtool.html">3.8.1. Forward Mapping</a>
+</li>
+<li><a href="ref_guide_pc_reverse.html">3.8.2. Reverse Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_middle.html">3.8.3. Meet-in-the-Middle Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_defaults.html">3.8.4. Mapping Defaults</a>
+</li>
+<li><a href="ref_guide_mapping_factory.html">3.8.5. Mapping Factory</a>
+</li>
+<li><a href="ref_guide_mapping_notes_nonstdjoins.html">3.8.6. Non-Standard Joins</a>
+</li>
+<li><a href="ref_guide_mapping_jpa.html">3.8.7. Additional JPA Mappings</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_mapping_jpa_datastoreid.html">Datastore Identity Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_version.html">Surrogate Version Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_columns.html">Multi-Column Mappings</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_fieldjoin.html">Join Column Attribute Targets</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_embed.html">Embedded Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_coll.html">Collections</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_onemany.html">One-Sided One-Many Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_map.html">Maps</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_constraints.html">Indexes and Constraints</a>
+</li>
+<li><a href="ref_guide_xmlmapping.html"><span class="toc-current">XML Column Mapping</span></a>
+</li>
+<li><a href="ref_guide_streamsupport.html">LOB Streaming</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_mapping_limits.html">3.8.8. Mapping Limitations</a>
+</li>
+<li><a href="ref_guide_mapping_ext.html">3.8.9. Mapping Extensions</a>
+</li>
+<li><a href="ref_guide_mapping_custom.html">3.8.10. Custom Mappings</a>
+</li>
+<li><a href="ref_guide_orphan.html">3.8.11. Orphaned Keys</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="ref_guide_xmlmapping"><a class="link" href="#ref_guide_xmlmapping">3.8.7.10. XML Column Mapping</a></h5>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>Some databases support XML column types and XPath queries and indexes over these columns.
+OpenJPA supports mapping of an entity property mapped to an XML column on the following databases and their minimum versions.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DB2 9</p>
+</li>
+<li>
+<p>MySQL 5.1.30</p>
+</li>
+<li>
+<p>Oracle 9</p>
+</li>
+<li>
+<p>PostgreSQL 8.3 (XML support must be compiled in, the minimum JDBC driver version is 8.3-603)</p>
+</li>
+<li>
+<p>SQL Server 2005</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="supported_databases.html">Supported Databases</a> for possible database-specific restrictions.</p>
+</div>
+<div class="paragraph">
+<p>Annotate the entity property using the XMLValueHandler strategy:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Persistent</span>
+<span class="nd">@Strategy</span><span class="o">(</span><span class="s">"org.apache.openjpa.jdbc.meta.strats.XMLValueHandler"</span><span class="o">)</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The default fetch type is EAGER but can be changed to LAZY by using:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Persistence</span><span class="o">(</span><span class="n">fetch</span><span class="o">=</span><span class="nc">FetchType</span><span class="o">.</span><span class="na">LAZY</span><span class="o">)</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The entity property class is required to have JAXB binding annotations.
+You can generate property class from an XML schema by using the <code>xjc</code> generator from the <a href="http://jaxb.java.net/">JAXB reference implementation</a>.
+The <code>xjc</code> will generate the class along with the required annotations.
+Ensure that <code class="class">@XmlRootElement</code> appears in the root class.
+In some cases this annotation needs to be added manually.</p>
+</div>
+<div class="paragraph">
+<p>The entity property class is required to have getter and setter methods for all its fields.
+By default, the <code>xjc</code> will not generate setter methods for collections but you can force it to do so by using the <a href="http://confluence.highsource.org/display/J2B/Setters+Plugin">
+setters plugin</a> or collection setter injector plugin.</p>
+</div>
+<div class="paragraph">
+<p>The JAXB jar files must be on the application classpath (jaxb-api.jar, jaxb-impl.jar, jsr173_1.0_api.jar or equivalent).</p>
+</div>
+<div class="paragraph">
+<p>JPQL path expressions can navigate into the mapped class and its subfields to any level.</p>
+</div>
+<div class="paragraph">
+<p>The path expression is rewritten into an equivalent XPath expression using SQL XML functions.</p>
+</div>
+<div class="paragraph">
+<p>The path expression must be single-valued.
+Path expressions over XML mapped classes can only be used in the WHERE clause as an operand to a simple predicate (=  &lt;&gt;  &lt;  &gt;  &gt;=  &#8656;).</p>
+</div>
+<div class="paragraph">
+<p>Path expressions over XML mapped fields can not be:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>an input to a JPQL scalar function</p>
+</li>
+<li>
+<p>an operand of BETWEEN,  IS NULL, LIKE or IN predicate</p>
+</li>
+<li>
+<p>used to project out subfields in the SELECT clause</p>
+</li>
+<li>
+<p>used in the FROM, GROUP BY, HAVING, ORDER BY clauses</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>XML schema must not contain namespace declarations.
+The JPQL path expressions can not refer to Java fields generated from XML ANY type or XML mixed element types.</p>
+</div>
+<div class="paragraph">
+<p>The data type generated by JAXB must be a valid type to use the property in a JPQL predicate.</p>
+</div>
+<div class="paragraph">
+<p>Shown below is a sample XML schema <a href="ref_guide_xmlmapping.html#ref_guide_xmlmapping_myaddress">myaddress.xsd</a>, in which the JPA entity Order has <code class="class">shipAddress</code> persistent field that maps to an XML column.</p>
+</div>
+<div id="ref_guide_xmlmapping_myaddress" class="exampleblock">
+<div class="title">Example 119. myaddress.xsd</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="nt">&lt;xs:schema</span> <span class="na">xmlns:xs=</span><span class="s">"http://www.w3.org/2001/XMLSchema"</span> <span class="nt">&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Address"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;xs:sequence&gt;</span>
+  <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Name"</span> <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Street"</span> <span class="na">type=</span><span class="s">"xs:string"</span>
+  	<span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"3"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"City"</span> <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"CAN_Address"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;xs:complexContent&gt;</span>
+  <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Address"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;xs:sequence&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Province"</span> <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"PostalCode"</span> <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/xs:sequence&gt;</span>
+  <span class="nt">&lt;/xs:extension&gt;</span>
+<span class="nt">&lt;/xs:complexContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"USPS_ZIP"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:integer"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xs:minInclusive</span> <span class="na">value=</span><span class="s">"01000"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;xs:maxInclusive</span> <span class="na">value=</span><span class="s">"99999"</span> <span class="nt">/&gt;</span>
+ <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"USA_Address"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;xs:complexContent&gt;</span>
+  <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Address"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;xs:sequence&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"State"</span> <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ZIP"</span> <span class="na">type=</span><span class="s">"USPS_ZIP"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/xs:sequence&gt;</span>
+  <span class="nt">&lt;/xs:extension&gt;</span>
+ <span class="nt">&lt;/xs:complexContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"MailAddress"</span> <span class="na">type=</span><span class="s">"Address"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AddrCAN"</span> <span class="na">type=</span><span class="s">"CAN_Address"</span>
+   <span class="na">substitutionGroup=</span><span class="s">"MailAddress"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AddrUSA"</span> <span class="na">type=</span><span class="s">"USA_Address"</span>
+   <span class="na">substitutionGroup=</span><span class="s">"MailAddress"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Java classes <a href="ref_guide_xmlmapping.html#ref_guide_xmlmapping_address">Address</a>, <a href="ref_guide_xmlmapping.html#ref_guide_xmlmapping_usaaddress">USAAddress</a> and <a href="ref_guide_xmlmapping.html#ref_guide_xmlmapping_canaddress">CANAddress</a> are produced from <code>myaddress</code> schema by using the <code>xjc</code> generator.</p>
+</div>
+<div id="ref_guide_xmlmapping_address" class="exampleblock">
+<div class="title">Example 120. Address.java</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">    <span class="o">...</span>
+<span class="nd">@XmlRootElement</span>
+<span class="nd">@XmlAccessorType</span><span class="o">(</span><span class="nc">XmlAccessType</span><span class="o">.</span><span class="na">FIELD</span><span class="o">)</span>
+<span class="nd">@XmlType</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Address"</span><span class="o">,</span> <span class="n">propOrder</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="s">"name"</span><span class="o">,</span>
+    <span class="s">"street"</span><span class="o">,</span>
+    <span class="s">"city"</span>
+<span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Address</span> <span class="o">{</span>
+    <span class="nd">@XmlElement</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Name"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="kd">protected</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="nd">@XmlElement</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Street"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="kd">protected</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">street</span><span class="o">;</span>
+    <span class="nd">@XmlElement</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"City"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="kd">protected</span> <span class="nc">String</span> <span class="n">city</span><span class="o">;</span>
+
+   <span class="cm">/**
+     * Getter and Setter methods.
+     *
+     */</span>
+     <span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="ref_guide_xmlmapping_usaaddress" class="exampleblock">
+<div class="title">Example 121. USAAddress.java</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">    <span class="o">...</span>
+<span class="nd">@XmlRootElement</span>
+<span class="nd">@XmlAccessorType</span><span class="o">(</span><span class="nc">XmlAccessType</span><span class="o">.</span><span class="na">FIELD</span><span class="o">)</span>
+<span class="nd">@XmlType</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"USA_Address"</span><span class="o">,</span> <span class="n">propOrder</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="s">"state"</span><span class="o">,</span>
+    <span class="s">"zip"</span>
+<span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">USAAddress</span>
+    <span class="kd">extends</span> <span class="nc">Address</span>
+<span class="o">{</span>
+
+    <span class="nd">@XmlElement</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"State"</span><span class="o">)</span>
+    <span class="kd">protected</span> <span class="nc">String</span> <span class="n">state</span><span class="o">;</span>
+    <span class="nd">@XmlElement</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"ZIP"</span><span class="o">)</span>
+    <span class="kd">protected</span> <span class="kt">int</span> <span class="n">zip</span><span class="o">;</span>
+
+   <span class="cm">/**
+     * Getter and Setter methods.
+     *
+     */</span>
+     <span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="ref_guide_xmlmapping_canaddress" class="exampleblock">
+<div class="title">Example 122. CANAddress.java</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">     <span class="o">...</span>
+<span class="nd">@XmlRootElement</span>
+<span class="nd">@XmlAccessorType</span><span class="o">(</span><span class="nc">XmlAccessType</span><span class="o">.</span><span class="na">FIELD</span><span class="o">)</span>
+<span class="nd">@XmlType</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"CAN_Address"</span><span class="o">,</span> <span class="n">propOrder</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="s">"province"</span><span class="o">,</span>
+    <span class="s">"postalCode"</span>
+<span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CANAddress</span>
+    <span class="kd">extends</span> <span class="nc">Address</span>
+<span class="o">{</span>
+
+    <span class="nd">@XmlElement</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Province"</span><span class="o">)</span>
+    <span class="kd">protected</span> <span class="nc">String</span> <span class="n">province</span><span class="o">;</span>
+    <span class="nd">@XmlElement</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"PostalCode"</span><span class="o">)</span>
+    <span class="kd">protected</span> <span class="nc">String</span> <span class="n">postalCode</span><span class="o">;</span>
+
+   <span class="cm">/**
+     * Getter and Setter methods.
+     *
+     */</span>
+     <span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="ref_guide_xmlmapping_annorder" class="exampleblock">
+<div class="title">Example 123. Showing annotated Order entity with XML mapping strategy</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Order</span> <span class="o">{</span>
+    <span class="nd">@Id</span>  <span class="kd">private</span> <span class="n">into</span> <span class="n">id</span><span class="o">;</span>
+    <span class="nd">@Persistent</span>
+    <span class="nd">@Strategy</span> <span class="o">(</span><span class="s">"org.apache.openjpa.jdbc.meta.strats.XMLValueHandler"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Address</span> <span class="n">shipAddress</span><span class="o">;</span>
+    <span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="ref_guide_xmlmapping_createorder" class="exampleblock">
+<div class="title">Example 124. Showing creation of Order entity having shipAddress mapped to XML column</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="o">...</span>
+<span class="n">myaddress</span><span class="o">.</span><span class="na">ObjectFactory</span> <span class="n">addressFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">myaddress</span><span class="o">.</span><span class="na">ObjectFactory</span><span class="o">();</span>
+<span class="nc">Customer</span> <span class="n">c1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Customer</span><span class="o">();</span>
+<span class="n">c1</span><span class="o">.</span><span class="na">setCid</span><span class="o">(</span> <span class="k">new</span> <span class="nc">Customer</span><span class="o">.</span><span class="na">CustomerKey</span><span class="o">(</span><span class="s">"USA"</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span> <span class="o">);</span>
+<span class="n">c1</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"Harry's Auto"</span><span class="o">);</span>
+<span class="nc">Order</span> <span class="n">o1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Order</span><span class="o">(</span> <span class="mi">850</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="n">c1</span><span class="o">);</span>
+<span class="nc">USAAddress</span> <span class="n">addr1</span> <span class="o">=</span> <span class="n">addressFactory</span><span class="o">.</span><span class="na">createUSAAddress</span><span class="o">();</span>
+<span class="n">addr1</span><span class="o">.</span><span class="na">setCity</span><span class="o">(</span><span class="s">"San Jose"</span><span class="o">);</span>
+<span class="n">addr1</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="s">"CA"</span><span class="o">);</span>
+<span class="n">addr1</span><span class="o">.</span><span class="na">setZIP</span><span class="o">(</span><span class="k">new</span> <span class="nc">Integer</span><span class="o">(</span><span class="s">"95141"</span><span class="o">));</span>
+<span class="n">addr1</span><span class="o">.</span><span class="na">getStreet</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="s">"12500 Monterey"</span><span class="o">);</span>
+<span class="n">addr1</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span> <span class="n">c1</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+<span class="n">o1</span><span class="o">.</span><span class="na">setShipAddress</span><span class="o">(</span><span class="n">addr1</span><span class="o">);</span>
+<span class="n">em</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">o1</span><span class="o">);</span>
+<span class="o">...</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="ref_guide_xmlmapping_jpqlquery" class="exampleblock">
+<div class="title">Example 125. Sample JPQL queries for XML column mapping</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"> <span class="k">select</span> <span class="n">o</span> <span class="k">from</span> <span class="k">Order</span> <span class="n">o</span> <span class="k">where</span> <span class="n">o</span><span class="p">.</span><span class="n">shipAddress</span><span class="p">.</span><span class="n">city</span> <span class="o">=</span> <span class="nv">"San Jose"</span> <span class="k">or</span>
+			      <span class="n">o</span><span class="p">.</span><span class="n">shipAddress</span><span class="p">.</span><span class="n">city</span> <span class="o">=</span> <span class="nv">"San Francisco"</span>  <span class="p">(</span><span class="n">OK</span><span class="p">)</span>
+
+ <span class="k">select</span> <span class="n">o</span><span class="p">.</span><span class="n">shipaAddress</span> <span class="k">from</span> <span class="k">Order</span> <span class="n">o</span>  <span class="p">(</span><span class="n">OK</span><span class="p">)</span>
+
+ <span class="k">select</span> <span class="n">o</span><span class="p">.</span><span class="n">shipAddress</span><span class="p">.</span><span class="n">city</span> <span class="k">from</span> <span class="k">Order</span> <span class="n">o</span>  <span class="p">(</span><span class="n">INVALID</span><span class="p">)</span>
+
+ <span class="k">select</span> <span class="n">o</span> <span class="k">from</span> <span class="k">Order</span> <span class="n">o</span> <span class="k">where</span> <span class="n">o</span><span class="p">.</span><span class="n">shipAddress</span><span class="p">.</span><span class="n">street</span> <span class="o">=</span> <span class="nv">"San Jose"</span>  <span class="p">(</span><span class="n">INVALID</span> <span class="n">multi</span><span class="o">-</span><span class="n">valued</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_mapping_jpa_unique.html">Unique Constraints</a> | ↑ Up: <a href="ref_guide_mapping_jpa.html">Additional JPA Mappings</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_streamsupport.html">LOB Streaming</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

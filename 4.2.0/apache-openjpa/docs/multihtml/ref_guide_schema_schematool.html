@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_schema_schematool" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_dbsetup_builtin.html">3.5.1. Using the OpenJPA DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_thirdparty.html">3.5.2. Using a Third-Party DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_sqlconn.html">3.5.3. Runtime Access to DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport.html">3.5.4. Database Support</a>
+</li>
+<li><a href="ref_guide_dbsetup_isolation.html">3.5.5. Setting the Transaction Isolation</a>
+</li>
+<li><a href="ref_guide_dbsetup_sql92.html">3.5.6. Setting the SQL Join Syntax</a>
+</li>
+<li><a href="ref_guide_dbsetup_multidb.html">3.5.7. Accessing Multiple Databases</a>
+</li>
+<li><a href="ref_guide_dbsetup_retain.html">3.5.8. Configuring the Use of JDBC Connections</a>
+</li>
+<li><a href="ref_guide_dbsetup_stmtbatch.html">3.5.9. Statement Batching</a>
+</li>
+<li><a href="ref_guide_dbsetup_lrs.html">3.5.10. Large Result Sets</a>
+</li>
+<li><a href="ref_guide_schema_def.html">3.5.11. Default Schema</a>
+</li>
+<li><a href="ref_guide_schema_info.html">3.5.12. Schema Reflection</a>
+</li>
+<li><a href="ref_guide_schema_schematool.html"><span class="toc-current">3.5.13. Schema Tool</span></a>
+</li>
+<li><a href="ref_guide_schema_xml.html">3.5.14. XML Schema Format</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_schema_schematool"><a class="link" href="#ref_guide_schema_schematool">3.5.13. Schema Tool</a></h4>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p>Most users will only access the schema tool indirectly, through the interfaces provided by other tools.
+You may find, however, that the schema tool is a powerful utility in its own right.
+The schema tool has two functions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To reflect on the current database schema, optionally translating it to an XML representation for further manipulation.</p>
+</li>
+<li>
+<p>To take in an XML schema definition, calculate the differences between the XML and the existing database schema, and apply the necessary changes to make the database match the XML.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The <a href="ref_guide_schema_xml.html">XML format</a> used by the schema tool abstracts away the differences between SQL dialects used by different database vendors.
+The tool also automatically adapts its SQL to meet foreign key dependencies.
+Thus the schema tool is useful as a general way to manipulate schemas.</p>
+</div>
+<div class="paragraph">
+<p>You can invoke the schema tool through its Java class, <a href="../../apidocs/org/apache/openjpa/jdbc/schema/SchemaTool.html">
+org.apache.openjpa.jdbc.schema.SchemaTool</a>.
+In addition to the universal flags of the <a href="ref_guide_conf.html">configuration framework</a>, the schema tool accepts the following command line arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>-ignoreErrors/-i &lt;true/t | false/f&gt;</code>: If <code>false</code>, an exception will be thrown if the tool encounters any database errors. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><code>-file/-f &lt;stdout | output file&gt;</code>: Use this option to write a SQL script for the planned schema modifications, rather them committing them to the database. When used in conjunction with the <code>export</code>  or <code>reflect</code> actions, the named file will be used to write the exported schema XML. If the file names a resource in the <code>CLASSPATH</code>, data will be written to that resource. Use <code>stdout</code>  to write to standard output. Defaults to <code>stdout</code>.</p>
+</li>
+<li>
+<p><code>-openjpaTables/-ot &lt;true/t | false/f&gt;</code>: When reflecting on the schema, whether to reflect on tables and sequences whose names start with <code>OPENJPA_</code>. Certain OpenJPA components may use such tables - for example, the <code>table</code> schema factory option covered in <a href="ref_guide_schema_info_factory.html">Schema Factory</a>. When using other actions, <code>openjpaTables</code> controls whether these tables can be dropped. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><code>-rollbackBeforeDDL/-rbddl &lt;true/t | false/f&gt;</code>: Set this option to <code>true</code> to send an initail rollback on the connection before any DDL statement is sent.</p>
+</li>
+<li>
+<p><code>-dropTables/-dt &lt;true/t | false/f&gt;</code>: Set this option to <code>true</code> to drop tables that appear to be unused during  <code>retain</code> and <code>refresh</code> actions. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><code>-dropSequences/-dsq &lt;true/t | false/f&gt;</code>: Set this option to <code>true</code> to drop sequences that appear to be unused during <code>retain</code> and <code>refresh</code> actions. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><code>-sequences/-sq &lt;true/t | false/f&gt;</code>: Whether to manipulate sequences. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><code>-indexes/-ix &lt;true/t | false/f&gt;</code>: Whether to manipulate indexes on existing tables. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><code>-primaryKeys/-pk &lt;true/t | false/f&gt;</code>: Whether to manipulate primary keys on existing tables. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><code>-foreignKeys/-fk &lt;true/t | false/f&gt;</code>: Whether to manipulate foreign keys on existing tables. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><code>-record/-r &lt;true/t | false/f&gt;</code>: Use <code>false</code>  to prevent writing the schema changes made by the tool to the current <a href="ref_guide_schema_info_factory.html"><code>schema factory</code></a>. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><code>-schemas/-s &lt;schema list&gt;</code>: A list of schema and table names that OpenJPA should access during this run of the schema tool. This is equivalent to setting the <a href="openjpa.jdbc.Schemas.html">openjpa.jdbc.Schemas</a> property for a single run.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The schema tool also accepts an <code>-action</code> or <code>-a</code>  flag.
+Multiple actions can be composed in a comma-separated list.
+The available actions are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add</code>: This is the default action if you do not specify one. It brings the schema up-to-date with the given XML document by adding tables, columns, indexes, etc. This action never drops any schema components.</p>
+</li>
+<li>
+<p><code>retain</code>: Keep all schema components in the given XML definition, but drop the rest from the database. This action never adds any schema components.</p>
+</li>
+<li>
+<p><code>drop</code>: Drop all schema components in the schema XML. Tables will only be dropped if they would have 0 columns after dropping all columns listed in the XML.</p>
+</li>
+<li>
+<p><code>refresh</code>: Equivalent to <code>retain</code>, then <code>add</code>.</p>
+</li>
+<li>
+<p><code>build</code>: Generate SQL to build a schema matching the one in the given XML file. Unlike <code>add</code>, this option does not take into account the fact that part of the schema defined in the XML file might already exist in the database. Therefore, this action is typically used in conjunction with the <code>-file</code> flag to write a SQL script. This script can later be used to recreate the schema in the XML.</p>
+</li>
+<li>
+<p><code>reflect</code>: Generate an XML representation of the current database schema.</p>
+</li>
+<li>
+<p><code>createDB</code>: Generate SQL to re-create the current database. This action is typically used in conjunction with the <code>-file</code> flag to write a SQL script that can be used to recreate the current schema on a fresh database.</p>
+</li>
+<li>
+<p><code>dropDB</code>: Generate SQL to drop the current database. Like <code>createDB</code>, this action can be used with the <code>-file</code>  flag to script a database drop rather than perform it.</p>
+</li>
+<li>
+<p><code>import</code>: Import the given XML schema definition into the current schema factory. Does nothing if the factory does not store a record of the schema.</p>
+</li>
+<li>
+<p><code>export</code>: Export the current schema factory&#8217;s stored schema definition to XML. May produce an empty file if the factory does not store a record of the schema.</p>
+</li>
+<li>
+<p><code>deleteTableContents</code>: Execute SQL to delete all rows from all tables that OpenJPA knows about.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The schema tool manipulates tables, columns, indexes, constraints, and sequences.
+It cannot create or drop the database schema objects in which the tables reside, however.
+If your XML documents refer to named database schemas, those schemas must exist.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>We present some examples of schema tool usage below.</p>
+</div>
+<div id="ref_guide_schema_schematool_create" class="exampleblock">
+<div class="title">Example 65. Schema Creation</div>
+<div class="content">
+<div class="paragraph">
+<p>
+Add the necessary schema components to the database to match the given XML document, but don&#8217;t drop any data:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">java org.apache.openjpa.jdbc.schema.SchemaTool targetSchema.xml</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="ref_guide_schema_schematool_script" class="exampleblock">
+<div class="title">Example 66. SQL Scripting</div>
+<div class="content">
+<div class="paragraph">
+<p>Repeat the same action as the first example, but this time don&#8217;t change the database.
+Instead, write any planned changes to a SQL script:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">java org.apache.openjpa.jdbc.schema.SchemaTool <span class="nt">-f</span> script.sql targetSchema.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Write a SQL script that will re-create the current database:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">java org.apache.openjpa.jdbc.schema.SchemaTool <span class="nt">-a</span> createDB <span class="nt">-f</span> script.sql</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="ref_guide_schema_schematool_table_cleanup" class="exampleblock">
+<div class="title">Example 67. Table Cleanup</div>
+<div class="content">
+<div class="paragraph">
+<p>
+Refresh the schema and delete all contents of all tables that OpenJPA knows about:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">java org.apache.openjpa.jdbc.schema.SchemaTool <span class="nt">-a</span> refresh,deleteTableContents</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="ref_guide_schema_schematool_drop" class="exampleblock">
+<div class="title">Example 68. Schema Drop</div>
+<div class="content">
+<div class="paragraph">
+<p>Drop the current database:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">java org.apache.openjpa.jdbc.schema.SchemaTool <span class="nt">-a</span> dropDB</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="ref_guide_schema_schematool_reflect" class="exampleblock">
+<div class="title">Example 69. Schema Reflection</div>
+<div class="content">
+<div class="paragraph">
+<p>Write an XML representation of the current schema to file <em class="path">schema.xml</em>
+.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">java org.apache.openjpa.jdbc.schema.SchemaTool <span class="nt">-a</span> reflect <span class="nt">-f</span> schema.xml</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_schema_info_factory.html">Schema Factory</a> | ↑ Up: <a href="ref_guide_dbsetup.html">JDBC</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_schema_xml.html">XML Schema Format</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

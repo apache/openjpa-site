@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_meta_gen" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+<ul class="sectlevel3">
+<li><a href="jpa_overview_meta_class.html">2.5.1. Class Metadata</a>
+</li>
+<li><a href="jpa_overview_meta_field.html">2.5.2. Field and Property Metadata</a>
+<ul class="sectlevel4">
+<li><a href="jpa_overview_explicit_access.html">Explicit Access</a>
+</li>
+<li><a href="jpa_overview_meta_transient.html">Transient</a>
+</li>
+<li><a href="jpa_overview_meta_id.html">Id</a>
+</li>
+<li><a href="jpa_overview_meta_gen.html"><span class="toc-current">Generated Value</span></a>
+</li>
+<li><a href="jpa_overview_meta_embedid.html">Embedded Id</a>
+</li>
+<li><a href="jpa_overview_meta_version.html">Version</a>
+</li>
+<li><a href="jpa_overview_meta_basic.html">Basic</a>
+</li>
+<li><a href="jpa_overview_meta_embedded.html">Embedded</a>
+</li>
+<li><a href="jpa_overview_meta_manytoone.html">Many To One</a>
+</li>
+<li><a href="jpa_overview_meta_onetomany.html">One To Many</a>
+</li>
+<li><a href="jpa_overview_meta_onetoone.html">One To One</a>
+</li>
+<li><a href="jpa_overview_meta_manytomany.html">Many To Many</a>
+</li>
+<li><a href="jpa_overview_meta_orderby.html">Order By</a>
+</li>
+<li><a href="jpa_overview_meta_mapkey.html">Map Key</a>
+</li>
+<li><a href="jpa_overview_meta_fielddefaults.html">Persistent Field Defaults</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_meta_xml.html">2.5.3. XML Schema</a>
+</li>
+<li><a href="jpa_overview_meta_complete.html">2.5.4. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_overview_meta_gen"><a class="link" href="#jpa_overview_meta_gen">2.5.2.4. Generated Value</a></h5>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p>The previous section showed you how to declare your identity fields with the <code class="class">Id</code> annotation.
+It is often convenient to allow the persistence implementation to assign a unique value to your identity fields automatically.
+JPA includes the <code class="class">GeneratedValue</code> annotation for this purpose.
+It has the following properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>GenerationType strategy</code>: Enum value specifying how to auto-generate the field value. The <code class="class">GenerationType</code> enum has the following values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>GeneratorType.AUTO</code>: The default. Assign the field a generated value, leaving the details to the JPA vendor. If the field type is UUID, it will be given an generated UUID.</p>
+</li>
+<li>
+<p><code>GenerationType.IDENTITY</code>: The database will assign an identity value on insert.</p>
+</li>
+<li>
+<p><code>GenerationType.SEQUENCE</code>: Use a datastore sequence to generate a field value.</p>
+</li>
+<li>
+<p><code>GenerationType.TABLE</code>: Use a sequence table to generate a field value.</p>
+</li>
+<li>
+<p><code>GenerationType.UUID</code>: Assign the field a type 4 UUID generated value. In this case, the field must be either <code class="class">String</code> or <code class="class">UUID</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>String generator</code>: The name of a generator defined in mapping metadata. We show you how to define named generators in <a href="jpa_overview_mapping_sequence.html">Generators</a>. If the <code class="class">GenerationType</code> is set but this property is unset, the JPA implementation uses appropriate defaults for the selected generation type.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The equivalent XML element is <code>generated-value</code>, which includes the following attributes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>strategy</code>: One of <code>TABLE</code>, <code>SEQUENCE</code>, <code>IDENTITY</code>, or <code>AUTO</code>, defaulting to <code>AUTO</code>.</p>
+</li>
+<li>
+<p><code>generator</code>: Equivalent to the generator property listed above.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>OpenJPA allows you to use the <code class="class">GeneratedValue</code> annotation on any field, not just identity fields.
+Before using the <code>IDENTITY</code>  generation strategy, however, read <a href="ref_guide_pc_oid_pkgen_autoinc.html">Autoassign / Identity Strategy Caveats</a> in the Reference Guide.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA also offers additional generator strategies for non-numeric fields, which you can access by setting <code>strategy</code> to <code>AUTO</code>  (the default), and setting the <code>generator</code> string to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>uuid-string</code>: OpenJPA will generate a 128-bit type 1 UUID unique within the network, represented as a 16-character string.
+For more information on UUIDs, see the IETF UUID draft specification at: <a href="http://www.ics.uci.edu/~ejw/authoring/uuid-guid/">
+http://www.ics.uci.edu/~ejw/authoring/uuid-guid/</a></p>
+</li>
+<li>
+<p><code>uuid-hex</code>: Same as <code>uuid-string</code>, but represents the type 1 UUID as a 32-character hexadecimal string.</p>
+</li>
+<li>
+<p><code>uuid-type4-string</code>: OpenJPA will generate a 128-bit type 4 pseudo-random UUID, represented as a 16-character string.
+For more information on UUIDs, see the IETF UUID draft specification at: <a href="http://www.ics.uci.edu/~ejw/authoring/uuid-guid/">
+http://www.ics.uci.edu/~ejw/authoring/uuid-guid/</a></p>
+</li>
+<li>
+<p><code>uuid-type4-hex</code>: Same as  <code>uuid-type4-string</code> , but represents the type 4 UUID as a 32-character hexadecimal string.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These string constants are defined in <a href="../../apidocs/org/apache/openjpa/persistence/Generator.html">
+org.apache.openjpa.persistence.Generator</a>.</p>
+</div>
+<div class="paragraph">
+<p>If the entities are mapped to the same table name but with different schema name within one <code>PersistenceUnit</code> intentionally, and the strategy of <code>GeneratedType.AUTO</code> is used to generate the ID for each entity, a schema name for each entity must be explicitly declared either through the annotation or the mapping.xml file.
+Otherwise, the mapping tool only creates the tables for those entities with the schema names under each schema.
+In addition, there will be only one <code>OPENJPA_SEQUENCE_TABLE</code> created for all the entities within the <code>PersistenceUnit</code> if the entities are not identified with the schema name.
+Read <a href="ref_guide_sequence.html">Generators</a> and <a href="ref_guide_schema_def.html">Default Schema</a> in the Reference Guide.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_overview_meta_id.html">Id</a> | ↑ Up: <a href="jpa_overview_meta_field.html">Field and Property Metadata</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_meta_embedid.html">Embedded Id</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

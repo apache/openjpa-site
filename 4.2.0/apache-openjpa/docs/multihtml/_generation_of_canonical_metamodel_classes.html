@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="_generation_of_canonical_metamodel_classes" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+<ul class="sectlevel3">
+<li><a href="_constructing_a_criteriaquery.html">2.11.1. Constructing a CriteriaQuery</a>
+</li>
+<li><a href="_executing_a_criteriaquery.html">2.11.2. Executing a CriteriaQuery</a>
+</li>
+<li><a href="_extension_to_criteria_api.html">2.11.3. Extension to Criteria API</a>
+</li>
+<li><a href="_generation_of_canonical_metamodel_classes.html"><span class="toc-current">2.11.4. Generation of Canonical MetaModel classes</span></a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="_generation_of_canonical_metamodel_classes"><a class="link" href="#_generation_of_canonical_metamodel_classes">2.11.4. Generation of Canonical MetaModel classes</a></h4>
+<div class="paragraph">
+<p>Annotation processing tool generates source code for a metamodel class given the annotated source code of persistent entity.
+This tool is invoked during compilation for JDK6 compiler if OpenJPA and JPA libraries are specified in the compiler <code>-classpath</code> option <em>and</em> Annotation processor option <code>-Aopenjpa.metamodel=true</code> is specified.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"> <span class="nv">$ </span>javac <span class="nt">-classpath</span> path/to/openjpa-all.jar <span class="nt">-Aopenjpa</span>.metamodel<span class="o">=</span><span class="nb">true </span>mypackage/MyEntity.java</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will generate source code for canonical meta-model class <code>mypackage.MyEntity_</code>.
+The source code is generated relative to the directory specified in <code>-s</code> option of <code>javac</code> compiler and defaulted to the current directory.</p>
+</div>
+<div class="paragraph">
+<p>The Annotation Processor recognizes the following options specified in the command-line with <code>-A</code> (none of them are mandatory).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>-Aopenjpa.log=TRACE|INFO|WARN|ERROR : The logging level. Default is <code>WARN</code>.</p>
+</li>
+<li>
+<p>-Aopenjpa.source=&lt;n&gt; : where &lt;n&gt; denotes the integral number for Java source version of the generated code. Default is <code>6</code>.</p>
+</li>
+<li>
+<p>-Aopenjpa.naming=class name : fully-qualified name of a class implementing <code>org.apache.openjpa.meta.MetaDataFactory</code> that determines the name of a meta-class given the name of the original persistent Java entity class. Defaults to <code>org.apache.openjpa.persistence.PersistenceMetaDataFactory</code> which appends an underscore character (<code>\_</code>) to the original Java class name.</p>
+</li>
+<li>
+<p>-Aopenjpa.header=&lt;url&gt; : A url whose content will appear as comment header to the generated file(s). Recognizes special value <code>ASL</code> for Apache Source License header as comment. By default, adds an OpenJPA proprietary text as comment block.</p>
+</li>
+<li>
+<p>-Aopenjpa.addGeneratedAnnotation=auto|force|false : Configure whether the annotation <code>jakarta.annotation.Generated</code> should be added to the generated metamodel classes. This annotation is not available on Java 9 upwards unless the <code>jakarta.annotation-api</code> is in the classpath. The default is <code>auto</code>. Set to <code>force</code> to add the annotation even if it is not in the classpath or to <code>false</code> to never add it to the generated class.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="_extension_to_criteria_api.html">Extension to Criteria API</a> | ↑ Up: <a href="jpa_overview_criteria.html">JPA Criteria</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_sqlquery.html">SQL Queries</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

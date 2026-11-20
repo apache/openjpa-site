@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_langref_from_identifiers" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+<ul class="sectlevel3">
+<li><a href="jpa_query_api.html">2.10.1. JPQL API</a>
+</li>
+<li><a href="jpa_langref.html">2.10.2. JPQL Language Reference</a>
+<ul class="sectlevel4">
+<li><a href="jpa_langref_stmnttypes.html">JPQL Statement Types</a>
+</li>
+<li><a href="jpa_langref_schematypes.html">JPQL Abstract Schema Types and Query Domains</a>
+</li>
+<li><a href="jpa_langref_fromclause.html">JPQL FROM Clause and Navigational Declarations</a>
+<ul class="sectlevel5">
+<li><a href="jpa_langref_from_identifiers.html"><span class="toc-current">JPQL FROM Identifiers</span></a>
+</li>
+<li><a href="jpa_langref_from_vars.html">JPQL Identification Variables</a>
+</li>
+<li><a href="jpa_langref_range.html">JPQL Range Declarations</a>
+</li>
+<li><a href="jpa_langref_path.html">JPQL Path Expressions</a>
+</li>
+<li><a href="jpa_langref_Joins.html">JPQL Joins</a>
+</li>
+<li><a href="jpa_langref_inner_joins.html">JPQL Inner Joins (Relationship Joins)</a>
+</li>
+<li><a href="jpa_langref_outer_joins.html">JPQL Outer Joins</a>
+</li>
+<li><a href="jpa_langref_fetch_joins.html">JPQL Fetch Joins</a>
+</li>
+<li><a href="jpa_langref_collection_dec.html">JPQL Collection Member Declarations</a>
+</li>
+<li><a href="jpa_langref_from_clause_and_sql.html">JPQL FROM Clause and SQL</a>
+</li>
+<li><a href="jpa_langref_polymorph.html">JPQL Polymorphism</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_langref_where.html">JPQL WHERE Clause</a>
+</li>
+<li><a href="jpa_langref_cond.html">JPQL Conditional Expressions</a>
+</li>
+<li><a href="jpa_langref_scalar_expressions.html">JPQL Scalar Expressions</a>
+</li>
+<li><a href="jpa_langref_group.html">JPQL GROUP BY, HAVING</a>
+</li>
+<li><a href="jpa_langref_select_clause.html">JPQL SELECT Clause</a>
+</li>
+<li><a href="jpa_langref_orderby.html">JPQL ORDER BY Clause</a>
+</li>
+<li><a href="jpa_langref_bulk_ops.html">JPQL Bulk Update and Delete</a>
+</li>
+<li><a href="jpa_langref_null_values.html">JPQL Null Values</a>
+</li>
+<li><a href="jpa_langref_equality.html">JPQL Equality and Comparison Semantics</a>
+</li>
+<li><a href="jpa_langref_bnf.html">JPQL BNF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect5">
+<h6 id="jpa_langref_from_identifiers"><a class="link" href="#jpa_langref_from_identifiers">2.10.2.3.1. JPQL FROM Identifiers</a></h6>
+<div class="paragraph">
+<p>An identifier is a character sequence of unlimited length.
+The character sequence must begin with a Java identifier start character, and all other characters must be Java identifier part characters.
+An identifier start character is any character for which the method <code class="method">Character.isJavaIdentifierStart</code> returns <code>true</code>.
+This includes the underscore (_) character and the dollar sign ($) character.
+An identifier part character is any character for which the method <code class="method">Character.isJavaIdentifierPart</code> returns <code>true</code>.
+The question mark (?) character is reserved for use by the Java Persistence query language.
+The following are reserved identifiers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ABS</code></p>
+</li>
+<li>
+<p><code>ALL</code></p>
+</li>
+<li>
+<p><code>AND</code></p>
+</li>
+<li>
+<p><code>ANY</code></p>
+</li>
+<li>
+<p><code>AS</code></p>
+</li>
+<li>
+<p><code>ASC</code></p>
+</li>
+<li>
+<p><code>AVG</code></p>
+</li>
+<li>
+<p><code>BETWEEN</code></p>
+</li>
+<li>
+<p><code>BIT_LENGTH</code></p>
+</li>
+<li>
+<p><code>BOTH</code></p>
+</li>
+<li>
+<p><code>BY</code></p>
+</li>
+<li>
+<p><code>CASE</code></p>
+</li>
+<li>
+<p><code>CEILING</code></p>
+</li>
+<li>
+<p><code>CHAR_LENGTH</code></p>
+</li>
+<li>
+<p><code>CHARACTER_LENGTH</code></p>
+</li>
+<li>
+<p><code>CLASS</code></p>
+</li>
+<li>
+<p><code>COALESCE</code></p>
+</li>
+<li>
+<p><code>CONCAT</code></p>
+</li>
+<li>
+<p><code>COUNT</code></p>
+</li>
+<li>
+<p><code>CURRENT_DATE</code></p>
+</li>
+<li>
+<p><code>CURRENT_TIME</code></p>
+</li>
+<li>
+<p><code>CURRENT_TIMESTAMP</code></p>
+</li>
+<li>
+<p><code>DELETE</code></p>
+</li>
+<li>
+<p><code>DESC</code></p>
+</li>
+<li>
+<p><code>DISTINCT</code></p>
+</li>
+<li>
+<p><code>ELSE</code></p>
+</li>
+<li>
+<p><code>EMPTY</code></p>
+</li>
+<li>
+<p><code>END</code></p>
+</li>
+<li>
+<p><code>ENTRY</code></p>
+</li>
+<li>
+<p><code>ESCAPE</code></p>
+</li>
+<li>
+<p><code>EXISTS</code></p>
+</li>
+<li>
+<p><code>EXP</code></p>
+</li>
+<li>
+<p><code>EXTRACT</code></p>
+</li>
+<li>
+<p><code>FALSE</code></p>
+</li>
+<li>
+<p><code>FETCH</code></p>
+</li>
+<li>
+<p><code>FLOOR</code></p>
+</li>
+<li>
+<p><code>FROM</code></p>
+</li>
+<li>
+<p><code>GROUP</code></p>
+</li>
+<li>
+<p><code>HAVING</code></p>
+</li>
+<li>
+<p><code>IN</code></p>
+</li>
+<li>
+<p><code>INDEX</code></p>
+</li>
+<li>
+<p><code>INNER</code></p>
+</li>
+<li>
+<p><code>IS</code></p>
+</li>
+<li>
+<p><code>JOIN</code></p>
+</li>
+<li>
+<p><code>KEY</code></p>
+</li>
+<li>
+<p><code>LEADING</code></p>
+</li>
+<li>
+<p><code>LEFT</code></p>
+</li>
+<li>
+<p><code>LENGTH</code></p>
+</li>
+<li>
+<p><code>LIKE</code></p>
+</li>
+<li>
+<p><code>LOCAL</code></p>
+</li>
+<li>
+<p><code>LN</code></p>
+</li>
+<li>
+<p><code>LOCATE</code></p>
+</li>
+<li>
+<p><code>LOWER</code></p>
+</li>
+<li>
+<p><code>MAX</code></p>
+</li>
+<li>
+<p><code>MEMBER</code></p>
+</li>
+<li>
+<p><code>MIN</code></p>
+</li>
+<li>
+<p><code>MOD</code></p>
+</li>
+<li>
+<p><code>NEW</code></p>
+</li>
+<li>
+<p><code>NOT</code></p>
+</li>
+<li>
+<p><code>NULL</code></p>
+</li>
+<li>
+<p><code>NULLIF</code></p>
+</li>
+<li>
+<p><code>OBJECT</code></p>
+</li>
+<li>
+<p><code>OF</code></p>
+</li>
+<li>
+<p><code>ON</code></p>
+</li>
+<li>
+<p><code>OR</code></p>
+</li>
+<li>
+<p><code>ORDER</code></p>
+</li>
+<li>
+<p><code>OUTER</code></p>
+</li>
+<li>
+<p><code>POSITION</code></p>
+</li>
+<li>
+<p><code>POWER</code></p>
+</li>
+<li>
+<p><code>ROUND</code></p>
+</li>
+<li>
+<p><code>SELECT</code></p>
+</li>
+<li>
+<p><code>SET</code></p>
+</li>
+<li>
+<p><code>SIGN</code></p>
+</li>
+<li>
+<p><code>SIZE</code></p>
+</li>
+<li>
+<p><code>SOME</code></p>
+</li>
+<li>
+<p><code>SQRT</code></p>
+</li>
+<li>
+<p><code>SIBSTRING</code></p>
+</li>
+<li>
+<p><code>SUM</code></p>
+</li>
+<li>
+<p><code>THEN</code></p>
+</li>
+<li>
+<p><code>TRAILING</code></p>
+</li>
+<li>
+<p><code>TREAT</code></p>
+</li>
+<li>
+<p><code>TRIM</code></p>
+</li>
+<li>
+<p><code>TRUE</code></p>
+</li>
+<li>
+<p><code>TYPE</code></p>
+</li>
+<li>
+<p><code>UNKNOWN</code></p>
+</li>
+<li>
+<p><code>UPDATE</code></p>
+</li>
+<li>
+<p><code>UPPER</code></p>
+</li>
+<li>
+<p><code>VALUE</code></p>
+</li>
+<li>
+<p><code>WHEN</code></p>
+</li>
+<li>
+<p><code>WHERE</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Reserved identifiers are case insensitive.
+Reserved identifiers must not be used as identification variables or result variables.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It is recommended that other SQL reserved words also not be used as identification variables in queries because they may be used as reserved identifiers in future releases of the specification.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>BIT_LENGTH, CHAR_LENGTH, CHARACTER_LENGTH, POSITION, and UNKNOWN are not currently used: they are reserved for future use.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="jpa_langref_fromclause.html">JPQL FROM Clause and Navigational Declarations</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_langref_from_vars.html">JPQL Identification Variables</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

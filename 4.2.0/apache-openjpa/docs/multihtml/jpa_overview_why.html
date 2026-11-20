@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_why" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html"><span class="toc-current">2.2. Why JPA?</span></a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect2">
+<h3 id="jpa_overview_why"><a class="link" href="#jpa_overview_why">2.2. Why JPA?</a></h3>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>Java developers who need to store and retrieve persistent data already have several options available to them: serialization, JDBC, JDO, proprietary object-relational mapping tools, object databases, and EJB 2 entity beans.
+Why introduce yet another persistence framework? The answer to this question is that with the exception of JDO, each of the aforementioned persistence solutions has severe limitations.
+JPA attempts to overcome these limitations, as illustrated by the table below.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Persistence Mechanisms</caption>
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Supports:</th>
+<th class="tableblock halign-left valign-top">Serialization</th>
+<th class="tableblock halign-left valign-top">JDBC</th>
+<th class="tableblock halign-left valign-top">ORM</th>
+<th class="tableblock halign-left valign-top">ODB</th>
+<th class="tableblock halign-left valign-top">EJB 2</th>
+<th class="tableblock halign-left valign-top">JDO</th>
+<th class="tableblock halign-left valign-top">JPA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java Objects</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Advanced OO Concepts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transactional Integrity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Concurrency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Large Data Sets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Existing Schema</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Relational and Non-Relational Stores</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Queries</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Strict Standards / Portability</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simplicity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>
+                            Yes </strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Serialization</em> is Java&#8217;s built-in mechanism for transforming an object graph into a series of bytes, which can then be sent over the network or stored in a file.
+Serialization is very easy to use, but it is also very limited.
+It must store and retrieve the entire object graph at once, making it unsuitable for dealing with large amounts of data.
+It cannot undo changes that are made to objects if an error occurs while updating information, making it unsuitable for applications that require strict data integrity.
+Multiple threads or programs cannot read and write the same serialized data concurrently without conflicting with each other.
+It provides no query capabilities.
+All these factors make serialization useless for all but the most trivial persistence needs.</p>
+</li>
+<li>
+<p>
+ Many developers use the <em>Java Database Connectivity</em> (JDBC) APIs to manipulate persistent data in relational databases.
+JDBC overcomes most of the shortcomings of serialization: it can handle large amounts of data, has mechanisms to ensure data integrity, supports concurrent access to information, and has a sophisticated query language in SQL.
+Unfortunately, JDBC does not duplicate serialization&#8217;s ease of use.
+The relational paradigm used by JDBC was not designed for storing objects, and therefore forces you to either abandon object-oriented programming for the portions of your code that deal with persistent data, or to find a way of mapping object-oriented concepts like inheritance to relational databases yourself.</p>
+</li>
+<li>
+<p>
+ There are many proprietary software products that can perform the mapping between objects and relational database tables for you.
+These <em>object-relational mapping</em> (ORM) frameworks allow you to focus on the object model and not concern yourself with the mismatch between the object-oriented and relational paradigms.
+Unfortunately, each of these product has its own set of APIs.
+Your code becomes tied to the proprietary interfaces of a single vendor.
+If the vendor raises prices, fails to fix show-stopping bugs, or falls behind in features, you cannot switch to another product without rewriting all of your persistence code.
+This is referred to as vendor lock-in.</p>
+</li>
+<li>
+<p>
+ Rather than map objects to relational databases, some software companies have developed a form of database designed specifically to store objects.
+These <em>object databases</em> (ODBs) are often much easier to use than object-relational mapping software.
+The Object Database Management Group (ODMG) was formed to create a standard API for accessing object databases; few object database vendors, however, comply with the ODMG&#8217;s recommendations.
+Thus, vendor lock-in plagues object databases as well.
+Many companies are also hesitant to switch from tried-and-true relational systems to the relatively unknown object database technology.
+Fewer data-analysis tools are available for object database systems, and there are vast quantities of data already stored in older relational databases.
+For all of these reasons and more, object databases have not caught on as well as their creators hoped.</p>
+</li>
+<li>
+<p>
+
+ The Enterprise Edition of the Java platform introduced entity Enterprise Java Beans (EJBs). EJB 2.x entities are components that represent persistent information in a datastore.
+Like object-relational mapping solutions, EJB 2.x entities provide an object-oriented view of persistent data.
+Unlike object-relational software, however, EJB 2.x entities are not limited to relational databases; the persistent information they represent may come from an Enterprise Information System (EIS) or other storage device.
+Also, EJB 2.x entities use a strict standard, making them portable across vendors.
+Unfortunately, the EJB 2.x standard is somewhat limited in the object-oriented concepts it can represent.
+Advanced features like inheritance, polymorphism, and complex relations are absent.
+Additionally, EBJ 2.x entities are difficult to code, and they require heavyweight and often expensive application servers to run.</p>
+</li>
+<li>
+<p> The JDO specification uses an API that is strikingly similar to JPA.
+JDO, however, supports non-relational databases, a feature that some argue dilutes the specification.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>JPA combines the best features from each of the persistence mechanisms listed above.
+Creating entities under JPA is as simple as creating serializable classes.
+JPA supports the large data sets, data consistency, concurrent use, and query capabilities of JDBC.
+Like object-relational software and object databases, JPA allows the use of advanced object-oriented concepts such as inheritance.
+JPA avoids vendor lock-in by relying on a strict specification like JDO and EJB 2.x entities.
+JPA focuses on relational databases.
+And like JDO, JPA is extremely easy to use.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>OpenJPA typically stores data in relational databases, but can be customized for use with non-relational datastores as well.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>JPA is not ideal for every application.
+For many applications, though, it provides an exciting alternative to other persistence mechanisms.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_overview_intro_transpers.html">Lightweight Persistence</a> | ↑ Up: <a href="jpa_overview.html">Java Persistence API</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_arch.html">Java Persistence API Architecture</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

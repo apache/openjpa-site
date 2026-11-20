@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_dbsetup_setDSatRuntime" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_dbsetup_builtin.html">3.5.1. Using the OpenJPA DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_thirdparty.html">3.5.2. Using a Third-Party DataSource</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_dbsetup_thirdparty_enlist.html">Managed and XA DataSources</a>
+</li>
+<li><a href="ref_guide_dbsetup_setDSatRuntime.html"><span class="toc-current">Setting the DataSource at runtime</span></a>
+<ul class="sectlevel5">
+<li><a href="ref_guide_dbsetup_setDSPerEM.html">Using different DataSources for each EntityManager</a>
+</li>
+<li><a href="ref_guide_dbsetup_setDSBenefits.html">Benefits</a>
+</li>
+<li><a href="ref_guide_dbsetup_setDSLimitations.html">Limitations</a>
+</li>
+<li><a href="ref_guide_dbsetup_setDSError.html">Error handling</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_dbsetup_sqlconn.html">3.5.3. Runtime Access to DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport.html">3.5.4. Database Support</a>
+</li>
+<li><a href="ref_guide_dbsetup_isolation.html">3.5.5. Setting the Transaction Isolation</a>
+</li>
+<li><a href="ref_guide_dbsetup_sql92.html">3.5.6. Setting the SQL Join Syntax</a>
+</li>
+<li><a href="ref_guide_dbsetup_multidb.html">3.5.7. Accessing Multiple Databases</a>
+</li>
+<li><a href="ref_guide_dbsetup_retain.html">3.5.8. Configuring the Use of JDBC Connections</a>
+</li>
+<li><a href="ref_guide_dbsetup_stmtbatch.html">3.5.9. Statement Batching</a>
+</li>
+<li><a href="ref_guide_dbsetup_lrs.html">3.5.10. Large Result Sets</a>
+</li>
+<li><a href="ref_guide_schema_def.html">3.5.11. Default Schema</a>
+</li>
+<li><a href="ref_guide_schema_info.html">3.5.12. Schema Reflection</a>
+</li>
+<li><a href="ref_guide_schema_schematool.html">3.5.13. Schema Tool</a>
+</li>
+<li><a href="ref_guide_schema_xml.html">3.5.14. XML Schema Format</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="ref_guide_dbsetup_setDSatRuntime"><a class="link" href="#ref_guide_dbsetup_setDSatRuntime">3.5.2.2. Setting the DataSource at runtime</a></h5>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>As mentioned above, the JTA and Non-JTA DataSources may be passed in as configuration properties at EntityManagerFactory creation.
+Either the JPA standard properties ( <code>jakarta.persistence.jtaDataSource</code>, <code>java.persistence.nonJtaDataSource</code>) or their OpenJPA specific equivalents (<code>openjpa.ConnectionFactoryName</code>, <code>openjpa.ConnectionFactory2Name</code>) may be used.
+One use case for this function is to store production connection information in configuration files but override the value when testing.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 51. Setting DataSource at Runtime</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;();</span>
+<span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"jakarta.persistence.jtaDataSource"</span><span class="o">,</span> <span class="s">"jdbc/myDataSource"</span><span class="o">);</span>
+<span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"jakarta.persistence.nonJtaDataSource"</span><span class="o">,</span> <span class="s">"jdbc/myNonJTADataSource"</span><span class="o">);</span>
+<span class="n">emf</span> <span class="o">=</span> <span class="nc">Persistence</span><span class="o">.</span><span class="na">createEntityManagerFactory</span><span class="o">(</span><span class="s">"example"</span><span class="o">,</span> <span class="n">props</span><span class="o">);</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="ref_guide_dbsetup_setDSPerEM.html">Using different DataSources for each EntityManager</a></p>
+</li>
+<li>
+<p><a href="ref_guide_dbsetup_setDSBenefits.html">Benefits</a></p>
+</li>
+<li>
+<p><a href="ref_guide_dbsetup_setDSLimitations.html">Limitations</a></p>
+</li>
+<li>
+<p><a href="ref_guide_dbsetup_setDSError.html">Error handling</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_dbsetup_thirdparty_enlist.html">Managed and XA DataSources</a> | ↑ Up: <a href="ref_guide_dbsetup_thirdparty.html">Using a Third-Party DataSource</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_dbsetup_setDSPerEM.html">Using different DataSources for each EntityManager</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

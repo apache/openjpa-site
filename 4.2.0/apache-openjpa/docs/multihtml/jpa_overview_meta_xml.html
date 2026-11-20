@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_meta_xml" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+<ul class="sectlevel3">
+<li><a href="jpa_overview_meta_class.html">2.5.1. Class Metadata</a>
+</li>
+<li><a href="jpa_overview_meta_field.html">2.5.2. Field and Property Metadata</a>
+</li>
+<li><a href="jpa_overview_meta_xml.html"><span class="toc-current">2.5.3. XML Schema</span></a>
+</li>
+<li><a href="jpa_overview_meta_complete.html">2.5.4. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="jpa_overview_meta_xml"><a class="link" href="#jpa_overview_meta_xml">2.5.3. XML Schema</a></h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>The latest revision of the version 2.0 orm schema is presented below.
+Version 2.0 of the schema must be used if JPA 2.0 elements are specified as XML metadata.
+Many of the elements in the schema relate to object/relational mapping rather than metadata; these elements are discussed in <a href="jpa_overview_mapping.html">Mapping Metadata</a>.
+Version 1.0 of the orm schema can be found at <a href="http://java.sun.com/xml/ns/persistence/orm_1_0.xsd" class="bare">http://java.sun.com/xml/ns/persistence/orm_1_0.xsd</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+    <span class="c">&lt;!-- Java Persistence API object/relational mapping file schema --&gt;</span>
+<span class="nt">&lt;xsd:schema</span> <span class="na">targetNamespace=</span><span class="s">"http://java.sun.com/xml/ns/persistence/orm"</span>
+    <span class="na">xmlns:orm=</span><span class="s">"http://java.sun.com/xml/ns/persistence/orm"</span>
+    <span class="na">xmlns:xsd=</span><span class="s">"http://www.w3.org/2001/XMLSchema"</span>
+    <span class="na">elementFormDefault=</span><span class="s">"qualified"</span> <span class="na">attributeFormDefault=</span><span class="s">"unqualified"</span>
+    <span class="na">version=</span><span class="s">"2.0"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:documentation&gt;</span>
+            @(#)orm_2_0.xsd 2.0 October 1 2009
+        <span class="nt">&lt;/xsd:documentation&gt;</span>
+    <span class="nt">&lt;/xsd:annotation&gt;</span>
+
+  <span class="nt">&lt;xsd:annotation&gt;</span>
+    <span class="nt">&lt;xsd:documentation&gt;</span>
+
+          DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+          Copyright 2005-2009 Sun Microsystems, Inc. All rights reserved.
+
+          The contents of this file are subject to the terms of either the
+          GNU General Public License Version 2 only ("GPL") or the Common
+          Development and Distribution License("CDDL") (collectively, the
+          "License").  You may not use this file except in compliance with
+          the License. You can obtain a copy of the License at
+          https://glassfish.dev.java.net/public/CDDL+GPL.html or
+          glassfish/bootstrap/legal/LICENSE.txt.  See the License for the
+          specific language governing permissions and limitations under the
+          License.
+
+          When distributing the software, include this License Header
+          Notice in each file and include the License file at
+          glassfish/bootstrap/legal/LICENSE.txt.  Sun designates this
+          particular file as subject to the "Classpath" exception as
+          provided by Sun in the GPL Version 2 section of the License file
+          that accompanied this code.  If applicable, add the following
+          below the License Header, with the fields enclosed by brackets []
+          replaced by your own identifying information:
+          "Portions Copyrighted [year] [name of copyright owner]"
+
+          Contributor(s):
+
+          If you wish your version of this file to be governed by only the
+          CDDL or only the GPL Version 2, indicate your decision by adding
+          "[Contributor] elects to include this software in this
+          distribution under the [CDDL or GPL Version 2] license."  If you
+          don't indicate a single choice of license, a recipient has the
+          option to distribute your version of this file under either the
+          CDDL, the GPL Version 2 or to extend the choice of license to its
+          licensees as provided above.  However, if you add GPL Version 2
+          code and therefore, elected the GPL Version 2 license, then the
+          option applies only if the new code is made subject to such
+          option by the copyright holder.
+
+        <span class="nt">&lt;/xsd:documentation&gt;</span>
+    <span class="nt">&lt;/xsd:annotation&gt;</span>
+
+    <span class="nt">&lt;xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:documentation&gt;</span>
+        <span class="cp">&lt;![CDATA[
+            This is the XML Schema for the persistence object/relational
+            mapping file.
+            The file may be named "META-INF/orm.xml" in the persistence
+            archive or it may be named some other name which would be
+            used to locate the file as resource on the classpath.
+            Object/relational mapping files must indicate the object/relational
+            mapping file schema by using the persistence namespace:
+            http://java.sun.com/xml/ns/persistence
+            and indicate the version of the schema by
+            using the version element as shown below:
+            &lt;entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+            http://java.sun.com/xml/ns/persistence/orm/orm_2_0.xsd"
+            version="2.0"&gt;</span>
+            ...
+            <span class="nt">&lt;/entity-mappings&gt;</span>
+        ]]&gt;
+        <span class="nt">&lt;/xsd:documentation&gt;</span>
+    <span class="nt">&lt;/xsd:annotation&gt;</span>
+
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"emptyType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"versionType"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"xsd:token"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:pattern</span> <span class="na">value=</span><span class="s">"[0-9]+(\.[0-9]+)*"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"entity-mappings"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:complexType&gt;</span>
+            <span class="nt">&lt;xsd:annotation&gt;</span>
+                <span class="nt">&lt;xsd:documentation&gt;</span>
+                    The entity-mappings element is the root element of a mapping
+                    file. It contains the following four types of elements:
+                    1. The persistence-unit-metadata element contains metadata
+                    for the entire persistence unit. It is undefined if this element
+                    occurs in multiple mapping files within the same
+                    persistence unit.
+                    2. The package, schema, catalog and access elements apply to all of
+                    the entity, mapped-superclass and embeddable
+                    elements defined in
+                    the same file in which they occur.
+                    3. The sequence-generator, table-generator, named-query,
+                    named-native-query and sql-result-set-mapping
+                    elements are global
+                    to the persistence unit. It is undefined to have more than one
+                    sequence-generator or table-generator of the same
+                    name in the same
+                    or different mapping files in a persistence unit. It is also
+                    undefined to have more than one named-query,
+                    named-native-query, or
+                    result-set-mapping of the same name in the same or different mapping
+                    files in a persistence unit.
+                    4. The entity, mapped-superclass and embeddable elements each define
+                    the mapping information for a managed persistent
+                    class. The mapping
+                    information contained in these elements may be complete or it may
+                    be partial.
+                <span class="nt">&lt;/xsd:documentation&gt;</span>
+            <span class="nt">&lt;/xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:sequence&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"persistence-unit-metadata"</span>
+                    <span class="na">type=</span><span class="s">"orm:persistence-unit-metadata"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"package"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"schema"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"catalog"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"sequence-generator"</span> <span class="na">type=</span><span class="s">"orm:sequence-generator"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"table-generator"</span> <span class="na">type=</span><span class="s">"orm:table-generator"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"named-query"</span> <span class="na">type=</span><span class="s">"orm:named-query"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"named-native-query"</span> <span class="na">type=</span><span class="s">"orm:named-native-query"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"sql-result-set-mapping"</span>
+                    <span class="na">type=</span><span class="s">"orm:sql-result-set-mapping"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"mapped-superclass"</span> <span class="na">type=</span><span class="s">"orm:mapped-superclass"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"entity"</span> <span class="na">type=</span><span class="s">"orm:entity"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"embeddable"</span> <span class="na">type=</span><span class="s">"orm:embeddable"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"version"</span> <span class="na">type=</span><span class="s">"orm:versionType"</span>
+                <span class="na">fixed=</span><span class="s">"2.0"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="nt">&lt;/xsd:element&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"persistence-unit-metadata"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                Metadata that applies to the persistence unit and not just to
+                the mapping file in which it is contained.
+                If the xml-mapping-metadata-complete element is specified,
+                the complete set of mapping metadata for the persistence unit
+                is contained in the XML mapping files for the persistence unit.
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"xml-mapping-metadata-complete"</span>
+                <span class="na">type=</span><span class="s">"orm:emptyType"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"persistence-unit-defaults"</span>
+                <span class="na">type=</span><span class="s">"orm:persistence-unit-defaults"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"persistence-unit-defaults"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                These defaults are applied to the persistence unit as a whole
+                unless they are overridden by local annotation or XML
+                element settings.
+                schema - Used as the schema for all tables, secondary tables, join
+                tables, collection tables, sequence generators, and table
+                generators that apply to the persistence unit
+                catalog - Used as the catalog for all tables, secondary tables, join
+                tables, collection tables, sequence generators, and
+                table generators that apply to the persistence unit
+                delimited-identifiers - Used to treat database identifiers as
+                delimited identifiers.
+                access - Used as the access type for all managed classes in
+                the persistence unit
+                cascade-persist - Adds cascade-persist to the set of cascade options
+                in all entity relationships of the persistence unit
+                entity-listeners - List of default entity listeners to be invoked
+                on each entity in the persistence unit.
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"schema"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"catalog"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"delimited-identifiers"</span> <span class="na">type=</span><span class="s">"orm:emptyType"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"cascade-persist"</span> <span class="na">type=</span><span class="s">"orm:emptyType"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"entity-listeners"</span> <span class="na">type=</span><span class="s">"orm:entity-listeners"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"entity"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                Defines the settings and mappings for an entity. Is allowed to be
+                sparsely populated and used in conjunction with the annotations.
+                Alternatively, the metadata-complete attribute can be
+                used to
+                indicate that no annotations on the entity class (and its fields
+                or properties) are to be processed. If this is the case then
+                the defaulting rules for the entity and its subelements will
+                be recursively applied.
+                @Target(TYPE) @Retention(RUNTIME)
+                public @interface Entity {
+                String name() default "";
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"table"</span> <span class="na">type=</span><span class="s">"orm:table"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"secondary-table"</span> <span class="na">type=</span><span class="s">"orm:secondary-table"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"primary-key-join-column"</span>
+                <span class="na">type=</span><span class="s">"orm:primary-key-join-column"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"id-class"</span> <span class="na">type=</span><span class="s">"orm:id-class"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"inheritance"</span> <span class="na">type=</span><span class="s">"orm:inheritance"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"discriminator-value"</span> <span class="na">type=</span><span class="s">"orm:discriminator-value"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"discriminator-column"</span> <span class="na">type=</span><span class="s">"orm:discriminator-column"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"sequence-generator"</span> <span class="na">type=</span><span class="s">"orm:sequence-generator"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"table-generator"</span> <span class="na">type=</span><span class="s">"orm:table-generator"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"named-query"</span> <span class="na">type=</span><span class="s">"orm:named-query"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"named-native-query"</span> <span class="na">type=</span><span class="s">"orm:named-native-query"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"sql-result-set-mapping"</span> <span class="na">type=</span><span class="s">"orm:sql-result-set-mapping"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"exclude-default-listeners"</span>
+                <span class="na">type=</span><span class="s">"orm:emptyType"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"exclude-superclass-listeners"</span>
+                <span class="na">type=</span><span class="s">"orm:emptyType"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"entity-listeners"</span> <span class="na">type=</span><span class="s">"orm:entity-listeners"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"pre-persist"</span> <span class="na">type=</span><span class="s">"orm:pre-persist"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-persist"</span> <span class="na">type=</span><span class="s">"orm:post-persist"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"pre-remove"</span> <span class="na">type=</span><span class="s">"orm:pre-remove"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-remove"</span> <span class="na">type=</span><span class="s">"orm:post-remove"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"pre-update"</span> <span class="na">type=</span><span class="s">"orm:pre-update"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-update"</span> <span class="na">type=</span><span class="s">"orm:post-update"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-load"</span> <span class="na">type=</span><span class="s">"orm:post-load"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"attribute-override"</span> <span class="na">type=</span><span class="s">"orm:attribute-override"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"association-override"</span> <span class="na">type=</span><span class="s">"orm:association-override"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"attributes"</span> <span class="na">type=</span><span class="s">"orm:attributes"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"cacheable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"metadata-complete"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"access-type"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                This element determines how the persistence provider accesses the
+                state of an entity or embedded object.
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"xsd:token"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"PROPERTY"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"FIELD"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"association-override"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE, METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface AssociationOverride {
+                String name();
+                JoinColumn[] joinColumns() default{};
+                JoinTable joinTable() default @JoinTable;
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"join-column"</span> <span class="na">type=</span><span class="s">"orm:join-column"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"join-table"</span> <span class="na">type=</span><span class="s">"orm:join-table"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"attribute-override"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE, METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface AttributeOverride {
+                String name();
+                Column column();
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"column"</span> <span class="na">type=</span><span class="s">"orm:column"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"attributes"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                This element contains the entity field or property mappings.
+                It may be sparsely populated to include only a subset of the
+                fields or properties. If metadata-complete for the entity is true
+                then the remainder of the attributes will be defaulted according
+                to the default rules.
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">type=</span><span class="s">"orm:id"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"embedded-id"</span> <span class="na">type=</span><span class="s">"orm:embedded-id"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"basic"</span> <span class="na">type=</span><span class="s">"orm:basic"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"version"</span> <span class="na">type=</span><span class="s">"orm:version"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"many-to-one"</span> <span class="na">type=</span><span class="s">"orm:many-to-one"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"one-to-many"</span> <span class="na">type=</span><span class="s">"orm:one-to-many"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"one-to-one"</span> <span class="na">type=</span><span class="s">"orm:one-to-one"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"many-to-many"</span> <span class="na">type=</span><span class="s">"orm:many-to-many"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"element-collection"</span> <span class="na">type=</span><span class="s">"orm:element-collection"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"embedded"</span> <span class="na">type=</span><span class="s">"orm:embedded"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"transient"</span> <span class="na">type=</span><span class="s">"orm:transient"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"basic"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface Basic {
+                FetchType fetch() default EAGER;
+                boolean optional() default true;
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"column"</span> <span class="na">type=</span><span class="s">"orm:column"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"lob"</span> <span class="na">type=</span><span class="s">"orm:lob"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"temporal"</span> <span class="na">type=</span><span class="s">"orm:temporal"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"enumerated"</span> <span class="na">type=</span><span class="s">"orm:enumerated"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"fetch"</span> <span class="na">type=</span><span class="s">"orm:fetch-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"optional"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"cascade-type"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                public enum CascadeType { ALL, PERSIST, MERGE, REMOVE, REFRESH,
+                DETACH};
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"cascade-all"</span> <span class="na">type=</span><span class="s">"orm:emptyType"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"cascade-persist"</span> <span class="na">type=</span><span class="s">"orm:emptyType"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"cascade-merge"</span> <span class="na">type=</span><span class="s">"orm:emptyType"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"cascade-remove"</span> <span class="na">type=</span><span class="s">"orm:emptyType"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"cascade-refresh"</span> <span class="na">type=</span><span class="s">"orm:emptyType"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"cascade-detach"</span> <span class="na">type=</span><span class="s">"orm:emptyType"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"collection-table"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface CollectionTable {
+                String name() default "";
+                String catalog() default "";
+                String schema() default "";
+                JoinColumn[] joinColumns() default {};
+                UniqueConstraint[] uniqueConstraints() default {};
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"join-column"</span> <span class="na">type=</span><span class="s">"orm:join-column"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"unique-constraint"</span> <span class="na">type=</span><span class="s">"orm:unique-constraint"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"catalog"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"schema"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"column"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface Column {
+                String name() default "";
+                boolean unique() default false;
+                boolean nullable() default true;
+                boolean insertable() default true;
+                boolean updatable() default true;
+                String columnDefinition() default "";
+                String table() default "";
+                int length() default 255;
+                int precision() default 0; // decimal precision
+                int scale() default 0; // decimal scale
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"unique"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"nullable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"insertable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"updatable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"column-definition"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"table"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"length"</span> <span class="na">type=</span><span class="s">"xsd:int"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"precision"</span> <span class="na">type=</span><span class="s">"xsd:int"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"scale"</span> <span class="na">type=</span><span class="s">"xsd:int"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"column-result"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({}) @Retention(RUNTIME)
+                public @interface ColumnResult {
+                String name();
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"discriminator-column"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE}) @Retention(RUNTIME)
+                public @interface DiscriminatorColumn {
+                String name() default "DTYPE";
+                DiscriminatorType discriminatorType() default STRING;
+                String columnDefinition() default "";
+                int length() default 31;
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"discriminator-type"</span> <span class="na">type=</span><span class="s">"orm:discriminator-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"column-definition"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"length"</span> <span class="na">type=</span><span class="s">"xsd:int"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"discriminator-type"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                public enum DiscriminatorType { STRING, CHAR, INTEGER };
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"xsd:token"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"STRING"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"CHAR"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"INTEGER"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"discriminator-value"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE}) @Retention(RUNTIME)
+                public @interface DiscriminatorValue {
+                String value();
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"element-collection"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface ElementCollection {
+                Class targetClass() default void.class;
+                FetchType fetch() default LAZY;
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"order-by"</span> <span class="na">type=</span><span class="s">"orm:order-by"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"order-column"</span> <span class="na">type=</span><span class="s">"orm:order-column"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key"</span> <span class="na">type=</span><span class="s">"orm:map-key"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-class"</span> <span class="na">type=</span><span class="s">"orm:map-key-class"</span>
+                        <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xsd:choice&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-temporal"</span>
+                            <span class="na">type=</span><span class="s">"orm:temporal"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-enumerated"</span>
+                            <span class="na">type=</span><span class="s">"orm:enumerated"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-attribute-override"</span>
+                            <span class="na">type=</span><span class="s">"orm:attribute-override"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                            <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsd:choice&gt;</span>
+                    <span class="nt">&lt;xsd:choice&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-column"</span>
+                            <span class="na">type=</span><span class="s">"orm:map-key-column"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-join-column"</span>
+                            <span class="na">type=</span><span class="s">"orm:map-key-join-column"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                            <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsd:choice&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"column"</span> <span class="na">type=</span><span class="s">"orm:column"</span>
+                        <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xsd:choice&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"temporal"</span> <span class="na">type=</span><span class="s">"orm:temporal"</span>
+                            <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"enumerated"</span> <span class="na">type=</span><span class="s">"orm:enumerated"</span>
+                            <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"lob"</span> <span class="na">type=</span><span class="s">"orm:lob"</span>
+                            <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsd:choice&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"attribute-override"</span>
+                        <span class="na">type=</span><span class="s">"orm:attribute-override"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                        <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"association-override"</span>
+                        <span class="na">type=</span><span class="s">"orm:association-override"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                        <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"collection-table"</span> <span class="na">type=</span><span class="s">"orm:collection-table"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"target-class"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"fetch"</span> <span class="na">type=</span><span class="s">"orm:fetch-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"embeddable"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                Defines the settings and mappings for embeddable objects. Is
+                allowed to be sparsely populated and used in conjunction with
+                the annotations. Alternatively, the metadata-complete attribute
+                can be used to indicate that no annotations are to be processed
+                in the class. If this is the case then the defaulting rules will
+                be recursively applied.
+                @Target({TYPE}) @Retention(RUNTIME)
+                public @interface Embeddable {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"attributes"</span> <span class="na">type=</span><span class="s">"orm:embeddable-attributes"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"metadata-complete"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"embeddable-attributes"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"basic"</span> <span class="na">type=</span><span class="s">"orm:basic"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"many-to-one"</span> <span class="na">type=</span><span class="s">"orm:many-to-one"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"one-to-many"</span> <span class="na">type=</span><span class="s">"orm:one-to-many"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"one-to-one"</span> <span class="na">type=</span><span class="s">"orm:one-to-one"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"many-to-many"</span> <span class="na">type=</span><span class="s">"orm:many-to-many"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"element-collection"</span> <span class="na">type=</span><span class="s">"orm:element-collection"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"embedded"</span> <span class="na">type=</span><span class="s">"orm:embedded"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"transient"</span> <span class="na">type=</span><span class="s">"orm:transient"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"embedded"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface Embedded {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"attribute-override"</span> <span class="na">type=</span><span class="s">"orm:attribute-override"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"association-override"</span> <span class="na">type=</span><span class="s">"orm:association-override"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"embedded-id"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface EmbeddedId {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"attribute-override"</span> <span class="na">type=</span><span class="s">"orm:attribute-override"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"entity-listener"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                Defines an entity listener to be invoked at lifecycle events
+                for the entities that list this listener.
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"pre-persist"</span> <span class="na">type=</span><span class="s">"orm:pre-persist"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-persist"</span> <span class="na">type=</span><span class="s">"orm:post-persist"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"pre-remove"</span> <span class="na">type=</span><span class="s">"orm:pre-remove"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-remove"</span> <span class="na">type=</span><span class="s">"orm:post-remove"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"pre-update"</span> <span class="na">type=</span><span class="s">"orm:pre-update"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-update"</span> <span class="na">type=</span><span class="s">"orm:post-update"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-load"</span> <span class="na">type=</span><span class="s">"orm:post-load"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"entity-listeners"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE}) @Retention(RUNTIME)
+                public @interface EntityListeners {
+                Class[] value();
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"entity-listener"</span> <span class="na">type=</span><span class="s">"orm:entity-listener"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"entity-result"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({}) @Retention(RUNTIME)
+                public @interface EntityResult {
+                Class entityClass();
+                FieldResult[] fields() default {};
+                String discriminatorColumn() default "";
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"field-result"</span> <span class="na">type=</span><span class="s">"orm:field-result"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"entity-class"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+            <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"discriminator-column"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"enum-type"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                public enum EnumType {
+                ORDINAL,
+                STRING
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"xsd:token"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"ORDINAL"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"STRING"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"enumerated"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface Enumerated {
+                EnumType value() default ORDINAL;
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"orm:enum-type"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"fetch-type"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                public enum FetchType { LAZY, EAGER };
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"xsd:token"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"LAZY"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"EAGER"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"field-result"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({}) @Retention(RUNTIME)
+                public @interface FieldResult {
+                String name();
+                String column();
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"column"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+            <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"generated-value"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface GeneratedValue {
+                GenerationType strategy() default AUTO;
+                String generator() default "";
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"strategy"</span> <span class="na">type=</span><span class="s">"orm:generation-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"generator"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"generation-type"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                public enum GenerationType { TABLE, SEQUENCE, IDENTITY, AUTO };
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"xsd:token"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"TABLE"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"SEQUENCE"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"IDENTITY"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"AUTO"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface Id {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"column"</span> <span class="na">type=</span><span class="s">"orm:column"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"generated-value"</span> <span class="na">type=</span><span class="s">"orm:generated-value"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"temporal"</span> <span class="na">type=</span><span class="s">"orm:temporal"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"table-generator"</span> <span class="na">type=</span><span class="s">"orm:table-generator"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"sequence-generator"</span> <span class="na">type=</span><span class="s">"orm:sequence-generator"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"id-class"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE}) @Retention(RUNTIME)
+                public @interface IdClass {
+                Class value();
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"inheritance"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE}) @Retention(RUNTIME)
+                public @interface Inheritance {
+                InheritanceType strategy() default SINGLE_TABLE;
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"strategy"</span> <span class="na">type=</span><span class="s">"orm:inheritance-type"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"inheritance-type"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                public enum InheritanceType
+                { SINGLE_TABLE, JOINED, TABLE_PER_CLASS};
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"xsd:token"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"SINGLE_TABLE"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"JOINED"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"TABLE_PER_CLASS"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"join-column"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface JoinColumn {
+                String name() default "";
+                String referencedColumnName() default "";
+                boolean unique() default false;
+                boolean nullable() default true;
+                boolean insertable() default true;
+                boolean updatable() default true;
+                String columnDefinition() default "";
+                String table() default "";
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"referenced-column-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"unique"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"nullable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"insertable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"updatable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"column-definition"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"table"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"join-table"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface JoinTable {
+                String name() default "";
+                String catalog() default "";
+                String schema() default "";
+                JoinColumn[] joinColumns() default {};
+                JoinColumn[] inverseJoinColumns() default {};
+                UniqueConstraint[] uniqueConstraints() default {};
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"join-column"</span> <span class="na">type=</span><span class="s">"orm:join-column"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"inverse-join-column"</span> <span class="na">type=</span><span class="s">"orm:join-column"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"unique-constraint"</span> <span class="na">type=</span><span class="s">"orm:unique-constraint"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"catalog"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"schema"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"lob"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface Lob {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"lock-mode-type"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                public enum LockModeType { READ, WRITE, OPTIMISTIC,
+                OPTIMISTIC_FORCE_INCREMENT, PESSIMISTIC_READ,
+                PESSIMISTIC_WRITE,
+                PESSIMISTIC_FORCE_INCREMENT, NONE};
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"xsd:token"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"READ"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"WRITE"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"OPTIMISTIC"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"OPTIMISTIC_FORCE_INCREMENT"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"PESSIMISTIC_READ"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"PESSIMISTIC_WRITE"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"PESSIMISTIC_FORCE_INCREMENT"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"NONE"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"many-to-many"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface ManyToMany {
+                Class targetEntity() default void.class;
+                CascadeType[] cascade() default {};
+                FetchType fetch() default LAZY;
+                String mappedBy() default "";
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"order-by"</span> <span class="na">type=</span><span class="s">"orm:order-by"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"order-column"</span> <span class="na">type=</span><span class="s">"orm:order-column"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key"</span> <span class="na">type=</span><span class="s">"orm:map-key"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-class"</span> <span class="na">type=</span><span class="s">"orm:map-key-class"</span>
+                        <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xsd:choice&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-temporal"</span>
+                            <span class="na">type=</span><span class="s">"orm:temporal"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-enumerated"</span>
+                            <span class="na">type=</span><span class="s">"orm:enumerated"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-attribute-override"</span>
+                            <span class="na">type=</span><span class="s">"orm:attribute-override"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                            <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsd:choice&gt;</span>
+                    <span class="nt">&lt;xsd:choice&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-column"</span>
+                            <span class="na">type=</span><span class="s">"orm:map-key-column"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-join-column"</span>
+                            <span class="na">type=</span><span class="s">"orm:map-key-join-column"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                            <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsd:choice&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"join-table"</span> <span class="na">type=</span><span class="s">"orm:join-table"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"cascade"</span> <span class="na">type=</span><span class="s">"orm:cascade-type"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"target-entity"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"fetch"</span> <span class="na">type=</span><span class="s">"orm:fetch-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"mapped-by"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"many-to-one"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface ManyToOne {
+                Class targetEntity() default void.class;
+                CascadeType[] cascade() default {};
+                FetchType fetch() default EAGER;
+                boolean optional() default true;
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"join-column"</span> <span class="na">type=</span><span class="s">"orm:join-column"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"join-table"</span> <span class="na">type=</span><span class="s">"orm:join-table"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"cascade"</span> <span class="na">type=</span><span class="s">"orm:cascade-type"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"target-entity"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"fetch"</span> <span class="na">type=</span><span class="s">"orm:fetch-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"optional"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"maps-id"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"map-key"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface MapKey {
+                String name() default "";
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"map-key-class"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface MapKeyClass {
+                Class value();
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"map-key-column"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface MapKeyColumn {
+                String name() default "";
+                boolean unique() default false;
+                boolean nullable() default false;
+                boolean insertable() default true;
+                boolean updatable() default true;
+                String columnDefinition() default "";
+                String table() default "";
+                int length() default 255;
+                int precision() default 0; // decimal precision
+                int scale() default 0; // decimal scale
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"unique"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"nullable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"insertable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"updatable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"column-definition"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"table"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"length"</span> <span class="na">type=</span><span class="s">"xsd:int"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"precision"</span> <span class="na">type=</span><span class="s">"xsd:int"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"scale"</span> <span class="na">type=</span><span class="s">"xsd:int"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"map-key-join-column"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface MapKeyJoinColumn {
+                String name() default "";
+                String referencedColumnName() default "";
+                boolean unique() default false;
+                boolean nullable() default false;
+                boolean insertable() default true;
+                boolean updatable() default true;
+                String columnDefinition() default "";
+                String table() default "";
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"referenced-column-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"unique"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"nullable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"insertable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"updatable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"column-definition"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"table"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"mapped-superclass"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                Defines the settings and mappings for a mapped superclass. Is
+                allowed to be sparsely populated and used in conjunction with
+                the annotations. Alternatively, the metadata-complete attribute
+                can be used to indicate that no annotations are to be processed
+                If this is the case then the defaulting rules will be recursively
+                applied.
+                @Target(TYPE) @Retention(RUNTIME)
+                public @interface MappedSuperclass{}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"id-class"</span> <span class="na">type=</span><span class="s">"orm:id-class"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"exclude-default-listeners"</span>
+                <span class="na">type=</span><span class="s">"orm:emptyType"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"exclude-superclass-listeners"</span>
+                <span class="na">type=</span><span class="s">"orm:emptyType"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"entity-listeners"</span> <span class="na">type=</span><span class="s">"orm:entity-listeners"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"pre-persist"</span> <span class="na">type=</span><span class="s">"orm:pre-persist"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-persist"</span> <span class="na">type=</span><span class="s">"orm:post-persist"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"pre-remove"</span> <span class="na">type=</span><span class="s">"orm:pre-remove"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-remove"</span> <span class="na">type=</span><span class="s">"orm:post-remove"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"pre-update"</span> <span class="na">type=</span><span class="s">"orm:pre-update"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-update"</span> <span class="na">type=</span><span class="s">"orm:post-update"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"post-load"</span> <span class="na">type=</span><span class="s">"orm:post-load"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"attributes"</span> <span class="na">type=</span><span class="s">"orm:attributes"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"metadata-complete"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"named-native-query"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE}) @Retention(RUNTIME)
+                public @interface NamedNativeQuery {
+                String name();
+                String query();
+                QueryHint[] hints() default {};
+                Class resultClass() default void.class;
+                String resultSetMapping() default ""; //named SqlResultSetMapping
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"query"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"hint"</span> <span class="na">type=</span><span class="s">"orm:query-hint"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"result-class"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"result-set-mapping"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"named-query"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE}) @Retention(RUNTIME)
+                public @interface NamedQuery {
+                String name();
+                String query();
+                LockModeType lockMode() default NONE;
+                QueryHint[] hints() default {};
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"query"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"lock-mode"</span> <span class="na">type=</span><span class="s">"orm:lock-mode-type"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"hint"</span> <span class="na">type=</span><span class="s">"orm:query-hint"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"one-to-many"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface OneToMany {
+                Class targetEntity() default void.class;
+                CascadeType[] cascade() default {};
+                FetchType fetch() default LAZY;
+                String mappedBy() default "";
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"order-by"</span> <span class="na">type=</span><span class="s">"orm:order-by"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"order-column"</span> <span class="na">type=</span><span class="s">"orm:order-column"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key"</span> <span class="na">type=</span><span class="s">"orm:map-key"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:sequence&gt;</span>
+                    <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-class"</span> <span class="na">type=</span><span class="s">"orm:map-key-class"</span>
+                        <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xsd:choice&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-temporal"</span>
+                            <span class="na">type=</span><span class="s">"orm:temporal"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-enumerated"</span>
+                            <span class="na">type=</span><span class="s">"orm:enumerated"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-attribute-override"</span>
+                            <span class="na">type=</span><span class="s">"orm:attribute-override"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                            <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsd:choice&gt;</span>
+                    <span class="nt">&lt;xsd:choice&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-column"</span>
+                            <span class="na">type=</span><span class="s">"orm:map-key-column"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"map-key-join-column"</span>
+                            <span class="na">type=</span><span class="s">"orm:map-key-join-column"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                            <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xsd:choice&gt;</span>
+                <span class="nt">&lt;/xsd:sequence&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"join-table"</span> <span class="na">type=</span><span class="s">"orm:join-table"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"join-column"</span> <span class="na">type=</span><span class="s">"orm:join-column"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"cascade"</span> <span class="na">type=</span><span class="s">"orm:cascade-type"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"target-entity"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"fetch"</span> <span class="na">type=</span><span class="s">"orm:fetch-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"mapped-by"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"orphan-removal"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"one-to-one"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface OneToOne {
+                Class targetEntity() default void.class;
+                CascadeType[] cascade() default {};
+                FetchType fetch() default EAGER;
+                boolean optional() default true;
+                String mappedBy() default "";
+                boolean orphanRemoval() default false;
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:choice&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"primary-key-join-column"</span>
+                    <span class="na">type=</span><span class="s">"orm:primary-key-join-column"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"join-column"</span> <span class="na">type=</span><span class="s">"orm:join-column"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"join-table"</span> <span class="na">type=</span><span class="s">"orm:join-table"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xsd:choice&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"cascade"</span> <span class="na">type=</span><span class="s">"orm:cascade-type"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"target-entity"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"fetch"</span> <span class="na">type=</span><span class="s">"orm:fetch-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"optional"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"mapped-by"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"orphan-removal"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"maps-id"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"order-by"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface OrderBy {
+                String value() default "";
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"order-column"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface OrderColumn {
+                String name() default "";
+                boolean nullable() default true;
+                boolean insertable() default true;
+                boolean updatable() default true;
+                String columnDefinition() default "";
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"nullable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"insertable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"updatable"</span> <span class="na">type=</span><span class="s">"xsd:boolean"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"column-definition"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"post-load"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD}) @Retention(RUNTIME)
+                public @interface PostLoad {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"method-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+            <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"post-persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD}) @Retention(RUNTIME)
+                public @interface PostPersist {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"method-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+            <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"post-remove"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD}) @Retention(RUNTIME)
+                public @interface PostRemove {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"method-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+            <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"post-update"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD}) @Retention(RUNTIME)
+                public @interface PostUpdate {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"method-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+            <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"pre-persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD}) @Retention(RUNTIME)
+                public @interface PrePersist {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"method-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+            <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"pre-remove"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD}) @Retention(RUNTIME)
+                public @interface PreRemove {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"method-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+            <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"pre-update"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD}) @Retention(RUNTIME)
+                public @interface PreUpdate {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"method-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+            <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"primary-key-join-column"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE, METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface PrimaryKeyJoinColumn {
+                String name() default "";
+                String referencedColumnName() default "";
+                String columnDefinition() default "";
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"referenced-column-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"column-definition"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"query-hint"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({}) @Retention(RUNTIME)
+                public @interface QueryHint {
+                String name();
+                String value();
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"value"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"secondary-table"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE}) @Retention(RUNTIME)
+                public @interface SecondaryTable {
+                String name();
+                String catalog() default "";
+                String schema() default "";
+                PrimaryKeyJoinColumn[] pkJoinColumns() default {};
+                UniqueConstraint[] uniqueConstraints() default {};
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"primary-key-join-column"</span>
+                <span class="na">type=</span><span class="s">"orm:primary-key-join-column"</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"unique-constraint"</span> <span class="na">type=</span><span class="s">"orm:unique-constraint"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"catalog"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"schema"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"sequence-generator"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE, METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface SequenceGenerator {
+                String name();
+                String sequenceName() default "";
+                String catalog() default "";
+                String schema() default "";
+                int initialValue() default 1;
+                int allocationSize() default 50;
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"sequence-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"catalog"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"schema"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"initial-value"</span> <span class="na">type=</span><span class="s">"xsd:int"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"allocation-size"</span> <span class="na">type=</span><span class="s">"xsd:int"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"sql-result-set-mapping"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE}) @Retention(RUNTIME)
+                public @interface SqlResultSetMapping {
+                String name();
+                EntityResult[] entities() default {};
+                ColumnResult[] columns() default {};
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"entity-result"</span> <span class="na">type=</span><span class="s">"orm:entity-result"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"column-result"</span> <span class="na">type=</span><span class="s">"orm:column-result"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"table"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE}) @Retention(RUNTIME)
+                public @interface Table {
+                String name() default "";
+                String catalog() default "";
+                String schema() default "";
+                UniqueConstraint[] uniqueConstraints() default {};
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"unique-constraint"</span> <span class="na">type=</span><span class="s">"orm:unique-constraint"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"catalog"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"schema"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"table-generator"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({TYPE, METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface TableGenerator {
+                String name();
+                String table() default "";
+                String catalog() default "";
+                String schema() default "";
+                String pkColumnName() default "";
+                String valueColumnName() default "";
+                String pkColumnValue() default "";
+                int initialValue() default 0;
+                int allocationSize() default 50;
+                UniqueConstraint[] uniqueConstraints() default {};
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"unique-constraint"</span> <span class="na">type=</span><span class="s">"orm:unique-constraint"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"table"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"catalog"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"schema"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"pk-column-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"value-column-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"pk-column-value"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"initial-value"</span> <span class="na">type=</span><span class="s">"xsd:int"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"allocation-size"</span> <span class="na">type=</span><span class="s">"xsd:int"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"temporal"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface Temporal {
+                TemporalType value();
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"orm:temporal-type"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:simpleType</span> <span class="na">name=</span><span class="s">"temporal-type"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                public enum TemporalType {
+                DATE, // java.sql.Date
+                TIME, // java.sql.Time
+                TIMESTAMP // java.sql.Timestamp
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:restriction</span> <span class="na">base=</span><span class="s">"xsd:token"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"DATE"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"TIME"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:enumeration</span> <span class="na">value=</span><span class="s">"TIMESTAMP"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:restriction&gt;</span>
+    <span class="nt">&lt;/xsd:simpleType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"transient"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface Transient {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"unique-constraint"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({}) @Retention(RUNTIME)
+                public @interface UniqueConstraint {
+                String name() default "";
+                String[] columnNames();
+                }
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"column-name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span>
+                <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+    <span class="c">&lt;!-- **************************************************** --&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">name=</span><span class="s">"version"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:annotation&gt;</span>
+            <span class="nt">&lt;xsd:documentation&gt;</span>
+                @Target({METHOD, FIELD}) @Retention(RUNTIME)
+                public @interface Version {}
+            <span class="nt">&lt;/xsd:documentation&gt;</span>
+        <span class="nt">&lt;/xsd:annotation&gt;</span>
+        <span class="nt">&lt;xsd:sequence&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"column"</span> <span class="na">type=</span><span class="s">"orm:column"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">"temporal"</span> <span class="na">type=</span><span class="s">"orm:temporal"</span>
+                <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xsd:sequence&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"xsd:string"</span> <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">"access"</span> <span class="na">type=</span><span class="s">"orm:access-type"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+<span class="nt">&lt;/xsd:schema&gt;</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_overview_meta_fielddefaults.html">Persistent Field Defaults</a> | ↑ Up: <a href="jpa_overview_meta.html">Metadata</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_meta_complete.html">Conclusion</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

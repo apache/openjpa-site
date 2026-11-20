@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="_constructing_a_criteriaquery" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+<ul class="sectlevel3">
+<li><a href="_constructing_a_criteriaquery.html"><span class="toc-current">2.11.1. Constructing a CriteriaQuery</span></a>
+</li>
+<li><a href="_executing_a_criteriaquery.html">2.11.2. Executing a CriteriaQuery</a>
+</li>
+<li><a href="_extension_to_criteria_api.html">2.11.3. Extension to Criteria API</a>
+</li>
+<li><a href="_generation_of_canonical_metamodel_classes.html">2.11.4. Generation of Canonical MetaModel classes</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="_constructing_a_criteriaquery"><a class="link" href="#_constructing_a_criteriaquery">2.11.1. Constructing a CriteriaQuery</a></h4>
+<div class="paragraph">
+<p>The CriteriaBuilder interface is the factory for CriteriaQuery.
+A CriteriaBuilder is obtained from either an EntityManagerFactory or an EntityManager as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">EntityManager</span> <span class="n">em</span> <span class="o">=</span> <span class="o">...</span> <span class="o">;</span>
+<span class="nc">CriteriaBuilder</span> <span class="n">queryBuilder</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">getCriteriaBuilder</span><span class="o">();</span>
+<span class="nc">CriteriaQuery</span> <span class="n">qdef</span> <span class="o">=</span> <span class="n">queryBuilder</span><span class="o">.</span><span class="na">createQuery</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first step in constructing a query definition is specification of query roots.
+Query roots specify the domain objects on which the query is evaluated.
+Query root is an instance of the Root&lt;T&gt; interface.
+A query root is added to a CriteriaQuery by <code class="method">addRoot(Class c)</code> method.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">    <span class="nc">Root</span><span class="o">&lt;</span><span class="nc">Customer</span><span class="o">&gt;</span> <span class="n">customer</span> <span class="o">=</span> <span class="n">qdef</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="nc">Customer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A query domain can be further refined by joining to other domain objects.
+For example, for the above query definition to operate over customers and their orders, use <code class="method">join(String attribute)</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Root</span><span class="o">&lt;</span><span class="nc">Order</span><span class="o">&gt;</span> <span class="n">order</span> <span class="o">=</span> <span class="n">customer</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">customer</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Customer_</span><span class="o">.</span><span class="na">orders</span><span class="o">));</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where Customer_.orders represent a field of canonical metamodel class for Customer.
+These canonical metamodel classes are generated during compilation by processing the persistent annotation in the source code of Customer.java.</p>
+</div>
+<div class="paragraph">
+<p>The condition of a query definition is set via <code class="method">where(Predicate p)</code> where the argument designates a conditional predicate.
+Conditional predicates are often composed of one or more comparisons between the attribute values of the domain objects and some variable.
+For example, to select the Customer whose name is <em>"John Doe"</em> and has orders that are not yet delivered, you can build the predicate and set it to the query definition as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">           <span class="n">qdef</span><span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="n">customer</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Customer_</span><span class="o">.</span><span class="na">name</span><span class="o">).</span><span class="na">equal</span><span class="o">(</span><span class="s">"John Doe"</span><span class="o">)</span>
+               <span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">order</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Order_</span><span class="o">.</span><span class="na">status</span><span class="o">).</span><span class="na">equal</span><span class="o">(</span><span class="nc">OrderStatus</span><span class="o">.</span><span class="na">DELIVERED</span><span class="o">).</span><span class="na">not</span><span class="o">()));</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code class="method">select()</code> method defines the result of the query.
+If left unspecified, the select projection is assumed to be the root domain object.
+However, you can specify the selected projections explicitly as a list:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">            <span class="n">qdef</span><span class="o">.</span><span class="na">select</span><span class="o">(</span><span class="n">customer</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Customer_</span><span class="o">.</span><span class="na">name</span><span class="o">),</span> <span class="n">order</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Order_</span><span class="o">.</span><span class="na">status</span><span class="o">));</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An attribute of a domain object can also be specified by navigating via <code class="method">get(String attr)</code>.
+The attribute <em>should</em> refer to a valid persistent property of the receiving domain object, however no such validation is enforced during the construction of the query definition.
+All validation is deferred until the query is actually executed.
+On the other hand, using canonical metamodel for path navigate enforces compile type checking.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="jpa_overview_criteria.html">JPA Criteria</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="_executing_a_criteriaquery.html">Executing a CriteriaQuery</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

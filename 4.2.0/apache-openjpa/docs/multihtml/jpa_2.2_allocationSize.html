@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_2.2_allocationSize" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+<ul class="sectlevel2">
+<li><a href="jpa_2.2_incompatibilities.html">Incompatibilities</a>
+<ul class="sectlevel3">
+<li><a href="jpa_2.2_allocationSize.html"><span class="toc-current">allocationSize Property of Sequence Generator</span></a>
+</li>
+<li><a href="jpa_2.2_metamodelArrays.html">MetaModel Attributes for Arrays</a>
+</li>
+<li><a href="jpa_2.2_SupportsSetClob.html">supportsSetClob Property.</a>
+</li>
+<li><a href="jpa_2.2_UseNativeSequenceCache.html">useNativeSequenceCache Property.</a>
+</li>
+<li><a href="jpa_2.2_cascadePersist.html">Cascade persist behavior</a>
+</li>
+<li><a href="jpa_2.2_LifecycleEventManager.html">Life Cycle Event Manager Callback Behavior</a>
+</li>
+<li><a href="jpa_2.2_sharedCacheMode.html">shared-cache-mode Property</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="jpa_2.2_allocationSize"><a class="link" href="#jpa_2.2_allocationSize">allocationSize Property of Sequence Generator</a></h4>
+<div class="paragraph">
+<p>In previous releases, specifying the <code>allocationSize</code> property of <a href="jpa_overview_mapping_sequence_seqgen.html">sequence generator</a> affected only sequence definition in the database.
+During schema creation, the <code>INCREMENT BY</code> clause of <code>CREATE SEQUENCE</code> statement always had a value of 1 and on DB2, Oracle and PostgreSQL databases a <code>CACHE</code> clause was added with the value of <code>allocationSize</code> property.
+Such a statement caused sequence values being cached in the database.
+Starting with OpenJPA 2.2.0, sequence values are cached in the jvm memory and the <code>allocationSize</code> property determines size of that cache.
+The <code>CACHE</code> clause is no longer used, instead the <code>INCREMENT BY</code> clause gets its value equal to the <code>allocationSize</code> property.
+Such a strategy reduces the number of database roundtrips required for retrieving sequence values considerably.</p>
+</div>
+<div class="paragraph">
+<p>In order for the existing applications to work with OpenJPA 2.2.0, you have to manually recreate or redefine sequences, specifying the correct <code>INCREMENT BY</code> value and, possibly, correct initial sequence value.
+Note that the default value of the <code>allocationSize</code> property is 50 and that value is used if the property is not specified.</p>
+</div>
+<div class="paragraph">
+<p>The requirement for sequence modification applies to all databases that support sequences, regardless of the <code>CACHE</code> clause being supported.
+The only exception is Firebird database - since with this database the increment step is determined during sequence value fetch, no migration activity is needed.</p>
+</div>
+<div class="paragraph">
+<p>To maintain the old behavior of sequence generator in OpenJPA 2.2.0, you can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set the <code>allocationSize</code> property value to 1.</p>
+</li>
+<li>
+<p>Additionally, if the <code>CACHE</code> clause has to be emitted in sequence definition, this can be accomplished by overriding the <a href="../../apidocs/org/apache/openjpa/jdbc/sql/DBDictionary.html#getCreateSequenceSQL(org.apache.openjpa.jdbc.schema.Sequence)"> DBDictionary.getCreateSequenceSQL</a> method.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="jpa_2.2_incompatibilities.html">Incompatibilities</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_2.2_metamodelArrays.html">MetaModel Attributes for Arrays</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

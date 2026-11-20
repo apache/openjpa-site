@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_pc_restrict_fields" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+<ul class="sectlevel3">
+<li><a href="jpa_overview_pc_restrict.html">2.4.1. Restrictions on Persistent Classes</a>
+<ul class="sectlevel4">
+<li><a href="jpa_overview_pc_no_arg.html">Default or No-Arg Constructor</a>
+</li>
+<li><a href="jpa_overview_pc_final.html">Final</a>
+</li>
+<li><a href="jpa_overview_pc_id.html">Identity Fields</a>
+</li>
+<li><a href="jpa_overview_pc_version.html">Version Field</a>
+</li>
+<li><a href="jpa_overview_pc_restrict_inheritance.html">Inheritance</a>
+</li>
+<li><a href="jpa_overview_pc_restrict_fields.html"><span class="toc-current">Persistent Fields</span></a>
+</li>
+<li><a href="jpa_overview_pc_restrict_conclusion.html">Conclusions</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_pc_identity.html">2.4.2. Entity Identity</a>
+</li>
+<li><a href="jpa_overview_pc_callbacks.html">2.4.3. Lifecycle Callbacks</a>
+</li>
+<li><a href="jpa_overview_pc_conclusion.html">2.4.4. Conclusions</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_overview_pc_restrict_fields"><a class="link" href="#jpa_overview_pc_restrict_fields">2.4.1.6. Persistent Fields</a></h5>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>JPA manages the state of all persistent fields.
+Before you access persistent state, the JPA runtime makes sure that it has been loaded from the datastore.
+When you set a field, the runtime records that it has changed so that the new value will be persisted.
+This allows you to treat the field in exactly the same way you treat any other field - another aspect of JPA&#8217;s transparency.</p>
+</div>
+<div class="paragraph">
+<p>JPA does not support static or final fields.
+It does, however, include built-in support for most common field types.
+These types can be roughly divided into three categories: immutable types, mutable types, and relations.</p>
+</div>
+<div class="paragraph">
+<p><em>Immutable</em> types, once created, cannot be changed.
+The only way to alter a persistent field of an immutable type is to assign a new value to the field.
+JPA supports the following immutable types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All primitives (<code class="class">int, float, byte</code>, etc)</p>
+</li>
+<li>
+<p>All primitive wrappers (<code class="class">java.lang.Integer, java.lang.Float, java.lang.Byte</code>, etc)</p>
+</li>
+<li>
+<p><code class="class">java.lang.String</code></p>
+</li>
+<li>
+<p><code class="class">java.math.BigInteger</code></p>
+</li>
+<li>
+<p><code class="class">java.math.BigDecimal</code></p>
+</li>
+<li>
+<p><code class="class">java.time.LocalDate</code></p>
+</li>
+<li>
+<p><code class="class">java.time.LocalDateTime</code></p>
+</li>
+<li>
+<p><code class="class">java.time.LocalTime</code></p>
+</li>
+<li>
+<p><code class="class">java.time.OffsetDateTime</code></p>
+</li>
+<li>
+<p><code class="class">java.time.OffsetTime</code></p>
+</li>
+<li>
+<p><code class="class">java.util.UUID</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>JPA also supports <code class="class">byte[]</code>, <code class="class">Byte[]</code>, <code class="class">char[]</code>, and <code class="class">Character[]</code> as immutable types.
+That is, you can persist fields of these types, but you should not manipulate individual array indexes without resetting the array into the persistent field.</p>
+</div>
+<div class="paragraph">
+<p>
+ Persistent fields of <em>mutable</em> types can be altered without assigning the field a new value.
+Mutable types can be modified directly through their own methods.
+The JPA specification requires that implementations support the following mutable field types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code class="class">java.util.Date</code></p>
+</li>
+<li>
+<p><code class="class">java.util.Calendar</code></p>
+</li>
+<li>
+<p><code class="class">java.sql.Date</code></p>
+</li>
+<li>
+<p><code class="class">java.sql.Timestamp</code></p>
+</li>
+<li>
+<p><code class="class">java.sql.Time</code></p>
+</li>
+<li>
+<p>Enums</p>
+</li>
+<li>
+<p>Entity types (relations between entities)</p>
+</li>
+<li>
+<p>Embeddable types</p>
+</li>
+<li>
+<p><code class="class">java.util.Collection</code>s of entities</p>
+</li>
+<li>
+<p><code class="class">java.util.Set</code>s of entities</p>
+</li>
+<li>
+<p><code class="class">java.util.List</code>s of entities</p>
+</li>
+<li>
+<p><code class="class">java.util.Map</code>s in which each entry maps the value of one of a related entity&#8217;s fields to that entity.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Collection and map types may be parameterized.</p>
+</div>
+<div class="paragraph">
+<p> Most JPA implementations also have support for persisting serializable values as binary data in the datastore. <a href="jpa_overview_meta.html">Metadata</a> has more information on persisting serializable types.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>OpenJPA also supports arrays, <code class="class">java.lang.Number</code>, <code class="class">java.util.Locale</code>, all JDK 1.2 <code class="class">Set</code>, <code class="class">List</code>, and <code class="class">Map</code> types, and many other mutable and immutable field types.
+OpenJPA also allows you to plug in support for custom types.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_overview_pc_restrict_inheritance.html">Inheritance</a> | ↑ Up: <a href="jpa_overview_pc_restrict.html">Restrictions on Persistent Classes</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_pc_restrict_conclusion.html">Conclusions</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

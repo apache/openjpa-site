@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_dbsetup_thirdparty" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_dbsetup_builtin.html">3.5.1. Using the OpenJPA DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_thirdparty.html"><span class="toc-current">3.5.2. Using a Third-Party DataSource</span></a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_dbsetup_thirdparty_enlist.html">Managed and XA DataSources</a>
+</li>
+<li><a href="ref_guide_dbsetup_setDSatRuntime.html">Setting the DataSource at runtime</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_dbsetup_sqlconn.html">3.5.3. Runtime Access to DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport.html">3.5.4. Database Support</a>
+</li>
+<li><a href="ref_guide_dbsetup_isolation.html">3.5.5. Setting the Transaction Isolation</a>
+</li>
+<li><a href="ref_guide_dbsetup_sql92.html">3.5.6. Setting the SQL Join Syntax</a>
+</li>
+<li><a href="ref_guide_dbsetup_multidb.html">3.5.7. Accessing Multiple Databases</a>
+</li>
+<li><a href="ref_guide_dbsetup_retain.html">3.5.8. Configuring the Use of JDBC Connections</a>
+</li>
+<li><a href="ref_guide_dbsetup_stmtbatch.html">3.5.9. Statement Batching</a>
+</li>
+<li><a href="ref_guide_dbsetup_lrs.html">3.5.10. Large Result Sets</a>
+</li>
+<li><a href="ref_guide_schema_def.html">3.5.11. Default Schema</a>
+</li>
+<li><a href="ref_guide_schema_info.html">3.5.12. Schema Reflection</a>
+</li>
+<li><a href="ref_guide_schema_schematool.html">3.5.13. Schema Tool</a>
+</li>
+<li><a href="ref_guide_schema_xml.html">3.5.14. XML Schema Format</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_dbsetup_thirdparty"><a class="link" href="#ref_guide_dbsetup_thirdparty">3.5.2. Using a Third-Party DataSource</a></h4>
+<div class="paragraph">
+<p>You can use OpenJPA with any third-party <code class="class">javax.sql.DataSource</code>.
+There are multiple ways of telling OpenJPA about a <code class="class">DataSource</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p> Set the <code class="class">DataSource</code> into the map passed to <code class="method">Persistence.createEntityManagerFactory</code> under the <a href="openjpa.ConnectionFactory.html"><code>openjpa.ConnectionFactory</code> </a> key.</p>
+</li>
+<li>
+<p> Bind the <code class="class">DataSource</code> into JNDI, and then specify its location in the <code>jta-data-source</code> or <code>non-jta-data-source</code> element of the <a href="jpa_overview_persistence_xml.html">JPA XML format</a> (depending on whether the <code class="class">DataSource</code> is managed by JTA), or in the <a href="openjpa.ConnectionFactoryName.html"><code>openjpa.ConnectionFactoryName</code></a> property.</p>
+</li>
+<li>
+<p> Specify the full class name of the <code class="class">DataSource</code> implementation in the <a href="openjpa.ConnectionDriverName.html"><code>openjpa.ConnectionDriverName</code></a> property in place of a JDBC driver.
+In this configuration OpenJPA will instantiate an instance of the named class via reflection.
+It will then configure the <code class="class">DataSource</code> with the properties in the <a href="openjpa.ConnectionProperties.html"><code>openjpa.ConnectionProperties</code></a> setting.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The features of OpenJPA&#8217;s own <code class="class">DataSource</code> can also be used with third-party implementations.
+OpenJPA layers on top of the third-party <code class="class">DataSource</code> to provide the extra functionality.
+To configure these features use the <a href="openjpa.ConnectionFactoryProperties.html"><code>openjpa.ConnectionFactoryProperties</code></a> property described in the previous section.</p>
+</div>
+<div id="ref_guide_dbsetup_thirdparty_ex" class="exampleblock">
+<div class="title">Example 49. Properties File for a Third-Party DataSource</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.ConnectionDriverName"</span> <span class="na">value=</span><span class="s">"oracle.jdbc.pool.OracleDataSource"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.ConnectionProperties"</span>
+    <span class="na">value=</span><span class="s">"PortNumber=1521, ServerName=saturn, DatabaseName=solarsid, DriverType=thin"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.ConnectionFactoryProperties"</span> <span class="na">value=</span><span class="s">"QueryTimeout=5000"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also force the Apache Commons DBCP BasicDataSource to be used for connection pooling when provided on the classpath by substituting it as the <code>ConnectionDriverName</code> and setting <code>ConnectionProperties=DriverClassName</code> to the actual JDBC driver value -</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.ConnectionDriverName"</span> <span class="na">value=</span><span class="s">"org.apache.commons.dbcp.BasicDataSource"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.ConnectionProperties"</span>
+    <span class="na">value=</span><span class="s">"DriverClassName=oracle.jdbc.pool.OracleDataSource, PortNumber=1521, ServerName=saturn, DatabaseName=solarsid, DriverType=thin, MaxIdle=0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.ConnectionFactoryProperties"</span> <span class="na">value=</span><span class="s">"QueryTimeout=5000"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="ref_guide_dbsetup_thirdparty_enlist.html">Managed and XA DataSources</a></p>
+</li>
+<li>
+<p><a href="ref_guide_dbsetup_setDSatRuntime.html">Setting the DataSource at runtime</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_dbsetup_dbcp.html">Configuring Apache Commons DBCP</a> | ↑ Up: <a href="ref_guide_dbsetup.html">JDBC</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_dbsetup_thirdparty_enlist.html">Managed and XA DataSources</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

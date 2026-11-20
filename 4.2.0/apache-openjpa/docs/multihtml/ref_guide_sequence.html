@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_sequence" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_runtime_arch.html">3.10.1. Architecture</a>
+</li>
+<li><a href="ref_guide_runtime_jpa.html">3.10.2. JPA Extensions</a>
+</li>
+<li><a href="ref_guide_locking.html">3.10.3. Object Locking</a>
+</li>
+<li><a href="ref_guide_savepoints.html">3.10.4. Savepoints</a>
+</li>
+<li><a href="ref_guide_enterprise_methodql.html">3.10.5. MethodQL</a>
+</li>
+<li><a href="ref_guide_sequence.html"><span class="toc-current">3.10.6. Generators</span></a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_sequence_runtime.html">Runtime Access</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_runtime_pm_event.html">3.10.7. Transaction Events</a>
+</li>
+<li><a href="ref_guide_enterprise_abstractstore.html">3.10.8. Non-Relational Stores</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_sequence"><a class="link" href="#ref_guide_sequence">3.10.6. Generators</a></h4>
+<div class="paragraph">
+<p>The JPA Overview&#8217;s <a href="jpa_overview_mapping.html">Mapping Metadata</a> details using generators to automatically populate identity fields in JPA.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA represents all generators internally with the <a href="../../apidocs/org/apache/openjpa/kernel/Seq.html">
+org.apache.openjpa.kernel.Seq</a> interface.
+This interface supplies all the context you need to create your own custom generators, including the current persistence environment, the JDBC <code class="class">DataSource</code>, and other essentials.
+The <a href="../../apidocs/org/apache/openjpa/jdbc/kernel/AbstractJDBCSeq.html">
+org.apache.openjpa.jdbc.kernel.AbstractJDBCSeq</a> helps you create custom JDBC-based sequences.
+OpenJPA also supplies the following built-in <code class="class">Seq</code>s:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>table</code>: This is OpenJPA&#8217;s default implementation.
+It is an alias for the <a href="../../apidocs/org/apache/openjpa/jdbc/kernel/TableJDBCSeq.html">
+org.apache.openjpa.jdbc.kernel.TableJDBCSeq</a> class.
+The <code class="class">TableJDBCSeq</code> uses a special single-row table to store a global sequence number.
+If the table does not already exist, it is created the first time you run the <a href="ref_guide_mapping_mappingtool.html">mapping tool</a> on a class that requires it.
+You can also use the class&#8217;s <code class="method">main</code> method to manipulate the table; see the <code class="method">TableJDBCSeq.main</code> method Javadoc for usage details.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This <code class="class">Seq</code> has the following properties:
+<strong> <code>Table</code>: The name of the sequence number table to use. Defaults to <code>OPENJPA_SEQUENCE_TABLE</code>. If the entities are mapped to the same table name but with different schema name within one PersistenceUnit, one <code>OPENJPA_SEQUENCE_TABLE</code> is created for each schema.
+</strong> <code>PrimaryKeyColumn</code>: The name of the primary key column for the sequence table. Defaults to <code>ID</code>.
+<strong> <code>SequenceColumn</code>: The name of the column that will hold the current sequence value. Defaults to <code>SEQUENCE_VALUE</code>.
+</strong> <code>Allocate</code>: The number of values to allocate on each database trip. Defaults to 50, meaning the class will set aside the next 50 numbers each time it accesses the sequence table, which in turn means it only has to make a database trip to get new sequence numbers once every 50 sequence number requests.
+* <code>class-table</code>: This is an alias for the <a href="../../apidocs/org/apache/openjpa/jdbc/kernel/ClassTableJDBCSeq.html"> org.apache.openjpa.jdbc.kernel.ClassTableJDBCSeq</a> . This <code class="class">Seq</code> is like the <code class="class">TableJDBCSeq</code> above, but maintains a separate table row, and therefore a separate sequence number, for each base persistent class. It has all the properties of the <code class="class">TableJDBCSeq</code>. Its table name defaults to <code>OPENJPA_SEQUENCES_TABLE</code>. It also adds the following properties:
+<strong> <code>IgnoreUnmapped</code>: Whether to ignore unmapped base classes, and instead use one row per least-derived mapped class. Defaults to <code>false</code>.
+</strong> <code>UseAliases</code>: Whether to use each class' entity name as the primary key value of each row, rather than the full class name. Defaults to <code>false</code>.</p>
+</div>
+<div class="paragraph">
+<p>As with the <code class="class">TableJDBCSeq</code>, the <code class="class">ClassTableJDBCSeq</code> creates its table automatically during mapping tool runs.
+However, you can manually manipulate the table through the class' <code class="method">main</code> method.
+See the Javadoc for the <code class="method">ClassTableJDBCSeq.main</code> method for usage details.
+* <code>value-table</code>: This is an alias for the <a href="../../apidocs/org/apache/openjpa/jdbc/kernel/ValueTableJDBCSeq.html">
+org.apache.openjpa.jdbc.kernel.ValueTableJDBCSeq</a> . This <code class="class">Seq</code> is like the <code class="class">ClassTableJDBCSeq</code> above, but has an arbitrary number of rows for sequence values, rather than a fixed pattern of one row per class.
+Its table defaults to <code>OPENJPA_SEQUENCES_TABLE</code>.
+It has all the properties of the <code class="class">TableJDBCSeq</code>, plus:
+** <code>PrimaryKeyValue</code>: The primary key value used by this instance.</p>
+</div>
+<div class="paragraph">
+<p>As with the <code class="class">TableJDBCSeq</code>, the <code class="class">ValueTableJDBCSeq</code> creates its table automatically during mapping tool runs.
+However, you can manually manipulate the table through the class' <code class="method">main</code> method.
+See the Javadoc for the <code class="method">ValueTableJDBCSeq.main</code> method for usage details.
+* <code>native</code>: This is an alias for the <a href="../../apidocs/org/apache/openjpa/jdbc/kernel/NativeJDBCSeq.html"> org.apache.openjpa.jdbc.kernel.NativeJDBCSeq</a>. Many databases have a concept of "native sequences" - a built-in mechanism for obtaining incrementing numbers. For example, in Oracle database, you can create a database sequence with a statement like <code>CREATE SEQUENCE MYSEQUENCE</code>. Sequence values can then be atomically obtained and incremented with the statement <code>SELECT MYSEQUENCE.NEXTVAL FROM DUAL</code>. OpenJPA provides support for this common mechanism of sequence generation with the <code class="class">NativeJDBCSeq</code>, which accepts the following properties:
+<strong> <code>Sequence</code>: The name of the database sequence. Defaults to <code>OPENJPA_SEQUENCE</code>.
+</strong> <code>InitialValue</code>: The initial sequence value. Defaults to 1.
+<strong> <code>Increment</code>: The amount the sequence increments. Defaults to 1.
+</strong> <code>Allocate</code>: The number of values to allocate on each database trip. Defaults to 50, meaning the class will set aside the next 50 numbers each time it accesses the sequence, which in turn means it only has to make a database trip to get new sequence numbers once every 50 sequence number requests.
+* <code>time</code>: This is an alias for the <a href="../../apidocs/org/apache/openjpa/kernel/TimeSeededSeq.html">
+org.apache.openjpa.kernel.TimeSeededSeq</a>.
+This type uses an in-memory static counter, initialized to the current time in milliseconds and monotonically incremented for each value requested.
+It is only suitable for single-JVM environments.</p>
+</div>
+<div class="paragraph">
+<p>You can use JPA <code>SequenceGenerator</code>s to describe any built-in <code class="class">Seq</code>s or your own <code class="class">Seq</code> implementation.
+Set the <code>sequenceName</code> attribute to a plugin string describing your choice.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+If specifying your own class name, you must include parentheses at the end of the class name, even if you have no plugin properties to configure.
+(E.g., <code>sequenceName="com.example.SeqImpl()"</code>.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>See <a href="jpa_overview_mapping_sequence.html">Generators</a> in the JPA Overview for details on defining <code>SequenceGenerator</code>s.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="ref_guide_conf_plugins.html">Plugin Configuration</a> for plugin string formatting.</p>
+</div>
+<div id="ref_guide_sequence_named" class="exampleblock">
+<div class="title">Example 136. Named Seq Sequence</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"AUTO"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Author</span> <span class="o">{</span>
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="nc">GenerationType</span><span class="o">.</span><span class="na">SEQUENCE</span><span class="o">,</span> <span class="n">generator</span><span class="o">=</span><span class="s">"AuthorSeq"</span><span class="o">)</span>
+    <span class="nd">@SequenceGenerator</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"AuthorSeq"</span><span class="o">,</span> <span class="n">sequenceName</span><span class="o">=</span><span class="s">"table(Table=AUTO_SEQ)"</span><span class="o">,</span> <span class="n">allocationSize</span><span class="o">=</span><span class="mi">100</span><span class="o">)</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"AID"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that if you want to use a plugin string without any arguments, you must still suffix the plugin type with <code>()</code> to differentiate it from a sequence name in the <code>SequenceGenerator.sequenceName</code> attribute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@SequenceGenerator</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"AuthorSeq"</span><span class="o">,</span> <span class="n">sequenceName</span><span class="o">=</span><span class="s">"table()"</span><span class="o">)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>OpenJPA maintains a <em>system</em> sequence to generate datastore identity values for classes that do not declare a specific datastore identity strategy.
+You can configure the system sequence through the <a href="openjpa.Sequence.html"><code>openjpa.Sequence</code></a> configuration property.
+This property accepts a plugin string describing a <code class="class">Seq</code> instance.</p>
+</div>
+<div id="ref_guide_sequence_systemex" class="exampleblock">
+<div class="title">Example 137. System Sequence Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.Sequence"</span> <span class="na">value=</span><span class="s">"time(Increment=100)"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>In JPA, set your <code>GeneratedValue</code> annotation&#8217;s
+<code>strategy</code> attribute to <code>AUTO</code> to use the configured system sequence.
+Or, because <code>AUTO</code> is the default strategy, use the annotation without attributes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@GeneratedValue</span>
+<span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="ref_guide_sequence_runtime.html">Runtime Access</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_enterprise_methodql.html">MethodQL</a> | ↑ Up: <a href="ref_guide_runtime.html">Runtime Extensions</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_sequence_runtime.html">Runtime Access</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="_distributed_query" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+<ul class="sectlevel3">
+<li><a href="slice_overview.html">3.14.1. Overview</a>
+</li>
+<li><a href="features_and_limitations.html">3.14.2. Salient Features</a>
+<ul class="sectlevel4">
+<li><a href="_transparency.html">Transparency</a>
+</li>
+<li><a href="_scaling.html">Scaling</a>
+</li>
+<li><a href="_distributed_query.html"><span class="toc-current">Distributed Query</span></a>
+</li>
+<li><a href="_data_distribution.html">Data Distribution</a>
+</li>
+<li><a href="_data_replication.html">Data Replication</a>
+</li>
+<li><a href="_heterogeneous_database.html">Heterogeneous Database</a>
+</li>
+<li><a href="_distributed_transaction.html">Distributed Transaction</a>
+</li>
+<li><a href="collocation_constraint.html">Collocation Constraint</a>
+</li>
+</ul>
+</li>
+<li><a href="slice_configuration.html">3.14.3. Usage</a>
+</li>
+<li><a href="_configuration_properties.html">3.14.4. Configuration Properties</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="_distributed_query"><a class="link" href="#_distributed_query">3.14.2.3. Distributed Query</a></h5>
+<div class="paragraph">
+<p>The queries are executed in parallel across one or more slices and the individual query results are merged into a single list before being returned to the caller application.
+The <em>merge</em> operation is more complex for the queries that involve sorting and/or specify a range.
+Slice supports both sorting and range queries.</p>
+</div>
+<div class="paragraph">
+<p>Slice also supports aggregate queries where the aggregate operation is <em>commutative</em> to partitioning such as <code class="class">COUNT()</code> or <code class="class">MAX()</code> but not <code class="class">AVG()</code>.</p>
+</div>
+<div class="paragraph">
+<p>By default, any query is executed against all available slices.
+However, the application can target the query only to a subset of slices by setting <em>hint</em> on <code class="class">jakarta.persistence.Query</code>.
+The hint key is <code class="class">openjpa.hint.slice.Target</code> and hint value is an array of slice identifiers.
+The following example shows how to target a query only to a pair of slices with logical identifier <code class="class">"One"</code> and <code class="class">"Two"</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">              <span class="nc">EntityManager</span> <span class="n">em</span> <span class="o">=</span> <span class="o">...;</span>
+              <span class="n">em</span><span class="o">.</span><span class="na">getTransaction</span><span class="o">().</span><span class="na">begin</span><span class="o">();</span>
+              <span class="nc">String</span> <span class="n">hint</span> <span class="o">=</span> <span class="s">"openjpa.hint.slice.Target"</span><span class="o">;</span>
+              <span class="nc">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"SELECT p FROM PObject"</span><span class="o">)</span>
+				              <span class="o">.</span><span class="na">setHint</span><span class="o">(</span><span class="n">hint</span><span class="o">,</span> <span class="k">new</span> <span class="nc">String</span><span class="o">[]{</span><span class="s">"One"</span><span class="o">,</span> <span class="s">"Two"</span><span class="o">});</span>
+              <span class="nc">List</span> <span class="n">result</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+              <span class="c1">// verify that each instance is originating from the hinted slices</span>
+              <span class="k">for</span> <span class="o">(</span><span class="nc">Object</span> <span class="n">pc</span> <span class="o">:</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+                 <span class="nc">String</span> <span class="n">sliceOrigin</span> <span class="o">=</span> <span class="nc">SlicePersistence</span><span class="o">.</span><span class="na">getSlice</span><span class="o">(</span><span class="n">pc</span><span class="o">);</span>
+                 <span class="n">assertTrue</span> <span class="o">(</span><span class="s">"One"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">sliceOrigin</span><span class="o">)</span> <span class="o">||</span> <span class="s">"Two"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">sliceOrigin</span><span class="o">));</span>
+              <span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The target hint applies to bulk <code>UPDATE</code> and <code>DELETE</code> statements, in JPQL and in native SQL, in the same way as to queries: such a statement runs only on the hinted slices.
+If the hint names no active slice, the query fails with an exception instead of running on all slices.</p>
+</div>
+<div class="paragraph">
+<p>To confine queries to a subset of slices via setting query hints can be considered intrusive to existing application.
+The alternative means of targeting queries is to configure a <em>Query Target Policy</em>.
+This policy is configured via plug-in property <code class="class">openjpa.slice.QueryTargetPolicy</code>.
+The plug-in property is fully-qualified class name of an implementation for <code class="class">org.apache.openjpa.slice.QueryTargetPolicy</code> interface.
+This interface contract allows a user application to target a query to a subset of slices based on the query and its bound parameters.
+The query target policy is consulted only when no explicit target hint is set on the query.
+It is consulted for bulk <code>UPDATE</code> and <code>DELETE</code> statements as well.
+By default, the policy executes a query on all available slices.</p>
+</div>
+<div class="paragraph">
+<p>A similar policy interface <code class="class">org.apache.openjpa.slice.FinderTargetPolicy</code> is available to target queries that originate from <code class="class">find()</code> by primary key.
+This finder target policy is consulted only when no explicit target hint is set on the current fetch plan.
+By default, the policy executes a query on all available slices to find an instance by its primary key.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="_scaling.html">Scaling</a> | ↑ Up: <a href="features_and_limitations.html">Salient Features</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="_data_distribution.html">Data Distribution</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

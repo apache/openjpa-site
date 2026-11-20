@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="dbsupport_db2_issues" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+<ul class="sectlevel2">
+<li><a href="jpa_resources.html">Appendix D: JPA Resources</a>
+</li>
+<li><a href="supported_databases.html">Appendix E: Supported Databases</a>
+<ul class="sectlevel3">
+<li><a href="dbappendix.html">Overview</a>
+</li>
+<li><a href="dbsupport.html">Verified Database Matrix</a>
+</li>
+<li><a href="dbcompatible.html">Compatible Database Matrix</a>
+</li>
+<li><a href="dbunverified.html">Unverified Database Matrix</a>
+</li>
+<li><a href="dbsupport_derby.html">Apache Derby</a>
+</li>
+<li><a href="dbsupport_interbase.html">Borland Interbase</a>
+</li>
+<li><a href="dbsupport_jdatastore.html">JDataStore</a>
+</li>
+<li><a href="dbsupport_db2.html">IBM DB2</a>
+<ul class="sectlevel4">
+<li><a href="dbsupport_db2_issues.html"><span class="toc-current">Known issues with DB2</span></a>
+</li>
+</ul>
+</li>
+<li><a href="dbsupport_empress.html">Empress</a>
+</li>
+<li><a href="dbsupport_h2.html">H2 Database Engine</a>
+</li>
+<li><a href="dbsupport_hypersonic.html">Hypersonic</a>
+</li>
+<li><a href="dbsupport_firebird.html">Firebird</a>
+</li>
+<li><a href="dbsupport_informix.html">Informix</a>
+</li>
+<li><a href="dbsupport_ingres.html">Ingres Database</a>
+</li>
+<li><a href="dbsupport_intersystems_cache.html">InterSystems Cache</a>
+</li>
+<li><a href="dbsupport_access.html">Microsoft Access</a>
+</li>
+<li><a href="dbsupport_sqlserver.html">Microsoft SQL Server</a>
+</li>
+<li><a href="dbsupport_foxpro.html">Microsoft FoxPro</a>
+</li>
+<li><a href="dbsupport_mysql.html">MySQL</a>
+</li>
+<li><a href="dbsupport_mariadb.html">MariaDB</a>
+</li>
+<li><a href="dbsupport_oracle.html">Oracle</a>
+</li>
+<li><a href="dbsupport_pointbase.html">Pointbase</a>
+</li>
+<li><a href="dbsupport_postgresql.html">PostgreSQL</a>
+</li>
+<li><a href="dbsupport_soliddb.html">IBM solidDB</a>
+</li>
+<li><a href="dbsupport_sybase.html">Sybase Adaptive Server</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="migration_considerations.html">Appendix F: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="dbsupport_db2_issues"><a class="link" href="#dbsupport_db2_issues">Known issues with DB2</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Floats and doubles may lose precision when stored.</p>
+</li>
+<li>
+<p>Empty char values are stored as NULL.</p>
+</li>
+<li>
+<p>Fields of type BLOB and CLOB are limited to 1M. This number can be increased by extending <code class="class">DB2Dictionary</code>.</p>
+</li>
+<li>
+<p>Explicit creation of indexes specified by the OpenJPA @Index annotation will fail on DB2 for iSeries if the default schema used by the JDBC driver does not exist. If a default schema is not specified on the connection, the iSeries will default to the user profile name. If a schema of that name does not exist, DB2 on iSeries will not create the schema, resulting in a failure when creating the index. The failure message will look similar to: "[SQL0204] USERNAME in QSYS type *LIB not found."  To work around this issue, specify a default schema on the JDBC URL or data source property and make sure that schema exists or create a schema which matches the user profile of the connection.</p>
+</li>
+<li>
+<p>Use of DB2 on z/OS with the IBM JCC driver requires the DESCSTAT subsystem parameter value to be set to 'YES'.  If this parameter is set to 'NO', the mapping tool will fail with a persistence exception containing this text: "Invalid parameter: Unknown column name TABLE_SCHEM".  After changing the value of DESCSTAT, DB2 metadata tables must be recreated by running the DSNTIJMS job. See DB2 for z/OS documentation for additional information.</p>
+</li>
+<li>
+<p>When using LOBs with persistent attributes of a streaming data type (e.g. <code>java.io.InputStream</code>) in the case of very large LOB, DB2 JCC driver will automatically use progressive streaming to retrieve the LOB data. With progressiveStreaming, the inputStream retrieved must be fully materialized before the next iteration of call to rs.next(). By default this will result in a LobClosedException when OpenJPA processes the InputStream.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To work around this condition you may force fullyMaterializedLobData to true in the connection URL as shown below :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="conf"><span class="n">openjpa</span>.<span class="n">ConnectionURL</span>: <span class="n">jdbc</span>:<span class="n">db2</span>://<span class="n">localhost</span>:<span class="m">50000</span>/<span class="n">demodb</span>:<span class="n">fullyMaterializeLobData</span>=<span class="n">true</span>;<span class="n">progressiveStreaming</span>=<span class="n">NO</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="dbsupport_db2.html">IBM DB2</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="dbsupport_empress.html">Empress</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

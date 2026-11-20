@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_langref_bnf" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+<ul class="sectlevel3">
+<li><a href="jpa_query_api.html">2.10.1. JPQL API</a>
+</li>
+<li><a href="jpa_langref.html">2.10.2. JPQL Language Reference</a>
+<ul class="sectlevel4">
+<li><a href="jpa_langref_stmnttypes.html">JPQL Statement Types</a>
+</li>
+<li><a href="jpa_langref_schematypes.html">JPQL Abstract Schema Types and Query Domains</a>
+</li>
+<li><a href="jpa_langref_fromclause.html">JPQL FROM Clause and Navigational Declarations</a>
+</li>
+<li><a href="jpa_langref_where.html">JPQL WHERE Clause</a>
+</li>
+<li><a href="jpa_langref_cond.html">JPQL Conditional Expressions</a>
+</li>
+<li><a href="jpa_langref_scalar_expressions.html">JPQL Scalar Expressions</a>
+</li>
+<li><a href="jpa_langref_group.html">JPQL GROUP BY, HAVING</a>
+</li>
+<li><a href="jpa_langref_select_clause.html">JPQL SELECT Clause</a>
+</li>
+<li><a href="jpa_langref_orderby.html">JPQL ORDER BY Clause</a>
+</li>
+<li><a href="jpa_langref_bulk_ops.html">JPQL Bulk Update and Delete</a>
+</li>
+<li><a href="jpa_langref_null_values.html">JPQL Null Values</a>
+</li>
+<li><a href="jpa_langref_equality.html">JPQL Equality and Comparison Semantics</a>
+</li>
+<li><a href="jpa_langref_bnf.html"><span class="toc-current">JPQL BNF</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_langref_bnf"><a class="link" href="#jpa_langref_bnf">2.10.2.13. JPQL BNF</a></h5>
+<div class="paragraph">
+<p>BNF notation summary:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>{ &#8230;&#8203; } grouping</p>
+</li>
+<li>
+<p>[ &#8230;&#8203; ] optional constructs</p>
+</li>
+<li>
+<p>* zero or more</p>
+</li>
+<li>
+<p>+ one or more</p>
+</li>
+<li>
+<p>| alternates</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following is the BNF for the Jakarta Persistence query language, from section 4.14 of the Jarkata Persistence 3.1 specification.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>QL_statement ::= select_statement | update_statement | delete_statement</p>
+</li>
+<li>
+<p>select_statement ::= union</p>
+</li>
+<li>
+<p>union ::= intersection | union {UNION [ALL] | EXCEPT [ALL]} intersection</p>
+</li>
+<li>
+<p>intersection ::= query_expression | intersection INTERSECT [ALL] query_expression</p>
+</li>
+<li>
+<p>query_expression ::= select_query | (union)</p>
+</li>
+<li>
+<p>select_query ::= [select_clause] from_clause [where_clause] [groupby_clause] [having_clause] [orderby_clause]</p>
+</li>
+<li>
+<p>update_statement ::= update_clause [where_clause]</p>
+</li>
+<li>
+<p>delete_statement ::= delete_clause [where_clause]</p>
+</li>
+<li>
+<p>from_clause ::= <code>FROM</code> identification_variable_declaration {, {identification_variable_declaration | collection_member_declaration}}*</p>
+</li>
+<li>
+<p>identification_variable_declaration ::= range_variable_declaration { join | fetch_join }*</p>
+</li>
+<li>
+<p>range_variable_declaration ::= entity_name [ <code>AS</code> ] identification_variable</p>
+</li>
+<li>
+<p>join ::= join_spec join_association_path_expression [ <code>AS</code> ] identification_variable [join_conition]</p>
+</li>
+<li>
+<p>fetch_join ::= join_spec <code>FETCH</code> join_association_path_expression</p>
+</li>
+<li>
+<p>join_spec ::= [ <code>LEFT</code> [ <code>OUTER</code> ]|  <code>INNER</code> ] <code>JOIN</code></p>
+</li>
+<li>
+<p>join_condition ::= ON conditional_expression</p>
+</li>
+<li>
+<p>join_association_path_expression ::= join_collection_valued_path_expression | join_single_valued_path_expression | <code>TREAT</code>(join_collection_valued_path_expression AS subtype) | <code>TREAT</code>(join_single_valued_path_expression AS subtype)</p>
+</li>
+<li>
+<p>join_collection_valued_path_expression ::= identification_variable.{single_valued_embeddable_object_field.}* collection_valued_field</p>
+</li>
+<li>
+<p>join_single_valued_path_expression ::= identification_variable.{single_valued_embeddable_object_field.}* single_valued_object_field</p>
+</li>
+<li>
+<p>collection_member_declaration ::= <code>IN</code> (join_collection_valued_path_expression) [ <code>AS</code> ] identification_variable</p>
+</li>
+<li>
+<p>qualified_identification_variable ::= map_field_identification_variable | <code>ENTRY</code>(identification_variable)</p>
+</li>
+<li>
+<p>map_field_identification_variable ::= <code>KEY</code>(identification_variable) | <code>VALUE</code>(identification_variable)</p>
+</li>
+<li>
+<p>single_valued_path_expression ::= qualified_identification_variable | <code>TREAT</code>(qualified_identification_variable <code>AS</code> subtype) | state_field_path_expression | single_valued_object_path_expression</p>
+</li>
+<li>
+<p>general_identification_variable ::= identification_variable | map_field_identification_variable</p>
+</li>
+<li>
+<p>general_subpath ::= simple_subpath | treated_subpath{.single_valued_object_field}*</p>
+</li>
+<li>
+<p>simple_subpath ::=  general_identification_variable | general_identification_variable{.single_valued_object_field}*</p>
+</li>
+<li>
+<p>treated_subpath ::= <code>TREAT</code>(general_subpath AS subtype)</p>
+</li>
+<li>
+<p>state_field_path_expression ::= general_subpath.state_field</p>
+</li>
+<li>
+<p>state_valued_path_expression ::= state_field_path_expression | general_identification_variable</p>
+</li>
+<li>
+<p>single_valued_object_path_expression ::= general_subpath.single_valued_object_field</p>
+</li>
+<li>
+<p>collection_valued_path_expression ::= general_subpath.{collection_valued_field}</p>
+</li>
+<li>
+<p>update_clause ::= <code>UPDATE</code> entity_name [[ <code>AS</code>  ] identification_variable] <code>SET</code> update_item {, update_item}*</p>
+</li>
+<li>
+<p>update_item ::= [identification_variable.]{single_valued_embeddable_object_field.}* {state_field | single_valued_object_field} = new_value</p>
+</li>
+<li>
+<p>new_value ::= scalar_expression | simple_entity_expression | <code>NULL</code></p>
+</li>
+<li>
+<p>delete_clause ::= <code>DELETE</code><code>FROM</code> entity_name [[ <code>AS</code> ] identification_variable]</p>
+</li>
+<li>
+<p>select_clause ::= <code>SELECT</code> [ <code>DISTINCT</code> ] select_item {, select_item}*</p>
+</li>
+<li>
+<p>select_item ::= select_expression [[AS] result_variable] *</p>
+</li>
+<li>
+<p>select_expression ::=  single_valued_path_expression | scalar_expression | aggregate_expression | identification_variable | <code>OBJECT</code> (identification_variable) | constructor_expression</p>
+</li>
+<li>
+<p>constructor_expression ::= <code>NEW</code> constructor_name( constructor_item {, constructor_item}*)</p>
+</li>
+<li>
+<p>constructor_item ::= single_valued_path_expression | scalar_expression | aggregate_expression | identification_variable</p>
+</li>
+<li>
+<p>aggregate_expression ::= { <code>AVG</code> | <code>MAX</code> | <code>MIN</code> | <code>SUM</code> }([ <code>DISTINCT</code> ] state_field_path_expression) | <code>COUNT</code> ([ <code>DISTINCT</code>  ] identification_variable | state_field_path_expression | single_valued_object_path_expression) | function_invocation</p>
+</li>
+<li>
+<p>where_clause ::= <code>WHERE</code> conditional_expression</p>
+</li>
+<li>
+<p>groupby_clause ::= <code>GROUP</code><code>BY</code> groupby_item {, groupby_item}*</p>
+</li>
+<li>
+<p>groupby_item ::= single_valued_path_expression | identification_variable</p>
+</li>
+<li>
+<p>having_clause ::= <code>HAVING</code> conditional_expression</p>
+</li>
+<li>
+<p>orderby_clause ::= <code>ORDER</code><code>BY</code> orderby_item {, orderby_item}*</p>
+</li>
+<li>
+<p>orderby_item ::= state_field_path_expression | general_identification_variable |  result_variable [ <code>ASC</code> | <code>DESC</code> ]</p>
+</li>
+<li>
+<p>subquery ::= simple_select_clause subquery_from_clause [where_clause] [groupby_clause] [having_clause]</p>
+</li>
+<li>
+<p>subquery_from_clause ::= <code>FROM</code> subselect_identification_variable_declaration {, subselect_identification_variable_declaration | collection_member_declaration}*</p>
+</li>
+<li>
+<p>subselect_identification_variable_declaration ::= identification_variable_declaration | derived_path_expression [ <code>AS</code>  ] identification_variable | derived_collection_member_declaration</p>
+</li>
+<li>
+<p>derived_path_expression ::= general_derived_path.single_valued_object_field | general_derived_path.collection_valued_field</p>
+</li>
+<li>
+<p>general_derived_path ::= simple_derived_path | treated_derived_path{.single_valued_object_field}*</p>
+</li>
+<li>
+<p>simple_derived_path ::= superquery_identification_variable{.single_valued_object_field}*</p>
+</li>
+<li>
+<p>treated_derived_path ::= <code>TREAT</code>(general_derived_path AS subtype)</p>
+</li>
+<li>
+<p>derived_collection_member_declaration ::= <code>IN</code> superquery_identification_variable.{single_valued_object_field.}*collection_valued_field</p>
+</li>
+<li>
+<p>simple_select_clause ::= <code>SELECT</code> [ <code>DISTINCT</code> ] simple_select_expression</p>
+</li>
+<li>
+<p>simple_select_expression ::= single_valued_path_expression | scalar_expression | aggregate_expression | identification_variable</p>
+</li>
+<li>
+<p>scalar_expression ::= arithmetic_expression | string_expression | enum_expression | datetime_expression | boolean_expression | case_expression | entity_type_expression</p>
+</li>
+<li>
+<p>conditional_expression ::= conditional_term | conditional_expression  <code>OR</code> conditional_term</p>
+</li>
+<li>
+<p>conditional_term ::= conditional_factor | conditional_term <code>AND</code>  conditional_factor</p>
+</li>
+<li>
+<p>conditional_factor ::= [ <code>NOT</code> ] conditional_primary</p>
+</li>
+<li>
+<p>conditional_primary ::= simple_cond_expression | (conditional_expression)</p>
+</li>
+<li>
+<p>simple_cond_expression ::= comparison_expression | between_expression | in_expression | like_expression | null_comparison_expression | empty_collection_comparison_expression | collection_member_expression | exists_expression</p>
+</li>
+<li>
+<p>between_expression ::= arithmetic_expression [ <code>NOT</code> ] <code>BETWEEN</code> arithmetic_expression <code>AND</code> arithmetic_expression | string_expression [ <code>NOT</code> ]  <code>BETWEEN</code> string_expression <code>AND</code> string_expression | datetime_expression [ <code>NOT</code> ] <code>BETWEEN</code> datetime_expression <code>AND</code> datetime_expression</p>
+</li>
+<li>
+<p>in_expression ::= {state_field_path_expression | type_discriminator} [ <code>NOT</code> ] <code>IN</code> {( in_item {, in_item}*) | (subquery) | collection_valued_input_parameter }</p>
+</li>
+<li>
+<p>in_item ::= literal | single_valued_input_parameter</p>
+</li>
+<li>
+<p>like_expression ::= string_expression [ <code>NOT</code> ] <code>LIKE</code>  pattern_value [ <code>ESCAPE</code> escape_character]</p>
+</li>
+<li>
+<p>null_comparison_expression ::= {single_valued_path_expression | input_parameter} <code>IS</code> [ <code>NOT</code> ] <code>NULL</code></p>
+</li>
+<li>
+<p>empty_collection_comparison_expression ::= collection_valued_path_expression <code>IS</code> [ <code>NOT</code> ] <code>EMPTY</code></p>
+</li>
+<li>
+<p>collection_member_expression ::= entity_expression [ <code>NOT</code> ] <code>MEMBER</code> [ <code>OF</code> ] collection_valued_path_expression</p>
+</li>
+<li>
+<p>entity_or_value_expression ::= single_valued_object_path_expression | state_field_path_expression | simple_entity_or_value_expression</p>
+</li>
+<li>
+<p>simple_entity_or_value_expression ::= identification_variable | input_parameter | literal</p>
+</li>
+<li>
+<p>exists_expression ::= [ <code>NOT</code> ] <code>EXISTS</code> (subquery)</p>
+</li>
+<li>
+<p>all_or_any_expression ::= { <code>ALL</code> | <code>ANY</code> | <code>SOME</code> }(subquery)</p>
+</li>
+<li>
+<p>comparison_expression ::= string_expression comparison_operator {string_expression | all_or_any_expression} |  boolean_expression {= | } {boolean_expression | all_or_any_expression} | enum_expression {= |} {enum_expression | all_or_any_expression} | datetime_expression comparison_operator {datetime_expression | all_or_any_expression} | entity_expression {= | } {entity_expression | all_or_any_expression} | arithmetic_expression comparison_operator {arithmetic_expression | all_or_any_expression} | entity_type_expression {= |} entity_type_expression}</p>
+</li>
+<li>
+<p>comparison_operator ::= = |  | = |  | = |</p>
+</li>
+<li>
+<p>arithmetic_expression ::= arithmetic_term | arithmetic_expression {+ | -} arithmetic_term</p>
+</li>
+<li>
+<p>arithmetic_term ::= arithmetic_factor | arithmetic_term {* | /} arithmetic_factor</p>
+</li>
+<li>
+<p>arithmetic_factor ::= [{+ | -}] arithmetic_primary</p>
+</li>
+<li>
+<p>arithmetic_primary ::= state_valued_path_expression | numeric_literal | (arithmetic_expression) | input_parameter | functions_returning_numerics | aggregate_expression | case_expression | function_invocation | arithmetic_cast_function | (subquery)</p>
+</li>
+<li>
+<p>string_expression ::= state_valued_path_expression | string_literal | input_parameter | functions_returning_strings | aggregate_expression | case_expression | function_invocation | string_cast_function | string_expression || string_expression | (subquery)</p>
+</li>
+<li>
+<p>datetime_expression ::= state_valued_path_expression | input_parameter | functions_returning_datetime | aggregate_expression | case_expression | function_invocation | date_time_timestamp_literal | (subquery)</p>
+</li>
+<li>
+<p>boolean_expression ::= state_valued_path_expression | boolean_literal | input_parameter | case_expression | function_invocation | (subquery)</p>
+</li>
+<li>
+<p>enum_expression ::= state_valued_path_expression | enum_literal | input_parameter | case_expression | (subquery)</p>
+</li>
+<li>
+<p>entity_expression ::= single_valued_object_path_expression | simple_entity_expression</p>
+</li>
+<li>
+<p>simple_entity_expression ::= identification_variable | input_parameter</p>
+</li>
+<li>
+<p>entity_type_expression ::= type_discriminator | entity_type_literal | input_parameter</p>
+</li>
+<li>
+<p>type_discriminator ::= <code>TYPE</code>(identification_variable | single_valued_object_path_expression | input_parameter)</p>
+</li>
+<li>
+<p>arithmetic_cast_function::= CAST(string_expression AS {INTEGER | LONG | FLOAT | DOUBLE})</p>
+</li>
+<li>
+<p>functions_returning_numerics ::= <code>LENGTH</code> (string_primary)| <code>LOCATE</code> (string_primary,string_primary [, arithmetic_expression]) | <code>ABS</code> (arithmetic_expression) | <code>CEILING</code> (arithmetic_expression) | <code>EXP</code> (arithmetic_expression) | <code>FLOOR</code> (arithmetic_expression) | <code>LN</code> (arithmetic_expression) | <code>SIGN</code> (arithmetic_expression) | <code>SQRT</code> (arithmetic_expression) | <code>MOD</code> (arithmetic_expression, arithmetic_expression) | <code>POWER</code> (arithmetic_expression) | <code>ROUND</code> (arithmetic_expression, arithmetic_expression) | <code>SIZE</code>  (collection_valued_path_expression) | <code>INDEX</code>(identification_variable) | extract_datetime_field</p>
+</li>
+<li>
+<p>functions_returning_datetime ::= <code>CURRENT_DATE</code> |  <code>CURRENT_TIME</code> | <code>CURRENT_TIMESTAMP</code> | <code>LOCAL DATE</code> | <code>LOCAL TIME</code> | <code>LOCAL DATETIME</code> | extract_datetime_part</p>
+</li>
+<li>
+<p>string_cast_function::= CAST(scalar_expression AS STRING)</p>
+</li>
+<li>
+<p>functions_returning_strings ::= <code>CONCAT</code> (string_expression, string_expression) | <code>SUBSTRING</code> (string_expression, arithmetic_expression[,arithmetic_expression])| <code>TRIM</code>  ([[trim_specification] [trim_character] <code>FROM</code> ] string_expression) | <code>LOWER</code> (string_expression) | <code>UPPER</code>  (string_expression)<code>REPLACE</code>(string_expression, string_expression, string_expression) | <code>LEFT</code>(string_expression, arithmetic_expression) | <code>RIGHT</code>(string_expression, arithmetic_expression)</p>
+</li>
+<li>
+<p>trim_specification ::= <code>LEADING</code> | <code>TRAILING</code> | <code>BOTH</code></p>
+</li>
+<li>
+<p>function_invocation ::= <code>FUNCTION</code>(function_name{, function_arg}*)</p>
+</li>
+<li>
+<p>extract_datetime_field := <code>EXTRACT</code>(datetime_field FROM datetime_expression)</p>
+</li>
+<li>
+<p>datetime_field := identification_variable</p>
+</li>
+<li>
+<p>extract_datetime_part := <code>EXTRACT</code>(datetime_part FROM datetime_expression)</p>
+</li>
+<li>
+<p>datetime_part := identification_variable</p>
+</li>
+<li>
+<p>function_arg ::= literal | state_valued_path_expression | input_parameter | scalar_expression</p>
+</li>
+<li>
+<p>case_expression ::= general_case_expression | simple_case_expression | coalesce_expression | nullif_expression</p>
+</li>
+<li>
+<p>general_case_expression::= <code>CASE</code> when_clause {when_clause}* <code>ELSE</code> scalar_expression <code>END</code></p>
+</li>
+<li>
+<p>when_clause::= <code>WHEN</code> conditional_expression <code>THEN</code> scalar_expression</p>
+</li>
+<li>
+<p>simple_case_expression::= <code>CASE</code> case_operand simple_when_clause {simple_when_clause}* <code>ELSE</code> scalar_expression <code>END</code></p>
+</li>
+<li>
+<p>case_operand::= state_field_path_expression | type_discriminator</p>
+</li>
+<li>
+<p>simple_when_clause::= <code>WHEN</code> scalar_expression <code>THEN</code> scalar_expression</p>
+</li>
+<li>
+<p>coalesce_expression::= <code>COALESCE</code>(scalar_expression {, scalar_expression}+)</p>
+</li>
+<li>
+<p>nullif_expression::= <code>NULLIF</code>(scalar_expression, scalar_expression)</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_langref_equality.html">JPQL Equality and Comparison Semantics</a> | ↑ Up: <a href="jpa_langref.html">JPQL Language Reference</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_criteria.html">JPA Criteria</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

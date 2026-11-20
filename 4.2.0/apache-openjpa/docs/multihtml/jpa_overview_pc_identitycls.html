@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_pc_identitycls" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+<ul class="sectlevel3">
+<li><a href="jpa_overview_pc_restrict.html">2.4.1. Restrictions on Persistent Classes</a>
+</li>
+<li><a href="jpa_overview_pc_identity.html">2.4.2. Entity Identity</a>
+<ul class="sectlevel4">
+<li><a href="jpa_overview_pc_identitycls.html"><span class="toc-current">Identity Class</span></a>
+<ul class="sectlevel5">
+<li><a href="jpa_overview_pc_identity_hierarchy.html">Identity Hierarchies</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_pc_callbacks.html">2.4.3. Lifecycle Callbacks</a>
+</li>
+<li><a href="jpa_overview_pc_conclusion.html">2.4.4. Conclusions</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_overview_pc_identitycls"><a class="link" href="#jpa_overview_pc_identitycls">2.4.2.1. Identity Class</a></h5>
+<div class="paragraph">
+<p>
+ If your entity has only one identity field, you can use the value of that field as the entity&#8217;s identity object in all <a href="jpa_overview_em.html"><code class="class">EntityManager</code></a> APIs.
+Otherwise, you must supply an identity class to use for identity objects.
+Your identity class must meet the following criteria:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The class must have a no-args constructor.</p>
+</li>
+<li>
+<p>The names of the non-static fields or properties of the class must be the same as the names of the identity fields or properties of the corresponding entity class, and the types must be identical.</p>
+</li>
+<li>
+<p>The <code class="method">equals</code> and <code class="method">hashCode</code> methods of the class must use the values of all fields or properties corresponding to identity fields or properties in the entity class.</p>
+</li>
+<li>
+<p>If the class is an inner class, it must be <code>static</code>.</p>
+</li>
+<li>
+<p>All entity classes related by inheritance must use the same identity class, or else each entity class must have its own identity class whose inheritance hierarchy mirrors the inheritance hierarchy of the owning entity classes (see <a href="jpa_overview_pc_identity_hierarchy.html">Identity Hierarchies</a>).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Jakarta Persistence 3.2 no longer requires the identity class to be public or to implement <code class="class">java.io.Serializable</code>, and OpenJPA no longer enforces either.
+An identity class that does not implement <code class="class">Serializable</code> can, however, not be used where OpenJPA has to serialize the identity object it is wrapped in: serializing a detached entity, remote commit events in a clustered configuration, and a distributed data cache.
+Those fail with a <code class="class">java.io.NotSerializableException</code> naming the identity class.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Though you may still create identity classes by hand, OpenJPA provides the <code class="class">appidtool</code> to automatically generate proper identity classes based on your identity fields.
+See <a href="ref_guide_pc_oid_application.html">Application Identity Tool</a> of the Reference Guide.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="jpa_overview_pc_identity_appidcode" class="exampleblock">
+<div class="title">Example 4. Identity Class</div>
+<div class="content">
+<div class="paragraph">
+<p>This example illustrates a proper identity class for an entity with multiple identity fields.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="cm">/**
+ * Persistent class using application identity.
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Magazine</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">isbn</span><span class="o">;</span>    <span class="c1">// identity field</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>   <span class="c1">// identity field</span>
+
+    <span class="c1">// rest of fields and methods omitted</span>
+
+
+    <span class="cm">/**
+     * Application identity class for Magazine.
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">MagazineId</span> <span class="o">{</span>
+
+        <span class="c1">// each identity field in the Magazine class must have a</span>
+        <span class="c1">// corresponding field in the identity class</span>
+        <span class="kd">public</span> <span class="nc">String</span> <span class="n">isbn</span><span class="o">;</span>
+        <span class="kd">public</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+
+        <span class="cm">/**
+         * Equality must be implemented in terms of identity field
+         * equality, and must use instanceof rather than comparing
+         * classes directly (some JPA implementations may subclass the
+         * identity class).
+         */</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="nc">Object</span> <span class="n">other</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">other</span> <span class="o">==</span> <span class="k">this</span><span class="o">)</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(!(</span><span class="n">other</span> <span class="k">instanceof</span> <span class="nc">MagazineId</span><span class="o">))</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+
+            <span class="nc">MagazineId</span> <span class="n">mi</span> <span class="o">=</span> <span class="o">(</span><span class="nc">MagazineId</span><span class="o">)</span> <span class="n">other</span><span class="o">;</span>
+            <span class="k">return</span> <span class="o">(</span><span class="n">isbn</span> <span class="o">==</span> <span class="n">mi</span><span class="o">.</span><span class="na">isbn</span>
+                <span class="o">||</span> <span class="o">(</span><span class="n">isbn</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">isbn</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">mi</span><span class="o">.</span><span class="na">isbn</span><span class="o">)))</span>
+                <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">title</span> <span class="o">==</span> <span class="n">mi</span><span class="o">.</span><span class="na">title</span>
+                <span class="o">||</span> <span class="o">(</span><span class="n">title</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">title</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">mi</span><span class="o">.</span><span class="na">title</span><span class="o">)));</span>
+        <span class="o">}</span>
+
+        <span class="cm">/**
+         * Hashcode must also depend on identity values.
+         */</span>
+        <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">((</span><span class="n">isbn</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="n">isbn</span><span class="o">.</span><span class="na">hashCode</span><span class="o">())</span>
+                <span class="o">^</span> <span class="o">((</span><span class="n">title</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="n">title</span><span class="o">.</span><span class="na">hashCode</span><span class="o">());</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">isbn</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">title</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="jpa_overview_pc_identity_hierarchy.html">Identity Hierarchies</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="jpa_overview_pc_identity.html">Entity Identity</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_pc_identity_hierarchy.html">Identity Hierarchies</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

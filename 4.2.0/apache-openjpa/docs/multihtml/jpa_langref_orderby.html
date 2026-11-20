@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_langref_orderby" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+<ul class="sectlevel3">
+<li><a href="jpa_query_api.html">2.10.1. JPQL API</a>
+</li>
+<li><a href="jpa_langref.html">2.10.2. JPQL Language Reference</a>
+<ul class="sectlevel4">
+<li><a href="jpa_langref_stmnttypes.html">JPQL Statement Types</a>
+</li>
+<li><a href="jpa_langref_schematypes.html">JPQL Abstract Schema Types and Query Domains</a>
+</li>
+<li><a href="jpa_langref_fromclause.html">JPQL FROM Clause and Navigational Declarations</a>
+</li>
+<li><a href="jpa_langref_where.html">JPQL WHERE Clause</a>
+</li>
+<li><a href="jpa_langref_cond.html">JPQL Conditional Expressions</a>
+</li>
+<li><a href="jpa_langref_scalar_expressions.html">JPQL Scalar Expressions</a>
+</li>
+<li><a href="jpa_langref_group.html">JPQL GROUP BY, HAVING</a>
+</li>
+<li><a href="jpa_langref_select_clause.html">JPQL SELECT Clause</a>
+</li>
+<li><a href="jpa_langref_orderby.html"><span class="toc-current">JPQL ORDER BY Clause</span></a>
+</li>
+<li><a href="jpa_langref_bulk_ops.html">JPQL Bulk Update and Delete</a>
+</li>
+<li><a href="jpa_langref_null_values.html">JPQL Null Values</a>
+</li>
+<li><a href="jpa_langref_equality.html">JPQL Equality and Comparison Semantics</a>
+</li>
+<li><a href="jpa_langref_bnf.html">JPQL BNF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_langref_orderby"><a class="link" href="#jpa_langref_orderby">2.10.2.9. JPQL ORDER BY Clause</a></h5>
+<div class="paragraph">
+<p>The <code>ORDER BY</code> clause allows the objects or values that are returned by the query to be ordered.
+The syntax of the <code>ORDER BY</code>  clause is</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>orderby_clause ::= ORDER BY orderby_item {, orderby_item}*</p>
+</li>
+<li>
+<p>orderby_item ::= { state_field_path_expression | result_variable } [ASC | DESC]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An orderby_item must be one of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A <code>state_field_path_expression</code> that evaluates to an orderable state field of an entity or embeddable class abstract schema type designated in the SELECT clause by one of the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>a <code>general_identification_variable</code></p>
+</li>
+<li>
+<p>a <code>single_valued_object_path_expression</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A <code>state_field_path_expression</code> that evaluates to the same state field of the same entity or embeddable abstract schema type as a <code>state_field_path_expression</code> in the <code>SELECT</code> clause.</p>
+</li>
+<li>
+<p>A <code>result_variable</code> that refers to an orderable item in the <code>SELECT</code> clause for which the same <code>result_variable</code> has been specified. This may be the result of an <code>aggregate_expression</code>, a <code>scalar_expression</code>, or a <code>state_field_path_expression</code> in the <code>SELECT</code> clause.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the five queries below are legal.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">pub</span> <span class="k">FROM</span> <span class="n">Publisher</span> <span class="n">pub</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">pub</span><span class="p">.</span><span class="n">revenue</span><span class="p">,</span> <span class="n">pub</span><span class="p">.</span><span class="n">name</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">o</span>
+<span class="k">FROM</span> <span class="n">Customer</span> <span class="k">c</span> <span class="k">JOIN</span> <span class="k">c</span><span class="p">.</span><span class="n">orders</span> <span class="n">o</span> <span class="k">JOIN</span> <span class="k">c</span><span class="p">.</span><span class="n">address</span> <span class="n">a</span>
+<span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="k">state</span> <span class="o">=</span> <span class="err">‘</span><span class="n">CA</span><span class="err">’</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">o</span><span class="p">.</span><span class="n">quantity</span> <span class="k">DESC</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">totalcost</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">o</span><span class="p">.</span><span class="n">quantity</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">zipcode</span>
+<span class="k">FROM</span> <span class="n">Customer</span> <span class="k">c</span> <span class="k">JOIN</span> <span class="k">c</span><span class="p">.</span><span class="n">orders</span> <span class="n">o</span> <span class="k">JOIN</span> <span class="k">c</span><span class="p">.</span><span class="n">address</span> <span class="n">a</span>
+<span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="k">state</span> <span class="o">=</span> <span class="err">‘</span><span class="n">CA</span><span class="err">’</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">o</span><span class="p">.</span><span class="n">quantity</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">zipcode</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">o</span><span class="p">.</span><span class="n">quantity</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">cost</span><span class="o">*</span><span class="mi">1</span><span class="p">.</span><span class="mi">08</span> <span class="k">AS</span> <span class="n">taxedCost</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">zipcode</span>
+<span class="k">FROM</span> <span class="n">Customer</span> <span class="k">c</span> <span class="k">JOIN</span> <span class="k">c</span><span class="p">.</span><span class="n">orders</span> <span class="n">o</span> <span class="k">JOIN</span> <span class="k">c</span><span class="p">.</span><span class="n">address</span> <span class="n">a</span>
+<span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="k">state</span> <span class="o">=</span> <span class="err">‘</span><span class="n">CA</span><span class="err">’</span> <span class="k">AND</span> <span class="n">a</span><span class="p">.</span><span class="n">county</span> <span class="o">=</span> <span class="err">‘</span><span class="n">Santa</span> <span class="n">Clara</span><span class="err">’</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">o</span><span class="p">.</span><span class="n">quantity</span><span class="p">,</span> <span class="n">taxedCost</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">zipcode</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="k">AVG</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">quantity</span><span class="p">)</span> <span class="k">as</span> <span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">zipcode</span>
+<span class="k">FROM</span> <span class="n">Customer</span> <span class="k">c</span> <span class="k">JOIN</span> <span class="k">c</span><span class="p">.</span><span class="n">orders</span> <span class="n">o</span> <span class="k">JOIN</span> <span class="k">c</span><span class="p">.</span><span class="n">address</span> <span class="n">a</span>
+<span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="k">state</span> <span class="o">=</span> <span class="err">‘</span><span class="n">CA</span><span class="err">’</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">a</span><span class="p">.</span><span class="n">zipcode</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">q</span> <span class="k">DESC</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following two queries are not legal because the <code>orderby_item</code> is not reflected in the <code>SELECT</code> clause of the query.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">p</span><span class="p">.</span><span class="n">product_name</span>
+<span class="k">FROM</span> <span class="k">Order</span> <span class="n">o</span> <span class="k">JOIN</span> <span class="n">o</span><span class="p">.</span><span class="n">lineItems</span> <span class="n">l</span> <span class="k">JOIN</span> <span class="n">l</span><span class="p">.</span><span class="n">product</span> <span class="n">p</span> <span class="k">JOIN</span> <span class="n">o</span><span class="p">.</span><span class="n">customer</span> <span class="k">c</span>
+<span class="k">WHERE</span> <span class="k">c</span><span class="p">.</span><span class="n">lastname</span> <span class="o">=</span> <span class="err">‘</span><span class="n">Smith</span><span class="err">’</span> <span class="k">AND</span> <span class="k">c</span><span class="p">.</span><span class="n">firstname</span> <span class="o">=</span> <span class="err">‘</span><span class="n">John</span><span class="err">’</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">p</span><span class="p">.</span><span class="n">price</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">p</span><span class="p">.</span><span class="n">product_name</span>
+<span class="k">FROM</span> <span class="k">Order</span> <span class="n">o</span><span class="p">,</span> <span class="k">IN</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">lineItems</span><span class="p">)</span> <span class="n">l</span> <span class="k">JOIN</span> <span class="n">o</span><span class="p">.</span><span class="n">customer</span> <span class="k">c</span>
+<span class="k">WHERE</span> <span class="k">c</span><span class="p">.</span><span class="n">lastname</span> <span class="o">=</span> <span class="err">‘</span><span class="n">Smith</span><span class="err">’</span> <span class="k">AND</span> <span class="k">c</span><span class="p">.</span><span class="n">firstname</span> <span class="o">=</span> <span class="err">‘</span><span class="n">John</span><span class="err">’</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">o</span><span class="p">.</span><span class="n">quantity</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If more than one <code>orderby_item</code> is specified, the left-to-right sequence of the <code>orderby_item</code> elements determines the precedence, whereby the leftmost <code>orderby_item</code> has highest precedence.</p>
+</div>
+<div class="paragraph">
+<p>The keyword <code>ASC</code> specifies that ascending ordering be used; the keyword <code>DESC</code> specifies that descending ordering be used.
+Ascending ordering is the default.</p>
+</div>
+<div class="paragraph">
+<p>SQL rules for the ordering of null values apply: that is, all null values must appear before all non-null values in the ordering or all null values must appear after all non-null values in the ordering, but it is not specified which.</p>
+</div>
+<div class="paragraph">
+<p>The ordering of the query result is preserved in the result of the query method if the <code>ORDER BY</code> clause is used.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="_jpa_langref_numeric_expressions_in_select.html">JPQL Numeric Expressions in the SELECT Clause</a> | ↑ Up: <a href="jpa_langref.html">JPQL Language Reference</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_langref_bulk_ops.html">JPQL Bulk Update and Delete</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

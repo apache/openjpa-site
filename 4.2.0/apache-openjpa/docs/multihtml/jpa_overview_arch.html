@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_arch" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html"><span class="toc-current">2.3. Java Persistence API Architecture</span></a>
+<ul class="sectlevel3">
+<li><a href="jpa_overview_arch_exceptions.html">2.3.1. JPA Exceptions</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect2">
+<h3 id="jpa_overview_arch"><a class="link" href="#jpa_overview_arch">2.3. Java Persistence API Architecture</a></h3>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>The diagram below illustrates the relationships between the primary components of the JPA architecture.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/jpa-arch.png" alt="JPA architecture">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A number of the depicted interfaces are only required outside of an EJB3-compliant application server.
+In an application server, <code class="class">EntityManager</code> instances are typically injected, rendering the <code class="class">EntityManagerFactory</code> unnecessary.
+Also, transactions within an application server are handled using standard application server transaction controls.
+Thus, the <code class="class">EntityTransaction</code> also goes unused.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><a href="jpa_overview_persistence.html"><code class="class"></strong> Persistence<strong></code></a></strong>: The <code class="class">jakarta.persistence.Persistence</code> class contains static helper methods to obtain <code class="class">EntityManagerFactory</code> instances in a vendor-neutral fashion.</p>
+</li>
+<li>
+<p><strong><a href="jpa_overview_emfactory.html"><code class="class"></strong>
+EntityManagerFactory<strong></code></a></strong>: The <code class="class">jakarta.persistence.EntityManagerFactory</code> class is a factory for <code class="class">EntityManager</code> s.</p>
+</li>
+<li>
+<p><strong><a href="jpa_overview_em.html"><code class="class"></strong>EntityManager<strong></code></a></strong>: The <code class="class">jakarta.persistence.EntityManager</code> is the primary JPA interface used by applications.
+Each <code class="class">EntityManager</code> manages a set of persistent objects, and has APIs to insert new objects and delete existing ones.
+When used outside the container, there is a one-to-one relationship between an <code class="class">EntityManager</code> and an <code class="class">EntityTransaction</code>. <code class="class">EntityManager</code>s also act as factories for <code class="class">Query</code> instances.</p>
+</li>
+<li>
+<p><strong><a href="jpa_overview_pc.html"><code class="class"></strong>Entity<strong></code></a></strong>: Entities are persistent objects that represent datastore records.</p>
+</li>
+<li>
+<p><strong><a href="jpa_overview_trans.html"><code class="class"></strong>
+EntityTransaction<strong></code></a></strong>: Each <code class="class">EntityManager</code> has a one-to-one relation with a single <code class="class">jakarta.persistence.EntityTransaction</code>. <code class="class">EntityTransaction</code>s allow operations on persistent data to be grouped into units of work that either completely succeed or completely fail, leaving the datastore in its original state.
+These all-or-nothing operations are important for maintaining data integrity.</p>
+</li>
+<li>
+<p>
+
+
+
+<strong><a href="jpa_overview_query.html"><code class="class"></strong>Query<strong></code></a></strong>: The <code class="class">jakarta.persistence.Query</code> interface is implemented by each JPA vendor to find persistent objects that meet certain criteria.
+JPA standardizes support for queries using both the Java Persistence Query Language (JPQL) and the Structured Query Language (SQL). You obtain <code class="class">Query</code> instances from an <code class="class">EntityManager</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The example below illustrates how the JPA interfaces interact to execute a JPQL query and update persistent objects.
+The example assumes execution outside a container.</p>
+</div>
+<div id="jpa_overview_arch_interact_outside" class="exampleblock">
+<div class="title">Example 1. Interaction of Interfaces Outside Container</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">  <span class="c1">// get an EntityManagerFactory using the Persistence class</span>
+  <span class="c1">// It is not recommended to obtain a factory often, as construction of a</span>
+  <span class="c1">// factory is a costly operation. Typically you will like to cache</span>
+  <span class="c1">// a factory and then refer it for repeated use</span>
+  <span class="nc">EntityManagerFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="nc">Persistence</span><span class="o">.</span><span class="na">createEntityManagerFactory</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+
+  <span class="c1">// get an EntityManager from the factory</span>
+  <span class="nc">EntityManager</span> <span class="n">em</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">createEntityManager</span><span class="o">();</span>
+
+  <span class="c1">// Begin a transaction</span>
+  <span class="n">em</span><span class="o">.</span><span class="na">getTransaction</span><span class="o">().</span><span class="na">begin</span><span class="o">();</span>
+
+  <span class="c1">// query for all employees who work in our research division</span>
+  <span class="c1">// and put in over 40 hours a week average</span>
+  <span class="nc">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"SELECT e "</span> <span class="o">+</span>
+                               <span class="s">"  FROM Employee e "</span> <span class="o">+</span>
+                               <span class="s">" WHERE e.division.name = 'Research' "</span> <span class="o">+</span>
+                               <span class="s">"   AND e.avgHours &gt; 40"</span><span class="o">);</span>
+  <span class="nc">List</span> <span class="n">results</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+
+  <span class="c1">// give all those hard-working employees a raise</span>
+  <span class="k">for</span> <span class="o">(</span><span class="nc">Object</span> <span class="n">res</span> <span class="o">:</span> <span class="n">results</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Employee</span> <span class="n">emp</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Employee</span><span class="o">)</span> <span class="n">res</span><span class="o">;</span>
+    <span class="n">emp</span><span class="o">.</span><span class="na">setSalary</span><span class="o">(</span><span class="n">emp</span><span class="o">.</span><span class="na">getSalary</span><span class="o">()</span> <span class="o">*</span> <span class="mf">1.1</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="c1">// commit will detect all updated entities and save them in database</span>
+  <span class="n">em</span><span class="o">.</span><span class="na">getTransaction</span><span class="o">().</span><span class="na">commit</span><span class="o">();</span>
+
+  <span class="c1">// free the resources</span>
+  <span class="n">em</span><span class="o">.</span><span class="na">close</span><span class="o">();</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Within a container, the <code class="class">EntityManager</code> will be injected and transactions will be handled declaratively.
+Thus, the in-container version of the example consists entirely of business logic:</p>
+</div>
+<div id="jpa_overview_arch_interact_inside" class="exampleblock">
+<div class="title">Example 2. Interaction of Interfaces Inside Container</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="c1">// query for all employees who work in our research division</span>
+<span class="c1">// and put in over 40 hours a week average - note that the EntityManager em</span>
+<span class="c1">// is injected using a @Resource annotation</span>
+<span class="nc">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select e from Employee e where "</span>
+    <span class="o">+</span> <span class="s">"e.division.name = 'Research' and e.avgHours &gt; 40"</span><span class="o">);</span>
+<span class="nc">List</span> <span class="n">results</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+
+<span class="c1">// give all those hard-working employees a raise</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">Object</span> <span class="n">res</span> <span class="o">:</span> <span class="n">results</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">emp</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Employee</span><span class="o">)</span> <span class="n">res</span><span class="o">;</span>
+    <span class="n">emp</span><span class="o">.</span><span class="na">setSalary</span><span class="o">(</span><span class="n">emp</span><span class="o">.</span><span class="na">getSalary</span><span class="o">()</span> <span class="o">*</span> <span class="mf">1.1</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The remainder of this document explores the JPA interfaces in detail.
+We present them in roughly the order that you will use them as you develop your application.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="jpa_overview_arch_exceptions.html">JPA Exceptions</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_overview_why.html">Why JPA?</a> | ↑ Up: <a href="jpa_overview.html">Java Persistence API</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_arch_exceptions.html">JPA Exceptions</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

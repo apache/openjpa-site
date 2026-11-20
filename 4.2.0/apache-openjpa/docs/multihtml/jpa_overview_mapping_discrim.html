@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_mapping_discrim" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+<ul class="sectlevel3">
+<li><a href="jpa_overview_mapping_table.html">2.13.1. Table</a>
+</li>
+<li><a href="jpa_overview_mapping_unq.html">2.13.2. Unique Constraints</a>
+</li>
+<li><a href="jpa_overview_mapping_column.html">2.13.3. Column</a>
+</li>
+<li><a href="jpa_overview_mapping_id.html">2.13.4. Identity Mapping</a>
+</li>
+<li><a href="jpa_overview_mapping_sequence.html">2.13.5. Generators</a>
+</li>
+<li><a href="jpa_overview_mapping_inher.html">2.13.6. Inheritance</a>
+</li>
+<li><a href="jpa_overview_mapping_discrim.html"><span class="toc-current">2.13.7. Discriminator</span></a>
+</li>
+<li><a href="jpa_overview_mapping_field.html">2.13.8. Field Mapping</a>
+</li>
+<li><a href="jpa_overview_mapping_full.html">2.13.9. The Complete Mappings</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="jpa_overview_mapping_discrim"><a class="link" href="#jpa_overview_mapping_discrim">2.13.7. Discriminator</a></h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>The <a href="jpa_overview_mapping_inher_single.html">single table</a> inheritance strategy results in a single table containing records for two or more different classes in an inheritance hierarchy.
+Similarly, using the <a href="jpa_overview_mapping_inher_joined.html">joined</a> strategy results in the superclass table holding records for superclass instances as well as for the superclass state of subclass instances.
+When selecting data, JPA needs a way to differentiate a row representing an object of one class from a row representing an object of another.
+That is the job of the <em>discriminator</em> column.</p>
+</div>
+<div class="paragraph">
+<p>The discriminator column is always in the table of the base entity.
+It holds a different value for records of each class, allowing the JPA runtime to determine what class of object each row represents.</p>
+</div>
+<div class="paragraph">
+<p>The <code class="class">DiscriminatorColumn</code> annotation represents a discriminator column.
+It has these properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>String name</code>: The column name. Defaults to <code>DTYPE</code>.</p>
+</li>
+<li>
+<p><code>length</code>: For string discriminator values, the length of the column. Defaults to 31.</p>
+</li>
+<li>
+<p><code>String columnDefinition</code>: This property has the same meaning as the <code>columnDefinition</code> property on the <code class="class">Column</code> annotation, described in <a href="jpa_overview_mapping_column.html">Column</a>.</p>
+</li>
+<li>
+<p><code>DiscriminatorType discriminatorType</code>: Enum value declaring the discriminator strategy of the hierarchy.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The corresponding XML element is <code>discriminator-column</code>.
+Its attributes mirror the annotation properties above:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code></p>
+</li>
+<li>
+<p><code>length</code></p>
+</li>
+<li>
+<p><code>column-definition</code></p>
+</li>
+<li>
+<p><code>discriminator-type</code>: One of <code>STRING</code>, <code>CHAR</code>, or <code>INTEGER</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code class="class">DiscriminatorValue</code> annotation specifies the discriminator value for each class.
+Though this annotation&#8217;s value is always a string, the implementation will parse it according to the <code class="class">DiscriminatorColumn</code>'s <code>discriminatorType</code> property above.
+The type defaults to <code>DiscriminatorType.STRING</code>, but may be  <code>DiscriminatorType.CHAR</code> or <code>DiscriminatorType.INTEGER</code>.
+If you do not specify a <code class="class">DiscriminatorValue</code>, the provider will choose an appropriate default.</p>
+</div>
+<div class="paragraph">
+<p>The corresponding XML element is <code>discriminator-value</code>.
+The text within this element is parsed as the discriminator value.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>OpenJPA assumes your model employs a discriminator column if any of the following are true:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The base entity explicitly declares an inheritance type of <code>SINGLE_TABLE</code>.</p>
+</li>
+<li>
+<p>The base entity sets a discriminator value.</p>
+</li>
+<li>
+<p>The base entity declares a discriminator column.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Only <code>SINGLE_TABLE</code> inheritance hierarchies require a discriminator column and values.  <code>JOINED</code> hierarchies can use a discriminator to make some operations more efficient, but do not require one. <code>TABLE_PER_CLASS</code> hierarchies have no use for a discriminator.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA defines additional discriminator strategies; see <a href="ref_guide_mapping_jpa.html">Additional JPA Mappings</a> in the Reference Guide for details.
+OpenJPA also supports final entity classes.
+OpenJPA does not use a discriminator on final classes.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>We can now translate our newfound knowledge of JPA discriminators into concrete JPA mappings.
+We first extend our diagram with discriminator columns:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/jpa-discrim-all.png" alt="jpa discrim all">
+</div>
+</div>
+<div class="paragraph">
+<p>Next, we present the updated mapping document.
+Notice that in this version, we have removed explicit inheritance annotations when the defaults sufficed.
+Also, notice that entities using the default <code>DTYPE</code> discriminator column mapping do not need an explicit <code class="class">DiscriminatorColumn</code> annotation.</p>
+</div>
+<div id="jpa_overview_mapping_discrimex" class="exampleblock">
+<div class="title">Example 32. Discriminator Mapping</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">org.mag</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@IdClass</span><span class="o">(</span><span class="nc">Magazine</span><span class="o">.</span><span class="na">MagazineId</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"MAG"</span><span class="o">)</span>
+<span class="nd">@DiscriminatorValue</span><span class="o">(</span><span class="s">"Mag"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Magazine</span> <span class="o">{</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">length</span><span class="o">=</span><span class="mi">9</span><span class="o">)</span>
+    <span class="nd">@Id</span> <span class="kd">private</span> <span class="nc">String</span> <span class="n">isbn</span><span class="o">;</span>
+    <span class="nd">@Id</span> <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+
+    <span class="o">...</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">MagazineId</span> <span class="o">{</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"ART"</span><span class="o">,</span> <span class="n">uniqueConstraints</span><span class="o">=</span><span class="nd">@Unique</span><span class="o">(</span><span class="n">columnNames</span><span class="o">=</span><span class="s">"TITLE"</span><span class="o">))</span>
+<span class="nd">@SequenceGenerator</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"ArticleSeq"</span><span class="o">,</span> <span class="n">sequenceName</span><span class="o">=</span><span class="s">"ART_SEQ"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Article</span> <span class="o">{</span>
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="nc">GenerationType</span><span class="o">.</span><span class="na">SEQUENCE</span><span class="o">,</span> <span class="n">generator</span><span class="o">=</span><span class="s">"ArticleSeq"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="o">...</span>
+<span class="o">}</span>
+
+
+<span class="kn">package</span> <span class="nn">org.mag.pub</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"COMP"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Company</span> <span class="o">{</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"CID"</span><span class="o">)</span>
+    <span class="nd">@Id</span> <span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"AUTH"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Author</span> <span class="o">{</span>
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="nc">GenerationType</span><span class="o">.</span><span class="na">TABLE</span><span class="o">,</span> <span class="n">generator</span><span class="o">=</span><span class="s">"AuthorGen"</span><span class="o">)</span>
+    <span class="nd">@TableGenerator</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"AuthorGen"</span><span class="o">,</span> <span class="n">table</span><span class="o">=</span><span class="s">"AUTH_GEN"</span><span class="o">,</span> <span class="n">pkColumnName</span><span class="o">=</span><span class="s">"PK"</span><span class="o">,</span>
+        <span class="n">valueColumnName</span><span class="o">=</span><span class="s">"AID"</span><span class="o">)</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"AID"</span><span class="o">,</span> <span class="n">columnDefinition</span><span class="o">=</span><span class="s">"INTEGER64"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="nd">@Embeddable</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Address</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+
+<span class="kn">package</span> <span class="nn">org.mag.subscribe</span><span class="o">;</span>
+
+<span class="nd">@MappedSuperclass</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Document</span> <span class="o">{</span>
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="nc">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">schema</span><span class="o">=</span><span class="s">"CNTRCT"</span><span class="o">)</span>
+<span class="nd">@Inheritance</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="nc">InheritanceType</span><span class="o">.</span><span class="na">JOINED</span><span class="o">)</span>
+<span class="nd">@DiscriminatorColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"CTYPE"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Contract</span>
+    <span class="kd">extends</span> <span class="nc">Document</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"SUB"</span><span class="o">,</span> <span class="n">schema</span><span class="o">=</span><span class="s">"CNTRCT"</span><span class="o">)</span>
+<span class="nd">@DiscriminatorColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"KIND"</span><span class="o">,</span> <span class="n">discriminatorType</span><span class="o">=</span><span class="nc">DiscriminatorType</span><span class="o">.</span><span class="na">INTEGER</span><span class="o">)</span>
+<span class="nd">@DiscriminatorValue</span><span class="o">(</span><span class="s">"1"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Subscription</span> <span class="o">{</span>
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="nc">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="o">...</span>
+
+    <span class="nd">@Entity</span>
+    <span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"LINE_ITEM"</span><span class="o">,</span> <span class="n">schema</span><span class="o">=</span><span class="s">"CNTRCT"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">LineItem</span>
+        <span class="kd">extends</span> <span class="nc">Contract</span> <span class="o">{</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Lifetime"</span><span class="o">)</span>
+<span class="nd">@DiscriminatorValue</span><span class="o">(</span><span class="s">"2"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LifetimeSubscription</span>
+    <span class="kd">extends</span> <span class="nc">Subscription</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Trial"</span><span class="o">)</span>
+<span class="nd">@DiscriminatorValue</span><span class="o">(</span><span class="s">"3"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TrialSubscription</span>
+    <span class="kd">extends</span> <span class="nc">Subscription</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The same metadata expressed in XML:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;entity-mappings</span> <span class="na">xmlns=</span><span class="s">"http://java.sun.com/xml/ns/persistence/orm"</span>
+    <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">"http://java.sun.com/xml/ns/persistence/orm orm_1_0.xsd"</span>
+    <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapped-superclass</span> <span class="na">class=</span><span class="s">"org.mag.subscribe.Document"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;attributes&gt;</span>
+            <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;generated-value</span> <span class="na">strategy=</span><span class="s">"IDENTITY"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/id&gt;</span>
+            ...
+        <span class="nt">&lt;/attributes&gt;</span>
+    <span class="nt">&lt;/mapped-superclass&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.Magazine"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"MAG"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;id-class</span><span class="err">="org.mag.Magazine.MagazineId"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;discriminator-value&gt;</span>Mag<span class="nt">&lt;/discriminator-value&gt;</span>
+        <span class="nt">&lt;attributes&gt;</span>
+            <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"isbn"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;column</span> <span class="na">length=</span><span class="s">"9"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"title"</span><span class="nt">/&gt;</span>
+            ...
+        <span class="nt">&lt;/attributes&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.Article"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"ART"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;unique-constraint&gt;</span>
+                <span class="nt">&lt;column-name&gt;</span>TITLE<span class="nt">&lt;/column-name&gt;</span>
+            <span class="nt">&lt;/unique-constraint&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+        <span class="nt">&lt;sequence-generator</span> <span class="na">name=</span><span class="s">"ArticleSeq"</span> <span class="na">sequence-name=</span><span class="s">"ART_SEQ"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attributes&gt;</span>
+            <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;generated-value</span> <span class="na">strategy=</span><span class="s">"SEQUENCE"</span> <span class="na">generator=</span><span class="s">"ArticleSeq"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/id&gt;</span>
+            ...
+        <span class="nt">&lt;/attributes&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.pub.Company"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"COMP"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attributes&gt;</span>
+            <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"CID"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/id&gt;</span>
+            ...
+        <span class="nt">&lt;/attributes&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.pub.Author"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"AUTH"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attributes&gt;</span>
+            <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"AID"</span> <span class="na">column-definition=</span><span class="s">"INTEGER64"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;generated-value</span> <span class="na">strategy=</span><span class="s">"TABLE"</span> <span class="na">generator=</span><span class="s">"AuthorGen"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;table-generator</span> <span class="na">name=</span><span class="s">"AuthorGen"</span> <span class="na">table=</span><span class="s">"AUTH_GEN"</span>
+                    <span class="na">pk-column-name=</span><span class="s">"PK"</span> <span class="na">value-column-name=</span><span class="s">"AID"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/id&gt;</span>
+            ...
+        <span class="nt">&lt;/attributes&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.subcribe.Contract"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">schema=</span><span class="s">"CNTRCT"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;inheritance</span> <span class="na">strategy=</span><span class="s">"JOINED"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;discriminator-column</span> <span class="na">name=</span><span class="s">"CTYPE"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attributes&gt;</span>
+            ...
+        <span class="nt">&lt;/attributes&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.subcribe.Subscription"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"SUB"</span> <span class="na">schema=</span><span class="s">"CNTRCT"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;inheritance</span> <span class="na">strategy=</span><span class="s">"SINGLE_TABLE"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;discriminator-value&gt;</span>1<span class="nt">&lt;/discriminator-value&gt;</span>
+        <span class="nt">&lt;discriminator-column</span> <span class="na">name=</span><span class="s">"KIND"</span> <span class="na">discriminator-type=</span><span class="s">"INTEGER"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attributes&gt;</span>
+            <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;generated-value</span> <span class="na">strategy=</span><span class="s">"IDENTITY"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/id&gt;</span>
+            ...
+        <span class="nt">&lt;/attributes&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.subscribe.Subscription.LineItem"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"LINE_ITEM"</span> <span class="na">schema=</span><span class="s">"CNTRCT"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;primary-key-join-column</span> <span class="na">name=</span><span class="s">"ID"</span> <span class="na">referenced-column-name=</span><span class="s">"PK"</span><span class="nt">/&gt;</span>
+        ...
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.subscribe.LifetimeSubscription"</span> <span class="na">name=</span><span class="s">"Lifetime"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;discriminator-value&gt;</span>2<span class="nt">&lt;/discriminator-value&gt;</span>
+        ...
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.mag.subscribe.TrialSubscription"</span> <span class="na">name=</span><span class="s">"Trial"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;discriminator-value&gt;</span>3<span class="nt">&lt;/discriminator-value&gt;</span>
+        ...
+    <span class="nt">&lt;/entity&gt;</span>
+<span class="nt">&lt;/entity-mappings&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_overview_mapping_inher_together.html">Putting it All Together</a> | ↑ Up: <a href="jpa_overview_mapping.html">Mapping Metadata</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_mapping_field.html">Field Mapping</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

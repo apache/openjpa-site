@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_cache" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_cache.html"><span class="toc-current">3.11.1. Data Cache</span></a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_cache_conf.html">Data Cache Configuration</a>
+</li>
+<li><a href="ref_guide_cache_use.html">Data Cache Usage</a>
+</li>
+<li><a href="ref_guide_cache_statistics.html">Cache Statistics</a>
+</li>
+<li><a href="ref_guide_cache_query.html">Query Cache</a>
+</li>
+<li><a href="ref_guide_cache_extension.html">Cache Extension</a>
+</li>
+<li><a href="ref_guide_cache_notes.html">Important Notes</a>
+</li>
+<li><a href="datastore_cache_issues.html">Known Issues and Limitations</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_cache_querycomp.html">3.11.2. Query Compilation Cache</a>
+</li>
+<li><a href="ref_guide_cache_querysql.html">3.11.3. Prepared SQL Cache</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_cache"><a class="link" href="#ref_guide_cache">3.11.1. Data Cache</a></h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>The OpenJPA data cache is an optional cache of persistent object data that operates at the <code class="class">EntityManagerFactory</code> level.
+This cache is designed to significantly increase performance while remaining in full compliance with the JPA standard.
+This means that turning on the caching option can transparently increase the performance of your application, with no changes to your code.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA&#8217;s data cache is not related to the <code class="class">EntityManager</code> cache dictated by the JPA specification.
+The JPA specification mandates behavior for the <code class="class">EntityManager</code> cache aimed at guaranteeing transaction isolation when operating on persistent objects.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA&#8217;s data cache is designed to provide significant performance increases over cacheless operation, while guaranteeing that behavior will be identical in both cache-enabled and cacheless operation.</p>
+</div>
+<div class="paragraph">
+<p>There are five ways to access data via the OpenJPA APIs: standard relation traversal, large result set relation traversal, queries, looking up an object by id, and iteration over an <code class="class">Extent</code>.
+OpenJPA&#8217;s cache plugin accelerates three of these mechanisms.
+It does not provide any caching of large result set relations or <code class="class">Extent</code> iterators.
+If you find yourself in need of higher-performance <code class="class">Extent</code> iteration, see <a href="datastore_cache_issues.html#ref_guide_cache_limits_extent">Query Replaces Extent</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. Data access methods</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Access method</th>
+<th class="tableblock halign-left valign-top">Uses cache</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standard relation traversal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Large result set relation traversal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lookups by object id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Iteration over an <code class="class">Extent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>When enabled, the cache is checked before making a trip to the datastore.
+Data is stored in the cache when objects are committed and when persistent objects are loaded from the datastore.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA&#8217;s data cache can operate in both single-JVM and multi-JVM environments.
+Multi-JVM caching is achieved through the use of the distributed event notification framework described in <a href="ref_guide_event.html">Remote Event Notification Framework</a>, or through custom integrations with a third-party distributed cache.</p>
+</div>
+<div class="paragraph">
+<p>The single JVM mode of operation maintains and shares a data cache across all <code class="class">EntityManager</code> instances obtained from a particular <code class="class">EntityManagerFactory</code>.
+This is not appropriate for use in a distributed environment, as caches in different JVMs or created from different <code class="class">EntityManagerFactory</code> objects will not be synchronized.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="ref_guide_cache_conf.html">Data Cache Configuration</a></p>
+</li>
+<li>
+<p><a href="ref_guide_cache_use.html">Data Cache Usage</a></p>
+</li>
+<li>
+<p><a href="ref_guide_cache_statistics.html">Cache Statistics</a></p>
+</li>
+<li>
+<p><a href="ref_guide_cache_query.html">Query Cache</a></p>
+</li>
+<li>
+<p><a href="ref_guide_cache_extension.html">Cache Extension</a></p>
+</li>
+<li>
+<p><a href="ref_guide_cache_notes.html">Important Notes</a></p>
+</li>
+<li>
+<p><a href="datastore_cache_issues.html">Known Issues and Limitations</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="ref_guide_caching.html">Caching</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_cache_conf.html">Data Cache Configuration</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

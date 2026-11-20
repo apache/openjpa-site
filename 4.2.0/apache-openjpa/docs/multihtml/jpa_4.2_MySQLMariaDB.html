@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_4.2_MySQLMariaDB" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+<ul class="sectlevel2">
+<li><a href="jpa_4.2_incompatibilities.html">Incompatibilities</a>
+<ul class="sectlevel3">
+<li><a href="jpa_4.2_Requirements.html">Platform and Dependency Requirements</a>
+</li>
+<li><a href="jpa_4.2_SecurityManager.html">SecurityManager Support Removed</a>
+</li>
+<li><a href="jpa_4.2_DynamicEnhancementAgent.html">Dynamic Enhancement Agent</a>
+</li>
+<li><a href="jpa_4.2_JUnitJupiter.html">openjpa-junit5 is now openjpa-junit-jupiter</a>
+</li>
+<li><a href="jpa_4.2_JPQLReservedIdentifiers.html">New JPQL Reserved Identifiers</a>
+</li>
+<li><a href="jpa_4.2_JPQLIntegerLiterals.html">JPQL Integer Literals are typed Integer</a>
+</li>
+<li><a href="jpa_4.2_CriteriaArithmeticResultType.html">Criteria arithmetic takes its result type from both operands</a>
+</li>
+<li><a href="jpa_4.2_JPQLArithmeticResultType.html">JPQL arithmetic ranks Double and Float above BigDecimal</a>
+</li>
+<li><a href="jpa_4.2_JPQLArithmeticAssociativity.html">JPQL arithmetic operators are left associative</a>
+</li>
+<li><a href="jpa_4.2_InMemoryNullArithmetic.html">Arithmetic with null is null in memory</a>
+</li>
+<li><a href="jpa_4.2_QueryValueConversion.html">Query value conversion</a>
+</li>
+<li><a href="jpa_4.2_ExtractWeek.html">EXTRACT(WEEK) is the ISO-8601 week</a>
+</li>
+<li><a href="jpa_4.2_QueryResultList.html">Query.getResultList() returns a materialized ArrayList</a>
+</li>
+<li><a href="jpa_4.2_BulkDeleteNoCascade.html">Bulk DELETE no longer cascades</a>
+</li>
+<li><a href="jpa_4.2_SliceBulkTargets.html">Slice target applies to bulk UPDATE and DELETE</a>
+</li>
+<li><a href="jpa_4.2_InMemoryBulkFlush.html">An in-memory bulk operation flushes the persistence context</a>
+</li>
+<li><a href="jpa_4.2_FlushBeforeQueries.html">Completed access paths for Criteria and collection-valued queries</a>
+</li>
+<li><a href="jpa_4.2_RollbackOnException.html">Exceptions mark the transaction rollback-only; closed EntityManager checks</a>
+</li>
+<li><a href="jpa_4.2_FindArgumentValidation.html">Argument validation in find(), getReference(), detach(), contains(), remove()</a>
+</li>
+<li><a href="jpa_4.2_CloseWithActiveTransaction.html">EntityManager.close() with an active resource-local transaction</a>
+</li>
+<li><a href="jpa_4.2_EntityManagerFactoryLifecycle.html">EntityManagerFactory lifecycle and properties</a>
+</li>
+<li><a href="jpa_4.2_QueryParameters.html">Query parameter API</a>
+</li>
+<li><a href="jpa_4.2_StoredProcedureQuery.html">StoredProcedureQuery semantics</a>
+</li>
+<li><a href="jpa_4.2_CriteriaMetamodel.html">Criteria API and Metamodel</a>
+</li>
+<li><a href="jpa_4.2_PersistenceUnitUtilIdentifier.html">PersistenceUnitUtil.getIdentifier() returns the plain identifier</a>
+</li>
+<li><a href="jpa_4.2_CacheModeProperties.html">Cache mode properties on EntityManager.setProperty()</a>
+</li>
+<li><a href="jpa_4.2_MapKeyColumn.html">Default map key column renamed to &lt;field&gt;_KEY</a>
+</li>
+<li><a href="jpa_4.2_MappingResolution.html">Attribute overrides, @OrderBy and inverse map keys</a>
+</li>
+<li><a href="jpa_4.2_SequenceGeneratorName.html">@SequenceGenerator without sequenceName</a>
+</li>
+<li><a href="jpa_4.2_SequenceGeneratorWithoutSequences.html">@SequenceGenerator on a database without sequences</a>
+</li>
+<li><a href="jpa_4.2_AttributeConverters.html">AttributeConverter handling</a>
+</li>
+<li><a href="jpa_4.2_ConverterTypeHierarchy.html">Converter types declared by a generic superclass or interface</a>
+</li>
+<li><a href="jpa_4.2_AutoApplyNonSerializable.html">An auto-apply converter maps an attribute whose type is not serializable</a>
+</li>
+<li><a href="jpa_4.2_AccessType.html">Access type determination and property accessors</a>
+</li>
+<li><a href="jpa_4.2_InstantYearMapping.html">java.time.Instant and java.time.Year mapping</a>
+</li>
+<li><a href="jpa_4.2_GeneratedDDL.html">Generated DDL changes</a>
+</li>
+<li><a href="jpa_4.2_SchemaGeneration.html">Jakarta Persistence schema generation and SQL scripts</a>
+</li>
+<li><a href="jpa_4.2_ColumnTypeConflicts.html">Numeric versus character column type conflicts</a>
+</li>
+<li><a href="jpa_4.2_DeleteCountZero.html">DELETE affecting zero rows tolerated for unversioned entities</a>
+</li>
+<li><a href="jpa_4.2_NonEntityClasses.html">Non-entity classes in persistence.xml</a>
+</li>
+<li><a href="jpa_4.2_KernelLeniency.html">Relaxed kernel checks</a>
+</li>
+<li><a href="jpa_4.2_FlushOrdering.html">Insert ordering across logical foreign keys</a>
+</li>
+<li><a href="jpa_4.2_Enhancer.html">Enhancer and runtime enhancement</a>
+</li>
+<li><a href="jpa_4.2_DelayedProxies.html">Delayed collection proxies on Java 21</a>
+</li>
+<li><a href="jpa_4.2_MetamodelGenerator.html">Static metamodel generator output</a>
+</li>
+<li><a href="jpa_4.2_LifecycleCallbacks.html">Lifecycle callbacks and listeners</a>
+</li>
+<li><a href="jpa_4.2_PersistenceXml.html">persistence.xml resource handling</a>
+</li>
+<li><a href="jpa_4.2_Locale.html">Locale-independent case conversion</a>
+</li>
+<li><a href="jpa_4.2_ReservedWords.html">Reserved word handling and MySQL delimiting</a>
+</li>
+<li><a href="jpa_4.2_LikeEscape.html">LIKE without an ESCAPE clause</a>
+</li>
+<li><a href="jpa_4.2_StoreCharsAsNumbers.html">char attributes are stored as CHAR(1)</a>
+</li>
+<li><a href="jpa_4.2_H2DecimalColumns.html">Decimal columns on H2</a>
+</li>
+<li><a href="jpa_4.2_MySQLDecimalColumns.html">Decimal columns on MySQL and MariaDB</a>
+</li>
+<li><a href="jpa_4.2_PostgreSQL.html">PostgreSQL</a>
+</li>
+<li><a href="jpa_4.2_MySQLMariaDB.html"><span class="toc-current">MySQL and MariaDB</span></a>
+</li>
+<li><a href="jpa_4.2_MySQLMariaDBReservedWords.html">Names that MySQL and MariaDB reserve</a>
+</li>
+<li><a href="jpa_4.2_SQLServer.html">Microsoft SQL Server</a>
+</li>
+<li><a href="jpa_4.2_SQLServerDecimalColumns.html">Decimal columns on Microsoft SQL Server</a>
+</li>
+<li><a href="jpa_4.2_Oracle.html">Oracle</a>
+</li>
+<li><a href="jpa_4.2_H2BigInteger.html">BigInteger columns on H2</a>
+</li>
+<li><a href="jpa_4.2_HSQLDB.html">HSQLDB</a>
+</li>
+<li><a href="jpa_4.2_HSQLDBDecimalColumns.html">Decimal columns and casts on HSQLDB</a>
+</li>
+<li><a href="jpa_4.2_SPIChanges.html">SPI changes for custom store, dictionary and expression implementations</a>
+</li>
+<li><a href="jpa_4.2_NewFeatures.html">Notable new features</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="jpa_4.2_MySQLMariaDB"><a class="link" href="#jpa_4.2_MySQLMariaDB">MySQL and MariaDB</a></h4>
+<div class="paragraph">
+<p>On MySQL 5.7+ and MariaDB 10.2+ temporal columns are now created as <code>DATETIME(6)</code> and <code>TIME(6)</code> (<code>DateFractionDigits=6</code>) instead of whole-second precision, so that <code>@Version</code> attributes of type <code class="class">Instant</code> or <code class="class">LocalDateTime</code> can distinguish updates within the same second.
+The value is set at connection time and overrides a <code>DateFractionDigits</code> value given in <a href="openjpa.jdbc.DBDictionary.html">openjpa.jdbc.DBDictionary</a>.
+Existing columns keep working, but schema validation or refresh may report or alter the precision.
+Use <code>@Column(secondPrecision=0)</code> on individual columns, or subclass the dictionary and reset <code>dateFractionDigits</code> after <code>connectedConfiguration()</code>, to keep whole seconds.</p>
+</div>
+<div class="paragraph">
+<p><code class="class">MariaDBDictionary</code> no longer replaces a configured positive <a href="openjpa.FetchBatchSize.html">openjpa.FetchBatchSize</a> with <code>Integer.MIN_VALUE</code> (the Connector/J 2.x streaming mode); the configured value is passed to the driver unchanged. <code class="class">MySQLDictionary</code> keeps the streaming behavior.
+Subclass <code class="class">MariaDBDictionary</code> and override <code>getBatchFetchSize(int)</code> to restore streaming.</p>
+</div>
+<div class="paragraph">
+<p>MariaDB 10.3 introduced sequence objects, and <code class="class">MariaDBDictionary</code> now reports sequence support on 10.3 and later, where it previously declared none.
+A <code>@SequenceGenerator</code> is therefore backed by a real sequence, so the schema tool issues <code>CREATE SEQUENCE</code> and <code>DROP SEQUENCE</code> for it and the database user needs the privilege to do so.
+The sequences are created <code>NOCACHE</code>, because OpenJPA caches values itself in blocks of the generator&#8217;s allocation size, and the server-side cache of 1000 increments - 1000 times the allocation size in identifiers, which is 50000 for an <code>allocationSize</code> of 50 - would only add gaps, since the <code>ALTER SEQUENCE &#8230;&#8203; INCREMENT BY</code> that OpenJPA issues per sequence instance discards the rest of the cached range.
+MariaDB 10.2 and earlier keep the sequence table fallback described in <a href="jpa_4.2_SequenceGeneratorWithoutSequences.html">@SequenceGenerator on a database without sequences</a>; a <code>NextSequenceQuery</code> configured in <a href="openjpa.jdbc.DBDictionary.html">openjpa.jdbc.DBDictionary</a> is left untouched.</p>
+</div>
+<div class="paragraph">
+<p><code>EXTRACT(WEEK FROM &#8230;&#8203;)</code> now returns the ISO week, as the specification defines it, by rendering <code>WEEK(x, 3)</code>.
+Before, MySQL and MariaDB computed it with weeks starting on Sunday, so queries on such dates return different values: for example 2024-01-01 is now week 1 instead of 0, and 2023-12-31 is week 52 instead of 53.
+A configured <code>ExtractDateTimeFieldFunction</code> no longer applies to <code>WEEK</code> on these databases.
+<code>EXTRACT(SECOND FROM &#8230;&#8203;)</code> now includes the fraction of the second, as the specification requires, by adding <code>EXTRACT(MICROSECOND FROM &#8230;&#8203;) / 1000000.0</code> to the whole seconds that MySQL and MariaDB return.
+A <code class="class">LocalTime</code> (and so an <code class="class">OffsetTime</code>) is now passed to and read from the driver as such instead of as a <code class="class">java.sql.Time</code>, which has no fraction of a second, so its fraction is kept in parameters and in <code>TIME(6)</code> columns.</p>
+</div>
+<div class="paragraph">
+<p>On MariaDB before 11.1, a bulk update or delete whose WHERE clause has a subquery on the target table now matches the primary keys of the affected rows in a derived table, as on MySQL (<code>AllowsBulkTargetInSubselect=false</code>), because these servers reject the multi-table <code>DELETE</code> that OpenJPA generates for it.</p>
+</div>
+<div class="paragraph">
+<p>Since the version is now parsed from the server&#8217;s reply even when a driver that is not MariaDB aware passes it on with its <code>5.5.5-</code> replication compatibility prefix, such a deployment reaches the features gated on 10.2 as well: temporal columns are generated as <code>DATETIME(6)</code> rather than <code>DATETIME</code>, as they already were for the same server reached through <code>mariadb-java-client</code>.
+A schema created by an earlier release keeps whole-second <code>DATETIME</code> columns until they are altered, and reading them is unaffected.
+The version gate assigns <code>timestampTypeName</code> and <code>dateFractionDigits</code> outright, so a value configured in <a href="openjpa.jdbc.DBDictionary.html">openjpa.jdbc.DBDictionary</a> does not survive it; subclass <code class="class">MariaDBDictionary</code> to generate the previous types.</p>
+</div>
+<div class="paragraph">
+<p>There is no upgrade path from an earlier release to migrate: a named <code>@SequenceGenerator</code> failed outright on every MariaDB before 4.2.0, so no counter exists to move.
+The case that needs care is a server upgrade under 4.2.0.
+An application that ran on MariaDB 10.2 or earlier has its counters in <code>OPENJPA_SEQUENCES_TABLE</code>; once the server is 10.3 or later the same generator is backed by a sequence object, which <code>openjpa.jdbc.SynchronizeMappings</code> or the schema tool creates starting at the generator&#8217;s <code>initialValue</code> and which therefore hands out identifiers that are already in use.
+Before upgrading the server, either create each sequence with <code>START WITH</code> above the highest identifier in use, or keep the existing counter by declaring the generator&#8217;s <code>sequenceName</code> as a <code>value-table(PrimaryKeyValue=&#8230;&#8203;)</code> plugin string, which <a href="jpa_4.2_SequenceGeneratorWithoutSequences.html">@SequenceGenerator on a database without sequences</a> leaves alone.
+Emptying the dictionary&#8217;s <code>NextSequenceQuery</code> does not pin the old backing store, because an empty value is normalised to none and then set again for a 10.3 server.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_4.2_PostgreSQL.html">PostgreSQL</a> | ↑ Up: <a href="jpa_4.2_incompatibilities.html">Incompatibilities</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_4.2_MySQLMariaDBReservedWords.html">Names that MySQL and MariaDB reserve</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

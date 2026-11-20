@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_query_basic" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+<ul class="sectlevel3">
+<li><a href="jpa_query_api.html">2.10.1. JPQL API</a>
+<ul class="sectlevel4">
+<li><a href="jpa_overview_query_basic.html"><span class="toc-current">Query Basics</span></a>
+</li>
+<li><a href="jpa_overview_query_relations.html">Relation Traversal</a>
+</li>
+<li><a href="jpa_overview_query_embeddables.html">Embeddable Traversal</a>
+</li>
+<li><a href="jpa_overview_join_fetch.html">Fetch Joins</a>
+</li>
+<li><a href="jpa_overview_query_functions.html">JPQL Functions</a>
+</li>
+<li><a href="jpa_overview_query_inheritance.html">Polymorphic Queries</a>
+</li>
+<li><a href="jpa_overview_query_params.html">Query Parameters</a>
+</li>
+<li><a href="jpa_overview_query_hints.html">Query Hints</a>
+</li>
+<li><a href="jpa_overview_query_ordering.html">Ordering</a>
+</li>
+<li><a href="jpa_overview_query_aggregates.html">Aggregates</a>
+</li>
+<li><a href="jpa_overview_query_named.html">Named Queries</a>
+</li>
+<li><a href="jpa_overview_query_delete.html">Delete By Query</a>
+</li>
+<li><a href="jpa_overview_query_update.html">Update By Query</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_langref.html">2.10.2. JPQL Language Reference</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_overview_query_basic"><a class="link" href="#jpa_overview_query_basic">2.10.1.1. Query Basics</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The preceding is a simple JPQL query for all <code class="class">Magazine</code> entities.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="nc">Query</span> <span class="nf">createQuery</span><span class="o">(</span><span class="nc">String</span> <span class="n">jpql</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <a href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/entitymanager">
+EntityManager.createQuery</a> method creates a <code class="class">Query</code> instance from a given JPQL string.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="nc">List</span> <span class="nf">getResultList</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Invoking <a href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/query#getResultList()">
+Query.getResultList</a> executes the query and returns a <code class="class">List</code> containing the matching objects.
+The following example executes our <code class="class">Magazine</code> query above:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">EntityManager</span> <span class="n">em</span> <span class="o">=</span> <span class="o">...</span>
+<span class="nc">Query</span> <span class="n">q</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"SELECT x FROM Magazine x"</span><span class="o">);</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Magazine</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Magazine</span><span class="o">&gt;)</span> <span class="n">q</span><span class="o">.</span><span class="na">getResultList</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A JPQL query has an internal namespace declared in the <code>from</code> clause of the query.
+Arbitrary identifiers are assigned to entities so that they can be referenced elsewhere in the query.
+In the query example above, the identifier <code>x</code> is assigned to the entity <code class="class">Magazine</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>as</code> keyword can optionally be used when declaring identifiers in the <code>from</code> clause. <code>SELECT x FROM
+Magazine x</code> and <code>SELECT x FROM Magazine AS x</code> are synonymous.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Following the <code>select</code> clause of the query is the object or objects that the query returns.
+In the case of the query above, the query&#8217;s result list will contain instances of the <code class="class">Magazine</code> class.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When selecting entities, you can optionally use the keyword <code>object</code>.
+The clauses <code>select x</code> and <code>SELECT
+OBJECT(x)</code> are synonymous.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The optional <code>where</code> clause places criteria on matching results.
+For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'JDJ'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Keywords in JPQL expressions are case-insensitive, but entity, identifier, and member names are not.
+For example, the expression above could also be expressed as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">select</span> <span class="n">x</span> <span class="k">from</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">where</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'JDJ'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But it could not be expressed as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">TITLE</span> <span class="o">=</span> <span class="s1">'JDJ'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As with the <code>select</code> clause, alias names in the <code>where</code>  clause are resolved to the entity declared in the <code>from</code>  clause.
+The query above could be described in English as "for all <code class="class">Magazine</code> instances <code>x</code>, return a list of every <code>x</code> such that <code>x</code>'s <code>title</code>  field is equal to 'JDJ'".</p>
+</div>
+<div class="paragraph">
+<p>JPQL uses SQL-like syntax for query criteria.
+The <code>and</code> and <code>or</code> logical operators chain multiple criteria together:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'JDJ'</span> <span class="k">OR</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'JavaPro'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>=</code> operator tests for equality. <code>&lt;&gt;</code>  tests for inequality.
+JPQL also supports the following arithmetic operators for numeric comparisons: <code>&gt;, &gt;=, &lt;, &#8656;</code>.
+For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">.</span><span class="mi">00</span> <span class="k">AND</span> <span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">.</span><span class="mi">00</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This query returns all magazines whose price is greater than 3.00 and less than or equal to 5.00.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&lt;&gt;</span> <span class="mi">3</span><span class="p">.</span><span class="mi">00</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This query returns all Magazines whose price is not equal to 3.00.</p>
+</div>
+<div class="paragraph">
+<p>You can group expressions together using parentheses in order to specify how they are evaluated.
+This is similar to how parentheses are used in Java.
+For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">.</span><span class="mi">00</span> <span class="k">AND</span> <span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">.</span><span class="mi">00</span><span class="p">)</span> <span class="k">OR</span> <span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">.</span><span class="mi">00</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This expression would match magazines whose price is less than 7.00.
+Alternately:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">.</span><span class="mi">00</span> <span class="k">AND</span> <span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">.</span><span class="mi">00</span> <span class="k">OR</span> <span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">.</span><span class="mi">00</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This expression would match magazines whose price is 4.00, 5.00 or 6.00, but not 1.00, 2.00 or 3.00.</p>
+</div>
+<div class="paragraph">
+<p>JPQL also includes the following conditionals:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[NOT] BETWEEN</code>: Shorthand for expressing that a value falls between two other values.
+The following two statements are synonymous:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">.</span><span class="mi">00</span> <span class="k">AND</span> <span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">.</span><span class="mi">00</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="k">BETWEEN</span> <span class="mi">3</span><span class="p">.</span><span class="mi">00</span> <span class="k">AND</span> <span class="mi">5</span><span class="p">.</span><span class="mi">00</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>[NOT] LIKE</code>: Performs a string comparison with wildcard support.
+The special character '_' in the parameter means to match any single character, and the special character '%' means to match any sequence of characters.
+The following statement matches title fields "JDJ" and "JavaPro", but not "IT Insider":</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="k">LIKE</span> <span class="s1">'J%'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following statement matches the title field "JDJ" but not "JavaPro":</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="k">LIKE</span> <span class="s1">'J__'</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>[NOT] IN</code>: Specifies that the member must be equal to one element of the provided list.
+The following two statements are synonymous:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">'JDJ'</span><span class="p">,</span> <span class="s1">'JavaPro'</span><span class="p">,</span> <span class="s1">'IT Insider'</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'JDJ'</span> <span class="k">OR</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'JavaPro'</span> <span class="k">OR</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'IT Insider'</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>IS [NOT] EMPTY</code>: Specifies that the collection field holds no elements.
+For example:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">articles</span> <span class="k">is</span> <span class="n">empty</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This statement will return all magazines whose  <code>articles</code> member contains no elements.</p>
+</div>
+</li>
+<li>
+<p><code>IS [NOT] NULL</code>: Specifies that the field is equal to null.
+For example:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">publisher</span> <span class="k">is</span> <span class="k">null</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This statement will return all Magazine instances whose "publisher" field is set to <code>null</code>.</p>
+</div>
+</li>
+<li>
+<p><code>NOT</code>: Negates the contained expression.
+For example, the following two statements are synonymous:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="k">NOT</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">=</span> <span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">price</span> <span class="o">&lt;&gt;</span> <span class="mi">10</span><span class="p">.</span><span class="mi">0</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="jpa_query_api.html">JPQL API</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_query_relations.html">Relation Traversal</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

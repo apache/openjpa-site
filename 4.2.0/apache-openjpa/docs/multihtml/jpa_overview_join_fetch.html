@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_join_fetch" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+<ul class="sectlevel3">
+<li><a href="jpa_query_api.html">2.10.1. JPQL API</a>
+<ul class="sectlevel4">
+<li><a href="jpa_overview_query_basic.html">Query Basics</a>
+</li>
+<li><a href="jpa_overview_query_relations.html">Relation Traversal</a>
+</li>
+<li><a href="jpa_overview_query_embeddables.html">Embeddable Traversal</a>
+</li>
+<li><a href="jpa_overview_join_fetch.html"><span class="toc-current">Fetch Joins</span></a>
+</li>
+<li><a href="jpa_overview_query_functions.html">JPQL Functions</a>
+</li>
+<li><a href="jpa_overview_query_inheritance.html">Polymorphic Queries</a>
+</li>
+<li><a href="jpa_overview_query_params.html">Query Parameters</a>
+</li>
+<li><a href="jpa_overview_query_hints.html">Query Hints</a>
+</li>
+<li><a href="jpa_overview_query_ordering.html">Ordering</a>
+</li>
+<li><a href="jpa_overview_query_aggregates.html">Aggregates</a>
+</li>
+<li><a href="jpa_overview_query_named.html">Named Queries</a>
+</li>
+<li><a href="jpa_overview_query_delete.html">Delete By Query</a>
+</li>
+<li><a href="jpa_overview_query_update.html">Update By Query</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_langref.html">2.10.2. JPQL Language Reference</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_overview_join_fetch"><a class="link" href="#jpa_overview_join_fetch">2.10.1.4. Fetch Joins</a></h5>
+<div class="paragraph">
+<p>JPQL queries may specify one or more <code>join fetch</code> declarations, which allow the query to specify which fields in the returned instances will be pre-fetched.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">join</span> <span class="k">fetch</span> <span class="n">x</span><span class="p">.</span><span class="n">articles</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'JDJ'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The query above returns <code class="class">Magazine</code> instances and guarantees that the <code>articles</code> field will already be fetched in the returned instances.</p>
+</div>
+<div class="paragraph">
+<p>Multiple fields may be specified in separate <code>join fetch</code> declarations:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">join</span> <span class="k">fetch</span> <span class="n">x</span><span class="p">.</span><span class="n">articles</span> <span class="k">join</span> <span class="k">fetch</span> <span class="n">x</span><span class="p">.</span><span class="n">authors</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'JDJ'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that in the above query, both <code>articles</code> and <code>authors</code> are relation property in <code class="class">Magazine</code>.
+JPQL syntax does not allow range variable declared for paths on the right-hand side of <code>join fetch</code>.
+Therefore, if <code class="class">Article</code> entity has a relation property of <code>publishers</code>, it is not possible to specify a query that returns <code class="class">Magazine</code> instances and pre-fetch the <code>articles</code> and the <code>publishers</code>.
+The following query will result in syntax error:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">join</span> <span class="k">fetch</span> <span class="n">x</span><span class="p">.</span><span class="n">articles</span> <span class="n">a</span> <span class="k">join</span> <span class="k">fetch</span> <span class="n">a</span><span class="p">.</span><span class="n">publishers</span> <span class="n">p</span> <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">'JDJ'</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Specifying the <code>join fetch</code> declaration is functionally equivalent to adding the fields to the Query&#8217;s <code class="class">FetchConfiguration</code>.
+See <a href="ref_guide_fetch.html">Fetch Groups</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_overview_query_embeddables.html">Embeddable Traversal</a> | ↑ Up: <a href="jpa_query_api.html">JPQL API</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_query_functions.html">JPQL Functions</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

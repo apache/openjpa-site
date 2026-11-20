@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="dbsupport" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+<ul class="sectlevel2">
+<li><a href="jpa_resources.html">Appendix D: JPA Resources</a>
+</li>
+<li><a href="supported_databases.html">Appendix E: Supported Databases</a>
+<ul class="sectlevel3">
+<li><a href="dbappendix.html">Overview</a>
+</li>
+<li><a href="dbsupport.html"><span class="toc-current">Verified Database Matrix</span></a>
+</li>
+<li><a href="dbcompatible.html">Compatible Database Matrix</a>
+</li>
+<li><a href="dbunverified.html">Unverified Database Matrix</a>
+</li>
+<li><a href="dbsupport_derby.html">Apache Derby</a>
+</li>
+<li><a href="dbsupport_interbase.html">Borland Interbase</a>
+</li>
+<li><a href="dbsupport_jdatastore.html">JDataStore</a>
+</li>
+<li><a href="dbsupport_db2.html">IBM DB2</a>
+</li>
+<li><a href="dbsupport_empress.html">Empress</a>
+</li>
+<li><a href="dbsupport_h2.html">H2 Database Engine</a>
+</li>
+<li><a href="dbsupport_hypersonic.html">Hypersonic</a>
+</li>
+<li><a href="dbsupport_firebird.html">Firebird</a>
+</li>
+<li><a href="dbsupport_informix.html">Informix</a>
+</li>
+<li><a href="dbsupport_ingres.html">Ingres Database</a>
+</li>
+<li><a href="dbsupport_intersystems_cache.html">InterSystems Cache</a>
+</li>
+<li><a href="dbsupport_access.html">Microsoft Access</a>
+</li>
+<li><a href="dbsupport_sqlserver.html">Microsoft SQL Server</a>
+</li>
+<li><a href="dbsupport_foxpro.html">Microsoft FoxPro</a>
+</li>
+<li><a href="dbsupport_mysql.html">MySQL</a>
+</li>
+<li><a href="dbsupport_mariadb.html">MariaDB</a>
+</li>
+<li><a href="dbsupport_oracle.html">Oracle</a>
+</li>
+<li><a href="dbsupport_pointbase.html">Pointbase</a>
+</li>
+<li><a href="dbsupport_postgresql.html">PostgreSQL</a>
+</li>
+<li><a href="dbsupport_soliddb.html">IBM solidDB</a>
+</li>
+<li><a href="dbsupport_sybase.html">Sybase Adaptive Server</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="migration_considerations.html">Appendix F: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="dbsupport"><a class="link" href="#dbsupport">Verified Database Matrix</a></h4>
+<div class="paragraph">
+<p>Following is a table of the supported database and JDBC driver versions that have been verified against this version of OpenJPA.
+For the list of other databases and drivers that were tested in prior releases or by other OpenJPA users, but may not support every feature of this release, please refer to the <a href="dbcompatible.html">Compatible Database Matrix</a> section.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 12. Supported Databases and JDBC Drivers</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Database Name</th>
+<th class="tableblock halign-left valign-top">Database Version</th>
+<th class="tableblock halign-left valign-top">JDBC Driver Name</th>
+<th class="tableblock halign-left valign-top">JDBC Driver Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_derby.html">Apache Derby</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.2.2.0, 10.3.3.0, 10.4.2.0, 10.5.3.0, 10.8.2.2, 10.14.2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Apache Derby Embedded JDBC Driver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as Database Version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_h2.html">H2</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.4.195, 1.4.196</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H2 Embedded JDBC Driver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as Database Version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_sqlserver.html">Microsoft SQL Server</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2005 (9.00), 2008 (10.00), 2017</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft SQL Server JDBC Driver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2 or 2.0, 9.2.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_oracle.html">Oracle</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10g (10.1, 10.2), 11g (11.1, 11.2), 12c, 18c, 19c, 21c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle JDBC driver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11.2.0.1, 11.2.0.4, 19.3.0.0, 23.26.2.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_postgresql.html">PostgreSQL</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.3.5, 8.4, 9, 11, 12, 13, 16, 18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PostgreSQL Native Driver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.3 JDBC3 (build 603), 8.4 JDBC3 (build 701), 42.2.5, , 42.2.19, 42.7.13</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_mysql.html">MySQL</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.26, 5.1.6, 5.7, 9.7.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MySQL Driver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.1.6, 5.1.47, 9.7.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_mariadb.html">MariaDB</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.5, 12.3.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MariaDB Driver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.5.8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_hypersonic.html">Hypersonic HSQLDB</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.5.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HSQLDB Driver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as Database Version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_db2.html">IBM DB2</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.1, 8.2, 9.1, 9.5, 9.7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IBM DB2 JDBC Universal Driver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.50.152</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_informix.html">IBM Informix Dynamic Server</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.00xC6, 11.10xC1, 11.5xC1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Informix JDBC driver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.00 JC3, 3.10 JC1, 3.50 JC1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_soliddb.html">IBM solidDB</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.5.0.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">solidDB JDBC Driver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dbsupport_sybase.html">Sybase Adaptive Server Enterprise</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12.5, 15.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jConnect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.5, 6.0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="dbappendix.html">Overview</a> | ↑ Up: <a href="supported_databases.html">Appendix B: Supported Databases</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="dbcompatible.html">Compatible Database Matrix</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

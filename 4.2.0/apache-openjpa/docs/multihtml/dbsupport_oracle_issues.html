@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="dbsupport_oracle_issues" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+<ul class="sectlevel2">
+<li><a href="jpa_resources.html">Appendix D: JPA Resources</a>
+</li>
+<li><a href="supported_databases.html">Appendix E: Supported Databases</a>
+<ul class="sectlevel3">
+<li><a href="dbappendix.html">Overview</a>
+</li>
+<li><a href="dbsupport.html">Verified Database Matrix</a>
+</li>
+<li><a href="dbcompatible.html">Compatible Database Matrix</a>
+</li>
+<li><a href="dbunverified.html">Unverified Database Matrix</a>
+</li>
+<li><a href="dbsupport_derby.html">Apache Derby</a>
+</li>
+<li><a href="dbsupport_interbase.html">Borland Interbase</a>
+</li>
+<li><a href="dbsupport_jdatastore.html">JDataStore</a>
+</li>
+<li><a href="dbsupport_db2.html">IBM DB2</a>
+</li>
+<li><a href="dbsupport_empress.html">Empress</a>
+</li>
+<li><a href="dbsupport_h2.html">H2 Database Engine</a>
+</li>
+<li><a href="dbsupport_hypersonic.html">Hypersonic</a>
+</li>
+<li><a href="dbsupport_firebird.html">Firebird</a>
+</li>
+<li><a href="dbsupport_informix.html">Informix</a>
+</li>
+<li><a href="dbsupport_ingres.html">Ingres Database</a>
+</li>
+<li><a href="dbsupport_intersystems_cache.html">InterSystems Cache</a>
+</li>
+<li><a href="dbsupport_access.html">Microsoft Access</a>
+</li>
+<li><a href="dbsupport_sqlserver.html">Microsoft SQL Server</a>
+</li>
+<li><a href="dbsupport_foxpro.html">Microsoft FoxPro</a>
+</li>
+<li><a href="dbsupport_mysql.html">MySQL</a>
+</li>
+<li><a href="dbsupport_mariadb.html">MariaDB</a>
+</li>
+<li><a href="dbsupport_oracle.html">Oracle</a>
+<ul class="sectlevel4">
+<li><a href="dbsupport_oracle_query_hints.html">Using Query Hints with Oracle</a>
+</li>
+<li><a href="dbsupport_oracle_issues.html"><span class="toc-current">Known issues with Oracle</span></a>
+</li>
+</ul>
+</li>
+<li><a href="dbsupport_pointbase.html">Pointbase</a>
+</li>
+<li><a href="dbsupport_postgresql.html">PostgreSQL</a>
+</li>
+<li><a href="dbsupport_soliddb.html">IBM solidDB</a>
+</li>
+<li><a href="dbsupport_sybase.html">Sybase Adaptive Server</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="migration_considerations.html">Appendix F: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="dbsupport_oracle_issues"><a class="link" href="#dbsupport_oracle_issues">Known issues with Oracle</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>The Oracle JDBC driver has significant differences between different versions. It is important to use the officially supported version of the drivers (10.2.0.1.0/11.2.0.x.0), which is backward compatible with previous versions of the Oracle server. It can be downloaded from <a href="http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html"> http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html</a>.</p>
+</li>
+<li>
+<p>Empty string/char values are stored as NULL.</p>
+</li>
+<li>
+<p>Oracle corp&#8217;s JDBC driver for Oracle has only limited support for batch updates. The result for OpenJPA is that batching of some statements may fail and in some cases, the exact object that failed an optimistic lock check cannot be determined. OpenJPA will throw an <code class="class">OptimisticException</code> with more failed objects than actually failed. This situation may be resolved by disabling statement batching by setting the batchLimit value to zero or by using a more recent Oracle JDBC Driver (11.2.0.1) with batch support improvements. Attempting to resolve the issue with a more current driver is recommended since disabling statement batching can result in a decrease in performance.</p>
+</li>
+</ul>
+</div>
+<div id="dbsupport_oracle_disable_batch_updates" class="exampleblock">
+<div class="title">Example 196. Property to disable statement batching for Oracle</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="conf"><span class="n">openjpa</span>.<span class="n">jdbc</span>.<span class="n">DBDictionary</span>: <span class="n">oracle</span>(<span class="n">batchLimit</span>=<span class="m">0</span>)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Oracle cannot store numbers with more than 38 digits in numeric columns.</p>
+</li>
+<li>
+<p>Floats and doubles may lose precision when stored.</p>
+</li>
+<li>
+<p>CLOB columns cannot be used in queries.</p>
+</li>
+<li>
+<p>The use of LOBs with persistent attributes of a streaming data type (ex. <code>java.io.InputStream</code> or <code>java.io.Reader</code>) may require the same connection to be used over the life of the transaction or entity manager. If the same connection is not used for persistent operations a <code>java.io.IOException</code> with message <code>Closed Connection</code>  may result. The OpenJPA property <code>openjpa.ConnectionRetainMode</code> can be used to control how OpenJPA uses datastore connections. See <a href="ref_guide_dbsetup_retain.html">Configuring the Use of JDBC Connections</a> for details.</p>
+</li>
+</ul>
+</div>
+<div id="dbsupport_oracle_retain_connection" class="exampleblock">
+<div class="title">Example 197. Property to retain connection over the lifetime of the entity manager</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="conf"><span class="n">openjpa</span>.<span class="n">ConnectionRetainMode</span>: <span class="n">always</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mapping persistent attributes to <a href="ref_guide_xmlmapping.html">XML columns</a> requires a JDBC 4 compliant driver if XML strings are longer than 4000 bytes, as counted in database. Otherwise an <code>ORA-01461: can bind a LONG value only for insert into a LONG column</code> error may result.</p>
+</li>
+<li>
+<p>If Oracle dictionary property <code>MaxEmbeddedBlobSize</code> or <code>MaxEmbeddedClobSize</code> is set to some limit (i.e. not -1) and embedded collection with BLOB/CLOB attribute is used, a <code>"org.apache.openjpa.persistence.ArgumentException: "x.y.z.EmbedOwner.embedCollection&lt;element:class x.y.z.EmbedValue&gt;" is mapped as embedded, but embedded field "x.y.z.EmbedOwner.embedCollection.x.y.z.EmbedValue.blob" is not embeddable. Embedded element/key/value types are limited to simple fields and direct relations to other persistent types"</code> error may result. To overcome this limitation, either use JDBC driver 11.2.0.x.0 (or later version) or set both <code>MaxEmbeddedBlobSize</code> and <code>MaxEmbeddedClobSize</code> properties to -1.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="dbsupport_oracle_query_hints.html">Using Query Hints with Oracle</a> | ↑ Up: <a href="dbsupport_oracle.html">Oracle</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="dbsupport_pointbase.html">Pointbase</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

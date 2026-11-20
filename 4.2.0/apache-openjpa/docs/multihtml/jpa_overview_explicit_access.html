@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_explicit_access" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+<ul class="sectlevel3">
+<li><a href="jpa_overview_meta_class.html">2.5.1. Class Metadata</a>
+</li>
+<li><a href="jpa_overview_meta_field.html">2.5.2. Field and Property Metadata</a>
+<ul class="sectlevel4">
+<li><a href="jpa_overview_explicit_access.html"><span class="toc-current">Explicit Access</span></a>
+</li>
+<li><a href="jpa_overview_meta_transient.html">Transient</a>
+</li>
+<li><a href="jpa_overview_meta_id.html">Id</a>
+</li>
+<li><a href="jpa_overview_meta_gen.html">Generated Value</a>
+</li>
+<li><a href="jpa_overview_meta_embedid.html">Embedded Id</a>
+</li>
+<li><a href="jpa_overview_meta_version.html">Version</a>
+</li>
+<li><a href="jpa_overview_meta_basic.html">Basic</a>
+</li>
+<li><a href="jpa_overview_meta_embedded.html">Embedded</a>
+</li>
+<li><a href="jpa_overview_meta_manytoone.html">Many To One</a>
+</li>
+<li><a href="jpa_overview_meta_onetomany.html">One To Many</a>
+</li>
+<li><a href="jpa_overview_meta_onetoone.html">One To One</a>
+</li>
+<li><a href="jpa_overview_meta_manytomany.html">Many To Many</a>
+</li>
+<li><a href="jpa_overview_meta_orderby.html">Order By</a>
+</li>
+<li><a href="jpa_overview_meta_mapkey.html">Map Key</a>
+</li>
+<li><a href="jpa_overview_meta_fielddefaults.html">Persistent Field Defaults</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_meta_xml.html">2.5.3. XML Schema</a>
+</li>
+<li><a href="jpa_overview_meta_complete.html">2.5.4. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_overview_explicit_access"><a class="link" href="#jpa_overview_explicit_access">2.5.2.1. Explicit Access</a></h5>
+<div class="paragraph">
+<p>
+ The access type of a class or individual persistent attributes can be specified explicitly using the <code>@Access</code> annotation or <code>access</code>  attribute on the XML elements used to define persistent attributes.
+When explicitly defining access, specify the explicit access type for the class and then apply the <code>@Access</code> annotation or <code>access</code> XML attribute to individual fields or properties.
+If explicit <code>FIELD</code> or <code>PROPERTY</code> is specified at the class level, all eligible non-transient fields or properties will be persistent.
+If using class level <code>FIELD</code> access, non-persistent fields must be <code>transient</code> or annotated with <code>@Transient</code>.
+If using class level <code>PROPERTY</code> access, non-persistent properties must be annotated <code>@Transient</code> or excluded using the <code>transient</code> XML attribute.
+Refer to the JPA specification for specific rules regarding the use of explicit access with embeddables and within an inheritance hierarchy.</p>
+</div>
+<div class="paragraph">
+<p>This entity definitions shows how multiple access types may be specified on an entity:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="nd">@Access</span><span class="o">(</span><span class="nc">AccessType</span><span class="o">.</span><span class="na">FIELD</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PaymentContract</span> <span class="o">{</span>
+
+    <span class="nd">@Id</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="nd">@Temporal</span><span class="o">(</span><span class="nc">TemporalType</span><span class="o">.</span><span class="na">DATE</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contractDate</span><span class="o">;</span>
+
+    <span class="nd">@Transient</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">terms</span><span class="o">;</span>
+
+    <span class="nd">@Version</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">version</span><span class="o">;</span>
+
+    <span class="nd">@Lob</span>
+    <span class="nd">@Access</span><span class="o">(</span><span class="nc">AccessType</span><span class="o">.</span><span class="na">PROPERTY</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getContractTerms</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">terms</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setContractTerms</span><span class="o">(</span><span class="nc">String</span> <span class="n">terms</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Format string before persisting</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">terms</span> <span class="o">=</span> <span class="n">formatTerms</span><span class="o">(</span><span class="n">terms</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The equivalent declarations in XML:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;entity-mappings</span> <span class="na">xmlns=</span><span class="s">"https://jakarta.ee/xml/ns/persistence/orm"</span>
+    <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">"https://jakarta.ee/xml/ns/persistence/orm https://jakarta.ee/xml/ns/persistence/orm/orm_3_0.xsd"</span>
+    <span class="na">version=</span><span class="s">"3.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">class=</span><span class="s">"org.xyz.PaymentContract"</span> <span class="na">access=</span><span class="s">"FIELD"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;attributes&gt;</span>
+            <span class="nt">&lt;id</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;basic</span> <span class="na">name=</span><span class="s">"contractTerms"</span> <span class="na">access=</span><span class="s">"PROPERTY"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;lob/&gt;</span>
+            <span class="nt">&lt;/basic&gt;</span>
+            <span class="nt">&lt;basic</span> <span class="na">name=</span><span class="s">"contractDate"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;temporal&gt;</span>DATE<span class="nt">&lt;/temporal&gt;</span>
+            <span class="nt">&lt;/basic&gt;</span>
+            <span class="nt">&lt;version</span> <span class="na">name=</span><span class="s">"version"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;transient</span> <span class="na">name=</span><span class="s">"terms"</span><span class="nt">/&gt;</span>
+       <span class="nt">&lt;/attributes&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+<span class="nt">&lt;/entity-mappings&gt;</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/warning.svg" alt="Warning">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When using property access, only the getter and setter method for a property should ever access the underlying persistent field directly.
+Other methods, including internal business methods in the persistent class, should go through the getter and setter methods when manipulating persistent state.</p>
+</div>
+<div class="paragraph">
+<p>Also, take care when adding business logic to your getter and setter methods.
+Consider that they are invoked by the persistence implementation to load and retrieve all persistent state; other side effects might not be desirable.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The remainder of this document uses the term "persistent field" to refer to either a persistent field or a persistent property.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="jpa_overview_meta_field.html">Field and Property Metadata</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_meta_transient.html">Transient</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

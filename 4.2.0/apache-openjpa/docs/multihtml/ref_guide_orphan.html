@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_orphan" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_mapping_mappingtool.html">3.8.1. Forward Mapping</a>
+</li>
+<li><a href="ref_guide_pc_reverse.html">3.8.2. Reverse Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_middle.html">3.8.3. Meet-in-the-Middle Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_defaults.html">3.8.4. Mapping Defaults</a>
+</li>
+<li><a href="ref_guide_mapping_factory.html">3.8.5. Mapping Factory</a>
+</li>
+<li><a href="ref_guide_mapping_notes_nonstdjoins.html">3.8.6. Non-Standard Joins</a>
+</li>
+<li><a href="ref_guide_mapping_jpa.html">3.8.7. Additional JPA Mappings</a>
+</li>
+<li><a href="ref_guide_mapping_limits.html">3.8.8. Mapping Limitations</a>
+</li>
+<li><a href="ref_guide_mapping_ext.html">3.8.9. Mapping Extensions</a>
+</li>
+<li><a href="ref_guide_mapping_custom.html">3.8.10. Custom Mappings</a>
+</li>
+<li><a href="ref_guide_orphan.html"><span class="toc-current">3.8.11. Orphaned Keys</span></a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_orphan"><a class="link" href="#ref_guide_orphan">3.8.11. Orphaned Keys</a></h4>
+<div class="paragraph">
+<p>Unless you apply database foreign key constraints extensively, it is possible to end up with orphaned keys in your database.
+For example, suppose <code class="class">Magazine</code><code>m</code> has a reference to <code class="class">Article</code><code>a</code>.
+If you delete <code>a</code> without nulling <code>m</code>'s reference, <code>m</code>'s database record will wind up with an orphaned key to the non-existent <code>a</code>  record.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>One way of avoiding orphaned keys is to use <em>dependent</em> fields.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>OpenJPA&#8217;s <a href="openjpa.OrphanedKeyAction.html"><code>openjpa.OrphanedKeyAction</code></a> configuration property controls what action to take when OpenJPA encounters an orphaned key.
+You can set this plugin string (see <a href="ref_guide_conf_plugins.html">Plugin Configuration</a>) to a custom implementation of the <a href="../../apidocs/org/apache/openjpa/event/OrphanedKeyAction.html">org.apache.openjpa.event.OrphanedKeyAction</a> interface, or use one of the built-in options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>log</code>: This is the default setting. This option logs a message for each orphaned key. It is an alias for the <a href="../../apidocs/org/apache/openjpa/event/LogOrphanedKeyAction.html"> org.apache.openjpa.event.LogOrphanedKeyAction</a> class, which has the following additional properties:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Channel</code>: The channel to log to. Defaults to <code>openjpa.Runtime</code>.</p>
+</li>
+<li>
+<p><code>Level</code>: The level to log at. Defaults to <code>WARN</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>exception</code>: Throw an <code class="class">EntityNotFoundException</code> when OpenJPA discovers an orphaned key. This is an alias for the <a href="../../apidocs/org/apache/openjpa/event/ExceptionOrphanedKeyAction.html"> org.apache.openjpa.event.ExceptionOrphanedKeyAction </a> class.</p>
+</li>
+<li>
+<p><code>none</code>: Ignore orphaned keys. This is an alias for the <a href="../../apidocs/org/apache/openjpa/event/NoneOrphanedKeyAction.html"> org.apache.openjpa.event.NoneOrphanedKeyAction</a> class.</p>
+</li>
+</ul>
+</div>
+<div id="ref_guide_orphan_logex" class="exampleblock">
+<div class="title">Example 127. Custom Logging Orphaned Keys</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.OrphanedKeyAction"</span> <span class="na">value=</span><span class="s">"log(Channel=Orphans, Level=DEBUG)"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_mapping_custom_field_conf.html">Configuration</a> | ↑ Up: <a href="ref_guide_mapping.html">Mapping</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_deploy.html">Deployment</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

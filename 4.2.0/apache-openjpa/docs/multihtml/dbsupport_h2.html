@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="dbsupport_h2" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+<ul class="sectlevel2">
+<li><a href="jpa_resources.html">Appendix D: JPA Resources</a>
+</li>
+<li><a href="supported_databases.html">Appendix E: Supported Databases</a>
+<ul class="sectlevel3">
+<li><a href="dbappendix.html">Overview</a>
+</li>
+<li><a href="dbsupport.html">Verified Database Matrix</a>
+</li>
+<li><a href="dbcompatible.html">Compatible Database Matrix</a>
+</li>
+<li><a href="dbunverified.html">Unverified Database Matrix</a>
+</li>
+<li><a href="dbsupport_derby.html">Apache Derby</a>
+</li>
+<li><a href="dbsupport_interbase.html">Borland Interbase</a>
+</li>
+<li><a href="dbsupport_jdatastore.html">JDataStore</a>
+</li>
+<li><a href="dbsupport_db2.html">IBM DB2</a>
+</li>
+<li><a href="dbsupport_empress.html">Empress</a>
+</li>
+<li><a href="dbsupport_h2.html"><span class="toc-current">H2 Database Engine</span></a>
+<ul class="sectlevel4">
+<li><a href="dbsupport_h2_issues.html">Known issues with H2 Database Engine</a>
+</li>
+</ul>
+</li>
+<li><a href="dbsupport_hypersonic.html">Hypersonic</a>
+</li>
+<li><a href="dbsupport_firebird.html">Firebird</a>
+</li>
+<li><a href="dbsupport_informix.html">Informix</a>
+</li>
+<li><a href="dbsupport_ingres.html">Ingres Database</a>
+</li>
+<li><a href="dbsupport_intersystems_cache.html">InterSystems Cache</a>
+</li>
+<li><a href="dbsupport_access.html">Microsoft Access</a>
+</li>
+<li><a href="dbsupport_sqlserver.html">Microsoft SQL Server</a>
+</li>
+<li><a href="dbsupport_foxpro.html">Microsoft FoxPro</a>
+</li>
+<li><a href="dbsupport_mysql.html">MySQL</a>
+</li>
+<li><a href="dbsupport_mariadb.html">MariaDB</a>
+</li>
+<li><a href="dbsupport_oracle.html">Oracle</a>
+</li>
+<li><a href="dbsupport_pointbase.html">Pointbase</a>
+</li>
+<li><a href="dbsupport_postgresql.html">PostgreSQL</a>
+</li>
+<li><a href="dbsupport_soliddb.html">IBM solidDB</a>
+</li>
+<li><a href="dbsupport_sybase.html">Sybase Adaptive Server</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="migration_considerations.html">Appendix F: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="dbsupport_h2"><a class="link" href="#dbsupport_h2">H2 Database Engine</a></h4>
+<div id="example_props_h2" class="exampleblock">
+<div class="title">Example 182. Example properties for H2 Database Engine</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="conf"><span class="n">openjpa</span>.<span class="n">ConnectionDriverName</span>: <span class="n">org</span>.<span class="n">h2</span>.<span class="n">Driver</span>
+<span class="n">openjpa</span>.<span class="n">ConnectionURL</span>: <span class="n">jdbc</span>:<span class="n">h2</span>:<span class="n">DB_NAME</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="dbsupport_h2_issues.html">Known issues with H2 Database Engine</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="dbsupport_empress_issues.html">Known issues with Empress</a> | ↑ Up: <a href="supported_databases.html">Appendix B: Supported Databases</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="dbsupport_h2_issues.html">Known issues with H2 Database Engine</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

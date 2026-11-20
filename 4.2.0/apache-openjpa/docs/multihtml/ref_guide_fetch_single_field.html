@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_fetch_single_field" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_pc_pcclasses.html">3.6.1. Persistent Class List</a>
+</li>
+<li><a href="ref_guide_pc_enhance.html">3.6.2. Enhancement</a>
+</li>
+<li><a href="ref_guide_pc_interfaces.html">3.6.3. Managed Interfaces</a>
+</li>
+<li><a href="ref_guide_pc_oid.html">3.6.4. Object Identity</a>
+</li>
+<li><a href="ref_guide_inverses.html">3.6.5. Managed Inverses</a>
+</li>
+<li><a href="ref_guide_pc_scos.html">3.6.6. Persistent Fields</a>
+</li>
+<li><a href="ref_guide_fetch.html">3.6.7. Fetch Groups</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_fetch_custom.html">Custom Fetch Groups</a>
+</li>
+<li><a href="ref_guide_fetch_conf.html">Custom Fetch Group Configuration</a>
+</li>
+<li><a href="ref_guide_fetch_single_field.html"><span class="toc-current">Per-field Fetch Configuration</span></a>
+</li>
+<li><a href="ref_guide_fetch_impl.html">Implementation Notes</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_perfpack_eager.html">3.6.8. Eager Fetching</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="ref_guide_fetch_single_field"><a class="link" href="#ref_guide_fetch_single_field">3.6.7.3. Per-field Fetch Configuration</a></h5>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>In addition to controlling fetch configuration on a per-fetch-group basis, you can configure OpenJPA to include particular fields in the current fetch plan.
+This allows you to add individual fields that are not in the default fetch group or in any other active fetch groups to the set of fields that will be eagerly loaded from the database.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA <code class="class">FetchPlan</code> methods:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">public FetchPlan addField<span class="o">(</span>String field<span class="o">)</span><span class="p">;</span>
+public FetchPlan addFields<span class="o">(</span>String... fields<span class="o">)</span><span class="p">;</span>
+public FetchPlan addFields<span class="o">(</span>Class cls, String... fields<span class="o">)</span><span class="p">;</span>
+public FetchPlan addFields<span class="o">(</span>Collection fields<span class="o">)</span><span class="p">;</span>
+public FetchPlan addFields<span class="o">(</span>Class cls, Collection fields<span class="o">)</span><span class="p">;</span>
+public FetchPlan removeField<span class="o">(</span>String field<span class="o">)</span><span class="p">;</span>
+public FetchPlan removeFields<span class="o">(</span>String... fields<span class="o">)</span><span class="p">;</span>
+public FetchPlan removeFields<span class="o">(</span>Class cls, String... fields<span class="o">)</span><span class="p">;</span>
+public FetchPlan removeFields<span class="o">(</span>Collection fields<span class="o">)</span><span class="p">;</span>
+public FetchPlan removeFields<span class="o">(</span>Class cls, Collection fields<span class="o">)</span><span class="p">;</span>
+public Collection&lt;String&gt; getFields<span class="o">()</span><span class="p">;</span>
+public void clearFields<span class="o">()</span><span class="p">;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The methods that take only string arguments use the fully-qualified field name, such as <code>org.mag.Magazine.publisher</code>.
+Similarly, <code class="method">getFields</code> returns the set of fully-qualified field names.
+In all methods, the named field must be defined in the class specified in the invocation, not a superclass.
+So, if the field <code>publisher</code> is defined in base class <code class="class">Publication</code> rather than subclass <code class="class">Magazine</code>, you must invoke <code>addField
+(Publication.class, "publisher")</code> and not <code>addField
+(Magazine.class, "publisher")</code>.
+This is stricter than Java&#8217;s default field-masking algorithms, which would allow the latter method behavior if <code>Magazine</code> did not also define a field called <code>publisher</code>.</p>
+</div>
+<div class="paragraph">
+<p>To include the fields defined in a super class by the subclass or to distinguish between fields that are defined in <em>both</em> super- and subclass, set <code>setExtendedPathLookup(boolean)</code> on <code>FetchPlan</code>  to <code>true</code>.
+By default, this option is set to <code>false</code>, to reduce more extensive lookups for predominant use cases.</p>
+</div>
+<div class="paragraph">
+<p>In order to avoid the cost of reflection, OpenJPA does not perform any validation of the field name / class name pairs that you put into the fetch configuration.
+If you specify non-existent class / field pairs, nothing adverse will happen, but you will receive no notification of the fact that the specified configuration is not being used.</p>
+</div>
+<div id="ref_guide_fetch-conf_per_field" class="exampleblock">
+<div class="title">Example 94. Adding an Eager Field</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">import org.apache.openjpa.persistence.<span class="k">*</span><span class="p">;</span>
+
+...
+
+OpenJPAEntityManager kem <span class="o">=</span> OpenJPAPersistence.cast<span class="o">(</span>em<span class="o">)</span><span class="p">;</span>
+kem.getFetchPlan<span class="o">()</span>.addField<span class="o">(</span>Magazine.class, <span class="s2">"publisher"</span><span class="o">)</span><span class="p">;</span>
+Magazine mag <span class="o">=</span> em.find<span class="o">(</span>Magazine.class, magId<span class="o">)</span><span class="p">;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_fetch_conf.html">Custom Fetch Group Configuration</a> | ↑ Up: <a href="ref_guide_fetch.html">Fetch Groups</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_fetch_impl.html">Implementation Notes</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

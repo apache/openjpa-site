@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_schema_info_factory" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_dbsetup_builtin.html">3.5.1. Using the OpenJPA DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_thirdparty.html">3.5.2. Using a Third-Party DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_sqlconn.html">3.5.3. Runtime Access to DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport.html">3.5.4. Database Support</a>
+</li>
+<li><a href="ref_guide_dbsetup_isolation.html">3.5.5. Setting the Transaction Isolation</a>
+</li>
+<li><a href="ref_guide_dbsetup_sql92.html">3.5.6. Setting the SQL Join Syntax</a>
+</li>
+<li><a href="ref_guide_dbsetup_multidb.html">3.5.7. Accessing Multiple Databases</a>
+</li>
+<li><a href="ref_guide_dbsetup_retain.html">3.5.8. Configuring the Use of JDBC Connections</a>
+</li>
+<li><a href="ref_guide_dbsetup_stmtbatch.html">3.5.9. Statement Batching</a>
+</li>
+<li><a href="ref_guide_dbsetup_lrs.html">3.5.10. Large Result Sets</a>
+</li>
+<li><a href="ref_guide_schema_def.html">3.5.11. Default Schema</a>
+</li>
+<li><a href="ref_guide_schema_info.html">3.5.12. Schema Reflection</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_schema_info_list.html">Schemas List</a>
+</li>
+<li><a href="ref_guide_schema_info_factory.html"><span class="toc-current">Schema Factory</span></a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_schema_schematool.html">3.5.13. Schema Tool</a>
+</li>
+<li><a href="ref_guide_schema_xml.html">3.5.14. XML Schema Format</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="ref_guide_schema_info_factory"><a class="link" href="#ref_guide_schema_info_factory">3.5.12.2. Schema Factory</a></h5>
+<div class="paragraph">
+<p>OpenJPA relies on the <a href="../../apidocs/org/apache/openjpa/jdbc/schema/SchemaFactory.html">
+openjpa.jdbc.SchemaFactory</a> interface for runtime schema information.
+You can control the schema factory OpenJPA uses through the <code>openjpa.jdbc.SchemaFactory</code> property.
+There are several built-in options to choose from:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>dynamic</code>: This is the default setting. It is an alias for the <a href="../../apidocs/org/apache/openjpa/jdbc/schema/DynamicSchemaFactory.html"> org.apache.openjpa.jdbc.schema.DynamicSchemaFactory</a>. The <code class="class">DynamicSchemaFactory</code> is the most performant schema factory, because it does not validate mapping information against the database. Instead, it assumes all object-relational mapping information is correct, and dynamically builds an in-memory representation of the schema from your mapping metadata. When using this factory, it is important that your mapping metadata correctly represent your database&#8217;s foreign key constraints so that OpenJPA can order its SQL statements to meet them.</p>
+</li>
+<li>
+<p><code>native</code>: This is an alias for the <a href="../../apidocs/org/apache/openjpa/jdbc/schema/LazySchemaFactory.html"> org.apache.openjpa.jdbc.schema.LazySchemaFactory</a> . As persistent classes are loaded by the application, OpenJPA reads their metadata and object-relational mapping information. This factory uses the <code class="class">java.sql.DatabaseMetaData</code> interface to reflect on the schema and ensure that it is consistent with the mapping data being read. Use this factory if you want up-front validation that your mapping metadata is consistent with the database during development. This factory accepts the following important properties:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ForeignKeys</code>: Set to <code>true</code> to automatically read foreign key information during schema validation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>table</code>: This is an alias for the <a href="../../apidocs/org/apache/openjpa/jdbc/schema/TableSchemaFactory.html"> org.apache.openjpa.jdbc.schema.TableSchemaFactory</a> . This schema factory stores schema information as an XML document in a database table it creates for this purpose. If your JDBC driver doesn&#8217;t support the <code class="class">java.sql.DatabaseMetaData</code> standard interface, but you still want some schema validation to occur at runtime, you might use this factory. It is not recommended for most users, though, because it is easy for the stored XML schema definition to get out-of-synch with the actual database. This factory accepts the following properties:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Table</code>: The name of the table to create to store schema information. Defaults to <code>OPENJPA_SCHEMA</code>.</p>
+</li>
+<li>
+<p><code>PrimaryKeyColumn</code>: The name of the table&#8217;s numeric primary key column. Defaults to <code>ID</code>.</p>
+</li>
+<li>
+<p><code>SchemaColumn</code>: The name of the table&#8217;s string column for holding the schema definition as an XML string. Defaults to <code>SCHEMA_DEF</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>file</code>: This is an alias for the <a href="../../apidocs/org/apache/openjpa/jdbc/schema/FileSchemaFactory.html"> org.apache.openjpa.jdbc.schema.FileSchemaFactory</a> . This factory is a lot like the <code class="class">TableSchemaFactory</code>, and has the same advantages and disadvantages. Instead of storing its XML schema definition in a database table, though, it stores it in a file. This factory accepts the following properties:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>File</code>: The resource name of the XML schema file. By default, the factory looks for a resource called <em class="path">package.schema</em>, located in any top-level directory of the <code>CLASSPATH</code> or in the top level of any jar in your <code>CLASSPATH</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can switch freely between schema factories at any time.
+The XML file format used by some factories is detailed in <a href="ref_guide_schema_xml.html">XML Schema Format</a> . As with any OpenJPA plugin, you can also implement your own schema factory if you have needs not met by the existing options.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_schema_info_list.html">Schemas List</a> | ↑ Up: <a href="ref_guide_schema_info.html">Schema Reflection</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_schema_schematool.html">Schema Tool</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

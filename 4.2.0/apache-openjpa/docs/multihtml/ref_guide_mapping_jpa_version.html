@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_mapping_jpa_version" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_mapping_mappingtool.html">3.8.1. Forward Mapping</a>
+</li>
+<li><a href="ref_guide_pc_reverse.html">3.8.2. Reverse Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_middle.html">3.8.3. Meet-in-the-Middle Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_defaults.html">3.8.4. Mapping Defaults</a>
+</li>
+<li><a href="ref_guide_mapping_factory.html">3.8.5. Mapping Factory</a>
+</li>
+<li><a href="ref_guide_mapping_notes_nonstdjoins.html">3.8.6. Non-Standard Joins</a>
+</li>
+<li><a href="ref_guide_mapping_jpa.html">3.8.7. Additional JPA Mappings</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_mapping_jpa_datastoreid.html">Datastore Identity Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_version.html"><span class="toc-current">Surrogate Version Mapping</span></a>
+</li>
+<li><a href="ref_guide_mapping_jpa_columns.html">Multi-Column Mappings</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_fieldjoin.html">Join Column Attribute Targets</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_embed.html">Embedded Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_coll.html">Collections</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_onemany.html">One-Sided One-Many Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_map.html">Maps</a>
+</li>
+<li><a href="ref_guide_mapping_jpa_constraints.html">Indexes and Constraints</a>
+</li>
+<li><a href="ref_guide_xmlmapping.html">XML Column Mapping</a>
+</li>
+<li><a href="ref_guide_streamsupport.html">LOB Streaming</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_mapping_limits.html">3.8.8. Mapping Limitations</a>
+</li>
+<li><a href="ref_guide_mapping_ext.html">3.8.9. Mapping Extensions</a>
+</li>
+<li><a href="ref_guide_mapping_custom.html">3.8.10. Custom Mappings</a>
+</li>
+<li><a href="ref_guide_orphan.html">3.8.11. Orphaned Keys</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="ref_guide_mapping_jpa_version"><a class="link" href="#ref_guide_mapping_jpa_version">3.8.7.2. Surrogate Version Mapping</a></h5>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA supports version fields as defined by the JPA specification, but allows you to use a surrogate version column in place of a version field if you like.
+You map the surrogate version column with the <a href="../../apidocs/org/apache/openjpa/persistence/jdbc/VersionColumn.html">
+org.apache.openjpa.persistence.jdbc.VersionColumn</a> annotation.
+You can also use the <a href="../../apidocs/org/apache/openjpa/persistence/jdbc/VersionColumns.html">
+org.apache.openjpa.persistence.jdbc.VersionColumns
+</a> annotation to declare an array of <code class="class">VersionColumn</code> values.
+Each <code class="class">VersionColumn</code> has the following properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>String name</code>: Defaults to <code>VERSN</code>.</p>
+</li>
+<li>
+<p><code>String table</code></p>
+</li>
+<li>
+<p><code>int length</code></p>
+</li>
+<li>
+<p><code>int precision</code></p>
+</li>
+<li>
+<p><code>int scale</code></p>
+</li>
+<li>
+<p><code>String columnDefinition</code></p>
+</li>
+<li>
+<p><code>boolean nullable</code></p>
+</li>
+<li>
+<p><code>boolean insertable</code></p>
+</li>
+<li>
+<p><code>boolean updatable</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All properties correspond exactly to the same-named properties on the standard <code class="class">Column</code> annotation, described in <a href="jpa_overview_mapping_column.html">Column</a>.</p>
+</div>
+<div class="paragraph">
+<p>By default, OpenJPA assumes that surrogate versioning uses a version number strategy.
+You can choose a different strategy with the <code class="class">VersionStrategy</code> annotation described in <a href="version-strategy.html">Version Strategy</a>.</p>
+</div>
+<div class="paragraph">
+<p>If multiple columns are used for surrogate versioning, then each column, by default, uses a version number.
+But column definition for each version column can be set independently to other numeric types.
+The version values are compared to detect optimistic concurrent modification.
+Such comparison must determine whether a version value <code>v1</code> represents an earlier, later or same with respect to another version value <code>v2</code>.
+While result of such comparison is obvious for a single numeric column that monotonically increases on each update, the same is not true when version value is an array of numbers.
+By default, OpenJPA compares a version <code>v1</code> as later than another version <code>v2</code>, if any array element of <code>v1</code> is later than the corresponding element of <code>v2</code>. <code>v1</code> is equal to <code>v2</code> if every array element is equal and <code>v1</code> is earlier to <code>v1</code> if some elements of <code>v1</code> are earlier and rest are equal to corresponding element of <code>v2</code>.</p>
+</div>
+<div class="paragraph">
+<p>Multiple surrogate version columns can be spread across primary and secondary tables.
+For example, following example shows 3 version columns <code>v01, v11, v12, v21</code> defined across the primary and secondary tables of a persistent entity</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"PRIMARY"</span><span class="o">)</span>
+<span class="nd">@SecondaryTables</span><span class="o">({</span>
+    <span class="nd">@SecondaryTable</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"SECONDARY_1"</span><span class="o">),</span>
+    <span class="nd">@SecondaryTable</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"SECONDARY_2"</span><span class="o">)</span>
+<span class="o">})</span>
+<span class="nd">@VersionStrategy</span><span class="o">(</span><span class="s">"version-numbers"</span><span class="o">)</span>
+<span class="nd">@VersionColumns</span><span class="o">({</span>
+    <span class="nd">@VersionColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"v01"</span><span class="o">)</span> <span class="c1">// default is the PRIMARY table</span>
+    <span class="nd">@VersionColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"v11"</span><span class="o">,</span> <span class="n">table</span><span class="o">=</span><span class="s">"SECONDARY_1"</span><span class="o">,</span> <span class="n">columnDefinition</span><span class="o">=</span><span class="s">"FLOAT"</span><span class="o">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">3</span><span class="o">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">10</span><span class="o">),</span>
+    <span class="nd">@VersionColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"v12"</span><span class="o">,</span> <span class="n">table</span><span class="o">=</span><span class="s">"SECONDARY_1"</span><span class="o">),</span>
+    <span class="nd">@VersionColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"v21"</span><span class="o">,</span> <span class="n">table</span><span class="o">=</span><span class="s">"SECONDARY_2"</span><span class="o">),</span>
+<span class="o">})</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_mapping_jpa_datastoreid.html">Datastore Identity Mapping</a> | ↑ Up: <a href="ref_guide_mapping_jpa.html">Additional JPA Mappings</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_mapping_jpa_columns.html">Multi-Column Mappings</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

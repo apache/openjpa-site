@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="openjpa.DataCacheMode" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_conf_openjpa.html">3.3.1. OpenJPA Properties</a>
+<ul class="sectlevel4">
+<li><a href="openjpa.AutoClear.html">openjpa.AutoClear</a>
+</li>
+<li><a href="openjpa.AutoDetach.html">openjpa.AutoDetach</a>
+</li>
+<li><a href="openjpa.BrokerFactory.html">openjpa.BrokerFactory</a>
+</li>
+<li><a href="openjpa.BrokerImpl.html">openjpa.BrokerImpl</a>
+</li>
+<li><a href="openjpa.Callbacks.html">openjpa.Callbacks</a>
+</li>
+<li><a href="openjpa.ClassResolver.html">openjpa.ClassResolver</a>
+</li>
+<li><a href="openjpa.Compatibility.html">openjpa.Compatibility</a>
+</li>
+<li><a href="openjpa.ConnectionDriverName.html">openjpa.ConnectionDriverName</a>
+</li>
+<li><a href="openjpa.Connection2DriverName.html">openjpa.Connection2DriverName</a>
+</li>
+<li><a href="openjpa.ConnectionFactory.html">openjpa.ConnectionFactory</a>
+</li>
+<li><a href="openjpa.ConnectionFactory2.html">openjpa.ConnectionFactory2</a>
+</li>
+<li><a href="openjpa.ConnectionFactoryName.html">openjpa.ConnectionFactoryName</a>
+</li>
+<li><a href="openjpa.ConnectionFactory2Name.html">openjpa.ConnectionFactory2Name</a>
+</li>
+<li><a href="openjpa.ConnectionFactoryMode.html">openjpa.ConnectionFactoryMode</a>
+</li>
+<li><a href="openjpa.ConnectionFactoryProperties.html">openjpa.ConnectionFactoryProperties</a>
+</li>
+<li><a href="openjpa.ConnectionFactory2Properties.html">openjpa.ConnectionFactory2Properties</a>
+</li>
+<li><a href="openjpa.ConnectionPassword.html">openjpa.ConnectionPassword</a>
+</li>
+<li><a href="openjpa.Connection2Password.html">openjpa.Connection2Password</a>
+</li>
+<li><a href="openjpa.ConnectionProperties.html">openjpa.ConnectionProperties</a>
+</li>
+<li><a href="openjpa.Connection2Properties.html">openjpa.Connection2Properties</a>
+</li>
+<li><a href="openjpa.ConnectionURL.html">openjpa.ConnectionURL</a>
+</li>
+<li><a href="openjpa.Connection2URL.html">openjpa.Connection2URL</a>
+</li>
+<li><a href="openjpa.ConnectionUserName.html">openjpa.ConnectionUserName</a>
+</li>
+<li><a href="openjpa.Connection2UserName.html">openjpa.Connection2UserName</a>
+</li>
+<li><a href="openjpa.ConnectionRetainMode.html">openjpa.ConnectionRetainMode</a>
+</li>
+<li><a href="openjpa.DataCache.html">openjpa.DataCache</a>
+</li>
+<li><a href="openjpa.DataCacheManager.html">openjpa.DataCacheManager</a>
+</li>
+<li><a href="openjpa.DataCacheMode.html"><span class="toc-current">openjpa.DataCacheMode</span></a>
+</li>
+<li><a href="openjpa.DataCacheTimeout.html">openjpa.DataCacheTimeout</a>
+</li>
+<li><a href="openjpa.DetachState.html">openjpa.DetachState</a>
+</li>
+<li><a href="openjpa.DynamicDataStructs.html">openjpa.DynamicDataStructs</a>
+</li>
+<li><a href="openjpa.DynamicEnhancementAgent.html">openjpa.DynamicEnhancementAgent</a>
+</li>
+<li><a href="openjpa.FetchBatchSize.html">openjpa.FetchBatchSize</a>
+</li>
+<li><a href="openjpa.EncryptionProvider.html">openjpa.EncryptionProvider</a>
+</li>
+<li><a href="openjpa.FetchGroups.html">openjpa.FetchGroups</a>
+</li>
+<li><a href="openjpa.FlushBeforeQueries.html">openjpa.FlushBeforeQueries</a>
+</li>
+<li><a href="openjpa.IgnoreChanges.html">openjpa.IgnoreChanges</a>
+</li>
+<li><a href="openjpa.Id.html">openjpa.Id</a>
+</li>
+<li><a href="openjpa.InitializeEagerly.html">openjpa.InitializeEagerly</a>
+</li>
+<li><a href="openjpa.Instrumentation.html">openjpa.Instrumentation</a>
+</li>
+<li><a href="openjpa.InverseManager.html">openjpa.InverseManager</a>
+</li>
+<li><a href="openjpa.LockManager.html">openjpa.LockManager</a>
+</li>
+<li><a href="openjpa.LockTimeout.html">openjpa.LockTimeout</a>
+</li>
+<li><a href="openjpa.Log.html">openjpa.Log</a>
+</li>
+<li><a href="openjpa.ManagedRuntime.html">openjpa.ManagedRuntime</a>
+</li>
+<li><a href="openjpa.Mapping.html">openjpa.Mapping</a>
+</li>
+<li><a href="openjpa.MaxFetchDepth.html">openjpa.MaxFetchDepth</a>
+</li>
+<li><a href="openjpa.MetaDataFactory.html">openjpa.MetaDataFactory</a>
+</li>
+<li><a href="openjpa.MetaDataRepository.html">openjpa.MetaDataRepository</a>
+</li>
+<li><a href="openjpa.Multithreaded.html">openjpa.Multithreaded</a>
+</li>
+<li><a href="openjpa.Optimistic.html">openjpa.Optimistic</a>
+</li>
+<li><a href="openjpa.OptimizeIdCopy.html">openjpa.OptimizeIdCopy</a>
+</li>
+<li><a href="openjpa.OrphanedKeyAction.html">openjpa.OrphanedKeyAction</a>
+</li>
+<li><a href="openjpa.NontransactionalRead.html">openjpa.NontransactionalRead</a>
+</li>
+<li><a href="openjpa.NontransactionalWrite.html">openjpa.NontransactionalWrite</a>
+</li>
+<li><a href="openjpa.ProxyManager.html">openjpa.ProxyManager</a>
+</li>
+<li><a href="openjpa.PostLoadOnMerge.html">openjpa.PostLoadOnMerge</a>
+</li>
+<li><a href="openjpa.QueryCache.html">openjpa.QueryCache</a>
+</li>
+<li><a href="openjpa.QueryCompilationCache.html">openjpa.QueryCompilationCache</a>
+</li>
+<li><a href="openjpa.ReadLockLevel.html">openjpa.ReadLockLevel</a>
+</li>
+<li><a href="openjpa.RemoteCommitProvider.html">openjpa.RemoteCommitProvider</a>
+</li>
+<li><a href="openjpa.RestoreState.html">openjpa.RestoreState</a>
+</li>
+<li><a href="openjpa.RetainState.html">openjpa.RetainState</a>
+</li>
+<li><a href="openjpa.RetryClassRegistration.html">openjpa.RetryClassRegistration</a>
+</li>
+<li><a href="openjpa.RuntimeUnenhancedClasses.html">openjpa.RuntimeUnenhancedClasses</a>
+</li>
+<li><a href="openjpa.SavepointManager.html">openjpa.SavepointManager</a>
+</li>
+<li><a href="openjpa.Sequence.html">openjpa.Sequence</a>
+</li>
+<li><a href="openjpa.Specification.html">openjpa.Specification</a>
+</li>
+<li><a href="openjpa.TransactionMode.html">openjpa.TransactionMode</a>
+</li>
+<li><a href="openjpa.UseTCCLinSelectNew.html">openjpa.UseTCCLinSelectNew</a>
+</li>
+<li><a href="openjpa.WriteLockLevel.html">openjpa.WriteLockLevel</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_conf_jdbc.html">3.3.2. OpenJPA JDBC Properties</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="openjpa.DataCacheMode"><a class="link" href="#openjpa.DataCacheMode">3.3.1.28. openjpa.DataCacheMode</a></h5>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p><strong>Property name:</strong> <code>openjpa.DataCacheMode</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Configuration API:</strong> <a href="../../apidocs/org/apache/openjpa/conf/OpenJPAConfiguration.html#getDataCacheMode()">
+org.apache.openjpa.conf.OpenJPAConfiguration.getDataCacheMode
+</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Resource adaptor config-property:</strong> <code>DataCacheMode</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> <code>DataCacheMode.UNSPECIFIED (see javadoc for details)</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Description:</strong> Determines which entities will be included in the DataCache.
+May be any of the values defined in link:../../apidocs/org/apache/openjpa/datacache/DataCacheMode.html.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="openjpa.DataCacheManager.html">openjpa.DataCacheManager</a> | ↑ Up: <a href="ref_guide_conf_openjpa.html">OpenJPA Properties</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="openjpa.DataCacheTimeout.html">openjpa.DataCacheTimeout</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

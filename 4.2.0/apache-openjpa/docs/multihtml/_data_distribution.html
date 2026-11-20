@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="_data_distribution" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+<ul class="sectlevel3">
+<li><a href="slice_overview.html">3.14.1. Overview</a>
+</li>
+<li><a href="features_and_limitations.html">3.14.2. Salient Features</a>
+<ul class="sectlevel4">
+<li><a href="_transparency.html">Transparency</a>
+</li>
+<li><a href="_scaling.html">Scaling</a>
+</li>
+<li><a href="_distributed_query.html">Distributed Query</a>
+</li>
+<li><a href="_data_distribution.html"><span class="toc-current">Data Distribution</span></a>
+</li>
+<li><a href="_data_replication.html">Data Replication</a>
+</li>
+<li><a href="_heterogeneous_database.html">Heterogeneous Database</a>
+</li>
+<li><a href="_distributed_transaction.html">Distributed Transaction</a>
+</li>
+<li><a href="collocation_constraint.html">Collocation Constraint</a>
+</li>
+</ul>
+</li>
+<li><a href="slice_configuration.html">3.14.3. Usage</a>
+</li>
+<li><a href="_configuration_properties.html">3.14.4. Configuration Properties</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="_data_distribution"><a class="link" href="#_data_distribution">3.14.2.4. Data Distribution</a></h5>
+<div class="paragraph">
+<p>The user application decides how the newly persistent instances be distributed across the slices.
+The user application specifies the data distribution policy by implementing <code class="class">org.apache.openjpa.slice.DistributionPolicy</code>.
+The <code class="class">DistributionPolicy</code> interface is simple with a single method.
+The complete listing of the documented interface follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">			<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">DistributionPolicy</span> <span class="o">{</span>
+			<span class="cm">/**
+			 * Gets the name of the slice where the given newly persistent
+			 * instance will be stored.
+			 *
+			 * @param pc The newly persistent or to-be-merged object.
+			 * @param slices name of the configured slices.
+			 * @param context persistence context managing the given instance.
+			 *
+			 * @return identifier of the slice. This name must match one of the
+			 * configured slice names.
+			 * @see DistributedConfiguration#getSliceNames()
+			 */</span>
+			<span class="nc">String</span> <span class="nf">distribute</span><span class="o">(</span><span class="nc">Object</span> <span class="n">pc</span><span class="o">,</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">slices</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">context</span><span class="o">);</span>
+			<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Slice runtime invokes this user-supplied method for the newly persistent instance that is explicit argument of the <code class="class">jakarta.persistence.EntityManager.persist(Object pc)</code>			 method.
+The user application must return a valid slice name from this method to designate the target slice for the given instance.
+The data distribution policy may be based on the attribute of the data itself.
+For example, all Customer whose first name begins with character 'A' to 'M' will be stored in one slice while names beginning with 'N' to 'Z' will be stored in another slice.
+The noteworthy aspect of such policy implementation is the attribute values that participate in the distribution policy logic should be set before invoking <code class="class">EntityManager.persist()</code> method.</p>
+</div>
+<div class="paragraph">
+<p>The user application needs to specify the target slice <em>only</em>			for the <em>root</em> instance i.e.
+the explicit argument for the <code class="class">EntityManager.persist(Object pc)</code> method.
+Slice computes the transitive closure of the graph i.e.
+the set of all instances directly or indirectly reachable from the root instance and stores them in the same target slice.</p>
+</div>
+<div class="paragraph">
+<p>Slice tracks the original database for existing instances.
+When an application issues a query, the resultant instances can be loaded from different slices.
+As Slice tracks the original slice for each instance, any subsequent update to an instance is committed to the appropriate original database slice.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can find the original slice of an instance <code class="class">pc</code> by the static utility method <code class="method">SlicePersistence.getSlice(pc)</code>.
+This method returns the slice identifier associated with the given <em>managed</em> instance.
+If the instance is not being managed then the method return null because any unmanaged or detached instance is not associated with any slice.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="_distributed_query.html">Distributed Query</a> | ↑ Up: <a href="features_and_limitations.html">Salient Features</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="_data_replication.html">Data Replication</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_4.2_InMemoryBulkFlush" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+<ul class="sectlevel2">
+<li><a href="jpa_4.2_incompatibilities.html">Incompatibilities</a>
+<ul class="sectlevel3">
+<li><a href="jpa_4.2_Requirements.html">Platform and Dependency Requirements</a>
+</li>
+<li><a href="jpa_4.2_SecurityManager.html">SecurityManager Support Removed</a>
+</li>
+<li><a href="jpa_4.2_DynamicEnhancementAgent.html">Dynamic Enhancement Agent</a>
+</li>
+<li><a href="jpa_4.2_JUnitJupiter.html">openjpa-junit5 is now openjpa-junit-jupiter</a>
+</li>
+<li><a href="jpa_4.2_JPQLReservedIdentifiers.html">New JPQL Reserved Identifiers</a>
+</li>
+<li><a href="jpa_4.2_JPQLIntegerLiterals.html">JPQL Integer Literals are typed Integer</a>
+</li>
+<li><a href="jpa_4.2_CriteriaArithmeticResultType.html">Criteria arithmetic takes its result type from both operands</a>
+</li>
+<li><a href="jpa_4.2_JPQLArithmeticResultType.html">JPQL arithmetic ranks Double and Float above BigDecimal</a>
+</li>
+<li><a href="jpa_4.2_JPQLArithmeticAssociativity.html">JPQL arithmetic operators are left associative</a>
+</li>
+<li><a href="jpa_4.2_InMemoryNullArithmetic.html">Arithmetic with null is null in memory</a>
+</li>
+<li><a href="jpa_4.2_QueryValueConversion.html">Query value conversion</a>
+</li>
+<li><a href="jpa_4.2_ExtractWeek.html">EXTRACT(WEEK) is the ISO-8601 week</a>
+</li>
+<li><a href="jpa_4.2_QueryResultList.html">Query.getResultList() returns a materialized ArrayList</a>
+</li>
+<li><a href="jpa_4.2_BulkDeleteNoCascade.html">Bulk DELETE no longer cascades</a>
+</li>
+<li><a href="jpa_4.2_SliceBulkTargets.html">Slice target applies to bulk UPDATE and DELETE</a>
+</li>
+<li><a href="jpa_4.2_InMemoryBulkFlush.html"><span class="toc-current">An in-memory bulk operation flushes the persistence context</span></a>
+</li>
+<li><a href="jpa_4.2_FlushBeforeQueries.html">Completed access paths for Criteria and collection-valued queries</a>
+</li>
+<li><a href="jpa_4.2_RollbackOnException.html">Exceptions mark the transaction rollback-only; closed EntityManager checks</a>
+</li>
+<li><a href="jpa_4.2_FindArgumentValidation.html">Argument validation in find(), getReference(), detach(), contains(), remove()</a>
+</li>
+<li><a href="jpa_4.2_CloseWithActiveTransaction.html">EntityManager.close() with an active resource-local transaction</a>
+</li>
+<li><a href="jpa_4.2_EntityManagerFactoryLifecycle.html">EntityManagerFactory lifecycle and properties</a>
+</li>
+<li><a href="jpa_4.2_QueryParameters.html">Query parameter API</a>
+</li>
+<li><a href="jpa_4.2_StoredProcedureQuery.html">StoredProcedureQuery semantics</a>
+</li>
+<li><a href="jpa_4.2_CriteriaMetamodel.html">Criteria API and Metamodel</a>
+</li>
+<li><a href="jpa_4.2_PersistenceUnitUtilIdentifier.html">PersistenceUnitUtil.getIdentifier() returns the plain identifier</a>
+</li>
+<li><a href="jpa_4.2_CacheModeProperties.html">Cache mode properties on EntityManager.setProperty()</a>
+</li>
+<li><a href="jpa_4.2_MapKeyColumn.html">Default map key column renamed to &lt;field&gt;_KEY</a>
+</li>
+<li><a href="jpa_4.2_MappingResolution.html">Attribute overrides, @OrderBy and inverse map keys</a>
+</li>
+<li><a href="jpa_4.2_SequenceGeneratorName.html">@SequenceGenerator without sequenceName</a>
+</li>
+<li><a href="jpa_4.2_SequenceGeneratorWithoutSequences.html">@SequenceGenerator on a database without sequences</a>
+</li>
+<li><a href="jpa_4.2_AttributeConverters.html">AttributeConverter handling</a>
+</li>
+<li><a href="jpa_4.2_ConverterTypeHierarchy.html">Converter types declared by a generic superclass or interface</a>
+</li>
+<li><a href="jpa_4.2_AutoApplyNonSerializable.html">An auto-apply converter maps an attribute whose type is not serializable</a>
+</li>
+<li><a href="jpa_4.2_AccessType.html">Access type determination and property accessors</a>
+</li>
+<li><a href="jpa_4.2_InstantYearMapping.html">java.time.Instant and java.time.Year mapping</a>
+</li>
+<li><a href="jpa_4.2_GeneratedDDL.html">Generated DDL changes</a>
+</li>
+<li><a href="jpa_4.2_SchemaGeneration.html">Jakarta Persistence schema generation and SQL scripts</a>
+</li>
+<li><a href="jpa_4.2_ColumnTypeConflicts.html">Numeric versus character column type conflicts</a>
+</li>
+<li><a href="jpa_4.2_DeleteCountZero.html">DELETE affecting zero rows tolerated for unversioned entities</a>
+</li>
+<li><a href="jpa_4.2_NonEntityClasses.html">Non-entity classes in persistence.xml</a>
+</li>
+<li><a href="jpa_4.2_KernelLeniency.html">Relaxed kernel checks</a>
+</li>
+<li><a href="jpa_4.2_FlushOrdering.html">Insert ordering across logical foreign keys</a>
+</li>
+<li><a href="jpa_4.2_Enhancer.html">Enhancer and runtime enhancement</a>
+</li>
+<li><a href="jpa_4.2_DelayedProxies.html">Delayed collection proxies on Java 21</a>
+</li>
+<li><a href="jpa_4.2_MetamodelGenerator.html">Static metamodel generator output</a>
+</li>
+<li><a href="jpa_4.2_LifecycleCallbacks.html">Lifecycle callbacks and listeners</a>
+</li>
+<li><a href="jpa_4.2_PersistenceXml.html">persistence.xml resource handling</a>
+</li>
+<li><a href="jpa_4.2_Locale.html">Locale-independent case conversion</a>
+</li>
+<li><a href="jpa_4.2_ReservedWords.html">Reserved word handling and MySQL delimiting</a>
+</li>
+<li><a href="jpa_4.2_LikeEscape.html">LIKE without an ESCAPE clause</a>
+</li>
+<li><a href="jpa_4.2_StoreCharsAsNumbers.html">char attributes are stored as CHAR(1)</a>
+</li>
+<li><a href="jpa_4.2_H2DecimalColumns.html">Decimal columns on H2</a>
+</li>
+<li><a href="jpa_4.2_MySQLDecimalColumns.html">Decimal columns on MySQL and MariaDB</a>
+</li>
+<li><a href="jpa_4.2_PostgreSQL.html">PostgreSQL</a>
+</li>
+<li><a href="jpa_4.2_MySQLMariaDB.html">MySQL and MariaDB</a>
+</li>
+<li><a href="jpa_4.2_MySQLMariaDBReservedWords.html">Names that MySQL and MariaDB reserve</a>
+</li>
+<li><a href="jpa_4.2_SQLServer.html">Microsoft SQL Server</a>
+</li>
+<li><a href="jpa_4.2_SQLServerDecimalColumns.html">Decimal columns on Microsoft SQL Server</a>
+</li>
+<li><a href="jpa_4.2_Oracle.html">Oracle</a>
+</li>
+<li><a href="jpa_4.2_H2BigInteger.html">BigInteger columns on H2</a>
+</li>
+<li><a href="jpa_4.2_HSQLDB.html">HSQLDB</a>
+</li>
+<li><a href="jpa_4.2_HSQLDBDecimalColumns.html">Decimal columns and casts on HSQLDB</a>
+</li>
+<li><a href="jpa_4.2_SPIChanges.html">SPI changes for custom store, dictionary and expression implementations</a>
+</li>
+<li><a href="jpa_4.2_NewFeatures.html">Notable new features</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="jpa_4.2_InMemoryBulkFlush"><a class="link" href="#jpa_4.2_InMemoryBulkFlush">An in-memory bulk operation flushes the persistence context</a></h4>
+<div class="paragraph">
+<p>Not every bulk <code>UPDATE</code> or <code>DELETE</code> can be expressed as a single statement.
+A delete whose candidate is mapped to more than one table, a candidate with delete lifecycle listeners, a candidate whose owned tables cannot be cleaned by a single key column and a query that was handed its candidates with <code>OpenJPAQuery.setCandidateCollection()</code> are executed in memory instead: OpenJPA loads the matching instances and applies the operation to them one by one.
+The result is a modified persistence context, not a modified database.</p>
+</div>
+<div class="paragraph">
+<p>Such an operation now flushes the persistence context when it has matched at least one instance, so the count returned by <code>executeUpdate()</code> has reached the database by the time the call returns.
+Previously nothing was written until the next flush or the commit, which meant that an <code>em.clear()</code> before the commit discarded the operation altogether while the count had already been reported, and that a <code>find()</code> in the same transaction after a <code>clear()</code> still saw the old row.</p>
+</div>
+<div class="paragraph">
+<p>The flush is not restricted to the instances the operation touched.
+The kernel flushes the transactional cache as a whole - there is no public API for flushing single instances - so pending changes that have nothing to do with the bulk operation are written as well, and the locks, triggers and constraint checks they imply happen earlier than before.</p>
+</div>
+<div class="paragraph">
+<p>Under the default <code>FlushModeType.AUTO</code> this is usually not a change of its own, because the query that loads the candidates flushes the context before the operation starts - but note that this pre-flush of <em>unrelated</em> pending changes is itself new in 4.2.0, see <a href="jpa_4.2_FlushBeforeQueries.html">Completed access paths for Criteria and collection-valued queries</a>.
+The trailing flush is the only flush, and therefore a side effect in its own right, in two cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>when the query never reaches the datastore at all, which is the case whenever its candidates were handed over with <code>OpenJPAQuery.setCandidateCollection()</code> - such a query is executed in memory from the start and does not pre-flush under any flush mode, including <code>AUTO</code>;</p>
+</li>
+<li>
+<p>with <code>FlushModeType.COMMIT</code>, or <a href="openjpa.FlushBeforeQueries.html">openjpa.FlushBeforeQueries</a><code>=false</code> or <code>with-connection</code> while no connection is open, where a dirty instance of a type that is not on the query&#8217;s access path used to stay pending.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The flush also moves the lifecycle callbacks of the instances the operation itself touched: <code>@PostRemove</code> and <code>@PostUpdate</code> fire during a flush, so they now run inside <code>executeUpdate()</code>.
+This is not an exotic case - a candidate with delete lifecycle listeners is one of the reasons a bulk delete is executed in memory in the first place.</p>
+</div>
+<div class="paragraph">
+<p>Nothing in the specification requires either behaviour.
+Jakarta Persistence 3.1 section 4.10 states that "the persistence context is not synchronized with the result of the bulk update or delete" and recommends that "bulk update and delete operations should only be performed within a transaction in a new persistence context or before fetching or accessing entities whose state might be affected by such operations". The flush is therefore a choice: a reported row count that has not reached the database is the worse of the two, so it is the default.</p>
+</div>
+<div class="paragraph">
+<p>Set <code>openjpa.Compatibility=FlushAfterInMemoryBulkOperation=false</code> (default <code>true</code>) to restore the 4.1.x timing.
+This only suppresses the flush, not the operation: the matching instances are still modified or marked for deletion in the persistence context and are written by the next flush or at commit, together with their <code>@PostRemove</code> and <code>@PostUpdate</code> callbacks.
+An <code>em.clear()</code> before that flush loses the operation, which is the behaviour this option restores.</p>
+</div>
+<div class="paragraph">
+<p>The same fallback applies when the context cannot be flushed at all: a store manager that does not support incremental flushing (the default of <code class="class">AbstractStoreManager</code>, so every bulk operation of such a store takes the in-memory path), or a savepoint set through a <a href="openjpa.SavepointManager.html">openjpa.SavepointManager</a> that cannot flush incrementally - which the default <code>in-mem</code> manager cannot.
+The flush after the operation is then skipped and logged at <code>INFO</code> rather than raising an exception, so the operation behaves as if the option had been turned off: it is applied in the context and written at commit, but the row count <code>executeUpdate()</code> returned has not reached the database when the call returns.</p>
+</div>
+<div class="paragraph">
+<p>Note that this covers only the flush after the operation.
+The flush <em>before</em> the candidate query, described in <a href="jpa_4.2_FlushBeforeQueries.html">Completed access paths for Criteria and collection-valued queries</a>, is guarded against an unsupported store but not against a savepoint, so a bulk operation issued with pending changes and a savepoint set still fails with the <code class="class">SavepointManager</code> message, exactly as in earlier releases.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_4.2_SliceBulkTargets.html">Slice target applies to bulk UPDATE and DELETE</a> | ↑ Up: <a href="jpa_4.2_incompatibilities.html">Incompatibilities</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_4.2_FlushBeforeQueries.html">Completed access paths for Criteria and collection-valued queries</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

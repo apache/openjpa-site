@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_dbsetup_dbdictprops" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_dbsetup_builtin.html">3.5.1. Using the OpenJPA DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_thirdparty.html">3.5.2. Using a Third-Party DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_sqlconn.html">3.5.3. Runtime Access to DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport.html">3.5.4. Database Support</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_dbsetup_dbdictprops.html"><span class="toc-current">DBDictionary Properties</span></a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_firebird.html">FirebirdDictionary Properties</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_mysql.html">MySQLDictionary Properties</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_oracle.html">OracleDictionary Properties</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_sybase.html">SybaseDictionary Properties</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_db2.html">DB2 Properties</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_delim_id.html">Delimited Identifiers Support</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_dbsetup_isolation.html">3.5.5. Setting the Transaction Isolation</a>
+</li>
+<li><a href="ref_guide_dbsetup_sql92.html">3.5.6. Setting the SQL Join Syntax</a>
+</li>
+<li><a href="ref_guide_dbsetup_multidb.html">3.5.7. Accessing Multiple Databases</a>
+</li>
+<li><a href="ref_guide_dbsetup_retain.html">3.5.8. Configuring the Use of JDBC Connections</a>
+</li>
+<li><a href="ref_guide_dbsetup_stmtbatch.html">3.5.9. Statement Batching</a>
+</li>
+<li><a href="ref_guide_dbsetup_lrs.html">3.5.10. Large Result Sets</a>
+</li>
+<li><a href="ref_guide_schema_def.html">3.5.11. Default Schema</a>
+</li>
+<li><a href="ref_guide_schema_info.html">3.5.12. Schema Reflection</a>
+</li>
+<li><a href="ref_guide_schema_schematool.html">3.5.13. Schema Tool</a>
+</li>
+<li><a href="ref_guide_schema_xml.html">3.5.14. XML Schema Format</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="ref_guide_dbsetup_dbdictprops"><a class="link" href="#ref_guide_dbsetup_dbdictprops">3.5.4.1. DBDictionary Properties</a></h5>
+<div class="paragraph">
+<p>The standard dictionaries all recognize the following properties.
+These properties will usually not need to be overridden, since the dictionary implementation should use the appropriate default values for your database.
+You typically won&#8217;t use these properties unless you are designing your own <code class="class">DBDictionary</code> for an unsupported database.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a id="DBDictionary.AllowsAliasInBulkClause"></a><code>AllowsAliasInBulkClause</code>: When true, SQL delete and update statements may use table aliases.</p>
+</li>
+<li>
+<p><a id="DBDictionary.AllowsBulkTargetInSubselect"></a><code>AllowsBulkTargetInSubselect</code>: When true, a subquery in the WHERE clause of an SQL delete or update statement may read the table that the statement changes. When false, the statement matches the primary keys of the affected rows in a derived table instead.</p>
+</li>
+<li>
+<p><a id="DBDictionary.ArrayTypeName"></a><code>ArrayTypeName</code>: The overridden default column type for <code>java.sql.Types.ARRAY</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.AutoAssignClause"></a><code>AutoAssignClause</code>: The column definition clause to append to a creation statement. For example, <code>"AUTO_INCREMENT"</code> for MySQL. This property is set automatically in the dictionary, and should not need to be overridden, and is only used when the schema is generated using the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.AutoAssignTypeName"></a><code>AutoAssignTypeName</code>: The column type name for auto-increment columns.
+For example, <code>"BIGSERIAL"</code> for PostgreSQL.
+This property is set automatically in the dictionary and should not need to be overridden.
+It is used only when the schema is generated using the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.BackslashEscapesInStringLiterals"></a><code>BackslashEscapesInStringLiterals</code>: When true, the database may read a backslash inside a string literal as an escape character. A string value with a backslash is then bound as a parameter instead of being written into the SQL text as a literal, which happens with the <code>openjpa.hint.UseLiteralInSQL</code> query hint and for the values of <code>CASE</code>, <code>COALESCE</code> and <code>NULLIF</code>. MySQL and MariaDB (unless their <code>sql_mode</code> contains <code>NO_BACKSLASH_ESCAPES</code>) and PostgreSQL (with <code>standard_conforming_strings</code> turned off) read a backslash that way, so their dictionaries set it to true. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.BatchLimit"></a><code>BatchLimit</code>: The default batch limit for sending multiple SQL statements at once to the database.
+A value of -1 indicates unlimited batching, and any positive integer indicates the maximum number of SQL statements to batch together.
+Defaults to 0 which disables batching.</p>
+</li>
+<li>
+<p><a id="DBDictionary.BigintTypeName"></a><code>BigintTypeName</code>: The overridden default column type for <code>java.sql.Types.BIGINT</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.BinaryTypeName"></a><code>BinaryTypeName</code>: The overridden default column type for <code>java.sql.Types.BINARY</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.BitTypeName"></a><code>BitTypeName</code>: The overridden default column type for <code>java.sql.Types.BIT</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.BlobBufferSize"></a><code>BlobBufferSize</code>: This property establishes the buffer size in the <code>INSERT/UPDATE</code> operations with an <code>java.io.InputStream</code>.
+This is only used with OpenJPA&#8217;s <a href="ref_guide_streamsupport.html">LOB Streaming</a>.
+Defaults to 50000.</p>
+</li>
+<li>
+<p><a id="DBDictionary.BlobTypeName"></a><code>BlobTypeName</code>: The overridden default column type for <code>java.sql.Types.BLOB</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.BooleanRepresentation"></a><code>BooleanRepresentation</code>: The overridden default representation for <code>java.lang.Boolean</code> or <code>boolean</code> fields in JPA Entities. A <a href="../../apidocs/org/apache/openjpa/jdbc/sql/BooleanRepresentation.html"> org.apache.openjpa.jdbc.sql.BooleanRepresentation</a> describes how Boolean values in entities get mapped into the database by default. Note that you additionally might need to define the <code>BooleanTypeName</code> <code>BitTypeName</code> settings to fit your selected BooleanRepresenation.</p>
+</li>
+<li>
+<p><a id="DBDictionary.BooleanTypeName"></a><code>BooleanTypeName</code>: The overridden default column type for <code>java.sql.Types.BOOLEAN</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.CastFunction"></a><code>CastFunction</code>: The SQL function call to cast a value to another SQL type. Use the tokens <code>{0}</code> and <code>{1}</code> to represent the two arguments. The result of the function is convert the <code>{0}</code> value to a <code>{1}</code> type. The default is <code>"CAST({0} AS {1})"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.CatalogSeparator"></a><code>CatalogSeparator</code>: The string the database uses to delimit between the schema name and the table name.
+This is typically <code>"."</code>, which is the default.</p>
+</li>
+<li>
+<p><a id="DBDictionary.CharTypeName"></a><code>CharTypeName</code>: The overridden default column type for <code>java.sql.Types.CHAR</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.CharacterColumnSize"></a><code>CharacterColumnSize</code>: The default size of <code>varchar</code>  and <code>char</code> columns.
+Typically 255.</p>
+</li>
+<li>
+<p><a id="DBDictionary.ClobBufferSize"></a><code>ClobBufferSize</code>: This property establish the buffer size in the <code>INSERT/UPDATE</code> operations with a <code>java.io.Reader</code>. This is only used with OpenJPA&#8217;s <a href="ref_guide_streamsupport.html">LOB Streaming</a>. Defaults to 50000.</p>
+</li>
+<li>
+<p><a id="DBDictionary.ClobTypeName"></a><code>ClobTypeName</code>: The overridden default column type for <code>java.sql.Types.CLOB</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.ClosePoolSQL"></a><code>ClosePoolSQL</code>: A special command to issue to the database when shutting down the pool.
+Usually the pool of connections to the database is closed when the application is ending.
+For embedded databases, whose lifecycle is coterminous with the application, there may be a special command, usually <code>"SHUTDOWN"</code>, that will cause the embedded database to close cleanly.
+Defaults to <code>null</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.ConcatenateFunction"></a><code>ConcatenateFunction</code>: The SQL function call or operation to concatenate two strings. Use the tokens <code>{0}</code> and <code>{1}</code> to represent the two arguments. The result of the function or operation is to concatenate the <code>{1}</code> string to the end of the <code>{0}</code> string. Defaults to <code>"({0}||{1})"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.ConstraintNameMode"></a><code>ConstraintNameMode</code>: When creating constraints, whether to put the constraint name before the definition (<code>"before"</code>), just after the constraint type name (<code>"mid"</code>), or after the constraint definition (<code>"after"</code>). Defaults to <code>"before"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.CreatePrimaryKeys"></a><code>CreatePrimaryKeys</code>: When false, do not create database primary keys for identifiers. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.CrossJoinClause"></a><code>CrossJoinClause</code>: The clause to use for a cross join (cartesian product). Defaults to <code>"CROSS JOIN"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.CurrentDateFunction"></a><code>CurrentDateFunction</code>: The SQL function call to obtain the current date from the database. Defaults to <code>"CURRENT_DATE"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.CurrentTimeFunction"></a><code>CurrentTimeFunction</code>: The SQL function call to obtain the current time from the database.
+Defaults to <code>"CURRENT_TIME"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.CurrentTimestampFunction"></a><code>CurrentTimestampFunction</code>: The SQL function call to obtain the current timestamp from the database. Defaults to <code>"CURRENT_TIMESTAMP"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.DateFractionDigits"></a><code>DateFractionDigits</code> Some databases support to store sub-second fraction values.
+The digits to store can sometimes be configured.
+This value defines the default number of digits to store in the database.
+A <code>dateFractionDigits=3</code> will e.g.
+lead to a <code>DATETIME(3)</code> on some databases.
+Note that this default can be overwritten to an integer value n per column via <code>@Column(scale=n)</code>.
+A <code>@Column(scale=-1)</code> will set the fraction digits to zero.</p>
+</li>
+<li>
+<p><a id="DBDictionary.DatePrecision"></a><code>DatePrecision</code>: The database is able to store time values to this degree of precision, which is expressed in nanoseconds. This value is usually one million, meaning that the database is able to store time values with a precision of one millisecond. Particular databases may have more or less precision. OpenJPA will round all time values to this degree of precision before storing them in the database. This property can be set to one of the following precisions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>DECI</code>: 100000000</p>
+</li>
+<li>
+<p><code>CENIT</code>: 10000000</p>
+</li>
+<li>
+<p><code>MILLI (default precision)</code>: 1000000</p>
+</li>
+<li>
+<p><code>MICRO</code>: 1000</p>
+</li>
+<li>
+<p><code>NANO (max precision)</code>: 1</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a id="DBDictionary.DateMillisecondBehavior"></a><code>DateMillisecondBehavior</code>: When retrieving a <code>Date</code> value from a database which stores the value in a TIMESTAMP column, the values retrieved will be rounded to the nearest millisecond.
+So a date of '2010-01-01 12:00:00.687701' stored in the database will become '2010-01-01 12:00:00.688' in the <code>Date</code> field of the entity.
+The following date stored in the database as '9999-12-31 23:59:59.9999' will become '10000-01-01 00:00:00.000'.  This rounding may not be desirable.
+With this property, a user has options which will direct OpenJPA how to handle the milliseconds.
+This property can be set to one of the enums defined in <code>DBDictionary.DateMillisecondBehaviors</code>.
+The options defined in <code>DBDictionary.DateMillisecondBehaviors</code> are as follows:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>DateMillisecondBehaviors.ROUND</code>: This is the default. The <code>Date</code> will be rounded to the nearest millisecond, as described above.</p>
+</li>
+<li>
+<p><code>DateMillisecondBehaviors.DROP</code>: The milliseconds will be dropped, thus rounding is not performed. As an example, a date of '2010-01-01 12:00:00.687701' stored in the database will become '2010-01-01 12:00:00.000' in the <code>Date</code> field of the entity.</p>
+</li>
+<li>
+<p><code>DateMillisecondBehaviors.RETAIN</code>: The milliseconds will not be rounded, but will be retained. As an example, a date of '2010-01-01 12:00:00.687701' stored in the database will become '2010-01-01 12:00:00.687' in the <code>Date</code> field of the entity.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a id="DBDictionary.DateTypeName"></a><code>DateTypeName</code>: The overridden default column type for <code>java.sql.Types.DATE</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.DecimalTypeName"></a><code>DecimalTypeName</code>: The overridden default column type for <code>java.sql.Types.DECIMAL</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.DelimitedCase"></a><code>DelimitedCase</code>: The case to use when querying the database about identifiers that have been delimited. It defaults to preserving the case of the originally specified name. Available values are: <code>upper, lower, preserve.</code></p>
+</li>
+<li>
+<p><a id="DBDictionary.DisableAlterSeqenceIncrementBy"></a><code>DisableAlterSeqenceIncrementBy</code>: OpenJPA attempts to execute an ALTER SEQUENCE&#8230;&#8203;.INCREMENT BY SQL statement for a user defined sequence.
+This is done to ensure that the 'allocationSize' value defined by the entity&#8217;s sequence, or default value, matches the sequence defined in the database.
+For example, with an allocationSize of 1000 for a sequence named 'SEQ_JPASAMPLE', the following SQL will be generated (the SQL might vary slightly depending on the databases): <code>ALTER SEQUENCE SEQ_JPASAMPLE INCREMENT BY 1000</code>.
+If the user executing this command doesn&#8217;t have permissions to execute the command, it will fail and in turn OpenJPA will disable sequence caching.
+If a user wants to disable this SQL command, this property can be set to true.
+However, the user must ensure that the entities defined sequence is kept in synch with the sequence defined in the database.
+Defaults to false.</p>
+</li>
+<li>
+<p><a id="DBDictionary.DisableSchemaFactoryColumnTypeErrors"></a><code>DisableSchemaFactoryColumnTypeErrors</code>: When something other than the default SchemaFactory is used, up-front mapping validation is performed against the database schema. As part of the validation, OpenJPA will verify a persistence class column&#8217;s type against the column type defined in the database schema. If a mismatch is found, OpenJPA will throw an exception to flag the mismatch types and will not allow processing to continue. This can be limiting, especially if the JDBC driver and/or database can properly handle the mismatch. Set this property to true to disable column type mismatch errors. Defaults to false.</p>
+</li>
+<li>
+<p><a id="DBDictionary.DistinctCountColumnSeparator"></a><code>DistinctCountColumnSeparator</code>: The string the database uses to delimit between column expressions in a <code>SELECT COUNT(DISTINCT
+column-list)</code> clause.
+Defaults to <code>null</code> for most databases, meaning that multiple columns in a distinct COUNT clause are not supported.</p>
+</li>
+<li>
+<p><a id="DBDictionary.DistinctTypeName"></a><code>DistinctTypeName</code>: The overridden default column type for <code>java.sql.Types.DISTINCT</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.DoubleTypeName"></a><code>DoubleTypeName</code>: The overridden default column type for <code>java.sql.Types.DOUBLE</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.DriverVendor"></a><code>DriverVendor</code>: The vendor of the particular JDBC driver you are using. Some dictionaries must alter their behavior depending on the driver vendor. Dictionaries usually detect the driver vendor and set this property themselves. See the <code>VENDOR_XXX</code> constants defined in the <code class="class">DBDictionary</code> Javadoc for available options.</p>
+</li>
+<li>
+<p><a id="DBDictionary.DropTableSQL"></a><code>DropTableSQL</code>: The SQL statement used to drop a table.
+Use the token <code>{0}</code> as the argument for the table name.
+Defaults to <code>"DROP TABLE {0}"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.FixedSizeTypeNames"></a><code>FixedSizeTypeNames</code>: A comma separated list of additional database types that have a size defined by the database. In other words, when a column of a fixed size type is declared, its size cannot be defined by the user. Common examples would be <code>DATE</code>, <code>FLOAT</code>, and <code>INTEGER</code>. Each database dictionary has its own internal set of fixed size type names that include the names mentioned here and many others. Names added to this property are added to the dictionary&#8217;s internal set. Defaults to <code>null</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.FloatTypeName"></a><code>FloatTypeName</code>: The overridden default column type for <code>java.sql.Types.FLOAT</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.ForUpdateClause"></a><code>ForUpdateClause</code>: The clause to append to <code>SELECT</code>  statements to issue queries that obtain pessimistic locks.
+Defaults to <code>"FOR UPDATE"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.GetStringVal"></a><code>GetStringVal</code>: A special function to return the value of an XML column in a select statement.
+For example, Oracle uses <code>".getClobVal()"</code>, as in <code>"SELECT t0.xmlcol.getClobVal() FROM xmltab t0"</code>.
+Defaults to the empty string.</p>
+</li>
+<li>
+<p><a id="DBDictionary.InClauseLimit"></a><code>InClauseLimit</code>: The maximum number of elements in an <code>IN</code> clause. OpenJPA works around cases where the limit is exceeded. Defaults to -1 meaning no limit.</p>
+</li>
+<li>
+<p><a id="DBDictionary.IndexPhysicalForeignKeys"></a><code>IndexPhysicalForeignKeys</code>: Whether a search Index should automatically get created on a physical foreign key.
+Some databases, like MySQL, handle this internally, so we do not need to generate an explicit Index in our DDL.
+Other databases need an explicit serach index on foreign key columns to improve performance.
+IndexPhysicalForeignKeys defaults to true for Oracle, MS-SQL and PostgreSQL.</p>
+</li>
+<li>
+<p><a id="DBDictionary.InitializationSQL"></a><code>InitializationSQL</code>: A piece of SQL to issue against the database whenever a connection is retrieved from the <code class="class">DataSource</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.InnerJoinClause"></a><code>InnerJoinClause</code>: The clause to use for an inner join. Defaults to <code>"INNER JOIN"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.IntegerTypeName"></a><code>IntegerTypeName</code>: The overridden default column type for <code>java.sql.Types.INTEGER</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.JavaObjectTypeName"></a><code>JavaObjectTypeName</code>: The overridden default column type for <code>java.sql.Types.JAVAOBJECT</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.JoinSyntax"></a><code>JoinSyntax</code>: The SQL join syntax to use in select statements.
+See <a href="ref_guide_dbsetup_sql92.html">Setting the SQL Join Syntax</a>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.LastGeneratedKeyQuery"></a><code>LastGeneratedKeyQuery</code>: The query to issue to obtain the last automatically generated key for an auto-increment column. For example, <code>"SELECT LAST_INSERT_ID()"</code> for MySQL. This property is set automatically in the dictionary, and should not need to be overridden. If <code>SupportsGetGeneratedKeys</code> is true, the query will not be issued but a more efficient JDBC 3.0 mechanism for obtaining generated keys will be used instead.</p>
+</li>
+<li>
+<p><a id="DBDicationary.LeadingDelimiter"></a><code>LeadingDelimiter</code>: The characters to use as the leading delimiter for a delimited identifier.
+The default value is a double quote, <code>(")</code>.
+See <a href="ref_guide_dbsetup_dbsupport_delim_id.html">Delimited Identifiers Support</a> for the default value for some specific databases.</p>
+</li>
+<li>
+<p><a id="DBDictionary.LongVarbinaryTypeName"></a><code>LongVarbinaryTypeName</code>: The overridden default column type for <code>java.sql.Types.LONGVARBINARY</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.LongVarcharTypeName"></a><code>LongVarcharTypeName</code>: The overridden default column type for <code>java.sql.Types.LONGVARCHAR</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.MaxAutoAssignNameLength"></a><code>MaxAutoAssignNameLength</code>: Set this property to the maximum length of the sequence name used for auto-increment columns. Names longer than this value are truncated. Defaults to 31.</p>
+</li>
+<li>
+<p><a id="DBDictionary.MaxColumnNameLength"></a><code>MaxColumnNameLength</code>: The maximum number of characters in a column name.
+Defaults to 128.</p>
+</li>
+<li>
+<p><a id="DBDictionary.MaxConstraintNameLength"></a><code>MaxConstraintNameLength</code>: The maximum number of characters in a constraint name. Defaults to 128.</p>
+</li>
+<li>
+<p><a id="DBDictionary.MaxEmbeddedBlobSize"></a><code>MaxEmbeddedBlobSize</code>: When greater than -1, the maximum size of a <code>BLOB</code> value that can be sent directly to the database within an insert or update statement.
+Values whose size is greater than <code>MaxEmbeddedBlobSize</code> force OpenJPA to work around this limitation.
+A value of -1 means that there is no limitation.
+Defaults to -1.</p>
+</li>
+<li>
+<p><a id="DBDictionary.MaxEmbeddedClobSize"></a><code>MaxEmbeddedClobSize</code>: When greater than -1, the maximum size of a <code>CLOB</code> value that can be sent directly to the database within an insert or update statement. Values whose size is greater than <code>MaxEmbeddedClobSize</code> force OpenJPA to work around this limitation. A value of -1 means that there is no limitation. Defaults to -1.</p>
+</li>
+<li>
+<p><a id="DBDictionary.MaxIndexNameLength"></a><code>MaxIndexNameLength</code>: The maximum number of characters in an index name.
+Defaults to 128.</p>
+</li>
+<li>
+<p><a id="DBDictionary.MaxIndexesPerTable"></a><code>MaxIndexesPerTable</code>: The maximum number of indexes that can be placed on a single table.
+Defaults to no limit.</p>
+</li>
+<li>
+<p><a id="DBDictionary.MaxTableNameLength"></a><code>MaxTableNameLength</code>: The maximum number of characters in a table name. Defaults to 128.</p>
+</li>
+<li>
+<p><a id="DBDictionary.NameConcatenator"></a><code>NameConcatenator</code>: The value used when names are concatenated to create a generated name.
+The default value is the underscore <code>"_"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.NextSequenceQuery"></a><code>NextSequenceQuery</code>: A SQL string for obtaining a native sequence value. May use a placeholder of <code>{0}</code> for the variable sequence name and <code>{1}</code> for sequence increment. Defaults to a database-appropriate value. For example, <code>"SELECT {0}.NEXTVAL FROM DUAL"</code> for Oracle database.</p>
+</li>
+<li>
+<p><a id="DBDictionary.NullTypeName"></a><code>NullTypeName</code>: The overridden default column type for <code>java.sql.Types.NULL</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.NumericTypeName"></a><code>NumericTypeName</code>: The overridden default column type for <code>java.sql.Types.NUMERIC</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.OtherTypeName"></a><code>OtherTypeName</code>: The overridden default column type for <code>java.sql.Types.OTHER</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.OuterJoinClause"></a><code>OuterJoinClause</code>: The clause to use for an left outer join. Defaults to <code>"LEFT OUTER JOIN"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.Platform"></a><code>Platform</code>: The name of the database that this dictionary targets.
+Defaults to <code>"Generic"</code>, but all dictionaries override this value.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RangePosition"></a><code>RangePosition</code>: Indicates where to specify in the SQL select statement the range, if any, of the result rows to be returned. When limiting the number of returned result rows to a subset of all those that satisfy the query&#8217;s conditions, the position of the range clause varies by database. Defaults to 0, meaning that the range is expressed at the end of the select statement but before any locking clause. See the RANGE_XXX constants defined in <code class="class">DBDictionary</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RealTypeName"></a><code>RealTypeName</code>: The overridden default column type for <code>java.sql.Types.REAL</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RefTypeName"></a><code>RefTypeName</code>: The overridden default column type for <code>java.sql.Types.REF</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RequiresAliasForSubselect"></a><code>RequiresAliasForSubselect</code>: When true, the database requires that subselects in a FROM clause be assigned an alias.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RequiresAutoCommitForMetadata"></a><code>RequiresAutoCommitForMetadata</code>: When true, the JDBC driver requires that autocommit be enabled before any schema interrogation operations can take place.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RequiresCastForCaseStringResult"></a><code>RequiresCastForCaseStringResult</code>: When true, a string literal, or a parameter bound to a string, returned by a <code>CASE</code> expression is cast to <code>VARCHAR</code> in the generated SQL, for databases that type a string literal as <code>CHAR</code> and pad the result of the <code>CASE</code> to the length of its longest result.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RequiresCastForComparisons"></a><code>RequiresCastForComparisons</code>: When true, comparisons of two values of different types or of two literals requires a cast in the generated SQL. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RequiresCastForMathFunctions"></a><code>RequiresCastForMathFunctions</code>: When true, math operations on two values of different types or on two literals requires a cast in the generated SQL. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RequiresCastForExtractOperand"></a><code>RequiresCastForExtractOperand</code>: When true, a parameter or literal operand of <code>EXTRACT</code> that is bound as a parameter is cast to <code>DATE</code>, <code>TIME</code> or <code>TIMESTAMP</code> in the generated SQL.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RequiresConditionForCrossJoin"></a><code>RequiresConditionForCrossJoin</code>: Some databases require that there always be a conditional statement for a cross join. If set, this parameter ensures that there will always be some condition to the join clause.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RequiresTargetForDelete"></a><code>RequiresTargetForDelete</code>: When true, the database requires a target for delete statements.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.ReservedWords"></a><code>ReservedWords</code>: A comma-separated list of reserved words for this database, beyond the standard SQL92 keywords.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SchemaCase"></a><code>SchemaCase</code>: The case to use when querying the database metadata about schema components.
+Defaults to making all names upper case.
+Available values are: <code>upper, lower, preserve</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SearchStringEscape"></a><code>SearchStringEscape</code>: The SQL string literal rendering of the backslash escape character, written into the <code>ESCAPE</code> clause of a generated SQL <code>LIKE</code> when the query itself supplies a backslash as its escape character. A database which consumes a backslash while parsing a string literal needs it doubled here. On MySQL and MariaDB that doubling is only correct while <code>sql_mode</code> contains no <code>NO_BACKSLASH_ESCAPES</code>; with that mode the server stops consuming backslashes and rejects the clause with <code>ERROR 1210</code>, so a query which runs against it has to pick an escape character other than a backslash. Defaults to <code>"\\"</code> (a single backslash in Java speak). Note: this character never gains an escape meaning inside a query pattern. A <code>LIKE</code> without an <code>ESCAPE</code> clause has no escape character at all, as Jakarta Persistence requires.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SearchStringNoEscape"></a><code>SearchStringNoEscape</code>: The SQL expression written into the <code>ESCAPE</code> clause of a generated SQL <code>LIKE</code> whose query supplied no escape character, used when <code>RequiresSearchStringEscapeForLike</code> is true. Defaults to <code>"''"</code>, the empty string literal, which is a non-standard spelling of "no escape character" accepted by H2 and PostgreSQL, and by MySQL only while <code>sql_mode</code> contains no <code>NO_BACKSLASH_ESCAPES</code>; a standard conforming database such as Derby rejects it, since the standard wants exactly one character. A dictionary which turns <code>RequiresSearchStringEscapeForLike</code> on therefore has to supply a value its database accepts. MySQL uses <code>"CHAR(0)"</code> because of the <code>sql_mode</code> above, and MariaDB because it ignores an empty escape clause altogether and keeps its backslash escape; that expression has the same effect for every pattern which does not contain a NUL character.</p>
+</li>
+<li>
+<p><a id="DBDictionary.RequiresSearchStringEscapeForLike"></a><code>RequiresSearchStringEscapeForLike</code>: When true, the database requires an explicit <code>ESCAPE</code> clause for queries that use <code>LIKE</code>, because its <code>LIKE</code> defaults to an escape character of its own (a backslash on H2, MySQL, MariaDB and PostgreSQL).  OpenJPA then writes the <code>SearchStringNoEscape</code> expression into an <code>ESCAPE</code> clause, which gives such a database the no escape character behaviour Jakarta Persistence requires.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SelectWords"></a><code>SelectWords</code>: A comma-separated list of keywords which may be used to start a SELECT statement for this database. If an application executes a native SQL statement which begins with SelectWords OpenJPA will treat the statement as a SELECT statement rather than an UPDATE statement.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SequenceNameSQL"></a><code>SequenceNameSQL</code>: Additional phrasing to use with <code>SequenceSQL</code>.
+Defaults to <code>null</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SequenceSQL"></a><code>SequenceSQL</code>: General structure of the SQL query to use when interrogating the database for sequence names. As there is no standard way to obtain sequence names, it defaults to <code>null</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SequenceSchemaSQL"></a><code>SequenceSchemaSQL</code>: Additional phrasing to use with <code>SequenceSQL</code>. Defaults to <code>null</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SimulateLocking"></a><code>SimulateLocking</code>: Some databases do not support pessimistic locking, which will result in an exception when you attempt a transaction while using the pessimistic lock manager.
+Setting this property to <code>true</code> suppresses the locking of rows in the database, thereby allowing pessimistic transactions even on databases that do not support locking.
+At the same time, setting this property to <code>true</code> means that you do not obtain the semantics of a pessimistic transaction with the database.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SmallintTypeName"></a><code>SmallintTypeName</code>: The overridden default column type for <code>java.sql.Types.SMALLINT</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.StorageLimitationsFatal"></a><code>StorageLimitationsFatal</code>: When true, any data truncation/rounding that is performed by the dictionary in order to store a value in the database will be treated as a fatal error, rather than just issuing a warning.</p>
+</li>
+<li>
+<p><a id="DBDictionary.StoreCharsAsNumbers"></a><code>StoreCharsAsNumbers</code>: Set this property to <code>false</code>  to store Java <code>char</code> fields as <code>CHAR</code>  values rather than numbers. Defaults to <code>true</code>, except on DB2, Apache Derby, H2, MariaDB, Microsoft SQL Server, MySQL, Oracle and PostgreSQL 9 and later, where the default is <code>false</code> (native <code>CHAR(1)</code>  storage; on Oracle the generated column is <code>CHAR(1 CHAR)</code>, which holds a character of any byte length). An explicitly configured value is always respected. Schemas created by earlier OpenJPA releases on PostgreSQL, MySQL, MariaDB, Derby, H2, SQL Server or Oracle store <code>char</code> fields in numeric columns and require <code>StoreCharsAsNumbers=true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.StoreLargeNumbersAsStrings"></a><code>StoreLargeNumbersAsStrings</code>: When true, the dictionary prefers to store Java fields of type <code class="class">BigInteger</code> and <code class="class">BigDecimal</code> as string values in the database.
+Likewise, the dictionary will instruct the mapping tool to map these Java types to character columns.
+Because some databases have limitations on the number of digits that can be stored in a numeric column (for example, Oracle can only store 38 digits), this option may be necessary for some applications.
+Note that this option may prevent OpenJPA from executing meaningful numeric queries against the columns.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.StringLengthFunction"></a><code>StringLengthFunction</code>: Name of the SQL function for getting the length of a string. Use the token <code>{0}</code> to represent the argument.</p>
+</li>
+<li>
+<p><a id="DBDictionary.StructTypeName"></a><code>StructTypeName</code>: The overridden default column type for <code>java.sql.Types.STRUCT</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SubstringFunctionName"></a><code>SubstringFunctionName</code>: Name of the SQL function for getting the substring of a string.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsAlterTableWithAddColumn"></a><code>SupportsAlterTableWithAddColumn</code>: When true, the database supports adding a new column in an ALTER TABLE statement.
+Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsAlterTableWithDropColumn"></a><code>SupportsAlterTableWithDropColumn</code>: When true, the database supports dropping a column in an ALTER TABLE statement. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsAutoAssign"></a><code>SupportsAutoAssign</code>: When true, the database supports auto-assign columns, where the value of column is assigned upon insertion of the row into the database.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsCascadeDeleteAction"></a><code>SupportsCascadeDeleteAction</code>: When true, the database supports the <code>CASCADE</code> delete action on foreign keys. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsCascadeUpdateAction"></a><code>SupportsCascadeUpdateAction</code>: When true, the database supports the <code>CASCADE</code> update action on foreign keys.
+Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsComments"></a><code>SupportsComments</code>: When true, comments can be associated with the table in the table creation statement. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsCorrelatedSubselect"></a><code>SupportsCorrelatedSubselect</code>: When true, the database supports correlated subselects.
+Correlated subselects are select statements nested within select statements that refers to a column in the outer select statement.
+For performance reasons, correlated subselects are generally a last resort.
+Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsDefaultDeleteAction"></a><code>SupportsDefaultDeleteAction</code>: When true, the database supports the <code>SET DEFAULT</code> delete action on foreign keys. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsDefaultUpdateAction"></a><code>SupportsDefaultUpdateAction</code>: When true, the database supports the <code>SET DEFAULT</code> update action on foreign keys.
+Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsDeferredConstraints"></a><code>SupportsDeferredConstraints</code>: When true, the database supports deferred constraints. The database supports deferred constraints by checking for constraint violations when the transaction commits, rather than checking for violations immediately after receiving each SQL statement within the transaction. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsDelimitedIdentifiers"></a><code>SupportsDelimitedIdentifiers</code>: When true, the database supports delimited identifiers.
+It defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsForeignKeys"></a><code>SupportsForeignKeys</code>: When true, the database supports foreign keys. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsForeignKeysComposite"></a><code>SupportsForeignKeysComposite</code>: When true, the database supports composite foreign keys.
+Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsGetGeneratedKeys"></a><code>SupportsGetGeneratedKeys</code>: When true, OpenJPA will use <code class="method">java.sql.Statement.getGeneratedKeys</code> method to obtain values of auto-increment columns. When false, a query specified by <code>LastGeneratedKeyQuery</code> will be used for that purpose. If not set, the value will be auto-detected by querying the JDBC driver. Setting the value to true requires that the JDBC driver supports version 3.0 or higher of the JDBC specification and supports the <code class="method">java.sql.Statement.getGeneratedKeys</code> method.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsHaving"></a><code>SupportsHaving</code>: When true, the database supports HAVING clauses in selects.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsLockingWithDistinctClause"></a><code>SupportsLockingWithDistinctClause</code>: When true, the database supports <code>FOR UPDATE</code> select clauses with <code>DISTINCT</code> clauses.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsLockingWithInnerJoin"></a><code>SupportsLockingWithInnerJoin</code>: When true, the database supports <code>FOR UPDATE</code> select clauses with inner join queries.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsLockingWithMultipleTables"></a><code>SupportsLockingWithMultipleTables</code>: When true, the database supports <code>FOR UPDATE</code> select clauses that select from multiple tables.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsLockingWithOrderClause"></a><code>SupportsLockingWithOrderClause</code>: When true, the database supports <code>FOR UPDATE</code> select clauses with <code>ORDER BY</code>  clauses.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsLockingWithOuterJoin"></a><code>SupportsLockingWithOuterJoin</code>: When true, the database supports <code>FOR UPDATE</code> select clauses with outer join queries.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsLockingWithSelectRange"></a><code>SupportsLockingWithSelectRange</code>: When true, the database supports <code>FOR UPDATE</code> select clauses with queries that select a range of data using <code>LIMIT</code>, <code>TOP</code> or the database equivalent. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsModOperator"></a><code>SupportsModOperator</code>: When true, the database supports the modulus operator (<code>%</code>) instead of the <code>MOD</code> function.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsMultipleNontransactionalResultSets"></a><code>SupportsMultipleNontransactionalResultSets</code>: When true, a nontransactional connection is capable of having multiple open <code class="class">ResultSet</code> instances.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsNullDeleteAction"></a><code>SupportsNullDeleteAction</code>: When true, the database supports the <code>SET NULL</code> delete action on foreign keys. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsNullTableForGetColumns"></a><code>SupportsNullTableForGetColumns</code>: When true, the database supports passing a <code>null</code> parameter to <code class="method">DatabaseMetaData.getColumns</code> as an optimization to get information about all the tables.
+Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsNullTableForGetImportedKeys"></a><code>SupportsNullTableForGetImportedKeys</code>: When true, the database supports passing a <code>null</code> parameter to <code class="method">DatabaseMetaData.getImportedKeys</code> as an optimization to get information about all the tables. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsNullTableForGetIndexInfo"></a><code>SupportsNullTableForGetIndexInfo</code>: When true, the database supports passing a <code>null</code> parameter to <code class="method">DatabaseMetaData.getIndexInfo</code> as an optimization to get information about all the tables. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsNullTableForGetPrimaryKeys"></a><code>SupportsNullTableForGetPrimaryKeys</code>: When true, the database supports passing a <code>null</code> parameter to <code class="method">DatabaseMetaData.getPrimaryKeys</code> as an optimization to get information about all the tables.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsNullUpdateAction"></a><code>SupportsNullUpdateAction</code>: When true, the database supports the <code>SET NULL</code> update action on foreign keys. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsQueryTimeout"></a><code>SupportsQueryTimeout</code>: When true, the JDBC driver supports calls to <code class="method">java.sql.Statement.setQueryTimeout</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.AllowQueryTimeoutOnFindUpdate"></a><code>AllowQueryTimeoutOnFindUpdate</code>: The JPA Specification defines the jakarta.persistence.query.timeout, in milliseconds, as a hint to the provider.
+The hint is used for Query operations.
+This property, when set to true, will allow the query timeout hint to apply to EntityManager operations.
+For example, when a 'find' is executed and the resultant entity updated, the query timeout will apply to the SQL update operation.
+This property defaults to false.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsRestrictDeleteAction"></a><code>SupportsRestrictDeleteAction</code>: When true, the database supports the <code>RESTRICT</code> delete action on foreign keys. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsRestrictUpdateAction"></a><code>SupportsRestrictUpdateAction</code>: When true, the database supports the <code>RESTRICT</code> update action on foreign keys. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsSchemaForGetColumns"></a><code>SupportsSchemaForGetColumns</code>: When false, the database driver does not support using the schema name for schema reflection on column names.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsSchemaForGetTables"></a><code>SupportsSchemaForGetTables</code>: If false, then the database driver does not support using the schema name for schema reflection on table names.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsSelectEndIndex"></a><code>SupportsSelectEndIndex</code>: When true, the database can create a select that is limited to the first N results.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsSelectForUpdate"></a><code>SupportsSelectForUpdate</code>: When true, the database supports <code>SELECT</code> statements with a pessimistic locking (<code>FOR UPDATE</code>) clause.
+Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsSelectStartIndex"></a><code>SupportsSelectStartIndex</code>: When true, the database can create a select that skips the first N results.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsSimpleCaseExpression"></a><code>SupportsSimpleCaseExpression</code>: When true, the database supports the simple form of <code>CASE</code> expression: <code>CASE &lt;a&gt; WHEN &lt;b&gt; THEN &lt;c&gt; WHEN &lt;d&gt; THEN &lt;e&gt; ELSE &lt;f&gt; END</code>.
+When false, the general form of <code>CASE</code> expression will be used: <code>CASE WHEN &lt;a&gt; = &lt;b&gt; THEN &lt;c&gt; WHEN &lt;a&gt; = &lt;d&gt; THEN &lt;e&gt; ELSE &lt;f&gt; END</code>.
+Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsSubselect"></a><code>SupportsSubselect</code>: When true, the database supports subselects in queries.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsTimestampNanos"></a><code>SupportsTimestampNanos</code>: When true, the database supports nanoseconds with TIMESTAMP columns. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsUniqueConstraints"></a><code>SupportsUniqueConstraints</code>: When true, the database supports unique constraints. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SupportsXMLColumn"></a><code>SupportsXMLColumn</code>: When true, the database supports an XML column type.
+See <a href="ref_guide_xmlmapping.html">XML Column Mapping</a> for information on using this capability.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SystemSchemas"></a><code>SystemSchemas</code>: A comma-separated list of schema names that should be ignored.</p>
+</li>
+<li>
+<p><a id="DBDictionary.SystemTables"></a><code>SystemTables</code>: A comma-separated list of table names that should be ignored.</p>
+</li>
+<li>
+<p><a id="DBDictionary.TableForUpdateClause"></a><code>TableForUpdateClause</code>: The clause to append to the end of each table alias in queries that obtain pessimistic locks. Defaults to <code>null</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.tableLengthIncludesSchema"></a><code>tableLengthIncludesSchema</code>: Whether the max length for a table name includes the table&#8217;s schema.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.TableTypes"></a><code>TableTypes</code>: Comma-separated list of table types to use when looking for tables during schema reflection, as defined in the <code class="method">java.sql.DatabaseMetaData.getTableInfo</code> JDBC method. An example is: <code>"TABLE,VIEW,ALIAS"</code>. Defaults to <code>"TABLE"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.TimeTypeName"></a><code>TimeTypeName</code>: The overridden default column type for <code>java.sql.Types.TIME</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.TimestampTypeName"></a><code>TimestampTypeName</code>: The overridden default column type for <code>java.sql.Types.TIMESTAMP</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.TinyintTypeName"></a><code>TinyintTypeName</code>: The overridden default column type for <code>java.sql.Types.TINYINT</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.ToLowerCaseFunction"></a><code>ToLowerCaseFunction</code>: Name of the SQL function for converting a string to lower case. Use the token <code>{0}</code> to represent the argument.</p>
+</li>
+<li>
+<p><a id="DBDictionary.ToUpperCaseFunction"></a><code>ToUpperCaseFunction</code>: SQL function call for converting a string to upper case.
+Use the token <code>{0}</code> to represent the argument.</p>
+</li>
+<li>
+<p><a id="DBDicationary.TrailingDelimiter"></a><code>TrailingDelimiter</code>: The characters to use as the trailing delimiter for a delimited identifier. The default value is a double quote, <code>(")</code>. See <a href="ref_guide_dbsetup_dbsupport_delim_id.html">Delimited Identifiers Support</a> for the default value for some specific databases.</p>
+</li>
+<li>
+<p><a id="DBDictionary.TrimBothFunction"></a><code>TrimBothFunction</code>: The SQL function call to trim any number of a particular character from both the start and end of a string.
+Note: some databases do not support specifying the character in which case only spaces or whitespace can be trimmed.
+Use the token <code>{1}</code> when possible to represent the character, and the token <code>{0}</code> to represent the string.
+Defaults to <code>"TRIM(BOTH {1} FROM {0})"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.TrimLeadingFunction"></a><code>TrimLeadingFunction</code>: The SQL function call to trim any number of a particular character from the start of a string. Note: some databases do not support specifying the character in which case only spaces or whitespace can be trimmed. Use the token <code>{1}</code> when possible to represent the character, and the token <code>{0}</code> to represent the string. Defaults to <code>"TRIM(LEADING {1} FROM {0})"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.TrimStringColumns"></a><code>TrimStringColumns</code>: When <code>true</code>, the resulting String from <code class="method">ResultSet.getString</code> will be trimmed of trailing white space.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.TrimTrailingFunction"></a><code>TrimTrailingFunction</code>: The SQL function call to trim any number of a particular character from the end of a string. Note: some databases do not support specifying the character in which case only spaces or whitespace can be trimmed. Use the token <code>{1}</code> when possible to represent the character, and the token <code>{0}</code> to represent the string. Defaults to <code>"TRIM(TRAILING {1} FROM {0})"</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.UseGetBestRowIdentifierForPrimaryKeys"></a><code>UseGetBestRowIdentifierForPrimaryKeys</code>: When true, metadata queries will use <code class="method">DatabaseMetaData.getBestRowIdentifier</code> to obtain information about primary keys, rather than <code class="method">DatabaseMetaData.getPrimaryKeys</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.UseGetBytesForBlobs"></a><code>UseGetBytesForBlobs</code>: When true, <code class="method">ResultSet.getBytes</code> will be used to obtain blob data rather than <code class="method">ResultSet.getBinaryStream</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.UseGetObjectForBlobs"></a><code>UseGetObjectForBlobs</code>: When true, <code class="method">ResultSet.getObject</code> will be used to obtain blob data rather than <code class="method">ResultSet.getBinaryStream</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.UseGetStringForClobs"></a><code>UseGetStringForClobs</code>: When true, <code class="method">ResultSet.getString</code> will be used to obtain clob data rather than <code class="method">ResultSet.getCharacterStream</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.UseJDBC4SetBinaryStream"></a><code>UseJDBC4SetBinaryStream</code>: When true, an attempt will be made to obtain a JDBC 4.0 version of <code class="method">PreparedStatement.setBinaryStream</code>. When false, a <code class="method">setBinaryStream</code> is used which takes the length of the stream. OpenJPA uses a -1 for the length since OpenJPA doesn&#8217;t know the length of the stream. A few JDBC drivers check the length and throw an exception when the length is less than zero. When this property is set to true, and an applicable JDK and JDBC 4.0 driver is available, a version of <code class="method">setBinaryStream</code> will be used which does not take a length. The default value of this property is true.</p>
+</li>
+<li>
+<p><a id="DBDictionary.UseNativeSequenceCache"></a><code>UseNativeSequenceCache</code>: This property was introduced in the 2.1.2 release to indicate (when set to <code>false</code>) that OpenJPA should not use the <code>CACHE</code> clause when creating a native sequence; instead the <code>INCREMENT BY</code> clause gets its value equal to the allocationSize property.
+In the 2.2.0 release, code was added to allow said functionality by default (see OPENJPA-1376). For forward compatibility, this property still remains, however it has been deprecated and will eventually be removed.
+Setting this property has no effect and any occurrence of it should be removed.</p>
+</li>
+<li>
+<p><a id="DBDictionary.UseSchemaName"></a><code>UseSchemaName</code>: If <code>false</code>, then avoid including the schema name in table name references. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.UseSetBytesForBlobs"></a><code>UseSetBytesForBlobs</code>: When true, <code class="method">PreparedStatement.setBytes</code> will be used to set blob data, rather than <code class="method">PreparedStatement.setBinaryStream</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.UseSetStringForClobs"></a><code>UseSetStringForClobs</code>: When true, <code class="method">PreparedStatement.setString</code> will be used to set clob data, rather than <code class="method">PreparedStatement.setCharacterStream</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.UseWildCardForCount"></a><code>UseWildCardForCount</code>: When true, the JPQL <code>COUNT</code> aggregate function will be translated into SQL <code>COUNT(*)</code> expression if the SQL query does not involve joins.
+Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.ValidationSQL"></a><code>ValidationSQL</code>: The SQL used to validate that a connection is still in a valid state.
+For example, <code>"SELECT SYSDATE FROM DUAL"</code>  for Oracle.</p>
+</li>
+<li>
+<p><a id="DBDictionary.VarbinaryTypeName"></a><code>VarbinaryTypeName</code>: The overridden default column type for <code>java.sql.Types.VARBINARY</code>. This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.VarcharTypeName"></a><code>VarcharTypeName</code>: The overridden default column type for <code>java.sql.Types.VARCHAR</code>.
+This is used only when the schema is generated by the <code>mappingtool</code>.</p>
+</li>
+<li>
+<p><a id="DBDictionary.XmlTypeName"></a><code>XmlTypeName</code>: The column type name for XML columns. This property is set automatically in the dictionary and should not need to be overridden. It is used only when the schema is generated using the <code>mappingtool</code>. Defaults to <code>"XML"</code>.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="ref_guide_dbsetup_dbsupport.html">Database Support</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_dbsetup_dbsupport_firebird.html">FirebirdDictionary Properties</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

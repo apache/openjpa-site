@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_dbsetup_lrs" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_dbsetup_builtin.html">3.5.1. Using the OpenJPA DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_thirdparty.html">3.5.2. Using a Third-Party DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_sqlconn.html">3.5.3. Runtime Access to DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport.html">3.5.4. Database Support</a>
+</li>
+<li><a href="ref_guide_dbsetup_isolation.html">3.5.5. Setting the Transaction Isolation</a>
+</li>
+<li><a href="ref_guide_dbsetup_sql92.html">3.5.6. Setting the SQL Join Syntax</a>
+</li>
+<li><a href="ref_guide_dbsetup_multidb.html">3.5.7. Accessing Multiple Databases</a>
+</li>
+<li><a href="ref_guide_dbsetup_retain.html">3.5.8. Configuring the Use of JDBC Connections</a>
+</li>
+<li><a href="ref_guide_dbsetup_stmtbatch.html">3.5.9. Statement Batching</a>
+</li>
+<li><a href="ref_guide_dbsetup_lrs.html"><span class="toc-current">3.5.10. Large Result Sets</span></a>
+</li>
+<li><a href="ref_guide_schema_def.html">3.5.11. Default Schema</a>
+</li>
+<li><a href="ref_guide_schema_info.html">3.5.12. Schema Reflection</a>
+</li>
+<li><a href="ref_guide_schema_schematool.html">3.5.13. Schema Tool</a>
+</li>
+<li><a href="ref_guide_schema_xml.html">3.5.14. XML Schema Format</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_dbsetup_lrs"><a class="link" href="#ref_guide_dbsetup_lrs">3.5.10. Large Result Sets</a></h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>By default, OpenJPA uses standard forward-only JDBC result sets, and completely instantiates the results of database queries on execution.
+When using a JDBC driver that supports version 2.0 or higher of the JDBC specification, however, you can configure OpenJPA to use scrolling result sets that may not bring all results into memory at once.
+You can also configure the number of result objects OpenJPA keeps references to, allowing you to traverse potentially enormous amounts of data without exhausting JVM memory.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can also configure on-demand loading for individual collection and map fields via large result set proxies.
+See <a href="ref_guide_pc_scos_proxy_lrs.html">Large Result Set Proxies</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Use the following properties to configure OpenJPA&#8217;s handling of result sets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="openjpa.FetchBatchSize.html"><code>openjpa.FetchBatchSize</code></a>: The number of objects to instantiate at once when traversing a result set. This number will be set as the fetch size on JDBC <code class="class">Statement</code> objects used to obtain result sets. It also factors in to the number of objects OpenJPA will maintain a hard reference to when traversing a query result.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The fetch size defaults to -1, meaning all results will be instantiated immediately on query execution.
+A value of 0 means to use the JDBC driver&#8217;s default batch size.
+Thus to enable large result set handling, you must set this property to 0 or to a positive number.
+* <a href="openjpa.jdbc.ResultSetType.html"><code>openjpa.jdbc.ResultSetType</code> </a>: The type of result set to use when executing database queries.
+This property accepts the following values, each of which corresponds exactly to the same-named <code class="class">java.sql.ResultSet</code> constant:
+<strong> <code>forward-only</code>: This is the default.
+</strong> <code>scroll-sensitive</code>
+** <code>scroll-insensitive</code></p>
+</div>
+<div class="paragraph">
+<p>Different JDBC drivers treat the different result set types differently.
+Not all drivers support all types.
+* <a href="openjpa.jdbc.FetchDirection.html"><code>openjpa.jdbc.FetchDirection</code></a>: The expected order in which you will access the query results.
+This property affects the type of data structure OpenJPA will use to hold the results, and is also given to the JDBC driver in case it can optimize for certain access patterns.
+This property accepts the following values, each of which corresponds exactly to the same-named <code class="class">java.sql.ResultSet</code> FETCH constant:
+<strong> <code>forward</code>: This is the default.
+</strong> <code>reverse</code>
+** <code>unknown</code></p>
+</div>
+<div class="paragraph">
+<p>Not all drivers support all fetch directions.
+* <a href="openjpa.jdbc.LRSSize.html"><code>openjpa.jdbc.LRSSize</code></a>: The strategy OpenJPA will use to determine the size of result sets.
+This property is <strong>only</strong> used if you change the fetch batch size from its default of -1, so that OpenJPA begins to use on-demand result loading.
+Available values are:
+<strong> <code>query</code>: This is the default. The first time you ask for the size of a query result, OpenJPA will perform a <code>SELECT COUNT(<strong>)</code>  query to determine the number of expected results. Note that depending on transaction status and settings, this can mean that the reported size is slightly different than the actual number of results available.
+</strong> <code>last</code>: If you have chosen a scrollable result set type, this setting will use the <code class="method">ResultSet.last</code> method to move to the last element in the result set and get its index. Unfortunately, some JDBC drivers will bring all results into memory in order to access the last one. Note that if you do not choose a scrollable result set type, then this will behave exactly like <code>unknown</code>. The default result set type is <code>forward-only</code>, so you must change the result set type in order for this property to have an effect.
+*</strong> <code>unknown</code>: Under this setting OpenJPA will return  <code>Integer.MAX_VALUE</code> as the size for any query result that uses on-demand loading.</p>
+</div>
+<div id="ref_guide_dbsetup_lrs_def" class="exampleblock">
+<div class="title">Example 63. Specifying Result Set Defaults</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.FetchBatchSize"</span> <span class="na">value=</span><span class="s">"20"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.jdbc.ResultSetType"</span> <span class="na">value=</span><span class="s">"scroll-insensitive"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.jdbc.FetchDirection"</span> <span class="na">value=</span><span class="s">"forward"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.jdbc.LRSSize"</span> <span class="na">value=</span><span class="s">"last"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Many <a href="ref_guide_runtime.html">OpenJPA runtime components</a> also have methods to configure these properties on a case-by-case basis through their fetch configuration.
+See <a href="ref_guide_runtime.html">Runtime Extensions</a>.</p>
+</div>
+<div id="ref_guide_dbsetup_lrs_runtime" class="exampleblock">
+<div class="title">Example 64. Specifying Result Set Behavior at Runtime</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.openjpa.persistence.jdbc.*</span><span class="o">;</span>
+
+<span class="o">...</span>
+
+<span class="nc">Query</span> <span class="n">q</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select m from Magazine m where m.title = 'JDJ'"</span><span class="o">);</span>
+<span class="nc">OpenJPAQuery</span> <span class="n">kq</span> <span class="o">=</span> <span class="nc">OpenJPAPersistence</span><span class="o">.</span><span class="na">cast</span><span class="o">(</span><span class="n">q</span><span class="o">);</span>
+<span class="nc">JDBCFetchPlan</span> <span class="n">fetch</span> <span class="o">=</span> <span class="o">(</span><span class="nc">JDBCFetchPlan</span><span class="o">)</span> <span class="n">kq</span><span class="o">.</span><span class="na">getFetchPlan</span><span class="o">();</span>
+<span class="n">fetch</span><span class="o">.</span><span class="na">setFetchBatchSize</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span>
+<span class="n">fetch</span><span class="o">.</span><span class="na">setResultSetType</span><span class="o">(</span><span class="nc">ResultSetType</span><span class="o">.</span><span class="na">SCROLL_INSENSITIVE</span><span class="o">);</span>
+<span class="n">fetch</span><span class="o">.</span><span class="na">setFetchDirection</span><span class="o">(</span><span class="nc">FetchDirection</span><span class="o">.</span><span class="na">FORWARD</span><span class="o">);</span>
+<span class="n">fetch</span><span class="o">.</span><span class="na">setLRSSizeAlgorithm</span><span class="o">(</span><span class="nc">LRSSizeAlgorithm</span><span class="o">.</span><span class="na">LAST</span><span class="o">);</span>
+<span class="nc">List</span> <span class="n">results</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="na">getResultList</span><span class="o">();</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_dbsetup_stmtbatch.html">Statement Batching</a> | ↑ Up: <a href="ref_guide_dbsetup.html">JDBC</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_schema_def.html">Default Schema</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

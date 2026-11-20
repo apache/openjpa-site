@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_overview_query_functions" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+<ul class="sectlevel3">
+<li><a href="jpa_query_api.html">2.10.1. JPQL API</a>
+<ul class="sectlevel4">
+<li><a href="jpa_overview_query_basic.html">Query Basics</a>
+</li>
+<li><a href="jpa_overview_query_relations.html">Relation Traversal</a>
+</li>
+<li><a href="jpa_overview_query_embeddables.html">Embeddable Traversal</a>
+</li>
+<li><a href="jpa_overview_join_fetch.html">Fetch Joins</a>
+</li>
+<li><a href="jpa_overview_query_functions.html"><span class="toc-current">JPQL Functions</span></a>
+</li>
+<li><a href="jpa_overview_query_inheritance.html">Polymorphic Queries</a>
+</li>
+<li><a href="jpa_overview_query_params.html">Query Parameters</a>
+</li>
+<li><a href="jpa_overview_query_hints.html">Query Hints</a>
+</li>
+<li><a href="jpa_overview_query_ordering.html">Ordering</a>
+</li>
+<li><a href="jpa_overview_query_aggregates.html">Aggregates</a>
+</li>
+<li><a href="jpa_overview_query_named.html">Named Queries</a>
+</li>
+<li><a href="jpa_overview_query_delete.html">Delete By Query</a>
+</li>
+<li><a href="jpa_overview_query_update.html">Update By Query</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_langref.html">2.10.2. JPQL Language Reference</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="jpa_overview_query_functions"><a class="link" href="#jpa_overview_query_functions">2.10.1.5. JPQL Functions</a></h5>
+<div class="paragraph">
+<p>As well as supporting direct field and relation comparisons, JPQL supports a pre-defined set of functions that you can apply.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>CONCAT(string1, string2)</code>: Concatenates two string fields or literals.
+For example:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">CONCAT</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">title</span><span class="p">,</span> <span class="s1">'s'</span><span class="p">)</span> <span class="o">=</span> <span class="s1">'JDJs'</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>SUBSTRING(string, startIndex, [length])</code>: Returns the part of the <code>string</code> argument starting at <code>startIndex</code> (1-based) and optionally ending at <code>length</code> characters past <code>startIndex</code>.
+If the <code>length</code> argument is not specified, the substring from the <code>startIndex</code> to the end of the <code>string</code> is returned.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="k">SUBSTRING</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">title</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="s1">'J'</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>TRIM([LEADING | TRAILING | BOTH] [character FROM] string</code>: Trims the specified character from either the beginning ( <code>LEADING</code>) end ( <code>TRAILING</code>) or both ( <code>BOTH</code>) of the string argument.
+If no trim character is specified, the space character will be trimmed.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="k">TRIM</span><span class="p">(</span><span class="k">BOTH</span> <span class="s1">'J'</span> <span class="k">FROM</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span><span class="p">)</span> <span class="o">=</span> <span class="s1">'D'</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>LOWER(string)</code>: Returns the lower-case of the specified string argument.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="k">LOWER</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">title</span><span class="p">)</span> <span class="o">=</span> <span class="s1">'jdj'</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>UPPER(string)</code>: Returns the upper-case of the specified string argument.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="k">UPPER</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">title</span><span class="p">)</span> <span class="o">=</span> <span class="s1">'JAVAPRO'</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>LENGTH(string)</code>: Returns the number of characters in the specified string argument.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="k">LENGTH</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">title</span><span class="p">)</span> <span class="o">=</span> <span class="mi">3</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>LOCATE(searchString, candidateString [, startIndex])</code>: Returns the first index of <code>searchString</code> in <code>candidateString</code>. Positions are 1-based. If the string is not found, returns 0.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">LOCATE</span><span class="p">(</span><span class="s1">'D'</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">title</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>ABS(number)</code>: Returns the absolute value of the argument.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="k">ABS</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">.</span><span class="mi">00</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>CEILING(number)</code>: Returns the smallest (closest to negative infinity) value that is greater than or equal to the argument and is equal to a mathematical integer.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">CEILING</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>EXP(number)</code>: Returns the Euler&#8217;s number <code>e</code> raised to the power of a value.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">EXP</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>FLOOR(number)</code>: Returns the largest (closest to positive infinity) value that is less than or equal to the argument and is equal to a mathematical integer.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">FLOOR</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>LN(number)</code>: Returns the natural logarithm (base <code>e</code>) of a value.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">LN</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>SQRT(number)</code>: Returns the square root of the argument.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">SQRT</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">00</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>MOD(number, divisor)</code>: Returns the modulo of <code>number</code>  and <code>divisor</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="k">MOD</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>POWER(base, exponent)</code>: Returns the value of the first argument raised to the power of the second argument.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">POWER</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>ROUND(number, precision)</code>: Rounds the number to given precision.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">ROUND</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>SIGN(number)</code>: Returns the sign (-1, 0, 1) of a number</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="n">x</span> <span class="k">WHERE</span> <span class="n">SIGN</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">price</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>INDEX(identification_variable)</code>: Returns an integer value corresponding to the position of its argument in an ordered list.
+The INDEX function can only be applied to identification variables denoting types for which an order column has been specified.</p>
+<div class="paragraph">
+<p>In the following example, <code>studentWaitlist</code> is a list of students for which an order column has been specified, the query returns the name of the first student on the waiting list of the course named 'Calculus':</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">w</span><span class="p">.</span><span class="n">name</span> <span class="k">FROM</span> <span class="n">Course</span> <span class="k">c</span> <span class="k">JOIN</span> <span class="k">c</span><span class="p">.</span><span class="n">studentWaitlist</span> <span class="n">w</span> <span class="k">WHERE</span> <span class="k">c</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="err">‘</span><span class="n">Calculus</span><span class="err">’</span> <span class="k">AND</span> <span class="k">INDEX</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>CURRENT_DATE</code>: Returns the current date.</p>
+</li>
+<li>
+<p><code>CURRENT_TIME</code>: Returns the current time.</p>
+</li>
+<li>
+<p><code>CURRENT_TIMESTAMP</code>: Returns the current timestamp.</p>
+</li>
+<li>
+<p><code>LOCAL DATE</code>: returns the value of current date on the database server.</p>
+</li>
+<li>
+<p><code>LOCAL TIME</code>: returns the value of current time on the database server.</p>
+</li>
+<li>
+<p><code>LOCAL DATETIME</code>: returns the value of current timestamp on the database server.</p>
+</li>
+<li>
+<p><code>EXTRACT</code>(date_field <code>FROM</code> date_expression) : extracts a given field  (year, quarter, month, week, day, hour, minute or second) from a datetime.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="k">c</span> <span class="k">FROM</span> <span class="n">Customer</span> <span class="k">AS</span> <span class="k">c</span> <span class="k">WHERE</span> <span class="k">EXTRACT</span><span class="p">(</span><span class="nb">YEAR</span> <span class="k">FROM</span> <span class="k">c</span><span class="p">.</span><span class="n">birthDate</span><span class="p">)</span>  <span class="p">(</span><span class="k">EXTRACT</span><span class="p">(</span><span class="nb">YEAR</span> <span class="k">FROM</span> <span class="k">CURRENT_DATE</span><span class="p">)</span> <span class="o">-</span> <span class="mi">13</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>EXTRACT</code>(date_part <code>FROM</code> date_expression) : extracts a date part  (date or time) from a datetime.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="k">c</span> <span class="k">FROM</span> <span class="n">Customer</span> <span class="k">AS</span> <span class="k">c</span> <span class="k">WHERE</span> <span class="k">EXTRACT</span><span class="p">(</span><span class="nb">DATE</span> <span class="k">FROM</span> <span class="k">c</span><span class="p">.</span><span class="n">createdTimestamp</span><span class="p">)</span>  <span class="p">{</span> <span class="n">d</span> <span class="s1">'1969-07-20'</span> <span class="p">}</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_overview_join_fetch.html">Fetch Joins</a> | ↑ Up: <a href="jpa_query_api.html">JPQL API</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_overview_query_inheritance.html">Polymorphic Queries</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

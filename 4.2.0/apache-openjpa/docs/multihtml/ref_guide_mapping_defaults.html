@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_mapping_defaults" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_mapping_mappingtool.html">3.8.1. Forward Mapping</a>
+</li>
+<li><a href="ref_guide_pc_reverse.html">3.8.2. Reverse Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_middle.html">3.8.3. Meet-in-the-Middle Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_defaults.html"><span class="toc-current">3.8.4. Mapping Defaults</span></a>
+</li>
+<li><a href="ref_guide_mapping_factory.html">3.8.5. Mapping Factory</a>
+</li>
+<li><a href="ref_guide_mapping_notes_nonstdjoins.html">3.8.6. Non-Standard Joins</a>
+</li>
+<li><a href="ref_guide_mapping_jpa.html">3.8.7. Additional JPA Mappings</a>
+</li>
+<li><a href="ref_guide_mapping_limits.html">3.8.8. Mapping Limitations</a>
+</li>
+<li><a href="ref_guide_mapping_ext.html">3.8.9. Mapping Extensions</a>
+</li>
+<li><a href="ref_guide_mapping_custom.html">3.8.10. Custom Mappings</a>
+</li>
+<li><a href="ref_guide_orphan.html">3.8.11. Orphaned Keys</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_mapping_defaults"><a class="link" href="#ref_guide_mapping_defaults">3.8.4. Mapping Defaults</a></h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>The previous sections showed how to use the mapping tool to generate default mappings.
+But how does the mapping tool know what mappings to generate? The answer lies in the <a href="../../apidocs/org/apache/openjpa/jdbc/meta/MappingDefaults.html">
+org.apache.openjpa.jdbc.meta.MappingDefaults</a> interface.
+OpenJPA uses an instance of this interface to decide how to name tables and columns, where to put foreign keys, and generally how to create a schema that matches your object model.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/important.svg" alt="Important">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>OpenJPA relies on foreign key constraint information at runtime to order SQL appropriately.
+Be sure to set your mapping defaults to reflect your existing database constraints, set the schema factory to reflect on the database for constraint information (see <a href="ref_guide_schema_info_factory.html">Schema Factory</a>), or use explicit foreign key mappings as described in <a href="ref_guide_mapping_jpa_fk.html">Foreign Keys</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <a href="openjpa.jdbc.MappingDefaults.html"><code>openjpa.jdbc.MappingDefaults</code></a> configuration property controls the <code class="class">MappingDefaults</code> interface implementation in use.
+This is a plugin property (see <a href="ref_guide_conf_plugins.html">Plugin Configuration</a>), so you can substitute your own implementation or configure the existing ones.
+OpenJPA includes the following standard implementations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>jpa</code>: Provides defaults in compliance with the JPA standard. This is an alias for the <a href="../../apidocs/org/apache/openjpa/persistence/jdbc/PersistenceMappingDefaults.html"> org.apache.openjpa.persistence.jdbc.PersistenceMappingDefaults </a> class. This class extends the <code class="class">MappingDefaultsImpl</code> class described below, so it has all the same properties (though with different default values), as well as:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>PrependFieldNameToJoinTableInverseJoinColumns</code>: Whether to prepend the owning field name to the names of inverse join columns in join tables. Defaults to true per the JPA specification. Set to false for compatibility with older OpenJPA versions which did not prepend the field name.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>default</code>: This is an alias for the <a href="../../apidocs/org/apache/openjpa/jdbc/meta/MappingDefaultsImpl.html"> org.apache.openjpa.jdbc.meta.MappingDefaultsImpl</a> class. This default implementation is highly configurable. It has the following properties:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>DefaultMissingInfo</code>: Whether to default missing column and table names rather than throw an exception. If set to false, full explicit mappings are required at runtime and when using mapping tool actions like <code>buildSchema</code> and <code>validate</code>.</p>
+</li>
+<li>
+<p><code>RemoveHungarianNotation</code>: Switches on/off removal of Hungarian notation when generating column names. Fields such as <code>mFoobar</code> and <code>strBarFoo</code> would become columns named <code>foobar</code> and <code>barfoo</code> respectively. OpenJPA will search for the first instance of a uppercase character in the field name and then truncate the column name to remove anything before it.</p>
+</li>
+<li>
+<p><code>BaseClassStrategy</code>: The default mapping strategy for base classes. You can specify a built-in strategy alias or the full class name of a <a href="ref_guide_mapping_custom_class.html">custom class strategy</a>. You can also use OpenJPA&#8217;s plugin format (see <a href="ref_guide_conf_plugins.html">Plugin Configuration</a>) to pass arguments to the strategy instance. See the <a href="../../apidocs/org/apache/openjpa/jdbc/meta/strats/package-summary.html"> org.apache.openjpa.jdbc.meta.strats</a> package for available strategies.</p>
+</li>
+<li>
+<p><code>SubclassStrategy</code>: The default mapping strategy for subclasses. You can specify a builtin strategy alias or the full class name of a <a href="ref_guide_mapping_custom_class.html">custom class strategy</a>. You can also use OpenJPA&#8217;s plugin format (see <a href="ref_guide_conf_plugins.html">Plugin Configuration</a>) to pass arguments to the strategy instance. Common strategies are <code>vertical</code> and <code>flat</code>, the default. See the <a href="../../apidocs/org/apache/openjpa/jdbc/meta/strats/package-summary.html"> org.apache.openjpa.jdbc.meta.strats</a> package for all available strategies.</p>
+</li>
+<li>
+<p><code>VersionStrategy</code>: The default version strategy for classes without a version field. You can specify a builtin strategy alias or the full class name of a <a href="ref_guide_mapping_custom_versdiscrim.html">custom version strategy</a>. You can also use OpenJPA&#8217;s plugin format (see <a href="ref_guide_conf_plugins.html">Plugin Configuration</a>) to pass arguments to the strategy instance. Common strategies are <code>none</code>, <code>state-comparison</code>, <code>timestamp</code>, and <code>version-number</code>, the default. See the <a href="../../apidocs/org/apache/openjpa/jdbc/meta/strats/package-summary.html"> org.apache.openjpa.jdbc.meta.strats</a> package for all available strategies.</p>
+</li>
+<li>
+<p><code>DiscriminatorStrategy</code>: The default discriminator strategy when no discriminator value is given. You can specify a builtin strategy alias or the full class name of a <a href="ref_guide_mapping_custom_versdiscrim.html">custom discriminator strategy</a>. You can also use OpenJPA&#8217;s plugin format (see <a href="ref_guide_conf_plugins.html">Plugin Configuration</a>) to pass arguments to the strategy instance. Common strategies are <code>final</code> for a base class without subclasses, <code>none</code> to use joins to subclass tables rather than a discriminator column, and <code>class-name</code>, the default. See the <a href="../../apidocs/org/apache/openjpa/jdbc/meta/strats/package-summary.html"> org.apache.openjpa.jdbc.meta.strats</a> package for all available strategies.</p>
+</li>
+<li>
+<p><code>FieldStrategies</code>: This property associates field types with custom strategies. The format of this property is similar to that of plugin strings (see <a href="ref_guide_conf_plugins.html">Plugin Configuration</a> ), without the class name. It is a comma-separated list of key/value pairs, where each key is a possible field type, and each value is itself a plugin string describing the strategy for that type. We present an example below. See <a href="ref_guide_mapping_custom_field.html">Custom Field Mapping</a> for information on custom field strategies.</p>
+</li>
+<li>
+<p><code>ForeignKeyDeleteAction</code>: The default delete action of foreign keys representing relations to other objects. Recognized values include <code>restrict</code>, <code>cascade</code>, <code>null</code> , <code>default</code>. These values correspond exactly to the standard database foreign key actions of the same names.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The value <code>none</code> tells OpenJPA not to create database foreign keys on relation columns.
+This is the default.
+<strong> <code>JoinForeignKeyDeleteAction</code>: The default delete action of foreign keys that join secondary, collection, map, or subclass tables to the primary table. Accepts the same values as the  <code>ForeignKeyDeleteAction</code> property above.
+</strong> <code>DeferConstraints</code>: Whether to use deferred database constraints if possible. Defaults to false.
+<strong> <code>IndexLogicalForeignKeys</code>: Boolean property controlling whether to create indexes on logical foreign keys. Logical foreign keys are columns that represent a link between tables, but have been configured through the <code>ForeignKey</code> properties above not to use a physical database foreign key. Defaults to true.
+</strong> <code>IndexPhysicalForeignKeys</code>: Boolean property controlling whether to create explicit indexes for real physical foreign keys depending on the corresponding <code>DBDictionary</code> attribute. Set this to</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> if you want to make sure that foreign keys are indexed.
+Defaults to false for backward compatibility reasons.
+** ``DataStoreIdColumnName``: The default name of datastore identity columns.
+** ``DiscriminatorColumnName``: The default name of discriminator columns.
+** ``IndexDiscriminator``: Whether to index the discriminator column. Defaults to true.
+** ``VersionColumnName``: The default name of version columns.
+** ``IndexVersion``: Whether to index the version column. Defaults to false.
+** ``AddNullIndicator``: Whether to create a synthetic null indicator column for embedded mappings. The null indicator column allows OpenJPA to distinguish between a null embedded object and one with default values for all persistent fields.
+** ``NullIndicatorColumnName``: The default name of synthetic null indicator columns for embedded objects.
+** ``OrderLists``: Whether to create a database ordering column for maintaining the order of persistent lists and arrays.
+** ``OrderColumnName``: The default name of collection and array ordering columns.
+** ``StoreEnumOrdinal``: Set to true to store enum fields as numeric ordinal values in the database. The default is to store the enum value name as a string, which is more robust if the Java enum declaration might be rearranged.
+** ``StoreUnmappedObjectIdString``: Set to true to store the stringified identity of related objects when the declared related type is unmapped. By default, OpenJPA stores the related object's primary key value(s). However, this breaks down if different subclasses of the related type use incompatible primary key structures. In that case, stringifying the identity value is the better choice.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The example below turns on foreign key generation during schema creation and associates the <code class="class">org.mag.data.InfoStruct</code> field type with the custom <code class="class">org.mag.mapping.InfoStructHandler</code> value handler.</p>
+</div>
+<div id="ref_guide_mapping_defaults_conf" class="exampleblock">
+<div class="title">Example 113. Configuring Mapping Defaults</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.jdbc.MappingDefaults"</span>
+    <span class="na">value=</span><span class="s">"ForeignKeyDeleteAction=restrict,
+    FieldStrategies='org.mag.data.InfoStruct=org.mag.mapping.InfoStructHandler'"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_mapping_middle.html">Meet-in-the-Middle Mapping</a> | ↑ Up: <a href="ref_guide_mapping.html">Mapping</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_mapping_factory.html">Mapping Factory</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

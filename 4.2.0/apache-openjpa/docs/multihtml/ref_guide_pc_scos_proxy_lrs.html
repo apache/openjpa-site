@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_pc_scos_proxy_lrs" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_pc_pcclasses.html">3.6.1. Persistent Class List</a>
+</li>
+<li><a href="ref_guide_pc_enhance.html">3.6.2. Enhancement</a>
+</li>
+<li><a href="ref_guide_pc_interfaces.html">3.6.3. Managed Interfaces</a>
+</li>
+<li><a href="ref_guide_pc_oid.html">3.6.4. Object Identity</a>
+</li>
+<li><a href="ref_guide_inverses.html">3.6.5. Managed Inverses</a>
+</li>
+<li><a href="ref_guide_pc_scos.html">3.6.6. Persistent Fields</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_pc_scos_restore.html">Restoring State</a>
+</li>
+<li><a href="ref_guide_pc_scos_order.html">Typing and Ordering</a>
+</li>
+<li><a href="ref_guide_pc_calendar_timezone.html">Calendar Fields and TimeZones</a>
+</li>
+<li><a href="ref_guide_pc_scos_proxy.html">Proxies</a>
+<ul class="sectlevel5">
+<li><a href="ref_guide_pc_scos_proxy_smart.html">Smart Proxies</a>
+</li>
+<li><a href="ref_guide_pc_scos_proxy_lrs.html"><span class="toc-current">Large Result Set Proxies</span></a>
+</li>
+<li><a href="ref_guide_pc_scos_proxy_custom.html">Custom Proxies</a>
+</li>
+<li><a href="ref_guide_pc_scos_proxy_serial.html">Serialization</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_pc_extern.html">Externalization</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_fetch.html">3.6.7. Fetch Groups</a>
+</li>
+<li><a href="ref_guide_perfpack_eager.html">3.6.8. Eager Fetching</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect5">
+<h6 id="ref_guide_pc_scos_proxy_lrs"><a class="link" href="#ref_guide_pc_scos_proxy_lrs">3.6.6.4.2. Large Result Set Proxies</a></h6>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>Under standard ORM behavior, traversing a persistent collection or map field brings the entire contents of that field into memory.
+Some persistent fields, however, might represent huge amounts of data, to the point that attempting to fully instantiate them can overwhelm the JVM or seriously degrade performance.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA uses special proxy types to represent these "large result set" fields.
+OpenJPA&#8217;s large result set proxies do not cache any data in memory.
+Instead, each operation on the proxy offloads the work to the database and returns the proper result.
+For example, the <code class="method">contains</code> method of a large result set collection will perform a  <code>SELECT COUNT(*)</code> query with the proper <code>WHERE</code> conditions to find out if the given element exists in the database&#8217;s record of the collection.
+Similarly, each time you obtain an iterator OpenJPA performs the proper query using the current <a href="ref_guide_dbsetup_lrs.html">large result set settings</a>, as discussed in the <a href="ref_guide_dbsetup.html">JDBC</a> chapter.
+As you invoke <code class="method">Iterator.next</code>, OpenJPA instantiates the result objects on-demand.</p>
+</div>
+<div class="paragraph">
+<p>You can free the resources used by a large result set iterator by passing it to the static <a href="ref_guide_runtime_openjpapersistence.html"><code class="method">OpenJPAPersistence.close</code></a> method.</p>
+</div>
+<div id="ref_guide_pc_scos_proxy_lrs_itr" class="exampleblock">
+<div class="title">Example 85. Using a Large Result Set Iterator</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">import org.apache.openjpa.persistence.<span class="k">*</span><span class="p">;</span>
+
+...
+
+Collection employees <span class="o">=</span> company.getEmployees<span class="o">()</span><span class="p">;</span> // employees is a lrs collection
+Iterator itr <span class="o">=</span> employees.iterator<span class="o">()</span><span class="p">;</span>
+<span class="k">while</span> <span class="o">(</span>itr.hasNext<span class="o">())</span>
+    process<span class="o">((</span>Employee<span class="o">)</span> itr.next<span class="o">())</span><span class="p">;</span>
+OpenJPAPersistence.close<span class="o">(</span>itr<span class="o">)</span><span class="p">;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also add and remove from large result set proxies, just as with standard fields.
+OpenJPA keeps a record of all changes to the elements of the proxy, which it uses to make sure the proper results are always returned from collection and map methods, and to update the field&#8217;s database record on commit.</p>
+</div>
+<div class="paragraph">
+<p>In order to use large result set proxies in JPA, add the <a href="../../apidocs/org/apache/openjpa/persistence/LRS.html">
+org.apache.openjpa.persistence.LRS</a> annotation to the persistent field.</p>
+</div>
+<div class="paragraph">
+<p>The following restrictions apply to large result set fields:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The field must be declared as either a <code class="class">java.util.Collection</code> or <code class="class">java.util.Map</code>. It cannot be declared as any other type, including any sub-interface of collection or map, or any concrete collection or map class.</p>
+</li>
+<li>
+<p>The field cannot have an externalizer (see <a href="ref_guide_pc_extern.html">Externalization</a>).</p>
+</li>
+<li>
+<p>Because they rely on their owning object for context, large result set proxies cannot be transferred from one persistent field to another. The following code would result in an error on commit:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">Collection employees <span class="o">=</span> company.getEmployees<span class="o">()</span>  // employees is a lrs collection
+company.setEmployees<span class="o">(</span>null<span class="o">)</span><span class="p">;</span>
+anotherCompany.setEmployees<span class="o">(</span>employees<span class="o">)</span><span class="p">;</span></code></pre>
+</div>
+</div>
+<div id="ref_guide_pc_scos_proxy_lrs_extension" class="exampleblock">
+<div class="title">Example 86. Marking a Large Result Set Field</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">import org.apache.openjpa.persistence.<span class="k">*</span><span class="p">;</span>
+
+@Entity
+public class Company <span class="o">{</span>
+
+    @ManyToMany
+    @LRS private Collection&lt;Employee&gt; employees<span class="p">;</span>
+
+    ...
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_pc_scos_proxy_smart.html">Smart Proxies</a> | ↑ Up: <a href="ref_guide_pc_scos_proxy.html">Proxies</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_pc_scos_proxy_custom.html">Custom Proxies</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

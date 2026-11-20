@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_langref_path" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+<ul class="sectlevel3">
+<li><a href="jpa_query_api.html">2.10.1. JPQL API</a>
+</li>
+<li><a href="jpa_langref.html">2.10.2. JPQL Language Reference</a>
+<ul class="sectlevel4">
+<li><a href="jpa_langref_stmnttypes.html">JPQL Statement Types</a>
+</li>
+<li><a href="jpa_langref_schematypes.html">JPQL Abstract Schema Types and Query Domains</a>
+</li>
+<li><a href="jpa_langref_fromclause.html">JPQL FROM Clause and Navigational Declarations</a>
+<ul class="sectlevel5">
+<li><a href="jpa_langref_from_identifiers.html">JPQL FROM Identifiers</a>
+</li>
+<li><a href="jpa_langref_from_vars.html">JPQL Identification Variables</a>
+</li>
+<li><a href="jpa_langref_range.html">JPQL Range Declarations</a>
+</li>
+<li><a href="jpa_langref_path.html"><span class="toc-current">JPQL Path Expressions</span></a>
+</li>
+<li><a href="jpa_langref_Joins.html">JPQL Joins</a>
+</li>
+<li><a href="jpa_langref_inner_joins.html">JPQL Inner Joins (Relationship Joins)</a>
+</li>
+<li><a href="jpa_langref_outer_joins.html">JPQL Outer Joins</a>
+</li>
+<li><a href="jpa_langref_fetch_joins.html">JPQL Fetch Joins</a>
+</li>
+<li><a href="jpa_langref_collection_dec.html">JPQL Collection Member Declarations</a>
+</li>
+<li><a href="jpa_langref_from_clause_and_sql.html">JPQL FROM Clause and SQL</a>
+</li>
+<li><a href="jpa_langref_polymorph.html">JPQL Polymorphism</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_langref_where.html">JPQL WHERE Clause</a>
+</li>
+<li><a href="jpa_langref_cond.html">JPQL Conditional Expressions</a>
+</li>
+<li><a href="jpa_langref_scalar_expressions.html">JPQL Scalar Expressions</a>
+</li>
+<li><a href="jpa_langref_group.html">JPQL GROUP BY, HAVING</a>
+</li>
+<li><a href="jpa_langref_select_clause.html">JPQL SELECT Clause</a>
+</li>
+<li><a href="jpa_langref_orderby.html">JPQL ORDER BY Clause</a>
+</li>
+<li><a href="jpa_langref_bulk_ops.html">JPQL Bulk Update and Delete</a>
+</li>
+<li><a href="jpa_langref_null_values.html">JPQL Null Values</a>
+</li>
+<li><a href="jpa_langref_equality.html">JPQL Equality and Comparison Semantics</a>
+</li>
+<li><a href="jpa_langref_bnf.html">JPQL BNF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect5">
+<h6 id="jpa_langref_path"><a class="link" href="#jpa_langref_path">2.10.2.3.4. JPQL Path Expressions</a></h6>
+<div class="paragraph">
+<p>An identification variable followed by the navigation operator (.) and a state-field or association-field is a path expression.
+The type of the path expression is the type computed as the result of navigation; that is, the type of the state-field or association-field to which the expression navigates.</p>
+</div>
+<div class="paragraph">
+<p>An identification variable qualified by the <code>KEY</code>, <code>VALUE</code>, or <code>ENTRY</code> operator is a path expression.
+The <code>KEY</code>, <code>VALUE</code>, and <code>ENTRY</code> operators may only be applied to identification variables that correspond to map-valued associations or map-valued element collections.
+The type of the path expression is the type computed as the result of the operation; that is, the abstract schema type of the field that is the value of the <code>KEY</code>, <code>VALUE</code>, or <code>ENTRY</code> operator (the map key, map value, or map entry respectively).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Note that use of <code>VALUE</code> is optional, as an identification variable referring to an association of type <code>java.util.Map</code> is of the abstract schema type of the map value.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The syntax for qualified identification variables is as follows.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>qualified_identification_variable :: = KEY(identification_variable) | VALUE(identification_variable) | ENTRY(identification_variable)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A path expression using the <code>KEY</code> or <code>VALUE</code> operator may be further composed.
+A path expression using the <code>ENTRY</code> operator is terminal.
+It cannot be further composed and can only appear in the <code>SELECT</code> list of a query.</p>
+</div>
+<div class="paragraph">
+<p>In the following query, <code>photos</code> is a map from photo label to filename.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">i</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">VALUE</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">Item</span> <span class="n">i</span> <span class="k">JOIN</span> <span class="n">i</span><span class="p">.</span><span class="n">photos</span> <span class="n">p</span>
+<span class="k">WHERE</span> <span class="k">KEY</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">LIKE</span> <span class="err">‘</span><span class="n">egret</span><span class="err">’</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the above query the identification variable <code>p</code> designates an abstract schema type corresponding to the map value.
+The results of <code>VALUE(p)</code> and <code>KEY(p)</code> are the map value and the map key associated with p, respectively.
+The following query is equivalent:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">i</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span>
+<span class="k">FROM</span> <span class="n">Item</span> <span class="n">i</span> <span class="k">JOIN</span> <span class="n">i</span><span class="p">.</span><span class="n">photos</span> <span class="n">p</span>
+<span class="k">WHERE</span> <span class="k">KEY</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">LIKE</span> <span class="err">‘</span><span class="n">egret</span><span class="err">’</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Depending on navigability, a path expression that leads to a association-field or to a field whose type is an embeddable class may be further composed.
+Path expressions can be composed from other path expressions if the original path expression evaluates to a single-valued type (not a collection) corresponding to a association-field.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, <code>contactInfo</code> denotes an embeddable class consisting of an address and set of phones. <code>Phone</code> is an entity.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">p</span><span class="p">.</span><span class="n">vendor</span>
+<span class="k">FROM</span> <span class="n">Employee</span> <span class="n">e</span> <span class="k">JOIN</span> <span class="n">e</span><span class="p">.</span><span class="n">contactInfo</span><span class="p">.</span><span class="n">phones</span> <span class="n">p</span>
+<span class="k">WHERE</span> <span class="n">e</span><span class="p">.</span><span class="n">contactInfo</span><span class="p">.</span><span class="n">address</span><span class="p">.</span><span class="n">zipcode</span> <span class="o">=</span> <span class="s1">'95054'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Path expression navigability is composed using "inner join" semantics.
+That is, if the value of a non-terminal association-field in the path expression is null, the path is considered to have no value, and does not participate in the determination of the result.</p>
+</div>
+<div class="paragraph">
+<p>The following query is equivalent to the query above:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">p</span><span class="p">.</span><span class="n">vendor</span>
+<span class="k">FROM</span> <span class="n">Employee</span> <span class="n">e</span> <span class="k">JOIN</span> <span class="n">e</span><span class="p">.</span><span class="n">contactInfo</span> <span class="k">c</span> <span class="k">JOIN</span> <span class="k">c</span><span class="p">.</span><span class="n">phones</span> <span class="n">p</span>
+<span class="k">WHERE</span> <span class="n">e</span><span class="p">.</span><span class="n">contactInfo</span><span class="p">.</span><span class="n">address</span><span class="p">.</span><span class="n">zipcode</span> <span class="o">=</span> <span class="s1">'95054'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The syntax for single-valued path expressions and collection valued path expressions is as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>single_valued_path_expression ::= qualified_identification_variable | state_field_path_expression | single_valued_object_path_expression</p>
+</li>
+<li>
+<p>state_field_path_expression ::= general_identification_variable.{single_valued_object_field.}*state_field</p>
+</li>
+<li>
+<p>single_valued_object_path_expression ::= general_identification_variable.{single_valued_object_field.}*single_valued_object_field</p>
+</li>
+<li>
+<p>collection_valued_path_expression ::= general_identification_variable.{single_valued_object_field.}*collection_valued_field</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A <code>single_valued_object_field</code> is designated by the name of an association-field in a one-to-one or many-to-one relationship or a field of embeddable class type.
+The type of a <code>single_valued_object_field</code> is the abstract schema type of the related entity or embeddable class.</p>
+</div>
+<div class="paragraph">
+<p>A <code>state_field</code> is designated by the name of an entity or embeddable class state field that corresponds to a basic type.</p>
+</div>
+<div class="paragraph">
+<p>A collection_valued_field is designated by the name of an association-field in a one-to-many or a many-to-many relationship or by the name of an element collection field.
+The type of a <code>collection_valued_field</code> is a collection of values of the abstract schema type of the related entity or element type.</p>
+</div>
+<div class="paragraph">
+<p>An identification variable used in a <code>single_valued_object_path_expression</code> or in a <code>collection_valued_path_expression</code> may be an unqualified identification variable or an identification variable to which the KEY or VALUE function has been applied.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>general_identification_variable ::= identification_variable | KEY(identification_variable) | VALUE(identification_variable)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is syntactically illegal to compose a path expression from a path expression that evaluates to a collection.
+For example, if <code>mag</code>  designates <code>Magazine</code>, the path expression
+<code>mag.articles.author</code> is illegal since navigation to authors results in a collection.
+This case should produce an error when the query string is verified.
+To handle such a navigation, an identification variable must be declared in the <code>FROM</code> clause to range over the elements of the <code>articles</code> collection.
+Another path expression must be used to navigate over each such element in the <code>WHERE</code> clause of the query, as in the following query which returns all authors that have any articles in any magazines:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">art</span><span class="p">.</span><span class="n">author</span> <span class="k">FROM</span> <span class="n">Magazine</span> <span class="k">AS</span> <span class="n">mag</span><span class="p">,</span> <span class="k">IN</span><span class="p">(</span><span class="n">mag</span><span class="p">.</span><span class="n">articles</span><span class="p">)</span> <span class="n">art</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is illegal to use a <code>collection_valued_path_expression</code> other than in the <code>FROM</code> clause of a query except in an <code>empty_collection_comparison_expression</code>, in a <code>collection_member_expression</code>, or as an argument to the <code>SIZE</code> operator.
+See <a href="jpa_langref_empty_comp.html">JPQL Empty Collection Comparison Expressions</a>, <a href="jpa_langref_collection_member.html">JPQL Collection Member Expressions</a>, and <a href="jpa_langref_arithmetic.html">JPQL Arithmetic Functions</a>.</p>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_langref_range.html">JPQL Range Declarations</a> | ↑ Up: <a href="jpa_langref_fromclause.html">JPQL FROM Clause and Navigational Declarations</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_langref_Joins.html">JPQL Joins</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

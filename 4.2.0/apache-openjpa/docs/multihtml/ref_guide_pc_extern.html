@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_pc_extern" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_pc_pcclasses.html">3.6.1. Persistent Class List</a>
+</li>
+<li><a href="ref_guide_pc_enhance.html">3.6.2. Enhancement</a>
+</li>
+<li><a href="ref_guide_pc_interfaces.html">3.6.3. Managed Interfaces</a>
+</li>
+<li><a href="ref_guide_pc_oid.html">3.6.4. Object Identity</a>
+</li>
+<li><a href="ref_guide_inverses.html">3.6.5. Managed Inverses</a>
+</li>
+<li><a href="ref_guide_pc_scos.html">3.6.6. Persistent Fields</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_pc_scos_restore.html">Restoring State</a>
+</li>
+<li><a href="ref_guide_pc_scos_order.html">Typing and Ordering</a>
+</li>
+<li><a href="ref_guide_pc_calendar_timezone.html">Calendar Fields and TimeZones</a>
+</li>
+<li><a href="ref_guide_pc_scos_proxy.html">Proxies</a>
+</li>
+<li><a href="ref_guide_pc_extern.html"><span class="toc-current">Externalization</span></a>
+<ul class="sectlevel5">
+<li><a href="ref_guide_pc_extern_values.html">External Values</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_fetch.html">3.6.7. Fetch Groups</a>
+</li>
+<li><a href="ref_guide_perfpack_eager.html">3.6.8. Eager Fetching</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="ref_guide_pc_extern"><a class="link" href="#ref_guide_pc_extern">3.6.6.5. Externalization</a></h5>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA offers the ability to write <a href="ref_guide_mapping_custom_field.html">custom field mappings</a> in order to have complete control over the mechanism with which fields are stored, queried, and loaded from the datastore.
+Often, however, a custom mapping is overkill.
+There is often a simple transformation from a Java field value to its database representation.
+Thus, OpenJPA provides the externalization service.
+Externalization allows you to specify methods that will externalize a field value to its database equivalent on store and then rebuild the value from its externalized form on load.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Fields of embeddable classes used for <code>@EmbeddedId</code> values in JPA cannot have externalizers.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The OpenJPA <a href="../../apidocs/org/apache/openjpa/persistence/Externalizer.html">
+org.apache.openjpa.persistence.Externalizer</a> annotation sets the name of a method that will be invoked to convert the field into its external form for database storage.
+You can specify either the name of a non-static method, which will be invoked on the field value, or a static method, which will be invoked with the field value as a parameter.
+Each method can also take an optional <a href="../../apidocs/org/apache/openjpa/kernel/StoreContext.html">
+StoreContext</a> parameter for access to a persistence context.
+The return value of the method is the field&#8217;s external form.
+By default, OpenJPA assumes that all named methods belong to the field value&#8217;s class (or its superclasses). You can, however, specify static methods of other classes using the format <code>&lt;class-name&gt;.&lt;method-name&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given a field of type <code class="class">CustomType</code> that externalizes to a string, the table below demonstrates several possible externalizer methods and their corresponding metadata extensions.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Externalizer Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method</th>
+<th class="tableblock halign-left valign-top">Extension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String CustomType.toString()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Externalizer("toString")</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String CustomType.toString(StoreContext ctx)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Externalizer("toString")</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public static String AnyClass.toString(CustomType ct)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Externalizer("AnyClass.toString")</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public static String AnyClass.toString(CustomType ct, StoreContext ctx)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Externalizer("AnyClass.toString")</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The OpenJPA <a href="../../apidocs/org/apache/openjpa/persistence/Factory.html">
+org.apache.openjpa.persistence.Factory</a> annotation contains the name of a method that will be invoked to instantiate the field from the external form stored in the database.
+Specify a static method name.
+The method will be invoked with the externalized value and must return an instance of the field type.
+The method can also take an optional <a href="../../apidocs/org/apache/openjpa/kernel/StoreContext.html">
+StoreContext</a> parameter for access to a persistence context.
+If a factory is not specified, OpenJPA will use the constructor of the field type that takes a single argument of the external type, or will throw an exception if no constructor with that signature exists.</p>
+</div>
+<div class="paragraph">
+<p>Given a field of type <code class="class">CustomType</code> that externalizes to a string, the table below demonstrates several possible factory methods and their corresponding metadata extensions.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Factory Options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method</th>
+<th class="tableblock halign-left valign-top">Extension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public CustomType(String str)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public static CustomType CustomType.fromString(String str)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Factory("fromString")</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public static CustomType CustomType.fromString(String str, StoreContext ctx)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Factory("fromString")</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public static CustomType AnyClass.fromString(String str)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Factory("AnyClass.fromString")</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public static CustomType AnyClass.fromString(String str, StoreContext ctx)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Factory("AnyClass.fromString")</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If your externalized field is not a standard persistent type, you must explicitly mark it persistent.
+In OpenJPA, you can force a persistent field by annotating it with <a href="ref_guide_meta_jpa_persistent.html"><code class="class">org.apache.openjpa.persistence.Persistent</code></a> annotation.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If your custom field type is mutable and is not a standard collection, map, or date class, OpenJPA will not be able to detect changes to the field.
+You must mark the field dirty manually, or create a custom field proxy.
+See <a href="../../apidocs/org/apache/openjpa/persistence/OpenJPAEntityManager.html">
+OpenJPAEntityManager.dirty</a> for how to mark a field dirty manually in JPA.
+See <a href="ref_guide_pc_scos_proxy.html">Proxies</a> for a discussion of proxies.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You can externalize a field to virtually any value that is supported by OpenJPA&#8217;s field mappings (embedded relations are the exception; you must declare your field to be a persistence-capable type in order to embed it). This means that a field can externalize to something as simple as a primitive, something as complex as a collection or map of entities, or anything in between.
+If you do choose to externalize to a collection or map, OpenJPA recognizes a family of metadata extensions for specifying type information for the externalized form of your fields - see <a href="type.html">Type</a>.
+If the external form of your field is an entity object or contains entities, OpenJPA will correctly include the objects in its persistence-by-reachability algorithms and its delete-dependent algorithms.</p>
+</div>
+<div class="paragraph">
+<p>The example below demonstrates a few forms of externalization.</p>
+</div>
+<div id="ref_guide_pc_externex" class="exampleblock">
+<div class="title">Example 88. Using Externalization</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">import org.apache.openjpa.persistence.<span class="k">*</span><span class="p">;</span>
+
+@Entity
+public class Magazine <span class="o">{</span>
+
+    // use Class.getName and Class.forName to go to/from strings
+    @Persistent
+    @Externalizer<span class="o">(</span><span class="s2">"getName"</span><span class="o">)</span>
+    @Factory<span class="o">(</span><span class="s2">"forName"</span><span class="o">)</span>
+    private Class cls<span class="p">;</span>
+
+    // use URL.getExternalForm <span class="k">for </span>externalization. no factory<span class="p">;</span>
+    // we can rely on the URL string constructor
+    @Persistent
+    @Externalizer<span class="o">(</span><span class="s2">"toExternalForm"</span><span class="o">)</span>
+    private URL url<span class="p">;</span>
+
+    // use our custom methods
+    @Persistent
+    @Externalizer<span class="o">(</span><span class="s2">"Magazine.authorsFromCustomType"</span><span class="o">)</span>
+    @Factory<span class="o">(</span><span class="s2">"Magazine.authorsToCustomType"</span><span class="o">)</span>
+    @ElementType<span class="o">(</span>Author.class<span class="o">)</span>
+    private CustomType customType<span class="p">;</span>
+
+    public static Collection authorsFromCustomType<span class="o">(</span>CustomType customType<span class="o">)</span> <span class="o">{</span>
+        ... logic to pack custom <span class="nb">type </span>into a list of authors ...
+    <span class="o">}</span>
+
+    public static CustomType authorsToCustomType<span class="o">(</span>Collection authors<span class="o">)</span> <span class="o">{</span>
+        ... logic to create custom <span class="nb">type </span>from a collection of authors ...
+    <span class="o">}</span>
+
+    ...
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You can query externalized fields using parameters.
+Pass in a value of the field type when executing the query.
+OpenJPA will externalize the parameter using the externalizer method named in your metadata, and compare the externalized parameter with the value stored in the database.
+As a shortcut, OpenJPA also allows you to use parameters or literals of the field&#8217;s externalized type in queries, as demonstrated in the example below.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Currently, queries are limited to fields that externalize to a primitive, primitive wrapper, string, or date types, due to constraints on query syntax.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="ref_guide_pc_extern_queryex" class="exampleblock">
+<div class="title">Example 89. Querying Externalization Fields</div>
+<div class="content">
+<div class="paragraph">
+<p>Assume the <code class="class">Magazine</code> class has the same fields as in the previous example.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">// you can query using parameters
+Query q <span class="o">=</span> em.createQuery<span class="o">(</span><span class="s2">"select m from Magazine m where m.url = :u"</span><span class="o">)</span><span class="p">;</span>
+q.setParameter<span class="o">(</span><span class="s2">"u"</span>, new URL<span class="o">(</span><span class="s2">"http://www.solarmetric.com"</span><span class="o">))</span><span class="p">;</span>
+List results <span class="o">=</span> q.getResultList<span class="o">()</span><span class="p">;</span>
+
+// or as a shortcut, you can use the externalized form directly
+q <span class="o">=</span> em.createQuery<span class="o">(</span><span class="s2">"select m from Magazine m where m.url = 'http://www.solarmetric.com'"</span><span class="o">)</span><span class="p">;</span>
+results <span class="o">=</span> q.getResultList<span class="o">()</span><span class="p">;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="ref_guide_pc_extern_values.html">External Values</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_pc_scos_proxy_serial.html">Serialization</a> | ↑ Up: <a href="ref_guide_pc_scos.html">Persistent Fields</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_pc_extern_values.html">External Values</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_langref_datetime" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+<ul class="sectlevel2">
+<li><a href="jpa_overview_intro.html">2.1. Introduction</a>
+</li>
+<li><a href="jpa_overview_why.html">2.2. Why JPA?</a>
+</li>
+<li><a href="jpa_overview_arch.html">2.3. Java Persistence API Architecture</a>
+</li>
+<li><a href="jpa_overview_pc.html">2.4. Entity</a>
+</li>
+<li><a href="jpa_overview_meta.html">2.5. Metadata</a>
+</li>
+<li><a href="jpa_overview_persistence.html">2.6. Persistence</a>
+</li>
+<li><a href="jpa_overview_emfactory.html">2.7. EntityManagerFactory</a>
+</li>
+<li><a href="jpa_overview_em.html">2.8. EntityManager</a>
+</li>
+<li><a href="jpa_overview_trans.html">2.9. Transaction</a>
+</li>
+<li><a href="jpa_overview_query.html">2.10. JPA Query</a>
+<ul class="sectlevel3">
+<li><a href="jpa_query_api.html">2.10.1. JPQL API</a>
+</li>
+<li><a href="jpa_langref.html">2.10.2. JPQL Language Reference</a>
+<ul class="sectlevel4">
+<li><a href="jpa_langref_stmnttypes.html">JPQL Statement Types</a>
+</li>
+<li><a href="jpa_langref_schematypes.html">JPQL Abstract Schema Types and Query Domains</a>
+</li>
+<li><a href="jpa_langref_fromclause.html">JPQL FROM Clause and Navigational Declarations</a>
+</li>
+<li><a href="jpa_langref_where.html">JPQL WHERE Clause</a>
+</li>
+<li><a href="jpa_langref_cond.html">JPQL Conditional Expressions</a>
+</li>
+<li><a href="jpa_langref_scalar_expressions.html">JPQL Scalar Expressions</a>
+<ul class="sectlevel5">
+<li><a href="jpa_langref_math_expressions.html">Arithmetic Expressions</a>
+</li>
+<li><a href="jpa_langref_functional_expressions.html">String, Arithmetic, and Datetime Functional Expressions</a>
+</li>
+<li><a href="jpa_langref_string_fun.html">JPQL String Functions</a>
+</li>
+<li><a href="jpa_langref_arithmetic.html">JPQL Arithmetic Functions</a>
+</li>
+<li><a href="jpa_langref_datetime.html"><span class="toc-current">JPQL Datetime Functions</span></a>
+</li>
+<li><a href="jpa_langref_typecasts_expressions.html">Typecasts</a>
+</li>
+<li><a href="jpa_langref_case_expressions.html">Case Expressions</a>
+</li>
+<li><a href="jpa_langref_entity_type_expressions.html">Entity Type Expressions</a>
+</li>
+</ul>
+</li>
+<li><a href="jpa_langref_group.html">JPQL GROUP BY, HAVING</a>
+</li>
+<li><a href="jpa_langref_select_clause.html">JPQL SELECT Clause</a>
+</li>
+<li><a href="jpa_langref_orderby.html">JPQL ORDER BY Clause</a>
+</li>
+<li><a href="jpa_langref_bulk_ops.html">JPQL Bulk Update and Delete</a>
+</li>
+<li><a href="jpa_langref_null_values.html">JPQL Null Values</a>
+</li>
+<li><a href="jpa_langref_equality.html">JPQL Equality and Comparison Semantics</a>
+</li>
+<li><a href="jpa_langref_bnf.html">JPQL BNF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_overview_criteria.html">2.11. JPA Criteria</a>
+</li>
+<li><a href="jpa_overview_sqlquery.html">2.12. SQL Queries</a>
+</li>
+<li><a href="jpa_overview_mapping.html">2.13. Mapping Metadata</a>
+</li>
+<li><a href="jpa_overview_conclusion.html">2.14. Conclusion</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect5">
+<h6 id="jpa_langref_datetime"><a class="link" href="#jpa_langref_datetime">2.10.2.6.5. JPQL Datetime Functions</a></h6>
+<div class="paragraph">
+<p>functions_returning_datetime:= CURRENT_DATE | CURRENT_TIME | CURRENT_TIMESTAMP | LOCAL DATE  | LOCAL TIME | LOCAL DATETIME | extract_datetime_part</p>
+</div>
+<div class="paragraph">
+<p>The functions LOCAL DATE, LOCAL TIME, and LOCAL DATETIME return the value of the current date, time,  or timestamp on the database server, respectively.
+Their types are java.time.LocalDate,  java.time.LocalTime, and java.time.LocalDateTime respectively.</p>
+</div>
+<div class="paragraph">
+<p>The functions CURRENT_DATE, CURRENT_TIME, and CURRENT_TIMESTAMP return the value of the current date,  time, or timestamp on the database server, respectively.
+Their types are java.sql.Date, java.sql.Time,  and java.sql.Timestamp respectively.</p>
+</div>
+<div class="paragraph">
+<p>The EXTRACT function takes a datetime argument and one of the following field type identifiers: YEAR,  QUARTER, MONTH, WEEK, DAY, HOUR, MINUTE, SECOND, DATE, TIME.</p>
+</div>
+<div class="paragraph">
+<p>EXTRACT returns the value of the corresponding field or part of the datetime.</p>
+</div>
+<div class="paragraph">
+<p>For the following field type identifiers, EXTRACT returns an integer value:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>YEAR</code> means the calendar year.</p>
+</li>
+<li>
+<p><code>QUARTER</code> means the calendar quarter, numbered from 1 to 4.</p>
+</li>
+<li>
+<p><code>MONTH</code> means the calendar month of the year, numbered from 1.</p>
+</li>
+<li>
+<p><code>WEEK</code> means the ISO-8601 week number.</p>
+</li>
+<li>
+<p><code>DAY</code> means the calendar day of the month, numbered from 1.</p>
+</li>
+<li>
+<p><code>HOUR</code> means the hour of the day in 24-hour time, numbered from 0 to 23.</p>
+</li>
+<li>
+<p><code>MINUTE</code> means the minute of the hour, numbered from 0 to 59.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For the SECOND field type identifier, EXTRACT returns a floating point value:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SECOND</code> means the second of the minute, numbered from 0 to 59, including a fractional part representing fractions of a second.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is illegal to pass a datetime argument which does not have the given field type to EXTRACT.</p>
+</div>
+<div class="paragraph">
+<p>For the following field type identifiers, EXTRACT returns a part of the datetime value:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>DATE</code> means the date part of a datetime.</p>
+</li>
+<li>
+<p><code>TIME</code> means the time part of a datetime.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is illegal to pass a datetime argument which does not have the given part to EXTRACT.</p>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_langref_arithmetic.html">JPQL Arithmetic Functions</a> | ↑ Up: <a href="jpa_langref_scalar_expressions.html">JPQL Scalar Expressions</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_langref_typecasts_expressions.html">Typecasts</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

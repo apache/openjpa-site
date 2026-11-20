@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="jpa_4.2_SequenceGeneratorWithoutSequences" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+<ul class="sectlevel2">
+<li><a href="jpa_4.2_incompatibilities.html">Incompatibilities</a>
+<ul class="sectlevel3">
+<li><a href="jpa_4.2_Requirements.html">Platform and Dependency Requirements</a>
+</li>
+<li><a href="jpa_4.2_SecurityManager.html">SecurityManager Support Removed</a>
+</li>
+<li><a href="jpa_4.2_DynamicEnhancementAgent.html">Dynamic Enhancement Agent</a>
+</li>
+<li><a href="jpa_4.2_JUnitJupiter.html">openjpa-junit5 is now openjpa-junit-jupiter</a>
+</li>
+<li><a href="jpa_4.2_JPQLReservedIdentifiers.html">New JPQL Reserved Identifiers</a>
+</li>
+<li><a href="jpa_4.2_JPQLIntegerLiterals.html">JPQL Integer Literals are typed Integer</a>
+</li>
+<li><a href="jpa_4.2_CriteriaArithmeticResultType.html">Criteria arithmetic takes its result type from both operands</a>
+</li>
+<li><a href="jpa_4.2_JPQLArithmeticResultType.html">JPQL arithmetic ranks Double and Float above BigDecimal</a>
+</li>
+<li><a href="jpa_4.2_JPQLArithmeticAssociativity.html">JPQL arithmetic operators are left associative</a>
+</li>
+<li><a href="jpa_4.2_InMemoryNullArithmetic.html">Arithmetic with null is null in memory</a>
+</li>
+<li><a href="jpa_4.2_QueryValueConversion.html">Query value conversion</a>
+</li>
+<li><a href="jpa_4.2_ExtractWeek.html">EXTRACT(WEEK) is the ISO-8601 week</a>
+</li>
+<li><a href="jpa_4.2_QueryResultList.html">Query.getResultList() returns a materialized ArrayList</a>
+</li>
+<li><a href="jpa_4.2_BulkDeleteNoCascade.html">Bulk DELETE no longer cascades</a>
+</li>
+<li><a href="jpa_4.2_SliceBulkTargets.html">Slice target applies to bulk UPDATE and DELETE</a>
+</li>
+<li><a href="jpa_4.2_InMemoryBulkFlush.html">An in-memory bulk operation flushes the persistence context</a>
+</li>
+<li><a href="jpa_4.2_FlushBeforeQueries.html">Completed access paths for Criteria and collection-valued queries</a>
+</li>
+<li><a href="jpa_4.2_RollbackOnException.html">Exceptions mark the transaction rollback-only; closed EntityManager checks</a>
+</li>
+<li><a href="jpa_4.2_FindArgumentValidation.html">Argument validation in find(), getReference(), detach(), contains(), remove()</a>
+</li>
+<li><a href="jpa_4.2_CloseWithActiveTransaction.html">EntityManager.close() with an active resource-local transaction</a>
+</li>
+<li><a href="jpa_4.2_EntityManagerFactoryLifecycle.html">EntityManagerFactory lifecycle and properties</a>
+</li>
+<li><a href="jpa_4.2_QueryParameters.html">Query parameter API</a>
+</li>
+<li><a href="jpa_4.2_StoredProcedureQuery.html">StoredProcedureQuery semantics</a>
+</li>
+<li><a href="jpa_4.2_CriteriaMetamodel.html">Criteria API and Metamodel</a>
+</li>
+<li><a href="jpa_4.2_PersistenceUnitUtilIdentifier.html">PersistenceUnitUtil.getIdentifier() returns the plain identifier</a>
+</li>
+<li><a href="jpa_4.2_CacheModeProperties.html">Cache mode properties on EntityManager.setProperty()</a>
+</li>
+<li><a href="jpa_4.2_MapKeyColumn.html">Default map key column renamed to &lt;field&gt;_KEY</a>
+</li>
+<li><a href="jpa_4.2_MappingResolution.html">Attribute overrides, @OrderBy and inverse map keys</a>
+</li>
+<li><a href="jpa_4.2_SequenceGeneratorName.html">@SequenceGenerator without sequenceName</a>
+</li>
+<li><a href="jpa_4.2_SequenceGeneratorWithoutSequences.html"><span class="toc-current">@SequenceGenerator on a database without sequences</span></a>
+</li>
+<li><a href="jpa_4.2_AttributeConverters.html">AttributeConverter handling</a>
+</li>
+<li><a href="jpa_4.2_ConverterTypeHierarchy.html">Converter types declared by a generic superclass or interface</a>
+</li>
+<li><a href="jpa_4.2_AutoApplyNonSerializable.html">An auto-apply converter maps an attribute whose type is not serializable</a>
+</li>
+<li><a href="jpa_4.2_AccessType.html">Access type determination and property accessors</a>
+</li>
+<li><a href="jpa_4.2_InstantYearMapping.html">java.time.Instant and java.time.Year mapping</a>
+</li>
+<li><a href="jpa_4.2_GeneratedDDL.html">Generated DDL changes</a>
+</li>
+<li><a href="jpa_4.2_SchemaGeneration.html">Jakarta Persistence schema generation and SQL scripts</a>
+</li>
+<li><a href="jpa_4.2_ColumnTypeConflicts.html">Numeric versus character column type conflicts</a>
+</li>
+<li><a href="jpa_4.2_DeleteCountZero.html">DELETE affecting zero rows tolerated for unversioned entities</a>
+</li>
+<li><a href="jpa_4.2_NonEntityClasses.html">Non-entity classes in persistence.xml</a>
+</li>
+<li><a href="jpa_4.2_KernelLeniency.html">Relaxed kernel checks</a>
+</li>
+<li><a href="jpa_4.2_FlushOrdering.html">Insert ordering across logical foreign keys</a>
+</li>
+<li><a href="jpa_4.2_Enhancer.html">Enhancer and runtime enhancement</a>
+</li>
+<li><a href="jpa_4.2_DelayedProxies.html">Delayed collection proxies on Java 21</a>
+</li>
+<li><a href="jpa_4.2_MetamodelGenerator.html">Static metamodel generator output</a>
+</li>
+<li><a href="jpa_4.2_LifecycleCallbacks.html">Lifecycle callbacks and listeners</a>
+</li>
+<li><a href="jpa_4.2_PersistenceXml.html">persistence.xml resource handling</a>
+</li>
+<li><a href="jpa_4.2_Locale.html">Locale-independent case conversion</a>
+</li>
+<li><a href="jpa_4.2_ReservedWords.html">Reserved word handling and MySQL delimiting</a>
+</li>
+<li><a href="jpa_4.2_LikeEscape.html">LIKE without an ESCAPE clause</a>
+</li>
+<li><a href="jpa_4.2_StoreCharsAsNumbers.html">char attributes are stored as CHAR(1)</a>
+</li>
+<li><a href="jpa_4.2_H2DecimalColumns.html">Decimal columns on H2</a>
+</li>
+<li><a href="jpa_4.2_MySQLDecimalColumns.html">Decimal columns on MySQL and MariaDB</a>
+</li>
+<li><a href="jpa_4.2_PostgreSQL.html">PostgreSQL</a>
+</li>
+<li><a href="jpa_4.2_MySQLMariaDB.html">MySQL and MariaDB</a>
+</li>
+<li><a href="jpa_4.2_MySQLMariaDBReservedWords.html">Names that MySQL and MariaDB reserve</a>
+</li>
+<li><a href="jpa_4.2_SQLServer.html">Microsoft SQL Server</a>
+</li>
+<li><a href="jpa_4.2_SQLServerDecimalColumns.html">Decimal columns on Microsoft SQL Server</a>
+</li>
+<li><a href="jpa_4.2_Oracle.html">Oracle</a>
+</li>
+<li><a href="jpa_4.2_H2BigInteger.html">BigInteger columns on H2</a>
+</li>
+<li><a href="jpa_4.2_HSQLDB.html">HSQLDB</a>
+</li>
+<li><a href="jpa_4.2_HSQLDBDecimalColumns.html">Decimal columns and casts on HSQLDB</a>
+</li>
+<li><a href="jpa_4.2_SPIChanges.html">SPI changes for custom store, dictionary and expression implementations</a>
+</li>
+<li><a href="jpa_4.2_NewFeatures.html">Notable new features</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="jpa_4.2_SequenceGeneratorWithoutSequences"><a class="link" href="#jpa_4.2_SequenceGeneratorWithoutSequences">@SequenceGenerator on a database without sequences</a></h4>
+<div class="paragraph">
+<p>A named <code>@SequenceGenerator</code> previously failed outright on every database whose dictionary defines no <code>NextSequenceQuery</code> - MySQL, MariaDB before 10.3, Apache Derby, Microsoft SQL Server and Sybase as configured by OpenJPA, and any other dictionary that declares none - with <code>Error instantiating named sequence "&#8230;&#8203;": Your database dictionary does
+                    not support native sequences</code>, and there was no property that avoided it.
+Such a generator is now backed by a <code class="class">org.apache.openjpa.jdbc.kernel.ValueTableJDBCSeq</code> instead: a counter row in <code>OPENJPA_SEQUENCES_TABLE</code>, whose <code>initialValue</code> and <code>allocationSize</code> are honoured, so the identifiers are unique and allocated in blocks as they would be from a real sequence.
+This is a design decision with a compatibility dimension, not something Jakarta Persistence demands; the specification leaves the realisation of a generator to the provider, and the observable contract is the uniqueness of the identifiers.</p>
+</div>
+<div class="paragraph">
+<p>What this means in practice:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>OPENJPA_SEQUENCES_TABLE</code> has to exist. The schema tool and <code>openjpa.jdbc.SynchronizeMappings</code> create it, but a hand-maintained schema has to add it, since nothing creates it otherwise.</p>
+</li>
+<li>
+<p>The counter row is keyed by the sequence name, so entities sharing one generator share one counter, as they would share a sequence object. The generator&#8217;s <code>schema</code> and <code>catalog</code> qualify that key - they do not place the table, which stays in the default schema. The schema is the one a sequence object would have been created in, which is the persistence unit default schema when the generator declares none, so changing that default moves the counter just as it would move the sequence object.</p>
+</li>
+<li>
+<p>Each allocation takes a row lock on the shared counter row for the duration of its transaction. Like every <code class="class">org.apache.openjpa.jdbc.kernel.TableJDBCSeq</code> derived sequence it therefore behaves best with <a href="openjpa.ConnectionFactory2.html">openjpa.ConnectionFactory2</a> configured, so that the allocation runs on a connection of its own.</p>
+</li>
+<li>
+<p>Some of these databases do have sequence objects even though the dictionary declares none - Microsoft SQL Server has had them since 2012. Where a generator is meant to draw from a sequence the database already has, which is also the way to keep sharing it with anything else that draws from it, configure that dictionary with a <code>NextSequenceQuery</code> in <a href="openjpa.jdbc.DBDictionary.html">openjpa.jdbc.DBDictionary</a>, for instance <code>openjpa.jdbc.DBDictionary=sqlserver(NextSequenceQuery="SELECT NEXT VALUE FOR {0}")</code>; the generator then keeps the native path.</p>
+</li>
+<li>
+<p>The substitution is logged once per generator as a warning, and <code>openjpa.Compatibility=EmulateNativeSequences=false</code> restores the previous hard failure.</p>
+</li>
+<li>
+<p>A dictionary that only learns from the server version whether the database has sequence objects - <code class="class">MariaDBDictionary</code> does - is asked for a connection while the generator is resolved, so that the answer does not depend on whether anything else has touched the database first. If no connection can be obtained, resolving the generator fails with that failure as its cause rather than picking a backing store that cannot be revised later. Dictionaries that declare a <code>NextSequenceQuery</code> in their constructor - Oracle, DB2, PostgreSQL, H2, HSQL, Informix, Firebird, Ingres - are resolved without a connection, as before.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="jpa_4.2_SequenceGeneratorName.html">@SequenceGenerator without sequenceName</a> | ↑ Up: <a href="jpa_4.2_incompatibilities.html">Incompatibilities</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="jpa_4.2_AttributeConverters.html">AttributeConverter handling</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

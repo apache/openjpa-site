@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_perfpack_eager" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_pc_pcclasses.html">3.6.1. Persistent Class List</a>
+</li>
+<li><a href="ref_guide_pc_enhance.html">3.6.2. Enhancement</a>
+</li>
+<li><a href="ref_guide_pc_interfaces.html">3.6.3. Managed Interfaces</a>
+</li>
+<li><a href="ref_guide_pc_oid.html">3.6.4. Object Identity</a>
+</li>
+<li><a href="ref_guide_inverses.html">3.6.5. Managed Inverses</a>
+</li>
+<li><a href="ref_guide_pc_scos.html">3.6.6. Persistent Fields</a>
+</li>
+<li><a href="ref_guide_fetch.html">3.6.7. Fetch Groups</a>
+</li>
+<li><a href="ref_guide_perfpack_eager.html"><span class="toc-current">3.6.8. Eager Fetching</span></a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_perfpack_eager_conf.html">Configuring Eager Fetching</a>
+</li>
+<li><a href="ref_guide_perfpack_eager_consider.html">Eager Fetching Considerations and Limitations</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_perfpack_eager"><a class="link" href="#ref_guide_perfpack_eager">3.6.8. Eager Fetching</a></h4>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p>Eager fetching is the ability to efficiently load subclass data and related objects along with the base instances being queried.
+Typically, OpenJPA has to make a trip to the database whenever a relation is loaded, or when you first access data that is mapped to a table other than the least-derived superclass table.
+If you perform a query that returns 100 <code class="class">Person</code> objects, and then you have to retrieve the <code class="class">Address</code> for each person, OpenJPA may make as many as 101 queries (the initial query, plus one for the address of each person returned). Or if some of the <code class="class">Person</code> instances turn out to be <code class="class">Employee</code>s, where <code class="class">Employee</code> has additional data in its own joined table, OpenJPA once again might need to make extra database trips to access the additional employee data.
+With eager fetching, OpenJPA can reduce these cases to a single query.</p>
+</div>
+<div class="paragraph">
+<p>Eager fetching only affects relations in the active fetch groups, and is limited by the declared maximum fetch depth and field recursion depth (see <a href="ref_guide_fetch.html">Fetch Groups</a>). In other words, relations that would not normally be loaded immediately when retrieving an object or accessing a field are not affected by eager fetching.
+In our example above, the address of each person would only be eagerly fetched if the query were configured to include the address field or its fetch group, or if the address were in the default fetch group.
+This allows you to control exactly which fields are eagerly fetched in different situations.
+Similarly, queries that exclude subclasses aren&#8217;t affected by eager subclass fetching, described below.</p>
+</div>
+<div class="paragraph">
+<p>Eager fetching has three modes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>none</code>: No eager fetching is performed. Related objects are always loaded in an independent select statement. No joined subclass data is loaded unless it is in the table(s) for the base type being queried. Unjoined subclass data is loaded using separate select statements rather than a SQL UNION operation.</p>
+</li>
+<li>
+<p><code>join</code>: In this mode, OpenJPA joins to to-one relations in the configured fetch groups.
+If OpenJPA is loading data for a single instance, then OpenJPA will also join to any collection field in the configured fetch groups.
+When loading data for multiple instances, though, (such as when executing a <code class="class">Query</code>) OpenJPA will not join to collections by default.
+Instead, OpenJPA defaults to <code>parallel</code> mode for collections, as described below.
+You can force OpenJPA use a join rather than parallel mode for a collection field using the metadata extension described in <a href="eager-fetch-mode.html">Eager Fetch Mode</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Under <code>join</code> mode, OpenJPA uses a left outer join (or inner join, if the relations' field metadata declares the relation non-nullable) to select the related data along with the data for the target objects.
+This process works recursively for to-one joins, so that if <code class="class">Person</code> has an <code class="class">Address</code>, and <code class="class">Address</code> has a <code class="class">TelephoneNumber</code>, and the fetch groups are configured correctly, OpenJPA might issue a single select that joins across the tables for all three classes.
+To-many joins can not recursively spawn other to-many joins, but they can spawn recursive to-one joins.</p>
+</div>
+<div class="paragraph">
+<p>Under the <code>join</code> subclass fetch mode, subclass data in joined tables is selected by outer joining to all possible subclass tables of the type being queried.
+As you&#8217;ll see below, subclass data fetching is configured separately from relation fetching, and can be disabled for specific classes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="img/icons/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Some databases may not support outer joins.
+Also, OpenJPA can not use outer joins if you have set the <a href="openjpa.jdbc.DBDictionary.html"><code>DBDictionary</code></a>'s <code>JoinSyntax</code> to <code>traditional</code>.
+See <a href="ref_guide_dbsetup_sql92.html">Setting the SQL Join Syntax</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>parallel</code>: Under this mode, OpenJPA selects to-one relations and joined collections as outlined in the <code>join</code> mode description above.
+Unjoined collection fields, however, are eagerly fetched using a separate select statement for each collection, executed in parallel with the select statement for the target objects.
+The parallel selects use the <code>WHERE</code> conditions from the primary select, but add their own joins to reach the related data.
+Thus, if you perform a query that returns 100 <code class="class">Company</code> objects, where each company has a list of <code class="class">Employee</code> objects and <code class="class">Department</code> objects, OpenJPA will make 3 queries.
+The first will select the company objects, the second will select the employees for those companies, and the third will select the departments for the same companies.
+Just as for joins, this process can be recursively applied to the objects in the relations being eagerly fetched.
+Continuing our example, if the <code class="class">Employee</code> class had a list of <code class="class">Projects</code> in one of the fetch groups being loaded, OpenJPA would execute a single additional select in parallel to load the projects of all employees of the matching companies.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Using an additional select to load each collection avoids transferring more data than necessary from the database to the application.
+If eager joins were used instead of parallel select statements, each collection added to the configured fetch groups would cause the amount of data being transferred to rise dangerously, to the point that you could easily overwhelm the network.</p>
+</div>
+<div class="paragraph">
+<p>Polymorphic to-one relations to table-per-class mappings use parallel eager fetching because proper joins are impossible.
+You can force other to-one relations to use parallel rather than join mode eager fetching using the metadata extension described in <a href="eager-fetch-mode.html">Eager Fetch Mode</a>.</p>
+</div>
+<div class="paragraph">
+<p>Parallel subclass fetch mode only applies to queries on joined inheritance hierarchies.
+Rather than outer-joining to subclass tables, OpenJPA will issue the query separately for each subclass.
+In all other situations, parallel subclass fetch mode acts just like join mode in regards to vertically-mapped subclasses.</p>
+</div>
+<div class="paragraph">
+<p>When OpenJPA knows that it is selecting for a single object only, it never uses <code>parallel</code> mode, because the additional selects can be made lazily just as efficiently.
+This mode only increases efficiency over
+<code>join</code> mode when multiple objects with eager relations are being loaded, or when multiple selects might be faster than joining to all possible subclasses.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="ref_guide_perfpack_eager_conf.html">Configuring Eager Fetching</a></p>
+</li>
+<li>
+<p><a href="ref_guide_perfpack_eager_consider.html">Eager Fetching Considerations and Limitations</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_fetch_impl.html">Implementation Notes</a> | ↑ Up: <a href="ref_guide_pc.html">Persistent Classes</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_perfpack_eager_conf.html">Configuring Eager Fetching</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

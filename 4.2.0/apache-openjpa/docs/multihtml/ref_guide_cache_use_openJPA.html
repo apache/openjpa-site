@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_cache_use_openJPA" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_cache.html">3.11.1. Data Cache</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_cache_conf.html">Data Cache Configuration</a>
+</li>
+<li><a href="ref_guide_cache_use.html">Data Cache Usage</a>
+<ul class="sectlevel5">
+<li><a href="ref_guide_cache_use_JPA.html">Using the JPA standard Cache interface</a>
+</li>
+<li><a href="ref_guide_cache_use_openJPA.html"><span class="toc-current">Using the OpenJPA StoreCache extensions</span></a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_cache_statistics.html">Cache Statistics</a>
+</li>
+<li><a href="ref_guide_cache_query.html">Query Cache</a>
+</li>
+<li><a href="ref_guide_cache_extension.html">Cache Extension</a>
+</li>
+<li><a href="ref_guide_cache_notes.html">Important Notes</a>
+</li>
+<li><a href="datastore_cache_issues.html">Known Issues and Limitations</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_cache_querycomp.html">3.11.2. Query Compilation Cache</a>
+</li>
+<li><a href="ref_guide_cache_querysql.html">3.11.3. Prepared SQL Cache</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect5">
+<h6 id="ref_guide_cache_use_openJPA"><a class="link" href="#ref_guide_cache_use_openJPA">3.11.1.2.2. Using the OpenJPA StoreCache extensions</a></h6>
+<div class="paragraph">
+<p>You obtain the <code class="class">StoreCache</code> through the <code class="method">OpenJPAEntityManagerFactory.getStoreCache</code> method.</p>
+</div>
+<div id="ref_guide_cache_access_jpa" class="exampleblock">
+<div class="title">Example 148. Accessing the StoreCache</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">org.apache.openjpa.persistence.*</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="nc">OpenJPAEntityManagerFactory</span> <span class="n">oemf</span> <span class="o">=</span> <span class="nc">OpenJPAPersistence</span><span class="o">.</span><span class="na">cast</span><span class="o">(</span><span class="n">emf</span><span class="o">);</span>
+<span class="nc">StoreCache</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">oemf</span><span class="o">.</span><span class="na">getStoreCache</span><span class="o">();</span>
+<span class="o">...</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alternatively you can just cast the same object returned from
+the EntityManager.getCache() method.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">org.apache.openjpa.persistence.StoreCache</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="nc">StoreCache</span> <span class="n">cache</span> <span class="o">=</span> <span class="o">(</span><span class="nc">StoreCache</span><span class="o">)</span> <span class="n">emf</span><span class="o">.</span><span class="na">getCache</span><span class="o">();</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">evict</span><span class="o">(</span><span class="nc">Class</span> <span class="n">cls</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">oid</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">evictAll</span><span class="o">();</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">evictAll</span><span class="o">(</span><span class="nc">Class</span> <span class="n">cls</span><span class="o">,</span> <span class="nc">Object</span><span class="o">...</span> <span class="n">oids</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">evictAll</span><span class="o">(</span><span class="nc">Class</span> <span class="n">cls</span><span class="o">,</span> <span class="nc">Collection</span> <span class="n">oids</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code class="method">evict</code> methods tell the cache to release data.
+Each method takes an entity class and one or more identity values, and releases the cached data for the corresponding persistent instances.
+The <code class="method">evictAll</code> method with no arguments clears the cache.
+Eviction is useful when the datastore is changed by a separate process outside OpenJPA&#8217;s control.
+In this scenario, you typically have to manually evict the data from the datastore cache; otherwise the OpenJPA runtime, oblivious to the changes, will maintain its stale copy.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">pin</span><span class="o">(</span><span class="nc">Class</span> <span class="n">cls</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">oid</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">pinAll</span><span class="o">(</span><span class="nc">Class</span> <span class="n">cls</span><span class="o">,</span> <span class="nc">Object</span><span class="o">...</span> <span class="n">oids</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">pinAll</span><span class="o">(</span><span class="nc">Class</span> <span class="n">cls</span><span class="o">,</span> <span class="nc">Collection</span> <span class="n">oids</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">unpin</span><span class="o">(</span><span class="nc">Class</span> <span class="n">cls</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">oid</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">unpinAll</span><span class="o">(</span><span class="nc">Class</span> <span class="n">cls</span><span class="o">,</span> <span class="nc">Object</span><span class="o">...</span> <span class="n">oids</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">unpinAll</span><span class="o">(</span><span class="nc">Class</span> <span class="n">cls</span><span class="o">,</span> <span class="nc">Collection</span> <span class="n">oids</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Most caches are of limited size.
+Pinning an identity to the cache ensures that the cache will not kick the data for the corresponding instance out of the cache, unless you manually evict it.
+Note that even after manual eviction, the data will get pinned again the next time it is fetched from the store.
+You can only remove a pin and make the data once again available for normal cache overflow eviction through the <code class="method">unpin</code> methods.
+Use pinning when you want a guarantee that a certain object will always be available from cache, rather than requiring a datastore trip.</p>
+</div>
+<div id="ref_guide_cache_use_jpa" class="exampleblock">
+<div class="title">Example 149. StoreCache Usage</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">org.apache.openjpa.persistence.*</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="nc">OpenJPAEntityManagerFactory</span> <span class="n">oemf</span> <span class="o">=</span> <span class="nc">OpenJPAPersistence</span><span class="o">.</span><span class="na">cast</span><span class="o">(</span><span class="n">emf</span><span class="o">);</span>
+<span class="nc">StoreCache</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">oemf</span><span class="o">.</span><span class="na">getStoreCache</span><span class="o">();</span>
+<span class="n">cache</span><span class="o">.</span><span class="na">pin</span><span class="o">(</span><span class="nc">Magazine</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">popularMag</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+<span class="n">cache</span><span class="o">.</span><span class="na">evict</span><span class="o">(</span><span class="nc">Magazine</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">changedMag</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>See the <code class="class">StoreCache</code><a href="../../apidocs/org/apache/openjpa/persistence/StoreCache.html">
+Javadoc</a> for information on additional functionality it provides.
+Also, <a href="ref_guide_runtime.html">Runtime Extensions</a> discusses OpenJPA&#8217;s other extensions to the standard set of JPA runtime interfaces.</p>
+</div>
+<div class="paragraph">
+<p>The examples above include calls to <code class="method">evict</code> to manually remove data from the data cache.
+Rather than evicting objects from the data cache directly, you can also configure OpenJPA to automatically evict objects from the data cache when you use the <code class="class">OpenJPAEntityManager</code>'s eviction APIs.</p>
+</div>
+<div id="ref_guide_cache_pmevict" class="exampleblock">
+<div class="title">Example 150. Automatic Data Cache Eviction</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"openjpa.BrokerImpl"</span> <span class="na">value=</span><span class="s">"EvictFromDataCache=true"</span><span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">org.apache.openjpa.persistence.*</span><span class="o">;</span>
+
+<span class="o">...</span>
+
+<span class="nc">OpenJPAEntityManager</span> <span class="n">oem</span> <span class="o">=</span> <span class="nc">OpenJPAPersistence</span><span class="o">.</span><span class="na">cast</span><span class="o">(</span><span class="n">em</span><span class="o">);</span>
+<span class="n">oem</span><span class="o">.</span><span class="na">evict</span><span class="o">(</span><span class="n">changedMag</span><span class="o">);</span>  <span class="c1">// will evict from data cache also</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_cache_use_JPA.html">Using the JPA standard Cache interface</a> | ↑ Up: <a href="ref_guide_cache_use.html">Data Cache Usage</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_cache_statistics.html">Cache Statistics</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_mapping_notes_nonstdjoins" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_mapping_mappingtool.html">3.8.1. Forward Mapping</a>
+</li>
+<li><a href="ref_guide_pc_reverse.html">3.8.2. Reverse Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_middle.html">3.8.3. Meet-in-the-Middle Mapping</a>
+</li>
+<li><a href="ref_guide_mapping_defaults.html">3.8.4. Mapping Defaults</a>
+</li>
+<li><a href="ref_guide_mapping_factory.html">3.8.5. Mapping Factory</a>
+</li>
+<li><a href="ref_guide_mapping_notes_nonstdjoins.html"><span class="toc-current">3.8.6. Non-Standard Joins</span></a>
+</li>
+<li><a href="ref_guide_mapping_jpa.html">3.8.7. Additional JPA Mappings</a>
+</li>
+<li><a href="ref_guide_mapping_limits.html">3.8.8. Mapping Limitations</a>
+</li>
+<li><a href="ref_guide_mapping_ext.html">3.8.9. Mapping Extensions</a>
+</li>
+<li><a href="ref_guide_mapping_custom.html">3.8.10. Custom Mappings</a>
+</li>
+<li><a href="ref_guide_orphan.html">3.8.11. Orphaned Keys</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="ref_guide_mapping_notes_nonstdjoins"><a class="link" href="#ref_guide_mapping_notes_nonstdjoins">3.8.6. Non-Standard Joins</a></h4>
+<div class="paragraph">
+<p>The JPA Overview&#8217;s <a href="jpa_overview_mapping.html">Mapping Metadata</a> explains join mapping.
+All of the examples in that document, however, use "standard" joins, in that there is one foreign key column for each primary key column in the target table.
+OpenJPA supports additional join patterns, including partial primary key joins, non-primary key joins, and joins using constant values.</p>
+</div>
+<div class="paragraph">
+<p> In a partial primary key join, the source table only has foreign key columns for a subset of the primary key columns in the target table.
+So long as this subset of columns correctly identifies the proper row(s) in the referenced table, OpenJPA will function properly.
+There is no special syntax for expressing a partial primary key join - just do not include column definitions for missing foreign key columns.</p>
+</div>
+<div class="paragraph">
+<p>In a non-primary key join, at least one of the target columns is not a primary key.
+Once again, OpenJPA supports this join type with the same syntax as a primary key join.
+There is one restriction, however: each non-primary key column you are joining to must be controlled by a field mapping that implements the <a href="../../apidocs/org/apache/openjpa/jdbc/meta/Joinable.html">
+org.apache.openjpa.jdbc.meta.Joinable</a> interface.
+All built in basic mappings implement this interface, including basic fields of embedded objects.
+OpenJPA will also respect any custom mappings that implement this interface.
+See <a href="ref_guide_mapping_custom.html">Custom Mappings</a> for an examination of custom mappings.</p>
+</div>
+<div class="paragraph">
+<p> Not all joins consist of only links between columns.
+In some cases you might have a schema in which one of the join criteria is that a column in the source or target table must have some constant value.
+OpenJPA calls joins involving constant values <em>constant joins</em>.</p>
+</div>
+<div class="paragraph">
+<p>To form a constant join in JPA mapping, first set the <code>JoinColumn</code>'s <code>name</code> attribute to the name of the column.
+If the column with the constant value is the target of the join, give its fully qualified name in the form <code>&lt;table name&gt;.&lt;column name&gt;</code>.
+Next, set the <code>referencedColumnName</code> attribute to the constant value.
+If the constant value is a string, place it in single quotes to differentiate it from a column name.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/joins-constant.png" alt="joins constant">
+</div>
+</div>
+<div class="paragraph">
+<p>Consider the tables above.
+First, we want to join row <code>T1.R1</code> to row <code>T2.R1</code>.
+If we just join column <code>T1.FK</code> to <code>T2.PK1</code>, we will wind up matching both <code>T2.R1</code>  and <code>T2.R2</code>.
+So in addition to joining
+<code>T1.FK</code> to <code>T2.PK1</code>, we also have to specify that <code>T2.PK2</code> has the value <code>a</code>.
+Here is how we&#8217;d accomplish this in mapping metadata.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"T1"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="err">...</span>  <span class="err">{</span>
+
+    <span class="err">@</span><span class="nc">ManyToOne</span>
+    <span class="nd">@JoinColumns</span><span class="o">({</span>
+        <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"FK"</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"PK1"</span><span class="o">),</span>
+        <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"T2.PK2"</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"'a'"</span><span class="o">)</span>
+    <span class="o">});</span>
+    <span class="kd">private</span> <span class="o">...;</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that we had to fully qualify the name of column <code>PK2</code> because it is in the target table.
+Also notice that we put single quotes around the constant value so that it won&#8217;t be confused with a column name.
+You do not need single quotes for numeric constants.
+For example, the syntax to join <code>T1.R2</code> to <code>T2.R4</code> is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"T1"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="err">...</span>  <span class="err">{</span>
+
+    <span class="err">@</span><span class="nc">ManyToOne</span>
+    <span class="nd">@JoinColumns</span><span class="o">({</span>
+        <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"FK"</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"PK2"</span><span class="o">),</span>
+        <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"T2.PK1"</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"2"</span><span class="o">)</span>
+    <span class="o">});</span>
+    <span class="kd">private</span> <span class="o">...;</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, from the inverse direction, these joins would look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"T2"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="err">...</span>  <span class="err">{</span>
+
+    <span class="err">@</span><span class="nc">ManyToOne</span>
+    <span class="nd">@JoinColumns</span><span class="o">({</span>
+        <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"T1.FK"</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"PK1"</span><span class="o">),</span>
+        <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"PK2"</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"'a'"</span><span class="o">)</span>
+    <span class="o">});</span>
+    <span class="kd">private</span> <span class="o">...;</span>
+
+    <span class="nd">@ManyToOne</span>
+    <span class="nd">@JoinColumns</span><span class="o">({</span>
+        <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"T1.FK"</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"PK2"</span><span class="o">),</span>
+        <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"PK1"</span> <span class="n">referencedColumnName</span><span class="o">=</span><span class="s">"2"</span><span class="o">)</span>
+    <span class="o">});</span>
+    <span class="kd">private</span> <span class="o">...;</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_mapping_factory.html">Mapping Factory</a> | ↑ Up: <a href="ref_guide_mapping.html">Mapping</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_mapping_jpa.html">Additional JPA Mappings</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

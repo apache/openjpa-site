@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="ref_guide_dbsetup_dbsupport_mysql" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+<ul class="sectlevel2">
+<li><a href="ref_guide_intro.html">3.1. Introduction</a>
+</li>
+<li><a href="ref_guide_conf.html">3.2. Configuration</a>
+</li>
+<li><a href="ref_guide_conf_plugins.html">3.3. Plugin Configuration</a>
+</li>
+<li><a href="ref_guide_logging.html">3.4. Logging and Auditing</a>
+</li>
+<li><a href="ref_guide_dbsetup.html">3.5. JDBC</a>
+<ul class="sectlevel3">
+<li><a href="ref_guide_dbsetup_builtin.html">3.5.1. Using the OpenJPA DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_thirdparty.html">3.5.2. Using a Third-Party DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_sqlconn.html">3.5.3. Runtime Access to DataSource</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport.html">3.5.4. Database Support</a>
+<ul class="sectlevel4">
+<li><a href="ref_guide_dbsetup_dbdictprops.html">DBDictionary Properties</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_firebird.html">FirebirdDictionary Properties</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_mysql.html"><span class="toc-current">MySQLDictionary Properties</span></a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_oracle.html">OracleDictionary Properties</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_sybase.html">SybaseDictionary Properties</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_db2.html">DB2 Properties</a>
+</li>
+<li><a href="ref_guide_dbsetup_dbsupport_delim_id.html">Delimited Identifiers Support</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_dbsetup_isolation.html">3.5.5. Setting the Transaction Isolation</a>
+</li>
+<li><a href="ref_guide_dbsetup_sql92.html">3.5.6. Setting the SQL Join Syntax</a>
+</li>
+<li><a href="ref_guide_dbsetup_multidb.html">3.5.7. Accessing Multiple Databases</a>
+</li>
+<li><a href="ref_guide_dbsetup_retain.html">3.5.8. Configuring the Use of JDBC Connections</a>
+</li>
+<li><a href="ref_guide_dbsetup_stmtbatch.html">3.5.9. Statement Batching</a>
+</li>
+<li><a href="ref_guide_dbsetup_lrs.html">3.5.10. Large Result Sets</a>
+</li>
+<li><a href="ref_guide_schema_def.html">3.5.11. Default Schema</a>
+</li>
+<li><a href="ref_guide_schema_info.html">3.5.12. Schema Reflection</a>
+</li>
+<li><a href="ref_guide_schema_schematool.html">3.5.13. Schema Tool</a>
+</li>
+<li><a href="ref_guide_schema_xml.html">3.5.14. XML Schema Format</a>
+</li>
+</ul>
+</li>
+<li><a href="ref_guide_pc.html">3.6. Persistent Classes</a>
+</li>
+<li><a href="ref_guide_meta.html">3.7. Metadata</a>
+</li>
+<li><a href="ref_guide_mapping.html">3.8. Mapping</a>
+</li>
+<li><a href="ref_guide_deploy.html">3.9. Deployment</a>
+</li>
+<li><a href="ref_guide_runtime.html">3.10. Runtime Extensions</a>
+</li>
+<li><a href="ref_guide_caching.html">3.11. Caching</a>
+</li>
+<li><a href="ref_guide_encryption.html">3.12. Encryption Provider</a>
+</li>
+<li><a href="ref_guide_remote.html">3.13. Remote and Offline Operation</a>
+</li>
+<li><a href="ref_guide_slice.html">3.14. Slice: Distributed Persistence</a>
+</li>
+<li><a href="ref_guide_integration.html">3.15. Third Party Integration</a>
+</li>
+<li><a href="ref_guide_optimization.html">3.16. Optimization Guidelines</a>
+</li>
+<li><a href="ref_guide_instrumentation.html">3.17. Instrumentation</a>
+</li>
+</ul>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect4">
+<h5 id="ref_guide_dbsetup_dbsupport_mysql"><a class="link" href="#ref_guide_dbsetup_dbsupport_mysql">3.5.4.3. MySQLDictionary Properties</a></h5>
+<div class="paragraph">
+<p>The <code>mysql</code> dictionary also understands the following properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a id="MySQLDictionary.DateFractionDigits"></a><code>DateFractionDigits</code>: Since MySQL 5.8 a timestamp (<code>DATETIME</code>) can store up to 6 sub-second fractions.
+The default in MySQL and OpenJPA is 0 for backward compatibility reasons.
+This default can be changed by setting <code>DateFractionDigits</code> to the number of sub-second fraction digits to be stored.
+This will e.g.
+result in a <code>DATETIME(6)</code> column.
+The number of fraction digits to be generated can also be tweaked via the <code>@Column(scale=n)</code> annotation, where n is the number of digits.
+This setting has primarily an impact on the generated SQL.</p>
+</li>
+<li>
+<p><a id="MySQLDictionary.DriverDeserializesBlobs"></a><code>DriverDeserializesBlobs</code>: Many older MySQL drivers automatically deserialize BLOBs on calls to <code class="method">ResultSet.getObject</code>. The <code class="class">MySQLDictionary</code> overrides the standard <code class="method">DBDictionary.getBlobObject</code> method to take this into account. Defaults to <code>true</code> if driver version is less than 5.0, <code>false</code> otherwise. If your driver deserializes automatically, you may want to set this property to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="MySQLDictionary.TableType"></a><code>TableType</code>: The MySQL table type to use when creating tables.
+Defaults to <code>"innodb"</code>.</p>
+</li>
+<li>
+<p><a id="MySQLDictionary.UseClobs"></a><code>UseClobs</code>: Some older versions of MySQL do not handle CLOBs correctly. To disable CLOB functionality, set this to <code>false</code>. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><a id="MySQLDictionary.OptimizeMultiTableDeletes"></a><code>OptimizeMultiTableDeletes</code>: MySQL as of version 4.0.0 supports multiple tables in <code>DELETE</code> statements.
+When this option is set, OpenJPA will use that syntax when doing bulk deletes from multiple tables.
+This can happen when the <code>deleteTableContents</code><code>SchemaTool</code> action is used.
+(See <a href="ref_guide_schema_schematool.html">Schema Tool</a> for more info about <code>deleteTableContents</code>.) Defaults to <code>false</code>, since the statement may fail if using InnoDB tables and delete constraints.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>MySQL Connector/J supports replication connections that automatically send queries to a read/write source, or to a load balanced set of replicas, based on the read-only status of the connection.
+See <a href="https://dev.mysql.com/doc/connector-j/en/connector-j-source-replica-replication-connection.html">
+MySQL Reference</a> for more details.</p>
+</div>
+<div class="paragraph">
+<p>This replication feature can be used transparently with OpenJPA application by following configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Connector/J 8 and later: <code>openjpa.ConnectionURL: jdbc:mysql:replication://source,replica/database</code> with the regular driver <code>com.mysql.cj.jdbc.Driver</code>.
+A replication connection obtained from a <code>DataSource</code> or a connection pool is recognized as well.</p>
+</li>
+<li>
+<p>Connector/J 5: <code>openjpa.ConnectionDriverName: com.mysql.jdbc.ReplicationDriver</code> and <code>openjpa.ConnectionFactoryProperties: autoReconnect=true,roundRobinLoadBalance=true</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The same holds for MariaDB Connector/J with a <code>jdbc:mariadb:replication://primary,replica/database</code> URL and the <code>MariaDBDictionary</code>.</p>
+</div>
+<div class="paragraph">
+<p>OpenJPA keeps the connection of an <code>EntityManager</code> read-only outside of a transaction, so that those reads go to a replica, and makes it writable when a transaction begins, so that the statements of the transaction, its reads included, go to the source.
+The connections OpenJPA uses for sequences and for schema changes are never made read-only.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="ref_guide_dbsetup_dbsupport_firebird.html">FirebirdDictionary Properties</a> | ↑ Up: <a href="ref_guide_dbsetup_dbsupport.html">Database Support</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="ref_guide_dbsetup_dbsupport_oracle.html">OracleDictionary Properties</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>

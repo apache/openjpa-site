@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Official User Guide for Apache OpenJPA.">
+<meta name="keywords" content="Apache OpenJPA, User Guide">
+<meta name="copyright" content="Copyright © 2006-2026 The Apache Software Foundation. All Rights Reserved.">
+<title>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</title>
+<link rel="stylesheet" href="./css/multipage.css">
+<link rel="stylesheet" href="./rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="migration_detach_behavior" class="book toc2 toc-left">
+<div id="header">
+<h1>Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</h1>
+<div class="details">
+<span id="revdate">Published 2026-09-17T20:17:10Z.</span>
+<br><span id="revremark">The Apache Software Foundation</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a></span></p><ul class="sectlevel1">
+<li><a href="introduction.html">1. Introduction</a>
+</li>
+<li><a href="jpa_overview.html">2. Java Persistence API</a>
+</li>
+<li><a href="ref_guide.html">3. Reference Guide</a>
+</li>
+<li><a href="_appendices.html">4. Appendices</a>
+</li>
+<li><a href="migration_considerations.html">Appendix D: Migration Considerations</a>
+</li>
+<li><a href="jpa_4.2.html">OpenJPA 4.2.0</a>
+</li>
+<li><a href="jpa_3.2.html">OpenJPA 3.2.0</a>
+</li>
+<li><a href="jpa_2.3.html">OpenJPA 2.3.0</a>
+</li>
+<li><a href="jpa_2.2.html">OpenJPA 2.2.0</a>
+</li>
+<li><a href="jpa_2.0.html">OpenJPA 2.0.0</a>
+<ul class="sectlevel2">
+<li><a href="jpa_2.0_incompatibilities.html">Incompatibilities</a>
+<ul class="sectlevel3">
+<li><a href="getProperties.html">getProperties()</a>
+</li>
+<li><a href="migration_detach_behavior.html"><span class="toc-current">Detach Behavior</span></a>
+</li>
+<li><a href="private_persistent_properties.html">Use of private persistent properties</a>
+</li>
+<li><a href="setParameter.html">Query.setParameter()</a>
+</li>
+<li><a href="serialization.html">Serialization of Entities</a>
+</li>
+<li><a href="QuerySQLCache.html">openjpa.jdbc.QuerySQLCache</a>
+</li>
+</ul>
+</li>
+<li><a href="internal_differences.html">Internal Behavioral Differences</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect3">
+<h4 id="migration_detach_behavior"><a class="link" href="#migration_detach_behavior">Detach Behavior</a></h4>
+<div class="paragraph">
+<p>The detach behavior has changed in several ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the 1.x.x release, managed entities were flushed to the database as part of the detach operation. This is no longer done in 2.0.</p>
+</li>
+<li>
+<p>In the 1.x.x release, entities were copied and returned. In 2.0, for those methods that have return values, the original entities are returned.</p>
+</li>
+<li>
+<p>In the 1.x.x release, managed entities still exist in the persistent context. In 2.0, they are removed.</p>
+</li>
+<li>
+<p>In the 1.x.x release, the detach operation is recursively cascaded to all referenced entities. In 2.0, the detach operation is only cascaded to those entities for which Cascade=detach has been specified.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Applications that use a 1.0 persistence.xml will automatically maintain OpenJPA 1.x.x behavior.
+It is possible for a version 2.0 application to revert back to the 1.x.x behavior for some of these items by setting the openjpa.Compatibility property as follows:</p>
+</div>
+<div class="paragraph">
+<p>In addition, a new method has been provided on the <a href="../../apidocs/org/apache/openjpa/persistence/OpenJPAEntityManager.html">OpenJPAEntityManager</a> interface to return a copy of the entity:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">    <span class="kd">public</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span> <span class="nf">detachCopy</span><span class="o">(</span><span class="no">T</span> <span class="n">pc</span><span class="o">):</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="getProperties.html">getProperties()</a> | ↑ Up: <a href="jpa_2.0_incompatibilities.html">Incompatibilities</a> | ⌂ Home: <a href="manual.html">Apache OpenJPA 4.2.0 User&#8217;s Guide: Official User Guide for Apache OpenJPA.</a> | Next: <a href="private_persistent_properties.html">Use of private persistent properties</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2026-11-16 20:54:01 +0100
+</div>
+</div>
+</body>
+</html>
